@@ -1,0 +1,13 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="All rights reserved"
+
+[[mods]]
+modId="lostworlds"
+version="1.0.0"
+displayName="Lost Worlds"
+authors="Willatendo"
+
+description='''
+A 1.16.5 Forge mod that adds dinosaurs, archaeology, and more to the game!
+'''

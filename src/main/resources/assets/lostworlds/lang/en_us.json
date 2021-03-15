@@ -1,0 +1,224 @@
+{
+	//Items
+	
+	//Brush
+	"item.lostworlds.brush": "Brush",
+	
+	//Plaster
+	"item.lostworlds.wet_paper": "Wet Paper",
+	
+	//Procompsognathus
+	"item.lostworlds.procompsognathus_bone": "Procompsognathus Bone",
+	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
+	"item.lostworlds.procompsognathus_egg": "Procompsognathus Egg",
+	"item.lostworlds.procompsognathus_baby": "Procompsognathus Baby",
+	"item.lostworlds.raw_procompsognathus_meat": "Raw Procompsognathus Meat",	
+	"item.lostworlds.cooked_procompsognathus_meat": "Cooked Procompsognathus Meat",
+	"item.lostworlds.procompsognathus_spawn_egg": "Procompsognathus Spawn Egg",	
+
+	//Palaeoniscum
+	"item.lostworlds.palaeoniscum_spawn_egg": "Palaeoniscum Spawn Egg",	
+	"item.lostworlds.palaeoniscum_bucket": "Palaeoniscum Bucket",	
+	
+	//Copper
+	"item.lostworlds.copper_ingot": "Copper Ingot",
+	"item.lostworlds.copper_nugget": "Copper Nugget",
+
+	//Oil and Plastic Stuff
+	"item.lostworlds.oil_bucket": "Oil Bucket",
+	"item.lostworlds.oil_resin_bucket": "Oil Resin Bucket",
+	"item.lostworlds.molten_plastic_bucket": "Molten Plastic Bucket",
+
+	//Music
+	"item.lostworlds.jp_music_disc": "Music Disc",
+	"item.lostworlds.jp_music_disc.desc": "John Williams - Welcome to Jurassic Park",
+
+	//Storage
+	"item.lostworlds.disc": "Disc",
+	"toolTip.lostworlds.disc.holding_shift": "Stores DNA Informatiuon For Computer Use",
+	"toolTip.lostworlds.disc.not_holding_shift": "Hold Shift For More Information",
+
+
+	//Crystal Scarab
+	"item.lostworlds.broken_crystal_scarab_gem": "Broken Crystal Scarab Gem",
+	"item.lostworlds.crystal_scarab_gem": "Crystal Scarab Gem",
+
+	//Crystal Scarab Tools
+	"item.lostworlds.crystal_scarab_sword": "Crystal Scarab Sword",
+	"item.lostworlds.crystal_scarab_shovel": "Crystal Scarab Shovel",
+	"item.lostworlds.crystal_scarab_pickaxe": "Crystal Scarab Pickaxe",
+	"item.lostworlds.crystal_scarab_axe": "Crystal Scarab Axe",
+	"item.lostworlds.crystal_scarab_hoe": "Crystal Scarab Hoe",
+	
+	//Copper
+	"block.lostworlds.copper_ore": "Copper Ore",
+	
+	//Fossils
+	"block.lostworlds.stone_fossil": "Stone Fossil",
+	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
+	"block.lostworlds.plastered_stone_fossil": "Plastered Stone Fossil",
+	
+	//Light Concrete
+	"block.lostworlds.light_concrete": "Light Concrete",
+	"block.lostworlds.light_concrete_stairs": "Light Concrete Stairs",
+	"block.lostworlds.light_concrete_slab": "Light Concrete Slab",
+	"block.lostworlds.light_concrete_wall": "Light Concrete Wall",
+	"block.lostworlds.light_concrete_pressure_plate": "Light Concrete Pressure Plate",
+	"block.lostworlds.light_concrete_button": "Light Concrete Button",
+
+	//Polished Light Concrete
+	"block.lostworlds.polished_light_concrete": "Polished Light Concrete",
+	"block.lostworlds.polished_light_concrete_stairs": "Polished Light Concrete Stairs",
+	"block.lostworlds.polished_light_concrete_slab": "Polished Light Concrete Slab",
+
+	//Dark Concrete
+	"block.lostworlds.dark_concrete": "Dark Concrete",
+	"block.lostworlds.dark_concrete_stairs": "Dark Concrete Stairs",
+	"block.lostworlds.dark_concrete_slab": "Dark Concrete Slab",
+	"block.lostworlds.dark_concrete_wall": "Dark Concrete Wall",
+	"block.lostworlds.dark_concrete_pressure_plate": "Dark Concrete Pressure Plate",
+	"block.lostworlds.dark_concrete_button": "Dark Concrete Button",
+	
+	//Polished Dark Concrete
+	"block.lostworlds.polished_dark_concrete": "Polished Dark Concrete",
+	"block.lostworlds.polished_dark_concrete_stairs": "Polished Dark Concrete Stairs",
+	"block.lostworlds.polished_dark_concrete_slab": "Polished Dark Concrete Slab",
+	
+	//Wooden Planks
+	"block.lostworlds.wooden_planks": "Wooden Planks",
+	"block.lostworlds.wooden_planks_stairs": "Wooden Planks Stairs",
+	"block.lostworlds.wooden_planks_slab": "Wooden Planks Slab",
+	"block.lostworlds.wooden_planks_fence": "Wooden Planks Wall",
+	"block.lostworlds.wooden_planks_fence_gate": "Wooden Planks Wall",
+	"block.lostworlds.wooden_planks_pressure_plate": "Wooden Planks Pressure Plate",
+	"block.lostworlds.wooden_planks_button": "Wooden Planks Button",
+	
+	//Refined Wooden Planks
+	"block.lostworlds.refined_wooden_planks": "Refined Wooden Planks",
+	"block.lostworlds.refined_wooden_planks_stairs": "Refined Wooden Planks Stairs",
+	"block.lostworlds.refined_wooden_planks_slab": "Refined Wooden Planks Slab",
+	"block.lostworlds.refined_wooden_planks_fence": "Refined Wooden Planks Wall",
+	"block.lostworlds.refined_wooden_planks_fence_gate": "Refined Wooden Planks Wall",
+	"block.lostworlds.refined_wooden_planks_pressure_plate": "Refined Wooden Planks Pressure Plate",
+	"block.lostworlds.refined_wooden_planks_button": "Refined Wooden Planks Button",
+	
+	//Pavement
+	"block.lostworlds.pavement": "Pavement",
+	"block.lostworlds.pavement_slope": "Pavement Slope",
+	"block.lostworlds.raised_pavement": "Raised Pavement",
+	
+	//Road
+	"block.lostworlds.gravel_road": "Gravel Road",
+	"block.lostworlds.raised_gravel_road": "Raised Gravel Road",
+	
+	"block.lostworlds.dirt_road": "Dirt Road",
+	"block.lostworlds.raised_dirt_road": "Raised Dirt Road",
+	
+	"block.lostworlds.paved_road": "Paved Road",
+	"block.lostworlds.raised_paved_road": "Raised Paved Road",
+
+	//Tile
+	"block.lostworlds.tile": "Tile",
+	"block.lostworlds.tile_stairs": "Tile Stairs",
+	"block.lostworlds.tile_slab": "Tile Slab",
+
+	//Metal Fence
+	"block.lostworlds.metal_fence": "Metal Fence",
+	
+	//Clear Glass
+	"block.lostworlds.clear_glass": "Clear Glass",
+	"block.lostworlds.clear_glass_pane": "Clear Glass Pane",
+	
+	//Tinted Glass
+	"block.lostworlds.tinted_glass": "Tinted Glass",
+	"block.lostworlds.tinted_glass_pane": "Tinted Glass Pane",
+
+	//Coloured Glass
+	"block.lostworlds.white_glass": "White Glass",
+	"block.lostworlds.white_glass_pane": "White Glass Pane",
+	
+	"block.lostworlds.light_grey_glass": "Light Grey Glass",
+	"block.lostworlds.light_grey_glass_pane": "Light Grey Glass Pane",
+
+	"block.lostworlds.grey_glass": "Grey Glass",
+	"block.lostworlds.grey_glass_pane": "Grey Glass Pane",
+
+	"block.lostworlds.black_glass": "Black Glass",
+	"block.lostworlds.black_glass_pane": "Black Glass Pane",
+	
+	"block.lostworlds.red_glass": "Red Glass",
+	"block.lostworlds.red_glass_pane": "Red Glass Pane",
+	
+	"block.lostworlds.orange_glass": "Orange Glass",
+	"block.lostworlds.orange_glass_pane": "Orange Glass Pane",
+
+	"block.lostworlds.yellow_glass": "Yellow Glass",
+	"block.lostworlds.yellow_glass_pane": "Yellow Glass Pane",
+	
+	"block.lostworlds.lime_glass": "Lime Glass",
+	"block.lostworlds.lime_glass_pane": "Lime Glass Pane",
+	
+	"block.lostworlds.green_glass": "Green Glass",
+	"block.lostworlds.green_glass_pane": "Green Glass Pane",
+	
+	"block.lostworlds.cyan_glass": "Cyan Glass",
+	"block.lostworlds.cyan_glass_pane": "Cyan Glass Pane",
+
+	"block.lostworlds.light_blue_glass": "Light Blue Glass",
+	"block.lostworlds.light_blue_glass_pane": "Light Blue Glass Pane",
+	
+	"block.lostworlds.blue_glass": "Blue Glass",
+	"block.lostworlds.blue_glass_pane": "Blue Glass Pane",
+	
+	"block.lostworlds.purple_glass": "Purple Glass",
+	"block.lostworlds.purple_glass_pane": "Purple Glass Pane",
+	
+	"block.lostworlds.magenta_glass": "Magenta Glass",
+	"block.lostworlds.magenta_glass_pane": "Magenta Glass Pane",
+	
+	"block.lostworlds.pink_glass": "Pink Glass",
+	"block.lostworlds.pink_glass_pane": "Pink Glass Pane",
+
+	"block.lostworlds.brown_glass": "Brown Glass",
+	"block.lostworlds.brown_glass_pane": "Brown Glass Pane",
+
+	//Coloured Blocks
+	"block.lostworlds.red_decoration_block": "Red Decoration Block",
+	"block.lostworlds.yellow_decoration_block": "Yellow Decoration Block",
+	"block.lostworlds.orange_decoration_block": "Orange Decoration Block",
+	"block.lostworlds.lime_decoration_block": "Lime Decoration Block",
+	"block.lostworlds.green_decoration_block": "Green Decoration Block",
+	"block.lostworlds.cyan_decoration_block": "Cyan Decoration Block",
+	"block.lostworlds.blue_decoration_block": "Blue Decoration Block",
+	"block.lostworlds.light_blue_decoration_block": "Light Blue Decoration Block",
+	"block.lostworlds.purple_decoration_block": "Purple Decoration Block",
+	"block.lostworlds.magenta_decoration_block": "Magenta Decoration Block",
+	"block.lostworlds.pink_decoration_block": "Pink Decoration Block",
+	"block.lostworlds.brown_decoration_block": "Brown Decoration Block",
+	"block.lostworlds.grey_decoration_block": "Grey Decoration Block",
+	"block.lostworlds.light_grey_decoration_block": "Light Grey Decoration Block",
+	"block.lostworlds.white_decoration_block": "White Decoration Block",
+	"block.lostworlds.black_decoration_block": "Black Decoration Block",
+	
+	//Thatch Block
+	"block.lostworlds.thatch_block": "Thatch Block",
+			
+	//Doors
+	"block.lostworlds.outdoor_toilet_door": "Outdoor Toilet Door",
+	"block.lostworlds.glass_shop_door": "Glass Shop Door",
+	"block.lostworlds.visitor_centre_door": "Visitor Centre Door",
+	"block.lostworlds.innovation_centre_door": "Innovation Centre Door",
+	"block.lostworlds.security_door": "Security Door",
+	"block.lostworlds.back_door": "Back Door",
+	
+	//Entities
+	//Permian
+	"entity.lostworlds.palaeoniscum_freislbeni": "Palaeoniscum freislbeni",
+	
+	//Triassic
+	//Procompsognathus
+	"entity.lostworlds.procompsognathus_triassicus": "Procompsognathus triassicus",
+
+	//Item Group	
+	"itemGroup.lostworlds.lostworlds": "Lost Worlds"
+}

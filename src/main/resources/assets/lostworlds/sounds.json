@@ -1,0 +1,42 @@
+{
+	"disc.jurassic_park": {
+		"category": "disc",
+		"subtitle": "jurassic_park",
+		"sounds": [
+			{
+				"name": "lostworlds:discs/jurassic_park",
+				"stream": true
+			}
+		]
+	},
+	"entity.compy.ambient": {
+		"category": "entity",
+		"subtitle": "entity.compy.ambient",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/compy_ambient",
+				"stream": false
+			}
+		]
+	},
+	"entity.compy.hurt": {
+		"category": "entity",
+		"subtitle": "entity.compy.hurt",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/compy_hurt",
+				"stream": false
+			}
+		]
+	},
+	"entity.compy.death": {
+		"category": "entity",
+		"subtitle": "entity.compy.death",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/compy_death",
+				"stream": false
+			}
+		]
+	}
+}
