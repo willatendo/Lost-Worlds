@@ -39,6 +39,9 @@ public class BlockInit
 	public static final RegistryObject<ExposedFossilBlock> EXPOSED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("exposed_stone_fossil", () -> new ExposedFossilBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(0).setRequiresTool().hardnessAndResistance(1.25F).notSolid().sound(SoundType.STONE)));
 	public static final RegistryObject<PlasteredFossilBlock> PLASTERED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_stone_fossil", () -> new PlasteredFossilBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.STONE).zeroHardnessAndResistance().sound(SoundType.CLOTH).notSolid()));
 		
+	//Fossil Processing
+//	public static final RegistryObject<FossilCleanerBlock> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new FossilCleanerBlock(AbstractBlock.Properties.create(Material.IRON, MaterialColor.GRAY)));
+	
 	//Permian Stuff
 	public static final RegistryObject<Block> PERMAIN_SAND = ModRegistry.BLOCK_REGISTRY.register("permian_sand", () -> new Block(AbstractBlock.Properties.create(Material.SAND)));
 	
@@ -116,8 +119,8 @@ public class BlockInit
 	public static final RegistryObject<PaneBlock> CLEAR_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("clear_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.create(Material.GLASS, MaterialColor.WHITE_TERRACOTTA).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));	
 	
 	//Tinted Glass
-	public static final RegistryObject<GlassBlock> TINTED_GLASS = ModRegistry.BLOCK_REGISTRY.register("tinted_glass", () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS, MaterialColor.BROWN_TERRACOTTA).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));
-	public static final RegistryObject<PaneBlock> TINTED_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("tinted_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.create(Material.GLASS, MaterialColor.BROWN_TERRACOTTA).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));
+	public static final RegistryObject<GlassBlock> TINTED_GLASS = ModRegistry.BLOCK_REGISTRY.register("tinted_glass", () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS, MaterialColor.BROWN).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));
+	public static final RegistryObject<PaneBlock> TINTED_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("tinted_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.create(Material.GLASS, MaterialColor.BROWN).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));
 	
 	//Coloured Glass
 	public static final RegistryObject<GlassBlock> WHITE_GLASS = ModRegistry.BLOCK_REGISTRY.register("white_glass", () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS, MaterialColor.WHITE_TERRACOTTA).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));
@@ -150,7 +153,7 @@ public class BlockInit
 	public static final RegistryObject<GlassBlock> CYAN_GLASS = ModRegistry.BLOCK_REGISTRY.register("cyan_glass", () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));
 	public static final RegistryObject<PaneBlock> CYAN_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("cyan_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));	
 	
-	public static final RegistryObject<GlassBlock> LIGHT_BLUE_GLASS = ModRegistry.BLOCK_REGISTRY.register("light_blue_glass", () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));
+	public static final RegistryObject<GlassBlock> LIGHT_BLUE_GLASS = ModRegistry.BLOCK_REGISTRY.register("light_blue_glass", () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS).hardnessAndResistance(3.0F).notSolid().sound(SoundType.GLASS)));
 	public static final RegistryObject<PaneBlock> LIGHT_BLUE_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("light_blue_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));	
 	
 	public static final RegistryObject<GlassBlock> BLUE_GLASS = ModRegistry.BLOCK_REGISTRY.register("blue_glass", () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).notSolid().sound(SoundType.GLASS)));

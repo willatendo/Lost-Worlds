@@ -6,8 +6,10 @@ license="All rights reserved"
 modId="lostworlds"
 version="1.0.0"
 displayName="Lost Worlds"
-authors="Willatendo"
+authors="Willatendo - Main Developer, Lambdaraptor - Porter and Translator (Russian)"
 
 description='''
-A 1.16.5 Forge mod that adds dinosaurs, archaeology, and more to the game!
+A 1.16.5/1.16.3/1.15.2 Forge mod that adds dinosaurs, archaeology, and more to the game!
+
+Willatendo develops the mod, Lambdaraptor ports the mod to 1.16.3 and 1.15.2 and translates to russian.
 '''

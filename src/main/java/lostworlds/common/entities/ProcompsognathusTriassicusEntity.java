@@ -40,7 +40,6 @@ public class ProcompsognathusTriassicusEntity extends CreatureEntity implements 
 	public ProcompsognathusTriassicusEntity(EntityType<? extends CreatureEntity> type, World worldIn) 
 	{
 		super(type, worldIn);
-		this.ignoreFrustumCheck = true;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

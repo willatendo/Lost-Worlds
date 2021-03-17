@@ -18,8 +18,11 @@ public class OreGen
 	{
 		if(!(event.getCategory().equals(Biome.Category.NETHER) || event.getCategory().equals(Biome.Category.THEEND)))
 		{
-			oreGenerationConfig(event.getGeneration(), OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.COPPER_ORE.get().getDefaultState(), 14, 5, 63, 20);
-			oreGenerationConfig(event.getGeneration(), OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.STONE_FOSSIL.get().getDefaultState(), 1, 30, 50, 20);
+			//Copper
+			oreGenerationConfig(event.getGeneration(), OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.COPPER_ORE.get().getDefaultState(), 9, 5, 83, 40);
+			
+			//Fossil
+			event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.STONE_FOSSIL.get().getDefaultState(), 1)).withPlacement(Placement.RANGE.configure(new TopSolidRangeConfig(30, 1, 100)).square().func_242731_b(50)));
 		}
 	}
 	
