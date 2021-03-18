@@ -1,7 +1,8 @@
 package lostworlds.core.init;
 
-import lostworlds.common.entities.PalaeoniscumFreieslebeniEntity;
-import lostworlds.common.entities.ProcompsognathusTriassicusEntity;
+import lostworlds.common.entities.NautilusEntity;
+import lostworlds.common.entities.PalaeoniscumEntity;
+import lostworlds.common.entities.ProcompsognathusEntity;
 import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
@@ -10,8 +11,9 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class EntityInit 
 {
-	public static final RegistryObject<EntityType<ProcompsognathusTriassicusEntity>> PROCOMPSOGNATHUS_TRIASSICUS_ENTITY = registerEntity("procompsognathus_triassicus", ProcompsognathusTriassicusEntity::new, EntityClassification.CREATURE, ProcompsognathusTriassicusEntity.class, 0.3F, 0.7F);
-	public static final RegistryObject<EntityType<PalaeoniscumFreieslebeniEntity>> PALAEONISCUM_FREISLEBENI_ENTITY = registerEntity("palaeoniscum_freislbeni", PalaeoniscumFreieslebeniEntity::new, EntityClassification.WATER_AMBIENT, PalaeoniscumFreieslebeniEntity.class, 0.25F, 0.25F);
+	public static final RegistryObject<EntityType<ProcompsognathusEntity>> PROCOMPSOGNATHUS_ENTITY = registerEntity("procompsognathus", ProcompsognathusEntity::new, EntityClassification.CREATURE, ProcompsognathusEntity.class, 0.3F, 0.7F);
+	public static final RegistryObject<EntityType<PalaeoniscumEntity>> PALAEONISCUM_ENTITY = registerEntity("palaeoniscum", PalaeoniscumEntity::new, EntityClassification.WATER_AMBIENT, PalaeoniscumEntity.class, 0.25F, 0.25F);
+	public static final RegistryObject<EntityType<NautilusEntity>> 	NAUTILUS_ENTITY = registerEntity("nautilus", NautilusEntity::new, EntityClassification.WATER_AMBIENT, NautilusEntity.class, 0.5F, 1.0F);
 	
 	//Registry
 	public static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, EntityType.IFactory<T> entity, EntityClassification entitytype, Class<T> entityClass, float width, float height) 

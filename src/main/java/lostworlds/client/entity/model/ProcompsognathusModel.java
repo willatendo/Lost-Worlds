@@ -1,41 +1,40 @@
 package lostworlds.client.entity.model;
 
+import lostworlds.common.entities.ProcompsognathusEntity;
 import lostworlds.core.util.reference.Reference;
 import net.minecraft.util.ResourceLocation;
-import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
-@SuppressWarnings("rawtypes")
-public class ProcompsognathusTriassicusModel extends AnimatedGeoModel
+public class ProcompsognathusModel extends AnimatedGeoModel<ProcompsognathusEntity>
 {
 	@Override
-	public ResourceLocation getModelLocation(Object object) 
+	public ResourceLocation getModelLocation(ProcompsognathusEntity object) 
 	{
-		return new ResourceLocation(Reference.ID, "geo/procompsognathus_triassicus.geo.json");
+		return new ResourceLocation(Reference.ID, "geo/procompsognathus.geo.json");
 	}
 	
 	@Override
-	public ResourceLocation getTextureLocation(Object object) 
+	public ResourceLocation getTextureLocation(ProcompsognathusEntity object) 
 	{
-		return new ResourceLocation(Reference.ID, "textures/model/entity/compy.png");
+		return new ResourceLocation(Reference.ID, "textures/model/entity/procompsognathus.png");
 	}
 	
 	@Override
-	public ResourceLocation getAnimationFileLocation(Object animatable) 
+	public ResourceLocation getAnimationFileLocation(ProcompsognathusEntity animatable) 
 	{
 		return new ResourceLocation(Reference.ID, "animations/procompsognathus.animations.json");
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
-	public void setLivingAnimations(IAnimatable entity, Integer uniqueID, AnimationEvent customPredicate) 
+	public void setLivingAnimations(ProcompsognathusEntity entity, Integer uniqueID, @SuppressWarnings("rawtypes") AnimationEvent customPredicate) 
 	{
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("head");
 
+		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
 		head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));
 		head.setRotationY(extraData.netHeadYaw * ((float) Math.PI / 180F));

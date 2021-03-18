@@ -19,6 +19,10 @@
 	//Palaeoniscum
 	"item.lostworlds.palaeoniscum_spawn_egg": "Palaeoniscum Spawn Egg",	
 	"item.lostworlds.palaeoniscum_bucket": "Palaeoniscum Bucket",	
+
+	//Nautilus
+	"item.lostworlds.nautilus_spawn_egg": "Nautilus Spawn Egg",	
+	"item.lostworlds.nautilus_bucket": "Nautilus Bucket",	
 	
 	//Copper
 	"item.lostworlds.copper_ingot": "Copper Ingot",
@@ -35,7 +39,7 @@
 
 	//Storage
 	"item.lostworlds.disc": "Disc",
-	"toolTip.lostworlds.disc.holding_shift": "Stores DNA Informatiuon For Computer Use",
+	"toolTip.lostworlds.disc.holding_shift": "Stores DNA Information For Computer Use",
 	"toolTip.lostworlds.disc.not_holding_shift": "Hold Shift For More Information",
 
 
@@ -216,11 +220,14 @@
 	
 	//Entities
 	//Permian
-	"entity.lostworlds.palaeoniscum_freislbeni": "Palaeoniscum freislbeni",
+	"entity.lostworlds.palaeoniscum": "Palaeoniscum freislbeni",
 	
 	//Triassic
 	//Procompsognathus
-	"entity.lostworlds.procompsognathus_triassicus": "Procompsognathus triassicus",
+	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",
+
+	//Multi Era
+	"entity.lostworlds.nautilus": "Nautilus pompilius",
 
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"

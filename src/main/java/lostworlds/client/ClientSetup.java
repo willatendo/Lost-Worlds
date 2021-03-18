@@ -1,7 +1,8 @@
 package lostworlds.client;
 
-import lostworlds.client.entity.render.PalaeoniscumFreieslebeniRender;
-import lostworlds.client.entity.render.ProcompsognathusTriassicusRender;
+import lostworlds.client.entity.render.NautilusRender;
+import lostworlds.client.entity.render.PalaeoniscumRender;
+import lostworlds.client.entity.render.ProcompsognathusRender;
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.util.reference.Reference;
@@ -64,7 +65,8 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.BROWN_GLASS.get(), RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.BROWN_GLASS_PANE.get(), RenderType.getTranslucent());	
 		//Entity
-		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PROCOMPSOGNATHUS_TRIASSICUS_ENTITY.get(), ProcompsognathusTriassicusRender::new);
-		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PALAEONISCUM_FREISLEBENI_ENTITY.get(), PalaeoniscumFreieslebeniRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), ProcompsognathusRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PALAEONISCUM_ENTITY.get(), PalaeoniscumRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.NAUTILUS_ENTITY.get(), NautilusRender::new);
 	}
 }

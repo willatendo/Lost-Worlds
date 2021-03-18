@@ -1,5 +1,6 @@
 package lostworlds.common.entities;
 
+import lostworlds.core.init.ItemInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemStack;
@@ -15,7 +16,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class PalaeoniscumFreieslebeniEntity extends AbstractGroupFishEntity implements IAnimatable
+public class PalaeoniscumEntity extends AbstractGroupFishEntity implements IAnimatable
 {
 	private AnimationFactory factory = new AnimationFactory(this);
 	
@@ -25,7 +26,7 @@ public class PalaeoniscumFreieslebeniEntity extends AbstractGroupFishEntity impl
 		return PlayState.CONTINUE;
 	}
 	
-	public PalaeoniscumFreieslebeniEntity(EntityType<? extends AbstractGroupFishEntity> type, World worldIn) 
+	public PalaeoniscumEntity(EntityType<? extends AbstractGroupFishEntity> type, World worldIn) 
 	{
 		super(type, worldIn);
 		this.ignoreFrustumCheck = true;
@@ -46,7 +47,7 @@ public class PalaeoniscumFreieslebeniEntity extends AbstractGroupFishEntity impl
 	@Override
 	protected ItemStack getFishBucket() 
 	{
-		return null;
+		return new ItemStack(ItemInit.PALAEONISCUM_BUCKET.get());
 	}
 
 	@Override

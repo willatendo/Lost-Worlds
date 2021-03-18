@@ -23,11 +23,5 @@ public class CreativeTab extends ItemGroup
 	{
 		return true;
 	}
-	
-	@Override
-	public int getLabelColor() 
-	{
-		return 0xF5C720;
-	}
 }
 

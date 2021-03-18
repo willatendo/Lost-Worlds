@@ -19,7 +19,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class ProcompsognathusTriassicusEntity extends CreatureEntity implements IAnimatable
+public class ProcompsognathusEntity extends CreatureEntity implements IAnimatable
 {	
 	private AnimationFactory factory = new AnimationFactory(this);
 
@@ -37,7 +37,7 @@ public class ProcompsognathusTriassicusEntity extends CreatureEntity implements 
 		}
 	}
 
-	public ProcompsognathusTriassicusEntity(EntityType<? extends CreatureEntity> type, World worldIn) 
+	public ProcompsognathusEntity(EntityType<? extends CreatureEntity> type, World worldIn) 
 	{
 		super(type, worldIn);
 	}
