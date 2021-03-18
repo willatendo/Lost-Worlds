@@ -9,10 +9,7 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class BiomeInit 
 {
-	static
-	{
-		registerBiome("volcano", BiomeMaker::makeVoidBiome);
-	}
+	public static RegistryObject<Biome> VOLCANO = registerBiome("volcano", BiomeMaker::makeVoidBiome);
 	
 	//Registry
 	private static RegistryObject<Biome> registerBiome(String id, Supplier<Biome> biome)

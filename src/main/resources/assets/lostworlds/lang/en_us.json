@@ -58,6 +58,9 @@
 	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
 	"block.lostworlds.plastered_stone_fossil": "Plastered Stone Fossil",
 	
+	//Volcanic Rock
+	"block.lostworlds.volcanic_rock": "Volcanic Rock",
+
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",
 	"block.lostworlds.light_concrete_stairs": "Light Concrete Stairs",

@@ -42,6 +42,9 @@ public class BlockInit
 	//Fossil Processing
 //	public static final RegistryObject<FossilCleanerBlock> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new FossilCleanerBlock(AbstractBlock.Properties.create(Material.IRON, MaterialColor.GRAY)));
 	
+	//Volcanic Stuff
+	public static final RegistryObject<Block> VOLCANIC_ROCK = ModRegistry.BLOCK_REGISTRY.register("volcanic_rock", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
+	
 	//Permian Stuff
 	public static final RegistryObject<Block> PERMAIN_SAND = ModRegistry.BLOCK_REGISTRY.register("permian_sand", () -> new Block(AbstractBlock.Properties.create(Material.SAND)));
 	
