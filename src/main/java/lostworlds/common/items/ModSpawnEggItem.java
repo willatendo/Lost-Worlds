@@ -19,7 +19,7 @@ import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
-public class ModSpawnEggItem  extends SpawnEggItem
+public class ModSpawnEggItem extends SpawnEggItem
 {
 	protected static final List<ModSpawnEggItem> UNADDED_EGGS = new ArrayList<ModSpawnEggItem>();
 	private final Lazy<? extends EntityType<?>> entityTypeSupplier;
@@ -66,4 +66,4 @@ public class ModSpawnEggItem  extends SpawnEggItem
 	public EntityType<?> getType(CompoundNBT nbt) {
 		return this.entityTypeSupplier.get();
 	}
-}
+}	

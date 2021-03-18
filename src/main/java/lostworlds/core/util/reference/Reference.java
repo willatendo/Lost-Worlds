@@ -18,6 +18,7 @@ public class Reference
 	
 	//Palaeozoic
 	public static final ResourceLocation PERMIAN = new ResourceLocation(Reference.ID, "permian_time_era");
+	public static final String PERMIAN_ID = "permian_id";
 	public static final ResourceLocation CARBONIFEROUS = new ResourceLocation(Reference.ID, "carboniferous_time_era");	
 	public static final ResourceLocation DEVONIAN = new ResourceLocation(Reference.ID, "devonian_time_era");		
 	public static final ResourceLocation SILURIAN = new ResourceLocation(Reference.ID, "carboniferous_time_era");	

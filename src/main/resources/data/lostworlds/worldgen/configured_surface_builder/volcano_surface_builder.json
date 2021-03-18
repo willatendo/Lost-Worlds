@@ -1,0 +1,15 @@
+{
+	"config": {
+		"top_material": {
+      		"Name": "minecraft:cobblestone"
+      	},
+      	"under_material": {
+      		"Name": "minecraft:cobblestone"
+      	},
+      	"underwater_material": 
+      	{
+    	  	"Name": "minecraft:cobblestone"
+    	}
+    },
+    "type": "lostworlds:volcano_surface_builder"
+}

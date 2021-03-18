@@ -20,7 +20,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class ProcompsognathusTriassicusEntity extends CreatureEntity implements IAnimatable
-{
+{	
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
@@ -61,7 +61,7 @@ public class ProcompsognathusTriassicusEntity extends CreatureEntity implements 
 		this.goalSelector.addGoal(0, new SwimGoal(this));
 		this.goalSelector.addGoal(1, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
 		this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
-		this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
+		this.goalSelector.addGoal(3, new LookRandomlyGoal(this));	
 	}
 	
 	@Override
@@ -81,4 +81,6 @@ public class ProcompsognathusTriassicusEntity extends CreatureEntity implements 
 	{
 		return SoundInit.COMPY_DEATH.get();
 	}
+	
+	
 }
