@@ -6,10 +6,12 @@ import org.apache.logging.log4j.Logger;
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.util.reference.Reference;
 import lostworlds.core.util.registry.ModRegistry;
+import lostworlds.world.features.MobSpawingFeature;
 import lostworlds.world.gen.OreGen;
 import net.minecraft.entity.EntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -35,6 +37,7 @@ public class LostWorlds
         
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGen::generateOres);
+        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> MobSpawingFeature.addFeatures(event));
     }
 
     private void setup(final FMLCommonSetupEvent event)

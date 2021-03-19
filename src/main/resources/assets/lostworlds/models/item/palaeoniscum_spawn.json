@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "lostworlds:items/spawn",
+		"layer1": "lostworlds:items/palaeoniscum_spawn_overlay"
+  }
+}

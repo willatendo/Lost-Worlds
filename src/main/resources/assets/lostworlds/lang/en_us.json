@@ -17,8 +17,14 @@
 	"item.lostworlds.procompsognathus_spawn_egg": "Procompsognathus Spawn Egg",	
 
 	//Palaeoniscum
+	"item.lostworlds.palaeoniscum_bone": "Palaeoniscum Bone",
+	"item.lostworlds.palaeoniscum_dna": "Palaeoniscum DNA",
+	"item.lostworlds.palaeoniscum_spawn": "Palaeoniscum Spawn",
+	"item.lostworlds.palaeoniscum_spawn_bucket": "Palaeoniscum Spawn Bucket",
+	"item.lostworlds.palaeoniscum": "Palaeoniscum",
+	"item.lostworlds.cooked_palaeoniscum": "Cooked Palaeoniscum",
 	"item.lostworlds.palaeoniscum_spawn_egg": "Palaeoniscum Spawn Egg",	
-	"item.lostworlds.palaeoniscum_bucket": "Palaeoniscum Bucket",	
+	"item.lostworlds.palaeoniscum_bucket": "Palaeoniscum Bucket",
 
 	//Nautilus
 	"item.lostworlds.nautilus_spawn_egg": "Nautilus Spawn Egg",	
@@ -223,7 +229,6 @@
 	"entity.lostworlds.palaeoniscum": "Palaeoniscum freislbeni",
 	
 	//Triassic
-	//Procompsognathus
 	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",
 
 	//Multi Era

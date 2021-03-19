@@ -44,6 +44,12 @@ public class ItemInit
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_SPAWN_EGG = registerSpawnEgg("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), 0x125611, 0x143025, group());
 	
 	//Palaeoniscum
+	public static final RegistryObject<Item> PALAEONISCUM_BONE = registerBone("palaeoniscum");
+	public static final RegistryObject<Item> PALAEONISCUM_DNA = registerDNA("palaeoniscum");
+	public static final RegistryObject<Item> PALAEONISCUM_SPAWN = registerSpawn("palaeoniscum", group());
+	public static final RegistryObject<Item> PALAEONISCUM_SPAWN_BUCKET = registerSpawnBucket("palaeoniscum", () -> EntityInit.PALAEONISCUM_ENTITY.get(), group());
+	public static final RegistryObject<Item> PALAEONISCUM_MEAT = registerFishMeat("palaeoniscum", FoodInit.PALAEONISCUM);
+	public static final RegistryObject<Item> PALAEONISCUM_COOKED_MEAT = registerCookedFishMeat("palaeoniscum", FoodInit.COOKED_PROCOMPSOGNATHUS_MEAT);
 	public static final RegistryObject<Item> PALAEONISCUM_SPAWN_EGG = registerSpawnEgg("palaeoniscum", () -> EntityInit.PALAEONISCUM_ENTITY.get(), 0x1e2f4f, 0x2b1838, group());
 	public static final RegistryObject<Item> PALAEONISCUM_BUCKET = registerEntityBucket("palaeoniscum", () -> EntityInit.PALAEONISCUM_ENTITY.get(), Fluids.WATER, group());
 	
@@ -272,6 +278,17 @@ public class ItemInit
 		return registerClassItem(id + "_spawn_egg", new ModSpawnEggItem(entity, primaryColour, secondaryColour, properties));
 	}
 	
+	//Spawn Items
+	private static RegistryObject<Item> registerSpawn(String id, Item.Properties properties)
+	{
+		return registerItem(id + "_spawn", properties);
+	}
+	
+	private static RegistryObject<Item> registerSpawnBucket(String id, NonNullSupplier<EntityType<?>> entity, Item.Properties properties)
+	{
+		return registerClassItem(id + "_spawn_bucket", new ModFishBucketItem(entity, Fluids.WATER, properties));
+	}
+	
 	//Buckets For Fish
 	private static RegistryObject<Item> registerEntityBucket(String id, NonNullSupplier<EntityType<?>> entity, Fluid fluid, Item.Properties properties)
 	{
@@ -304,9 +321,19 @@ public class ItemInit
 		return registerItem("raw_" + type + "_meat", group().food(food));
 	}
 	
+	private static RegistryObject<Item> registerFishMeat(String type, Food food) 
+	{
+		return registerItem(type, group().food(food));
+	}
+	
 	private static RegistryObject<Item> registerCookedMeat(String type, Food food) 
 	{
 		return registerItem("cooked_" + type + "_meat", group().food(food));
+	}
+	
+	private static RegistryObject<Item> registerCookedFishMeat(String type, Food food) 
+	{
+		return registerItem("cooked_" + type, group().food(food));
 	}
 	
 	public static void initItems() { }
