@@ -1,5 +1,6 @@
 package lostworlds.core.init;
 
+import lostworlds.common.blocks.ArchaeologyTable;
 import lostworlds.common.blocks.ExposedFossilBlock;
 import lostworlds.common.blocks.PlasteredFossilBlock;
 import lostworlds.core.util.ModMaterials;
@@ -16,6 +17,7 @@ import net.minecraft.block.HayBlock;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.PaneBlock;
 import net.minecraft.block.PressurePlateBlock;
+import net.minecraft.block.SandBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
@@ -42,8 +44,20 @@ public class BlockInit
 	//Fossil Processing
 //	public static final RegistryObject<FossilCleanerBlock> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new FossilCleanerBlock(AbstractBlock.Properties.create(Material.IRON, MaterialColor.GRAY)));
 	
+	//Museum Stuff
+	public static final RegistryObject<ArchaeologyTable> ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+	
 	//Volcanic Stuff
 	public static final RegistryObject<Block> VOLCANIC_ROCK = ModRegistry.BLOCK_REGISTRY.register("volcanic_rock", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
+	public static final RegistryObject<StairsBlock> VOLCANIC_ROCK_STAIRS = ModRegistry.BLOCK_REGISTRY.register("volcanic_rock_stairs", () -> new StairsBlock(() -> BlockInit.VOLCANIC_ROCK.get().getDefaultState(), AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
+	public static final RegistryObject<SlabBlock> VOLCANIC_ROCK_SLAB = ModRegistry.BLOCK_REGISTRY.register("volcanic_rock_slab", () -> new SlabBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
+	public static final RegistryObject<WallBlock> VOLCANIC_ROCK_WALL = ModRegistry.BLOCK_REGISTRY.register("volcanic_rock_wall", () -> new WallBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
+	
+	public static final RegistryObject<Block> POLISHED_VOLCANIC_ROCK = ModRegistry.BLOCK_REGISTRY.register("polished_volcanic_rock", () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
+	public static final RegistryObject<StairsBlock> POLISHED_VOLCANIC_ROCK_STAIRS = ModRegistry.BLOCK_REGISTRY.register("polished_volcanic_rock_stairs", () -> new StairsBlock(() -> BlockInit.POLISHED_VOLCANIC_ROCK.get().getDefaultState(), AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
+	public static final RegistryObject<SlabBlock> POLISHED_VOLCANIC_ROCK_SLAB = ModRegistry.BLOCK_REGISTRY.register("polished_volcanic_rock_slab", () -> new SlabBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
+	
+	public static final RegistryObject<SandBlock> VOLCANIC_ASH = ModRegistry.BLOCK_REGISTRY.register("volcanic_ash", () -> new SandBlock(0x888988, AbstractBlock.Properties.create(Material.SAND, MaterialColor.GRAY).harvestTool(ToolType.SHOVEL).harvestLevel(1).setRequiresTool().hardnessAndResistance(0.5F).sound(SoundType.SAND)));	
 	
 	//Permian Stuff
 	public static final RegistryObject<Block> PERMAIN_SAND = ModRegistry.BLOCK_REGISTRY.register("permian_sand", () -> new Block(AbstractBlock.Properties.create(Material.SAND)));

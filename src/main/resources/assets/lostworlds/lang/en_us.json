@@ -1,6 +1,8 @@
 {
 	//Items
-	
+	//Book Of Paleontology
+	"item.lostworlds.book_of_paleontology": "Book Of Paleontology",
+		
 	//Brush
 	"item.lostworlds.brush": "Brush",
 	
@@ -68,8 +70,20 @@
 	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
 	"block.lostworlds.plastered_stone_fossil": "Plastered Stone Fossil",
 	
+	//Museum Stuff
+	"block.lostworlds.archaeology_table": "Archaeology Table",
+		
 	//Volcanic Rock
 	"block.lostworlds.volcanic_rock": "Volcanic Rock",
+	"block.lostworlds.volcanic_rock_stairs": "Volcanic Rock Stairs",
+	"block.lostworlds.volcanic_rock_slab": "Volcanic Rock Slab",
+	"block.lostworlds.volcanic_rock_wall": "Volcanic Rock Wall",
+
+	"block.lostworlds.polished_volcanic_rock": "Polished Volcanic Rock",
+	"block.lostworlds.polished_volcanic_rock_stairs": "Polished Volcanic Rock Stairs",
+	"block.lostworlds.polished_volcanic_rock_slab": "Polished Volcanic Rock Slab",
+
+	"block.lostworlds.volcanic_ash": "Volcanic Ash",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",

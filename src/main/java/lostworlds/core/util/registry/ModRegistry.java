@@ -4,7 +4,8 @@ import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.SoundInit;
-import lostworlds.core.util.reference.Reference;
+import lostworlds.core.util.reference.ModReference;
+import lostworlds.world.init.BiomeInit;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.PaintingType;
@@ -27,31 +28,31 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModRegistry 
 {
 	//Deferred Registers
-	public static final DeferredRegister<ParticleType<?>> PARTICLE_REGISTRY = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, Reference.ID);
-	public static final DeferredRegister<SoundEvent> SOUND_REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Reference.ID);
-	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALISER_REGISTRY = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Reference.ID);
-	public static final DeferredRegister<Item> ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.ID);
-	public static final DeferredRegister<PaintingType> PAINTING_REGISTRY = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, Reference.ID);
-	public static final DeferredRegister<ContainerType<?>> CONTAINER_REGISTRY = DeferredRegister.create(ForgeRegistries.CONTAINERS, Reference.ID);
-	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Reference.ID);
-	public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.ID);
-	public static final DeferredRegister<EntityType<?>> ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, Reference.ID);
-	public static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDER_REGISTRY = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, Reference.ID);
-	public static final DeferredRegister<Biome> BIOME_REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, Reference.ID);
+	public static final DeferredRegister<ParticleType<?>> PARTICLE_REGISTRY = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, ModReference.ID);
+	public static final DeferredRegister<SoundEvent> SOUND_REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ModReference.ID);
+	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALISER_REGISTRY = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ModReference.ID);
+	public static final DeferredRegister<Item> ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, ModReference.ID);
+	public static final DeferredRegister<PaintingType> PAINTING_REGISTRY = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, ModReference.ID);
+	public static final DeferredRegister<ContainerType<?>> CONTAINER_REGISTRY = DeferredRegister.create(ForgeRegistries.CONTAINERS, ModReference.ID);
+	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, ModReference.ID);
+	public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ModReference.ID);
+	public static final DeferredRegister<EntityType<?>> ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModReference.ID);
+	public static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDER_REGISTRY = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, ModReference.ID);
+	public static final DeferredRegister<Biome> BIOME_REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, ModReference.ID);
 	
 	//Demenstions
-	public static final RegistryKey<World> PLEISTOCENE_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.PLEISTOCENE);
-	public static final RegistryKey<World> CRETACOUS_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.CRETACOUS);
-	public static final RegistryKey<World> JURASSIC_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.JURASSIC);
-	public static final RegistryKey<World> TRIASSIC_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.TRIASSIC);
-	public static final RegistryKey<World> PERMIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.PERMIAN);
-	public static final RegistryKey<World> CARBONIFEROUS_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.CARBONIFEROUS);
-	public static final RegistryKey<World> DEVONIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.DEVONIAN);
-	public static final RegistryKey<World> SILURIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.SILURIAN);
-	public static final RegistryKey<World> ORDOVICIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.ORDOVICIAN);	
-	public static final RegistryKey<World> CAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.CAMBRIAN);	
-	public static final RegistryKey<World> FROZEN_PRECAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.FROZEN_PRECAMBRIAN);	
-	public static final RegistryKey<World> PRECAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, Reference.PRECAMBRIAN);	
+	public static final RegistryKey<World> PLEISTOCENE_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.PLEISTOCENE);
+	public static final RegistryKey<World> CRETACOUS_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.CRETACOUS);
+	public static final RegistryKey<World> JURASSIC_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.JURASSIC);
+	public static final RegistryKey<World> TRIASSIC_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.TRIASSIC);
+	public static final RegistryKey<World> PERMIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.PERMIAN);
+	public static final RegistryKey<World> CARBONIFEROUS_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.CARBONIFEROUS);
+	public static final RegistryKey<World> DEVONIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.DEVONIAN);
+	public static final RegistryKey<World> SILURIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.SILURIAN);
+	public static final RegistryKey<World> ORDOVICIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.ORDOVICIAN);	
+	public static final RegistryKey<World> CAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.CAMBRIAN);	
+	public static final RegistryKey<World> FROZEN_PRECAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.FROZEN_PRECAMBRIAN);	
+	public static final RegistryKey<World> PRECAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.PRECAMBRIAN);	
 	
 	public static void registry() 
 	{
@@ -73,5 +74,6 @@ public class ModRegistry
 		ItemInit.initItems();
 		BlockInit.initBlocks();
 		EntityInit.initEntities();
+		BiomeInit.initBiomes();
 	}
 }

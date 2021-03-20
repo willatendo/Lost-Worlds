@@ -1,20 +1,35 @@
-package lostworlds.world.gen;
+package lostworlds.world.features;
 
 import lostworlds.core.init.BlockInit;
+import lostworlds.core.init.EntityInit;
 import net.minecraft.block.BlockState;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.world.biome.Biome.Category;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.template.RuleTest;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidRangeConfig;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
-public class OreGen 
+public class BiomeFeatures 
 {
-	public static void generateOres(final BiomeLoadingEvent event)
+	public static void addMobSpawning(BiomeLoadingEvent event)
+	{
+		if (event.getCategory() != Category.NETHER && event.getCategory() != Category.THEEND && event.getCategory() != Category.NONE)
+		{
+			if (event.getCategory() == Category.OCEAN)
+			{
+				event.getSpawns().withSpawner(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(EntityInit.NAUTILUS_ENTITY.get(), 1, 1, 1));
+			}
+		}
+	}
+	
+	public static void generateOre(BiomeLoadingEvent event)
 	{
 		if(!(event.getCategory().equals(Biome.Category.NETHER) || event.getCategory().equals(Biome.Category.THEEND)))
 		{

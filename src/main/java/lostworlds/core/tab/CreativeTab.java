@@ -1,7 +1,7 @@
 package lostworlds.core.tab;
 
 import lostworlds.core.init.ItemInit;
-import lostworlds.core.util.reference.Reference;
+import lostworlds.core.util.reference.ModReference;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -9,7 +9,7 @@ public class CreativeTab extends ItemGroup
 {
 	public CreativeTab(String label) 
 	{
-		super(Reference.ID + "." + label);
+		super(ModReference.ID + "." + label);
 	}
 
 	@Override

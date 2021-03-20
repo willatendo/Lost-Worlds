@@ -56,7 +56,7 @@ public class ItemInit
 	//Nautilus
 	public static final RegistryObject<Item> NAUTILUS_SPAWN_EGG = registerSpawnEgg("nautilus", () -> EntityInit.NAUTILUS_ENTITY.get(), 0xd8cecd, 0x4f4841, group());
 	public static final RegistryObject<Item> NAUTILUS_BUCKET = registerEntityBucket("nautilus", () -> EntityInit.NAUTILUS_ENTITY.get(), Fluids.WATER, group());
-	
+		
 	//Copper
 	public static final RegistryObject<Item> COPPER_INGOT = registerItem("copper_ingot", group());
 	public static final RegistryObject<Item> COPPER_NUGGET = registerItem("copper_nugget", group());
@@ -95,9 +95,22 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("stone_fossil", () -> new BlockItem(BlockInit.STONE_FOSSIL.get(), group()));
 	public static final RegistryObject<BlockItem> EXPOSED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("exposed_stone_fossil", () -> new BlockItem(BlockInit.EXPOSED_STONE_FOSSIL.get(), group()));
 	public static final RegistryObject<BlockItem> PLASTERED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("plastered_stone_fossil", () -> new BlockItem(BlockInit.PLASTERED_STONE_FOSSIL.get(), group()));
+
+	//Museum Stuff
+	public static final RegistryObject<BlockItem> ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("archaeology_table", () -> new BlockItem(BlockInit.ARCHAEOLOGY_TABLE.get(), group()));
+
 	
 	//Volcanic Stuff
 	public static final RegistryObject<BlockItem> VOLCANIC_ROCK = ModRegistry.ITEM_REGISTRY.register("volcanic_rock", () -> new BlockItem(BlockInit.VOLCANIC_ROCK.get(), group()));	
+	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_STAIRS = ModRegistry.ITEM_REGISTRY.register("volcanic_rock_stairs", () -> new BlockItem(BlockInit.VOLCANIC_ROCK_STAIRS.get(), group()));	
+	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_SLAB = ModRegistry.ITEM_REGISTRY.register("volcanic_rock_slab", () -> new BlockItem(BlockInit.VOLCANIC_ROCK_SLAB.get(), group()));	
+	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_WALL = ModRegistry.ITEM_REGISTRY.register("volcanic_rock_wall", () -> new BlockItem(BlockInit.VOLCANIC_ROCK_WALL.get(), group()));	
+	
+	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK = ModRegistry.ITEM_REGISTRY.register("polished_volcanic_rock", () -> new BlockItem(BlockInit.POLISHED_VOLCANIC_ROCK.get(), group()));	
+	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_STAIRS = ModRegistry.ITEM_REGISTRY.register("polished_volcanic_rock_stairs", () -> new BlockItem(BlockInit.POLISHED_VOLCANIC_ROCK_STAIRS.get(), group()));	
+	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_SLAB = ModRegistry.ITEM_REGISTRY.register("polished_volcanic_rock_slab", () -> new BlockItem(BlockInit.POLISHED_VOLCANIC_ROCK_SLAB.get(), group()));	
+
+	public static final RegistryObject<BlockItem> VOLCANIC_ASH = ModRegistry.ITEM_REGISTRY.register("volcanic_ash", () -> new BlockItem(BlockInit.VOLCANIC_ASH.get(), group()));
 	
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("light_concrete", () -> new BlockItem(BlockInit.LIGHT_CONCRETE.get(), group()));
