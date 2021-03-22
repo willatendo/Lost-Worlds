@@ -14,6 +14,7 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -26,6 +27,7 @@ import net.minecraft.item.SwordItem;
 import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
 
+@SuppressWarnings("deprecation")
 public class ItemInit 
 {
 	//Items
@@ -68,14 +70,13 @@ public class ItemInit
 	public static final RegistryObject<Item> COPPER_NUGGET = simpleItemRegister("copper_nugget", standardProperties());
 	
 	//Oil and Plastic Stuff
-	public static final RegistryObject<Item> OIL_BUCKET = simpleItemRegister("oil_bucket", standardProperties().maxStackSize(1));
+	public static final RegistryObject<Item> OIL_BUCKET = advancedItemRegister("oil_bucket", new BucketItem(FluidInit.OIL_FLUID.get(), standardProperties().maxStackSize(1)));
 	public static final RegistryObject<Item> MOLTEN_PLASTIC_BUCKET = simpleItemRegister("molten_plastic_bucket", standardProperties().maxStackSize(1));
 	
 	//Electronics
 	public static final RegistryObject<Item> COPPER_WIRE = simpleItemRegister("copper_wire", standardProperties());	
 	
 	//Music
-	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> JP_MUSIC_DISC = advancedItemRegister("jp_music_disc", new MusicDiscItem(15, SoundInit.LAZY_JP_MUSIC.get(), standardProperties().maxStackSize(1).rarity(Rarity.RARE)));
 	
 	//Storage

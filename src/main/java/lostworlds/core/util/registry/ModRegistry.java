@@ -10,6 +10,7 @@ import lostworlds.world.init.SurfaceBuilderInit;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.PaintingType;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -31,6 +32,7 @@ public class ModRegistry
 	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALISER_REGISTRY = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ModReference.ID);
 	public static final DeferredRegister<Item> ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, ModReference.ID);
 	public static final DeferredRegister<PaintingType> PAINTING_REGISTRY = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, ModReference.ID);
+	public static final DeferredRegister<Fluid> FLUID_REGISTRY = DeferredRegister.create(ForgeRegistries.FLUIDS, ModReference.ID);
 	public static final DeferredRegister<ContainerType<?>> CONTAINER_REGISTRY = DeferredRegister.create(ForgeRegistries.CONTAINERS, ModReference.ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, ModReference.ID);
 	public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ModReference.ID);
@@ -47,6 +49,7 @@ public class ModRegistry
 		RECIPE_SERIALISER_REGISTRY.register(bus);
 		ITEM_REGISTRY.register(bus);
 		PAINTING_REGISTRY.register(bus);
+		FLUID_REGISTRY.register(bus);
 		CONTAINER_REGISTRY.register(bus);
 		TILE_ENTITY_REGISTRY.register(bus);
 		BLOCK_REGISTRY.register(bus);

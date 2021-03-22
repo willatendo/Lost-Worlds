@@ -13,10 +13,6 @@ public enum ModItemTeir implements IItemTier
 	{
 		return Ingredient.fromItems(Items.STRING);
 	}),
-	BONE(0, 125, 2.5F, 1.0F, 20, () -> 
-	{
-		return Ingredient.fromItems(Items.BONE);
-	}),
 	ANCIENT(2, 550, 5.0F, 10.0F, 5, () ->
 	{
 		return Ingredient.fromItems(Items.IRON_INGOT);
