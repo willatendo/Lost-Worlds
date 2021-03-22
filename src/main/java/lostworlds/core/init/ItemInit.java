@@ -242,7 +242,7 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> BROWN_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("brown_glass_pane", () -> new BlockItem(BlockInit.BROWN_GLASS_PANE.get(), standardProperties()));	
 
 	//Coloured Blocks
-	public static final RegistryObject<BlockItem> RED_DECORATION_BlockItem = ModRegistry.ITEM_REGISTRY.register("red_decoration_block", () -> new BlockItem(BlockInit.RED_DECORATION_BLOCK.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> RED_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("red_decoration_block", () -> new BlockItem(BlockInit.RED_DECORATION_BLOCK.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> ORANGE_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("orange_decoration_block", () -> new BlockItem(BlockInit.ORANGE_DECORATION_BLOCK.get(), standardProperties()));	
 	public static final RegistryObject<BlockItem> YELLOW_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("yellow_decoration_block", () -> new BlockItem(BlockInit.YELLOW_DECORATION_BLOCK.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> LIME_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("lime_decoration_block", () -> new BlockItem(BlockInit.LIME_DECORATION_BLOCK.get(), standardProperties()));
