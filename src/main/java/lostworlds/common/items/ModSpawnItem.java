@@ -24,16 +24,16 @@ public class ModSpawnItem extends SpawnEggItem
 	protected static final List<ModSpawnItem> UNADDED_EGGS = new ArrayList<ModSpawnItem>();
 	private final Lazy<? extends EntityType<?>> entityTypeSupplier;
 
-	public ModSpawnItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, final Item.Properties properties) 
+	public ModSpawnItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Item.Properties properties) 
 	{
-		super(null, primaryColour, secondaryColour, properties);
+		super(null, 0x00000, 0x00000, properties);
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 		UNADDED_EGGS.add(this);
 	}
 
-	public ModSpawnItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, final Item.Properties properties) 
+	public ModSpawnItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final Item.Properties properties) 
 	{
-		super(null, primaryColour, secondaryColour, properties);
+		super(null, 0x00000, 0x00000, properties);
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 		UNADDED_EGGS.add(this);
 	}
@@ -63,7 +63,8 @@ public class ModSpawnItem extends SpawnEggItem
 	}
 
 	@Override
-	public EntityType<?> getType(CompoundNBT nbt) {
+	public EntityType<?> getType(CompoundNBT nbt) 
+	{
 		return this.entityTypeSupplier.get();
 	}
 }	
