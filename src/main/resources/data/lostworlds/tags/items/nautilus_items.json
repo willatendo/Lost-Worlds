@@ -1,0 +1,12 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:nautilus_dna",
+		"lostworlds:nautilus_spawn",
+		"lostworlds:nautilus_spawn_bucket",
+		"lostworlds:nautilus_tentical",
+		"lostworlds:cooked_nautilus_tentical",
+		"lostworlds:nautilus_spawn_egg",
+		"lostworlds:nautilus_bucket"
+  ]
+}

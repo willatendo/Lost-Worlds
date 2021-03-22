@@ -54,6 +54,11 @@ public class ItemInit
 	public static final RegistryObject<Item> PALAEONISCUM_BUCKET = registerEntityBucket("palaeoniscum", () -> EntityInit.PALAEONISCUM_ENTITY.get(), Fluids.WATER, group());
 	
 	//Nautilus
+	public static final RegistryObject<Item> NAUTILUS_DNA = registerDNA("nautilus");
+	public static final RegistryObject<Item> NAUTILUS_SPAWN = registerSpawn("nautilus", group());
+	public static final RegistryObject<Item> NAUTILUS_SPAWN_BUCKET = registerSpawnBucket("nautilus", () -> EntityInit.NAUTILUS_ENTITY.get(), group());
+	public static final RegistryObject<Item> NAUTILUS_TENTICAL = registerClassItem("nautilus_tentical", new Item(group().food(FoodInit.NAUTILUS_TENTICAL)));
+	public static final RegistryObject<Item> COOKED_NAUTILUS_TENTICAL = registerClassItem("cooked_nautilus_tentical", new Item(group().food(FoodInit.COOKED_NAUTILUS_TENTICAL)));
 	public static final RegistryObject<Item> NAUTILUS_SPAWN_EGG = registerSpawnEgg("nautilus", () -> EntityInit.NAUTILUS_ENTITY.get(), 0xd8cecd, 0x4f4841, group());
 	public static final RegistryObject<Item> NAUTILUS_BUCKET = registerEntityBucket("nautilus", () -> EntityInit.NAUTILUS_ENTITY.get(), Fluids.WATER, group());
 		
@@ -63,11 +68,10 @@ public class ItemInit
 	
 	//Oil and Plastic Stuff
 	public static final RegistryObject<Item> OIL_BUCKET = registerItem("oil_bucket", group().maxStackSize(1));
-	public static final RegistryObject<Item> OIL_RESIN_BUCKET = registerItem("oil_resin_bucket", group().maxStackSize(1));
 	public static final RegistryObject<Item> MOLTEN_PLASTIC_BUCKET = registerItem("molten_plastic_bucket", group().maxStackSize(1));
 	
 	//Electronics
-	
+	public static final RegistryObject<Item> COPPER_WIRE = registerItem("copper_wire", group());	
 	
 	//Music
 	@SuppressWarnings("deprecation")
@@ -326,7 +330,7 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerBabyDino(String type) 
 	{
-		return registerItem(type + "_baby", group().maxStackSize(1));
+		return registerClassItem(type + "_baby", new ModSpawnEggItem(() -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), 0x000000, 0x000000, group().maxStackSize(1)));
 	}
 	
 	private static RegistryObject<Item> registerMeat(String type, Food food) 

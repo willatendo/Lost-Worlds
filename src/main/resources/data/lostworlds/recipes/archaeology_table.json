@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"$$$",
+		"###",
+		"@ @"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:iron_ingot"
+		},
+		"@": {
+			"item": "minecraft:oak_log"
+		},
+		"$": {
+			"item": "minecraft:stripped_oak_log"
+		}
+	},
+	"result": {
+		"item": "lostworlds:archaeology_table"
+	}
+}

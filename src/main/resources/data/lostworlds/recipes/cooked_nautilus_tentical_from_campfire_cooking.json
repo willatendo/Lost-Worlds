@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:campfire_cooking",
+	"ingredient": {
+		"item": "lostworlds:nautilus_tentical"
+	},
+	"result": "lostworlds:cooked_nautilus_tentical",
+	"experience": 0.5,
+	"cookingtime": 600
+}

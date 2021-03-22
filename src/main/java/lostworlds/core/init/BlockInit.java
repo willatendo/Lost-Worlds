@@ -60,7 +60,7 @@ public class BlockInit
 	public static final RegistryObject<SandBlock> VOLCANIC_ASH = ModRegistry.BLOCK_REGISTRY.register("volcanic_ash", () -> new SandBlock(0x888988, AbstractBlock.Properties.create(Material.SAND, MaterialColor.GRAY).harvestTool(ToolType.SHOVEL).harvestLevel(1).setRequiresTool().hardnessAndResistance(0.5F).sound(SoundType.SAND)));	
 	
 	//Permian Stuff
-	public static final RegistryObject<Block> PERMAIN_SAND = ModRegistry.BLOCK_REGISTRY.register("permian_sand", () -> new Block(AbstractBlock.Properties.create(Material.SAND)));
+//	public static final RegistryObject<Block> PERMAIN_SAND = ModRegistry.BLOCK_REGISTRY.register("permian_sand", () -> new Block(AbstractBlock.Properties.create(Material.SAND)));
 	
 	//Paths
 	

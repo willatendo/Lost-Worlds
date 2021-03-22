@@ -6,6 +6,7 @@ import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.SoundInit;
 import lostworlds.core.util.reference.ModReference;
 import lostworlds.world.init.BiomeInit;
+import lostworlds.world.init.SurfaceBuilderInit;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.PaintingType;
@@ -14,10 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.RegistryKey;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,20 +38,6 @@ public class ModRegistry
 	public static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDER_REGISTRY = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, ModReference.ID);
 	public static final DeferredRegister<Biome> BIOME_REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, ModReference.ID);
 	
-	//Demenstions
-	public static final RegistryKey<World> PLEISTOCENE_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.PLEISTOCENE);
-	public static final RegistryKey<World> CRETACOUS_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.CRETACOUS);
-	public static final RegistryKey<World> JURASSIC_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.JURASSIC);
-	public static final RegistryKey<World> TRIASSIC_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.TRIASSIC);
-	public static final RegistryKey<World> PERMIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.PERMIAN);
-	public static final RegistryKey<World> CARBONIFEROUS_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.CARBONIFEROUS);
-	public static final RegistryKey<World> DEVONIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.DEVONIAN);
-	public static final RegistryKey<World> SILURIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.SILURIAN);
-	public static final RegistryKey<World> ORDOVICIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.ORDOVICIAN);	
-	public static final RegistryKey<World> CAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.CAMBRIAN);	
-	public static final RegistryKey<World> FROZEN_PRECAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.FROZEN_PRECAMBRIAN);	
-	public static final RegistryKey<World> PRECAMBRIAN_WORLD_KEY = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, ModReference.PRECAMBRIAN);	
-	
 	public static void registry() 
 	{
 		final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -74,6 +58,7 @@ public class ModRegistry
 		ItemInit.initItems();
 		BlockInit.initBlocks();
 		EntityInit.initEntities();
+		SurfaceBuilderInit.initSurfaceBuilders();
 		BiomeInit.initBiomes();
 	}
 }

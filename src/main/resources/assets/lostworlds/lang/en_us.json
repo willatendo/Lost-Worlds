@@ -8,6 +8,8 @@
 	
 	//Plaster
 	"item.lostworlds.wet_paper": "Wet Paper",
+
+	"toolTip.lostworlds.wet_paper": "Used for the safe transport of fossils",
 	
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_bone": "Procompsognathus Bone",
@@ -29,6 +31,11 @@
 	"item.lostworlds.palaeoniscum_bucket": "Palaeoniscum Bucket",
 
 	//Nautilus
+	"item.lostworlds.nautilus_dna": "Nautilus DNA",	
+	"item.lostworlds.nautilus_spawn": "Nautilus Spawn",	
+	"item.lostworlds.nautilus_spawn_bucket": "Nautilus Spawn Bucket",	
+	"item.lostworlds.nautilus_tentical": "Nautilus Tentical",	
+	"item.lostworlds.cooked_nautilus_tentical": "Cooked Nautilus Tentical",	
 	"item.lostworlds.nautilus_spawn_egg": "Nautilus Spawn Egg",	
 	"item.lostworlds.nautilus_bucket": "Nautilus Bucket",	
 	
@@ -38,8 +45,10 @@
 
 	//Oil and Plastic Stuff
 	"item.lostworlds.oil_bucket": "Oil Bucket",
-	"item.lostworlds.oil_resin_bucket": "Oil Resin Bucket",
 	"item.lostworlds.molten_plastic_bucket": "Molten Plastic Bucket",
+
+	//Electronics
+	"item.lostworlds.copper_wire": "Copper Wire",	
 
 	//Music
 	"item.lostworlds.jp_music_disc": "Music Disc",
@@ -62,6 +71,7 @@
 	"item.lostworlds.crystal_scarab_axe": "Crystal Scarab Axe",
 	"item.lostworlds.crystal_scarab_hoe": "Crystal Scarab Hoe",
 	
+	//Blocks
 	//Copper
 	"block.lostworlds.copper_ore": "Copper Ore",
 	

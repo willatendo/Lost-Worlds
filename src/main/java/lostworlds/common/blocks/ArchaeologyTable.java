@@ -5,7 +5,11 @@ import java.util.Map;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.IWaterLoggable;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer.Builder;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -19,8 +23,9 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 
-public class ArchaeologyTable extends Block
+public class ArchaeologyTable extends Block implements IWaterLoggable
 {
+	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	protected static final Map<Block, Map<Direction, VoxelShape>> SHAPES = new HashMap<Block, Map<Direction, VoxelShape>>();
 	public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
 	
@@ -29,7 +34,7 @@ public class ArchaeologyTable extends Block
 	public ArchaeologyTable(Properties properties) 
 	{
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
+		this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, Boolean.valueOf(false)));
 		
 		runCalculation(VOXEL_SHAPE);
 	}
@@ -56,14 +61,35 @@ public class ArchaeologyTable extends Block
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
-		return this.getDefaultState().with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());
+		FluidState fluidstate = context.getWorld().getFluidState(context.getPos());
+		boolean flag = fluidstate.getFluid() == Fluids.WATER;
+		return this.getDefaultState().with(WATERLOGGED, Boolean.valueOf(flag)).with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());
 	}
 
 	@Override
 	protected void fillStateContainer(Builder<Block, BlockState> builder) 
 	{
 		super.fillStateContainer(builder);
-		builder.add(HORIZONTAL_FACING);
+		builder.add(HORIZONTAL_FACING, WATERLOGGED);
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Override
+	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
+	{
+		if (stateIn.get(WATERLOGGED)) 
+		{
+			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+		}
+		
+		return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+	}
+	 
+	@SuppressWarnings("deprecation")
+	@Override
+	public FluidState getFluidState(BlockState state) 
+	{
+		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
 	}
 	
 	protected static VoxelShape calculateShapes(Direction to, VoxelShape shape) 

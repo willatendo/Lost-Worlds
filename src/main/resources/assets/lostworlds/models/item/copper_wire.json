@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/book_of_paleontology"
+		"layer0": "lostworlds:items/copper_wire"
   }
 }
