@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[36,)"
-license="All rights reserved"
+license="Creative Commons"
 
 [[mods]]
 modId="lostworlds"

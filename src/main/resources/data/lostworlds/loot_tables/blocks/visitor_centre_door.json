@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+	{
+		"rolls": 1,
+		"entries": [
+		{
+			"type": "minecraft:item",
+			"conditions": [
+			{
+				"condition": "minecraft:block_state_property",
+				"block": "lostworlds:visitor_centre_door",
+				"properties": {
+					"half": "lower"
+				}
+			}],
+			"name": "minecraft:acacia_door"
+		}],
+		"conditions": [
+		{
+			"condition": "lostworlds:visitor_centre_door"
+		}]
+	}]
+}
