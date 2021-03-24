@@ -49,6 +49,13 @@
 
 	//Electronics
 	"item.lostworlds.copper_wire": "Copper Wire",	
+	"item.lostworlds.computer_fan": "Computer Fan",	
+	"item.lostworlds.computer_screen": "Computer Screen",	
+	"item.lostworlds.computer_frame": "Computer Frame",	
+	"item.lostworlds.computer_storage_port": "Computer Storage Port",	
+	"item.lostworlds.motherboard": "Motherboard",	
+	"item.lostworlds.cpu": "CPU",	
+	"item.lostworlds.ram": "RAM",	
 
 	//Music
 	"item.lostworlds.jp_music_disc": "Music Disc",
@@ -125,8 +132,8 @@
 	"block.lostworlds.wooden_planks": "Wooden Planks",
 	"block.lostworlds.wooden_planks_stairs": "Wooden Planks Stairs",
 	"block.lostworlds.wooden_planks_slab": "Wooden Planks Slab",
-	"block.lostworlds.wooden_planks_fence": "Wooden Planks Wall",
-	"block.lostworlds.wooden_planks_fence_gate": "Wooden Planks Wall",
+	"block.lostworlds.wooden_planks_fence": "Wooden Planks Fence",
+	"block.lostworlds.wooden_planks_fence_gate": "Wooden Planks Fence Gate",
 	"block.lostworlds.wooden_planks_pressure_plate": "Wooden Planks Pressure Plate",
 	"block.lostworlds.wooden_planks_button": "Wooden Planks Button",
 	
@@ -134,8 +141,8 @@
 	"block.lostworlds.refined_wooden_planks": "Refined Wooden Planks",
 	"block.lostworlds.refined_wooden_planks_stairs": "Refined Wooden Planks Stairs",
 	"block.lostworlds.refined_wooden_planks_slab": "Refined Wooden Planks Slab",
-	"block.lostworlds.refined_wooden_planks_fence": "Refined Wooden Planks Wall",
-	"block.lostworlds.refined_wooden_planks_fence_gate": "Refined Wooden Planks Wall",
+	"block.lostworlds.refined_wooden_planks_fence": "Refined Wooden Planks Fence",
+	"block.lostworlds.refined_wooden_planks_fence_gate": "Refined Wooden Planks Fence Gate",
 	"block.lostworlds.refined_wooden_planks_pressure_plate": "Refined Wooden Planks Pressure Plate",
 	"block.lostworlds.refined_wooden_planks_button": "Refined Wooden Planks Button",
 	

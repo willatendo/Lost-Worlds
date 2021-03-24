@@ -18,12 +18,12 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 
-public class PlasteredFossilBlock extends Block implements IWaterLoggable
+public class PlasteredStoneFossilBlock extends Block implements IWaterLoggable
 {
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	private static final VoxelShape SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
 	
-	public PlasteredFossilBlock(Properties properties) 
+	public PlasteredStoneFossilBlock(Properties properties) 
 	{
 		super(properties);
 	}

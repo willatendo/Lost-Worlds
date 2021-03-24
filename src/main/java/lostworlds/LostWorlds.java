@@ -6,8 +6,8 @@ import org.apache.logging.log4j.Logger;
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.util.reference.ModReference;
 import lostworlds.core.util.registry.ModRegistry;
-import lostworlds.world.features.BiomeFeatures;
 import lostworlds.world.init.BiomeInit;
+import lostworlds.world.init.FeatureInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
@@ -38,9 +38,9 @@ public class LostWorlds
         GeckoLib.initialize();
         
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeFeatures::generateOre);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::generateOre);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
-        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> BiomeFeatures.addMobSpawning(event));
+        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> FeatureInit.addMobSpawning(event));
     }
 
     private void setup(final FMLCommonSetupEvent event)

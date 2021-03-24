@@ -70,11 +70,18 @@ public class ItemInit
 	public static final RegistryObject<Item> COPPER_NUGGET = simpleItemRegister("copper_nugget", standardProperties());
 	
 	//Oil and Plastic Stuff
-	public static final RegistryObject<Item> OIL_BUCKET = advancedItemRegister("oil_bucket", new BucketItem(FluidInit.OIL_FLUID.get(), standardProperties().maxStackSize(1)));
+	public static final RegistryObject<Item> OIL_BUCKET = advancedItemRegister("oil_bucket", new BucketItem(() -> FluidInit.OIL_FLUID.get(), standardProperties().maxStackSize(1)));
 	public static final RegistryObject<Item> MOLTEN_PLASTIC_BUCKET = simpleItemRegister("molten_plastic_bucket", standardProperties().maxStackSize(1));
 	
 	//Electronics
 	public static final RegistryObject<Item> COPPER_WIRE = simpleItemRegister("copper_wire", standardProperties());	
+	public static final RegistryObject<Item> COMPUTER_FAN = simpleItemRegister("computer_fan", standardProperties());
+	public static final RegistryObject<Item> COMPUTER_SCREEN = simpleItemRegister("computer_screen", standardProperties());
+	public static final RegistryObject<Item> COMPUTER_FRAME = simpleItemRegister("computer_frame", standardProperties());
+	public static final RegistryObject<Item> COMPUTER_STORAGE_PORT = simpleItemRegister("computer_storage_port", standardProperties());
+	public static final RegistryObject<Item> MOTHERBOARD = simpleItemRegister("motherboard", standardProperties());
+	public static final RegistryObject<Item> CPU = simpleItemRegister("cpu", standardProperties());
+	public static final RegistryObject<Item> RAM = simpleItemRegister("ram", standardProperties());	
 	
 	//Music
 	public static final RegistryObject<Item> JP_MUSIC_DISC = advancedItemRegister("jp_music_disc", new MusicDiscItem(15, SoundInit.LAZY_JP_MUSIC.get(), standardProperties().maxStackSize(1).rarity(Rarity.RARE)));

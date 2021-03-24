@@ -17,7 +17,7 @@ public class FluidInit
 	//Assets
 	public static final ResourceLocation OIL_STILL_RL = new ResourceLocation(ModReference.ID, "fluids/oil_still"); 
 	public static final ResourceLocation OIL_FLOWING_RL = new ResourceLocation(ModReference.ID, "fluids/oil_flowing"); 
-	public static final ResourceLocation OIL_OVERLAY_RL = new ResourceLocation(ModReference.ID, "fluids/oil_overlaying"); 
+	public static final ResourceLocation OIL_OVERLAY_RL = new ResourceLocation(ModReference.ID, "fluids/oil_overlay"); 
 	
 	//Objects
 	public static final RegistryObject<FlowingFluid> OIL_FLUID = ModRegistry.FLUID_REGISTRY.register("oil_fluid", () -> new ForgeFlowingFluid.Source(FluidInit.OIL_PROPERTIES));
@@ -28,4 +28,6 @@ public class FluidInit
 	
 	//Properties
 	public static final ForgeFlowingFluid.Properties OIL_PROPERTIES = new ForgeFlowingFluid.Properties(() -> OIL_FLUID.get(), () -> OIL_FLOWING.get(), FluidAttributes.builder(OIL_STILL_RL, OIL_FLOWING_RL).density(0).sound(SoundEvents.BLOCK_WATER_AMBIENT).overlay(OIL_OVERLAY_RL)).block(() -> FluidInit.OIL_BLOCK.get()).bucket(() -> ItemInit.OIL_BUCKET.get());
+
+	public static void initFluids() { }
 }

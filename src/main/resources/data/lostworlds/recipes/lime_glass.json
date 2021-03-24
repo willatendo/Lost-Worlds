@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"#@#",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "lostworlds:clear_glass"
+		},
+		"@": {
+			"item": "minecraft:lime_dye"
+		}
+	},
+	"result": {
+		"item": "lostworlds:lime_glass",
+		"count": 8
+	}
+}

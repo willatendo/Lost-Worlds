@@ -4,7 +4,7 @@ import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.reference.ModReference;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 
 public class CreativeTab extends ItemGroup
 {
@@ -32,9 +32,9 @@ public class CreativeTab extends ItemGroup
 	}
 	
 	@Override
-	public void fill(NonNullList<ItemStack> items) 
+	public ResourceLocation getBackgroundImage() 
 	{
-		super.fill(items);
+		return new ResourceLocation(ModReference.ID, "textures/gui/creative_tab/lostworlds_tab.png");
 	}
 }
 

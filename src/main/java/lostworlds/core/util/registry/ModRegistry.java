@@ -2,7 +2,9 @@ package lostworlds.core.util.registry;
 
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
+import lostworlds.core.init.FluidInit;
 import lostworlds.core.init.ItemInit;
+import lostworlds.core.init.PaintingInit;
 import lostworlds.core.init.SoundInit;
 import lostworlds.core.util.reference.ModReference;
 import lostworlds.world.init.BiomeInit;
@@ -59,6 +61,8 @@ public class ModRegistry
 		
 		SoundInit.initSounds();
 		ItemInit.initItems();
+		PaintingInit.initPaintings();
+		FluidInit.initFluids();
 		BlockInit.initBlocks();
 		EntityInit.initEntities();
 		SurfaceBuilderInit.initSurfaceBuilders();

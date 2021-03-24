@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:wooden_planks_fence",
+		"lostworlds:refined_wooden_planks_fence",
+		"lostworlds:metal_fence"
+  ]
+}

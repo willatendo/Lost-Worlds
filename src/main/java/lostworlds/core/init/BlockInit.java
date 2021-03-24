@@ -1,8 +1,9 @@
 package lostworlds.core.init;
 
 import lostworlds.common.blocks.ArchaeologyTable;
-import lostworlds.common.blocks.ExposedFossilBlock;
-import lostworlds.common.blocks.PlasteredFossilBlock;
+import lostworlds.common.blocks.ExposedStoneFossilBlock;
+import lostworlds.common.blocks.PlasteredStoneFossilBlock;
+import lostworlds.common.blocks.StoneFossilBlock;
 import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolType;
 import lostworlds.core.util.registry.ModRegistry;
@@ -37,9 +38,9 @@ public class BlockInit
 	public static final RegistryObject<OreBlock> COPPER_ORE = ModRegistry.BLOCK_REGISTRY.register("copper_ore", () -> new OreBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool().hardnessAndResistance(3.0F).sound(SoundType.STONE)));
 		
 	//Fossils
-	public static final RegistryObject<Block> STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("stone_fossil", () -> new Block(AbstractBlock.Properties.create(ModMaterials.MADE_FOR_BRUSH, MaterialColor.STONE).harvestTool(ModToolType.BRUSH).harvestLevel(0).setRequiresTool().hardnessAndResistance(1.5F).sound(SoundType.STONE)));
-	public static final RegistryObject<ExposedFossilBlock> EXPOSED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("exposed_stone_fossil", () -> new ExposedFossilBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(0).setRequiresTool().hardnessAndResistance(1.25F).notSolid().sound(SoundType.STONE)));
-	public static final RegistryObject<PlasteredFossilBlock> PLASTERED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_stone_fossil", () -> new PlasteredFossilBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.STONE).zeroHardnessAndResistance().sound(SoundType.CLOTH).notSolid()));
+	public static final RegistryObject<StoneFossilBlock> STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("stone_fossil", () -> new StoneFossilBlock(AbstractBlock.Properties.create(ModMaterials.MADE_FOR_BRUSH, MaterialColor.STONE).harvestTool(ModToolType.BRUSH).harvestLevel(0).setRequiresTool().hardnessAndResistance(1.5F).sound(SoundType.STONE)));
+	public static final RegistryObject<ExposedStoneFossilBlock> EXPOSED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("exposed_stone_fossil", () -> new ExposedStoneFossilBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(0).setRequiresTool().hardnessAndResistance(1.25F).notSolid().sound(SoundType.STONE)));
+	public static final RegistryObject<PlasteredStoneFossilBlock> PLASTERED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_stone_fossil", () -> new PlasteredStoneFossilBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.STONE).zeroHardnessAndResistance().sound(SoundType.CLOTH).notSolid()));
 		
 	//Fossil Processing
 //	public static final RegistryObject<FossilCleanerBlock> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new FossilCleanerBlock(AbstractBlock.Properties.create(Material.IRON, MaterialColor.GRAY)));

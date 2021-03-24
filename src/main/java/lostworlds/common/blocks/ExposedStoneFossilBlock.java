@@ -33,13 +33,13 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class ExposedFossilBlock extends Block implements IWaterLoggable
+public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 {
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	private static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
 	private static final VoxelShape SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
 	
-	public ExposedFossilBlock(AbstractBlock.Properties properties) 
+	public ExposedStoneFossilBlock(AbstractBlock.Properties properties) 
 	{
 		super(properties);
 		this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, Boolean.valueOf(false)));
