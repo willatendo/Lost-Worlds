@@ -2,6 +2,7 @@ package lostworlds.core.util.enums;
 
 import java.util.function.Supplier;
 
+import lostworlds.core.init.ItemInit;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
@@ -11,15 +12,15 @@ public enum ModItemTeir implements IItemTier
 {
 	BRUSH(0, 34, 1.5F, 1.4F, 0, () -> 
 	{
-		return Ingredient.fromItems(Items.STRING);
+		return Ingredient.of(Items.STRING);
 	}),
 	ANCIENT(2, 550, 5.0F, 10.0F, 5, () ->
 	{
-		return Ingredient.fromItems(Items.IRON_INGOT);
+		return Ingredient.of(Items.IRON_INGOT);
 	}),	
 	SCARAB(4, 15000, 30.0F, 80.0F, 40, () -> 
 	{
-		return Ingredient.fromItems(Items.ACACIA_BOAT);
+		return Ingredient.of(ItemInit.CRYSTAL_SCARAB_GEM.get()); 
 	});
 	
 	private final int harvestLevel;
@@ -39,33 +40,33 @@ public enum ModItemTeir implements IItemTier
 		this.repairMaterial = new LazyValue<>(repairMaterialIn);
 	}
 	
-	public int getMaxUses() 
+	public int getUses() 
 	{
 		return this.maxUses;
 	}
 	
-	public float getEfficiency() 
+	public float getSpeed() 
 	{
 		return this.efficiency;
 	}
 	
-	public float getAttackDamage() 
+	public float getAttackDamageBonus() 
 	{
 		return this.attackDamage;
 	}
 	
-	public int getHarvestLevel() 
+	public int getLevel() 
 	{
 		return this.harvestLevel;
 	}
 	
-	public int getEnchantability() 
+	public int getEnchantmentValue() 
 	{
 		return this.enchantability;
 	}
 	
-	public Ingredient getRepairMaterial() 
+	public Ingredient getRepairIngredient() 
 	{
-		return this.repairMaterial.getValue();
+		return this.repairMaterial.get();
 	}
 }

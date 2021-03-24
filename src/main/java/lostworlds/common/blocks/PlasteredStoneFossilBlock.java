@@ -21,7 +21,7 @@ import net.minecraft.world.IWorld;
 public class PlasteredStoneFossilBlock extends Block implements IWaterLoggable
 {
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	private static final VoxelShape SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
+	private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
 	
 	public PlasteredStoneFossilBlock(Properties properties) 
 	{
@@ -37,45 +37,45 @@ public class PlasteredStoneFossilBlock extends Block implements IWaterLoggable
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
-		FluidState fluidstate = context.getWorld().getFluidState(context.getPos());
-		boolean flag = fluidstate.getFluid() == Fluids.WATER;
-		return super.getStateForPlacement(context).with(WATERLOGGED, Boolean.valueOf(flag));
+		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+		boolean flag = fluidstate.getType() == Fluids.WATER;
+		return super.getStateForPlacement(context).setValue(WATERLOGGED, Boolean.valueOf(flag));
 	}
 	
 	@Override
-	protected void fillStateContainer(Builder<Block, BlockState> builder) 
+	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) 
 	{
-		super.fillStateContainer(builder);
+		super.createBlockStateDefinition(builder);
 		builder.add(WATERLOGGED);
 	}
 	
 	@Override
-	public PushReaction getPushReaction(BlockState state) 
+	public PushReaction getPistonPushReaction(BlockState state) 
 	{
 		return PushReaction.DESTROY;
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Override
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
-		if (stateIn.get(WATERLOGGED)) 
+		if (stateIn.getValue(WATERLOGGED)) 
 		{
-			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 		
-		return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 	 
 	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{
-		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 	
 	@Override
-	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) 
+	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) 
 	{
 		return false;
 	}

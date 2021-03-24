@@ -21,14 +21,14 @@ public class DiscItem extends Item
 	public DiscItem(Properties properties) 
 	{
 		super(properties);
-	}	
+	}
 	
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
+	public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
 	{
-		super.addInformation(stack, worldIn, tooltip, flagIn);
-		if(InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), GLFW.GLFW_KEY_LEFT_SHIFT))
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
+		if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT))
 		{
 			tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + ".disc.holding_shift"));
 		}

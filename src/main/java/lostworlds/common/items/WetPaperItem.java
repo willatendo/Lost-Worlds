@@ -18,9 +18,9 @@ public class WetPaperItem extends Item
 	}
 	
 	@Override
-	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
+	public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
 	{
-		super.addInformation(stack, worldIn, tooltip, flagIn);
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		
 		tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + ".wet_paper"));
 	}

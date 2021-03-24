@@ -19,12 +19,12 @@ public class PalaeoniscumRender extends GeoEntityRenderer<PalaeoniscumEntity>
 	public PalaeoniscumRender(EntityRendererManager renderManager)
 	{
 		super(renderManager, new PalaeoniscumModel());
-		this.shadowSize = 0.15F;
+		this.shadowRadius = 0.15F;
 	}
 	
 	@Override
 	public RenderType getRenderType(PalaeoniscumEntity animatable, float partialTicks, MatrixStack stack, IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, ResourceLocation textureLocation) 
 	{
-		return RenderType.getEntityTranslucent(getTextureLocation(animatable));
+		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 }

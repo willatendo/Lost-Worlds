@@ -19,12 +19,12 @@ public class ProcompsognathusRender extends GeoEntityRenderer<ProcompsognathusEn
 	public ProcompsognathusRender(EntityRendererManager renderManager)
 	{
 		super(renderManager, new ProcompsognathusModel());
-		this.shadowSize = 0.15F;
+		this.shadowRadius = 0.15F;
 	}
 	
 	@Override
 	public RenderType getRenderType(ProcompsognathusEntity animatable, float partialTicks, MatrixStack stack, IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, ResourceLocation textureLocation) 
 	{
-		return RenderType.getEntityTranslucent(getTextureLocation(animatable));
+		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 }

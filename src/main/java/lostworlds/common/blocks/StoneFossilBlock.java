@@ -27,50 +27,50 @@ public class StoneFossilBlock extends Block
 	public StoneFossilBlock(Properties properties) 
 	{
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH));
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
 	{
-		return state.rotate(mirrorIn.toRotation(state.get(HORIZONTAL_FACING)));
+		return state.rotate(mirrorIn.getRotation(state.getValue(HORIZONTAL_FACING)));
 	}
 	
 	@Override
 	public BlockState rotate(BlockState state, IWorld world, BlockPos pos, Rotation direction) 
 	{
-		return state.with(HORIZONTAL_FACING, direction.rotate(state.get(HORIZONTAL_FACING)));
+		return state.setValue(HORIZONTAL_FACING, direction.rotate(state.getValue(HORIZONTAL_FACING)));
 	}
 	
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
-		return super.getStateForPlacement(context).with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());
+		return super.getStateForPlacement(context).setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
 	}
 	
 	@Override
-	protected void fillStateContainer(Builder<Block, BlockState> builder) 
+	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) 
 	{
-		super.fillStateContainer(builder);
+		super.createBlockStateDefinition(builder);
 		builder.add(HORIZONTAL_FACING);
 	}
 	
 	@Override
-	public void onBlockClicked(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) 
+	public void attack(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) 
 	{		
-		if(player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof BrushItem)
+		if(player.getItemInHand(Hand.MAIN_HAND).getItem() instanceof BrushItem)
 		{
-			worldIn.setBlockState(pos, BlockInit.EXPOSED_STONE_FOSSIL.get().getDefaultState().with(HORIZONTAL_FACING, state.get(HORIZONTAL_FACING)));
-			worldIn.playSound(player, pos, SoundEvents.BLOCK_STONE_HIT, SoundCategory.BLOCKS, 0.7F, 1.0F);
+			worldIn.setBlockAndUpdate(pos, BlockInit.EXPOSED_STONE_FOSSIL.get().defaultBlockState().setValue(HORIZONTAL_FACING, state.getValue(HORIZONTAL_FACING)));
+			worldIn.playSound(player, pos, SoundEvents.STONE_BREAK, SoundCategory.BLOCKS, 0.7F, 1.0F);
 			
 //			if(!player.abilities.isCreativeMode)
 //			{
-				ItemStack stack = player.getHeldItemMainhand();
+				ItemStack stack = player.getMainHandItem();
 				
-				stack.damageItem(1, player, (p_220040_1_) -> 
+				stack.hurtAndBreak(1, player, (p_220040_1_) -> 
 				{
-					p_220040_1_.sendBreakAnimation(player.getActiveHand());
+					p_220040_1_.broadcastBreakEvent(player.getUsedItemHand());
 				});
 //			}
 		}

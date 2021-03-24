@@ -29,7 +29,7 @@ public class NautilusEntity extends AbstractFishEntity implements IAnimatable
 	public NautilusEntity(EntityType<? extends AbstractFishEntity> type, World worldIn) 
 	{
 		super(type, worldIn);
-		this.ignoreFrustumCheck = true;
+		this.noCulling = true;
 	}
 
 	@Override
@@ -43,9 +43,9 @@ public class NautilusEntity extends AbstractFishEntity implements IAnimatable
 	{
 		return this.factory;
 	}
-
+	
 	@Override
-	protected ItemStack getFishBucket() 
+	protected ItemStack getBucketItemStack() 
 	{
 		return new ItemStack(ItemInit.NAUTILUS_BUCKET.get());
 	}
@@ -53,21 +53,21 @@ public class NautilusEntity extends AbstractFishEntity implements IAnimatable
 	@Override
 	protected SoundEvent getFlopSound() 
 	{
-		return SoundEvents.BLOCK_ANVIL_BREAK;
+		return SoundEvents.ANVIL_BREAK;
 	}
 	
 	protected SoundEvent getAmbientSound() 
 	{
-		return SoundEvents.BLOCK_BUBBLE_COLUMN_BUBBLE_POP;
+		return SoundEvents.BUBBLE_COLUMN_BUBBLE_POP;
 	}
 	
 	protected SoundEvent getDeathSound() 
 	{
-		return SoundEvents.BLOCK_ANVIL_BREAK;
+		return SoundEvents.ANVIL_BREAK;
 	}
 	
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
 	{
-		return SoundEvents.BLOCK_ANVIL_HIT;
+		return SoundEvents.ANVIL_HIT;
 	}
 }

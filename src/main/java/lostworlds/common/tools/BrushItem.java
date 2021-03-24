@@ -21,12 +21,12 @@ public class BrushItem extends ToolItem
 
 	public BrushItem(IItemTier tier, float attackDamageIn, float attackSpeedIn, Properties properties) 
 	{
-		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON_BLOCKS, properties.addToolType(ModToolType.BRUSH, tier.getHarvestLevel()));
+		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON_BLOCKS, properties.addToolType(ModToolType.BRUSH, tier.getLevel()));
 	}
 	
 	public float getDestroySpeed(ItemStack stack, BlockState state) 
 	{
 		Material material = state.getMaterial();
-		return EFFECTIVE_ON_MATERIALS.contains(material) ? this.efficiency : super.getDestroySpeed(stack, state);
+		return EFFECTIVE_ON_MATERIALS.contains(material) ? this.speed : super.getDestroySpeed(stack, state);
 	}
 }

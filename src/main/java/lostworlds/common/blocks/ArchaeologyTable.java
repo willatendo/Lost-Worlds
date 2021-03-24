@@ -29,12 +29,12 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 	protected static final Map<Block, Map<Direction, VoxelShape>> SHAPES = new HashMap<Block, Map<Direction, VoxelShape>>();
 	public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
 	
-	private static final VoxelShape VOXEL_SHAPE = Block.makeCuboidShape(0, 0, 2, 16, 14, 16);
+	private static final VoxelShape VOXEL_SHAPE = Block.box(0, 0, 2, 16, 14, 16);
 
 	public ArchaeologyTable(Properties properties) 
 	{
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, Boolean.valueOf(false)));
+		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(WATERLOGGED, Boolean.valueOf(false)));
 		
 		runCalculation(VOXEL_SHAPE);
 	}
@@ -42,65 +42,65 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) 
 	{
-		return SHAPES.get(this).get(state.get(HORIZONTAL_FACING));
+		return SHAPES.get(this).get(state.getValue(HORIZONTAL_FACING));
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
 	{
-		return state.rotate(mirrorIn.toRotation(state.get(HORIZONTAL_FACING)));
+		return state.rotate(mirrorIn.getRotation(state.getValue(HORIZONTAL_FACING)));
 	}
 
 	@Override
 	public BlockState rotate(BlockState state, IWorld world, BlockPos pos, Rotation direction) 
 	{
-		return state.with(HORIZONTAL_FACING, direction.rotate(state.get(HORIZONTAL_FACING)));
+		return state.setValue(HORIZONTAL_FACING, direction.rotate(state.getValue(HORIZONTAL_FACING)));
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
-		FluidState fluidstate = context.getWorld().getFluidState(context.getPos());
-		boolean flag = fluidstate.getFluid() == Fluids.WATER;
-		return this.getDefaultState().with(WATERLOGGED, Boolean.valueOf(flag)).with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());
+		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+		boolean flag = fluidstate.getType() == Fluids.WATER;
+		return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
 	}
-
+	
 	@Override
-	protected void fillStateContainer(Builder<Block, BlockState> builder) 
+	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) 
 	{
-		super.fillStateContainer(builder);
+		super.createBlockStateDefinition(builder);
 		builder.add(HORIZONTAL_FACING, WATERLOGGED);
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Override
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
-		if (stateIn.get(WATERLOGGED)) 
+		if (stateIn.getValue(WATERLOGGED)) 
 		{
-			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 		
-		return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 	 
 	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{
-		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 	
 	protected static VoxelShape calculateShapes(Direction to, VoxelShape shape) 
 	{
 		VoxelShape[] buffer = new VoxelShape[] { shape, VoxelShapes.empty() };
 
-		int times = (to.getHorizontalIndex() - Direction.NORTH.getHorizontalIndex() + 4) % 4;
+		int times = (to.get3DDataValue() - Direction.NORTH.get3DDataValue() + 4) % 4;
 		for (int i = 0; i < times; i++) 
 		{
-			buffer[0].forEachBox((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = VoxelShapes.or(buffer[1],
-					VoxelShapes.create(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
+			buffer[0].forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = VoxelShapes.or(buffer[1],
+					VoxelShapes.box(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
 			buffer[0] = buffer[1];
 			buffer[1] = VoxelShapes.empty();
 		}

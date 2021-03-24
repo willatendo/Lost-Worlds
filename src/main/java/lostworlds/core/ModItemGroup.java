@@ -6,5 +6,6 @@ import net.minecraft.item.ItemGroup;
 
 public class ModItemGroup
 {
-	public static final ItemGroup TAB = new CreativeTab(ModReference.ID).setBackgroundImageName("item_search.png");
+	@SuppressWarnings("deprecation")
+	public static final ItemGroup TAB = new CreativeTab(ModReference.ID).setBackgroundSuffix("item_search.png");
 }

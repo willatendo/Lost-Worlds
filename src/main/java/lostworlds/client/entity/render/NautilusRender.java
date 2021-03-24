@@ -19,12 +19,12 @@ public class NautilusRender extends GeoEntityRenderer<NautilusEntity>
 	public NautilusRender(EntityRendererManager renderManager)
 	{
 		super(renderManager, new NautilusModel());
-		this.shadowSize = 0.15F;
+		this.shadowRadius = 0.15F;
 	}
 	
 	@Override
 	public RenderType getRenderType(NautilusEntity animatable, float partialTicks, MatrixStack stack, IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, ResourceLocation textureLocation) 
 	{
-		return RenderType.getEntityTranslucent(getTextureLocation(animatable));
+		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 }

@@ -8,9 +8,7 @@ import lostworlds.core.util.reference.ModReference;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.world.init.BiomeInit;
 import lostworlds.world.init.FeatureInit;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
@@ -53,9 +51,4 @@ public class LostWorlds
 	{
 		ModSpawnEggItem.initSpawnEggs();
 	}
-    
-    public void openBookGUI(ItemStack itemStackIn)
-    {
-    	Minecraft.getInstance().displayGuiScreen(null);
-    }
 }

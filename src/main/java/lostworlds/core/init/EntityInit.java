@@ -18,7 +18,7 @@ public class EntityInit
 	//Registry
 	public static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, EntityType.IFactory<T> entity, EntityClassification entitytype, Class<T> entityClass, float width, float height) 
 	{
-		return ModRegistry.ENTITY_REGISTRY.register(name, () -> EntityType.Builder.create(entity, entitytype).size(width, height).build(name));
+		return ModRegistry.ENTITY_REGISTRY.register(name, () -> EntityType.Builder.of(entity, entitytype).sized(width, height).build(name));
 	}
 	
 	public static void initEntities() { }

@@ -1,4 +1,4 @@
-package lostworlds.core.init;
+ package lostworlds.core.init;
 
 import lostworlds.common.items.DiscItem;
 import lostworlds.common.items.ModFishBucketItem;
@@ -70,8 +70,8 @@ public class ItemInit
 	public static final RegistryObject<Item> COPPER_NUGGET = simpleItemRegister("copper_nugget", standardProperties());
 	
 	//Oil and Plastic Stuff
-	public static final RegistryObject<Item> OIL_BUCKET = advancedItemRegister("oil_bucket", new BucketItem(() -> FluidInit.OIL_FLUID.get(), standardProperties().maxStackSize(1)));
-	public static final RegistryObject<Item> MOLTEN_PLASTIC_BUCKET = simpleItemRegister("molten_plastic_bucket", standardProperties().maxStackSize(1));
+	public static final RegistryObject<Item> OIL_BUCKET = advancedItemRegister("oil_bucket", new BucketItem(() -> FluidInit.OIL_FLUID.get(), standardProperties().stacksTo(1)));
+	public static final RegistryObject<Item> MOLTEN_PLASTIC_BUCKET = simpleItemRegister("molten_plastic_bucket", standardProperties().stacksTo(1));
 	
 	//Electronics
 	public static final RegistryObject<Item> COPPER_WIRE = simpleItemRegister("copper_wire", standardProperties());	
@@ -84,10 +84,10 @@ public class ItemInit
 	public static final RegistryObject<Item> RAM = simpleItemRegister("ram", standardProperties());	
 	
 	//Music
-	public static final RegistryObject<Item> JP_MUSIC_DISC = advancedItemRegister("jp_music_disc", new MusicDiscItem(15, SoundInit.LAZY_JP_MUSIC.get(), standardProperties().maxStackSize(1).rarity(Rarity.RARE)));
+	public static final RegistryObject<Item> JP_MUSIC_DISC = advancedItemRegister("jp_music_disc", new MusicDiscItem(15, SoundInit.LAZY_JP_MUSIC.get(), standardProperties().stacksTo(1).rarity(Rarity.RARE)));
 	
 	//Storage
-	public static final RegistryObject<Item> DISC = advancedItemRegister("disc", new DiscItem(standardProperties().maxStackSize(1)));
+	public static final RegistryObject<Item> DISC = advancedItemRegister("disc", new DiscItem(standardProperties().stacksTo(1)));
 		
 	//Crystal Scarab	
 	public static final RegistryObject<Item> BROKEN_CRYSTAL_SCARAB_GEM = simpleItemRegister("broken_crystal_scarab_gem", standardProperties().rarity(Rarity.RARE));
@@ -284,7 +284,7 @@ public class ItemInit
 	//Standard Properties
 	private static Properties standardProperties()
 	{
-		return new Item.Properties().group(ModItemGroup.TAB);
+		return new Item.Properties().tab(ModItemGroup.TAB);
 	}
 	
 	//Advanced Item Register
@@ -312,7 +312,7 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerEgg(String type) 
 	{
-		return simpleItemRegister(type + "_egg", standardProperties().maxStackSize(1));
+		return simpleItemRegister(type + "_egg", standardProperties().stacksTo(1));
 	}
 	
 	private static RegistryObject<Item> registerSpawn(String id, Item.Properties properties)
@@ -322,7 +322,7 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerBabyDino(NonNullSupplier<EntityType<?>> entity, String type) 
 	{
-		return advancedItemRegister(type + "_baby", new ModSpawnItem(entity, standardProperties().maxStackSize(1)));
+		return advancedItemRegister(type + "_baby", new ModSpawnItem(entity, standardProperties().stacksTo(1)));
 	}
 	
 	private static RegistryObject<Item> registerSpawnBucket(String id, NonNullSupplier<EntityType<?>> entity, Item.Properties properties)

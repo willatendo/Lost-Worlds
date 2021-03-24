@@ -29,7 +29,7 @@ public class PalaeoniscumEntity extends AbstractGroupFishEntity implements IAnim
 	public PalaeoniscumEntity(EntityType<? extends AbstractGroupFishEntity> type, World worldIn) 
 	{
 		super(type, worldIn);
-		this.ignoreFrustumCheck = true;
+		this.noCulling = true;
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class PalaeoniscumEntity extends AbstractGroupFishEntity implements IAnim
 	}
 
 	@Override
-	protected ItemStack getFishBucket() 
+	protected ItemStack getBucketItemStack() 
 	{
 		return new ItemStack(ItemInit.PALAEONISCUM_BUCKET.get());
 	}
@@ -53,21 +53,21 @@ public class PalaeoniscumEntity extends AbstractGroupFishEntity implements IAnim
 	@Override
 	protected SoundEvent getFlopSound() 
 	{
-		return SoundEvents.ENTITY_TROPICAL_FISH_FLOP;
+		return SoundEvents.TROPICAL_FISH_FLOP;
 	}
 	
 	protected SoundEvent getAmbientSound() 
 	{
-		return SoundEvents.ENTITY_COD_AMBIENT;
+		return SoundEvents.COD_AMBIENT;
 	}
 	
 	protected SoundEvent getDeathSound() 
 	{
-		return SoundEvents.ENTITY_COD_DEATH;
+		return SoundEvents.COD_DEATH;
 	}
 	
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
 	{
-		return SoundEvents.ENTITY_COD_HURT;
+		return SoundEvents.COD_HURT;
 	}
 }

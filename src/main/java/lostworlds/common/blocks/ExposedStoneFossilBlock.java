@@ -37,12 +37,12 @@ public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 {
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	private static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
-	private static final VoxelShape SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
+	private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
 	
 	public ExposedStoneFossilBlock(AbstractBlock.Properties properties) 
 	{
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, Boolean.valueOf(false)));
+		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(WATERLOGGED, Boolean.valueOf(false)));
 	}
 	
 	@Override
@@ -55,76 +55,76 @@ public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
 	{
-		return state.rotate(mirrorIn.toRotation(state.get(HORIZONTAL_FACING)));
+		return state.rotate(mirrorIn.getRotation(state.getValue(HORIZONTAL_FACING)));
 	}
 	
 	@Override
 	public BlockState rotate(BlockState state, IWorld world, BlockPos pos, Rotation direction) 
 	{
-		return state.with(HORIZONTAL_FACING, direction.rotate(state.get(HORIZONTAL_FACING)));
+		return state.setValue(HORIZONTAL_FACING, direction.rotate(state.getValue(HORIZONTAL_FACING)));
 	}
 	
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
-		FluidState fluidstate = context.getWorld().getFluidState(context.getPos());
-		boolean flag = fluidstate.getFluid() == Fluids.WATER;
-		return super.getStateForPlacement(context).with(WATERLOGGED, Boolean.valueOf(flag)).with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());
+		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+		boolean flag = fluidstate.getType() == Fluids.WATER;
+		return super.getStateForPlacement(context).setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
 	}
 	
 	@Override
-	protected void fillStateContainer(Builder<Block, BlockState> builder) 
+	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) 
 	{
-		super.fillStateContainer(builder);
+		super.createBlockStateDefinition(builder);
 		builder.add(HORIZONTAL_FACING, WATERLOGGED);
 	}
 	
 	@Override
-	public PushReaction getPushReaction(BlockState state) 
+	public PushReaction getPistonPushReaction(BlockState state) 
 	{
 		return PushReaction.DESTROY;
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Override
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
-		if (stateIn.get(WATERLOGGED)) 
+		if (stateIn.getValue(WATERLOGGED)) 
 		{
-			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 		
-		return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 	 
 	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{
-		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 	
 	@Override
-	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) 
+	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) 
 	{
 		return false;
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) 
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) 
 	{
-		if(player.getHeldItem(handIn) != null)
+		if(player.getItemInHand(handIn) != null)
 		{
-			Item item = player.getHeldItem(handIn).getItem();
+			Item item = player.getItemInHand(handIn).getItem();
 			if(item instanceof WetPaperItem)
 			{
-				worldIn.setBlockState(pos, BlockInit.PLASTERED_STONE_FOSSIL.get().getDefaultState().with(WATERLOGGED, state.get(WATERLOGGED)));
-				worldIn.playSound(player, pos, SoundEvents.BLOCK_WOOL_PLACE, SoundCategory.BLOCKS, 0.7F, 1.0F);
+				worldIn.setBlockAndUpdate(pos, BlockInit.PLASTERED_STONE_FOSSIL.get().defaultBlockState().setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+				worldIn.playSound(player, pos, SoundEvents.WOOL_PLACE, SoundCategory.BLOCKS, 0.7F, 1.0F);
 				
-				if(!player.abilities.isCreativeMode)
+				if(!player.abilities.instabuild)
 				{
-					ItemStack stack = player.getHeldItem(handIn);
+					ItemStack stack = player.getItemInHand(handIn);
 					stack.shrink(1);
 				}
 				
@@ -136,6 +136,6 @@ public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 			return ActionResultType.FAIL;
 		}
 		
-		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+		return super.use(state, worldIn, pos, player, handIn, hit);
 	}
 }

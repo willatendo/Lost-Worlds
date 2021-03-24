@@ -14,7 +14,7 @@ public class CreativeTab extends ItemGroup
 	}
 
 	@Override
-	public ItemStack createIcon() 
+	public ItemStack makeIcon() 
 	{
 		return ItemInit.WET_PAPER.get().getDefaultInstance();
 	}

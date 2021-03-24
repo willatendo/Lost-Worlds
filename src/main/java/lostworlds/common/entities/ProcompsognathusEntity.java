@@ -25,7 +25,7 @@ public class ProcompsognathusEntity extends CreatureEntity implements IAnimatabl
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
 	{
-		if (!(limbSwingAmount > -0.15F && limbSwingAmount < 0.15F))
+		if (!(animationSpeed > -0.15F && animationSpeed < 0.15F))
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.procompsognathus.walk", true));
 			return PlayState.CONTINUE;
