@@ -1,8 +1,5 @@
 {
 	//Items
-	//Book Of Paleontology
-	"item.lostworlds.book_of_paleontology": "Book Of Paleontology",
-		
 	//Brush
 	"item.lostworlds.brush": "Brush",
 	
@@ -86,7 +83,10 @@
 	"block.lostworlds.stone_fossil": "Stone Fossil",
 	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
 	"block.lostworlds.plastered_stone_fossil": "Plastered Stone Fossil",
-	
+
+	//Fossil Processing
+	"block.lostworlds.fossil_cleaner": "Fossil Cleaner",
+		
 	//Museum Stuff
 	"block.lostworlds.archaeology_table": "Archaeology Table",
 		

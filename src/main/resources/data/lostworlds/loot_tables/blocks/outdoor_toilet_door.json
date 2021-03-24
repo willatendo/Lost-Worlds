@@ -14,11 +14,11 @@
 					"half": "lower"
 				}
 			}],
-			"name": "minecraft:acacia_door"
+			"name": "lostworlds:outdoor_toilet_door"
 		}],
 		"conditions": [
 		{
-			"condition": "lostworlds:outdoor_toilet_door"
+			"condition": "minecraft:survives_explosion"
 		}]
 	}]
 }

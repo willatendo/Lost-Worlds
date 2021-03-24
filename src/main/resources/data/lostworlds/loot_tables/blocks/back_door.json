@@ -14,11 +14,11 @@
 					"half": "lower"
 				}
 			}],
-			"name": "minecraft:acacia_door"
+			"name": "lostworlds:back_door"
 		}],
 		"conditions": [
 		{
-			"condition": "lostworlds:back_door"
+			"condition": "minecraft:survives_explosion"
 		}]
 	}]
 }

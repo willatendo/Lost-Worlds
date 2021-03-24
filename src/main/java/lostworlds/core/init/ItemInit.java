@@ -109,9 +109,11 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> EXPOSED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("exposed_stone_fossil", () -> new BlockItem(BlockInit.EXPOSED_STONE_FOSSIL.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PLASTERED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("plastered_stone_fossil", () -> new BlockItem(BlockInit.PLASTERED_STONE_FOSSIL.get(), standardProperties()));
 
+	//Fossil Processing	
+	public static final RegistryObject<BlockItem> FOSSIL_CLEANER = ModRegistry.ITEM_REGISTRY.register("fossil_cleaner", () -> new BlockItem(BlockInit.FOSSIL_CLEANER.get(), standardProperties()));
+	
 	//Museum Stuff
 	public static final RegistryObject<BlockItem> ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("archaeology_table", () -> new BlockItem(BlockInit.ARCHAEOLOGY_TABLE.get(), standardProperties()));
-
 	
 	//Volcanic Stuff
 	public static final RegistryObject<BlockItem> VOLCANIC_ROCK = ModRegistry.ITEM_REGISTRY.register("volcanic_rock", () -> new BlockItem(BlockInit.VOLCANIC_ROCK.get(), standardProperties()));	

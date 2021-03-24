@@ -14,11 +14,11 @@
 					"half": "lower"
 				}
 			}],
-			"name": "minecraft:acacia_door"
+			"name": "lostworlds:innovation_centre_door"
 		}],
 		"conditions": [
 		{
-			"condition": "lostworlds:innovation_centre_door"
+			"condition": "minecraft:survives_explosion"
 		}]
 	}]
 }
