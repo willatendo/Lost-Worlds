@@ -18,8 +18,8 @@ import net.minecraft.block.HayBlock;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.PaneBlock;
 import net.minecraft.block.PressurePlateBlock;
-import net.minecraft.block.SandBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
+import net.minecraft.block.SandBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
@@ -41,10 +41,7 @@ public class BlockInit
 	public static final RegistryObject<StoneFossilBlock> STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("stone_fossil", () -> new StoneFossilBlock(AbstractBlock.Properties.of(ModMaterials.MADE_FOR_BRUSH, MaterialColor.STONE).harvestTool(ModToolType.BRUSH).harvestLevel(0).requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.STONE)));
 	public static final RegistryObject<ExposedStoneFossilBlock> EXPOSED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("exposed_stone_fossil", () -> new ExposedStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops().strength(1.25F).noOcclusion().sound(SoundType.STONE)));
 	public static final RegistryObject<PlasteredStoneFossilBlock> PLASTERED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_stone_fossil", () -> new PlasteredStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().sound(SoundType.WOOL).noOcclusion()));
-		
-	//Fossil Processing
-	public static final RegistryObject<Block> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new Block(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
-	
+			
 	//Museum Stuff
 	public static final RegistryObject<ArchaeologyTable> ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	
@@ -136,8 +133,8 @@ public class BlockInit
 	public static final RegistryObject<PaneBlock> TINTED_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("tinted_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
 	
 	//Coloured Glass
-	public static final RegistryObject<GlassBlock> WHITE_GLASS = ModRegistry.BLOCK_REGISTRY.register("white_glass", () -> new GlassBlock(AbstractBlock.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_WHITE).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
-	public static final RegistryObject<PaneBlock> WHITE_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("white_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_WHITE).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));	
+	public static final RegistryObject<GlassBlock> WHITE_GLASS = ModRegistry.BLOCK_REGISTRY.register("white_glass", () -> new GlassBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
+	public static final RegistryObject<PaneBlock> WHITE_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("white_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));	
 	
 	public static final RegistryObject<GlassBlock> LIGHT_GREY_GLASS = ModRegistry.BLOCK_REGISTRY.register("light_grey_glass", () -> new GlassBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
 	public static final RegistryObject<PaneBlock> LIGHT_GREY_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("light_grey_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));	
@@ -183,6 +180,9 @@ public class BlockInit
 	
 	public static final RegistryObject<GlassBlock> BROWN_GLASS = ModRegistry.BLOCK_REGISTRY.register("brown_glass", () -> new GlassBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
 	public static final RegistryObject<PaneBlock> BROWN_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("brown_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));	
+	
+	public static final RegistryObject<GlassBlock> SHADED_GLASS = ModRegistry.BLOCK_REGISTRY.register("shaded_glass", () -> new GlassBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
+	public static final RegistryObject<PaneBlock> SHADED_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("shaded_glass", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
 	
 	//Colour Blocks
 	public static final RegistryObject<Block> RED_DECORATION_BLOCK = ModRegistry.BLOCK_REGISTRY.register("red_decoration_block", () -> new Block(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));

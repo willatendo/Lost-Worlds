@@ -84,9 +84,6 @@
 	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
 	"block.lostworlds.plastered_stone_fossil": "Plastered Stone Fossil",
 
-	//Fossil Processing
-	"block.lostworlds.fossil_cleaner": "Fossil Cleaner",
-		
 	//Museum Stuff
 	"block.lostworlds.archaeology_table": "Archaeology Table",
 		
@@ -225,6 +222,9 @@
 
 	"block.lostworlds.brown_glass": "Brown Glass",
 	"block.lostworlds.brown_glass_pane": "Brown Glass Pane",
+
+	"block.lostworlds.shaded_glass": "Shaded Glass",
+	"block.lostworlds.shaded_glass_pane": "Shaded Glass Pane",
 
 	//Coloured Blocks
 	"block.lostworlds.red_decoration_block": "Red Decoration Block",

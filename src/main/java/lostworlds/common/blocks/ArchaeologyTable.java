@@ -108,10 +108,12 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		return buffer[0];
 	}
 
-	protected void runCalculation(VoxelShape shape) {
+	protected void runCalculation(VoxelShape shape) 
+	{
 		SHAPES.put(this, new HashMap<Direction, VoxelShape>());
 		Map<Direction, VoxelShape> facingMap = SHAPES.get(this);
-		for (Direction direction : Direction.values()) {
+		for (Direction direction : Direction.values()) 
+		{
 			facingMap.put(direction, calculateShapes(direction, shape));
 		}
 	}	

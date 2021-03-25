@@ -108,9 +108,6 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("stone_fossil", () -> new BlockItem(BlockInit.STONE_FOSSIL.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> EXPOSED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("exposed_stone_fossil", () -> new BlockItem(BlockInit.EXPOSED_STONE_FOSSIL.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PLASTERED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("plastered_stone_fossil", () -> new BlockItem(BlockInit.PLASTERED_STONE_FOSSIL.get(), standardProperties()));
-
-	//Fossil Processing	
-	public static final RegistryObject<BlockItem> FOSSIL_CLEANER = ModRegistry.ITEM_REGISTRY.register("fossil_cleaner", () -> new BlockItem(BlockInit.FOSSIL_CLEANER.get(), standardProperties()));
 	
 	//Museum Stuff
 	public static final RegistryObject<BlockItem> ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("archaeology_table", () -> new BlockItem(BlockInit.ARCHAEOLOGY_TABLE.get(), standardProperties()));
@@ -251,6 +248,9 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> BROWN_GLASS = ModRegistry.ITEM_REGISTRY.register("brown_glass", () -> new BlockItem(BlockInit.BROWN_GLASS.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> BROWN_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("brown_glass_pane", () -> new BlockItem(BlockInit.BROWN_GLASS_PANE.get(), standardProperties()));	
 
+	public static final RegistryObject<BlockItem> SHADED_GLASS = ModRegistry.ITEM_REGISTRY.register("shaded_glass", () -> new BlockItem(BlockInit.SHADED_GLASS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> SHADED_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("shaded_glass_pane", () -> new BlockItem(BlockInit.SHADED_GLASS_PANE.get(), standardProperties()));	
+	
 	//Coloured Blocks
 	public static final RegistryObject<BlockItem> RED_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("red_decoration_block", () -> new BlockItem(BlockInit.RED_DECORATION_BLOCK.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> ORANGE_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("orange_decoration_block", () -> new BlockItem(BlockInit.ORANGE_DECORATION_BLOCK.get(), standardProperties()));	
