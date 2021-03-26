@@ -9,18 +9,12 @@ import net.minecraft.entity.Pose;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.controller.MovementController;
-import net.minecraft.entity.ai.goal.BreatheAirGoal;
 import net.minecraft.entity.ai.goal.FindWaterGoal;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.RandomSwimmingGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.passive.DolphinEntity;
+import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigator;
 import net.minecraft.pathfinding.SwimmerPathNavigator;
 import net.minecraft.tags.FluidTags;
@@ -29,46 +23,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
+//Rhinesuchus -- Subject to rewrite!
 public abstract class AbstractAmphibianEntity extends AbstractLandAndWaterMobEntity
-{
-	private static final DataParameter<Integer> MOISTNESS_LEVEL = EntityDataManager.defineId(DolphinEntity.class, DataSerializers.INT);
-	
+{	
 	public AbstractAmphibianEntity(EntityType<? extends AbstractAmphibianEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn);
 		this.moveControl = new AbstractAmphibianEntity.MoveHelperController(this);
-	}
-	
-	protected void handleAirSupply(int number) 
-	{
-		
-	}
-	
-	public int getMoistnessLevel() 
-	{
-		return this.entityData.get(MOISTNESS_LEVEL);
-	}
-	
-	public void setMoisntessLevel(int number) 
-	{
-		this.entityData.set(MOISTNESS_LEVEL, number);
-	}
-	
-	protected void defineSynchedData() 
-	{
-		super.defineSynchedData();
-		this.entityData.define(MOISTNESS_LEVEL, 2400);
-	}
-	
-	public void addAdditionalSaveData(CompoundNBT nbt) 
-	{
-		super.addAdditionalSaveData(nbt);
-		nbt.putInt("Moistness", this.getMoistnessLevel());
-	}
-	
-	public void readAdditionalSaveData(CompoundNBT nbt) 
-	{
-		this.setMoisntessLevel(nbt.getInt("Moistness"));
 	}
 	
 	protected float getStandingEyeHeight(Pose pose, EntitySize size) 
@@ -95,27 +56,16 @@ public abstract class AbstractAmphibianEntity extends AbstractLandAndWaterMobEnt
 	protected void registerGoals() 
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(0, new BreatheAirGoal(this));
-		this.goalSelector.addGoal(1, new RandomSwimmingGoal(this, 1.0D, 1));
-		this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 1.0D));
-		this.goalSelector.addGoal(3, new FindWaterGoal(this));
-		this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
-		this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+		this.goalSelector.addGoal(0, new RandomSwimmingGoal(this, 1.0D, 1));
+		this.goalSelector.addGoal(1, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+		this.goalSelector.addGoal(2, new FindWaterGoal(this));
+		this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
+		this.goalSelector.addGoal(4, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 	}
 	
 	protected PathNavigator createNavigation(World worldIn) 
 	{
 		return new SwimmerPathNavigator(this, worldIn);
-	}
-	
-	public int getMaxAirSupply() 
-	{
-		return 10000;
-	}
-	
-	protected int increaseAirSupply(int number) 
-	{
-		return this.getMaxAirSupply();
 	}
 	
 	protected boolean canRandomSwim() 

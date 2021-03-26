@@ -279,7 +279,7 @@
 				}
 			}
 		},
-		"animation.rhinesuchus.swiming": {
+		"animation.rhinesuchus.swimming": {
 			"loop": true,
 			"animation_length": 10,
 			"bones": {
