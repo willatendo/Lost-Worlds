@@ -21,6 +21,7 @@ public class CommonSetup
 			GlobalEntityTypeAttributes.put(EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 2.5D).add(Attributes.MOVEMENT_SPEED, 0.5D).build());
 			GlobalEntityTypeAttributes.put(EntityInit.PALAEONISCUM_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 5.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).build());
 			GlobalEntityTypeAttributes.put(EntityInit.NAUTILUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.75D).build());
+			GlobalEntityTypeAttributes.put(EntityInit.RHINESUCHUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.ATTACK_DAMAGE, 3.0F).build());
 		});
 	}
 }

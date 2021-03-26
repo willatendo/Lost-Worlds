@@ -182,7 +182,7 @@ public class BlockInit
 	public static final RegistryObject<PaneBlock> BROWN_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("brown_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));	
 	
 	public static final RegistryObject<GlassBlock> SHADED_GLASS = ModRegistry.BLOCK_REGISTRY.register("shaded_glass", () -> new GlassBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
-	public static final RegistryObject<PaneBlock> SHADED_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("shaded_glass", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
+	public static final RegistryObject<PaneBlock> SHADED_GLASS_PANE = ModRegistry.BLOCK_REGISTRY.register("shaded_glass_pane", () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).noOcclusion().sound(SoundType.GLASS)));
 	
 	//Colour Blocks
 	public static final RegistryObject<Block> RED_DECORATION_BLOCK = ModRegistry.BLOCK_REGISTRY.register("red_decoration_block", () -> new Block(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));

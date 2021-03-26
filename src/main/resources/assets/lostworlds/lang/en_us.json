@@ -36,6 +36,9 @@
 	"item.lostworlds.nautilus_spawn_egg": "Nautilus Spawn Egg",	
 	"item.lostworlds.nautilus_bucket": "Nautilus Bucket",	
 	
+	//Rhinesuchus
+	"item.lostworlds.rhinesuchus_spawn_egg": "Rhinesuchus Spawn Egg",	
+	
 	//Copper
 	"item.lostworlds.copper_ingot": "Copper Ingot",
 	"item.lostworlds.copper_nugget": "Copper Nugget",
@@ -258,6 +261,7 @@
 	//Entities
 	//Permian
 	"entity.lostworlds.palaeoniscum": "Palaeoniscum freislbeni",
+	"entity.lostworlds.rhinesuchus": "Rhinesuches whaitsi",
 	
 	//Triassic
 	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",
