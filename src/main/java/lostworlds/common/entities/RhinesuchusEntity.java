@@ -14,7 +14,6 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-//Rhinesuchus -- Subject to rewrite!
 public class RhinesuchusEntity extends AbstractAmphibianEntity implements IAnimatable, IMob
 {
 	private AnimationFactory factory = new AnimationFactory(this);
@@ -32,12 +31,7 @@ public class RhinesuchusEntity extends AbstractAmphibianEntity implements IAnima
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
 	{
-		if(!(animationSpeed > -0.15F && animationSpeed < 0.15F) && !isInWater())
-		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rhinesuchus.walking", true));
-			return PlayState.CONTINUE;
-		}
-		else if(isInWater())
+		if(!(animationSpeed > -0.15F && animationSpeed < 0.15F))
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rhinesuchus.swimming", true));
 			return PlayState.CONTINUE;
