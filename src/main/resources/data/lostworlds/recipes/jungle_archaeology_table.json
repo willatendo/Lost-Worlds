@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"$$$",
+		"###",
+		"@ @"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:iron_ingot"
+		},
+		"@": {
+			"item": "minecraft:stripped_jungle_log"
+		},
+		"$": {
+			"item": "minecraft:jungle_log"
+		}
+	},
+	"result": {
+		"item": "lostworlds:jungle_archaeology_table"
+	}
+}

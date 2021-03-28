@@ -6,7 +6,7 @@
 		"entries": [
 		{
 			"type": "minecraft:item",
-			"name": "lostworlds:archaeology_table"
+			"name": "lostworlds:oak_archaeology_table"
 		}],
 		"conditions": [
 		{

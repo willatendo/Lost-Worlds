@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"$$$",
+		"###",
+		"@ @"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:iron_ingot"
+		},
+		"@": {
+			"item": "minecraft:spruce_log"
+		},
+		"$": {
+			"item": "minecraft:stripped_spruce_log"
+		}
+	},
+	"result": {
+		"item": "lostworlds:stripped_spruce_archaeology_table"
+	}
+}

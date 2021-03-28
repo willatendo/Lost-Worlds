@@ -1,18 +1,30 @@
 package lostworlds.common.tileentity;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import javax.annotation.Nullable;
 
 import lostworlds.common.container.FossilCleanerContianer;
+import lostworlds.common.recipe.FossilCleanerRecipe;
+import lostworlds.core.init.RecipeSerialiserInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.FossilCleanerItemHandler;
 import lostworlds.core.util.reference.ModReference;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
@@ -23,11 +35,15 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 public class FossilCleanerTileEntity extends TileEntity implements ITickableTileEntity, INamedContainerProvider
 {
@@ -47,7 +63,7 @@ public class FossilCleanerTileEntity extends TileEntity implements ITickableTile
 	{
 		this(TileEntityInit.FOSSIL_CLEANER_TILE_ENTITY.get());
 	}
-
+	
 	@Override
 	public Container createMenu(final int windowID, final PlayerInventory playerInv, final PlayerEntity playerEntity) 
 	{
@@ -144,6 +160,58 @@ public class FossilCleanerTileEntity extends TileEntity implements ITickableTile
 		CompoundNBT nbt = new CompoundNBT();
 		this.save(nbt);
 		return nbt;
+	}
+	
+	@Nullable
+	private FossilCleanerRecipe getRecipe(ItemStack stack) 
+	{
+		if(stack == null) 
+		{
+			return null;
+		}
+
+		Set<IRecipe<?>> recipes = findRecipesByType(RecipeSerialiserInit.FOSSIL_CLEANER_RECIPE_TYPE, this.level);
+		for(IRecipe<?> iRecipe : recipes) 
+		{
+			FossilCleanerRecipe recipe = (FossilCleanerRecipe) iRecipe;
+			if (recipe.matches(new RecipeWrapper(this.inventory), this.level)) 
+			{
+				return recipe;
+			}
+		}
+
+		return null;
+	}
+	
+	public static Set<IRecipe<?>> findRecipesByType(IRecipeType<?> typeIn, World world) 
+	{
+		return world != null ? world.getRecipeManager().getRecipes().stream().filter(recipe -> recipe.getType() == typeIn).collect(Collectors.toSet()) : Collections.emptySet();
+	}
+
+	@SuppressWarnings("resource")
+	@OnlyIn(Dist.CLIENT)
+	public static Set<IRecipe<?>> findRecipesByType(IRecipeType<?> typeIn) 
+	{
+		ClientWorld world = Minecraft.getInstance().level;
+		return world != null ? world.getRecipeManager().getRecipes().stream().filter(recipe -> recipe.getType() == typeIn).collect(Collectors.toSet()) : Collections.emptySet();
+	}
+
+	public static Set<ItemStack> getAllRecipeInputs(IRecipeType<?> typeIn, World worldIn) 
+	{
+		Set<ItemStack> inputs = new HashSet<ItemStack>();
+		Set<IRecipe<?>> recipes = findRecipesByType(typeIn, worldIn);
+		for(IRecipe<?> recipe : recipes) 
+		{
+			NonNullList<Ingredient> ingredients = recipe.getIngredients();
+			ingredients.forEach(ingredient -> 
+			{
+				for(ItemStack stack : ingredient.getItems()) 
+				{
+					inputs.add(stack);
+				}
+			});
+		}
+		return inputs;
 	}
 
 	@Override

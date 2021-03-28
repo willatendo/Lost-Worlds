@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"$$$",
+		"###",
+		"@ @"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:iron_ingot"
+		},
+		"@": {
+			"item": "minecraft:acacia_log"
+		},
+		"$": {
+			"item": "minecraft:stripped_acacia_log"
+		}
+	},
+	"result": {
+		"item": "lostworlds:stripped_acacia_archaeology_table"
+	}
+}
