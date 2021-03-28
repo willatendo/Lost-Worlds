@@ -94,7 +94,7 @@
 	"block.lostworlds.plastered_stone_fossil": "Plastered Stone Fossil",
 
 	//Fossil Processing
-	"block.lostworlds.fossil_processing": "Fossil Cleaner",
+	"block.lostworlds.fossil_cleaner": "Fossil Cleaner",
 
 	//Museum Stuff
 	"block.lostworlds.oak_archaeology_table": "Oak Archaeology Table",
@@ -300,6 +300,9 @@
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
+	
+	//Containers
+	"container.lostworlds.fossil_cleaner": "Fossil Cleaner",
 	
 	//Biome
 	//Permian
