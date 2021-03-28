@@ -41,7 +41,9 @@ public class BlockInit
 	public static final RegistryObject<StoneFossilBlock> STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("stone_fossil", () -> new StoneFossilBlock(AbstractBlock.Properties.of(ModMaterials.MADE_FOR_BRUSH, MaterialColor.STONE).harvestTool(ModToolType.BRUSH).harvestLevel(0).requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.STONE)));
 	public static final RegistryObject<ExposedStoneFossilBlock> EXPOSED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("exposed_stone_fossil", () -> new ExposedStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops().strength(1.25F).noOcclusion().sound(SoundType.STONE)));
 	public static final RegistryObject<PlasteredStoneFossilBlock> PLASTERED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_stone_fossil", () -> new PlasteredStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().sound(SoundType.WOOL).noOcclusion()));
-			
+	
+	//Fossil Processing
+	
 	//Museum Stuff
 	public static final RegistryObject<ArchaeologyTable> ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	
@@ -56,7 +58,14 @@ public class BlockInit
 	public static final RegistryObject<SlabBlock> POLISHED_VOLCANIC_ROCK_SLAB = ModRegistry.BLOCK_REGISTRY.register("polished_volcanic_rock_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
 	
 	public static final RegistryObject<SandBlock> VOLCANIC_ASH = ModRegistry.BLOCK_REGISTRY.register("volcanic_ash", () -> new SandBlock(0x888988, AbstractBlock.Properties.of(Material.SAND, MaterialColor.COLOR_GRAY).harvestTool(ToolType.SHOVEL).harvestLevel(1).strength(0.5F).sound(SoundType.SAND)));	
-			
+	
+	//Permian
+	public static final RegistryObject<SandBlock> PERMIAN_SAND = ModRegistry.BLOCK_REGISTRY.register("permian_sand", () -> new SandBlock(0xaa915c, AbstractBlock.Properties.of(Material.SAND, MaterialColor.SAND).harvestTool(ToolType.SHOVEL).strength(1.5F).sound(SoundType.SAND)));
+	
+	public static final RegistryObject<Block> PERMIAN_STONE = ModRegistry.BLOCK_REGISTRY.register("permian_stone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<StairsBlock> PERMIAN_STONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("permian_stone_stairs", () -> new StairsBlock(() -> BlockInit.PERMIAN_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<SlabBlock> PERMIAN_STONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("permian_stone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	
 	//Light Concrete
 	public static final RegistryObject<Block> LIGHT_CONCRETE = ModRegistry.BLOCK_REGISTRY.register("light_concrete", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops().strength(6.0F, 8.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<StairsBlock> LIGHT_CONCRETE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("light_concrete_stairs", () -> new StairsBlock(BlockInit.LIGHT_CONCRETE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops().strength(6.0F, 8.0F).sound(SoundType.STONE)));

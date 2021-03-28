@@ -102,6 +102,13 @@
 
 	"block.lostworlds.volcanic_ash": "Volcanic Ash",
 
+	//Permian
+	"block.lostworlds.permian_sand": "Permian Sand",
+
+	"block.lostworlds.permian_stone": "Permian Stone",
+	"block.lostworlds.permian_stone_stairs": "Permian Stone Stairs",
+	"block.lostworlds.permian_stone_slab": "Permian Stone Slab",
+
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",
 	"block.lostworlds.light_concrete_stairs": "Light Concrete Stairs",

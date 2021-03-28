@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/outer_stairs",
+ 	"textures": {
+		"bottom": "lostworlds:blocks/permian_stone",
+		"top": "lostworlds:blocks/permian_stone",
+		"side": "lostworlds:blocks/permian_stone"
+	}
+}

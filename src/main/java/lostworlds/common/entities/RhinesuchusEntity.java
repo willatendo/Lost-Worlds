@@ -2,9 +2,9 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractAmphibianEntity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.monster.IMob;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -14,7 +14,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class RhinesuchusEntity extends AbstractAmphibianEntity implements IAnimatable, IMob
+public class RhinesuchusEntity extends AbstractAmphibianEntity implements IAnimatable
 {
 	private AnimationFactory factory = new AnimationFactory(this);
 	
@@ -33,7 +33,7 @@ public class RhinesuchusEntity extends AbstractAmphibianEntity implements IAnima
 	{
 		if(!(animationSpeed > -0.15F && animationSpeed < 0.15F))
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rhinesuchus.swimming", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rhinesuchus.swim", true));
 			return PlayState.CONTINUE;
 		}
 		else
@@ -50,9 +50,20 @@ public class RhinesuchusEntity extends AbstractAmphibianEntity implements IAnima
 	}
 	
 	@Override
-	protected void registerGoals() 
+	protected SoundEvent getAmbientSound() 
 	{
-		super.registerGoals();
-		this.goalSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
+		return SoundEvents.SLIME_BLOCK_STEP;
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource source) 
+	{
+		return SoundEvents.SLIME_BLOCK_HIT;
+	}
+	
+	@Override
+	protected SoundEvent getDeathSound() 
+	{
+		return SoundEvents.SLIME_BLOCK_HIT;
 	}
 }

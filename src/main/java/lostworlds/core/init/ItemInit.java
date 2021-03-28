@@ -126,7 +126,14 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_SLAB = ModRegistry.ITEM_REGISTRY.register("polished_volcanic_rock_slab", () -> new BlockItem(BlockInit.POLISHED_VOLCANIC_ROCK_SLAB.get(), standardProperties()));	
 
 	public static final RegistryObject<BlockItem> VOLCANIC_ASH = ModRegistry.ITEM_REGISTRY.register("volcanic_ash", () -> new BlockItem(BlockInit.VOLCANIC_ASH.get(), standardProperties()));
-	
+
+	//Permian
+	public static final RegistryObject<BlockItem> PERMIAN_SAND = ModRegistry.ITEM_REGISTRY.register("permian_sand", () -> new BlockItem(BlockInit.PERMIAN_SAND.get(), standardProperties()));
+
+	public static final RegistryObject<BlockItem> PERMIAN_STONE = ModRegistry.ITEM_REGISTRY.register("permian_stone", () -> new BlockItem(BlockInit.PERMIAN_STONE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> PERMIAN_STONE_STAIRS = ModRegistry.ITEM_REGISTRY.register("permian_stone_stairs", () -> new BlockItem(BlockInit.PERMIAN_STONE_STAIRS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> PERMIAN_STONE_SLAB = ModRegistry.ITEM_REGISTRY.register("permian_stone_slab", () -> new BlockItem(BlockInit.PERMIAN_STONE_SLAB.get(), standardProperties()));
+
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("light_concrete", () -> new BlockItem(BlockInit.LIGHT_CONCRETE.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_STAIRS =  ModRegistry.ITEM_REGISTRY.register("light_concrete_stairs", () -> new BlockItem(BlockInit.LIGHT_CONCRETE_STAIRS.get(), standardProperties()));
