@@ -92,7 +92,8 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 	
-	protected static VoxelShape calculateShapes(Direction to, VoxelShape shape) {
+	protected static VoxelShape calculateShapes(Direction to, VoxelShape shape) 
+	{
 		VoxelShape[] buffer = new VoxelShape[] { shape, VoxelShapes.empty() };
 
 		int times = (to.get2DDataValue() - Direction.NORTH.get2DDataValue() + 4) % 4;
@@ -106,10 +107,12 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		return buffer[0];
 	}
 
-	protected void runCalculation(VoxelShape shape) {
+	protected void runCalculation(VoxelShape shape) 
+	{
 		SHAPES.put(this, new HashMap<Direction, VoxelShape>());
 		Map<Direction, VoxelShape> facingMap = SHAPES.get(this);
-		for (Direction direction : Direction.values()) {
+		for (Direction direction : Direction.values()) 
+		{
 			facingMap.put(direction, calculateShapes(direction, shape));
 		}
 	}	

@@ -1,5 +1,8 @@
 package lostworlds.common.blocks;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.FossilCleanerItemHandler;
@@ -25,6 +28,9 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -33,12 +39,22 @@ import net.minecraftforge.fml.network.NetworkHooks;
 public class FossilCleanerBlock extends Block
 {
 	public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
+	protected static final Map<Block, Map<Direction, VoxelShape>> SHAPES = new HashMap<Block, Map<Direction, VoxelShape>>();
 	public static final BooleanProperty CLEANING = BooleanProperty.create("cleaning");
+	public static final VoxelShape VOXEL_SHAPE = Block.box(1, 0, 1, 15, 8, 16);
 	
 	public FossilCleanerBlock(Properties properties) 
 	{
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(CLEANING, false));
+		
+		runCalculation(VOXEL_SHAPE);
+	}
+	
+	@Override
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) 
+	{
+		return SHAPES.get(this).get(state.getValue(HORIZONTAL_FACING));
 	}
 	
 	@Override
@@ -138,6 +154,31 @@ public class FossilCleanerBlock extends Block
 		if(state.hasTileEntity() && state.getBlock() != newState.getBlock())
 		{
 			worldIn.removeBlockEntity(pos);
+		}
+	}
+	
+	protected static VoxelShape calculateShapes(Direction to, VoxelShape shape) 
+	{
+		VoxelShape[] buffer = new VoxelShape[] { shape, VoxelShapes.empty() };
+
+		int times = (to.get2DDataValue() - Direction.NORTH.get2DDataValue() + 4) % 4;
+		for (int i = 0; i < times; i++) 
+		{
+			buffer[0].forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = VoxelShapes.or(buffer[1], VoxelShapes.box(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
+			buffer[0] = buffer[1];
+			buffer[1] = VoxelShapes.empty();
+		}
+
+		return buffer[0];
+	}
+
+	protected void runCalculation(VoxelShape shape) 
+	{
+		SHAPES.put(this, new HashMap<Direction, VoxelShape>());
+		Map<Direction, VoxelShape> facingMap = SHAPES.get(this);
+		for (Direction direction : Direction.values()) 
+		{
+			facingMap.put(direction, calculateShapes(direction, shape));
 		}
 	}
 }

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lostworlds:block/fossil_cleaner" },
+        "facing=south": { "model": "lostworlds:block/fossil_cleaner", "y": 180 },
+        "facing=west":  { "model": "lostworlds:block/fossil_cleaner", "y": 270 },
+        "facing=east":  { "model": "lostworlds:block/fossil_cleaner", "y": 90 }
+    }
+}
