@@ -2,6 +2,7 @@ package lostworlds.core.init;
 
 import lostworlds.common.blocks.ArchaeologyTable;
 import lostworlds.common.blocks.ExposedStoneFossilBlock;
+import lostworlds.common.blocks.FossilCleanerBlock;
 import lostworlds.common.blocks.PlasteredStoneFossilBlock;
 import lostworlds.common.blocks.StoneFossilBlock;
 import lostworlds.core.util.ModMaterials;
@@ -43,9 +44,26 @@ public class BlockInit
 	public static final RegistryObject<PlasteredStoneFossilBlock> PLASTERED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_stone_fossil", () -> new PlasteredStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().sound(SoundType.WOOL).noOcclusion()));
 	
 	//Fossil Processing
+	public static final RegistryObject<FossilCleanerBlock> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new FossilCleanerBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY)));
 	
 	//Museum Stuff
-	public static final RegistryObject<ArchaeologyTable> ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ArchaeologyTable> OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ArchaeologyTable> STRIPPED_OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<ArchaeologyTable> BIRCH_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("birch_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ArchaeologyTable> STRIPPED_BIRCH_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_birch_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<ArchaeologyTable> JUNGLE_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("jungle_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ArchaeologyTable> STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_jungle_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<ArchaeologyTable> SPRUCE_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("spruce_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ArchaeologyTable> STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_spruce_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<ArchaeologyTable> ACACIA_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("acacia_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ArchaeologyTable> STRIPPED_ACACIA_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_acacia_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<ArchaeologyTable> DARK_OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("dark_oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ArchaeologyTable> STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_dark_oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	
 	//Volcanic Stuff
 	public static final RegistryObject<Block> VOLCANIC_ROCK = ModRegistry.BLOCK_REGISTRY.register("volcanic_rock", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));

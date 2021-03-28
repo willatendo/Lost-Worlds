@@ -92,15 +92,13 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 	
-	protected static VoxelShape calculateShapes(Direction to, VoxelShape shape) 
-	{
+	protected static VoxelShape calculateShapes(Direction to, VoxelShape shape) {
 		VoxelShape[] buffer = new VoxelShape[] { shape, VoxelShapes.empty() };
 
-		int times = (to.get3DDataValue() - Direction.NORTH.get3DDataValue() + 4) % 4;
+		int times = (to.get2DDataValue() - Direction.NORTH.get2DDataValue() + 4) % 4;
 		for (int i = 0; i < times; i++) 
 		{
-			buffer[0].forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = VoxelShapes.or(buffer[1],
-					VoxelShapes.box(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
+			buffer[0].forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = VoxelShapes.or(buffer[1], VoxelShapes.box(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
 			buffer[0] = buffer[1];
 			buffer[1] = VoxelShapes.empty();
 		}
@@ -108,12 +106,10 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		return buffer[0];
 	}
 
-	protected void runCalculation(VoxelShape shape) 
-	{
+	protected void runCalculation(VoxelShape shape) {
 		SHAPES.put(this, new HashMap<Direction, VoxelShape>());
 		Map<Direction, VoxelShape> facingMap = SHAPES.get(this);
-		for (Direction direction : Direction.values()) 
-		{
+		for (Direction direction : Direction.values()) {
 			facingMap.put(direction, calculateShapes(direction, shape));
 		}
 	}	

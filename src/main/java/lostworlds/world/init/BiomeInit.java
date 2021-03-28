@@ -23,6 +23,9 @@ public class BiomeInit
 	public static final RegistryObject<Biome> PERMIAN_DESERT = createBiome("permian_desert", ModBiomeMaker::makeAPermianDesert);
 	public static final RegistryKey<Biome> PERMIAN_DESERT_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModReference.ID, "permian_desert"));
 	
+	public static final RegistryObject<Biome> FLOOD_BASALT_PLAINS = createBiome("flood_basalt_plains", ModBiomeMaker::makeAFloodBasaltPlains);
+	public static final RegistryKey<Biome> FLOOD_BASALT_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModReference.ID, "flood_basalt_plains"));
+	
 	//Registry
     public static RegistryObject<Biome> createBiome(String name, Supplier<Biome> biome) 
     {

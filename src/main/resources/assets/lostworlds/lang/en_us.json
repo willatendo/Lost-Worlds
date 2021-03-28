@@ -37,6 +37,12 @@
 	"item.lostworlds.nautilus_bucket": "Nautilus Bucket",	
 	
 	//Rhinesuchus
+	"item.lostworlds.rhinesuchus_bone": "Rhinesuchus Bone",	
+	"item.lostworlds.rhinesuchus_dna": "Rhinesuchus DNA",	
+	"item.lostworlds.rhinesuchus_spawn": "Rhinesuchus Spawn",	
+	"item.lostworlds.rhinesuchus_spawn_bucket": "Rhinesuchus Bucket",	
+	"item.lostworlds.raw_rhinesuchus_meat": "Raw Rhinesuchus Meat",	
+	"item.lostworlds.cooked_rhinesuchus_meat": "Cooked Rhinesuchus Meat",	
 	"item.lostworlds.rhinesuchus_spawn_egg": "Rhinesuchus Spawn Egg",	
 	
 	//Copper
@@ -87,8 +93,27 @@
 	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
 	"block.lostworlds.plastered_stone_fossil": "Plastered Stone Fossil",
 
+	//Fossil Processing
+	"block.lostworlds.fossil_processing": "Fossil Cleaner",
+
 	//Museum Stuff
-	"block.lostworlds.archaeology_table": "Archaeology Table",
+	"block.lostworlds.oak_archaeology_table": "Oak Archaeology Table",
+	"block.lostworlds.stripped_oak_archaeology_table": "Stripped Oak Archaeology Table",
+	
+	"block.lostworlds.birch_archaeology_table": "Birch Archaeology Table",
+	"block.lostworlds.stripped_birch_archaeology_table": "Stripped Birch Archaeology Table",
+	
+	"block.lostworlds.jungle_archaeology_table": "Jungle Archaeology Table",
+	"block.lostworlds.stripped_jungle_archaeology_table": "Stripped Jungle Archaeology Table",
+	
+	"block.lostworlds.spruce_archaeology_table": "Spruce Archaeology Table",
+	"block.lostworlds.stripped_spruce_archaeology_table": "Stripped Spruce Archaeology Table",
+	
+	"block.lostworlds.acacia_archaeology_table": "Acacia Archaeology Table",
+	"block.lostworlds.stripped_acacia_archaeology_table": "Stripped Acacia Archaeology Table",
+	
+	"block.lostworlds.dark_oak_archaeology_table": "Dark Oak Archaeology Table",
+	"block.lostworlds.stripped_dark_oak_archaeology_table": "Stripped Dark Oak Archaeology Table",
 		
 	//Volcanic Rock
 	"block.lostworlds.volcanic_rock": "Volcanic Rock",
@@ -275,7 +300,15 @@
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
-
+	
+	//Biome
+	//Permian
+	"biome.lostworlds.flood_basalt_plains": "Flood Basalt Plains",
+	"biome.lostworlds.permian_desert" :"Permian Desert",
+	
+	//Modern Day
+	"biome.lostworlds.volcano": "Volcano",
+	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"
 }

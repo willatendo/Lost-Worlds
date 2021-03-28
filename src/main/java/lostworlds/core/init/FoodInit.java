@@ -14,4 +14,7 @@ public class FoodInit
 	
 	public static final Food NAUTILUS_TENTICAL = new Food.Builder().effect(() -> new EffectInstance(Effects.POISON, 100), 0.25F).nutrition(2).saturationMod(0.0F).build();
 	public static final Food COOKED_NAUTILUS_TENTICAL = new Food.Builder().nutrition(8).saturationMod(0.56F).build();
+	
+	public static final Food RAW_RHINESUCHUS_MEAT = new Food.Builder().effect(() -> new EffectInstance(Effects.POISON, 100), 0.25F).nutrition(2).saturationMod(0.0F).build();
+	public static final Food COOKED_RHINESUCHUS_MEAT = new Food.Builder().nutrition(8).saturationMod(0.56F).build();
 }
