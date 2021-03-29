@@ -15,12 +15,14 @@ public class FossilCleanerRecipe implements IFossilCleanerRecipe
 	private final ResourceLocation id;
 	private Ingredient input;
 	private final ItemStack output;
+	protected final int cleanTime;
 	
-	public FossilCleanerRecipe(ResourceLocation id, Ingredient input, ItemStack output)
+	public FossilCleanerRecipe(ResourceLocation id, Ingredient input, ItemStack output, int cleanTime)
 	{
 		this.id = id;
 		this.output = output;
 		this.input = input;
+		this.cleanTime = cleanTime;
 	}
 	
 	@Override
@@ -60,6 +62,11 @@ public class FossilCleanerRecipe implements IFossilCleanerRecipe
 	public Ingredient getInput() 
 	{
 		return this.input;
+	}
+	
+	public int getCleanTime() 
+	{
+		return this.cleanTime;
 	}
 
 	@Override

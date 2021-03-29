@@ -6,7 +6,7 @@
 	//Plaster
 	"item.lostworlds.wet_paper": "Wet Paper",
 
-	"toolTip.lostworlds.wet_paper": "Used for the safe transport of fossils",
+	"toolTip.lostworlds.wet_paper": "Used For The Safe Transport of Fossils",
 	
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_bone": "Procompsognathus Bone",
@@ -133,6 +133,11 @@
 	"block.lostworlds.permian_stone": "Permian Stone",
 	"block.lostworlds.permian_stone_stairs": "Permian Stone Stairs",
 	"block.lostworlds.permian_stone_slab": "Permian Stone Slab",
+
+	"block.lostworlds.permian_cobblestone": "Permian Cobblestone",
+	"block.lostworlds.permian_cobblestone_stairs": "Permian Cobblestone Stairs",
+	"block.lostworlds.permian_cobblestone_slab": "Permian Cobblestone Slab",
+	"block.lostworlds.permian_cobblestone_wall": "Permian Cobblestone Wall",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",

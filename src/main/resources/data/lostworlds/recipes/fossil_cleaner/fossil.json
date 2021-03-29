@@ -1,0 +1,10 @@
+{
+	"type": "lostworlds:fossil_cleaner",
+	"output": {
+		"item": "lostworlds:plastered_stone_fossil"
+	},
+
+	"input": {
+		"item": "lostworlds:fossil"
+	}
+}

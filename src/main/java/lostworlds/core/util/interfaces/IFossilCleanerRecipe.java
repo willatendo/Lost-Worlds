@@ -24,7 +24,7 @@ public interface IFossilCleanerRecipe extends IRecipe<RecipeWrapper>
 	@Override
 	default boolean canCraftInDimensions(int width, int heigth) 
 	{
-		return false;
+		return true;
 	}
 	
 	Ingredient getInput();

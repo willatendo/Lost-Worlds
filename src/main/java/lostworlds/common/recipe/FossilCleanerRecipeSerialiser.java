@@ -20,7 +20,7 @@ public class FossilCleanerRecipeSerialiser extends ForgeRegistryEntry<IRecipeSer
 		ItemStack output = CraftingHelper.getItemStack(JSONUtils.getAsJsonObject(json, "output"), true);
 		Ingredient input = Ingredient.fromJson(JSONUtils.getAsJsonObject(json, "input"));
 		
-		return new FossilCleanerRecipe(id, input, output);
+		return new FossilCleanerRecipe(id, input, output, 20000);
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class FossilCleanerRecipeSerialiser extends ForgeRegistryEntry<IRecipeSer
 		ItemStack output = buffer.readItem();
 		Ingredient input = Ingredient.fromNetwork(buffer);
 
-		return new FossilCleanerRecipe(id, input, output);
+		return new FossilCleanerRecipe(id, input, output, 20000);
 	}
 
 	@Override
