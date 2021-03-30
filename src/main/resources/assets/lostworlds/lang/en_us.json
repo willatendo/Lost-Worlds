@@ -68,10 +68,13 @@
 	"item.lostworlds.jp_music_disc.desc": "John Williams - Welcome to Jurassic Park",
 
 	//Storage
-	"item.lostworlds.disc": "Disc",
-	"toolTip.lostworlds.disc.holding_shift": "Stores DNA Information For Computer Use",
-	"toolTip.lostworlds.disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.storage_disc": "Storage Disc",
+	"toolTip.lostworlds.storage_disc.holding_shift": "Stores DNA Information For Computer Use",
+	"toolTip.lostworlds.storage_disc.not_holding_shift": "Hold Shift For More Information",
 
+	"item.lostworlds.procompsognathus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.procompsognathus_dna_disc.holding_shift": "Storing: \u00A76Procompsognathus triassicus",
+	"toolTip.lostworlds.procompsognathus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 
 	//Crystal Scarab
 	"item.lostworlds.broken_crystal_scarab_gem": "Broken Crystal Scarab Gem",
@@ -138,6 +141,16 @@
 	"block.lostworlds.permian_cobblestone_stairs": "Permian Cobblestone Stairs",
 	"block.lostworlds.permian_cobblestone_slab": "Permian Cobblestone Slab",
 	"block.lostworlds.permian_cobblestone_wall": "Permian Cobblestone Wall",
+
+	"block.lostworlds.small_permian_desert_plant": "Small Permian Desert Plant",
+	"block.lostworlds.medium_permian_desert_plant": "Medium Permian Desert Plant",
+	"block.lostworlds.large_permian_desert_plant": "Large Permian Desert Plant",
+
+	"block.lostworlds.conifer_log": "Conifer Log",
+	"block.lostworlds.stripped_conifer_log": "Stripped Conifer Log",
+	"block.lostworlds.conifer_wood": "Conifer Wood",
+	"block.lostworlds.stripped_conifer_wood": "Stripped Conifer Wood",
+	"block.lostworlds.conifer_planks": "Conifer Planks",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",
@@ -302,6 +315,9 @@
 	
 	//Triassic
 	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",
+	
+	//Cretaceous
+	"entity.lostworlds.carnotaurus": "Carnotaurus sastrei",
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
@@ -314,6 +330,7 @@
 	"biome.lostworlds.flood_basalt_plains": "Flood Basalt Plains",
 	"biome.lostworlds.permian_desert" :"Permian Desert",
 	"biome.lostworlds.permian_plains" :"Permian Plains",
+	"biome.lostworlds.permian_ocean" :"Permian Ocean",
 	
 	//Modern Day
 	"biome.lostworlds.volcano": "Volcano",

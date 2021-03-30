@@ -3,7 +3,11 @@ package lostworlds.core.init;
 import lostworlds.common.blocks.ArchaeologyTable;
 import lostworlds.common.blocks.ExposedStoneFossilBlock;
 import lostworlds.common.blocks.FossilCleanerBlock;
+import lostworlds.common.blocks.LargePermianDesertPlant;
+import lostworlds.common.blocks.LostWorldsLog;
+import lostworlds.common.blocks.MediumPermianDesertPlant;
 import lostworlds.common.blocks.PlasteredStoneFossilBlock;
+import lostworlds.common.blocks.SmallPermianDesertPlant;
 import lostworlds.common.blocks.StoneFossilBlock;
 import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolType;
@@ -88,6 +92,16 @@ public class BlockInit
 	public static final RegistryObject<StairsBlock> PERMIAN_COBBLESTONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("permian_cobblestone_stairs", () -> new StairsBlock(() -> BlockInit.PERMIAN_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<SlabBlock> PERMIAN_COBBLESTONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("permian_cobblestone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<WallBlock> PERMIAN_COBBLESTONE_WALL = ModRegistry.BLOCK_REGISTRY.register("permian_cobblestone_wall", () -> new WallBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	
+	public static final RegistryObject<SmallPermianDesertPlant> SMALL_PERMIAN_DESERT_PLANT = ModRegistry.BLOCK_REGISTRY.register("small_permian_desert_plant", () -> new SmallPermianDesertPlant(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<MediumPermianDesertPlant> MEDIUM_PERMIAN_DESERT_PLANT = ModRegistry.BLOCK_REGISTRY.register("medium_permian_desert_plant", () -> new MediumPermianDesertPlant(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<LargePermianDesertPlant> LARGE_PERMIAN_DESERT_PLANT = ModRegistry.BLOCK_REGISTRY.register("large_permian_desert_plant", () -> new LargePermianDesertPlant(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	
+	public static final RegistryObject<LostWorldsLog> CONIFER_LOG = ModRegistry.BLOCK_REGISTRY.register("conifer_log", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<LostWorldsLog> STRIPPED_CONIFER_LOG = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_log", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<LostWorldsLog> CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("conifer_wood", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<LostWorldsLog> STRIPPED_CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_wood", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> CONIFER_PLANKS = ModRegistry.BLOCK_REGISTRY.register("conifer_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	
 	//Light Concrete
 	public static final RegistryObject<Block> LIGHT_CONCRETE = ModRegistry.BLOCK_REGISTRY.register("light_concrete", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops().strength(6.0F, 8.0F).sound(SoundType.STONE)));

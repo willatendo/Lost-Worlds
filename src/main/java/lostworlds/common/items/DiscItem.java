@@ -18,9 +18,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class DiscItem extends Item
 {
-	public DiscItem(Properties properties) 
+	private String id;
+	
+	public DiscItem(String extraId, Properties properties) 
 	{
 		super(properties);
+		this.id = extraId;
 	}
 	
 	@Override
@@ -30,11 +33,11 @@ public class DiscItem extends Item
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT))
 		{
-			tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + ".disc.holding_shift"));
+			tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + "." + id + ".holding_shift"));
 		}
 		else
 		{
-			tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + ".disc.not_holding_shift"));
+			tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + "." + id + ".not_holding_shift"));
 		}
 	}
 }

@@ -6,8 +6,9 @@ import org.apache.logging.log4j.Logger;
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.util.reference.ModReference;
 import lostworlds.core.util.registry.ModRegistry;
+import lostworlds.core.vanilla.properties.LostWorldsStrippables;
 import lostworlds.world.init.BiomeInit;
-import lostworlds.world.init.FeatureInit;
+import lostworlds.world.init.ModFeatures;
 import net.minecraft.entity.EntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -17,6 +18,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -29,6 +31,7 @@ public class LostWorlds
     public LostWorlds() 
     {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
 
         ModRegistry.registry();
         
@@ -36,14 +39,19 @@ public class LostWorlds
         GeckoLib.initialize();
         
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::generateOre);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, ModFeatures::generateOre);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
-        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> FeatureInit.addMobSpawning(event));
+        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> ModFeatures.addMobSpawning(event));
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
     	
+    }
+    
+    private void loadComplete(FMLLoadCompleteEvent event)
+    {
+    	LostWorldsStrippables.strippingMap();
     }
     
     @SubscribeEvent

@@ -1,13 +1,8 @@
 package lostworlds.common.entities;
 
+import lostworlds.common.entities.abstracts.AbstractLostWorldsEntity;
 import lostworlds.core.init.SoundInit;
-import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.LookAtGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -19,7 +14,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class ProcompsognathusEntity extends CreatureEntity implements IAnimatable
+public class ProcompsognathusEntity extends AbstractLostWorldsEntity implements IAnimatable
 {	
 	private AnimationFactory factory = new AnimationFactory(this);
 
@@ -37,7 +32,7 @@ public class ProcompsognathusEntity extends CreatureEntity implements IAnimatabl
 		}
 	}
 
-	public ProcompsognathusEntity(EntityType<? extends CreatureEntity> type, World worldIn) 
+	public ProcompsognathusEntity(EntityType<? extends ProcompsognathusEntity> type, World worldIn) 
 	{
 		super(type, worldIn);
 	}
@@ -54,14 +49,17 @@ public class ProcompsognathusEntity extends CreatureEntity implements IAnimatabl
 	{
 		return this.factory;
 	}
-
+	
 	@Override
-	protected void registerGoals()
+	public boolean isHostile() 
 	{
-		this.goalSelector.addGoal(0, new SwimGoal(this));
-		this.goalSelector.addGoal(1, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-		this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
-		this.goalSelector.addGoal(3, new LookRandomlyGoal(this));	
+		return true;
+	}
+	
+	@Override
+	public boolean isScaredOfPlayer() 
+	{
+		return false;
 	}
 	
 	@Override

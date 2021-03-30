@@ -50,6 +50,8 @@ public class ModBiomeMaker
 		DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDesertLakes(biomegenerationsettings$builder);
 		
+		ModBiomeFeatures.addPermianDesertPlants(biomegenerationsettings$builder);
+		
 		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(0.125F).scale(0.05F).temperature(3.75F).downfall(0.3F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x8e8144).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(0xb73824).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
 	}
 	

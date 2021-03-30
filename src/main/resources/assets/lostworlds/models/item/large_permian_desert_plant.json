@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/disc"
+		"layer0": "lostworlds:blocks/large_permian_desert_plant"
   }
 }

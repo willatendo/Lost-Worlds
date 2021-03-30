@@ -99,7 +99,8 @@ public class ItemInit
 	public static final RegistryObject<Item> JP_MUSIC_DISC = advancedItemRegister("jp_music_disc", new MusicDiscItem(15, SoundInit.LAZY_JP_MUSIC.get(), standardProperties().stacksTo(1).rarity(Rarity.RARE)));
 	
 	//Storage
-	public static final RegistryObject<Item> DISC = advancedItemRegister("disc", new DiscItem(standardProperties().stacksTo(1)));
+	public static final RegistryObject<Item> STORAGE_DISC = advancedItemRegister("storage_disc", new DiscItem("storage_disc", standardProperties().stacksTo(1)));
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = advancedItemRegister("procompsognathus_dna_disc", new DiscItem("procompsognathus_dna_disc", standardProperties().stacksTo(1)));
 		
 	//Crystal Scarab	
 	public static final RegistryObject<Item> BROKEN_CRYSTAL_SCARAB_GEM = simpleItemRegister("broken_crystal_scarab_gem", standardProperties().rarity(Rarity.RARE));
@@ -166,7 +167,17 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_STAIRS = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_stairs", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_STAIRS.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_SLAB = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_slab", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_SLAB.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_WALL = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_wall", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_WALL.get(), standardProperties()));
-	
+
+	public static final RegistryObject<BlockItem> SMALL_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("small_permian_desert_plant", () -> new BlockItem(BlockInit.SMALL_PERMIAN_DESERT_PLANT.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> MEDIUM_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("medium_permian_desert_plant", () -> new BlockItem(BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> LARGE_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("large_permian_desert_plant", () -> new BlockItem(BlockInit.LARGE_PERMIAN_DESERT_PLANT.get(), standardProperties()));
+
+	public static final RegistryObject<BlockItem> CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("conifer_log", () -> new BlockItem(BlockInit.CONIFER_LOG.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("conifer_wood", () -> new BlockItem(BlockInit.CONIFER_WOOD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_log", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_LOG.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_wood", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_WOOD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_PLANKS = ModRegistry.ITEM_REGISTRY.register("conifer_planks", () -> new BlockItem(BlockInit.CONIFER_PLANKS.get(), standardProperties()));
+
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("light_concrete", () -> new BlockItem(BlockInit.LIGHT_CONCRETE.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_STAIRS =  ModRegistry.ITEM_REGISTRY.register("light_concrete_stairs", () -> new BlockItem(BlockInit.LIGHT_CONCRETE_STAIRS.get(), standardProperties()));
