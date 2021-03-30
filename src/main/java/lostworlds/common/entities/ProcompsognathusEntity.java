@@ -1,6 +1,6 @@
 package lostworlds.common.entities;
 
-import lostworlds.common.entities.abstracts.AbstractLostWorldsEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.core.init.SoundInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.DamageSource;
@@ -14,7 +14,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class ProcompsognathusEntity extends AbstractLostWorldsEntity implements IAnimatable
+public class ProcompsognathusEntity extends AbstractPrehistoricEntity implements IAnimatable
 {	
 	private AnimationFactory factory = new AnimationFactory(this);
 
@@ -58,6 +58,12 @@ public class ProcompsognathusEntity extends AbstractLostWorldsEntity implements 
 	
 	@Override
 	public boolean isScaredOfPlayer() 
+	{
+		return false;
+	}
+	
+	@Override
+	public boolean isFish() 
 	{
 		return false;
 	}

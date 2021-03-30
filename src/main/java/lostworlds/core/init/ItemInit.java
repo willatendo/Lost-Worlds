@@ -177,6 +177,14 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_log", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_LOG.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_wood", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_WOOD.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> CONIFER_PLANKS = ModRegistry.ITEM_REGISTRY.register("conifer_planks", () -> new BlockItem(BlockInit.CONIFER_PLANKS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_STAIRS = ModRegistry.ITEM_REGISTRY.register("confier_stairs", () -> new BlockItem(BlockInit.CONIFER_STAIRS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_SLAB = ModRegistry.ITEM_REGISTRY.register("conifer_slab", () -> new BlockItem(BlockInit.CONIFER_SLAB.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_FENCE = ModRegistry.ITEM_REGISTRY.register("conifer_fence", () -> new BlockItem(BlockInit.CONIFER_FENCE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_FENCE_GATE = ModRegistry.ITEM_REGISTRY.register("conifer_fence_gate", () -> new BlockItem(BlockInit.CONIFER_FENCE_GATE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("conifer_pressure_plate", () -> new BlockItem(BlockInit.CONIFER_PRESSURE_PLATE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_BUTTON = ModRegistry.ITEM_REGISTRY.register("conifer_button", () -> new BlockItem(BlockInit.CONIFER_BUTTON.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_TRAPDOOR = ModRegistry.ITEM_REGISTRY.register("conifer_trapdoor", () -> new BlockItem(BlockInit.CONIFER_TRAPDOOR.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_DOOR = ModRegistry.ITEM_REGISTRY.register("conifer_door", () -> new BlockItem(BlockInit.CONIFER_DOOR.get(), standardProperties()));
 
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("light_concrete", () -> new BlockItem(BlockInit.LIGHT_CONCRETE.get(), standardProperties()));

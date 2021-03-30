@@ -29,6 +29,7 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.StoneButtonBlock;
+import net.minecraft.block.TrapDoorBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.WoodButtonBlock;
 import net.minecraft.block.material.Material;
@@ -102,6 +103,14 @@ public class BlockInit
 	public static final RegistryObject<LostWorldsLog> CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("conifer_wood", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<LostWorldsLog> STRIPPED_CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_wood", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> CONIFER_PLANKS = ModRegistry.BLOCK_REGISTRY.register("conifer_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<StairsBlock> CONIFER_STAIRS = ModRegistry.BLOCK_REGISTRY.register("conifer_stairs", () -> new StairsBlock(() -> BlockInit.CONIFER_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<SlabBlock> CONIFER_SLAB = ModRegistry.BLOCK_REGISTRY.register("conifer_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<FenceBlock> CONIFER_FENCE = ModRegistry.BLOCK_REGISTRY.register("conifer_fence", () -> new FenceBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<FenceGateBlock> CONIFER_FENCE_GATE = ModRegistry.BLOCK_REGISTRY.register("conifer_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<PressurePlateBlock> CONIFER_PRESSURE_PLATE = ModRegistry.BLOCK_REGISTRY.register("conifer_pressure_plate", () -> new PressurePlateBlock(Sensitivity.EVERYTHING, AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<WoodButtonBlock> CONIFER_BUTTON = ModRegistry.BLOCK_REGISTRY.register("conifer_button", () -> new WoodButtonBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<TrapDoorBlock> CONIFER_TRAPDOOR = ModRegistry.BLOCK_REGISTRY.register("conifer_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<TrapDoorBlock> CONIFER_DOOR = ModRegistry.BLOCK_REGISTRY.register("conifer_door", () -> new TrapDoorBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	
 	//Light Concrete
 	public static final RegistryObject<Block> LIGHT_CONCRETE = ModRegistry.BLOCK_REGISTRY.register("light_concrete", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops().strength(6.0F, 8.0F).sound(SoundType.STONE)));

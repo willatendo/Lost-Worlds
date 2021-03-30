@@ -151,6 +151,12 @@
 	"block.lostworlds.conifer_wood": "Conifer Wood",
 	"block.lostworlds.stripped_conifer_wood": "Stripped Conifer Wood",
 	"block.lostworlds.conifer_planks": "Conifer Planks",
+	"block.lostworlds.conifer_stairs": "Conifer Stairs",
+	"block.lostworlds.conifer_slab": "Conifer Slab",
+	"block.lostworlds.conifer_fence": "Conifer Fence",
+	"block.lostworlds.conifer_fence_gate": "Conifer Fence Gate",
+	"block.lostworlds.conifer_pressure_plate": "Conifer Pressure Plate",
+	"block.lostworlds.conifer_button": "Conifer Button",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",
