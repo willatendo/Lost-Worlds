@@ -6,6 +6,7 @@ import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.FluidInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.PaintingInit;
+import lostworlds.core.init.ParticleInit;
 import lostworlds.core.init.SoundInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.reference.ModReference;
@@ -61,6 +62,7 @@ public class ModRegistry
 		SURFACE_BUILDER_REGISTRY.register(bus);
 		BIOME_REGISTRY.register(bus);
 		
+		ParticleInit.initParticles();
 		SoundInit.initSounds();
 		ItemInit.initItems();
 		PaintingInit.initPaintings();

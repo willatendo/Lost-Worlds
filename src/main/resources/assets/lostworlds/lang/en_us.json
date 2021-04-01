@@ -146,10 +146,13 @@
 	"block.lostworlds.medium_permian_desert_plant": "Medium Permian Desert Plant",
 	"block.lostworlds.large_permian_desert_plant": "Large Permian Desert Plant",
 
+	"block.lostworlds.permian_ground_ferns": "Permian Ground Ferns",
+
 	"block.lostworlds.conifer_log": "Conifer Log",
 	"block.lostworlds.stripped_conifer_log": "Stripped Conifer Log",
 	"block.lostworlds.conifer_wood": "Conifer Wood",
 	"block.lostworlds.stripped_conifer_wood": "Stripped Conifer Wood",
+	"block.lostworlds.conifer_leaves": "Conifer Leaves",
 	"block.lostworlds.conifer_planks": "Conifer Planks",
 	"block.lostworlds.conifer_stairs": "Conifer Stairs",
 	"block.lostworlds.conifer_slab": "Conifer Slab",
@@ -157,6 +160,10 @@
 	"block.lostworlds.conifer_fence_gate": "Conifer Fence Gate",
 	"block.lostworlds.conifer_pressure_plate": "Conifer Pressure Plate",
 	"block.lostworlds.conifer_button": "Conifer Button",
+	"block.lostworlds.conifer_trapdoor": "Conifer Trapdoor",
+	"block.lostworlds.conifer_door": "Conifer Door",
+	"block.lostworlds.conifer_sign": "Conifer Sign",
+	"item.lostworlds.conifer_boat": "Conifer Boat",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",

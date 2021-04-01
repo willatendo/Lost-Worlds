@@ -13,4 +13,9 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_PERMIAN_DESERT_PLANT_MEDIUM);
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_PERMIAN_DESERT_PLANT_LARGE);
 	}
+	
+	public static void addPermianPlainsPlants(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_PERMIAN_GROUND_FERNS);
+	}
 }

@@ -3,6 +3,8 @@ package lostworlds.common.entities.abstracts;
 import lostworlds.common.goal.LostWorldsSwimGoal;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.IEquipable;
+import net.minecraft.entity.IRideable;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
@@ -19,6 +21,8 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	protected boolean isHostile;
 	protected boolean isScaredOfPlayer;
 	protected boolean isFish;
+	protected boolean isRideable;
+	protected boolean isAmphibian;
 
 	public AbstractPrehistoricEntity(EntityType<? extends AbstractPrehistoricEntity> entityIn, World worldIn) 
 	{
@@ -41,6 +45,11 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		return this.isHostile;		
 	}
 	
+	public boolean isAmphibian() 
+	{
+		return this.isAmphibian;		
+	}
+	
 	public boolean isScaredOfPlayer() 
 	{
 		return this.isScaredOfPlayer;
@@ -58,6 +67,11 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 			return true;
 		}
 		return false;
+	}
+	
+	public boolean isRideable()
+	{
+		return this.isRideable;
 	}
 	
 	@Override
@@ -84,6 +98,14 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 			this.goalSelector.addGoal(0, new PanicGoal(this, 1.25D));
 			this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 			this.goalSelector.addGoal(4, new LostWorldsSwimGoal(this));
+		}
+	}
+	
+	public static abstract class AbstractRideablePrehistoricEntity extends AbstractPrehistoricEntity implements IRideable, IEquipable
+	{
+		public AbstractRideablePrehistoricEntity(EntityType<? extends AbstractPrehistoricEntity> entityIn, World worldIn) 
+		{
+			super(entityIn, worldIn);
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package lostworlds.world.biome;
 
+import lostworlds.core.init.ParticleInit;
 import lostworlds.world.init.SurfaceBuilderInit;
 import lostworlds.world.surfacebuilders.ModSurfaceBuilders;
 import net.minecraft.world.biome.Biome;
@@ -8,6 +9,7 @@ import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.MoodSoundAmbience;
+import net.minecraft.world.biome.ParticleEffectAmbience;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
 import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
@@ -47,12 +49,10 @@ public class ModBiomeMaker
 		DefaultBiomeFeatures.addDefaultCarvers(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
-		DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-		DefaultBiomeFeatures.addDesertLakes(biomegenerationsettings$builder);
 		
 		ModBiomeFeatures.addPermianDesertPlants(biomegenerationsettings$builder);
 		
-		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(0.125F).scale(0.05F).temperature(3.75F).downfall(0.3F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x8e8144).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(0xb73824).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(0.125F).scale(0.05F).temperature(3.75F).downfall(0.0F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x8e8144).waterColor(0xaf9852).waterFogColor(0x6b6145).fogColor(0xd1c5a1).skyColor(0xb73824).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).ambientParticle(new ParticleEffectAmbience(ParticleInit.PERMIAN_DESERT_AMBIANT_DUST.get(), 0.00625F)).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
 	}
 	
 	public static Biome makeAFloodBasaltPlains() 
@@ -80,11 +80,11 @@ public class ModBiomeMaker
 		DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-		DefaultBiomeFeatures.addForestGrass(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addForestFlowers(biomegenerationsettings$builder);
-		DefaultBiomeFeatures.addDesertLakes(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addExtraEmeralds(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDefaultLakes(biomegenerationsettings$builder);
+		
+		ModBiomeFeatures.addPermianPlainsPlants(biomegenerationsettings$builder);
 		
 		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.PLAINS).depth(0.125F).scale(0.05F).temperature(1.5F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(0x81b0e2).waterFogColor(0x6795c6).fogColor(0x355177).skyColor(0x50aeed).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
 	}

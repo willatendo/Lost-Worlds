@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/tinted_cross",
+	"textures": {
+		"cross": "lostworlds:blocks/permian_ground_ferns"
+	}
+}

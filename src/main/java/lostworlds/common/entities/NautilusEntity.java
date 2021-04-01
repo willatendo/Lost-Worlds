@@ -1,8 +1,8 @@
 package lostworlds.common.entities;
 
+import lostworlds.common.entities.abstracts.AbstractPrehistoricFishEntity;
 import lostworlds.core.init.ItemInit;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.passive.fish.AbstractFishEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -16,7 +16,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class NautilusEntity extends AbstractFishEntity implements IAnimatable
+public class NautilusEntity extends AbstractPrehistoricFishEntity implements IAnimatable
 {
 	private AnimationFactory factory = new AnimationFactory(this);
 	
@@ -26,7 +26,7 @@ public class NautilusEntity extends AbstractFishEntity implements IAnimatable
 		return PlayState.CONTINUE;
 	}
 
-	public NautilusEntity(EntityType<? extends AbstractFishEntity> type, World worldIn) 
+	public NautilusEntity(EntityType<? extends AbstractPrehistoricFishEntity> type, World worldIn) 
 	{
 		super(type, worldIn);
 		this.noCulling = true;
