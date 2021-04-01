@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "lostworlds:stripped_conifer_log"
+		}
+	],
+	"result": 
+	{
+		"item": "lostworlds:conifer_planks",
+		"count": 4
+	}
+}

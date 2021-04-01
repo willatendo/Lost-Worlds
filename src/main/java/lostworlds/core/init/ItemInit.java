@@ -80,6 +80,9 @@ public class ItemInit
 	public static final RegistryObject<Item> RHINESUCHUS_COOKED_MEAT = registerCookedMeat("rhinesuchus", FoodInit.COOKED_RHINESUCHUS_MEAT);
 	public static final RegistryObject<Item> RHINESUCHUS_SPAWN_EGG = registerSpawnEgg("rhinesuchus", () -> EntityInit.RHINESUCHUS_ENTITY.get(), 0xceaa7b, 0x1c1308, standardProperties());
 	
+	//Dimetrodon
+	public static final RegistryObject<Item> DIMETRODON_SPAWN_EGG = registerSpawnEgg("dimetrodon", () -> EntityInit.DIMETRODON_ENTITY.get(), 0x378ca8, 0x152875, standardProperties());
+	
 	//Copper
 	public static final RegistryObject<Item> COPPER_INGOT = simpleItemRegister("copper_ingot", standardProperties());
 	public static final RegistryObject<Item> COPPER_NUGGET = simpleItemRegister("copper_nugget", standardProperties());
@@ -117,8 +120,9 @@ public class ItemInit
 	public static final RegistryObject<Item> CRYSTAL_SCARAB_HOE = advancedItemRegister("crystal_scarab_hoe", new HoeItem(ModItemTeir.SCARAB, 10, -3.0F, standardProperties().rarity(Rarity.EPIC)));
 	
 	//Blocks
-	//Copper
+	//Ore
 	public static final RegistryObject<BlockItem> COPPER_ORE = ModRegistry.ITEM_REGISTRY.register("copper_ore", () -> new BlockItem(BlockInit.COPPER_ORE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> OIL_SANDS = ModRegistry.ITEM_REGISTRY.register("oil_sands", () -> new BlockItem(BlockInit.OIL_SANDS.get(), standardProperties()));
 	
 	//Fossil
 	public static final RegistryObject<BlockItem> STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("stone_fossil", () -> new BlockItem(BlockInit.STONE_FOSSIL.get(), standardProperties()));
@@ -146,6 +150,9 @@ public class ItemInit
 	
 	public static final RegistryObject<BlockItem> DARK_OAK_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("dark_oak_archaeology_table", () -> new BlockItem(BlockInit.DARK_OAK_ARCHAEOLOGY_TABLE.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_dark_oak_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	
+	public static final RegistryObject<BlockItem> CONIFER_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("conifer_archaeology_table", () -> new BlockItem(BlockInit.CONIFER_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_ARCHAEOLOGY_TABLE.get(), standardProperties()));
 	
 	//Volcanic Stuff
 	public static final RegistryObject<BlockItem> VOLCANIC_ROCK = ModRegistry.ITEM_REGISTRY.register("volcanic_rock", () -> new BlockItem(BlockInit.VOLCANIC_ROCK.get(), standardProperties()));	

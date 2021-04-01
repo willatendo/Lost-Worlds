@@ -7,6 +7,9 @@
 	"item.lostworlds.wet_paper": "Wet Paper",
 
 	"toolTip.lostworlds.wet_paper": "Used For The Safe Transport of Fossils",
+
+	//Fossil
+	"item.lostworlds.fossil": "Fossil",
 	
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_bone": "Procompsognathus Bone",
@@ -88,8 +91,9 @@
 	"item.lostworlds.crystal_scarab_hoe": "Crystal Scarab Hoe",
 	
 	//Blocks
-	//Copper
+	//Ore
 	"block.lostworlds.copper_ore": "Copper Ore",
+	"block.lostworlds.oil_sands": "Oil Sands",
 	
 	//Fossils
 	"block.lostworlds.stone_fossil": "Stone Fossil",
@@ -117,6 +121,9 @@
 	
 	"block.lostworlds.dark_oak_archaeology_table": "Dark Oak Archaeology Table",
 	"block.lostworlds.stripped_dark_oak_archaeology_table": "Stripped Dark Oak Archaeology Table",
+	
+	"block.lostworlds.conifer_archaeology_table": "Conifer Archaeology Table",
+	"block.lostworlds.stripped_conifer_archaeology_table": "Stripped Conifer Archaeology Table",	
 		
 	//Volcanic Rock
 	"block.lostworlds.volcanic_rock": "Volcanic Rock",
@@ -323,6 +330,7 @@
 	
 	//Entities
 	//Permian
+	"entity.lostworlds.dimetrodon": "Dimetrodon limbatus",
 	"entity.lostworlds.palaeoniscum": "Palaeoniscum freislbeni",
 	"entity.lostworlds.rhinesuchus": "Rhinesuches whaitsi",
 	
@@ -347,6 +355,7 @@
 	
 	//Modern Day
 	"biome.lostworlds.volcano": "Volcano",
+	"biome.lostworlds.oil_sands_desert": "Oil Sands Desert",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"

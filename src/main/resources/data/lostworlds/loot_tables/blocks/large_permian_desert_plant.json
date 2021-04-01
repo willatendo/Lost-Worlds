@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+	{
+		"rolls": 1,
+		"entries": [
+		{
+			"type": "minecraft:item",
+			"name": "lostworlds:large_permian_desert_plant"
+		}],
+		"conditions": [
+		{
+			"condition": "minecraft:match_tool",
+			"predicate": {
+				"enchantments": [
+				{
+					"enchantment": "minecraft:silk_touch",
+					"levels": {
+						"min": 1
+					}
+				}]
+			}
+		}]
+	}]
+}

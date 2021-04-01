@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		" @ "
+	],
+	"key": {
+		"#": {
+			"item": "lostworlds:conifer_planks"
+		},
+		"@": {
+			"item": "minecraft:stick"
+		}
+	},
+	"result": {
+		"item": "lostworlds:conifer_sign",
+		"count": 3
+	}
+}

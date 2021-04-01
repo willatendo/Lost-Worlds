@@ -37,7 +37,7 @@ public class ProcompsognathusEntity extends AbstractPrehistoricEntity implements
 		super(type, worldIn);
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void registerControllers(AnimationData data) 
 	{

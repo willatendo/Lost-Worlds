@@ -2,9 +2,9 @@ package lostworlds.common.blocks;
 
 import net.minecraft.block.RotatedPillarBlock;
 
-public class LostWorldsLog extends RotatedPillarBlock
+public class ConiferLog extends RotatedPillarBlock
 {	
-	public LostWorldsLog(Properties properties)
+	public ConiferLog(Properties properties)
 	{
 		super(properties);
 	}

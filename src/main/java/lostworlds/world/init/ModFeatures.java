@@ -2,6 +2,7 @@ package lostworlds.world.init;
 
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
+import lostworlds.world.feature.ModFillerBlockType;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.util.registry.Registry;
@@ -64,9 +65,10 @@ public class ModFeatures
 	{
 		if(!(event.getCategory().equals(Biome.Category.NETHER) || event.getCategory().equals(Biome.Category.THEEND)))
 		{
-			//Copper
+			//Ore
 			oreGenerationConfig(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.COPPER_ORE.get().defaultBlockState(), 9, 5, 83, 40);
-
+			oreGenerationConfig(event.getGeneration(), ModFillerBlockType.SAND, BlockInit.OIL_SANDS.get().defaultBlockState(), 8, 5, 128, 10);
+			
 			//Fossil
 			event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.STONE_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(50)));				
 		}

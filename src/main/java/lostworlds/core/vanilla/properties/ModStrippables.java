@@ -6,7 +6,7 @@ import lostworlds.core.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.item.AxeItem;
 
-public class LostWorldsStrippables
+public class ModStrippables
 {
 	public static void add(Block logBlock, Block strippedLogBlock)
 	{

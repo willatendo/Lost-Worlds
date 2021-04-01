@@ -4,7 +4,7 @@ import lostworlds.common.blocks.ArchaeologyTable;
 import lostworlds.common.blocks.ExposedStoneFossilBlock;
 import lostworlds.common.blocks.FossilCleanerBlock;
 import lostworlds.common.blocks.LargePermianDesertPlant;
-import lostworlds.common.blocks.LostWorldsLog;
+import lostworlds.common.blocks.ConiferLog;
 import lostworlds.common.blocks.MediumPermianDesertPlant;
 import lostworlds.common.blocks.ModStandingSignBlock;
 import lostworlds.common.blocks.ModWallSignBlock;
@@ -45,8 +45,9 @@ import net.minecraftforge.fml.RegistryObject;
 @SuppressWarnings("deprecation")
 public class BlockInit 
 {
-	//Copper
+	//Ore
 	public static final RegistryObject<OreBlock> COPPER_ORE = ModRegistry.BLOCK_REGISTRY.register("copper_ore", () -> new OreBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<OreBlock> OIL_SANDS = ModRegistry.BLOCK_REGISTRY.register("oil_sands", () -> new OreBlock(AbstractBlock.Properties.of(Material.SAND, MaterialColor.SAND).harvestTool(ToolType.SHOVEL).strength(0.5F).sound(SoundType.SAND)));
 		
 	//Fossils
 	public static final RegistryObject<StoneFossilBlock> STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("stone_fossil", () -> new StoneFossilBlock(AbstractBlock.Properties.of(ModMaterials.MADE_FOR_BRUSH, MaterialColor.STONE).harvestTool(ModToolType.BRUSH).harvestLevel(0).requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.STONE)));
@@ -74,6 +75,9 @@ public class BlockInit
 	
 	public static final RegistryObject<ArchaeologyTable> DARK_OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("dark_oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ArchaeologyTable> STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_dark_oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<ArchaeologyTable> CONIFER_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("conifer_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ArchaeologyTable> STRIPPED_CONIFER_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	
 	//Volcanic Stuff
 	public static final RegistryObject<Block> VOLCANIC_ROCK = ModRegistry.BLOCK_REGISTRY.register("volcanic_rock", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));
@@ -105,10 +109,10 @@ public class BlockInit
 
 	public static final RegistryObject<PermianGroundFernsBlock> PERMIAN_GROUND_FERNS = ModRegistry.BLOCK_REGISTRY.register("permian_ground_ferns", () -> new PermianGroundFernsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 
-	public static final RegistryObject<LostWorldsLog> CONIFER_LOG = ModRegistry.BLOCK_REGISTRY.register("conifer_log", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
-	public static final RegistryObject<LostWorldsLog> STRIPPED_CONIFER_LOG = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_log", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
-	public static final RegistryObject<LostWorldsLog> CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("conifer_wood", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
-	public static final RegistryObject<LostWorldsLog> STRIPPED_CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_wood", () -> new LostWorldsLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ConiferLog> CONIFER_LOG = ModRegistry.BLOCK_REGISTRY.register("conifer_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ConiferLog> STRIPPED_CONIFER_LOG = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ConiferLog> CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("conifer_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ConiferLog> STRIPPED_CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<LeavesBlock> CONIFER_LEAVES = ModRegistry.BLOCK_REGISTRY.register("conifer_leaves", () -> new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.3F).noOcclusion().sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> CONIFER_PLANKS = ModRegistry.BLOCK_REGISTRY.register("conifer_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<StairsBlock> CONIFER_STAIRS = ModRegistry.BLOCK_REGISTRY.register("conifer_stairs", () -> new StairsBlock(() -> BlockInit.CONIFER_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));

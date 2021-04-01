@@ -1,5 +1,6 @@
 package lostworlds.client;
 
+import lostworlds.client.entity.render.DimetrodonRender;
 import lostworlds.client.entity.render.NautilusRender;
 import lostworlds.client.entity.render.PalaeoniscumRender;
 import lostworlds.client.entity.render.ProcompsognathusRender;
@@ -87,6 +88,7 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PALAEONISCUM_ENTITY.get(), PalaeoniscumRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.NAUTILUS_ENTITY.get(), NautilusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.RHINESUCHUS_ENTITY.get(), RhinesuchusRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.DIMETRODON_ENTITY.get(), DimetrodonRender::new);
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 	}
