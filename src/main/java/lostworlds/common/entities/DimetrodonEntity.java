@@ -3,6 +3,13 @@ package lostworlds.common.entities;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.core.init.SoundInit;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
+import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.entity.passive.CowEntity;
+import net.minecraft.entity.passive.PigEntity;
+import net.minecraft.entity.passive.RabbitEntity;
+import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -65,6 +72,18 @@ public class DimetrodonEntity extends AbstractPrehistoricEntity implements IAnim
 	public boolean isFish() 
 	{
 		return false;
+	}
+	
+	@Override
+	protected void registerGoals() 
+	{
+		super.registerGoals();
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
+		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, CowEntity.class, false));
+		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, PigEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ChickenEntity.class, false));
+		this.targetSelector.addGoal(8, new NearestAttackableTargetGoal<>(this, RabbitEntity.class, false));	
+		this.targetSelector.addGoal(9, new NearestAttackableTargetGoal<>(this, SheepEntity.class, false));	
 	}
 	
 	@Override

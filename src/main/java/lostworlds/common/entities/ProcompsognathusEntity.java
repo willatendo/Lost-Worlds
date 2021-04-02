@@ -3,6 +3,10 @@ package lostworlds.common.entities;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.core.init.SoundInit;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
+import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.entity.passive.ParrotEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -42,6 +46,15 @@ public class ProcompsognathusEntity extends AbstractPrehistoricEntity implements
 	public void registerControllers(AnimationData data) 
 	{
 		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+	}
+	
+	@Override
+	protected void registerGoals() 
+	{
+		super.registerGoals();
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
+		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, ChickenEntity.class, false));
+		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, ParrotEntity.class, false));
 	}
 
 	@Override

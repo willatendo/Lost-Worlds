@@ -18,4 +18,9 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	{
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_PERMIAN_GROUND_FERNS);
 	}
+	
+	public static void addConiferTree(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.CONIFER_TREES);
+	}
 }

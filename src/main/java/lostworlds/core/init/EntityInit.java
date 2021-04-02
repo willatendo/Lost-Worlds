@@ -18,7 +18,7 @@ public class EntityInit
 	public static final RegistryObject<EntityType<PalaeoniscumEntity>> PALAEONISCUM_ENTITY = registerEntity("palaeoniscum", PalaeoniscumEntity::new, EntityClassification.WATER_AMBIENT, PalaeoniscumEntity.class, 0.25F, 0.25F);
 	public static final RegistryObject<EntityType<NautilusEntity>> NAUTILUS_ENTITY = registerEntity("nautilus", NautilusEntity::new, EntityClassification.WATER_AMBIENT, NautilusEntity.class, 0.5F, 1.0F);
 	public static final RegistryObject<EntityType<RhinesuchusEntity>> RHINESUCHUS_ENTITY = registerEntity("rhinesuchus", RhinesuchusEntity::new, EntityClassification.CREATURE, RhinesuchusEntity.class, 0.5F, 0.5F);
-	public static final RegistryObject<EntityType<DimetrodonEntity>> DIMETRODON_ENTITY = registerEntity("dimetrodon_entity", DimetrodonEntity::new, EntityClassification.CREATURE, DimetrodonEntity.class, 0.75F, 2.0F);
+	public static final RegistryObject<EntityType<DimetrodonEntity>> DIMETRODON_ENTITY = registerEntity("dimetrodon", DimetrodonEntity::new, EntityClassification.CREATURE, DimetrodonEntity.class, 0.75F, 2.0F);
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);

@@ -5,11 +5,13 @@ import lostworlds.common.blocks.ExposedStoneFossilBlock;
 import lostworlds.common.blocks.FossilCleanerBlock;
 import lostworlds.common.blocks.LargePermianDesertPlant;
 import lostworlds.common.blocks.ConiferLog;
+import lostworlds.common.blocks.DimetrodonEggBlock;
 import lostworlds.common.blocks.MediumPermianDesertPlant;
 import lostworlds.common.blocks.ModStandingSignBlock;
 import lostworlds.common.blocks.ModWallSignBlock;
 import lostworlds.common.blocks.PermianGroundFernsBlock;
 import lostworlds.common.blocks.PlasteredStoneFossilBlock;
+import lostworlds.common.blocks.ProcompsognathusEggBlock;
 import lostworlds.common.blocks.SmallPermianDesertPlant;
 import lostworlds.common.blocks.StoneFossilBlock;
 import lostworlds.core.util.ModMaterials;
@@ -56,6 +58,10 @@ public class BlockInit
 	
 	//Fossil Processing
 	public static final RegistryObject<FossilCleanerBlock> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new FossilCleanerBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).noOcclusion()));
+	
+	//Egg
+	public static final RegistryObject<DimetrodonEggBlock> DIMETRODON_EGG = ModRegistry.BLOCK_REGISTRY.register("dimetrodon_egg", () -> new DimetrodonEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
+	public static final RegistryObject<ProcompsognathusEggBlock> PROCOMPSOGNATHUS_EGG = ModRegistry.BLOCK_REGISTRY.register("procompsognathus_egg", () -> new ProcompsognathusEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
 	
 	//Museum Stuff
 	public static final RegistryObject<ArchaeologyTable> OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));

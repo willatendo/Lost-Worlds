@@ -11,4 +11,5 @@ public class ModSurfaceBuilders
 	public static final SurfaceBuilderConfig PERMIAN_DESERT = new SurfaceBuilderConfig(BlockInit.PERMIAN_SAND.get().defaultBlockState(), BlockInit.PERMIAN_SAND.get().defaultBlockState(), BlockInit.PERMIAN_SAND.get().defaultBlockState());
 	public static final SurfaceBuilderConfig FLOOD_BASALT_PLAINS = new SurfaceBuilderConfig(BlockInit.VOLCANIC_ROCK.get().defaultBlockState(), BlockInit.VOLCANIC_ROCK.get().defaultBlockState(), BlockInit.VOLCANIC_ROCK.get().defaultBlockState());
 	public static final SurfaceBuilderConfig PERMIAN_PLAINS = new SurfaceBuilderConfig(Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.SAND.defaultBlockState());
+	public static final SurfaceBuilderConfig PERMIAN_MOUNTAIN = new SurfaceBuilderConfig(BlockInit.PERMIAN_STONE.get().defaultBlockState(), BlockInit.PERMIAN_STONE.get().defaultBlockState(), BlockInit.PERMIAN_STONE.get().defaultBlockState());
 }

@@ -36,8 +36,11 @@ public class BiomeInit
 	public static final RegistryObject<Biome> PERMIAN_OCEAN = createBiome("permian_ocean", BiomeMaker::warmOceanBiome);
 	public static final RegistryKey<Biome> PERMIAN_OCEAN_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModReference.ID, "permian_ocean"));
 
-	public static final RegistryObject<Biome> PERMIAN_MOUNTAINS = createBiome("permian_mountains", BiomeMaker::warmOceanBiome);
+	public static final RegistryObject<Biome> PERMIAN_MOUNTAINS = createBiome("permian_mountains", ModBiomeMaker::makeAPermianMountains);
 	public static final RegistryKey<Biome> PERMIAN_MOUNTAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModReference.ID, "permian_mountains"));
+	
+	public static final RegistryObject<Biome> CONIFER_FOREST = createBiome("conifer_forest", ModBiomeMaker::makeAConiferForest);
+	public static final RegistryKey<Biome> CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModReference.ID, "conifer_forest"));
 	
 	//Registry
     public static RegistryObject<Biome> createBiome(String name, Supplier<Biome> biome) 

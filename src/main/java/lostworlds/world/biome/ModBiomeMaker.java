@@ -118,4 +118,37 @@ public class ModBiomeMaker
 		
 		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.PLAINS).depth(0.125F).scale(0.05F).temperature(1.5F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(0x81b0e2).waterFogColor(0x6795c6).fogColor(0x355177).skyColor(0x50aeed).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
 	}
+	
+	public static Biome makeAPermianMountains() 
+	{
+		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+		
+		BiomeGenerationSettings.Builder biomegenerationsettings$builder = genSettings(SurfaceBuilderInit.NAKED_PERMIAN_MOUNTAIN_SURFACE_BUILDER, ModSurfaceBuilders.PERMIAN_MOUNTAIN);
+		DefaultBiomeFeatures.addDefaultCarvers(biomegenerationsettings$builder);
+		DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
+		DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
+		DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+		DefaultBiomeFeatures.addDefaultLakes(biomegenerationsettings$builder);
+		
+		ModBiomeFeatures.addPermianPlainsPlants(biomegenerationsettings$builder);
+		
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.EXTREME_HILLS).depth(1.0F).scale(0.5F).temperature(1.5F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(0x81b0e2).waterFogColor(0x6795c6).fogColor(0x355177).skyColor(0x50aeed).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
+	}
+	
+	public static Biome makeAConiferForest() 
+	{
+		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+		
+		BiomeGenerationSettings.Builder biomegenerationsettings$builder = genSettings(SurfaceBuilderInit.NAKED_PERMIAN_PLAINS_SURFACE_BUILDER, ModSurfaceBuilders.PERMIAN_PLAINS);
+		DefaultBiomeFeatures.addDefaultCarvers(biomegenerationsettings$builder);
+		DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
+		DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
+		DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+		DefaultBiomeFeatures.addDefaultLakes(biomegenerationsettings$builder);
+		
+		ModBiomeFeatures.addPermianPlainsPlants(biomegenerationsettings$builder);
+		ModBiomeFeatures.addConiferTree(biomegenerationsettings$builder);
+		
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.FOREST).depth(0.125F).scale(0.05F).temperature(1.5F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(0x81b0e2).waterFogColor(0x6795c6).fogColor(0x355177).skyColor(0x50aeed).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
+	}
 }

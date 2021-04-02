@@ -14,8 +14,7 @@
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_bone": "Procompsognathus Bone",
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
-	"item.lostworlds.procompsognathus_egg": "Procompsognathus Egg",
-	"item.lostworlds.procompsognathus_baby": "Procompsognathus Baby",
+	"block.lostworlds.procompsognathus_egg": "Procompsognathus Egg",
 	"item.lostworlds.raw_procompsognathus_meat": "Raw Procompsognathus Meat",	
 	"item.lostworlds.cooked_procompsognathus_meat": "Cooked Procompsognathus Meat",
 	"item.lostworlds.procompsognathus_spawn_egg": "Procompsognathus Spawn Egg",	
@@ -49,6 +48,11 @@
 	"item.lostworlds.rhinesuchus_spawn_egg": "Rhinesuchus Spawn Egg",	
 	
 	//Dimetrodon
+	"item.lostworlds.dimetrodon_bone": "Dimetrodon Bone",	
+	"item.lostworlds.dimetrodon_dna": "Dimetrodon DNA",	
+	"block.lostworlds.dimetrodon_egg": "Dimetrodon Egg",	
+	"item.lostworlds.raw_dimetrodon_meat": "Raw Dimetrodon Meat",	
+	"item.lostworlds.cooked_dimetrodon_meat": "Cooked Dimetrodon Meat",	
 	"item.lostworlds.dimetrodon_spawn_egg": "Dimetrodon Spawn Egg",	
 
 	//Copper
@@ -355,6 +359,7 @@
 	"biome.lostworlds.permian_desert" :"Permian Desert",
 	"biome.lostworlds.permian_plains" :"Permian Plains",
 	"biome.lostworlds.permian_ocean" :"Permian Ocean",
+	"biome.lostworlds.conifer_forest" :"Conifer Forest",
 	
 	//Modern Day
 	"biome.lostworlds.volcano": "Volcano",

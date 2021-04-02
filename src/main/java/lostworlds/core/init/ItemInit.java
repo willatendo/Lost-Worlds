@@ -5,7 +5,6 @@ import lostworlds.common.items.DiscItem;
 import lostworlds.common.items.ModBoatItem;
 import lostworlds.common.items.ModFishBucketItem;
 import lostworlds.common.items.ModSpawnEggItem;
-import lostworlds.common.items.ModSpawnItem;
 import lostworlds.common.items.WetPaperItem;
 import lostworlds.common.tools.BrushItem;
 import lostworlds.core.ModItemGroup;
@@ -46,8 +45,7 @@ public class ItemInit
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_BONE = registerBone("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
-	public static final RegistryObject<Item> PROCOMPSOGNATHUS_EGG = registerEgg("procompsognathus");
-	public static final RegistryObject<Item> PROCOMPSOGNATHUS_BABY = registerBabyDino(() -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), "procompsognathus");
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_EGG = ModRegistry.ITEM_REGISTRY.register("procompsognathus_egg", () -> new BlockItem(BlockInit.PROCOMPSOGNATHUS_EGG.get(), standardProperties()));
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_MEAT = registerMeat("procompsognathus", FoodInit.RAW_PROCOMPSOGNATHUS_MEAT);
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_COOKED_MEAT = registerCookedMeat("procompsognathus", FoodInit.COOKED_PROCOMPSOGNATHUS_MEAT);
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_SPAWN_EGG = registerSpawnEgg("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), 0x125611, 0x143025, standardProperties());
@@ -81,6 +79,11 @@ public class ItemInit
 	public static final RegistryObject<Item> RHINESUCHUS_SPAWN_EGG = registerSpawnEgg("rhinesuchus", () -> EntityInit.RHINESUCHUS_ENTITY.get(), 0xceaa7b, 0x1c1308, standardProperties());
 	
 	//Dimetrodon
+	public static final RegistryObject<Item> DIMETRODON_BONE = registerBone("dimetrodon");
+	public static final RegistryObject<Item> DIMETRODON_DNA = registerDNA("dimetrodon");
+	public static final RegistryObject<Item> DIMETRODON_EGG = ModRegistry.ITEM_REGISTRY.register("dimetrodon_egg", () -> new BlockItem(BlockInit.DIMETRODON_EGG.get(), standardProperties()));
+	public static final RegistryObject<Item> DIMETRODON_MEAT = registerMeat("dimetrodon", FoodInit.RAW_DIMETRODON_MEAT);
+	public static final RegistryObject<Item> DIMETRODON_COOKED_MEAT = registerCookedMeat("dimetrodon", FoodInit.COOKED_DIMETRODON_MEAT);
 	public static final RegistryObject<Item> DIMETRODON_SPAWN_EGG = registerSpawnEgg("dimetrodon", () -> EntityInit.DIMETRODON_ENTITY.get(), 0x378ca8, 0x152875, standardProperties());
 	
 	//Copper
@@ -118,7 +121,7 @@ public class ItemInit
 	public static final RegistryObject<Item> CRYSTAL_SCARAB_PICKAXE = advancedItemRegister("crystal_scarab_pickaxe", new PickaxeItem(ModItemTeir.SCARAB, 32, -2.8F, standardProperties().rarity(Rarity.EPIC)));
 	public static final RegistryObject<Item> CRYSTAL_SCARAB_AXE = advancedItemRegister("crystal_scarab_axe", new AxeItem(ModItemTeir.SCARAB, 70.0F, -3.2F, standardProperties().rarity(Rarity.EPIC)));
 	public static final RegistryObject<Item> CRYSTAL_SCARAB_HOE = advancedItemRegister("crystal_scarab_hoe", new HoeItem(ModItemTeir.SCARAB, 10, -3.0F, standardProperties().rarity(Rarity.EPIC)));
-	
+		
 	//Blocks
 	//Ore
 	public static final RegistryObject<BlockItem> COPPER_ORE = ModRegistry.ITEM_REGISTRY.register("copper_ore", () -> new BlockItem(BlockInit.COPPER_ORE.get(), standardProperties()));
@@ -389,19 +392,9 @@ public class ItemInit
 		return simpleItemRegister(type + "_dna", standardProperties());
 	}
 	
-	private static RegistryObject<Item> registerEgg(String type) 
-	{
-		return simpleItemRegister(type + "_egg", standardProperties().stacksTo(1));
-	}
-	
 	private static RegistryObject<Item> registerSpawn(String id)
 	{
 		return simpleItemRegister(id + "_spawn", standardProperties());
-	}
-	
-	private static RegistryObject<Item> registerBabyDino(NonNullSupplier<EntityType<?>> entity, String type) 
-	{
-		return advancedItemRegister(type + "_baby", new ModSpawnItem(entity, standardProperties().stacksTo(1)));
 	}
 	
 	private static RegistryObject<Item> registerSpawnBucket(String id, NonNullSupplier<EntityType<?>> entity)
