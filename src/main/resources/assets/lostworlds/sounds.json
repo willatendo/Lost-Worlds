@@ -58,7 +58,65 @@
 		"subtitle": "entity.procompsognathus.death",
 		"sounds": [
 			{
-				"name": "lostworlds:entity/procompsognathus_hurt_1",
+				"name": "lostworlds:entity/procompsognathus_death_1",
+				"stream": false
+			}
+		]
+	},
+	"entity.dimetrodon.ambient": {
+		"category": "entity",
+		"subtitle": "entity.dimetrodon.ambient",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/dimetrodon_ambient_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/dimetrodon_ambient_2",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/dimetrodon_ambient_3",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/dimetrodon_ambient_4",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/dimetrodon_ambient_5",
+				"stream": false
+			}
+		]
+	},
+	"entity.dimetrodon.hurt": {
+		"category": "entity",
+		"subtitle": "entity.dimetrodon.hurt",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/dimetrodon_hurt_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/dimetrodon_hurt_2",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/dimetrodon_hurt_3",
+				"stream": false
+			}
+		]
+	},
+	"entity.dimetrodon.death": {
+		"category": "entity",
+		"subtitle": "entity.dimetrodon.death",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/dimetrodon_death_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/dimetrodon_death_2",
 				"stream": false
 			}
 		]

@@ -71,7 +71,7 @@ public class ProcompsognathusEntity extends AbstractPrehistoricEntity implements
 	@Override
 	protected SoundEvent getAmbientSound() 
 	{
-		return SoundInit.COMPY_AMBIANT.get();
+		return SoundInit.COMPY_AMBIENT.get();
 	}
 	
 	@Override
@@ -85,6 +85,4 @@ public class ProcompsognathusEntity extends AbstractPrehistoricEntity implements
 	{
 		return SoundInit.COMPY_DEATH.get();
 	}
-	
-	
 }

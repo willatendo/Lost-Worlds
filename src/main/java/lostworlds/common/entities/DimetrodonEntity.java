@@ -1,7 +1,10 @@
 package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
+import lostworlds.core.init.SoundInit;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -64,5 +67,21 @@ public class DimetrodonEntity extends AbstractPrehistoricEntity implements IAnim
 		return false;
 	}
 	
+	@Override
+	protected SoundEvent getAmbientSound() 
+	{
+		return SoundInit.DIMETRODON_AMBIENT.get();
+	}
 	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
+	{
+		return SoundInit.DIMETRODON_HURT.get();
+	}
+	
+	@Override
+	protected SoundEvent getDeathSound() 
+	{
+		return SoundInit.DIMETRODON_DEATH.get();
+	}
 }
