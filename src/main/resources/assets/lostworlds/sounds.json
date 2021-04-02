@@ -9,32 +9,56 @@
 			}
 		]
 	},
-	"entity.compy.ambient": {
+	"entity.procompsognathus.ambient": {
 		"category": "entity",
-		"subtitle": "entity.compy.ambient",
+		"subtitle": "entity.procompsognathus.ambient",
 		"sounds": [
 			{
-				"name": "lostworlds:entity/compy_ambient",
+				"name": "lostworlds:entity/procompsognathus_ambient_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/procompsognathus_ambient_2",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/procompsognathus_ambient_3",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/procompsognathus_ambient_4",
 				"stream": false
 			}
 		]
 	},
-	"entity.compy.hurt": {
+	"entity.procompsognathus.hurt": {
 		"category": "entity",
-		"subtitle": "entity.compy.hurt",
+		"subtitle": "entity.procompsognathus.hurt",
 		"sounds": [
 			{
-				"name": "lostworlds:entity/compy_hurt",
+				"name": "lostworlds:entity/procompsognathus_hurt_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/procompsognathus_hurt_2",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/procompsognathus_hurt_3",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/procompsognathus_hurt_4",
 				"stream": false
 			}
 		]
 	},
-	"entity.compy.death": {
+	"entity.procompsognathus.death": {
 		"category": "entity",
-		"subtitle": "entity.compy.death",
+		"subtitle": "entity.procompsognathus.death",
 		"sounds": [
 			{
-				"name": "lostworlds:entity/compy_death",
+				"name": "lostworlds:entity/procompsognathus_hurt_1",
 				"stream": false
 			}
 		]

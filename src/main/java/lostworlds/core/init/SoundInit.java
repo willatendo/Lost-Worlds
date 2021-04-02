@@ -10,9 +10,9 @@ import net.minecraftforge.fml.RegistryObject;
 public class SoundInit 
 {	
 	//Compy Sounds
-	public static final RegistryObject<SoundEvent> COMPY_AMBIANT = ModRegistry.SOUND_REGISTRY.register("compy_ambient", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.compy.ambient")));
-	public static final RegistryObject<SoundEvent> COMPY_HURT = ModRegistry.SOUND_REGISTRY.register("compy_hurt", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.compy.hurt")));
-	public static final RegistryObject<SoundEvent> COMPY_DEATH = ModRegistry.SOUND_REGISTRY.register("compy_death", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.compy.death")));
+	public static final RegistryObject<SoundEvent> COMPY_AMBIANT = ModRegistry.SOUND_REGISTRY.register("procompsognathus_ambient", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.procompsognathus.ambient")));
+	public static final RegistryObject<SoundEvent> COMPY_HURT = ModRegistry.SOUND_REGISTRY.register("procompsognathus_hurt", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.procompsognathus.hurt")));
+	public static final RegistryObject<SoundEvent> COMPY_DEATH = ModRegistry.SOUND_REGISTRY.register("procompsognathus_death", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.procompsognathus.death")));
 	
 	//Music Disc
 	public static final Lazy<SoundEvent> LAZY_JP_MUSIC = Lazy.of(() -> new SoundEvent(new ResourceLocation(ModReference.ID, "disc.jurassic_park")));
