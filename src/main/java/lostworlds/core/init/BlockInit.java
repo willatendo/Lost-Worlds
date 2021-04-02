@@ -63,6 +63,9 @@ public class BlockInit
 	public static final RegistryObject<DimetrodonEggBlock> DIMETRODON_EGG = ModRegistry.BLOCK_REGISTRY.register("dimetrodon_egg", () -> new DimetrodonEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
 	public static final RegistryObject<ProcompsognathusEggBlock> PROCOMPSOGNATHUS_EGG = ModRegistry.BLOCK_REGISTRY.register("procompsognathus_egg", () -> new ProcompsognathusEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
 	
+	//Mud
+	public static final RegistryObject<Block> MUD = ModRegistry.BLOCK_REGISTRY.register("mud", () -> new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
+	
 	//Museum Stuff
 	public static final RegistryObject<ArchaeologyTable> OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ArchaeologyTable> STRIPPED_OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));

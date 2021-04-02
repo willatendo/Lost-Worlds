@@ -86,6 +86,9 @@ public class ItemInit
 	public static final RegistryObject<Item> DIMETRODON_COOKED_MEAT = registerCookedMeat("dimetrodon", FoodInit.COOKED_DIMETRODON_MEAT);
 	public static final RegistryObject<Item> DIMETRODON_SPAWN_EGG = registerSpawnEgg("dimetrodon", () -> EntityInit.DIMETRODON_ENTITY.get(), 0x378ca8, 0x152875, standardProperties());
 	
+	//Mud Ball
+	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
+	
 	//Copper
 	public static final RegistryObject<Item> COPPER_INGOT = simpleItemRegister("copper_ingot", standardProperties());
 	public static final RegistryObject<Item> COPPER_NUGGET = simpleItemRegister("copper_nugget", standardProperties());
@@ -134,6 +137,9 @@ public class ItemInit
 	
 	//Fossil Processing
 	public static final RegistryObject<BlockItem> FOSSIL_CLEANER = ModRegistry.ITEM_REGISTRY.register("fossil_cleaner", () -> new BlockItem(BlockInit.FOSSIL_CLEANER.get(), standardProperties()));
+
+	//Mud
+	public static final RegistryObject<BlockItem> MUD = ModRegistry.ITEM_REGISTRY.register("mud", () -> new BlockItem(BlockInit.MUD.get(), standardProperties()));
 
 	//Museum Stuff
 	public static final RegistryObject<BlockItem> OAK_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("oak_archaeology_table", () -> new BlockItem(BlockInit.OAK_ARCHAEOLOGY_TABLE.get(), standardProperties()));

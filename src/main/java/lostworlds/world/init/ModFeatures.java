@@ -83,8 +83,15 @@ public class ModFeatures
 		if(!(event.getCategory().equals(Biome.Category.NETHER) || event.getCategory().equals(Biome.Category.THEEND)))
 		{
 			//Ore
-			oreGenerationConfig(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.COPPER_ORE.get().defaultBlockState(), 9, 5, 83, 40);
+			oreGenerationConfig(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.COPPER_ORE.get().defaultBlockState(), 9, 5, 83, 25);
 			oreGenerationConfig(event.getGeneration(), ModFillerBlockType.SAND, BlockInit.OIL_SANDS.get().defaultBlockState(), 8, 5, 128, 10);
+			
+			//Mud
+			if(event.getCategory().equals(Biome.Category.SWAMP))
+			{
+				oreGenerationConfig(event.getGeneration(), ModFillerBlockType.GRASS, BlockInit.MUD.get().defaultBlockState(), 3, 5, 128, 25);
+				oreGenerationConfig(event.getGeneration(), ModFillerBlockType.DIRT, BlockInit.MUD.get().defaultBlockState(), 3, 5, 128, 25);
+			}
 			
 			//Fossil
 			event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.STONE_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(50)));				
