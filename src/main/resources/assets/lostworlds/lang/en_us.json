@@ -48,6 +48,9 @@
 	"item.lostworlds.cooked_rhinesuchus_meat": "Cooked Rhinesuchus Meat",	
 	"item.lostworlds.rhinesuchus_spawn_egg": "Rhinesuchus Spawn Egg",	
 	
+	//Dimetrodon
+	"item.lostworlds.dimetrodon_spawn_egg": "Dimetrodon Spawn Egg",	
+
 	//Copper
 	"item.lostworlds.copper_ingot": "Copper Ingot",
 	"item.lostworlds.copper_nugget": "Copper Nugget",

@@ -1,9 +1,9 @@
 package lostworlds.core.tab;
 
-import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.reference.ModReference;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 
 public class CreativeTab extends ItemGroup
@@ -16,7 +16,7 @@ public class CreativeTab extends ItemGroup
 	@Override
 	public ItemStack makeIcon() 
 	{
-		return ItemInit.WET_PAPER.get().getDefaultInstance();
+		return Items.NAUTILUS_SHELL.getDefaultInstance();
 	}
 	
 	@Override
