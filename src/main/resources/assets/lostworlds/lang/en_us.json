@@ -55,6 +55,9 @@
 	"item.lostworlds.cooked_dimetrodon_meat": "Cooked Dimetrodon Meat",	
 	"item.lostworlds.dimetrodon_spawn_egg": "Dimetrodon Spawn Egg",	
 
+	//Mud
+	"item.lostworlds.mud_ball": "Mud Ball",	
+
 	//Copper
 	"item.lostworlds.copper_ingot": "Copper Ingot",
 	"item.lostworlds.copper_nugget": "Copper Nugget",
@@ -109,6 +112,9 @@
 
 	//Fossil Processing
 	"block.lostworlds.fossil_cleaner": "Fossil Cleaner",
+
+	//Mud
+	"block.lostworlds.mud": "Mud",
 
 	//Museum Stuff
 	"block.lostworlds.oak_archaeology_table": "Oak Archaeology Table",

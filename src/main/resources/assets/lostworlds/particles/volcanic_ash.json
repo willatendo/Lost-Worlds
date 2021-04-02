@@ -1,0 +1,10 @@
+{
+	"textures": [
+		"lostworlds:volcanic_ash_large_dark_grey",
+		"lostworlds:volcanic_ash_medium_dark_grey",
+		"lostworlds:volcanic_ash_small_dark_grey",
+		"lostworlds:volcanic_ash_large_grey",
+		"lostworlds:volcanic_ash_medium_grey",
+		"lostworlds:volcanic_ash_small_grey"
+	]
+}
