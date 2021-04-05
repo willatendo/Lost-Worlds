@@ -4,17 +4,16 @@ import java.util.List;
 
 import lostworlds.core.util.reference.ModReference;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class WetPaperItem extends Item
+public class WetPaperItem extends ModItem
 {
-	public WetPaperItem(Properties properties) 
+	public WetPaperItem(String textID) 
 	{
-		super(properties);
+		super(textID);
 	}
 	
 	@Override

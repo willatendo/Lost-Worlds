@@ -1,6 +1,7 @@
 {
 	"textures": {
-		"1": "lostworlds:blocks/dimetrodon_egg"
+		"1": "lostworlds:blocks/dimetrodon_egg",
+		"particle": "lostworlds:blocks/dimetrodon_egg"
 	},
 	"elements": [
 		{

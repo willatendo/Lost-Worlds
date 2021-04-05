@@ -9,11 +9,12 @@ import net.minecraft.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
@@ -23,18 +24,21 @@ public class ModSpawnEggItem extends SpawnEggItem
 {
 	protected static final List<ModSpawnEggItem> UNADDED_EGGS = new ArrayList<ModSpawnEggItem>();
 	private final Lazy<? extends EntityType<?>> entityTypeSupplier;
+	private String textID;
 
-	public ModSpawnEggItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, final Item.Properties properties) 
+	public ModSpawnEggItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, String textId) 
 	{
-		super(null, primaryColour, secondaryColour, properties);
+		super(null, primaryColour, secondaryColour, ModItem.standardItemProperties());
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
+		this.textID = textId;
 		UNADDED_EGGS.add(this);
 	}
 
-	public ModSpawnEggItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, final Item.Properties properties) 
+	public ModSpawnEggItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, String textId) 
 	{
-		super(null, primaryColour, secondaryColour, properties);
+		super(null, primaryColour, secondaryColour, ModItem.standardItemProperties());
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
+		this.textID = textId;
 		UNADDED_EGGS.add(this);
 	}
 
@@ -62,9 +66,16 @@ public class ModSpawnEggItem extends SpawnEggItem
 		}
 		UNADDED_EGGS.clear();
 	}
+	
+	@Override
+	public ITextComponent getName(ItemStack stack) 
+	{
+		return new TranslationTextComponent(textID);
+	}
 
 	@Override
-	public EntityType<?> getType(CompoundNBT nbt) {
+	public EntityType<?> getType(CompoundNBT nbt) 
+	{
 		return this.entityTypeSupplier.get();
 	}
 }	

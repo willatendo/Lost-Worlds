@@ -1,6 +1,7 @@
 package lostworlds.client;
 
 import lostworlds.client.entity.render.DimetrodonRender;
+import lostworlds.client.entity.render.EdaphosaurusRender;
 import lostworlds.client.entity.render.NautilusRender;
 import lostworlds.client.entity.render.PalaeoniscumRender;
 import lostworlds.client.entity.render.ProcompsognathusRender;
@@ -27,7 +28,6 @@ public class ClientSetup
 	public static void clientSetup(FMLClientSetupEvent event)
 	{
     	//Containers
-    	
     	//Blocks
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_STONE_FOSSIL.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.SMALL_PERMIAN_DESERT_PLANT.get(), RenderType.cutout());
@@ -89,6 +89,7 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.NAUTILUS_ENTITY.get(), NautilusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.RHINESUCHUS_ENTITY.get(), RhinesuchusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.DIMETRODON_ENTITY.get(), DimetrodonRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.EDAPHOSAURUS_ENTITY.get(), EdaphosaurusRender::new);
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 	}

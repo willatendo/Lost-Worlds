@@ -4,20 +4,20 @@
 	"item.lostworlds.brush": "Brush",
 	
 	//Plaster
-	"item.lostworlds.wet_paper": "Wet Paper",
+	"wet_paper": "Wet Paper",
 
 	"toolTip.lostworlds.wet_paper": "Used For The Safe Transport of Fossils",
 
 	//Fossil
-	"item.lostworlds.fossil": "Fossil",
+	"fossil": "Fossil",
 	
 	//Procompsognathus
-	"item.lostworlds.procompsognathus_bone": "Procompsognathus Bone",
-	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
+	"procompsognathus_bone": "Procompsognathus Bone",
+	"procompsognathus_dna": "Procompsognathus DNA",
 	"block.lostworlds.procompsognathus_egg": "Procompsognathus Egg",
-	"item.lostworlds.raw_procompsognathus_meat": "Raw Procompsognathus Meat",	
-	"item.lostworlds.cooked_procompsognathus_meat": "Cooked Procompsognathus Meat",
-	"item.lostworlds.procompsognathus_spawn_egg": "Procompsognathus Spawn Egg",	
+	"raw_procompsognathus_meat": "Raw Procompsognathus Meat",	
+	"cooked_procompsognathus_meat": "Cooked Procompsognathus Meat",
+	"procompsognathus_spawn_egg": "Procompsognathus Spawn Egg",	
 
 	//Palaeoniscum
 	"item.lostworlds.palaeoniscum_bone": "Palaeoniscum Bone",
@@ -54,6 +54,9 @@
 	"item.lostworlds.raw_dimetrodon_meat": "Raw Dimetrodon Meat",	
 	"item.lostworlds.cooked_dimetrodon_meat": "Cooked Dimetrodon Meat",	
 	"item.lostworlds.dimetrodon_spawn_egg": "Dimetrodon Spawn Egg",	
+
+	//Edaphosaurus
+	"item.lostworlds.edaphosaurus_spawn_egg": "Edaphosaurus Spawn Egg",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -113,8 +116,14 @@
 	//Fossil Processing
 	"block.lostworlds.fossil_cleaner": "Fossil Cleaner",
 
+	"block.lostworlds.power_supply_block": "Power Supply Block",
+	"toolTip.lostworlds.power_supply_block": "A Fancier Way of Powering Your Machines",
+
 	//Mud
 	"block.lostworlds.mud": "Mud",
+
+	//Nesting Block
+	"block.lostworlds.nesting_block": "Nesting Block",
 
 	//Museum Stuff
 	"block.lostworlds.oak_archaeology_table": "Oak Archaeology Table",
@@ -346,6 +355,7 @@
 	"entity.lostworlds.dimetrodon": "Dimetrodon limbatus",
 	"entity.lostworlds.palaeoniscum": "Palaeoniscum freislbeni",
 	"entity.lostworlds.rhinesuchus": "Rhinesuches whaitsi",
+	"entity.lostworlds.edaphosaurus": "Edaphosaurus pogonias",
 	
 	//Triassic
 	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",

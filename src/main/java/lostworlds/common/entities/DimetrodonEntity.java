@@ -78,6 +78,7 @@ public class DimetrodonEntity extends AbstractPrehistoricEntity implements IAnim
 	protected void registerGoals() 
 	{
 		super.registerGoals();
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, EdaphosaurusEntity.class, false));
 		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
 		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, CowEntity.class, false));
 		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, PigEntity.class, false));

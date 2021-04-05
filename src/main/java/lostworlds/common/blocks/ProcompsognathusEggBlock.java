@@ -17,7 +17,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -70,7 +69,7 @@ public class ProcompsognathusEggBlock extends Block
 			}
 		}
 	}
-	
+		
 	private void destroyEggOther(World worldIn, BlockPos pos, BlockState state) 
 	{
 		worldIn.playSound((PlayerEntity)null, pos, SoundEvents.TURTLE_EGG_BREAK, SoundCategory.BLOCKS, 0.7F, 0.9F + worldIn.random.nextFloat() * 0.2F);
@@ -107,7 +106,7 @@ public class ProcompsognathusEggBlock extends Block
 	
 	public static boolean isNest(IBlockReader blockReader, BlockPos pos) 
 	{
-		return blockReader.getBlockState(pos).is(BlockTags.SAND);
+		return blockReader.getBlockState(pos).is(BlockInit.NESTING_BLOCK.get());
 	}
 	
 	public void onPlace(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean bool) 
