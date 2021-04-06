@@ -37,7 +37,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class DimetrodonEntity extends AbstractPrehistoricEntity implements IAnimatable
+public class GorgonopsEntity extends AbstractPrehistoricEntity implements IAnimatable
 {
 	private AnimationFactory factory = new AnimationFactory(this);
 
@@ -45,21 +45,21 @@ public class DimetrodonEntity extends AbstractPrehistoricEntity implements IAnim
 	{
 		if(!(animationSpeed > -0.15F && animationSpeed < 0.15F))
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dimetrodon.walking", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gorgonops.walking", true));
 			return PlayState.CONTINUE;
 		}
 		else
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dimetrodon.idol", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gorgonops.idol", true));
 			return PlayState.CONTINUE;
 		}
 	}
-	
-	public DimetrodonEntity(EntityType<? extends DimetrodonEntity> entityIn, World worldIn) 
+
+	public GorgonopsEntity(EntityType<? extends GorgonopsEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn);
 	}
-
+	
 	@Override
 	public void registerControllers(AnimationData data) 
 	{
@@ -125,18 +125,18 @@ public class DimetrodonEntity extends AbstractPrehistoricEntity implements IAnim
 	@Override
 	protected SoundEvent getAmbientSound() 
 	{
-		return SoundInit.DIMETRODON_AMBIENT.get();
+		return SoundInit.GORGONOPS_AMBIENT.get();
 	}
 	
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
 	{
-		return SoundInit.DIMETRODON_HURT.get();
+		return SoundInit.GORGONOPS_HURT.get();
 	}
 	
 	@Override
 	protected SoundEvent getDeathSound() 
 	{
-		return SoundInit.DIMETRODON_DEATH.get();
+		return SoundInit.GORGONOPS_DEATH.get();
 	}
 }

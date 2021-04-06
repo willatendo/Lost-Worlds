@@ -1,5 +1,6 @@
 package lostworlds.common.items;
 
+import lostworlds.core.ModItemGroup;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.FishBucketItem;
@@ -13,16 +14,16 @@ public class ModFishBucketItem extends FishBucketItem
 	private final Lazy<? extends EntityType<?>> entityTypeSupplier;
 
 	@SuppressWarnings("deprecation")
-	public ModFishBucketItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid, final Item.Properties properties) 
+	public ModFishBucketItem(final String textID, final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
-		super(null, fluid, properties);
+		super(null, fluid,new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 	}
 
 	@SuppressWarnings("deprecation")
-	public ModFishBucketItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid, final Item.Properties properties) 
+	public ModFishBucketItem(final String textID, final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
-		super(null, fluid, properties);
+		super(null, fluid, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 	}
 	

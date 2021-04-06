@@ -2,6 +2,7 @@ package lostworlds.core.init;
 
 import lostworlds.common.entities.DimetrodonEntity;
 import lostworlds.common.entities.EdaphosaurusEntity;
+import lostworlds.common.entities.GorgonopsEntity;
 import lostworlds.common.entities.ModBoatEntity;
 import lostworlds.common.entities.NautilusEntity;
 import lostworlds.common.entities.PalaeoniscumEntity;
@@ -21,6 +22,7 @@ public class EntityInit
 	public static final RegistryObject<EntityType<RhinesuchusEntity>> RHINESUCHUS_ENTITY = registerEntity("rhinesuchus", RhinesuchusEntity::new, EntityClassification.CREATURE, RhinesuchusEntity.class, 0.5F, 0.5F);
 	public static final RegistryObject<EntityType<DimetrodonEntity>> DIMETRODON_ENTITY = registerEntity("dimetrodon", DimetrodonEntity::new, EntityClassification.CREATURE, DimetrodonEntity.class, 0.75F, 2.0F);
 	public static final RegistryObject<EntityType<EdaphosaurusEntity>> EDAPHOSAURUS_ENTITY = registerEntity("edaphosaurus", EdaphosaurusEntity::new, EntityClassification.CREATURE, EdaphosaurusEntity.class, 0.75F, 1.5F);
+	public static final RegistryObject<EntityType<GorgonopsEntity>> GORGONOPS_ENTITY = registerEntity("gorgonops", GorgonopsEntity::new, EntityClassification.CREATURE, GorgonopsEntity.class, 0.4F, 0.5F);
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);

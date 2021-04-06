@@ -68,6 +68,8 @@ public class ModBiomeMaker
 		DefaultBiomeFeatures.addDesertExtraDecoration(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDesertExtraVegetation(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDesertVegetation(biomegenerationsettings$builder);
+		
+		ModBiomeFeatures.addOilSands(biomegenerationsettings$builder);
 				
 		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(0.125F).scale(0.05F).temperature(2.0F).downfall(0.0F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(2.0F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
 	}

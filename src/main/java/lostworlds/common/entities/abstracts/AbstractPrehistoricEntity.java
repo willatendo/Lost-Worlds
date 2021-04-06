@@ -32,6 +32,18 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		return false;
 	}
 	
+	@Override
+	public boolean canChangeDimensions() 
+	{
+		return true;
+	}
+	
+	@Override
+	public boolean canBeLeashed(PlayerEntity playerEntity) 
+	{
+		return true;
+	}
+	
 	public boolean removeWhenFarAway(double doubleIn) 
 	{
 		return false;

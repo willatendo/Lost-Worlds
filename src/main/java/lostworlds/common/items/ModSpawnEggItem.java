@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import lostworlds.core.ModItemGroup;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
@@ -24,21 +24,18 @@ public class ModSpawnEggItem extends SpawnEggItem
 {
 	protected static final List<ModSpawnEggItem> UNADDED_EGGS = new ArrayList<ModSpawnEggItem>();
 	private final Lazy<? extends EntityType<?>> entityTypeSupplier;
-	private String textID;
 
-	public ModSpawnEggItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, String textId) 
+	public ModSpawnEggItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour) 
 	{
-		super(null, primaryColour, secondaryColour, ModItem.standardItemProperties());
+		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
-		this.textID = textId;
 		UNADDED_EGGS.add(this);
 	}
 
-	public ModSpawnEggItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, String textId) 
+	public ModSpawnEggItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour) 
 	{
-		super(null, primaryColour, secondaryColour, ModItem.standardItemProperties());
+		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
-		this.textID = textId;
 		UNADDED_EGGS.add(this);
 	}
 
@@ -65,12 +62,6 @@ public class ModSpawnEggItem extends SpawnEggItem
 			DispenserBlock.registerBehavior(spawnEgg, dispenseBehaviour);
 		}
 		UNADDED_EGGS.clear();
-	}
-	
-	@Override
-	public ITextComponent getName(ItemStack stack) 
-	{
-		return new TranslationTextComponent(textID);
 	}
 
 	@Override

@@ -120,5 +120,110 @@
 				"stream": false
 			}
 		]
+	},
+	"entity.gorgonops.ambient": {
+		"category": "entity",
+		"subtitle": "entity.gorgonops.ambient",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/gorgonops_ambient_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/gorgonops_ambient_2",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/gorgonops_ambient_3",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/gorgonops_ambient_4",
+				"stream": false
+			}
+		]
+	},
+	"entity.gorgonops.hurt": {
+		"category": "entity",
+		"subtitle": "entity.gorgonops.hurt",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/gorgonops_hurt_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/gorgonops_hurt_2",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/gorgonops_hurt_3",
+				"stream": false
+			}
+		]
+	},
+	"entity.gorgonops.death": {
+		"category": "entity",
+		"subtitle": "entity.gorgonops.death",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/gorgonops_death_1",
+				"stream": false
+			}
+		]
+	},
+	"entity.edaphosaurus.ambient": {
+		"category": "entity",
+		"subtitle": "entity.edaphosaurus.ambient",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/edaphosaurus_ambient_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/edaphosaurus_ambient_2",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/edaphosaurus_ambient_3",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/edaphosaurus_ambient_4",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/edaphosaurus_ambient_5",
+				"stream": false
+			}
+		]
+	},
+	"entity.edaphosaurus.hurt": {
+		"category": "entity",
+		"subtitle": "entity.edaphosaurus.hurt",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/edaphosaurus_hurt_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/edaphosaurus_hurt_2",
+				"stream": false
+			}
+		]
+	},
+	"entity.edaphosaurus.death": {
+		"category": "entity",
+		"subtitle": "entity.edaphosaurus.death",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/procompsognathus_death_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/procompsognathus_death_2",
+				"stream": false
+			}
+		]
 	}
+	
 }

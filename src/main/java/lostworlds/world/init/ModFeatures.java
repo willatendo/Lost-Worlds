@@ -46,6 +46,8 @@ public class ModFeatures
 
     protected static final BlockState CONIFER_LOG = BlockInit.CONIFER_LOG.get().defaultBlockState();
 
+    protected static final BlockState OIL_SANDS = BlockInit.OIL_SANDS.get().defaultBlockState();
+
     public static final BlockClusterFeatureConfig DEFAULT_PERMAIN_DESERT_CONFIG_SMALL = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModFeatures.SMALL_PERMIAN_DESERT_PLANT), SimpleBlockPlacer.INSTANCE)).tries(11).build();
 	public static final BlockClusterFeatureConfig DEFAULT_PERMAIN_DESERT_CONFIG_MEDIUM = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModFeatures.MEDIUM_PERMIAN_DESERT_PLANT), SimpleBlockPlacer.INSTANCE)).tries(9).build();
 	public static final BlockClusterFeatureConfig DEFAULT_PERMAIN_DESERT_CONFIG_LARGE = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModFeatures.LARGE_PERMIAN_DESERT_PLANT), SimpleBlockPlacer.INSTANCE)).tries(4).build();
@@ -61,6 +63,8 @@ public class ModFeatures
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> CONIFER_TREE = register("conifer_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(CONIFER_LOG), new SimpleBlockStateProvider(ModFeatures.CONIFER_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(0, 2), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
 	
 	public static final ConfiguredFeature<?, ?> CONIFER_TREES = register("conifer_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(CONIFER_TREE.weighted(0.5F)), CONIFER_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
+
+	public static final ConfiguredFeature<?, ?> ORE_OIL_SANDS = register("ore_oil_sands", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.SAND, OIL_SANDS, 9)).range(128).squared().count(10));
 
 	private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) 
 	{
@@ -84,7 +88,6 @@ public class ModFeatures
 		{
 			//Ore
 			oreGenerationConfig(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.COPPER_ORE.get().defaultBlockState(), 9, 5, 83, 25);
-			oreGenerationConfig(event.getGeneration(), ModFillerBlockType.SAND, BlockInit.OIL_SANDS.get().defaultBlockState(), 8, 5, 128, 10);
 			
 			//Mud
 			if(event.getCategory().equals(Biome.Category.SWAMP))

@@ -19,6 +19,16 @@ public class SoundInit
 	public static final RegistryObject<SoundEvent> DIMETRODON_HURT = ModRegistry.SOUND_REGISTRY.register("dimetrodon_hurt", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.dimetrodon.hurt")));
 	public static final RegistryObject<SoundEvent> DIMETRODON_DEATH = ModRegistry.SOUND_REGISTRY.register("dimetrodon_death", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.dimetrodon.death")));
 	
+	//Dimetrodon
+	public static final RegistryObject<SoundEvent> GORGONOPS_AMBIENT = ModRegistry.SOUND_REGISTRY.register("gorgonops_ambient", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.gorgonops.ambient")));
+	public static final RegistryObject<SoundEvent> GORGONOPS_HURT = ModRegistry.SOUND_REGISTRY.register("gorgonops_hurt", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.gorgonops.hurt")));
+	public static final RegistryObject<SoundEvent> GORGONOPS_DEATH = ModRegistry.SOUND_REGISTRY.register("gorgonops_death", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.gorgonops.death")));
+	
+	//Edaphosaurus
+	public static final RegistryObject<SoundEvent> EDAPHOSAURUS_AMBIENT = ModRegistry.SOUND_REGISTRY.register("edaphosaurus_ambient", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.edaphosaurus.ambient")));
+	public static final RegistryObject<SoundEvent> EDAPHOSAURUS_HURT = ModRegistry.SOUND_REGISTRY.register("edaphosaurus_hurt", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.edaphosaurus.hurt")));
+	public static final RegistryObject<SoundEvent> EDAPHOSAURUS_DEATH = ModRegistry.SOUND_REGISTRY.register("edaphosaurus_death", () -> new SoundEvent(new ResourceLocation(ModReference.ID, "entity.edaphosaurus.death")));
+		
 	//Music Disc
 	public static final Lazy<SoundEvent> LAZY_JP_MUSIC = Lazy.of(() -> new SoundEvent(new ResourceLocation(ModReference.ID, "disc.jurassic_park")));
 	public static final RegistryObject<SoundEvent> JP_MUSIC = ModRegistry.SOUND_REGISTRY.register("jurassic_park", LAZY_JP_MUSIC);

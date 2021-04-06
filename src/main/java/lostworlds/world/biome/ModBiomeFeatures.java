@@ -23,4 +23,9 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	{
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.CONIFER_TREES);
 	}
+	
+	public static void addOilSands(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ModFeatures.ORE_OIL_SANDS);
+	}
 }

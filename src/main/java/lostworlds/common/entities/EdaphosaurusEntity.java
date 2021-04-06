@@ -1,7 +1,12 @@
 package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
+import lostworlds.core.init.SoundInit;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntityPredicates;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -39,6 +44,13 @@ public class EdaphosaurusEntity extends AbstractPrehistoricEntity implements IAn
 	{
 		data.addAnimationController(new AnimationController<IAnimatable>(this, "controller", 0, this::predicate));
 	}
+	
+	@Override
+	protected void registerGoals() 
+	{
+		super.registerGoals();
+		this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, DimetrodonEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
+	}
 
 	@Override
 	public AnimationFactory getFactory() 
@@ -62,5 +74,23 @@ public class EdaphosaurusEntity extends AbstractPrehistoricEntity implements IAn
 	public boolean isFish() 
 	{
 		return false;
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound() 
+	{
+		return SoundInit.EDAPHOSAURUS_AMBIENT.get();
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
+	{
+		return SoundInit.EDAPHOSAURUS_HURT.get();
+	}
+	
+	@Override
+	protected SoundEvent getDeathSound() 
+	{
+		return SoundInit.EDAPHOSAURUS_DEATH.get();
 	}
 }

@@ -4,20 +4,20 @@
 	"item.lostworlds.brush": "Brush",
 	
 	//Plaster
-	"wet_paper": "Wet Paper",
+	"item.lostworlds.wet_paper": "Wet Paper",
 
 	"toolTip.lostworlds.wet_paper": "Used For The Safe Transport of Fossils",
 
 	//Fossil
-	"fossil": "Fossil",
+	"item.lostworlds.fossil": "Fossil",
 	
 	//Procompsognathus
-	"procompsognathus_bone": "Procompsognathus Bone",
-	"procompsognathus_dna": "Procompsognathus DNA",
+	"item.lostworlds.procompsognathus_bone": "Procompsognathus Bone",
+	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
 	"block.lostworlds.procompsognathus_egg": "Procompsognathus Egg",
-	"raw_procompsognathus_meat": "Raw Procompsognathus Meat",	
-	"cooked_procompsognathus_meat": "Cooked Procompsognathus Meat",
-	"procompsognathus_spawn_egg": "Procompsognathus Spawn Egg",	
+	"item.lostworlds.raw_procompsognathus_meat": "Raw Procompsognathus Meat",	
+	"item.lostworlds.cooked_procompsognathus_meat": "Cooked Procompsognathus Meat",
+	"item.lostworlds.procompsognathus_spawn_egg": "Procompsognathus Spawn Egg",	
 
 	//Palaeoniscum
 	"item.lostworlds.palaeoniscum_bone": "Palaeoniscum Bone",
@@ -56,7 +56,18 @@
 	"item.lostworlds.dimetrodon_spawn_egg": "Dimetrodon Spawn Egg",	
 
 	//Edaphosaurus
+	"item.lostworlds.edaphosaurus_bone": "Edaphosaurus Bone",
+	"item.lostworlds.edaphosaurus_dna": "Edaphosaurus DNA",
+	"item.lostworlds.raw_edaphosaurus_meat": "Raw Edaphosaurus Meat",
+	"item.lostworlds.cooked_edaphosaurus_meat": "Cooked Edaphosaurus Meat",
 	"item.lostworlds.edaphosaurus_spawn_egg": "Edaphosaurus Spawn Egg",
+
+	//Gorgonops
+	"item.lostworlds.gorgonops_bone": "Gorgonops Bone",
+	"item.lostworlds.gorgonops_dna": "Gorgonops DNA",
+	"item.lostworlds.raw_gorgonops_meat": "Raw Gorgonops Meat",
+	"item.lostworlds.cooked_gorgonops_meat": "Cooked Gorgonops Meat",
+	"item.lostworlds.gorgonops_spawn_egg": "Gorgonops Spawn Egg",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -182,6 +193,7 @@
 	"block.lostworlds.conifer_wood": "Conifer Wood",
 	"block.lostworlds.stripped_conifer_wood": "Stripped Conifer Wood",
 	"block.lostworlds.conifer_leaves": "Conifer Leaves",
+	"block.lostworlds.conifer_sapling": "Conifer Sapling",
 	"block.lostworlds.conifer_planks": "Conifer Planks",
 	"block.lostworlds.conifer_stairs": "Conifer Stairs",
 	"block.lostworlds.conifer_slab": "Conifer Slab",
@@ -356,6 +368,7 @@
 	"entity.lostworlds.palaeoniscum": "Palaeoniscum freislbeni",
 	"entity.lostworlds.rhinesuchus": "Rhinesuches whaitsi",
 	"entity.lostworlds.edaphosaurus": "Edaphosaurus pogonias",
+	"entity.lostworlds.gorgonops": "Gorgonops whaitsi ",
 	
 	//Triassic
 	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",

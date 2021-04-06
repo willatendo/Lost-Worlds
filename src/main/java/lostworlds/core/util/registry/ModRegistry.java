@@ -1,8 +1,5 @@
 package lostworlds.core.util.registry;
 
-import lostworlds.common.items.ModFoodItem;
-import lostworlds.common.items.ModItem;
-import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.FluidInit;
@@ -20,7 +17,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.PaintingType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.particles.ParticleType;
@@ -28,9 +24,7 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
-import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -50,42 +44,6 @@ public class ModRegistry
 	public static final DeferredRegister<EntityType<?>> ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModReference.ID);
 	public static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDER_REGISTRY = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, ModReference.ID);
 	public static final DeferredRegister<Biome> BIOME_REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, ModReference.ID);
-	
-	//Registers
-	public static RegistryObject<Item> makeAdvancedItem(String id, Item item)
-	{
-		return ITEM_REGISTRY.register(id, () -> item);
-	}
-	
-	public static RegistryObject<Item> makeSimpleItem(String id)
-	{
-		return makeAdvancedItem(id, new ModItem(id));
-	}
-	
-	public static RegistryObject<Item> makeBoneItem(String id)
-	{
-		return makeSimpleItem(id + "_bone");
-	}
-	
-	public static RegistryObject<Item> makeDNAItem(String id)
-	{
-		return makeSimpleItem(id + "_dna");
-	}
-		
-	public static RegistryObject<Item> makeRawMeatItem(String id, Food food)
-	{
-		return makeAdvancedItem("raw_" + id + "_meat", new ModFoodItem("raw_" + id + "_meat", food));
-	}
-	
-	public static RegistryObject<Item> makeCookedMeatItem(String id, Food food)
-	{
-		return makeAdvancedItem("cooked_" + id + "_meat", new ModFoodItem("cooked_" + id + "_meat", food));
-	}
-	
-	public static RegistryObject<Item> makeSpawnEggItem(String id, NonNullSupplier<EntityType<?>> entityIn, int primaryColour, int secondaryColour)
-	{
-		return makeAdvancedItem(id + "_spawn_egg", new ModSpawnEggItem(entityIn, primaryColour, secondaryColour, id + "_spawn_egg"));
-	}
 	
 	public static void registry() 
 	{
