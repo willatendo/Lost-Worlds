@@ -46,7 +46,7 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 	}
 	
 	@Nullable
-	public abstract AbstractPrehistoricEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricEntity prehistoricEntity);
+	public abstract AbstractPrehistoricAgeingEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricAgeingEntity prehistoricEntity);
 	
 	protected void defineSynchedData() 
 	{

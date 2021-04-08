@@ -5,7 +5,6 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
-import lostworlds.core.init.SoundInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -34,8 +33,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -46,30 +43,30 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class DimetrodonEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
+public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
 	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.RABBIT, Items.CHICKEN, Items.MUTTON, Items.COD, Items.SALMON, Items.TROPICAL_FISH, ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PALAEONISCUM_MEAT.get(), ItemInit.PROCOMPSOGNATHUS_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
 	{
-		if(!(animationSpeed > -0.15F && animationSpeed < 0.15F))
+		if(event.isMoving())
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dimetrodon.walking", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.carnotaurus.walk", true));
 			return PlayState.CONTINUE;
 		}
 		else
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dimetrodon.idol", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.carnotaurus.idol", true));
 			return PlayState.CONTINUE;
 		}
 	}
 	
-	public DimetrodonEntity(EntityType<? extends DimetrodonEntity> entityIn, World worldIn) 
+	public CarnotaurusEntity(EntityType<? extends CarnotaurusEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn);
 	}
-
+	
 	@Override
 	public void registerControllers(AnimationData data) 
 	{
@@ -139,28 +136,10 @@ public class DimetrodonEntity extends AbstractPrehistoricAnimalEntity implements
 		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, false));	
 		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, DolphinEntity.class, false));
 	}
-	
-	@Override
-	protected SoundEvent getAmbientSound() 
-	{
-		return SoundInit.DIMETRODON_AMBIENT.get();
-	}
-	
-	@Override
-	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
-	{
-		return SoundInit.DIMETRODON_HURT.get();
-	}
-	
-	@Override
-	protected SoundEvent getDeathSound() 
-	{
-		return SoundInit.DIMETRODON_DEATH.get();
-	}
 
 	@Override
 	public AbstractPrehistoricAgeingEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricAgeingEntity prehistoricEntity) 
 	{
-		return EntityInit.DIMETRODON_ENTITY.get().create(serverWorld);
+		return EntityInit.CARNOTAURUS_ENTITY.get().create(serverWorld);
 	}
 }

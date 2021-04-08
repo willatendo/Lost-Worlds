@@ -8,7 +8,6 @@ import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModID;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.core.vanilla.properties.ModStrippables;
-import lostworlds.world.dimension.PermianDimension;
 import lostworlds.world.init.BiomeInit;
 import lostworlds.world.init.ModFeatures;
 import net.minecraft.block.ComposterBlock;
@@ -41,7 +40,7 @@ public class LostWorlds
         ModRegistry.registry();
         
         //Dimensions
-        PermianDimension.init();
+ //       PermianDimension.init();
         
         //Lib - 3.0.15
         GeckoLib.initialize();

@@ -27,4 +27,16 @@ public class GorgonopsRender extends GeoEntityRenderer<GorgonopsEntity>
 	{
 		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
+	
+	@Override
+	public void render(GorgonopsEntity entity, float entityYaw, float partialTicks, MatrixStack stack, IRenderTypeBuffer bufferIn, int packedLightIn) 
+	{
+		if(entity.isBaby())
+		{
+			stack.scale(0.5F, 0.5F, 0.5F);
+		}
+		stack.scale(1.0F, 1.0F, 1.0F);
+		
+		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
+	}
 }

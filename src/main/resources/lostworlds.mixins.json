@@ -1,0 +1,18 @@
+{
+	"required": true,
+	"package": "lostworlds.mixins",
+	"compatibilityLevel": "JAVA_8",
+	"refmap": "lostwrolds.refmap.json",
+	"mixins": [
+		"DimensionSettingsAccessor",
+	 	"DimensionTypeAccessor",
+    	"DimensionTypeMixin",
+    	"NetherBiomeProviderAccessor"
+    ],
+    "client": [
+    ],
+    "injectors": {
+    	"defaultRequire": 1
+    },
+    "minVersion": "0.8"
+}

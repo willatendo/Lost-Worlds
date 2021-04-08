@@ -1,0 +1,157 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.carno",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 7,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 0.5, 0]
+			},
+			"bones": [
+				{
+					"name": "carnotaurus",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "tail",
+					"parent": "carnotaurus",
+					"pivot": [0, 21, 10]
+				},
+				{
+					"name": "tailStart",
+					"parent": "tail",
+					"pivot": [0, 17.5, 10],
+					"cubes": [
+						{"origin": [-3.5, 14, 9], "size": [7, 7, 10], "pivot": [-5, 17, 9], "rotation": [-5, 0, 0], "uv": [24, 30]}
+					]
+				},
+				{
+					"name": "midTail",
+					"parent": "tailStart",
+					"pivot": [0, 17, 19.5],
+					"cubes": [
+						{"origin": [-2, 15, 18], "size": [4, 4, 13], "uv": [25, 8]}
+					]
+				},
+				{
+					"name": "endTail",
+					"parent": "midTail",
+					"pivot": [0, 17.51684, 31.5662],
+					"cubes": [
+						{"origin": [-1, 16.51684, 30.06623], "size": [2, 2, 11], "pivot": [0, 16.51684, 31.56623], "rotation": [-5, 0, 0], "uv": [46, 0]}
+					]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "carnotaurus",
+					"pivot": [6, 16.83333, 7.16667],
+					"cubes": [
+						{"origin": [4, 9, 4], "size": [4, 8, 6], "uv": [20, 47]}
+					]
+				},
+				{
+					"name": "leftLegBottom",
+					"parent": "leftLeg",
+					"pivot": [6, 10.25, 10.25],
+					"cubes": [
+						{"origin": [4.5, 2, 7], "size": [3, 9, 3], "pivot": [7, 7, 6], "rotation": [-15, 0, 0], "uv": [58, 34]}
+					]
+				},
+				{
+					"name": "leftFoot",
+					"parent": "leftLegBottom",
+					"pivot": [6, 2, 7],
+					"cubes": [
+						{"origin": [3.5, 0, 3], "size": [5, 2, 6], "uv": [28, 0]}
+					]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "carnotaurus",
+					"pivot": [-6, 16.8333, 7.1667],
+					"cubes": [
+						{"origin": [-8, 9, 4], "size": [4, 8, 6], "uv": [40, 47]}
+					]
+				},
+				{
+					"name": "rightLegBottom",
+					"parent": "rightLeg",
+					"pivot": [-6, 10.69351, 10.078],
+					"cubes": [
+						{"origin": [-7.5, 0.38703, 6.656], "size": [3, 10, 3], "pivot": [-6, 5.38703, 8.156], "rotation": [-15, 0, 0], "uv": [57, 58]}
+					]
+				},
+				{
+					"name": "RightFoot",
+					"parent": "rightLegBottom",
+					"pivot": [-6, 2, 7],
+					"cubes": [
+						{"origin": [-8.5, 0, 3], "size": [5, 2, 6], "uv": [46, 13]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "carnotaurus",
+					"pivot": [-0.05385, 18.2, -9.11538],
+					"cubes": [
+						{"origin": [-3, 16, -16], "size": [6, 6, 3], "pivot": [0, 19, -17], "rotation": [5, 0, 0], "uv": [0, 53]},
+						{"origin": [-5, 20, -16], "size": [2, 1, 2], "pivot": [0, 19, -17], "rotation": [5, 0, 20], "uv": [0, 24]},
+						{"origin": [2.3, 22.6, -16], "size": [2, 1, 2], "pivot": [7, 22, -17], "rotation": [5, 0, -20], "uv": [0, 21]},
+						{"origin": [-2.8, 17, -20], "size": [5.6, 5, 4], "pivot": [1, 19, -17], "rotation": [5, 0, 0], "uv": [48, 25]},
+						{"origin": [-2.8, 16, -20], "size": [1, 1, 0], "pivot": [1, 19, -17], "rotation": [5, 0, 0], "uv": [7, 7]},
+						{"origin": [-0.5, 16, -20], "size": [1, 1, 0], "pivot": [1, 19, -17], "rotation": [5, 0, 0], "uv": [0, 7]},
+						{"origin": [1.8, 16, -20], "size": [1, 1, 0], "pivot": [1, 19, -17], "rotation": [5, 0, 0], "uv": [0, 0]},
+						{"origin": [-2.8, 16, -18], "size": [0, 1, 1], "pivot": [1, 19, -17], "rotation": [5, 0, 0], "uv": [0, 5]},
+						{"origin": [-2.8, 16, -20], "size": [0, 1, 1], "pivot": [1, 19, -17], "rotation": [5, 0, 0], "uv": [0, 4]},
+						{"origin": [2.8, 16, -20], "size": [0, 1, 1], "pivot": [7, 19, -17], "rotation": [5, 0, 0], "uv": [0, 1]},
+						{"origin": [2.8, 16, -18], "size": [0, 1, 1], "pivot": [7, 19, -17], "rotation": [5, 0, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "neck",
+					"parent": "head",
+					"pivot": [16, 0, 0],
+					"cubes": [
+						{"origin": [-2.5, 16, -15], "size": [5, 5, 8], "pivot": [0, 18, -12], "rotation": [-20, 0, 0], "uv": [0, 40]}
+					]
+				},
+				{
+					"name": "bottomJaw",
+					"parent": "head",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-2.3, 16, -19.5], "size": [4.5, 1, 4], "pivot": [0, 16, -18], "rotation": [5, 0, 0], "uv": [24, 25]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "carnotaurus",
+					"pivot": [0, 15.75, -3],
+					"cubes": [
+						{"origin": [-4.5, 10, 0], "size": [9, 11, 10], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "torso",
+					"parent": "body",
+					"pivot": [0, 15.75, -3],
+					"cubes": [
+						{"origin": [-3.5, 11, -9], "size": [7, 9, 10], "pivot": [-2, 14, -9], "rotation": [5, 0, 0], "uv": [0, 21]}
+					]
+				},
+				{
+					"name": "arms",
+					"parent": "body",
+					"pivot": [0, 15.75, -6],
+					"cubes": [
+						{"origin": [3.5, 15, -8], "size": [2, 2, 3], "pivot": [10, 14, -9], "rotation": [-30, 0, 0], "uv": [0, 0]},
+						{"origin": [-5.5, 15, -8], "size": [2, 2, 3], "pivot": [-11, 14, -9], "rotation": [-30, 0, 0], "uv": [0, 5]}
+					]
+				}
+			]
+		}
+	]
+}
