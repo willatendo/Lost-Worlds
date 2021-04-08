@@ -2,7 +2,7 @@ package lostworlds.common.items;
 
 import java.util.List;
 
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -22,6 +22,6 @@ public class WetPaperItem extends Item
 	{
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		
-		tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + ".wet_paper"));
+		tooltip.add(new TranslationTextComponent("toolTip." + ModID.ID + ".wet_paper"));
 	}
 }

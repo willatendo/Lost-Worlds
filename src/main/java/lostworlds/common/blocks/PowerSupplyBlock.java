@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneBlock;
@@ -45,7 +45,7 @@ public class PowerSupplyBlock extends RedstoneBlock
 	public void appendHoverText(ItemStack stack, IBlockReader blockReader, List<ITextComponent> textComponent, ITooltipFlag flag) 
 	{
 		super.appendHoverText(stack, blockReader, textComponent, flag);
-		textComponent.add(new TranslationTextComponent("toolTip." + ModReference.ID + ".power_supply_block"));
+		textComponent.add(new TranslationTextComponent("toolTip." + ModID.ID + ".power_supply_block"));
 	}
 	
 	@Override

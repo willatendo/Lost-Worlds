@@ -2,7 +2,7 @@ package lostworlds.core.util.interfaces;
 
 import javax.annotation.Nonnull;
 
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
@@ -12,7 +12,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 public interface IFossilCleanerRecipe extends IRecipe<RecipeWrapper>
 {
-	ResourceLocation RECIPE_TYPE_ID = new ResourceLocation(ModReference.ID, "fossil_cleaner");
+	ResourceLocation RECIPE_TYPE_ID = new ResourceLocation(ModID.ID, "fossil_cleaner");
 	
 	
 	

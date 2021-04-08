@@ -2,7 +2,7 @@ package lostworlds.client;
 
 import lostworlds.common.particle.PermianDesertDustParticle;
 import lostworlds.core.init.ParticleInit;
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -10,7 +10,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid = ModReference.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = ModID.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ParticleSetup 
 {
 	@SuppressWarnings("resource")

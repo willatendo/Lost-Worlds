@@ -1,6 +1,6 @@
 package lostworlds.core.tab;
 
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -11,7 +11,7 @@ public class CreativeTab extends ItemGroup
 {
 	public CreativeTab(String label) 
 	{
-		super(ModReference.ID + "." + label);
+		super(ModID.ID + "." + label);
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class CreativeTab extends ItemGroup
 	@Override
 	public ResourceLocation getBackgroundImage() 
 	{
-		return new ResourceLocation(ModReference.ID, "textures/gui/creative_tab/lostworlds_tab.png");
+		return new ResourceLocation(ModID.ID, "textures/gui/creative_tab/lostworlds_tab.png");
 	}
 	
 	@Override

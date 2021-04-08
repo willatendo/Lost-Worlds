@@ -43,7 +43,7 @@ public class ItemInit
 	public static final RegistryObject<Item> FOSSIL = simpleItemRegister("fossil", standardProperties());
 	
 	//Field Guide
-	public static final RegistryObject<Item> FEILD_GUIDE = ModRegistry.ITEM_REGISTRY.register("feild_guide", () -> new FieldGuideItem(standardProperties()));
+	public static final RegistryObject<Item> FEILD_GUIDE = ModRegistry.ITEM_REGISTRY.register("field_guide", () -> new FieldGuideItem(standardProperties()));
 	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_BONE = registerBone("procompsognathus");

@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.ProcompsognathusEntity;
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
@@ -13,19 +13,19 @@ public class ProcompsognathusModel extends AnimatedGeoModel<ProcompsognathusEnti
 	@Override
 	public ResourceLocation getModelLocation(ProcompsognathusEntity object) 
 	{
-		return new ResourceLocation(ModReference.ID, "geo/procompsognathus.geo.json");
+		return new ResourceLocation(ModID.ID, "geo/procompsognathus.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(ProcompsognathusEntity object) 
 	{
-		return new ResourceLocation(ModReference.ID, "textures/model/entity/procompsognathus.png");
+		return new ResourceLocation(ModID.ID, "textures/model/entity/procompsognathus.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(ProcompsognathusEntity animatable) 
 	{
-		return new ResourceLocation(ModReference.ID, "animations/procompsognathus.animations.json");
+		return new ResourceLocation(ModID.ID, "animations/procompsognathus.animations.json");
 	}
 	
 	@Override

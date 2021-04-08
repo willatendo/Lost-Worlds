@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.lwjgl.glfw.GLFW;
 
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.util.InputMappings;
@@ -33,11 +33,11 @@ public class DiscItem extends Item
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT))
 		{
-			tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + "." + id + ".holding_shift"));
+			tooltip.add(new TranslationTextComponent("toolTip." + ModID.ID + "." + id + ".holding_shift"));
 		}
 		else
 		{
-			tooltip.add(new TranslationTextComponent("toolTip." + ModReference.ID + "." + id + ".not_holding_shift"));
+			tooltip.add(new TranslationTextComponent("toolTip." + ModID.ID + "." + id + ".not_holding_shift"));
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package lostworlds.common.items;
 
+import lostworlds.common.entities.ProcompsognathusEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,12 +17,17 @@ public class FieldGuideItem extends Item
 	}
 	
 	@Override
-	public ActionResultType interactLivingEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity livingEntity, Hand handIn) 
+	public ActionResultType interactLivingEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity entity, Hand hand) 
 	{
-		if(livingEntity instanceof AbstractPrehistoricEntity)
+		if(entity instanceof AbstractPrehistoricEntity)
 		{
+			if(entity instanceof ProcompsognathusEntity)
+			{
+//				DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> ProcompsognathusFieldGuideEntry.open());
+			}
 			return ActionResultType.SUCCESS;
 		}
+		
 		return ActionResultType.FAIL;
 	}
 }

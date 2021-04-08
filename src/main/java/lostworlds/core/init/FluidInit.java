@@ -1,6 +1,6 @@
 package lostworlds.core.init;
 
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.FlowingFluidBlock;
@@ -15,9 +15,9 @@ import net.minecraftforge.fml.RegistryObject;
 public class FluidInit 
 {
 	//Assets
-	public static final ResourceLocation OIL_STILL_RL = new ResourceLocation(ModReference.ID, "fluids/oil_still"); 
-	public static final ResourceLocation OIL_FLOWING_RL = new ResourceLocation(ModReference.ID, "fluids/oil_flowing"); 
-	public static final ResourceLocation OIL_OVERLAY_RL = new ResourceLocation(ModReference.ID, "fluids/oil_overlay"); 
+	public static final ResourceLocation OIL_STILL_RL = new ResourceLocation(ModID.ID, "fluids/oil_still"); 
+	public static final ResourceLocation OIL_FLOWING_RL = new ResourceLocation(ModID.ID, "fluids/oil_flowing"); 
+	public static final ResourceLocation OIL_OVERLAY_RL = new ResourceLocation(ModID.ID, "fluids/oil_overlay"); 
 	
 	//Objects
 	public static final RegistryObject<FlowingFluid> OIL_FLUID = ModRegistry.FLUID_REGISTRY.register("oil_fluid", () -> new ForgeFlowingFluid.Source(FluidInit.OIL_PROPERTIES));

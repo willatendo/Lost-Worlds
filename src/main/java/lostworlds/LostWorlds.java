@@ -5,9 +5,10 @@ import org.apache.logging.log4j.Logger;
 
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.init.BlockInit;
-import lostworlds.core.util.reference.ModReference;
+import lostworlds.core.util.ModID;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.core.vanilla.properties.ModStrippables;
+import lostworlds.world.dimension.PermianDimension;
 import lostworlds.world.init.BiomeInit;
 import lostworlds.world.init.ModFeatures;
 import net.minecraft.block.ComposterBlock;
@@ -25,8 +26,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
-@Mod(ModReference.ID)
-@Mod.EventBusSubscriber(modid = ModReference.ID, bus = Bus.MOD)
+@Mod(ModID.ID)
+@Mod.EventBusSubscriber(modid = ModID.ID, bus = Bus.MOD)
 public class LostWorlds
 {
     public static final Logger LOGGER = LogManager.getLogger();
@@ -36,7 +37,11 @@ public class LostWorlds
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
 
+        //Main Objects
         ModRegistry.registry();
+        
+        //Dimensions
+        PermianDimension.init();
         
         //Lib - 3.0.15
         GeckoLib.initialize();
