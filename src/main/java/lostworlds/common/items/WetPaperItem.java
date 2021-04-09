@@ -3,11 +3,12 @@ package lostworlds.common.items;
 import java.util.List;
 
 import lostworlds.core.util.ModID;
+import lostworlds.core.util.TextUtil;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class WetPaperItem extends Item
@@ -22,6 +23,6 @@ public class WetPaperItem extends Item
 	{
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		
-		tooltip.add(new TranslationTextComponent("toolTip." + ModID.ID + ".wet_paper"));
+		tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + ".wet_paper", TextFormatting.GRAY));
 	}
 }

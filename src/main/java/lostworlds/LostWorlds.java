@@ -40,7 +40,7 @@ public class LostWorlds
         ModRegistry.registry();
         
         //Dimensions
- //       PermianDimension.init();
+ //     PermianDimension.init();
         
         //Lib - 3.0.15
         GeckoLib.initialize();

@@ -1,5 +1,6 @@
 package lostworlds.common.items;
 
+import lostworlds.client.gui.fieldguideentries.ProcompsognathusFieldGuideEntry;
 import lostworlds.common.entities.ProcompsognathusEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import net.minecraft.entity.LivingEntity;
@@ -8,6 +9,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.DistExecutor;
 
 public class FieldGuideItem extends Item
 {
@@ -16,6 +19,7 @@ public class FieldGuideItem extends Item
 		super(properties);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public ActionResultType interactLivingEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity entity, Hand hand) 
 	{
@@ -23,7 +27,7 @@ public class FieldGuideItem extends Item
 		{
 			if(entity instanceof ProcompsognathusEntity)
 			{
-//				DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> ProcompsognathusFieldGuideEntry.open());
+				DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> ProcompsognathusFieldGuideEntry.open());
 			}
 			return ActionResultType.SUCCESS;
 		}
