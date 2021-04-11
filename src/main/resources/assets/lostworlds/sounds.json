@@ -224,6 +224,55 @@
 				"stream": false
 			}
 		]
+	},
+	"entity.carnotaurus.ambient": {
+		"category": "entity",
+		"subtitle": "entity.carnotaurus.ambient",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/carnotaurus_ambient_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/carnotaurus_ambient_2",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/carnotaurus_ambient_3",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/carnotaurus_ambient_4",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/carnotaurus_ambient_5",
+				"stream": false
+			}
+		]
+	},
+	"entity.carnotaurus.hurt": {
+		"category": "entity",
+		"subtitle": "entity.carnotaurus.hurt",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/carnotaurus_hurt_1",
+				"stream": false
+			},
+			{
+				"name": "lostworlds:entity/carnotaurus_hurt_2",
+				"stream": false
+			}
+		]
+	},
+	"entity.carnotaurus.death": {
+		"category": "entity",
+		"subtitle": "entity.carnotaurus.death",
+		"sounds": [
+			{
+				"name": "lostworlds:entity/carnotaurus_death_1",
+				"stream": false
+			}
+		]
 	}
-	
 }

@@ -12,16 +12,20 @@
 	"item.lostworlds.fossil": "Fossil",
 	
 	//Procompsognathus
-	"item.lostworlds.procompsognathus_bone": "Procompsognathus Bone",
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
+	"item.lostworlds.procompsognathus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.procompsognathus_dna_disc.holding_shift": "Storing: Procompsognathus triassicus",
+	"toolTip.lostworlds.procompsognathus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.procompsognathus_egg": "Procompsognathus Egg",
 	"item.lostworlds.raw_procompsognathus_meat": "Raw Procompsognathus Meat",	
 	"item.lostworlds.cooked_procompsognathus_meat": "Cooked Procompsognathus Meat",
 	"item.lostworlds.procompsognathus_spawn_egg": "Procompsognathus Spawn Egg",	
 
 	//Palaeoniscum
-	"item.lostworlds.palaeoniscum_bone": "Palaeoniscum Bone",
 	"item.lostworlds.palaeoniscum_dna": "Palaeoniscum DNA",
+	"item.lostworlds.palaeoniscum_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.palaeoniscum_dna_disc.holding_shift": "Storing: Palaeoniscum freislbeni",
+	"toolTip.lostworlds.palaeoniscum_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.palaeoniscum_spawn": "Palaeoniscum Spawn",
 	"item.lostworlds.palaeoniscum_spawn_bucket": "Palaeoniscum Spawn Bucket",
 	"item.lostworlds.palaeoniscum": "Palaeoniscum",
@@ -31,6 +35,9 @@
 
 	//Nautilus
 	"item.lostworlds.nautilus_dna": "Nautilus DNA",	
+	"item.lostworlds.nautilus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.nautilus_dna_disc.holding_shift": "Storing: Nautilus pompilius",
+	"toolTip.lostworlds.nautilus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.nautilus_spawn": "Nautilus Spawn",	
 	"item.lostworlds.nautilus_spawn_bucket": "Nautilus Spawn Bucket",	
 	"item.lostworlds.nautilus_tentical": "Nautilus Tentical",	
@@ -39,8 +46,10 @@
 	"item.lostworlds.nautilus_bucket": "Nautilus Bucket",	
 	
 	//Rhinesuchus
-	"item.lostworlds.rhinesuchus_bone": "Rhinesuchus Bone",	
 	"item.lostworlds.rhinesuchus_dna": "Rhinesuchus DNA",	
+	"item.lostworlds.rhinesuchus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.rhinesuchus_dna_disc.holding_shift": "Storing: Rhinesuches whaitsi",
+	"toolTip.lostworlds.rhinesuchus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.rhinesuchus_spawn": "Rhinesuchus Spawn",	
 	"item.lostworlds.rhinesuchus_spawn_bucket": "Rhinesuchus Bucket",	
 	"item.lostworlds.raw_rhinesuchus_meat": "Raw Rhinesuchus Meat",	
@@ -48,29 +57,50 @@
 	"item.lostworlds.rhinesuchus_spawn_egg": "Rhinesuchus Spawn Egg",	
 	
 	//Dimetrodon
-	"item.lostworlds.dimetrodon_bone": "Dimetrodon Bone",	
-	"item.lostworlds.dimetrodon_dna": "Dimetrodon DNA",	
+	"item.lostworlds.dimetrodon_dna": "Dimetrodon DNA",		
+	"item.lostworlds.dimetrodon_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.dimetrodon_dna_disc.holding_shift": "Storing: Dimetrodon limbatus",
+	"toolTip.lostworlds.dimetrodon_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.dimetrodon_egg": "Dimetrodon Egg",	
 	"item.lostworlds.raw_dimetrodon_meat": "Raw Dimetrodon Meat",	
 	"item.lostworlds.cooked_dimetrodon_meat": "Cooked Dimetrodon Meat",	
 	"item.lostworlds.dimetrodon_spawn_egg": "Dimetrodon Spawn Egg",	
 
 	//Edaphosaurus
-	"item.lostworlds.edaphosaurus_bone": "Edaphosaurus Bone",
-	"item.lostworlds.edaphosaurus_dna": "Edaphosaurus DNA",
+	"item.lostworlds.edaphosaurus_dna": "Edaphosaurus DNA",	
+	"item.lostworlds.edaphosaurus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.edaphosaurus_dna_disc.holding_shift": "Storing: Edaphosaurus pogonias",
+	"toolTip.lostworlds.edaphosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_edaphosaurus_meat": "Raw Edaphosaurus Meat",
 	"item.lostworlds.cooked_edaphosaurus_meat": "Cooked Edaphosaurus Meat",
 	"item.lostworlds.edaphosaurus_spawn_egg": "Edaphosaurus Spawn Egg",
 
 	//Gorgonops
-	"item.lostworlds.gorgonops_bone": "Gorgonops Bone",
 	"item.lostworlds.gorgonops_dna": "Gorgonops DNA",
+	"item.lostworlds.gorgonops_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.gorgonops_dna_disc.holding_shift": "Storing: Gorgonops whaitsi",
+	"toolTip.lostworlds.gorgonops_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_gorgonops_meat": "Raw Gorgonops Meat",
 	"item.lostworlds.cooked_gorgonops_meat": "Cooked Gorgonops Meat",
 	"item.lostworlds.gorgonops_spawn_egg": "Gorgonops Spawn Egg",
 
 	//Carnotaurus
+	"item.lostworlds.carnotaurus_dna": "Carnotaurus DNA",
+	"item.lostworlds.carnotaurus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.carnotaurus_dna_disc.holding_shift": "Storing: Carnotaurus sastrei",
+	"toolTip.lostworlds.carnotaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_carnotaurus_meat": "Raw Carnotaurus Meat",
+	"item.lostworlds.cooked_carnotaurus_meat": "Cooked Carnotaurus Meat",
 	"item.lostworlds.carnotaurus_spawn_egg": "Carnotaurus Spawn Egg",
+
+	//Tyrannosaurus	
+	"item.lostworlds.tyrannosaurus_dna": "Tyrannosaurus DNA",
+	"item.lostworlds.tyrannosaurus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.tyrannosaurus_dna_disc.holding_shift": "Storing: Tyrannosaurus rex",
+	"toolTip.lostworlds.tyrannosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_tyrannosaurus_meat": "Raw Tyrannosaurus Meat",
+	"item.lostworlds.cooked_tyrannosaurus_meat": "Cooked Tyrannosaurus Meat",
+	"item.lostworlds.tyrannosaurus_spawn_egg": "Tyrannosaurus Spawn Egg",
 	
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -101,10 +131,6 @@
 	"item.lostworlds.storage_disc": "Storage Disc",
 	"toolTip.lostworlds.storage_disc.holding_shift": "Stores DNA Information For Computer Use",
 	"toolTip.lostworlds.storage_disc.not_holding_shift": "Hold Shift For More Information",
-
-	"item.lostworlds.procompsognathus_dna_disc": "Storage Disc",
-	"toolTip.lostworlds.procompsognathus_dna_disc.holding_shift": "Storing: Procompsognathus triassicus",
-	"toolTip.lostworlds.procompsognathus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 
 	//Crystal Scarab
 	"item.lostworlds.broken_crystal_scarab_gem": "Broken Crystal Scarab Gem",
@@ -365,19 +391,24 @@
 	"block.lostworlds.security_door": "Security Door",
 	"block.lostworlds.back_door": "Back Door",
 	
+	//Fluids
+	//Oil
+	"fluid.lostworlds.oil_fluid": "Oil",
+	
 	//Entities
 	//Permian
 	"entity.lostworlds.dimetrodon": "Dimetrodon limbatus",
 	"entity.lostworlds.palaeoniscum": "Palaeoniscum freislbeni",
 	"entity.lostworlds.rhinesuchus": "Rhinesuches whaitsi",
 	"entity.lostworlds.edaphosaurus": "Edaphosaurus pogonias",
-	"entity.lostworlds.gorgonops": "Gorgonops whaitsi ",
+	"entity.lostworlds.gorgonops": "Gorgonops whaitsi",
 	
 	//Triassic
 	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",
 	
 	//Cretaceous
 	"entity.lostworlds.carnotaurus": "Carnotaurus sastrei",
+	"entity.lostworlds.tyrannosaurus": "Tyrannosaurus rex",
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
@@ -396,6 +427,10 @@
 	//Modern Day
 	"biome.lostworlds.volcano": "Volcano",
 	"biome.lostworlds.oil_sands_desert": "Oil Sands Desert",
+	
+	//On Load Event
+	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 7 Developer Edition. DO NOT REDISTRIBUTE.",
+	"lostworlds.loadEvent.player": "\u00A76Willatendo & Lambdaraptor49 thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 7",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"

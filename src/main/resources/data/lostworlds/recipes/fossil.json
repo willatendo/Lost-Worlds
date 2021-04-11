@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:fossil_cleaner",
-	"ingredient": {
-		"item": "lostworlds:plastered_stone_fossil"
-	},
-	"result": "lostworlds:fossil",
-	"experience": 0.5,
-	"cleaningtime": 2200
-}

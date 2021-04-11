@@ -26,4 +26,10 @@ public class FoodInit
 	
 	public static final Food RAW_GORGONOPS_MEAT = new Food.Builder().effect(() -> new EffectInstance(Effects.POISON, 100), 0.25F).nutrition(1).saturationMod(0.0F).build();
 	public static final Food COOKED_GORGONOPS_MEAT = new Food.Builder().nutrition(4).saturationMod(0.56F).build();
+
+	public static final Food RAW_CARNOTAURUS_MEAT = new Food.Builder().effect(() -> new EffectInstance(Effects.POISON, 100), 0.25F).nutrition(1).saturationMod(0.0F).build();
+	public static final Food COOKED_CARNOTAURUS_MEAT = new Food.Builder().nutrition(7).saturationMod(0.56F).build();
+	
+	public static final Food RAW_TYRANNOSAURUS_MEAT = new Food.Builder().effect(() -> new EffectInstance(Effects.POISON, 100), 0.25F).nutrition(1).saturationMod(0.0F).build();
+	public static final Food COOKED_TYRANNOSAURUS_MEAT = new Food.Builder().nutrition(7).saturationMod(0.56F).build();
 }

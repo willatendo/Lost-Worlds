@@ -9,6 +9,7 @@ import lostworlds.common.entities.NautilusEntity;
 import lostworlds.common.entities.PalaeoniscumEntity;
 import lostworlds.common.entities.ProcompsognathusEntity;
 import lostworlds.common.entities.RhinesuchusEntity;
+import lostworlds.common.entities.TyrannosaurusEntity;
 import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
@@ -25,6 +26,7 @@ public class EntityInit
 	public static final RegistryObject<EntityType<EdaphosaurusEntity>> EDAPHOSAURUS_ENTITY = registerEntity("edaphosaurus", EdaphosaurusEntity::new, EntityClassification.CREATURE, EdaphosaurusEntity.class, 0.75F, 1.5F);
 	public static final RegistryObject<EntityType<GorgonopsEntity>> GORGONOPS_ENTITY = registerEntity("gorgonops", GorgonopsEntity::new, EntityClassification.CREATURE, GorgonopsEntity.class, 0.4F, 0.5F);
 	public static final RegistryObject<EntityType<CarnotaurusEntity>> CARNOTAURUS_ENTITY = registerEntity("carnotaurus", CarnotaurusEntity::new, EntityClassification.CREATURE, CarnotaurusEntity.class, 0.75F, 1.25F);
+	public static final RegistryObject<EntityType<TyrannosaurusEntity>> TYRANNOSAURUS_ENTITY = registerEntity("tyrannosaurus", TyrannosaurusEntity::new, EntityClassification.CREATURE, TyrannosaurusEntity.class, 0.75F, 1.25F);
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);

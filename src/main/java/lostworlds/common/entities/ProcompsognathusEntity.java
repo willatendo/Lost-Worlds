@@ -68,11 +68,11 @@ public class ProcompsognathusEntity extends AbstractPrehistoricAnimalEntity impl
 	protected void registerGoals() 
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(3, new PrehistoricBreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(4, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, ChickenEntity.class, false));
-		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, ParrotEntity.class, false));
+		this.goalSelector.addGoal(5, new PrehistoricBreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ChickenEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ParrotEntity.class, false));
 	}
 
 	@Override

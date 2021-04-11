@@ -26,6 +26,7 @@ public class CommonSetup
 			GlobalEntityTypeAttributes.put(EntityInit.EDAPHOSAURUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 15.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).build());
 			GlobalEntityTypeAttributes.put(EntityInit.GORGONOPS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 20.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).add(Attributes.ATTACK_DAMAGE, 7.0D).build());
 			GlobalEntityTypeAttributes.put(EntityInit.CARNOTAURUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 50.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).add(Attributes.ATTACK_DAMAGE, 7.0D).build());
+			GlobalEntityTypeAttributes.put(EntityInit.TYRANNOSAURUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 75.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).add(Attributes.ATTACK_DAMAGE, 20.0D).build());
 		});
 	}
 }

@@ -30,6 +30,7 @@ import software.bernie.geckolib3.GeckoLib;
 public class LostWorlds
 {
     public static final Logger LOGGER = LogManager.getLogger();
+    public static boolean DISABLE_IN_DEV = false;
 
     public LostWorlds() 
     {
@@ -57,22 +58,11 @@ public class LostWorlds
     	DeferredWorkQueue.runLater(() -> 
     	{
     		ComposterBlock.add(0.6F, BlockInit.CONIFER_LEAVES.get());
-    	});
-    	DeferredWorkQueue.runLater(() -> 
-    	{
     		ComposterBlock.add(0.4F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
-    	});
-    	DeferredWorkQueue.runLater(() -> 
-    	{
     		ComposterBlock.add(0.6F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
-    	});
-    	DeferredWorkQueue.runLater(() -> 
-    	{
     		ComposterBlock.add(0.8F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
-    	});
-    	DeferredWorkQueue.runLater(() -> 
-    	{
     		ComposterBlock.add(0.6F, BlockInit.PERMIAN_GROUND_FERNS.get());
+    		ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
     	});
     }
     

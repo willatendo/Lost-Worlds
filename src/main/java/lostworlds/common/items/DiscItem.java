@@ -34,14 +34,7 @@ public class DiscItem extends Item
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT))
 		{
-			if(id.endsWith("disc"))
-			{
-				tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + "." + id + ".holding_shift", TextFormatting.GRAY));
-			}
-			else
-			{
-				tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + "." + id + ".holding_shift", TextFormatting.GOLD));
-			}
+			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + "." + id + ".holding_shift", TextFormatting.GOLD));
 		}
 		else
 		{

@@ -8,6 +8,7 @@ import lostworlds.client.entity.render.NautilusRender;
 import lostworlds.client.entity.render.PalaeoniscumRender;
 import lostworlds.client.entity.render.ProcompsognathusRender;
 import lostworlds.client.entity.render.RhinesuchusRender;
+import lostworlds.client.entity.render.TyrannosaurusRender;
 import lostworlds.common.entities.ModBoatRender;
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
@@ -95,6 +96,7 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.EDAPHOSAURUS_ENTITY.get(), EdaphosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.GORGONOPS_ENTITY.get(), GorgonopsRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.CARNOTAURUS_ENTITY.get(), CarnotaurusRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.TYRANNOSAURUS_ENTITY.get(), TyrannosaurusRender::new);
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 	}

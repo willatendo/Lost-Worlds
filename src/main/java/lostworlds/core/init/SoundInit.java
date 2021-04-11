@@ -28,6 +28,11 @@ public class SoundInit
 	public static final RegistryObject<SoundEvent> EDAPHOSAURUS_AMBIENT = ModRegistry.SOUND_REGISTRY.register("edaphosaurus_ambient", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.edaphosaurus.ambient")));
 	public static final RegistryObject<SoundEvent> EDAPHOSAURUS_HURT = ModRegistry.SOUND_REGISTRY.register("edaphosaurus_hurt", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.edaphosaurus.hurt")));
 	public static final RegistryObject<SoundEvent> EDAPHOSAURUS_DEATH = ModRegistry.SOUND_REGISTRY.register("edaphosaurus_death", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.edaphosaurus.death")));
+	
+	//Carnotaurus
+	public static final RegistryObject<SoundEvent> CARNOTAURUS_AMBIENT = ModRegistry.SOUND_REGISTRY.register("carnotaurus_ambient", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.carnotaurus.ambient")));
+	public static final RegistryObject<SoundEvent> CARNOTAURUS_HURT = ModRegistry.SOUND_REGISTRY.register("carnotaurus_hurt", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.carnotaurus.hurt")));
+	public static final RegistryObject<SoundEvent> CARNOTAURUS_DEATH = ModRegistry.SOUND_REGISTRY.register("carnotaurus_death", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.carnotaurus.death")));
 		
 	//Music Disc
 	public static final Lazy<SoundEvent> LAZY_JP_MUSIC = Lazy.of(() -> new SoundEvent(new ResourceLocation(ModID.ID, "disc.jurassic_park")));

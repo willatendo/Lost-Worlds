@@ -110,34 +110,34 @@ public class GorgonopsEntity extends AbstractPrehistoricAnimalEntity implements 
 	protected void registerGoals() 
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(3, new PrehistoricBreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(4, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, PalaeoniscumEntity.class, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, RhinesuchusEntity.class, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, ProcompsognathusEntity.class, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, CowEntity.class, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, PigEntity.class, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, ChickenEntity.class, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, RabbitEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, SheepEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, CatEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, WolfEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, FoxEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, HorseEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, MuleEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, DonkeyEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, OcelotEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, PolarBearEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, PandaEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, ParrotEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, SalmonEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, CodEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, TropicalFishEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, RabbitEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, SquidEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, false));	
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, DolphinEntity.class, false));
+		this.goalSelector.addGoal(5, new PrehistoricBreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PalaeoniscumEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, RhinesuchusEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ProcompsognathusEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CowEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PigEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ChickenEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, RabbitEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SheepEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CatEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, WolfEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, FoxEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, HorseEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, MuleEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, DonkeyEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, OcelotEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PolarBearEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PandaEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ParrotEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SalmonEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CodEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, TropicalFishEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, RabbitEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SquidEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, DolphinEntity.class, false));
 	}
 	
 	@Override

@@ -1,4 +1,4 @@
- package lostworlds.core.init; 
+package lostworlds.core.init; 
 
 import lostworlds.common.entities.ModBoatEntity.ModBoatType;
 import lostworlds.common.items.DiscItem;
@@ -46,16 +46,16 @@ public class ItemInit
 	public static final RegistryObject<Item> FEILD_GUIDE = ModRegistry.ITEM_REGISTRY.register("field_guide", () -> new FieldGuideItem(new Item.Properties()));
 	
 	//Procompsognathus
-	public static final RegistryObject<Item> PROCOMPSOGNATHUS_BONE = registerBone("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = registerDisc("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_EGG = ModRegistry.ITEM_REGISTRY.register("procompsognathus_egg", () -> new BlockItem(BlockInit.PROCOMPSOGNATHUS_EGG.get(), standardProperties()));
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_MEAT = registerMeat("procompsognathus", FoodInit.RAW_PROCOMPSOGNATHUS_MEAT);
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_COOKED_MEAT = registerCookedMeat("procompsognathus", FoodInit.COOKED_PROCOMPSOGNATHUS_MEAT);
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_SPAWN_EGG = registerSpawnEgg("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), 0x125611, 0x143025);
 	
 	//Palaeoniscum
-	public static final RegistryObject<Item> PALAEONISCUM_BONE = registerBone("palaeoniscum");
 	public static final RegistryObject<Item> PALAEONISCUM_DNA = registerDNA("palaeoniscum");
+	public static final RegistryObject<Item> PALAEONISCUM_DNA_DISC = registerDisc("palaeoniscum");
 	public static final RegistryObject<Item> PALAEONISCUM_SPAWN = registerSpawn("palaeoniscum");
 	public static final RegistryObject<Item> PALAEONISCUM_SPAWN_BUCKET = registerSpawnBucket("palaeoniscum", () -> EntityInit.PALAEONISCUM_ENTITY.get());
 	public static final RegistryObject<Item> PALAEONISCUM_MEAT = registerFishMeat("palaeoniscum", FoodInit.PALAEONISCUM);
@@ -65,6 +65,7 @@ public class ItemInit
 	
 	//Nautilus
 	public static final RegistryObject<Item> NAUTILUS_DNA = registerDNA("nautilus");
+	public static final RegistryObject<Item> NAUTILUS_DNA_DISC = registerDisc("nautilus");
 	public static final RegistryObject<Item> NAUTILUS_SPAWN = registerSpawn("nautilus");
 	public static final RegistryObject<Item> NAUTILUS_SPAWN_BUCKET = registerSpawnBucket("nautilus", () -> EntityInit.NAUTILUS_ENTITY.get());
 	public static final RegistryObject<Item> NAUTILUS_TENTICAL = advancedItemRegister("nautilus_tentical", new Item(standardProperties().food(FoodInit.NAUTILUS_TENTICAL)));
@@ -73,8 +74,8 @@ public class ItemInit
 	public static final RegistryObject<Item> NAUTILUS_BUCKET = registerEntityBucket("nautilus", () -> EntityInit.NAUTILUS_ENTITY.get());
 		
 	//Rhinesuchus
-	public static final RegistryObject<Item> RHINESUCHUS_BONE = registerBone("rhinesuchus");
 	public static final RegistryObject<Item> RHINESUCHUS_DNA = registerDNA("rhinesuchus");
+	public static final RegistryObject<Item> RHINESUCHUS_DNA_DISC = registerDisc("rhinesuchus");
 	public static final RegistryObject<Item> RHINESUCHUS_SPAWN = registerSpawn("rhinesuchus");
 	public static final RegistryObject<Item> RHINESUCHUS_SPAWN_BUCKET = registerSpawnBucket("rhinesuchus", () -> EntityInit.RHINESUCHUS_ENTITY.get());
 	public static final RegistryObject<Item> RHINESUCHUS_MEAT = registerMeat("rhinesuchus", FoodInit.RAW_RHINESUCHUS_MEAT);
@@ -82,30 +83,41 @@ public class ItemInit
 	public static final RegistryObject<Item> RHINESUCHUS_SPAWN_EGG = registerSpawnEgg("rhinesuchus", () -> EntityInit.RHINESUCHUS_ENTITY.get(), 0xceaa7b, 0x1c1308);
 	
 	//Dimetrodon
-	public static final RegistryObject<Item> DIMETRODON_BONE = registerBone("dimetrodon");
 	public static final RegistryObject<Item> DIMETRODON_DNA = registerDNA("dimetrodon");
+	public static final RegistryObject<Item> DIMETRODON_DNA_DISC = registerDisc("dimetrodon");
 	public static final RegistryObject<Item> DIMETRODON_EGG = ModRegistry.ITEM_REGISTRY.register("dimetrodon_egg", () -> new BlockItem(BlockInit.DIMETRODON_EGG.get(), standardProperties()));
 	public static final RegistryObject<Item> DIMETRODON_MEAT = registerMeat("dimetrodon", FoodInit.RAW_DIMETRODON_MEAT);
 	public static final RegistryObject<Item> DIMETRODON_COOKED_MEAT = registerCookedMeat("dimetrodon", FoodInit.COOKED_DIMETRODON_MEAT);
 	public static final RegistryObject<Item> DIMETRODON_SPAWN_EGG = registerSpawnEgg("dimetrodon", () -> EntityInit.DIMETRODON_ENTITY.get(), 0x378ca8, 0x152875);
 	
 	//Edaphosaurus
-	public static final RegistryObject<Item> EDAPHOSAURUS_BONE = registerBone("edaphosaurus");
 	public static final RegistryObject<Item> EDAPHOSAURUS_DNA = registerDNA("edaphosaurus");
+	public static final RegistryObject<Item> EDAPHOSAURUS_DNA_DISC = registerDisc("edaphosaurus");
 	public static final RegistryObject<Item> EDAPHOSAURUS_MEAT = registerMeat("edaphosaurus", FoodInit.RAW_EDAPHOSAURUS_MEAT);
 	public static final RegistryObject<Item> EDAPHOSAURUS_COOKED_MEAT = registerCookedMeat("edaphosaurus", FoodInit.COOKED_EDAPHOSAURUS_MEAT);
 	public static final RegistryObject<Item> EDAPHOSAURUS_SPAWN_EGG = registerSpawnEgg("edaphosaurus", () -> EntityInit.EDAPHOSAURUS_ENTITY.get(), 0x96af42, 0x2a3016);
 
 	//Gorgonops
-	public static final RegistryObject<Item> GORGONOPS_BONE = registerBone("gorgonops");
 	public static final RegistryObject<Item> GORGONOPS_DNA = registerDNA("gorgonops");
+	public static final RegistryObject<Item> GORGONOPS_DNA_DISC = registerDisc("gorgonops");
 	public static final RegistryObject<Item> GORGONOPS_MEAT = registerMeat("gorgonops", FoodInit.RAW_GORGONOPS_MEAT);
 	public static final RegistryObject<Item> GORGONOPS_COOKED_MEAT = registerCookedMeat("gorgonops", FoodInit.COOKED_GORGONOPS_MEAT);
 	public static final RegistryObject<Item> GORGONOPS_SPAWN_EGG = registerSpawnEgg("gorgonops", () -> EntityInit.GORGONOPS_ENTITY.get(), 0x967d46, 0x4f2f1a);
 
 	//Carnotaurus
+	public static final RegistryObject<Item> CARNOTAURUS_DNA = registerDNA("carnotaurus");
+	public static final RegistryObject<Item> CARNOTAURUS_DNA_DISC = registerDisc("carnotaurus");
+	public static final RegistryObject<Item> CARNOTAURUS_MEAT = registerMeat("carnotaurus", FoodInit.RAW_CARNOTAURUS_MEAT);
+	public static final RegistryObject<Item> CARNOTAURUS_COOKED_MEAT = registerCookedMeat("carnotaurus", FoodInit.COOKED_CARNOTAURUS_MEAT);
 	public static final RegistryObject<Item> CARNOTAURUS_SPAWN_EGG = registerSpawnEgg("carnotaurus", () -> EntityInit.CARNOTAURUS_ENTITY.get(), 0x682324, 0x171c06);
 	
+	//Tyrannosaurus
+	public static final RegistryObject<Item> TYRANNOSAURUS_DNA = registerDNA("tyrannosaurus");
+	public static final RegistryObject<Item> TYRANNOSAURUS_DNA_DISC = registerDisc("tyrannosaurus");
+	public static final RegistryObject<Item> TYRANNOSAURUS_MEAT = registerMeat("tyrannosaurus", FoodInit.RAW_TYRANNOSAURUS_MEAT);
+	public static final RegistryObject<Item> TYRANNOSAURUS_COOKED_MEAT = registerCookedMeat("tyrannosaurus", FoodInit.COOKED_TYRANNOSAURUS_MEAT);
+	public static final RegistryObject<Item> TYRANNOSAURUS_SPAWN_EGG = registerSpawnEgg("tyrannosaurus", () -> EntityInit.TYRANNOSAURUS_ENTITY.get(), 0x92b541, 0x125134);
+
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
 	
@@ -132,7 +144,6 @@ public class ItemInit
 	
 	//Storage
 	public static final RegistryObject<Item> STORAGE_DISC = advancedItemRegister("storage_disc", new DiscItem("storage_disc", standardProperties().stacksTo(1)));
-	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = advancedItemRegister("procompsognathus_dna_disc", new DiscItem("procompsognathus_dna_disc", standardProperties().stacksTo(1)));
 		
 	//Crystal Scarab	
 	public static final RegistryObject<Item> BROKEN_CRYSTAL_SCARAB_GEM = simpleItemRegister("broken_crystal_scarab_gem", standardProperties().rarity(Rarity.RARE));
@@ -393,7 +404,7 @@ public class ItemInit
 	
 	//Item Registers
 	//Standard Properties
-	private static Properties standardProperties()
+	public static Properties standardProperties()
 	{
 		return new Item.Properties().tab(ModItemGroup.TAB);
 	}
@@ -410,15 +421,16 @@ public class ItemInit
 		return advancedItemRegister(id, new Item(properties));
 	}
 	
-	//Dinosaur Items Quick Register (They're all the same anyway)
-	private static RegistryObject<Item> registerBone(String type) 
-	{
-		return simpleItemRegister(type + "_bone", standardProperties());
-	}
+	//Quick Register
 	
 	private static RegistryObject<Item> registerDNA(String type) 
 	{
 		return simpleItemRegister(type + "_dna", standardProperties());
+	}
+	
+	private static RegistryObject<Item> registerDisc(String type)
+	{
+		return advancedItemRegister(type + "_dna_disc", new DiscItem(type + "_dna_disc", standardProperties().stacksTo(1)));
 	}
 	
 	private static RegistryObject<Item> registerSpawn(String id)

@@ -1,0 +1,150 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.tyrannosaurus",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 8,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "tyrannosaurus",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "head",
+					"parent": "tyrannosaurus",
+					"pivot": [0, 22, -14.125],
+					"cubes": [
+						{"origin": [-4.5, 22, -29], "size": [9, 9, 9], "uv": [68, 24]}
+					]
+				},
+				{
+					"name": "bottomJaw",
+					"parent": "head",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3, 22.1, -36.8], "size": [6, 2, 8], "uv": [89, 89]}
+					]
+				},
+				{
+					"name": "snout",
+					"parent": "head",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3.5, 24, -37], "size": [7, 6, 8], "uv": [22, 82]},
+						{"origin": [-3.5, 23, -37], "size": [1, 1, 0], "uv": [6, 9]},
+						{"origin": [-1.5, 23, -37], "size": [1, 1, 0], "uv": [4, 9]},
+						{"origin": [0.5, 23, -37], "size": [1, 1, 0], "uv": [8, 8]},
+						{"origin": [2.5, 23, -37], "size": [1, 1, 0], "uv": [0, 0]},
+						{"origin": [3.5, 23, -30], "size": [0, 1, 1], "uv": [2, 8]},
+						{"origin": [3.5, 23, -32], "size": [0, 1, 1], "uv": [0, 8]},
+						{"origin": [3.5, 23, -34], "size": [0, 1, 1], "uv": [6, 7]},
+						{"origin": [3.5, 23, -36], "size": [0, 1, 1], "uv": [4, 7]},
+						{"origin": [-3.5, 23, -36], "size": [0, 1, 1], "uv": [2, 7]},
+						{"origin": [-3.5, 23, -34], "size": [0, 1, 1], "uv": [0, 7]},
+						{"origin": [-3.5, 23, -32], "size": [0, 1, 1], "uv": [0, 1]},
+						{"origin": [-3.5, 23, -30], "size": [0, 1, 1], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "neck",
+					"parent": "head",
+					"pivot": [0, 22, -14],
+					"cubes": [
+						{"origin": [-4, 22, -24], "size": [8, 8, 12], "pivot": [0, 23, -21], "rotation": [-25, 0, 0], "uv": [0, 54]}
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "tyrannosaurus",
+					"pivot": [0, 21, 9.5],
+					"cubes": [
+						{"origin": [-5, 17, 9], "size": [10, 10, 16], "pivot": [0, 24, 10], "rotation": [-5, 0, 0], "uv": [0, 28]}
+					]
+				},
+				{
+					"name": "midTail",
+					"parent": "tail",
+					"pivot": [0, 20.25, 24.25],
+					"cubes": [
+						{"origin": [-4, 17, 24], "size": [8, 7, 17], "pivot": [0, 21, 27], "rotation": [-5, 0, 0], "uv": [35, 37]}
+					]
+				},
+				{
+					"name": "endTail",
+					"parent": "midTail",
+					"pivot": [0, 19, 40.5],
+					"cubes": [
+						{"origin": [-2, 17, 40], "size": [4, 4, 13], "pivot": [0, 19, 44], "rotation": [-5, 0, 0], "uv": [72, 48]}
+					]
+				},
+				{
+					"name": "RightLeg",
+					"parent": "tyrannosaurus",
+					"pivot": [-7, 22.93333, 4.73333],
+					"cubes": [
+						{"origin": [-10, 16, -1], "size": [6, 9, 12], "pivot": [-9, 19, 3], "rotation": [-90, 0, 0], "uv": [40, 61]},
+						{"origin": [-9, 11.3, -0.55], "size": [4, 5, 11.5], "pivot": [-9, 10, 3], "rotation": [-100, 0, 0], "uv": [0, 74]}
+					]
+				},
+				{
+					"name": "rightFoot",
+					"parent": "RightLeg",
+					"pivot": [-7, 3.5, 6],
+					"cubes": [
+						{"origin": [-10, 0, 0], "size": [6, 3, 8], "uv": [44, 88]}
+					]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "tyrannosaurus",
+					"pivot": [7, 22.5, 5],
+					"cubes": [
+						{"origin": [5, 1, 4], "size": [4, 12, 5], "pivot": [7, 8, 6], "rotation": [-10, 0, 0], "uv": [0, 90]},
+						{"origin": [4, 11, 0], "size": [6, 12, 9], "uv": [67, 73]}
+					]
+				},
+				{
+					"name": "leftFoot",
+					"parent": "leftLeg",
+					"pivot": [7, 3.5, 6],
+					"cubes": [
+						{"origin": [4, 0, 0], "size": [6, 3, 8], "uv": [88, 65]}
+					]
+				},
+				{
+					"name": "arms",
+					"parent": "tyrannosaurus",
+					"pivot": [0, 15.875, -10],
+					"cubes": [
+						{"origin": [4.25, 11, -11], "size": [3, 5, 3], "pivot": [1.5, 15, -11], "rotation": [-30, 0, 0], "uv": [0, 36]},
+						{"origin": [4, 12, -12], "size": [3, 5, 3], "pivot": [1.5, 16, -12], "rotation": [30, 0, 0], "uv": [50, 0]},
+						{"origin": [-7, 11.75, -12], "size": [3, 5, 3], "pivot": [4.5, 15.75, -12], "rotation": [30, 0, 0], "uv": [0, 28]},
+						{"origin": [-7.25, 10.75, -11], "size": [3, 5, 3], "pivot": [4.5, 14.75, -11], "rotation": [-30, 0, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "tyrannosaurus",
+					"pivot": [0, -7, 0],
+					"cubes": [
+						{"origin": [-7, 14, -4], "size": [14, 14, 14], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "frontBody",
+					"parent": "body",
+					"pivot": [0, 21, -8],
+					"cubes": [
+						{"origin": [-6, 15, -14], "size": [12, 12, 12], "pivot": [0, 18, -12], "rotation": [5, 0, 0], "uv": [56, 0]}
+					]
+				}
+			]
+		}
+	]
+}

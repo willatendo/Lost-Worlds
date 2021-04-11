@@ -1,6 +1,6 @@
 package lostworlds.client.entity.model;
 
-import lostworlds.common.entities.SpinosaurusEntity;
+import lostworlds.common.entities.TyrannosaurusEntity;
 import lostworlds.core.util.ModID;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -11,28 +11,28 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
 @OnlyIn(Dist.CLIENT)
-public class SpinosaurusModel extends AnimatedGeoModel<SpinosaurusEntity> 
+public class TyrannosaurusModel extends AnimatedGeoModel<TyrannosaurusEntity> 
 {
 	@Override
-	public ResourceLocation getModelLocation(SpinosaurusEntity object) 
+	public ResourceLocation getModelLocation(TyrannosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/spinosaurus.geo.json");
+		return new ResourceLocation(ModID.ID, "geo/tyrannosaurus.geo.json");
 	}
 	
 	@Override
-	public ResourceLocation getTextureLocation(SpinosaurusEntity object) 
+	public ResourceLocation getTextureLocation(TyrannosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/spinosaurus.png");
+		return new ResourceLocation(ModID.ID, "textures/model/entity/tyrannosaurus.png");
 	}
 	
 	@Override
-	public ResourceLocation getAnimationFileLocation(SpinosaurusEntity animatable) 
+	public ResourceLocation getAnimationFileLocation(TyrannosaurusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/carnotaurus.animations.json");
+		return new ResourceLocation(ModID.ID, "animations/tyrannosaurus.animations.json");
 	}
 
 	@Override
-	public void setLivingAnimations(SpinosaurusEntity entity, Integer uniqueID, @SuppressWarnings("rawtypes") AnimationEvent customPredicate) 
+	public void setLivingAnimations(TyrannosaurusEntity entity, Integer uniqueID, @SuppressWarnings("rawtypes") AnimationEvent customPredicate) 
 	{
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("head");

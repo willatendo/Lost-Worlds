@@ -61,11 +61,11 @@ public class ModFeatures
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_GROUND_FERNS = register("patch_permian_ground_ferns", Feature.RANDOM_PATCH.configured(ModFeatures.DEFAULT_PERMIAN_GROUND_FERNS_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> CONIFER_TREE = register("conifer_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(CONIFER_LOG), new SimpleBlockStateProvider(ModFeatures.CONIFER_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(0, 2), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
-	
+		
 	public static final ConfiguredFeature<?, ?> CONIFER_TREES = register("conifer_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(CONIFER_TREE.weighted(0.5F)), CONIFER_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 
 	public static final ConfiguredFeature<?, ?> ORE_OIL_SANDS = register("ore_oil_sands", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.SAND, OIL_SANDS, 9)).range(128).squared().count(10));
-
+	
 	private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) 
 	{
 		return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, id, configuredFeature);

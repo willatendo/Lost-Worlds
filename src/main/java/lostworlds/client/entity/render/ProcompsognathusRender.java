@@ -33,9 +33,9 @@ public class ProcompsognathusRender extends GeoEntityRenderer<ProcompsognathusEn
 	{
 		if(entity.isBaby())
 		{
-			stack.scale(0.5F, 0.5F, 0.5F);
+			stack.scale(0.39F, 0.38F, 0.39F); 
 		}
-		stack.scale(1.0F, 1.0F, 1.0F);
+		stack.scale(0.5F, 0.487F, 0.5F); // Length, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}
