@@ -2,6 +2,7 @@ package lostworlds.core.init;
 
 import lostworlds.common.blocks.ArchaeologyTable;
 import lostworlds.common.blocks.ConiferLog;
+import lostworlds.common.blocks.DirtFossil;
 import lostworlds.common.blocks.ExposedStoneFossilBlock;
 import lostworlds.common.blocks.LargePermianDesertPlant;
 import lostworlds.common.blocks.MediumPermianDesertPlant;
@@ -12,9 +13,12 @@ import lostworlds.common.blocks.PlasteredStoneFossilBlock;
 import lostworlds.common.blocks.PowerSupplyBlock;
 import lostworlds.common.blocks.SmallPermianDesertPlant;
 import lostworlds.common.blocks.StoneFossilBlock;
+import lostworlds.common.blocks.eggs.CarnotaurusEggBlock;
 import lostworlds.common.blocks.eggs.DimetrodonEggBlock;
 import lostworlds.common.blocks.eggs.EdaphosaurusEggBlock;
+import lostworlds.common.blocks.eggs.GorgonopsEggBlock;
 import lostworlds.common.blocks.eggs.ProcompsognathusEggBlock;
+import lostworlds.common.blocks.eggs.TyrannosaurusEggBlock;
 import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolType;
 import lostworlds.core.util.ModWoodType;
@@ -58,7 +62,9 @@ public class BlockInit
 	public static final RegistryObject<StoneFossilBlock> STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("stone_fossil", () -> new StoneFossilBlock(AbstractBlock.Properties.of(ModMaterials.MADE_FOR_BRUSH, MaterialColor.STONE).harvestTool(ModToolType.BRUSH).harvestLevel(0).requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.STONE)));
 	public static final RegistryObject<ExposedStoneFossilBlock> EXPOSED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("exposed_stone_fossil", () -> new ExposedStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops().strength(1.25F).noOcclusion().sound(SoundType.STONE)));
 	public static final RegistryObject<PlasteredStoneFossilBlock> PLASTERED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_stone_fossil", () -> new PlasteredStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().sound(SoundType.WOOL).noOcclusion()));
-	
+
+	public static final RegistryObject<DirtFossil> DIRT_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("dirt_fossil", () -> new DirtFossil(AbstractBlock.Properties.of(ModMaterials.MADE_FOR_NOTHING, MaterialColor.STONE).strength(1.5F).sound(SoundType.GRASS)));
+
 	//Fossil Processing	
 	
 	
@@ -68,6 +74,9 @@ public class BlockInit
 	public static final RegistryObject<ProcompsognathusEggBlock> PROCOMPSOGNATHUS_EGG = ModRegistry.BLOCK_REGISTRY.register("procompsognathus_egg", () -> new ProcompsognathusEggBlock());
 	public static final RegistryObject<DimetrodonEggBlock> DIMETRODON_EGG = ModRegistry.BLOCK_REGISTRY.register("dimetrodon_egg", () -> new DimetrodonEggBlock());
 	public static final RegistryObject<EdaphosaurusEggBlock> EDAPHOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("edaphosaurus_egg", () -> new EdaphosaurusEggBlock());
+	public static final RegistryObject<GorgonopsEggBlock> GORGONOPS_EGG = ModRegistry.BLOCK_REGISTRY.register("gorgonops_egg", () -> new GorgonopsEggBlock());
+	public static final RegistryObject<CarnotaurusEggBlock> CARNOTAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("carnotaurus_egg", () -> new CarnotaurusEggBlock());
+	public static final RegistryObject<TyrannosaurusEggBlock> TYRANNOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("tyrannosaurus_egg", () -> new TyrannosaurusEggBlock());
 	
 	//Mud
 	public static final RegistryObject<Block> MUD = ModRegistry.BLOCK_REGISTRY.register("mud", () -> new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
