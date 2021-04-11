@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import javax.annotation.Nullable;
 
-import lostworlds.common.goal.LostWorldsFollowSchoolLeaderGoal;
+import lostworlds.common.goal.ModFollowSchoolLeaderGoal;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.SpawnReason;
@@ -27,7 +27,7 @@ public abstract class AbstractPrehistoricGroupFishEntity extends AbstractPrehist
 	protected void registerGoals() 
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(5, new LostWorldsFollowSchoolLeaderGoal(this));
+		this.goalSelector.addGoal(5, new ModFollowSchoolLeaderGoal(this));
 	}
 	
 	public int getMaxSpawnClusterSize() 

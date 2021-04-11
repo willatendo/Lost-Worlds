@@ -6,13 +6,13 @@ import java.util.function.Predicate;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricGroupFishEntity;
 import net.minecraft.entity.ai.goal.Goal;
 
-public class LostWorldsFollowSchoolLeaderGoal extends Goal 
+public class ModFollowSchoolLeaderGoal extends Goal 
 {
 	private final AbstractPrehistoricGroupFishEntity mob;
 	private int timeToRecalcPath;
 	private int nextStartTick;
 	
-	public LostWorldsFollowSchoolLeaderGoal(AbstractPrehistoricGroupFishEntity entity) 
+	public ModFollowSchoolLeaderGoal(AbstractPrehistoricGroupFishEntity entity) 
 	{
 		this.mob = entity;
 		this.nextStartTick = this.nextStartTick(entity);

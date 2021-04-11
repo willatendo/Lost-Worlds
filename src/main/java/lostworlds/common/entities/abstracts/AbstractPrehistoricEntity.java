@@ -1,6 +1,6 @@
 package lostworlds.common.entities.abstracts;
 
-import lostworlds.common.goal.LostWorldsSwimGoal;
+import lostworlds.common.goal.ModSwimGoal;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
@@ -107,7 +107,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		{
 			this.goalSelector.addGoal(0, new PanicGoal(this, 1.25D));
 			this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
-			this.goalSelector.addGoal(2, new LostWorldsSwimGoal(this));
+			this.goalSelector.addGoal(2, new ModSwimGoal(this));
 		}
 	}
 }

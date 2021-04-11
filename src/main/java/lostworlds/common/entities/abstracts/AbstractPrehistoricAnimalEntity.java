@@ -11,6 +11,7 @@ import lostworlds.core.init.BlockInit;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.item.ExperienceOrbEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -22,6 +23,7 @@ import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
@@ -53,6 +55,15 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		}
 		
 		super.customServerAiStep();
+	}
+	
+	@Override
+	protected void registerGoals() 
+	{
+		if(isBaby())
+		{
+			goalSelector.addGoal(3, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
+		}
 	}
 	
 	public void aiStep() 

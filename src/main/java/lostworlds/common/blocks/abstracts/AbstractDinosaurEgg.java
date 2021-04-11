@@ -1,14 +1,13 @@
-package lostworlds.common.blocks;
-
-import java.util.Random;
+package lostworlds.common.blocks.abstracts;
 
 import javax.annotation.Nullable;
 
-import lostworlds.common.entities.DimetrodonEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.core.init.BlockInit;
-import lostworlds.core.init.EntityInit;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.ZombieEntity;
@@ -25,18 +24,56 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
 
-public class DimetrodonEggBlock extends Block
+public abstract class AbstractDinosaurEgg extends Block
 {
-	private static final VoxelShape VOXEL_SHAPE = Block.box(6, 0, 6, 10, 7, 10);
+	private boolean isSmall = false;
+	private boolean isMedium = false;
+	private boolean isLarge = false;
+	
+	public static final VoxelShape SMALL = Block.box(7, 0, 7, 9, 4, 9);
+	public static final VoxelShape MEDIUM = Block.box(6, 0, 6, 10, 7, 10);
+	public static final VoxelShape LARGE = Block.box(5.5, 0, 5.5, 10.5, 8, 10.5);
+	
 	public static final IntegerProperty HATCH = BlockStateProperties.HATCH;
 
-	public DimetrodonEggBlock(Properties properties) 
+	public AbstractDinosaurEgg() 
 	{
-		super(properties);
+		super(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG));
 		this.registerDefaultState(this.stateDefinition.any().setValue(HATCH, Integer.valueOf(0)));
+	}	
+	
+	public boolean isSmall()
+	{
+		return this.isSmall;
+	}
+	
+	public boolean isMedium()
+	{
+		return this.isMedium;
+	}
+	
+	public boolean isLarge()
+	{
+		return this.isLarge;
+	}
+	
+	@Override
+	public VoxelShape getShape(BlockState state, IBlockReader blockReader, BlockPos pos, ISelectionContext context) 
+	{
+		if(isSmall())
+		{
+			return SMALL;
+		}
+		if(isMedium())
+		{
+			return MEDIUM;
+		}
+		else 
+		{
+			return LARGE;
+		}
 	}
 	
 	public void stepOn(World worldIn, BlockPos pos, Entity entityIn) 
@@ -62,9 +99,11 @@ public class DimetrodonEggBlock extends Block
 			if(!worldIn.isClientSide && worldIn.random.nextInt(integer) == 0) 
 			{
 				BlockState blockstate = worldIn.getBlockState(pos);
-				if(blockstate.is(BlockInit.DIMETRODON_EGG.get())) 
+				if(blockstate.is(this)) 
 				{
-					this.destroyEgg(worldIn, pos, entityIn, 3);
+					worldIn.playSound((PlayerEntity)null, pos, SoundEvents.TURTLE_EGG_BREAK, SoundCategory.BLOCKS, 0.7F, 0.9F + worldIn.random.nextFloat() * 0.2F);
+
+					worldIn.destroyBlock(pos, false);
 	            }
 			}
 		}
@@ -74,29 +113,6 @@ public class DimetrodonEggBlock extends Block
 	{
 		worldIn.playSound((PlayerEntity)null, pos, SoundEvents.TURTLE_EGG_BREAK, SoundCategory.BLOCKS, 0.7F, 0.9F + worldIn.random.nextFloat() * 0.2F);
 		worldIn.destroyBlock(pos, false);
-	}
-	
-	public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random rand) 
-	{
-		if(this.shouldUpdateHatchLevel(world) && onNest(world, pos)) 
-		{
-			int i = state.getValue(HATCH);
-			if(i < 2) 
-			{
-				world.playSound((PlayerEntity)null, pos, SoundEvents.TURTLE_EGG_CRACK, SoundCategory.BLOCKS, 0.7F, 0.9F + rand.nextFloat() * 0.2F);
-				world.setBlock(pos, state.setValue(HATCH, Integer.valueOf(i + 1)), 2);
-			} 
-			else 
-			{
-				world.playSound((PlayerEntity)null, pos, SoundEvents.TURTLE_EGG_HATCH, SoundCategory.BLOCKS, 0.7F, 0.9F + rand.nextFloat() * 0.2F);
-				world.removeBlock(pos, false);
-				
-				world.levelEvent(2001, pos, Block.getId(state));
-				DimetrodonEntity dimetrodon = EntityInit.DIMETRODON_ENTITY.get().create(world);
-				dimetrodon.moveTo((double)pos.getX() + 0.3D * 0.2D, (double)pos.getY(), (double)pos.getZ() + 0.3D, 0.0F, 0.0F);
-				world.addFreshEntity(dimetrodon);
-			}
-		}
 	}
 	
 	public static boolean onNest(IBlockReader blockReader, BlockPos pos) 
@@ -117,7 +133,7 @@ public class DimetrodonEggBlock extends Block
 		}
 	}
 	
-	private boolean shouldUpdateHatchLevel(World worldIn) 
+	public boolean shouldUpdateHatchLevel(World worldIn) 
 	{
 		float f = worldIn.getTimeOfDay(1.0F);
 		if((double)f < 0.69D && (double)f > 0.65D) 
@@ -136,19 +152,14 @@ public class DimetrodonEggBlock extends Block
 		this.destroyEggOther(worldIn, pos, state);
 	}
 	
-	public VoxelShape getShape(BlockState state, IBlockReader blockReader, BlockPos pos, ISelectionContext context) 
-	{
-		return VOXEL_SHAPE;
-	}
-	
 	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) 
 	{
 		builder.add(HATCH);
 	}
 	
-	private boolean canDestroyEgg(World worldIn, Entity entity) 
+	public boolean canDestroyEgg(World worldIn, Entity entity) 
 	{
-		if(!(entity instanceof DimetrodonEntity))
+		if(!(entity instanceof AbstractPrehistoricEntity))
 		{
 			if(!(entity instanceof LivingEntity)) 
 			{
