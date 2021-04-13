@@ -136,6 +136,7 @@ public class BlockInit
 
 	public static final RegistryObject<PermianGroundFernsBlock> PERMIAN_GROUND_FERNS = ModRegistry.BLOCK_REGISTRY.register("permian_ground_ferns", () -> new PermianGroundFernsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 
+	//Conifer
 	public static final RegistryObject<ConiferLog> CONIFER_LOG = ModRegistry.BLOCK_REGISTRY.register("conifer_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ConiferLog> STRIPPED_CONIFER_LOG = ModRegistry.BLOCK_REGISTRY.register("stripped_conifer_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ConiferLog> CONIFER_WOOD = ModRegistry.BLOCK_REGISTRY.register("conifer_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
@@ -153,6 +154,13 @@ public class BlockInit
 	public static final RegistryObject<DoorBlock> CONIFER_DOOR = ModRegistry.BLOCK_REGISTRY.register("conifer_door", () -> new DoorBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).noOcclusion().sound(SoundType.WOOD)));
 	public static final RegistryObject<ModStandingSignBlock> CONIFER_SIGN = ModRegistry.BLOCK_REGISTRY.register("conifer_sign", () -> new ModStandingSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission(), ModWoodType.CONIFER));
 	public static final RegistryObject<ModWallSignBlock> CONIFER_WALL_SIGN = ModRegistry.BLOCK_REGISTRY.register("conifer_wall_sign", () -> new ModWallSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission().dropsLike(BlockInit.CONIFER_SIGN.get()), ModWoodType.CONIFER));
+	
+	//Ginkgo
+	public static final RegistryObject<ConiferLog> GINKGO_LOG = ModRegistry.BLOCK_REGISTRY.register("ginkgo_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ConiferLog> STRIPPED_GINKGO_LOG = ModRegistry.BLOCK_REGISTRY.register("stripped_ginkgo_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ConiferLog> GINKGO_WOOD = ModRegistry.BLOCK_REGISTRY.register("ginkgo_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ConiferLog> STRIPPED_GINKGO_WOOD = ModRegistry.BLOCK_REGISTRY.register("stripped_ginkgo_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> GINKGO_PLANKS = ModRegistry.BLOCK_REGISTRY.register("ginkgo_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	
 	//Light Concrete
 	public static final RegistryObject<Block> LIGHT_CONCRETE = ModRegistry.BLOCK_REGISTRY.register("light_concrete", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops().strength(6.0F, 8.0F).sound(SoundType.STONE)));

@@ -239,6 +239,12 @@
 	"block.lostworlds.conifer_sign": "Conifer Sign",
 	"item.lostworlds.conifer_boat": "Conifer Boat",
 
+	"block.lostworlds.ginkgo_log": "Ginkgo Log",
+	"block.lostworlds.stripped_ginkgo_log": "Stripped Ginkgo Log",
+	"block.lostworlds.ginkgo_wood": "Ginkgo Wood",
+	"block.lostworlds.stripped_ginkgo_wood": "Stripped Ginkgo Wood",
+	"block.lostworlds.ginkgo_planks": "Ginkgo Planks",
+
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",
 	"block.lostworlds.light_concrete_stairs": "Light Concrete Stairs",

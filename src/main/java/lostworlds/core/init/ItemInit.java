@@ -300,6 +300,13 @@ public class ItemInit
 	public static final RegistryObject<SignItem> CONIFER_SIGN = ModRegistry.ITEM_REGISTRY.register("conifer_sign", () -> new SignItem(standardProperties(), BlockInit.CONIFER_SIGN.get(), BlockInit.CONIFER_WALL_SIGN.get()));
 	public static final RegistryObject<ModBoatItem> CONIFER_BOAT = ModRegistry.ITEM_REGISTRY.register("conifer_boat", () -> new ModBoatItem(ModBoatType.CONIFER, standardProperties()));
 
+	//Ginkgo
+	public static final RegistryObject<BlockItem> GINKGO_LOG = ModRegistry.ITEM_REGISTRY.register("ginkgo_log", () -> new BlockItem(BlockInit.GINKGO_LOG.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_WOOD = ModRegistry.ITEM_REGISTRY.register("ginkgo_wood", () -> new BlockItem(BlockInit.GINKGO_WOOD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_log", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_LOG.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_wood", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_WOOD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_PLANKS = ModRegistry.ITEM_REGISTRY.register("ginkgo_planks", () -> new BlockItem(BlockInit.GINKGO_PLANKS.get(), standardProperties()));
+	
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("light_concrete", () -> new BlockItem(BlockInit.LIGHT_CONCRETE.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_STAIRS =  ModRegistry.ITEM_REGISTRY.register("light_concrete_stairs", () -> new BlockItem(BlockInit.LIGHT_CONCRETE_STAIRS.get(), standardProperties()));
