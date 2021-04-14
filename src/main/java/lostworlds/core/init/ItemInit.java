@@ -306,6 +306,15 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_log", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_LOG.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_wood", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_WOOD.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> GINKGO_PLANKS = ModRegistry.ITEM_REGISTRY.register("ginkgo_planks", () -> new BlockItem(BlockInit.GINKGO_PLANKS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_STAIRS = ModRegistry.ITEM_REGISTRY.register("ginkgo_stairs", () -> new BlockItem(BlockInit.GINKGO_STAIRS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_SLAB = ModRegistry.ITEM_REGISTRY.register("ginkgo_slab", () -> new BlockItem(BlockInit.GINKGO_SLAB.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_FENCE = ModRegistry.ITEM_REGISTRY.register("ginkgo_fence", () -> new BlockItem(BlockInit.GINKGO_FENCE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_FENCE_GATE = ModRegistry.ITEM_REGISTRY.register("ginkgo_fence_gate", () -> new BlockItem(BlockInit.GINKGO_FENCE_GATE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("ginkgo_pressure_plate", () -> new BlockItem(BlockInit.GINKGO_PRESSURE_PLATE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_BUTTON = ModRegistry.ITEM_REGISTRY.register("ginkgo_button", () -> new BlockItem(BlockInit.GINKGO_BUTTON.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_TRAPDOOR = ModRegistry.ITEM_REGISTRY.register("ginkgo_trapdoor", () -> new BlockItem(BlockInit.GINKGO_TRAPDOOR.get(), standardProperties())); 
+	public static final RegistryObject<BlockItem> GINKGO_DOOR = ModRegistry.ITEM_REGISTRY.register("ginkgo_door", () -> new BlockItem(BlockInit.GINKGO_DOOR.get(), standardProperties()));
+	public static final RegistryObject<ModBoatItem> GINKGO_BOAT = ModRegistry.ITEM_REGISTRY.register("ginkgo_boat", () -> new ModBoatItem(ModBoatType.GINKGO, standardProperties()));
 	
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("light_concrete", () -> new BlockItem(BlockInit.LIGHT_CONCRETE.get(), standardProperties()));

@@ -7,6 +7,7 @@ import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModID;
 import lostworlds.core.util.registry.ModRegistry;
+import lostworlds.core.vanilla.properties.ModFlammables;
 import lostworlds.core.vanilla.properties.ModStrippables;
 import lostworlds.world.init.BiomeInit;
 import lostworlds.world.init.ModFeatures;
@@ -43,6 +44,9 @@ public class LostWorlds
         //Dimensions
  //     PermianDimension.init();
         
+        //InGen
+//		InGenSecretes.init();
+        
         //Lib - 3.0.15
         GeckoLib.initialize();
         
@@ -69,6 +73,7 @@ public class LostWorlds
     private void loadComplete(FMLLoadCompleteEvent event)
     {
     	ModStrippables.strippingMap();
+    	ModFlammables.flammables();
     }
     
     @SubscribeEvent

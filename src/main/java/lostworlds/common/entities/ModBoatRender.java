@@ -18,7 +18,8 @@ public class ModBoatRender extends EntityRenderer<ModBoatEntity>
 {
 	private static final ResourceLocation[] BOAT_TEXTURES = new ResourceLocation[] 
 	{
-		new ResourceLocation("lostworlds:textures/entity/boat/conifer_boat.png")
+		new ResourceLocation("lostworlds:textures/entity/boat/conifer_boat.png"),
+		new ResourceLocation("lostworlds:textures/entity/boat/ginkgo_boat.png")
 	};
 	
 	protected final BoatModel modelBoat = new BoatModel();

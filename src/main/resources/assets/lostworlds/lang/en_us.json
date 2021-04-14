@@ -244,6 +244,14 @@
 	"block.lostworlds.ginkgo_wood": "Ginkgo Wood",
 	"block.lostworlds.stripped_ginkgo_wood": "Stripped Ginkgo Wood",
 	"block.lostworlds.ginkgo_planks": "Ginkgo Planks",
+	"block.lostworlds.ginkgo_stairs": "Ginkgo Stairs",
+	"block.lostworlds.ginkgo_slab": "Ginkgo Slab",
+	"block.lostworlds.ginkgo_fence": "Ginkgo Fence",
+	"block.lostworlds.ginkgo_fence_gate": "Ginkgo Fence Gate",
+	"block.lostworlds.ginkgo_pressure_plate": "Ginkgo Pressure Plate",
+	"block.lostworlds.ginkgo_button": "Ginkgo Button",
+	"block.lostworlds.ginkgo_trapdoor": "Ginkgo Trapdoor",
+	"block.lostworlds.ginkgo_door": "Ginkgo Door",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",

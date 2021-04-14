@@ -25,7 +25,7 @@ public class DevBuildLoad
 		else
 		{
 			PlayerEntity player = event.getPlayer();
-			event.getPlayer().sendMessage(new StringTextComponent("lostworlds.loadEvent.player"), player.getUUID());
+			event.getPlayer().sendMessage(new StringTextComponent(ModID.ID + ".loadEvent.player"), player.getUUID());
 		}
 	}
 }

@@ -58,19 +58,23 @@ public class ModBoatEntity extends BoatEntity
 	@Override
 	public Item getDropItem() 
 	{
-		switch(this.getBoatType())
+		switch(this.getModBoatType())
 		{
 			default:
 				return ItemInit.CONIFER_BOAT.get();
+			case GINKGO:
+				return ItemInit.GINKGO_BOAT.get();
 		}
 	}
 	
 	public Block getPlanks() 
 	{
-        switch (this.getBoatType())
+        switch (this.getModBoatType())
         {
         	default:
         		return BlockInit.CONIFER_PLANKS.get();
+        	case GINKGO:
+        		return BlockInit.GINKGO_PLANKS.get();
         }
 	}
 	
@@ -209,7 +213,8 @@ public class ModBoatEntity extends BoatEntity
     
     public enum ModBoatType 
     {
-    	CONIFER("conifer");
+    	CONIFER("conifer"),
+    	GINKGO("gingko");
     	
     	private final String name;
 

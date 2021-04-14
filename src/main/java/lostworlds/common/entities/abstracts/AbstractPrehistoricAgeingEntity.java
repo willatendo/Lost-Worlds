@@ -20,7 +20,7 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 {
 	private static final DataParameter<Boolean> DATA_BABY_ID = EntityDataManager.defineId(AgeableEntity.class, DataSerializers.BOOLEAN);
 	
-	protected int age;
+	public int age;
 	protected int forcedAge;
 	protected int forcedAgeTimer;
 	
