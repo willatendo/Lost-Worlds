@@ -35,7 +35,7 @@ public class TyrannosaurusRender extends GeoEntityRenderer<TyrannosaurusEntity>
 		{
 			stack.scale(0.15F, 0.15F, 0.15F);
 		}
-		stack.scale(1.97F, 1.93F, 2.1F);
+		stack.scale(1.50F, 1.93F, 1.9F);
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

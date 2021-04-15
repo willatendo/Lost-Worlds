@@ -35,7 +35,7 @@ public class TyrannosaurusModel extends AnimatedGeoModel<TyrannosaurusEntity>
 	public void setLivingAnimations(TyrannosaurusEntity entity, Integer uniqueID, @SuppressWarnings("rawtypes") AnimationEvent customPredicate) 
 	{
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
-		IBone head = this.getAnimationProcessor().getBone("head");
+		IBone head = this.getAnimationProcessor().getBone("neck");
 
 		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);

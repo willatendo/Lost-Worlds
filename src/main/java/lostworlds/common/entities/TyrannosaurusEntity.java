@@ -11,7 +11,6 @@ import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.passive.CatEntity;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.passive.CowEntity;
-import net.minecraft.entity.passive.DolphinEntity;
 import net.minecraft.entity.passive.FoxEntity;
 import net.minecraft.entity.passive.OcelotEntity;
 import net.minecraft.entity.passive.PandaEntity;
@@ -20,12 +19,8 @@ import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.passive.PolarBearEntity;
 import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.entity.passive.SheepEntity;
-import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.passive.WolfEntity;
-import net.minecraft.entity.passive.fish.CodEntity;
-import net.minecraft.entity.passive.fish.SalmonEntity;
-import net.minecraft.entity.passive.fish.TropicalFishEntity;
 import net.minecraft.entity.passive.horse.DonkeyEntity;
 import net.minecraft.entity.passive.horse.HorseEntity;
 import net.minecraft.entity.passive.horse.MuleEntity;
@@ -131,14 +126,8 @@ public class TyrannosaurusEntity extends AbstractPrehistoricAnimalEntity impleme
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, OcelotEntity.class, false));	
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PolarBearEntity.class, false));	
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PandaEntity.class, false));	
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ParrotEntity.class, false));	
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SalmonEntity.class, false));	
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CodEntity.class, false));	
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, TropicalFishEntity.class, false));	
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, RabbitEntity.class, false));	
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SquidEntity.class, false));	
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ParrotEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, false));	
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, DolphinEntity.class, false));
 	}
 
 	@Override

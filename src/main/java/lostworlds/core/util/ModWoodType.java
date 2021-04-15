@@ -10,4 +10,5 @@ public class ModWoodType extends WoodType
 	}
 
 	public static final WoodType CONIFER = WoodType.register(new ModWoodType("conifer"));
+	public static final WoodType GINKGO = WoodType.register(new ModWoodType("ginkgo"));
 }

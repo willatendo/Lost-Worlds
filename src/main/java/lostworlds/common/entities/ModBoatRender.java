@@ -68,6 +68,6 @@ public class ModBoatRender extends EntityRenderer<ModBoatEntity>
 	@Override
 	public ResourceLocation getTextureLocation(ModBoatEntity entity) 
 	{
-		return BOAT_TEXTURES[entity.getBoatType().ordinal()];
+		return BOAT_TEXTURES[entity.getModBoatType().ordinal()];
 	}	
 }

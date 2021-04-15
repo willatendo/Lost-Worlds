@@ -45,7 +45,7 @@ public class ModBoatEntity extends BoatEntity
 		this.zo = z;
 	}
 	
-	public ModBoatEntity(EntityType<? extends BoatEntity> boatEntityType, World worldType) 
+	public ModBoatEntity(EntityType<? extends ModBoatEntity> boatEntityType, World worldType) 
 	{
 		super(boatEntityType, worldType);
 	}
@@ -98,7 +98,7 @@ public class ModBoatEntity extends BoatEntity
     @Override
     protected void addAdditionalSaveData(CompoundNBT nbt) 
     {
-    	nbt.putString("Type", this.getBoatType().getName());
+    	nbt.putString("Type", this.getModBoatType().getName());
     }
 
     @Override

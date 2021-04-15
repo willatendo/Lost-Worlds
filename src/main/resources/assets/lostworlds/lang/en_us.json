@@ -252,6 +252,8 @@
 	"block.lostworlds.ginkgo_button": "Ginkgo Button",
 	"block.lostworlds.ginkgo_trapdoor": "Ginkgo Trapdoor",
 	"block.lostworlds.ginkgo_door": "Ginkgo Door",
+	"block.lostworlds.ginkgo_sign": "Ginkgo Sign",
+	"item.lostworlds.ginkgo_boat": "Ginkgo Boat",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",

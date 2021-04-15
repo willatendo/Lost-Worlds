@@ -314,6 +314,7 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> GINKGO_BUTTON = ModRegistry.ITEM_REGISTRY.register("ginkgo_button", () -> new BlockItem(BlockInit.GINKGO_BUTTON.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> GINKGO_TRAPDOOR = ModRegistry.ITEM_REGISTRY.register("ginkgo_trapdoor", () -> new BlockItem(BlockInit.GINKGO_TRAPDOOR.get(), standardProperties())); 
 	public static final RegistryObject<BlockItem> GINKGO_DOOR = ModRegistry.ITEM_REGISTRY.register("ginkgo_door", () -> new BlockItem(BlockInit.GINKGO_DOOR.get(), standardProperties()));
+	public static final RegistryObject<SignItem> GINKGO_SIGN = ModRegistry.ITEM_REGISTRY.register("ginkgo_sign", () -> new SignItem(standardProperties(), BlockInit.GINKGO_SIGN.get(), BlockInit.GINKGO_WALL_SIGN.get()));
 	public static final RegistryObject<ModBoatItem> GINKGO_BOAT = ModRegistry.ITEM_REGISTRY.register("ginkgo_boat", () -> new ModBoatItem(ModBoatType.GINKGO, standardProperties()));
 	
 	//Light Concrete
