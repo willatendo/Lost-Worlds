@@ -172,6 +172,10 @@ public class ItemInit
 	public static final RegistryObject<Item> TYRANNOSAURUS_SKULL_BONE = registerSkull("tyrannosaurus");
 	public static final RegistryObject<Item> TYRANNOSAURUS_CLAW_BONE = registerSpecialBone("tyrannosaurus");
 
+	public static final RegistryObject<Item> ALLOSAURUS_SPAWN_EGG = registerSpawnEgg("allosaurus", () -> EntityInit.ALLOSAURUS_ENTITY.get(), 0x687c35, 0x26300c);
+
+	public static final RegistryObject<Item> GIGANOTOSAURUS_SPAWN_EGG = registerSpawnEgg("giganotosaurus", () -> EntityInit.GIGANOTOSAURUS_ENTITY.get(), 0xd8a734, 0x4f391c);
+
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
 	

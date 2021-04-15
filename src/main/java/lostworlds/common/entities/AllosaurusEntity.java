@@ -5,7 +5,6 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
-import lostworlds.core.init.SoundInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -34,8 +33,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -46,7 +43,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
+public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
 	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.RABBIT, Items.CHICKEN, Items.MUTTON, Items.COD, Items.SALMON, Items.TROPICAL_FISH, ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PALAEONISCUM_MEAT.get(), ItemInit.PROCOMPSOGNATHUS_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
@@ -55,17 +52,17 @@ public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implement
 	{
 		if(event.isMoving())
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.carnotaurus.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.allosaurus.walk", true));
 			return PlayState.CONTINUE;
 		}
 		else
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.carnotaurus.idle", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.allosaurus.idle", true));
 			return PlayState.CONTINUE;
 		}
 	}
 	
-	public CarnotaurusEntity(EntityType<? extends CarnotaurusEntity> entityIn, World worldIn) 
+	public AllosaurusEntity(EntityType<? extends AllosaurusEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn);
 	}
@@ -75,7 +72,7 @@ public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implement
 	{
 		data.addAnimationController(new AnimationController<IAnimatable>(this, "controller", 0, this::predicate));
 	}
-
+	
 	@Override
 	public AnimationFactory getFactory() 
 	{
@@ -143,28 +140,10 @@ public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implement
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, false));	
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, DolphinEntity.class, false));
 	}
-	
-	@Override
-	protected SoundEvent getAmbientSound() 
-	{
-		return SoundInit.CARNOTAURUS_AMBIENT.get();
-	}
-	
-	@Override
-	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
-	{
-		return SoundInit.CARNOTAURUS_HURT.get();
-	}
-	
-	@Override
-	protected SoundEvent getDeathSound() 
-	{
-		return SoundInit.CARNOTAURUS_DEATH.get();
-	}
-	
+
 	@Override
 	public AbstractPrehistoricAgeingEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricAgeingEntity prehistoricEntity) 
 	{
-		return EntityInit.CARNOTAURUS_ENTITY.get().create(serverWorld);
+		return EntityInit.ALLOSAURUS_ENTITY.get().create(serverWorld);
 	}
 }

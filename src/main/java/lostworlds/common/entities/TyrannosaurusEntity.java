@@ -52,7 +52,7 @@ public class TyrannosaurusEntity extends AbstractPrehistoricAnimalEntity impleme
 		}
 		else
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.tyrannosaurus.idol", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.tyrannosaurus.idle", true));
 			return PlayState.CONTINUE;
 		}
 	}

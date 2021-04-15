@@ -1,8 +1,10 @@
 package lostworlds.core.init;
 
+import lostworlds.common.entities.AllosaurusEntity;
 import lostworlds.common.entities.CarnotaurusEntity;
 import lostworlds.common.entities.DimetrodonEntity;
 import lostworlds.common.entities.EdaphosaurusEntity;
+import lostworlds.common.entities.GiganotosauruEntity;
 import lostworlds.common.entities.GorgonopsEntity;
 import lostworlds.common.entities.ModBoatEntity;
 import lostworlds.common.entities.NautilusEntity;
@@ -27,6 +29,8 @@ public class EntityInit
 	public static final RegistryObject<EntityType<GorgonopsEntity>> GORGONOPS_ENTITY = registerEntity("gorgonops", GorgonopsEntity::new, EntityClassification.CREATURE, GorgonopsEntity.class, 0.4F, 0.5F);
 	public static final RegistryObject<EntityType<CarnotaurusEntity>> CARNOTAURUS_ENTITY = registerEntity("carnotaurus", CarnotaurusEntity::new, EntityClassification.CREATURE, CarnotaurusEntity.class, 0.75F, 1.25F);
 	public static final RegistryObject<EntityType<TyrannosaurusEntity>> TYRANNOSAURUS_ENTITY = registerEntity("tyrannosaurus", TyrannosaurusEntity::new, EntityClassification.CREATURE, TyrannosaurusEntity.class, 2.0F, 1.75F);
+	public static final RegistryObject<EntityType<AllosaurusEntity>> ALLOSAURUS_ENTITY = registerEntity("allosaurus", AllosaurusEntity::new, EntityClassification.CREATURE, AllosaurusEntity.class, 2.0F, 1.75F);
+	public static final RegistryObject<EntityType<GiganotosauruEntity>> GIGANOTOSAURUS_ENTITY = registerEntity("giganotosaurus", GiganotosauruEntity::new, EntityClassification.CREATURE, GiganotosauruEntity.class, 2.0F, 1.75F);
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);

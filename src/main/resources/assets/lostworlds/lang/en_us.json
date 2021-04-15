@@ -105,7 +105,11 @@
 	"item.lostworlds.raw_tyrannosaurus_meat": "Raw Tyrannosaurus Meat",
 	"item.lostworlds.cooked_tyrannosaurus_meat": "Cooked Tyrannosaurus Meat",
 	"item.lostworlds.tyrannosaurus_spawn_egg": "Tyrannosaurus Spawn Egg",
+
+	"item.lostworlds.allosaurus_spawn_egg": "Allosaurus Spawn Egg",
 	
+	"item.lostworlds.giganotosaurus_spawn_egg": "Giganotosaurus Spawn Egg",
+
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
 
@@ -425,10 +429,14 @@
 	
 	//Triassic
 	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",
+
+	//Jurassic
+	"entity.lostworlds.allosaurus": "Allosaurus fragilis",
 	
 	//Cretaceous
 	"entity.lostworlds.carnotaurus": "Carnotaurus sastrei",
 	"entity.lostworlds.tyrannosaurus": "Tyrannosaurus rex",
+	"entity.lostworlds.giganotosaurus": "Giganotosaurus carolinii",
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
