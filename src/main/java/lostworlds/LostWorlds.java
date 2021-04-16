@@ -10,7 +10,8 @@ import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.core.vanilla.properties.ModFlammables;
 import lostworlds.core.vanilla.properties.ModStrippables;
 import lostworlds.world.init.BiomeInit;
-import lostworlds.world.init.ModFeatures;
+import lostworlds.world.init.Mobs;
+import lostworlds.world.init.Ores;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraftforge.common.MinecraftForge;
@@ -51,9 +52,9 @@ public class LostWorlds
         GeckoLib.initialize();
         
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, ModFeatures::generateOre);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, Ores::generateOre);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
-        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> ModFeatures.addMobSpawning(event));
+        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> Mobs.addMobSpawning(event));
     }
 
     @SuppressWarnings("deprecation")

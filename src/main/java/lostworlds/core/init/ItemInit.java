@@ -5,7 +5,10 @@ import lostworlds.common.items.DiscItem;
 import lostworlds.common.items.FieldGuideItem;
 import lostworlds.common.items.ModBoatItem;
 import lostworlds.common.items.ModFishBucketItem;
+import lostworlds.common.items.ModSignItem;
+import lostworlds.common.items.ModSlabBurnableItem;
 import lostworlds.common.items.ModSpawnEggItem;
+import lostworlds.common.items.ModWoodBurnableItem;
 import lostworlds.common.items.WetPaperItem;
 import lostworlds.common.tools.BrushItem;
 import lostworlds.core.ModItemGroup;
@@ -224,8 +227,9 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> EXPOSED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("exposed_stone_fossil", () -> new BlockItem(BlockInit.EXPOSED_STONE_FOSSIL.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PLASTERED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("plastered_stone_fossil", () -> new BlockItem(BlockInit.PLASTERED_STONE_FOSSIL.get(), standardProperties()));
 
-	public static final RegistryObject<BlockItem> DIRT_FOSSIL = ModRegistry.ITEM_REGISTRY.register("dirt_fossil", () -> new BlockItem(BlockInit.DIRT_FOSSIL.get(), standardProperties()));
-
+	//Fossil Processing
+	
+	
 	public static final RegistryObject<BlockItem> POWER_SUPPLY_BLOCK = ModRegistry.ITEM_REGISTRY.register("power_supply_block", () -> new BlockItem(BlockInit.POWER_SUPPLY_BLOCK.get(), standardProperties()));
 
 	//Mud
@@ -286,22 +290,22 @@ public class ItemInit
 
 	public static final RegistryObject<BlockItem> PERMIAN_GROUND_FERNS = ModRegistry.ITEM_REGISTRY.register("permian_ground_ferns", () -> new BlockItem(BlockInit.PERMIAN_GROUND_FERNS.get(), standardProperties()));
 
-	public static final RegistryObject<BlockItem> CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("conifer_log", () -> new BlockItem(BlockInit.CONIFER_LOG.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("conifer_wood", () -> new BlockItem(BlockInit.CONIFER_WOOD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_log", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_LOG.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_wood", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_WOOD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_LEAVES = ModRegistry.ITEM_REGISTRY.register("conifer_leaves", () -> new BlockItem(BlockInit.CONIFER_LEAVES.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_SAPLING = ModRegistry.ITEM_REGISTRY.register("conifer_sapling", () -> new BlockItem(BlockInit.CONIFER_SAPLING.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_PLANKS = ModRegistry.ITEM_REGISTRY.register("conifer_planks", () -> new BlockItem(BlockInit.CONIFER_PLANKS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_STAIRS = ModRegistry.ITEM_REGISTRY.register("conifer_stairs", () -> new BlockItem(BlockInit.CONIFER_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_SLAB = ModRegistry.ITEM_REGISTRY.register("conifer_slab", () -> new BlockItem(BlockInit.CONIFER_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_FENCE = ModRegistry.ITEM_REGISTRY.register("conifer_fence", () -> new BlockItem(BlockInit.CONIFER_FENCE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_FENCE_GATE = ModRegistry.ITEM_REGISTRY.register("conifer_fence_gate", () -> new BlockItem(BlockInit.CONIFER_FENCE_GATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("conifer_pressure_plate", () -> new BlockItem(BlockInit.CONIFER_PRESSURE_PLATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_BUTTON = ModRegistry.ITEM_REGISTRY.register("conifer_button", () -> new BlockItem(BlockInit.CONIFER_BUTTON.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_TRAPDOOR = ModRegistry.ITEM_REGISTRY.register("conifer_trapdoor", () -> new BlockItem(BlockInit.CONIFER_TRAPDOOR.get(), standardProperties())); 
-	public static final RegistryObject<BlockItem> CONIFER_DOOR = ModRegistry.ITEM_REGISTRY.register("conifer_door", () -> new BlockItem(BlockInit.CONIFER_DOOR.get(), standardProperties()));
-	public static final RegistryObject<SignItem> CONIFER_SIGN = ModRegistry.ITEM_REGISTRY.register("conifer_sign", () -> new SignItem(standardProperties(), BlockInit.CONIFER_SIGN.get(), BlockInit.CONIFER_WALL_SIGN.get()));
+	public static final RegistryObject<BlockItem> CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("conifer_log", () -> new ModWoodBurnableItem(BlockInit.CONIFER_LOG.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("conifer_wood", () -> new ModWoodBurnableItem(BlockInit.CONIFER_WOOD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_log", () -> new ModWoodBurnableItem(BlockInit.STRIPPED_CONIFER_LOG.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_wood", () -> new ModWoodBurnableItem(BlockInit.STRIPPED_CONIFER_WOOD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_LEAVES = ModRegistry.ITEM_REGISTRY.register("conifer_leaves", () -> new ModWoodBurnableItem(BlockInit.CONIFER_LEAVES.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_SAPLING = ModRegistry.ITEM_REGISTRY.register("conifer_sapling", () -> new ModWoodBurnableItem(BlockInit.CONIFER_SAPLING.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_PLANKS = ModRegistry.ITEM_REGISTRY.register("conifer_planks", () -> new ModWoodBurnableItem(BlockInit.CONIFER_PLANKS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_STAIRS = ModRegistry.ITEM_REGISTRY.register("conifer_stairs", () -> new ModWoodBurnableItem(BlockInit.CONIFER_STAIRS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_SLAB = ModRegistry.ITEM_REGISTRY.register("conifer_slab", () -> new ModSlabBurnableItem(BlockInit.CONIFER_SLAB.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_FENCE = ModRegistry.ITEM_REGISTRY.register("conifer_fence", () -> new ModWoodBurnableItem(BlockInit.CONIFER_FENCE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_FENCE_GATE = ModRegistry.ITEM_REGISTRY.register("conifer_fence_gate", () -> new ModWoodBurnableItem(BlockInit.CONIFER_FENCE_GATE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("conifer_pressure_plate", () -> new ModWoodBurnableItem(BlockInit.CONIFER_PRESSURE_PLATE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_BUTTON = ModRegistry.ITEM_REGISTRY.register("conifer_button", () -> new ModWoodBurnableItem(BlockInit.CONIFER_BUTTON.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_TRAPDOOR = ModRegistry.ITEM_REGISTRY.register("conifer_trapdoor", () -> new ModWoodBurnableItem(BlockInit.CONIFER_TRAPDOOR.get(), standardProperties())); 
+	public static final RegistryObject<BlockItem> CONIFER_DOOR = ModRegistry.ITEM_REGISTRY.register("conifer_door", () -> new ModWoodBurnableItem(BlockInit.CONIFER_DOOR.get(), standardProperties()));
+	public static final RegistryObject<ModSignItem> CONIFER_SIGN = ModRegistry.ITEM_REGISTRY.register("conifer_sign", () -> new ModSignItem(BlockInit.CONIFER_SIGN.get(), BlockInit.CONIFER_WALL_SIGN.get(), standardProperties()));
 	public static final RegistryObject<ModBoatItem> CONIFER_BOAT = ModRegistry.ITEM_REGISTRY.register("conifer_boat", () -> new ModBoatItem(ModBoatType.CONIFER, standardProperties()));
 
 	//Ginkgo

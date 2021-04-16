@@ -43,6 +43,8 @@ public class CreativeTab extends ItemGroup
 	public void fillItemList(NonNullList<ItemStack> item) 
 	{
 		item.add(ItemInit.BRUSH.get().getDefaultInstance());
+		item.add(ItemInit.WET_PAPER.get().getDefaultInstance());
+		item.add(ItemInit.FEILD_GUIDE.get().getDefaultInstance());
 	}
 }
 

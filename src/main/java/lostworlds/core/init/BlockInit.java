@@ -2,7 +2,6 @@ package lostworlds.core.init;
 
 import lostworlds.common.blocks.ArchaeologyTable;
 import lostworlds.common.blocks.ConiferLog;
-import lostworlds.common.blocks.DirtFossil;
 import lostworlds.common.blocks.ExposedStoneFossilBlock;
 import lostworlds.common.blocks.LargePermianDesertPlant;
 import lostworlds.common.blocks.MediumPermianDesertPlant;
@@ -62,8 +61,6 @@ public class BlockInit
 	public static final RegistryObject<StoneFossilBlock> STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("stone_fossil", () -> new StoneFossilBlock(AbstractBlock.Properties.of(ModMaterials.MADE_FOR_BRUSH, MaterialColor.STONE).harvestTool(ModToolType.BRUSH).harvestLevel(0).requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.STONE)));
 	public static final RegistryObject<ExposedStoneFossilBlock> EXPOSED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("exposed_stone_fossil", () -> new ExposedStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops().strength(1.25F).noOcclusion().sound(SoundType.STONE)));
 	public static final RegistryObject<PlasteredStoneFossilBlock> PLASTERED_STONE_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_stone_fossil", () -> new PlasteredStoneFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().sound(SoundType.WOOL).noOcclusion()));
-
-	public static final RegistryObject<DirtFossil> DIRT_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("dirt_fossil", () -> new DirtFossil(AbstractBlock.Properties.of(ModMaterials.MADE_FOR_NOTHING, MaterialColor.STONE).strength(1.5F).sound(SoundType.GRASS)));
 
 	//Fossil Processing	
 	
@@ -207,7 +204,7 @@ public class BlockInit
 	public static final RegistryObject<PressurePlateBlock> WOODEN_PLANKS_PRESSURE_PLATE = ModRegistry.BLOCK_REGISTRY.register("wooden_planks_pressure_plate", () -> new PressurePlateBlock(Sensitivity.EVERYTHING, AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).harvestLevel(0).strength(1.2F, 0.5F).noCollission().sound(SoundType.WOOD)));
 	public static final RegistryObject<WoodButtonBlock> WOODEN_PLANKS_BUTTON = ModRegistry.BLOCK_REGISTRY.register("wooden_planks_button", () -> new WoodButtonBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).harvestLevel(0).strength(1.2F, 0.5F).noCollission().sound(SoundType.WOOD)));
 
-	//Wooden Planks
+	//Refined Wooden Planks
 	public static final RegistryObject<Block> REFINED_WOODEN_PLANKS = ModRegistry.BLOCK_REGISTRY.register("refined_wooden_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).harvestLevel(0).strength(2.7F, 1.9F).sound(SoundType.WOOD)));
 	public static final RegistryObject<StairsBlock> REFINED_WOODEN_PLANKS_STAIRS = ModRegistry.BLOCK_REGISTRY.register("refined_wooden_planks_stairs", () -> new StairsBlock(() -> BlockInit.REFINED_WOODEN_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).harvestLevel(0).strength(2.7F, 1.9F).sound(SoundType.WOOD)));
 	public static final RegistryObject<SlabBlock> REFINED_WOODEN_PLANKS_SLAB = ModRegistry.BLOCK_REGISTRY.register("refined_wooden_planks_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).harvestLevel(0).strength(2.7F, 1.9F).sound(SoundType.WOOD)));

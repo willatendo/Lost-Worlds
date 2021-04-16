@@ -87,4 +87,10 @@ public class ModBoatItem extends Item
 			}
 		}
 	}
+	
+	@Override
+	public int getBurnTime(ItemStack itemStack) 
+	{
+		return 1200;
+	}
 }
