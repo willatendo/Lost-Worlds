@@ -48,7 +48,7 @@ public class LostWorlds
         //InGen
 //		InGenSecretes.init();
         
-        //Lib - 3.0.15
+        //Lib - 3.0.30
         GeckoLib.initialize();
         
         MinecraftForge.EVENT_BUS.register(this);
