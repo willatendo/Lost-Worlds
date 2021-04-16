@@ -7,14 +7,14 @@
 	"item.lostworlds.wet_paper": "Wet Paper",
 
 	"toolTip.lostworlds.wet_paper.holding_shift": "Used For The Safe Transport of Fossils",
-	"toolTip.lostworlds.wet_paper.not_holding_shift": "Used For The Safe Transport of Fossils",
+	"toolTip.lostworlds.wet_paper.not_holding_shift": "Hold Shift For More Information",
 
 	//Fossil
 	"item.lostworlds.fossil": "Fossil",
 
 	//Field Guide
 	"item.lostworlds.field_guide": "Field Guide",	
-	"toolTip.lostworlds.field_guide.holding_shift": "Tells basic information on the Dinosaurs, as well as thier stats",
+	"toolTip.lostworlds.field_guide.holding_shift": "Tells basic information about a used on prehistoric creature, as well as thier stats",
 	"toolTip.lostworlds.field_guide.not_holding_shift": "Hold Shift For More Information",
 		
 	//Procompsognathus
@@ -178,6 +178,11 @@
 
 	//Nesting Block
 	"block.lostworlds.nesting_block": "Nesting Block",
+	
+	//Time Machine
+	"block.lostworlds.time_machine": "Time Machine",
+	"toolTip.lostworlds.time_machine.holding_shift": "Has an unmatchable power alure around it. Only a tool of equal, mysterious power can break it. Place it well",
+	"toolTip.lostworlds.time_machine.not_holding_shift": "Hold Shift For More Information",
 
 	//Museum Stuff
 	"block.lostworlds.oak_archaeology_table": "Oak Archaeology Table",
@@ -253,6 +258,7 @@
 	"block.lostworlds.stripped_ginkgo_log": "Stripped Ginkgo Log",
 	"block.lostworlds.ginkgo_wood": "Ginkgo Wood",
 	"block.lostworlds.stripped_ginkgo_wood": "Stripped Ginkgo Wood",
+	"block.lostworlds.ginkgo_leaves": "Ginkgo Leaves",
 	"block.lostworlds.ginkgo_planks": "Ginkgo Planks",
 	"block.lostworlds.ginkgo_stairs": "Ginkgo Stairs",
 	"block.lostworlds.ginkgo_slab": "Ginkgo Slab",

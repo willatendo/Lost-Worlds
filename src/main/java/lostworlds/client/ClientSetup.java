@@ -87,6 +87,7 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_LEAVES.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_DOOR.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_TRAPDOOR.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_LEAVES.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_DOOR.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_TRAPDOOR.get(), RenderType.translucent());
 		//Sign

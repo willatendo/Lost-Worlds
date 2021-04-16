@@ -12,6 +12,7 @@ import lostworlds.common.blocks.PlasteredStoneFossilBlock;
 import lostworlds.common.blocks.PowerSupplyBlock;
 import lostworlds.common.blocks.SmallPermianDesertPlant;
 import lostworlds.common.blocks.StoneFossilBlock;
+import lostworlds.common.blocks.TimeMachineBlock;
 import lostworlds.common.blocks.eggs.CarnotaurusEggBlock;
 import lostworlds.common.blocks.eggs.DimetrodonEggBlock;
 import lostworlds.common.blocks.eggs.EdaphosaurusEggBlock;
@@ -81,6 +82,9 @@ public class BlockInit
 	//Nesting Block
 	public static final RegistryObject<Block> NESTING_BLOCK = ModRegistry.BLOCK_REGISTRY.register("nesting_block", () -> new Block(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.3F).sound(SoundType.GRASS)));
 
+	//Time Machine
+	public static final RegistryObject<TimeMachineBlock> TIME_MACHINE = ModRegistry.BLOCK_REGISTRY.register("time_machine", () -> new TimeMachineBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.GOLD).harvestTool(ToolType.PICKAXE).harvestLevel(4).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
+	
 	//Museum Stuff
 	public static final RegistryObject<ArchaeologyTable> OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ArchaeologyTable> STRIPPED_OAK_ARCHAEOLOGY_TABLE = ModRegistry.BLOCK_REGISTRY.register("stripped_oak_archaeology_table", () -> new ArchaeologyTable(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
@@ -157,6 +161,7 @@ public class BlockInit
 	public static final RegistryObject<ConiferLog> STRIPPED_GINKGO_LOG = ModRegistry.BLOCK_REGISTRY.register("stripped_ginkgo_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ConiferLog> GINKGO_WOOD = ModRegistry.BLOCK_REGISTRY.register("ginkgo_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ConiferLog> STRIPPED_GINKGO_WOOD = ModRegistry.BLOCK_REGISTRY.register("stripped_ginkgo_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<LeavesBlock> GINKGO_LEAVES = ModRegistry.BLOCK_REGISTRY.register("ginkgo_leaves", () -> new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.3F).noOcclusion().sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> GINKGO_PLANKS = ModRegistry.BLOCK_REGISTRY.register("ginkgo_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<StairsBlock> GINKGO_STAIRS = ModRegistry.BLOCK_REGISTRY.register("ginkgo_stairs", () -> new StairsBlock(() -> BlockInit.CONIFER_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<SlabBlock> GINKGO_SLAB = ModRegistry.BLOCK_REGISTRY.register("ginkgo_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
