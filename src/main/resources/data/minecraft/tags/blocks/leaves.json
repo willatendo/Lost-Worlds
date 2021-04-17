@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"lostworlds:conifer_leaves"
-  ]
+		"lostworlds:conifer_leaves",
+		"lostworlds:ginkgo_leaves"
+	]
 }

@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"lostworlds:conifer_trapdoor"
-  ]
+		"lostworlds:conifer_trapdoor",
+		"lostworlds:ginkgo_trapdoor"
+	]
 }

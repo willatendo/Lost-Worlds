@@ -450,10 +450,6 @@
 	"block.lostworlds.security_door": "Security Door",
 	"block.lostworlds.back_door": "Back Door",
 	
-	//Fluids
-	//Oil
-	"fluid.lostworlds.oil_fluid": "Oil",
-	
 	//Entities
 	//Permian
 	"entity.lostworlds.dimetrodon": "Dimetrodon limbatus",

@@ -15,6 +15,10 @@ import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.GroundPathNavigator;
 import net.minecraft.pathfinding.PathNavigator;
 import net.minecraft.tags.FluidTags;
@@ -24,7 +28,10 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
 public abstract class AbstractPrehistoricEntity extends CreatureEntity
-{	
+{
+	public static final DataParameter<Boolean> ATTACKING = EntityDataManager.defineId(AbstractPrehistoricEntity.class, DataSerializers.BOOLEAN);
+	public static final DataParameter<Integer> SEX = EntityDataManager.defineId(AbstractPrehistoricEntity.class, DataSerializers.INT);
+	
 	protected boolean isHostile;
 	protected boolean isScaredOfPlayer;
 	protected boolean isFish = false;
@@ -87,6 +94,37 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	public boolean isLandAndWater()
 	{
 		return this.isLandAndWater;
+	}
+	
+	@Override
+	protected void defineSynchedData() 
+	{
+		super.defineSynchedData();
+		this.getEntityData().define(ATTACKING, false);
+	}
+	
+	public void setAttacking(boolean attacking) 
+	{
+		this.entityData.set(ATTACKING, attacking);
+	}
+	
+	public boolean isAttacking() 
+	{
+		return this.entityData.get(ATTACKING);
+	}
+	
+	@Override
+	public void addAdditionalSaveData(CompoundNBT nbt) 
+	{
+		super.addAdditionalSaveData(nbt);
+		nbt.putBoolean("Biteing", this.isAttacking());
+	}
+	
+	@Override
+	public void readAdditionalSaveData(CompoundNBT nbt) 
+	{
+		super.readAdditionalSaveData(nbt);
+		this.setAttacking(nbt.getBoolean("Biteing"));
 	}
 	
 	public void travel(Vector3d vec3d) 
@@ -170,7 +208,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 			if(isHostile())
 			{
-				this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
+				this.goalSelector.addGoal(4, new ModAttackGoal(this, 1.0D, false));
 			}
 			if(!isHostile() && isScaredOfPlayer())
 			{
@@ -191,7 +229,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 			if(isHostile())
 			{
-				this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
+				this.goalSelector.addGoal(4, new ModAttackGoal(this, 1.0D, false));
 			}
 			if(!isHostile() && isScaredOfPlayer())
 			{
@@ -242,5 +280,33 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 				this.animal.setSpeed(0.0F);
 			}
 		}
+	}
+	
+	class ModAttackGoal extends MeleeAttackGoal 
+	{
+		private final AbstractPrehistoricEntity entity;
+		
+		public ModAttackGoal(AbstractPrehistoricEntity entityIn, double speedIn, boolean useMemory) 
+		{
+			super(entityIn, speedIn, useMemory);
+			this.entity = entityIn;
+		}
+		
+		public boolean canUse() {
+            this.entity.setAttacking(true);
+            return super.canUse();
+        }
+
+        public void start() 
+        {
+            super.start();
+            this.entity.setAttacking(true);
+        }
+
+        public void stop() 
+        {
+            super.stop();
+            this.entity.setAttacking(false);
+        }
 	}
 }

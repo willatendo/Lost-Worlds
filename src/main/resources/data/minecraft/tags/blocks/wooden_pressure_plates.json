@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"lostworlds:conifer_pressure_plate"
-  ]
+		"lostworlds:conifer_pressure_plate",
+		"lostworlds:ginkgo_pressure_plate"
+	]
 }
