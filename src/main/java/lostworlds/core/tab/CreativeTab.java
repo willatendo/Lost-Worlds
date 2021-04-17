@@ -104,7 +104,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PALAEONISCUM_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_MEAT.get().getDefaultInstance());
-		item.add(ItemInit.SUCHOMIMUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.SUCHOMIMUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.TYRANNOSAURUS_MEAT.get().getDefaultInstance());
 
 		//Cooked Meat
@@ -118,7 +118,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PALAEONISCUM_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_COOKED_MEAT.get().getDefaultInstance());
-		item.add(ItemInit.SUCHOMIMUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.SUCHOMIMUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.TYRANNOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		
 		//Bones
