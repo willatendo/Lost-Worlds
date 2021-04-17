@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/cooked_large_dinosaur_meat"
+		"layer0": "lostworlds:items/cooked_carnotaurus_meat"
   }
 }

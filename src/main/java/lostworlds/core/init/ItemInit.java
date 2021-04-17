@@ -45,6 +45,8 @@ public class ItemInit
 	//Field Guide
 	public static final RegistryObject<Item> FEILD_GUIDE = ModRegistry.ITEM_REGISTRY.register("field_guide", () -> new FieldGuideItem(new Item.Properties()));
 	
+	public static final RegistryObject<Item> EMPTY_VILE = simpleItemRegister("empty_vile", standardProperties());
+
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = registerDisc("procompsognathus");
@@ -201,6 +203,10 @@ public class ItemInit
 	public static final RegistryObject<Item> GIGANOTOSAURUS_CLAW_BONE = registerSpecialBone("giganotosaurus");
 	
 	//Suchomimus
+	public static final RegistryObject<Item> SUCHOMIMUS_DNA = registerDNA("suchomimus");
+	public static final RegistryObject<Item> SUCHOMIMUS_DNA_DISC = registerDisc("suchomimus");
+	public static final RegistryObject<Item> SUCHOMIMUS_MEAT = registerMeat("suchomimus", FoodInit.RAW_LARGE_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> SUCHOMIMUS_COOKED_MEAT = registerCookedMeat("suchomimus", FoodInit.COOKED_LARGE_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> SUCHOMIMUS_SPAWN_EGG = registerSpawnEgg("suchomimus", () -> EntityInit.SUCHOMIMUS_ENTITY.get(), 0x6a94c1, 0x110f54);
 	
 	//Mud Ball
@@ -300,28 +306,31 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> VOLCANIC_ASH = ModRegistry.ITEM_REGISTRY.register("volcanic_ash", () -> new BlockItem(BlockInit.VOLCANIC_ASH.get(), standardProperties()));
 
 	//Permian
+	//Sand
 	public static final RegistryObject<BlockItem> PERMIAN_SAND = ModRegistry.ITEM_REGISTRY.register("permian_sand", () -> new BlockItem(BlockInit.PERMIAN_SAND.get(), standardProperties()));
 
+	//Stone
 	public static final RegistryObject<BlockItem> PERMIAN_STONE = ModRegistry.ITEM_REGISTRY.register("permian_stone", () -> new BlockItem(BlockInit.PERMIAN_STONE.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PERMIAN_STONE_STAIRS = ModRegistry.ITEM_REGISTRY.register("permian_stone_stairs", () -> new BlockItem(BlockInit.PERMIAN_STONE_STAIRS.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PERMIAN_STONE_SLAB = ModRegistry.ITEM_REGISTRY.register("permian_stone_slab", () -> new BlockItem(BlockInit.PERMIAN_STONE_SLAB.get(), standardProperties()));
-	
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_STAIRS = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_stairs", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_STAIRS.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_SLAB = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_slab", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_SLAB.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_WALL = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_wall", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_WALL.get(), standardProperties()));
 
+	//Flora
 	public static final RegistryObject<BlockItem> SMALL_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("small_permian_desert_plant", () -> new BlockItem(BlockInit.SMALL_PERMIAN_DESERT_PLANT.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> MEDIUM_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("medium_permian_desert_plant", () -> new BlockItem(BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> LARGE_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("large_permian_desert_plant", () -> new BlockItem(BlockInit.LARGE_PERMIAN_DESERT_PLANT.get(), standardProperties()));
 
 	public static final RegistryObject<BlockItem> PERMIAN_GROUND_FERNS = ModRegistry.ITEM_REGISTRY.register("permian_ground_ferns", () -> new BlockItem(BlockInit.PERMIAN_GROUND_FERNS.get(), standardProperties()));
 
+	//Conifer
 	public static final RegistryObject<BlockItem> CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("conifer_log", () -> new ModWoodBurnableItem(BlockInit.CONIFER_LOG.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("conifer_wood", () -> new ModWoodBurnableItem(BlockInit.CONIFER_WOOD.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_log", () -> new ModWoodBurnableItem(BlockInit.STRIPPED_CONIFER_LOG.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_wood", () -> new ModWoodBurnableItem(BlockInit.STRIPPED_CONIFER_WOOD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_LEAVES = ModRegistry.ITEM_REGISTRY.register("conifer_leaves", () -> new ModWoodBurnableItem(BlockInit.CONIFER_LEAVES.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_LEAVES = ModRegistry.ITEM_REGISTRY.register("conifer_leaves", () -> new BlockItem(BlockInit.CONIFER_LEAVES.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> CONIFER_SAPLING = ModRegistry.ITEM_REGISTRY.register("conifer_sapling", () -> new ModWoodBurnableItem(BlockInit.CONIFER_SAPLING.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> CONIFER_PLANKS = ModRegistry.ITEM_REGISTRY.register("conifer_planks", () -> new ModWoodBurnableItem(BlockInit.CONIFER_PLANKS.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> CONIFER_STAIRS = ModRegistry.ITEM_REGISTRY.register("conifer_stairs", () -> new ModWoodBurnableItem(BlockInit.CONIFER_STAIRS.get(), standardProperties()));
@@ -340,7 +349,7 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> GINKGO_WOOD = ModRegistry.ITEM_REGISTRY.register("ginkgo_wood", () -> new BlockItem(BlockInit.GINKGO_WOOD.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_log", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_LOG.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_wood", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_WOOD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_LEAVES = ModRegistry.ITEM_REGISTRY.register("ginkgo_leaves", () -> new ModWoodBurnableItem(BlockInit.GINKGO_LEAVES.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_LEAVES = ModRegistry.ITEM_REGISTRY.register("ginkgo_leaves", () -> new BlockItem(BlockInit.GINKGO_LEAVES.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> GINKGO_PLANKS = ModRegistry.ITEM_REGISTRY.register("ginkgo_planks", () -> new BlockItem(BlockInit.GINKGO_PLANKS.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> GINKGO_STAIRS = ModRegistry.ITEM_REGISTRY.register("ginkgo_stairs", () -> new BlockItem(BlockInit.GINKGO_STAIRS.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> GINKGO_SLAB = ModRegistry.ITEM_REGISTRY.register("ginkgo_slab", () -> new BlockItem(BlockInit.GINKGO_SLAB.get(), standardProperties()));

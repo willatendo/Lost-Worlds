@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/raw_medium_dinosaur_meat"
+		"layer0": "lostworlds:items/raw_dimetrodon_meat"
   }
 }

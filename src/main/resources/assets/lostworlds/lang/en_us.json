@@ -12,6 +12,9 @@
 	"item.lostworlds.field_guide": "Field Guide",	
 	"toolTip.lostworlds.field_guide.holding_shift": "Tells basic information about a used on prehistoric creature, as well as thier stats",
 	"toolTip.lostworlds.field_guide.not_holding_shift": "Hold Shift For More Information",
+	
+	//Vile
+	"item.lostworlds.empty_vile": "Empty Vile",
 		
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
@@ -108,10 +111,31 @@
 	"item.lostworlds.cooked_tyrannosaurus_meat": "Cooked Tyrannosaurus Meat",
 	"item.lostworlds.tyrannosaurus_spawn_egg": "Tyrannosaurus Spawn Egg",
 
+	//Allosaurus	
+	"item.lostworlds.allosaurus_dna": "Allosaurus DNA",
+	"item.lostworlds.allosaurus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.allosaurus_dna_disc.holding_shift": "Storing: Allosaurus fragilis",
+	"toolTip.lostworlds.allosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_allosaurus_meat": "Raw Allosaurus Meat",
+	"item.lostworlds.cooked_allosaurus_meat": "Cooked Allosaurus Meat",
 	"item.lostworlds.allosaurus_spawn_egg": "Allosaurus Spawn Egg",
 	
+	//Giganotosaurus	
+	"item.lostworlds.giganotosaurus_dna": "Giganotosaurus DNA",
+	"item.lostworlds.giganotosaurus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.giganotosaurus_dna_disc.holding_shift": "Storing: Giganotosaurus carolinii",
+	"toolTip.lostworlds.giganotosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_giganotosaurus_meat": "Raw Giganotosaurus Meat",
+	"item.lostworlds.cooked_giganotosaurus_meat": "Cooked Giganotosaurus Meat",
 	"item.lostworlds.giganotosaurus_spawn_egg": "Giganotosaurus Spawn Egg",
 
+	//Suchomimus	
+	"item.lostworlds.suchomimus_dna": "Suchomimus DNA",
+	"item.lostworlds.suchomimus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.suchomimus_dna_disc.holding_shift": "Storing: Suchomimus tenerensis",
+	"toolTip.lostworlds.suchomimus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_suchomimus_meat": "Raw Suchomimus Meat",
+	"item.lostworlds.cooked_suchomimus_meat": "Cooked Suchomimus Meat",
 	"item.lostworlds.suchomimus_spawn_egg": "Suchomimus Spawn Egg",
 
 	//Mud
