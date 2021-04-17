@@ -1,0 +1,166 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.allosaurus",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 12,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "Suchomimus",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Body",
+					"parent": "Suchomimus",
+					"pivot": [0, 23, 9],
+					"cubes": [
+						{"origin": [-7, 15, -7], "size": [14, 20, 24], "uv": [0, 0]},
+						{"origin": [-6, 16, -18], "size": [12, 16, 12], "pivot": [0, 22, -12], "rotation": [5, 0, 0], "uv": [0, 76]}
+					]
+				},
+				{
+					"name": "Arm1",
+					"parent": "Body",
+					"pivot": [3, 19, -12.7],
+					"rotation": [-25, 0, 0],
+					"cubes": [
+						{"origin": [4, 11, -13.6], "size": [4, 9, 5], "pivot": [3, 16, -11.6], "rotation": [25, 0, 0], "uv": [0, 44]}
+					]
+				},
+				{
+					"name": "Eibow1",
+					"parent": "Arm1",
+					"pivot": [5.4, 11.6, -10.5],
+					"rotation": [67.5, 0, 0],
+					"cubes": [
+						{"origin": [4.4, 7.6, -10.4], "size": [3, 8, 4], "pivot": [3.4, 13.6, -12.4], "rotation": [-65, 0, 0], "uv": [37, 44]}
+					]
+				},
+				{
+					"name": "Arm2",
+					"parent": "Body",
+					"pivot": [-3, 19, -12.7],
+					"rotation": [-25, 0, 0],
+					"cubes": [
+						{"origin": [-8, 11, -13.6], "size": [4, 9, 5], "pivot": [-3, 16, -11.6], "rotation": [25, 0, 0], "uv": [0, 44], "mirror": true}
+					]
+				},
+				{
+					"name": "Eibow2",
+					"parent": "Arm2",
+					"pivot": [-5.4, 11.6, -10.5],
+					"rotation": [67.5, 0, 0],
+					"cubes": [
+						{"origin": [-7.4, 7.6, -10.4], "size": [3, 8, 4], "pivot": [-3.4, 13.6, -12.4], "rotation": [-65, 0, 0], "uv": [37, 44], "mirror": true}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "Body",
+					"pivot": [0, 30.3, 16.6],
+					"cubes": [
+						{"origin": [-5, 23, 16], "size": [10, 11, 21], "pivot": [0, 25, 22], "rotation": [-5, 0, 0], "uv": [55, 23]}
+					]
+				},
+				{
+					"name": "Tail2",
+					"parent": "Tail",
+					"pivot": [0, 29.5, 36.3],
+					"cubes": [
+						{"origin": [-3, 25, 36], "size": [6, 7, 25], "uv": [0, 44]}
+					]
+				},
+				{
+					"name": "Tail3",
+					"parent": "Tail2",
+					"pivot": [0, 29.3, 61.6],
+					"cubes": [
+						{"origin": [-2, 27, 60], "size": [4, 4, 24], "pivot": [0, 27, 62], "rotation": [-5, 0, 0], "uv": [38, 55]}
+					]
+				},
+				{
+					"name": "Neck",
+					"parent": "Body",
+					"pivot": [0, 27, -18],
+					"cubes": [
+						{"origin": [-4, 24, -30], "size": [8, 8, 17], "pivot": [0, 28, -24], "rotation": [-25, 0, 0], "uv": [77, 66]}
+					]
+				},
+				{
+					"name": "Head",
+					"parent": "Neck",
+					"pivot": [0, 31.1, -28.3],
+					"rotation": [5, 0, 0],
+					"cubes": [
+						{"origin": [-4.5, 25.1, -34.3], "size": [9, 9, 7], "uv": [96, 27]},
+						{"origin": [-1.4, 33.2, -35.5], "size": [2, 3, 3.3], "pivot": [4, 34.1, -33.3], "rotation": [90, 0, 0], "uv": [0, 16]},
+						{"origin": [-2.5, 27.8, -52.3], "size": [5, 5, 19], "pivot": [-1, 33.1, -37.3], "rotation": [-1, 0, 0], "uv": [48, 83]},
+						{"origin": [-2.5, 22.80076, -52.38726], "size": [5, 5, 19], "pivot": [-1, 28.10076, -37.38726], "rotation": [-1, 0, 0], "uv": [163, 0]}
+					]
+				},
+				{
+					"name": "Jaw",
+					"parent": "Head",
+					"pivot": [0, 26.9, -33.3],
+					"cubes": [
+						{"origin": [-1.5, 26.06259, -51.39021], "size": [3, 2, 18], "uv": [52, 0]}
+					]
+				},
+				{
+					"name": "Leg1",
+					"parent": "Suchomimus",
+					"pivot": [4, 20, 11],
+					"cubes": [
+						{"origin": [2, 12, 4], "size": [7, 16, 11], "uv": [96, 0]}
+					]
+				},
+				{
+					"name": "Knee1",
+					"parent": "Leg1",
+					"pivot": [-3, 13, 14.8],
+					"cubes": [
+						{"origin": [3.5, 1.3, 11.3], "size": [4, 11.9, 5], "pivot": [4, 11, 14], "rotation": [-20, 0, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Feet1",
+					"parent": "Knee1",
+					"pivot": [-3, 2.2, 11.6],
+					"cubes": [
+						{"origin": [2.5, 0.2, 3.8], "size": [6, 3, 9], "uv": [96, 91]}
+					]
+				},
+				{
+					"name": "Leg2",
+					"parent": "Suchomimus",
+					"pivot": [-4, 20, 11],
+					"cubes": [
+						{"origin": [-9, 12, 4], "size": [7, 16, 11], "uv": [96, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "Knee2",
+					"parent": "Leg2",
+					"pivot": [3, 13, 14.8],
+					"cubes": [
+						{"origin": [-7.5, 1.3, 11.3], "size": [4, 11.9, 5], "pivot": [-4, 11, 14], "rotation": [-20, 0, 0], "uv": [0, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "Feet2",
+					"parent": "Knee2",
+					"pivot": [3, 2.2, 11.6],
+					"cubes": [
+						{"origin": [-8.5, 0.2, 3.8], "size": [6, 3, 9], "uv": [96, 91], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

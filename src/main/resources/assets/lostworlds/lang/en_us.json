@@ -5,12 +5,8 @@
 	
 	//Plaster
 	"item.lostworlds.wet_paper": "Wet Paper",
-
 	"toolTip.lostworlds.wet_paper.holding_shift": "Used For The Safe Transport of Fossils",
 	"toolTip.lostworlds.wet_paper.not_holding_shift": "Hold Shift For More Information",
-
-	//Fossil
-	"item.lostworlds.fossil": "Fossil",
 
 	//Field Guide
 	"item.lostworlds.field_guide": "Field Guide",	
@@ -115,6 +111,8 @@
 	"item.lostworlds.allosaurus_spawn_egg": "Allosaurus Spawn Egg",
 	
 	"item.lostworlds.giganotosaurus_spawn_egg": "Giganotosaurus Spawn Egg",
+
+	"item.lostworlds.suchomimus_spawn_egg": "Suchomimus Spawn Egg",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -450,6 +448,7 @@
 	"entity.lostworlds.carnotaurus": "Carnotaurus sastrei",
 	"entity.lostworlds.tyrannosaurus": "Tyrannosaurus rex",
 	"entity.lostworlds.giganotosaurus": "Giganotosaurus carolinii",
+	"entity.lostworlds.suchomimus": "Suchomimus tenerensis",
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
@@ -471,7 +470,7 @@
 	
 	//On Load Event
 	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 7 Developer Edition. DO NOT REDISTRIBUTE.",
-	"lostworlds.loadEvent.player": "\u00A76Willatendo & Lambdaraptor49 thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 7",
+	"lostworlds.loadEvent.player": "Willatendo, Jooji, and Lambdaraptor49 thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 7",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"

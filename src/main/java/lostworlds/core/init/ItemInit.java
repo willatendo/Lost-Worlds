@@ -1,4 +1,4 @@
-package lostworlds.core.init; 
+ package lostworlds.core.init; 
 
 import lostworlds.common.entities.ModBoatEntity.ModBoatType;
 import lostworlds.common.items.DiscItem;
@@ -42,9 +42,6 @@ public class ItemInit
 	//Plaster
 	public static final RegistryObject<Item> WET_PAPER = advancedItemRegister("wet_paper", new WetPaperItem(standardProperties()));
 
-	//Fossil
-	public static final RegistryObject<Item> FOSSIL = simpleItemRegister("fossil", standardProperties());
-	
 	//Field Guide
 	public static final RegistryObject<Item> FEILD_GUIDE = ModRegistry.ITEM_REGISTRY.register("field_guide", () -> new FieldGuideItem(new Item.Properties()));
 	
@@ -202,6 +199,9 @@ public class ItemInit
 	public static final RegistryObject<Item> GIGANOTOSAURUS_VERTEBRAE_BONE = registerVertebraeBone("giganotosaurus");
 	public static final RegistryObject<Item> GIGANOTOSAURUS_SKULL_BONE = registerSkull("giganotosaurus");
 	public static final RegistryObject<Item> GIGANOTOSAURUS_CLAW_BONE = registerSpecialBone("giganotosaurus");
+	
+	//Suchomimus
+	public static final RegistryObject<Item> SUCHOMIMUS_SPAWN_EGG = registerSpawnEgg("suchomimus", () -> EntityInit.SUCHOMIMUS_ENTITY.get(), 0x6a94c1, 0x110f54);
 	
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
