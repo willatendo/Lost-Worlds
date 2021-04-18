@@ -1,0 +1,12 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:tyrannosaurus_arm_bone",
+		"lostworlds:tyrannosaurus_leg_bone",
+		"lostworlds:tyrannosaurus_foot_bone",
+		"lostworlds:tyrannosaurus_rib_bone",
+		"lostworlds:tyrannosaurus_vertebrea_bone",
+		"lostworlds:tyrannosaurus_skull_bone",
+		"lostworlds:tyrannosaurus_special_bone"
+	]
+}

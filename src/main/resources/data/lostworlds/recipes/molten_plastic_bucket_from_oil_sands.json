@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:blasting",
-	"ingredient": {
-		"item": "lostworlds:oil_sands"
-	},
-	"result": "lostworlds:molten_plastic_bucket",
-	"experience": 0.5,
-	"cookingtime": 700
-}

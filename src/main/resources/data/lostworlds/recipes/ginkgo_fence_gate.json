@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"@#@",
+		"@#@"
+	],
+	"key": {
+		"#": {
+			"item": "lostworlds:ginkgo_planks"
+		},
+		"@": {
+			"item": "minecraft:stick"
+		}
+	},
+	"result": {
+		"item": "lostworlds:ginkgo_fence_gate"
+	}
+}

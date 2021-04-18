@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:carnotaurus_dna",
+		"lostworlds:carnotaurus_dna_disc",
+		"lostworlds:carnotaurus_egg",
+		"lostworlds:carnotaurus_meat",
+		"lostworlds:cooked_carnotaurus_meat",
+		"lostworlds:carnotaurus_spawn_egg"
+	]
+}

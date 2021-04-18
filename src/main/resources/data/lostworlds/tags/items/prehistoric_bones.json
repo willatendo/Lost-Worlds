@@ -1,6 +1,17 @@
 {
 	"replace": false,
 	"values": [
-		"lostworlds:nautilus_dna"
+		"#lostworlds:allosaurus_bones",
+		"#lostworlds:carnotaurus_bones",
+		"#lostworlds:dimetrodon_bones",
+		"#lostworlds:edahosaurus_bones",
+		"#lostworlds:giganotosaurus_bones",
+		"#lostworlds:gorgonops_bones",
+		"minecraft:nautilus_shell",
+		"#lostworlds:palaeoniscum_bones",
+		"#lostworlds:procompsognathus_bones",
+		"#lostworlds:rhinesuchus_bones",
+		"#lostworlds:suchomimus_bones",
+		"#lostworlds:tetraceratops_bones"
  	]
 }

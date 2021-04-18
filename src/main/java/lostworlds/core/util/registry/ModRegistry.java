@@ -2,7 +2,6 @@ package lostworlds.core.util.registry;
 
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
-import lostworlds.core.init.FluidInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.PaintingInit;
 import lostworlds.core.init.ParticleInit;
@@ -15,7 +14,6 @@ import lostworlds.world.init.SurfaceBuilderInit;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.PaintingType;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -37,7 +35,6 @@ public class ModRegistry
 	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALISER_REGISTRY = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ModID.ID);
 	public static final DeferredRegister<Item> ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, ModID.ID);
 	public static final DeferredRegister<PaintingType> PAINTING_REGISTRY = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, ModID.ID);
-	public static final DeferredRegister<Fluid> FLUID_REGISTRY = DeferredRegister.create(ForgeRegistries.FLUIDS, ModID.ID);
 	public static final DeferredRegister<ContainerType<?>> CONTAINER_REGISTRY = DeferredRegister.create(ForgeRegistries.CONTAINERS, ModID.ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, ModID.ID);
 	public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ModID.ID);
@@ -54,7 +51,6 @@ public class ModRegistry
 		RECIPE_SERIALISER_REGISTRY.register(bus);
 		ITEM_REGISTRY.register(bus);
 		PAINTING_REGISTRY.register(bus);
-		FLUID_REGISTRY.register(bus);
 		CONTAINER_REGISTRY.register(bus);
 		TILE_ENTITY_REGISTRY.register(bus);
 		BLOCK_REGISTRY.register(bus);
@@ -67,7 +63,6 @@ public class ModRegistry
 		RecipeSerialiserInit.initRecipeSerialisers();
 		ItemInit.initItems();
 		PaintingInit.initPaintings();
-		FluidInit.initFluids();
 		TileEntityInit.initTileEntities();
 		BlockInit.initBlocks();
 		EntityInit.initEntities();

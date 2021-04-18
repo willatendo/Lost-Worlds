@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:tyrannosaurus_dna",
+		"lostworlds:tyrannosaurus_dna_disc",
+		"lostworlds:tyrannosaurus_egg",
+		"lostworlds:tyrannosaurus_meat",
+		"lostworlds:cooked_tyrannosaurus_meat",
+		"lostworlds:tyrannosaurus_spawn_egg"
+	]
+}

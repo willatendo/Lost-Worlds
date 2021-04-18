@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:procompsognathus_arm_bone",
+		"lostworlds:procompsognathus_leg_bone",
+		"lostworlds:procompsognathus_foot_bone",
+		"lostworlds:procompsognathus_rib_bone",
+		"lostworlds:procompsognathus_vertebrea_bone",
+		"lostworlds:procompsognathus_skull_bone"
+	]
+}

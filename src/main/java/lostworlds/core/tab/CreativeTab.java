@@ -76,6 +76,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PROCOMPSOGNATHUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_DNA.get().getDefaultInstance());
+		item.add(ItemInit.TETRACERATOPS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.TYRANNOSAURUS_DNA.get().getDefaultInstance());
 		
 		//Storage Discs
@@ -105,6 +106,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PROCOMPSOGNATHUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.TETRACERATOPS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.TYRANNOSAURUS_MEAT.get().getDefaultInstance());
 
 		//Cooked Meat
@@ -119,6 +121,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PROCOMPSOGNATHUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_COOKED_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.TETRACERATOPS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.TYRANNOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		
 		//Bones
@@ -136,6 +139,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PROCOMPSOGNATHUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.TETRACERATOPS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.TYRANNOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		
 		//Scarab

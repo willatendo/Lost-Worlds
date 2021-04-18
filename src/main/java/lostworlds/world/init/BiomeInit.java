@@ -21,9 +21,6 @@ public class BiomeInit
 	public static final RegistryObject<Biome> VOLCANO = createBiome("volcano", ModBiomeMaker::makeAVolcanoBiome);
 	public static final RegistryKey<Biome> VOLCANO_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "volcano"));
 	
-	public static final RegistryObject<Biome> OIL_SANDS_DESERT = createBiome("oil_sands_desert", ModBiomeMaker::makeAOilSands);
-	public static final RegistryKey<Biome> OIL_SANDS_DESERT_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "oil_sands_desert"));
-	
 	public static final RegistryObject<Biome> PERMIAN_DESERT = createBiome("permian_desert", ModBiomeMaker::makeAPermianDesert);
 	public static final RegistryKey<Biome> PERMIAN_DESERT_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "permian_desert"));
 	
@@ -57,11 +54,6 @@ public class BiomeInit
     	{
     		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(VOLCANO_KEY, 1));
     		BiomeDictionary.addTypes(VOLCANO_KEY, Type.HOT, Type.MOUNTAIN, Type.RARE);
-    	}
-    	if(event.getName().equals(OIL_SANDS_DESERT.get().getRegistryName()))
-    	{
-    		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(OIL_SANDS_DESERT_KEY, 1));
-    		BiomeDictionary.addTypes(OIL_SANDS_DESERT_KEY, Type.HOT, Type.RARE);
     	}
     }
 }

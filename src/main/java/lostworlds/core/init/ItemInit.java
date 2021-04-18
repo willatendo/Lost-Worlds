@@ -18,7 +18,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.BucketItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -208,6 +207,26 @@ public class ItemInit
 	public static final RegistryObject<Item> SUCHOMIMUS_MEAT = registerMeat("suchomimus", FoodInit.RAW_LARGE_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> SUCHOMIMUS_COOKED_MEAT = registerCookedMeat("suchomimus", FoodInit.COOKED_LARGE_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> SUCHOMIMUS_SPAWN_EGG = registerSpawnEgg("suchomimus", () -> EntityInit.SUCHOMIMUS_ENTITY.get(), 0x6a94c1, 0x110f54);
+	public static final RegistryObject<Item> SUCHOMIMUS_ARM_BONE = registerArmBone("suchomimus");
+	public static final RegistryObject<Item> SUCHOMIMUS_LEG_BONE = registerLegBone("suchomimus");
+	public static final RegistryObject<Item> SUCHOMIMUS_FOOT_BONE = registerFootBone("suchomimus");
+	public static final RegistryObject<Item> SUCHOMIMUS_RIB_BONE = registerRibBone("suchomimus");
+	public static final RegistryObject<Item> SUCHOMIMUS_VERTEBRAE_BONE = registerVertebraeBone("suchomimus");
+	public static final RegistryObject<Item> SUCHOMIMUS_SKULL_BONE = registerSkull("suchomimus");
+	public static final RegistryObject<Item> SUCHOMIMUS_CLAW_BONE = registerSpecialBone("suchomimus");
+	
+	//Tetraceratops
+	public static final RegistryObject<Item> TETRACERATOPS_DNA = registerDNA("tetraceratops");
+	public static final RegistryObject<Item> TETRACERATOPS_DNA_DISC = registerDisc("tetraceratops");
+	public static final RegistryObject<Item> TETRACERATOPS_MEAT = registerMeat("tetraceratops", FoodInit.RAW_LARGE_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> TETRACERATOPS_COOKED_MEAT = registerCookedMeat("tetraceratops", FoodInit.COOKED_LARGE_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> TETRACERATOPS_SPAWN_EGG = registerSpawnEgg("tetraceratops", () -> EntityInit.TETRACERATOPS_ENTITY.get(), 0x873624, 0x543b11);
+	public static final RegistryObject<Item> TETRACERATOPS_ARM_BONE = registerArmBone("tetraceratops");
+	public static final RegistryObject<Item> TETRACERATOPS_LEG_BONE = registerLegBone("tetraceratops");
+	public static final RegistryObject<Item> TETRACERATOPS_FOOT_BONE = registerFootBone("tetraceratops");
+	public static final RegistryObject<Item> TETRACERATOPS_RIB_BONE = registerRibBone("tetraceratops");
+	public static final RegistryObject<Item> TETRACERATOPS_VERTEBRAE_BONE = registerVertebraeBone("tetraceratops");
+	public static final RegistryObject<Item> TETRACERATOPS_SKULL_BONE = registerSkull("tetraceratops");
 	
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
@@ -215,10 +234,6 @@ public class ItemInit
 	//Copper
 	public static final RegistryObject<Item> COPPER_INGOT = simpleItemRegister("copper_ingot", standardProperties());
 	public static final RegistryObject<Item> COPPER_NUGGET = simpleItemRegister("copper_nugget", standardProperties());
-	
-	//Oil and Plastic Stuff
-	public static final RegistryObject<Item> OIL_BUCKET = advancedItemRegister("oil_bucket", new BucketItem(() -> FluidInit.OIL_FLUID.get(), standardProperties().stacksTo(1)));
-	public static final RegistryObject<Item> MOLTEN_PLASTIC_BUCKET = simpleItemRegister("molten_plastic_bucket", standardProperties().stacksTo(1));
 	
 	//Electronics
 	public static final RegistryObject<Item> COPPER_WIRE = simpleItemRegister("copper_wire", standardProperties());	
@@ -250,7 +265,6 @@ public class ItemInit
 	//Blocks
 	//Ore
 	public static final RegistryObject<BlockItem> COPPER_ORE = ModRegistry.ITEM_REGISTRY.register("copper_ore", () -> new BlockItem(BlockInit.COPPER_ORE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> OIL_SANDS = ModRegistry.ITEM_REGISTRY.register("oil_sands", () -> new BlockItem(BlockInit.OIL_SANDS.get(), standardProperties()));
 	
 	//Fossil
 	public static final RegistryObject<BlockItem> STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("stone_fossil", () -> new BlockItem(BlockInit.STONE_FOSSIL.get(), standardProperties()));
@@ -623,7 +637,7 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerSpecialBone(String id)
 	{
-		return simpleItemRegister(id + "_special", standardProperties());
+		return simpleItemRegister(id + "_special_bone", standardProperties());
 	}
 	
 	public static void initItems() { }

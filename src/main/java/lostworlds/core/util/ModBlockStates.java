@@ -7,7 +7,6 @@ public class ModBlockStates
 {
 	//Ore
 	public static final BlockState COPPER_ORE = BlockInit.COPPER_ORE.get().defaultBlockState();
-	public static final BlockState OIL_SANDS = BlockInit.OIL_SANDS.get().defaultBlockState();
 	
 	//Fossils
 	public static final BlockState STONE_FOSSIL = BlockInit.STONE_FOSSIL.get().defaultBlockState();

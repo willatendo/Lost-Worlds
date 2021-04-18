@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:grogonops_dna",
+		"lostworlds:grogonops_dna_disc",
+		"lostworlds:grogonops_egg",
+		"lostworlds:grogonops_meat",
+		"lostworlds:cooked_grogonops_meat",
+		"lostworlds:grogonops_spawn_egg"
+	]
+}

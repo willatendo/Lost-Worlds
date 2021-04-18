@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:edaphosaurus_dna",
+		"lostworlds:edaphosaurus_dna_disc",
+		"lostworlds:edaphosaurus_egg",
+		"lostworlds:edaphosaurus_meat",
+		"lostworlds:cooked_edaphosaurus_meat",
+		"lostworlds:edaphosaurus_spawn_egg"
+	]
+}

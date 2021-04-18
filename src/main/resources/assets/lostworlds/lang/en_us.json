@@ -137,6 +137,15 @@
 	"item.lostworlds.raw_suchomimus_meat": "Raw Suchomimus Meat",
 	"item.lostworlds.cooked_suchomimus_meat": "Cooked Suchomimus Meat",
 	"item.lostworlds.suchomimus_spawn_egg": "Suchomimus Spawn Egg",
+	
+	//Tetraceratops	
+	"item.lostworlds.tetraceratops_dna": "Tetraceratops DNA",
+	"item.lostworlds.tetraceratops_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.tetraceratops_dna_disc.holding_shift": "Storing: Tetraceratops insignis",
+	"toolTip.lostworlds.tetraceratops_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_tetraceratops_meat": "Raw Tetraceratops Meat",
+	"item.lostworlds.cooked_tetraceratops_meat": "Cooked Tetraceratops Meat",
+	"item.lostworlds.tetraceratops_spawn_egg": "Tetraceratops Spawn Egg",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -144,10 +153,6 @@
 	//Copper
 	"item.lostworlds.copper_ingot": "Copper Ingot",
 	"item.lostworlds.copper_nugget": "Copper Nugget",
-
-	//Oil and Plastic Stuff
-	"item.lostworlds.oil_bucket": "Oil Bucket",
-	"item.lostworlds.molten_plastic_bucket": "Molten Plastic Bucket",
 
 	//Electronics
 	"item.lostworlds.copper_wire": "Copper Wire",	
@@ -182,7 +187,6 @@
 	//Blocks
 	//Ore
 	"block.lostworlds.copper_ore": "Copper Ore",
-	"block.lostworlds.oil_sands": "Oil Sands",
 	
 	//Fossils
 	"block.lostworlds.stone_fossil": "Stone Fossil",
@@ -457,6 +461,7 @@
 	"entity.lostworlds.rhinesuchus": "Rhinesuches whaitsi",
 	"entity.lostworlds.edaphosaurus": "Edaphosaurus pogonias",
 	"entity.lostworlds.gorgonops": "Gorgonops whaitsi",
+	"entity.lostworlds.tetraceratops": "Tetraceratops insignis",
 	
 	//Triassic
 	"entity.lostworlds.procompsognathus": "Procompsognathus triassicus",
