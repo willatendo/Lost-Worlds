@@ -7,6 +7,6 @@ public class ModWalkGoal extends RandomWalkingGoal
 {
 	public ModWalkGoal(CreatureEntity entity) 
 	{
-		super(entity, 1.0D, 10, false);
+		super(entity, 1.0D, 30, true);
 	}
 }

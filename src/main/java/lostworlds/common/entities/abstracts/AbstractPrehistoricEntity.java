@@ -1,27 +1,32 @@
 package lostworlds.common.entities.abstracts;
 
+import java.util.EnumSet;
+
 import lostworlds.common.goal.ModSwimGoal;
 import lostworlds.common.goal.ModWalkGoal;
 import lostworlds.common.goal.path.GroundAndSwimmerPathNavigator;
 import net.minecraft.entity.CreatureEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.GroundPathNavigator;
 import net.minecraft.pathfinding.PathNavigator;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -100,7 +105,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	protected void defineSynchedData() 
 	{
 		super.defineSynchedData();
-		this.getEntityData().define(ATTACKING, false);
+		this.getEntityData().define(ATTACKING, Boolean.FALSE);
 	}
 	
 	public void setAttacking(boolean attacking) 
@@ -111,20 +116,6 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	public boolean isAttacking() 
 	{
 		return this.entityData.get(ATTACKING);
-	}
-	
-	@Override
-	public void addAdditionalSaveData(CompoundNBT nbt) 
-	{
-		super.addAdditionalSaveData(nbt);
-		nbt.putBoolean("Biteing", this.isAttacking());
-	}
-	
-	@Override
-	public void readAdditionalSaveData(CompoundNBT nbt) 
-	{
-		super.readAdditionalSaveData(nbt);
-		this.setAttacking(nbt.getBoolean("Biteing"));
 	}
 	
 	public void travel(Vector3d vec3d) 
@@ -238,6 +229,17 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		}
 	}
 	
+	public boolean attackEntityAsMob(Entity entityIn) 
+	{
+		boolean flag = entityIn.hurt(DamageSource.mobAttack(this), (float) ((int) this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
+        if (flag) 
+        {
+            this.doEnchantDamageEffects(this, entityIn);
+        }
+
+        return flag;
+    }
+	
 	static class MoveHelperController extends MovementController 
 	{
 		private final AbstractPrehistoricEntity animal;
@@ -285,22 +287,54 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	class ModAttackGoal extends MeleeAttackGoal 
 	{
 		private final AbstractPrehistoricEntity entity;
+		@SuppressWarnings("unused")
+		private int attackStep;
 		
 		public ModAttackGoal(AbstractPrehistoricEntity entityIn, double speedIn, boolean useMemory) 
 		{
 			super(entityIn, speedIn, useMemory);
 			this.entity = entityIn;
+			this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
 		}
 		
-		public boolean canUse() {
-            this.entity.setAttacking(true);
-            return super.canUse();
+		protected void checkAndPerformAttack(LivingEntity entity, double distToEnemySqr) 
+		{
+			double d0 = this.getAttackReachSqr(entity);
+            if(distToEnemySqr <= d0 && this.isTimeToAttack()) 
+            {
+                this.resetAttackCooldown();
+                this.entity.attackEntityAsMob(entity);
+                AbstractPrehistoricEntity.this.setAttacking(false);
+            }
+            else if(distToEnemySqr <= d0 * 2.0D) 
+            {
+                if(this.isTimeToAttack()) 
+                {
+                	AbstractPrehistoricEntity.this.setAttacking(false);
+                    this.resetAttackCooldown();
+                }
+
+                if(this.getTicksUntilNextAttack() <= 10) 
+                {
+                	AbstractPrehistoricEntity.this.setAttacking(true);
+                }
+            }
+            else 
+            {
+                this.resetAttackCooldown();
+                AbstractPrehistoricEntity.this.setAttacking(false);
+            }
+		}
+		
+		public boolean canUse() 
+		{
+			LivingEntity livingentity = this.entity.getTarget();
+            return livingentity != null && livingentity.isAlive() && this.entity.canAttack(livingentity);
         }
 
         public void start() 
         {
-            super.start();
-            this.entity.setAttacking(true);
+        	this.attackStep = 0;
         }
 
         public void stop() 

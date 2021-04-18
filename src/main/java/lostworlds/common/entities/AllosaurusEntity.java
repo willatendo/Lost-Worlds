@@ -2,6 +2,7 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
@@ -49,17 +50,20 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
-	{
-		if(event.isMoving())
+	{				
+		if(this.entityData.get(AbstractPrehistoricEntity.ATTACKING))
+		{
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.allosaurus.attack", true));
+		}
+		else if(event.isMoving())
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.allosaurus.walk", true));
-			return PlayState.CONTINUE;
 		}
 		else
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.allosaurus.idle", true));
-			return PlayState.CONTINUE;
-		}
+		}	
+		return PlayState.CONTINUE;
 	}
 	
 	public AllosaurusEntity(EntityType<? extends AllosaurusEntity> entityIn, World worldIn) 
