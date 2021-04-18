@@ -35,8 +35,7 @@ import net.minecraft.world.World;
 
 public abstract class AbstractPrehistoricEntity extends CreatureEntity
 {
-	public static final DataParameter<Boolean> ATTACKING = EntityDataManager.defineId(AbstractPrehistoricEntity.class, DataSerializers.BOOLEAN);
-	public static final DataParameter<Integer> SEX = EntityDataManager.defineId(AbstractPrehistoricEntity.class, DataSerializers.INT);
+	public static final DataParameter<Boolean> ATTACKING = EntityDataManager.defineId(AbstractPrehistoricEntity.class, DataSerializers.BOOLEAN);	
 	
 	protected boolean isHostile;
 	protected boolean isScaredOfPlayer;
