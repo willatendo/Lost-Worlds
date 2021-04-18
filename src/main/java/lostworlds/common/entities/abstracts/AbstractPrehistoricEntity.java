@@ -3,7 +3,6 @@ package lostworlds.common.entities.abstracts;
 import java.util.EnumSet;
 
 import lostworlds.common.goal.ModSwimGoal;
-import lostworlds.common.goal.ModWalkGoal;
 import lostworlds.common.goal.path.GroundAndSwimmerPathNavigator;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.Entity;
@@ -18,7 +17,9 @@ import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.PanicGoal;
+import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -194,7 +195,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		if(!isFish() && !isLandAndWater())
 		{
 			this.goalSelector.addGoal(0, new SwimGoal(this));
-			this.goalSelector.addGoal(1, new ModWalkGoal(this));
+			this.goalSelector.addGoal(1, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 			if(isHostile())
@@ -214,7 +215,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		}
 		if(isLandAndWater() && !isFish())
 		{
-			this.goalSelector.addGoal(1, new ModWalkGoal(this));
+			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 0.001F));
 			this.goalSelector.addGoal(1, new ModSwimGoal(this));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
