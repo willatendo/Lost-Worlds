@@ -234,6 +234,9 @@
 	
 	"block.lostworlds.conifer_archaeology_table": "Conifer Archaeology Table",
 	"block.lostworlds.stripped_conifer_archaeology_table": "Stripped Conifer Archaeology Table",	
+	
+	"block.lostworlds.ginkgo_archaeology_table": "Ginkgo Archaeology Table",
+	"block.lostworlds.stripped_ginkgo_archaeology_table": "Stripped Ginkgo Archaeology Table",	
 		
 	//Volcanic Rock
 	"block.lostworlds.volcanic_rock": "Volcanic Rock",

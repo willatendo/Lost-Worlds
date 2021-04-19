@@ -32,7 +32,6 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 	public void tick() 
 	{
 		super.tick();
-		
 		if(this.isInWaterOrBubble() && this.isLandNavigator) 
 		{
 			switchNavigator(false);

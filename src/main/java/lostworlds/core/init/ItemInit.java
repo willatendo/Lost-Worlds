@@ -311,6 +311,9 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> CONIFER_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("conifer_archaeology_table", () -> new BlockItem(BlockInit.CONIFER_ARCHAEOLOGY_TABLE.get(), standardProperties()));
 	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_ARCHAEOLOGY_TABLE.get(), standardProperties()));
 	
+	public static final RegistryObject<BlockItem> GINKGO_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("ginkgo_archaeology_table", () -> new BlockItem(BlockInit.GINKGO_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	
 	//Volcanic Stuff
 	public static final RegistryObject<BlockItem> VOLCANIC_ROCK = ModRegistry.ITEM_REGISTRY.register("volcanic_rock", () -> new BlockItem(BlockInit.VOLCANIC_ROCK.get(), standardProperties()));	
 	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_STAIRS = ModRegistry.ITEM_REGISTRY.register("volcanic_rock_stairs", () -> new BlockItem(BlockInit.VOLCANIC_ROCK_STAIRS.get(), standardProperties()));	
