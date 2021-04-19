@@ -33,7 +33,7 @@ public class GreatAukRender extends GeoEntityRenderer<GreatAukEntity>
 	{
 		if(entity.isBaby())
 		{
-			stack.scale(0.15F, 0.15F, 0.15F);
+			stack.scale(0.35F, 0.35F, 0.35F);
 		}
 		stack.scale(1.0F, 1.0F, 1.0F);
 		

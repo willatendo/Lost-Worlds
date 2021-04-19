@@ -6,9 +6,8 @@ license="Creative Commons"
 modId="lostworlds"
 version="1.0.0"
 displayName="The Lost Worlds"
-authors="Willatendo, Lilly Jooji, DapperDino, and Lambdaraptor49"
+authors="Main Developer: Willatendo. Artists: Lilly Jooji, and bAbA. Former Artists: DapperDino"
 
 description='''
 A 1.16.5/1.16.3/1.15.2 Forge mod that adds dinosaurs, archaeology, and more to the game!
-Willatendo develops the mod, Lambdaraptor ports the mod to 1.16.3 and 1.15.2 and translates to russian.
 '''

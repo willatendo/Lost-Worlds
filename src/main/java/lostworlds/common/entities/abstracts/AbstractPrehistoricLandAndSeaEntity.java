@@ -1,25 +1,28 @@
 package lostworlds.common.entities.abstracts;
 
-import lostworlds.common.goal.path.GroundAndSwimmerPathNavigator;
+import lostworlds.common.goal.path.SemiAquaticPathNavigator;
 import lostworlds.core.util.interfaces.ISemiAquatic;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.pathfinding.GroundPathNavigator;
-import net.minecraft.pathfinding.PathNavigator;
-import net.minecraft.pathfinding.SwimmerPathNavigator;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
 public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehistoricAnimalEntity implements ISemiAquatic
 {
+	public float prevInWaterProgress;
+    public float inWaterProgress;
 	private boolean isLandNavigator;
 	private int swimTimer = -1000;
 	
-	public AbstractPrehistoricLandAndSeaEntity(EntityType<? extends AbstractPrehistoricAnimalEntity> entityIn, World worldIn) 
+	public AbstractPrehistoricLandAndSeaEntity(EntityType<? extends AbstractPrehistoricLandAndSeaEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn);
-		this.moveControl = new AbstractPrehistoricEntity.LandAndSeaMoveHelperController(this);
+		this.setPathfindingMalus(PathNodeType.WATER, 0.0F);
+        this.setPathfindingMalus(PathNodeType.WATER_BORDER, 0.0F);
+		switchNavigator(false);
 	}
 	
 	@Override
@@ -31,16 +34,32 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 	@Override
 	public void tick() 
 	{
+		prevInWaterProgress = inWaterProgress;
 		super.tick();
-		if(this.isInWaterOrBubble() && this.isLandNavigator) 
+		if(this.isInWaterOrBubble() && inWaterProgress < 5F) 
 		{
-			switchNavigator(false);
+            inWaterProgress++;
+        }
+        if(!this.isInWaterOrBubble() && inWaterProgress > 0F)
+        {
+            inWaterProgress--;
+        }
+        if(this.isInWaterOrBubble() && this.isLandNavigator) 
+        {
+            switchNavigator(false);
         }
         if(!this.isInWaterOrBubble() && !this.isLandNavigator) 
         {
             switchNavigator(true);
         }
-        
+        if(inWaterProgress > 0) 
+        {
+            this.maxUpStep = 1;
+        } 
+        else 
+        {
+            this.maxUpStep = 0.6F;
+        }
         if(this.level.isClientSide())
         {
         	if (isInWater()) 
@@ -83,42 +102,22 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 		else 
         {
             this.moveControl = new MovementController(this);
-            this.navigation = new SwimmerPathNavigator(this, level);
+            this.navigation = new SemiAquaticPathNavigator(this, level);
             this.isLandNavigator = false;
         }
     }
 	
-	@Override
-	protected PathNavigator createNavigation(World worldIn) 
+	public void travel(Vector3d travelVector) 
 	{
-		return new GroundAndSwimmerPathNavigator(this, worldIn);
-	}
-	
-	public void travel(Vector3d vec3d) 
-	{
-		if(this.isEffectiveAi() && this.isInWater()) 
-		{
-			this.moveRelative(0.01F, vec3d);
-			this.move(MoverType.SELF, this.getDeltaMovement());
-			this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
-			if(this.getTarget() == null) 
-			{
-				this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
-			}
-		} 
-		if(this.isEffectiveAi() && !this.isInWater()) 
-		{
-			this.moveRelative(0.01F, vec3d);
-			this.move(MoverType.SELF, this.getDeltaMovement());
-			this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
-			if(this.getTarget() == null) 
-			{
-				this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
-			}
-		} 
-		else 
-		{
-			super.travel(vec3d);
-		}
-	}
+        if(this.isEffectiveAi() && this.isInWater()) 
+        {
+        	this.moveRelative(this.getSpeed(), travelVector);
+            this.move(MoverType.SELF, this.getDeltaMovement());
+            this.moveTo(this.getDeltaMovement().scale(0.9D));
+        } 
+        else 
+        {
+            super.travel(travelVector);
+        }
+    }
 }

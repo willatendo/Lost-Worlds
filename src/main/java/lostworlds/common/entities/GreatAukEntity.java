@@ -13,7 +13,6 @@ import net.minecraft.entity.passive.fish.TropicalFishEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -53,9 +52,6 @@ public class GreatAukEntity extends AbstractPrehistoricLandAndSeaEntity implemen
 	public GreatAukEntity(EntityType<? extends GreatAukEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn);
-
-        this.setPathfindingMalus(PathNodeType.WATER, 0.0F);
-        this.setPathfindingMalus(PathNodeType.WATER_BORDER, 0.0F);
 	}
 	
 	@Override

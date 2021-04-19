@@ -5,6 +5,6 @@ public interface ISemiAquatic
 	boolean shouldEnterWater();
 
     boolean shouldLeaveWater();
-    
+        
     int getWaterSearchRange();
 }

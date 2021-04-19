@@ -3,6 +3,7 @@ package lostworlds.common.entities.abstracts;
 import java.util.EnumSet;
 
 import lostworlds.common.goal.ModSwimGoal;
+import lostworlds.common.goal.ModSwimSemiAquaticGoal;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -185,7 +186,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		if(isLandAndWater() && !isFish())
 		{
 			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 1.0D));
-			this.goalSelector.addGoal(1, new ModSwimGoal(this));
+			this.goalSelector.addGoal(1, new ModSwimSemiAquaticGoal(this, 1.0D, 30));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 			if(isHostile())

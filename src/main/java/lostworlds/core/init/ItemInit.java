@@ -3,6 +3,7 @@
 import lostworlds.common.entities.ModBoatEntity.ModBoatType;
 import lostworlds.common.items.DiscItem;
 import lostworlds.common.items.FieldGuideItem;
+import lostworlds.common.items.GreatAukEggItem;
 import lostworlds.common.items.ModBoatItem;
 import lostworlds.common.items.ModFishBucketItem;
 import lostworlds.common.items.ModSignItem;
@@ -229,8 +230,8 @@ public class ItemInit
 	public static final RegistryObject<Item> TETRACERATOPS_SKULL_BONE = registerSkull("tetraceratops");
 	
 	//Great Auk
+	public static final RegistryObject<Item> GREAT_AUK_EGG = advancedItemRegister("great_auk_egg", new GreatAukEggItem(standardProperties().stacksTo(16)));
 	public static final RegistryObject<Item> GREAT_AUK_SPAWN_EGG = registerSpawnEgg("great_auk", () -> EntityInit.GREAT_AUK_ENTITY.get(), 0x000000, 0xFFFFFF);
-	
 	
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
