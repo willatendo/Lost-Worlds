@@ -1,7 +1,8 @@
 package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
-import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
@@ -37,29 +38,39 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class SuchomimusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
+public class SuchomimusEntity extends AbstractPrehistoricLandAndSeaEntity implements IAnimatable
 {
 	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.RABBIT, Items.CHICKEN, Items.MUTTON, Items.COD, Items.SALMON, Items.TROPICAL_FISH, ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PALAEONISCUM_MEAT.get(), ItemInit.PROCOMPSOGNATHUS_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
 	{
-		if(event.isMoving())
+		if(this.entityData.get(AbstractPrehistoricEntity.ATTACKING))
+		{
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.suchomimus.attack", true));
+		}
+		else if(event.isMoving() && !isInWaterOrBubble())
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.suchomimus.walk", true));
-			return PlayState.CONTINUE;
+		}
+		else if(event.isMoving() && isInWaterOrBubble())
+		{
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.suchomimus.swim", true));
+		}
+		else if(!isInWaterOrBubble())
+		{
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.suchomimus.idle", true));
 		}
 		else
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.suchomimus.idle", true));
-			return PlayState.CONTINUE;
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.suchomimus.swimming_idle", true));
 		}
+		return PlayState.CONTINUE;
 	}
 
 	public SuchomimusEntity(EntityType<? extends SuchomimusEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
@@ -93,14 +104,8 @@ public class SuchomimusEntity extends AbstractPrehistoricAnimalEntity implements
 	}
 	
 	@Override
-	public boolean isLandAndWater() 
-	{
-		return true;
-	}
-	
-	@Override
 	public boolean isFood(ItemStack stack) 
-	{
+	{	
 		return FOOD_ITEMS.test(stack);
 	}
 	
@@ -139,6 +144,6 @@ public class SuchomimusEntity extends AbstractPrehistoricAnimalEntity implements
 	@Override
 	public AbstractPrehistoricAgeingEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricAgeingEntity prehistoricEntity) 
 	{
-		return EntityInit.TYRANNOSAURUS_ENTITY.get().create(serverWorld);
+		return EntityInit.SUCHOMIMUS_ENTITY.get().create(serverWorld);
 	}
 }

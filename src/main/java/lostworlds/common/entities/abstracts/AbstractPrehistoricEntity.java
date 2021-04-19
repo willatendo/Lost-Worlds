@@ -3,12 +3,10 @@ package lostworlds.common.entities.abstracts;
 import java.util.EnumSet;
 
 import lostworlds.common.goal.ModSwimGoal;
-import lostworlds.common.goal.path.GroundAndSwimmerPathNavigator;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
@@ -30,7 +28,6 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
 public abstract class AbstractPrehistoricEntity extends CreatureEntity
@@ -46,11 +43,6 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	public AbstractPrehistoricEntity(EntityType<? extends AbstractPrehistoricEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn);
-		
-		if(isLandAndWater())
-		{
-			this.moveControl = new AbstractPrehistoricEntity.MoveHelperController(this);
-		}
 	}
 	
 	@Override
@@ -118,36 +110,18 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		return this.entityData.get(ATTACKING);
 	}
 	
-	public void travel(Vector3d vec3d) 
-	{
-		if(this.isEffectiveAi() && this.isInWater() && isLandAndWater()) 
-		{
-			this.moveRelative(0.01F, vec3d);
-			this.move(MoverType.SELF, this.getDeltaMovement());
-			this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
-			if(this.getTarget() == null) 
-			{
-				this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
-			}
-		} 
-		else 
-		{
-			super.travel(vec3d);
-		}
-	}
-	
 	@Override
 	public boolean isPushedByFluid() 
 	{
 		if(isFish())
 		{
-			return true;
+			return false;
 		}
 		if(isLandAndWater())
 		{
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 	
 	public boolean canRandomSwim() 
@@ -166,10 +140,6 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	@Override
 	protected PathNavigator createNavigation(World worldIn) 
 	{
-		if(isLandAndWater())
-		{
-			return new GroundAndSwimmerPathNavigator(this, worldIn);
-		}
 		return new GroundPathNavigator(this, worldIn);
 	}
 	
@@ -214,7 +184,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		}
 		if(isLandAndWater() && !isFish())
 		{
-			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 0.001F));
+			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 1.0D));
 			this.goalSelector.addGoal(1, new ModSwimGoal(this));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
@@ -240,11 +210,11 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
         return flag;
     }
 	
-	static class MoveHelperController extends MovementController 
+	static class LandAndSeaMoveHelperController extends MovementController 
 	{
 		private final AbstractPrehistoricEntity animal;
 		
-		MoveHelperController(AbstractPrehistoricEntity entity) 
+		LandAndSeaMoveHelperController(AbstractPrehistoricEntity entity) 
 		{
 			super(entity);
 			this.animal = entity;

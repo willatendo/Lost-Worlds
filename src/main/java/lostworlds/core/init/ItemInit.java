@@ -228,6 +228,10 @@ public class ItemInit
 	public static final RegistryObject<Item> TETRACERATOPS_VERTEBRAE_BONE = registerVertebraeBone("tetraceratops");
 	public static final RegistryObject<Item> TETRACERATOPS_SKULL_BONE = registerSkull("tetraceratops");
 	
+	//Great Auk
+	public static final RegistryObject<Item> GREAT_AUK_SPAWN_EGG = registerSpawnEgg("great_auk", () -> EntityInit.GREAT_AUK_ENTITY.get(), 0x000000, 0xFFFFFF);
+	
+	
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
 	

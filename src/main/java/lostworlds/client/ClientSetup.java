@@ -6,6 +6,7 @@ import lostworlds.client.entity.render.DimetrodonRender;
 import lostworlds.client.entity.render.EdaphosaurusRender;
 import lostworlds.client.entity.render.GiganotosaurusRender;
 import lostworlds.client.entity.render.GorgonopsRender;
+import lostworlds.client.entity.render.GreatAukRender;
 import lostworlds.client.entity.render.NautilusRender;
 import lostworlds.client.entity.render.PalaeoniscumRender;
 import lostworlds.client.entity.render.ProcompsognathusRender;
@@ -108,6 +109,7 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.GIGANOTOSAURUS_ENTITY.get(), GiganotosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.SUCHOMIMUS_ENTITY.get(), SuchomimusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.TETRACERATOPS_ENTITY.get(), TetraceratopsRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.GREAT_AUK_ENTITY.get(), GreatAukRender::new);
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 	}
