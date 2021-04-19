@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"@#@",
+		"#$#",
+		"@#@"
+	],
+	"key": {
+		"#": {
+			"item": "lostworlds:crystal_scarab_gem"
+		},
+		"@": {
+			"item": "minecraft:gold_ingot"
+		},
+		"$": {
+			"item": "minecraft:enchanting_table"
+		}
+	},
+	"result": {
+		"item": "lostworlds:time_machine"
+	}
+}

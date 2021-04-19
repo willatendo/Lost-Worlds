@@ -480,6 +480,9 @@
 	"entity.lostworlds.tyrannosaurus": "Tyrannosaurus rex",
 	"entity.lostworlds.giganotosaurus": "Giganotosaurus carolinii",
 	"entity.lostworlds.suchomimus": "Suchomimus tenerensis",
+	
+	//Modern
+	"entity.lostworlds.great_auk": "Pinguinus impennis",
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
