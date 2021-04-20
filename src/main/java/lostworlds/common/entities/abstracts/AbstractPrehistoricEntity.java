@@ -141,7 +141,11 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	@Override
 	protected PathNavigator createNavigation(World worldIn) 
 	{
-		return new GroundPathNavigator(this, worldIn);
+		if(!isLandAndWater() || !isFish)
+		{
+			return new GroundPathNavigator(this, worldIn);
+		}
+		return super.createNavigation(worldIn);
 	}
 	
 	@Override
