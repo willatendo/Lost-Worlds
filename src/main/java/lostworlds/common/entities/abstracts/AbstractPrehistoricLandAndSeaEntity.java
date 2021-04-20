@@ -1,7 +1,7 @@
 package lostworlds.common.entities.abstracts;
 
+import lostworlds.common.goal.controller.AnimalSwimMoveController;
 import lostworlds.common.goal.path.SemiAquaticPathNavigator;
-import lostworlds.core.util.interfaces.ISemiAquatic;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.controller.MovementController;
@@ -10,12 +10,9 @@ import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehistoricAnimalEntity implements ISemiAquatic
+public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehistoricAnimalEntity
 {
-	public float prevInWaterProgress;
-    public float inWaterProgress;
 	private boolean isLandNavigator;
-	private int swimTimer = -1000;
 	
 	public AbstractPrehistoricLandAndSeaEntity(EntityType<? extends AbstractPrehistoricLandAndSeaEntity> entityIn, World worldIn) 
 	{
@@ -32,64 +29,24 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 	}
 	
 	@Override
+	public boolean isFish() 
+	{
+		return false;
+	}
+	
+	@Override
 	public void tick() 
 	{
-		prevInWaterProgress = inWaterProgress;
 		super.tick();
-		if(this.isInWaterOrBubble() && inWaterProgress < 5F) 
+		if (this.isInWaterOrBubble() && this.isLandNavigator) 
 		{
-            inWaterProgress++;
-        }
-        if(!this.isInWaterOrBubble() && inWaterProgress > 0F)
-        {
-            inWaterProgress--;
-        }
-        if(this.isInWaterOrBubble() && this.isLandNavigator) 
-        {
             switchNavigator(false);
         }
-        if(!this.isInWaterOrBubble() && !this.isLandNavigator) 
+        if (!this.isInWaterOrBubble() && !this.isLandNavigator) 
         {
             switchNavigator(true);
         }
-        if(inWaterProgress > 0) 
-        {
-            this.maxUpStep = 1;
-        } 
-        else 
-        {
-            this.maxUpStep = 0.6F;
-        }
-        if(this.level.isClientSide())
-        {
-        	if (isInWater()) 
-    		{
-    			swimTimer++;
-    		} 
-    		else 
-    		{
-    			swimTimer--;
-    		}
-        }
 	}
-	
-	@Override
-    public boolean shouldEnterWater() 
-	{
-		return swimTimer <= -1000;
-	}
-	
-	@Override
-	public boolean shouldLeaveWater() 
-	{
-		return swimTimer > 600;
-	}
-	
-	@Override
-    public int getWaterSearchRange() 
-	{
-        return 10;
-    }
 	
 	private void switchNavigator(boolean onLand) 
 	{
@@ -101,23 +58,27 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
         } 
 		else 
         {
-            this.moveControl = new MovementController(this);
+            this.moveControl = new AnimalSwimMoveController(this, 1.2F, 1.6F);
             this.navigation = new SemiAquaticPathNavigator(this, level);
             this.isLandNavigator = false;
         }
     }
 	
-	public void travel(Vector3d travelVector) 
+	public void travel(Vector3d vec3d) 
 	{
-        if(this.isEffectiveAi() && this.isInWater()) 
-        {
-        	this.moveRelative(this.getSpeed(), travelVector);
-            this.move(MoverType.SELF, this.getDeltaMovement());
-            this.moveTo(this.getDeltaMovement().scale(0.9D));
-        } 
-        else 
-        {
-            super.travel(travelVector);
-        }
-    }
+		if(this.isEffectiveAi() && this.isInWater()) 
+		{
+			this.moveRelative(this.getSpeed(), vec3d);
+			this.move(MoverType.SELF, this.getDeltaMovement());
+			this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
+			if(this.getTarget() == null) 
+			{
+				this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
+			}
+		} 
+		else 
+		{
+			super.travel(vec3d);
+		}
+	}
 }
