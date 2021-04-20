@@ -151,6 +151,9 @@
 	"item.lostworlds.great_auk_egg": "Great Auk Egg",
 	"item.lostworlds.great_auk_spawn_egg": "Great Auk Spawn Egg",
 
+	//Ouranosaurus
+	"item.lostworlds.ouranosaurus_spawn_egg": "Ouranosaurus Spawn Egg",
+
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
 
@@ -481,6 +484,7 @@
 	"entity.lostworlds.tyrannosaurus": "Tyrannosaurus rex",
 	"entity.lostworlds.giganotosaurus": "Giganotosaurus carolinii",
 	"entity.lostworlds.suchomimus": "Suchomimus tenerensis",
+	"entity.lostworlds.ouranosaurus": "Ouranosaurus nigeriensis",
 	
 	//Modern
 	"entity.lostworlds.great_auk": "Pinguinus impennis",

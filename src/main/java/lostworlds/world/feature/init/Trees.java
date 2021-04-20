@@ -1,4 +1,4 @@
-package lostworlds.world.init;
+package lostworlds.world.feature.init;
 
 import lostworlds.core.util.ModBlockStates;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;

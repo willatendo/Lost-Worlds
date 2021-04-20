@@ -1,4 +1,4 @@
-package lostworlds.world.init;
+package lostworlds.world.feature.init;
 
 import com.google.common.collect.ImmutableList;
 

@@ -10,6 +10,7 @@ import lostworlds.common.entities.GreatAukEggEntity;
 import lostworlds.common.entities.GreatAukEntity;
 import lostworlds.common.entities.ModBoatEntity;
 import lostworlds.common.entities.NautilusEntity;
+import lostworlds.common.entities.OuranosaurusEntity;
 import lostworlds.common.entities.PalaeoniscumEntity;
 import lostworlds.common.entities.ProcompsognathusEntity;
 import lostworlds.common.entities.RhinesuchusEntity;
@@ -39,6 +40,7 @@ public class EntityInit
 	public static final RegistryObject<EntityType<TetraceratopsEntity>> TETRACERATOPS_ENTITY = registerEntity("tetraceratops", TetraceratopsEntity::new, EntityClassification.CREATURE, TetraceratopsEntity.class, 0.75F, 0.25F);
 	public static final RegistryObject<EntityType<GreatAukEntity>> GREAT_AUK_ENTITY = registerEntity("great_auk", GreatAukEntity::new, EntityClassification.CREATURE, GreatAukEntity.class, 0.5F, 0.25F);
 	public static final RegistryObject<EntityType<GreatAukEggEntity>> GREAT_AUK_EGG_ENTITY = registerEntity("great_auk_egg", GreatAukEggEntity::new, EntityClassification.MISC, GreatAukEggEntity.class, 0.25F, 0.25F);
+	public static final RegistryObject<EntityType<OuranosaurusEntity>> OURANOSAURUS_ENTITY = registerEntity("ouranosaurus", OuranosaurusEntity::new, EntityClassification.CREATURE, OuranosaurusEntity.class, 0.5F, 0.5F);
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);

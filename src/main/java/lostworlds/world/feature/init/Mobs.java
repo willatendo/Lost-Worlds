@@ -1,4 +1,4 @@
-package lostworlds.world.init;
+package lostworlds.world.feature.init;
 
 import lostworlds.core.init.EntityInit;
 import net.minecraft.entity.EntityClassification;

@@ -1,4 +1,4 @@
-package lostworlds.world.init;
+package lostworlds.world.feature.init;
 
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModBlockStates;

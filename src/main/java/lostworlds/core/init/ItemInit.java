@@ -232,6 +232,9 @@ public class ItemInit
 	//Great Auk
 	public static final RegistryObject<Item> GREAT_AUK_EGG = advancedItemRegister("great_auk_egg", new GreatAukEggItem(standardProperties().stacksTo(16)));
 	public static final RegistryObject<Item> GREAT_AUK_SPAWN_EGG = registerSpawnEgg("great_auk", () -> EntityInit.GREAT_AUK_ENTITY.get(), 0x000000, 0xFFFFFF);
+
+	//Ouranosaurus
+	public static final RegistryObject<Item> OURANOSAURUS_SPAWN_EGG = registerSpawnEgg("ouranosaurus", () -> EntityInit.OURANOSAURUS_ENTITY.get(), 0x2b3187, 0x1da6e5);
 	
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());

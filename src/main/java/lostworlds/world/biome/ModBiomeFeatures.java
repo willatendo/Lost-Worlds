@@ -1,6 +1,6 @@
 package lostworlds.world.biome;
 
-import lostworlds.world.init.Foliage;
+import lostworlds.world.feature.init.Foliage;
 import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
