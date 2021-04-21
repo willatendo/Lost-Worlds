@@ -46,15 +46,15 @@ public class FukuivenatorEntity extends AbstractPrehistoricAnimalEntity implemen
 	{				
 		if(this.entityData.get(AbstractPrehistoricEntity.ATTACKING))
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fukuvenator.attack", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fukuivenator.attack", true));
 		}
 		else if(event.isMoving())
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fukuvenator.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fukuivenator.walk", true));
 		}
 		else
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fukuvenator.idle", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fukuivenator.idle", true));
 		}	
 		return PlayState.CONTINUE;
 	}

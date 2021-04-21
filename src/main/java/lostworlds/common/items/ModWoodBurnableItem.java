@@ -1,16 +1,16 @@
 package lostworlds.common.items;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.NonNullSupplier;
 
-public class ModWoodBurnableItem extends BlockItem
+public class ModWoodBurnableItem extends ModBlockItem
 {
-	public ModWoodBurnableItem(Block blockIn, Properties properties) 
+	public ModWoodBurnableItem(NonNullSupplier<? extends Block> blockSupplier, Properties properties) 
 	{
-		super(blockIn, properties);
+		super(blockSupplier, properties);
 	}
-	
+
 	@Override
 	public int getBurnTime(ItemStack itemStack) 
 	{

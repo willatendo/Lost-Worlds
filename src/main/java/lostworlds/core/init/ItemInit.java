@@ -4,6 +4,7 @@ import lostworlds.common.entities.ModBoatEntity.ModBoatType;
 import lostworlds.common.items.DiscItem;
 import lostworlds.common.items.FieldGuideItem;
 import lostworlds.common.items.GreatAukEggItem;
+import lostworlds.common.items.ModBlockItem;
 import lostworlds.common.items.ModBoatItem;
 import lostworlds.common.items.ModFishBucketItem;
 import lostworlds.common.items.ModSignItem;
@@ -15,6 +16,7 @@ import lostworlds.common.tools.BrushItem;
 import lostworlds.core.ModItemGroup;
 import lostworlds.core.util.enums.ModItemTeir;
 import lostworlds.core.util.registry.ModRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.AxeItem;
@@ -27,7 +29,6 @@ import net.minecraft.item.MusicDiscItem;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SignItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
@@ -275,276 +276,276 @@ public class ItemInit
 		
 	//Blocks
 	//Ore
-	public static final RegistryObject<BlockItem> COPPER_ORE = ModRegistry.ITEM_REGISTRY.register("copper_ore", () -> new BlockItem(BlockInit.COPPER_ORE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> COPPER_ORE =registerBlockItem("copper_ore", () -> BlockInit.COPPER_ORE.get());
 	
 	//Fossil
-	public static final RegistryObject<BlockItem> STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("stone_fossil", () -> new BlockItem(BlockInit.STONE_FOSSIL.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> EXPOSED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("exposed_stone_fossil", () -> new BlockItem(BlockInit.EXPOSED_STONE_FOSSIL.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PLASTERED_STONE_FOSSIL = ModRegistry.ITEM_REGISTRY.register("plastered_stone_fossil", () -> new BlockItem(BlockInit.PLASTERED_STONE_FOSSIL.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> STONE_FOSSIL = registerBlockItem("stone_fossil", () -> BlockInit.STONE_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_STONE_FOSSIL = registerBlockItem("exposed_stone_fossil", () -> BlockInit.EXPOSED_STONE_FOSSIL.get());
+	public static final RegistryObject<BlockItem> PLASTERED_STONE_FOSSIL = registerBlockItem("plastered_stone_fossil", () -> BlockInit.PLASTERED_STONE_FOSSIL.get());
 
 	//Fossil Processing
 	
 	
-	public static final RegistryObject<BlockItem> POWER_SUPPLY_BLOCK = ModRegistry.ITEM_REGISTRY.register("power_supply_block", () -> new BlockItem(BlockInit.POWER_SUPPLY_BLOCK.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> POWER_SUPPLY_BLOCK = registerBlockItem("power_supply_block", () -> BlockInit.POWER_SUPPLY_BLOCK.get());
 
 	//Mud
-	public static final RegistryObject<BlockItem> MUD = ModRegistry.ITEM_REGISTRY.register("mud", () -> new BlockItem(BlockInit.MUD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> MUD = registerBlockItem("mud", () -> BlockInit.MUD.get());
 
 	//Nesting Block
-	public static final RegistryObject<BlockItem> NESTING_BLOCK = ModRegistry.ITEM_REGISTRY.register("nesting_block", () -> new BlockItem(BlockInit.NESTING_BLOCK.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> NESTING_BLOCK = registerBlockItem("nesting_block", () -> BlockInit.NESTING_BLOCK.get());
 
 	//Time Machine
-	public static final RegistryObject<BlockItem> TIME_MACHINE = ModRegistry.ITEM_REGISTRY.register("time_machine", () -> new BlockItem(BlockInit.TIME_MACHINE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> TIME_MACHINE = registerBlockItem("time_machine", () -> BlockInit.TIME_MACHINE.get());
 	
 	//Museum Stuff
-	public static final RegistryObject<BlockItem> OAK_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("oak_archaeology_table", () -> new BlockItem(BlockInit.OAK_ARCHAEOLOGY_TABLE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_OAK_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_oak_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_OAK_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> OAK_ARCHAEOLOGY_TABLE = registerBlockItem("oak_archaeology_table", () -> BlockInit.OAK_ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<BlockItem> STRIPPED_OAK_ARCHAEOLOGY_TABLE =registerBlockItem("stripped_oak_archaeology_table", () -> BlockInit.STRIPPED_OAK_ARCHAEOLOGY_TABLE.get());
 	
-	public static final RegistryObject<BlockItem> BIRCH_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("birch_archaeology_table", () -> new BlockItem(BlockInit.BIRCH_ARCHAEOLOGY_TABLE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_BIRCH_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_birch_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_BIRCH_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> BIRCH_ARCHAEOLOGY_TABLE = registerBlockItem("birch_archaeology_table", () -> BlockInit.BIRCH_ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<BlockItem> STRIPPED_BIRCH_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_birch_archaeology_table", () -> BlockInit.STRIPPED_BIRCH_ARCHAEOLOGY_TABLE.get());
 	
-	public static final RegistryObject<BlockItem> JUNGLE_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("jungle_archaeology_table", () -> new BlockItem(BlockInit.JUNGLE_ARCHAEOLOGY_TABLE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_jungle_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> JUNGLE_ARCHAEOLOGY_TABLE = registerBlockItem("jungle_archaeology_table", () -> BlockInit.JUNGLE_ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<BlockItem> STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_jungle_archaeology_table", () -> BlockInit.STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE.get());
 	
-	public static final RegistryObject<BlockItem> SPRUCE_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("spruce_archaeology_table", () -> new BlockItem(BlockInit.SPRUCE_ARCHAEOLOGY_TABLE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_spruce_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> SPRUCE_ARCHAEOLOGY_TABLE = registerBlockItem("spruce_archaeology_table", () -> BlockInit.SPRUCE_ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<BlockItem> STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_spruce_archaeology_table", () -> BlockInit.STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE.get());
 	
-	public static final RegistryObject<BlockItem> ACACIA_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("acacia_archaeology_table", () -> new BlockItem(BlockInit.ACACIA_ARCHAEOLOGY_TABLE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_ACACIA_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_acacia_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_ACACIA_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> ACACIA_ARCHAEOLOGY_TABLE = registerBlockItem("acacia_archaeology_table", () -> BlockInit.ACACIA_ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<BlockItem> STRIPPED_ACACIA_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_acacia_archaeology_table", () -> BlockInit.STRIPPED_ACACIA_ARCHAEOLOGY_TABLE.get());
 	
-	public static final RegistryObject<BlockItem> DARK_OAK_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("dark_oak_archaeology_table", () -> new BlockItem(BlockInit.DARK_OAK_ARCHAEOLOGY_TABLE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_dark_oak_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> DARK_OAK_ARCHAEOLOGY_TABLE = registerBlockItem("dark_oak_archaeology_table", () -> BlockInit.DARK_OAK_ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<BlockItem> STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_dark_oak_archaeology_table", () -> BlockInit.STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE.get());
 	
-	public static final RegistryObject<BlockItem> CONIFER_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("conifer_archaeology_table", () -> new BlockItem(BlockInit.CONIFER_ARCHAEOLOGY_TABLE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_CONIFER_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_ARCHAEOLOGY_TABLE = registerBlockItem("conifer_archaeology_table", () -> BlockInit.CONIFER_ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_conifer_archaeology_table", () -> BlockInit.STRIPPED_CONIFER_ARCHAEOLOGY_TABLE.get());
 	
-	public static final RegistryObject<BlockItem> GINKGO_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("ginkgo_archaeology_table", () -> new BlockItem(BlockInit.GINKGO_ARCHAEOLOGY_TABLE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_ARCHAEOLOGY_TABLE = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_archaeology_table", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_ARCHAEOLOGY_TABLE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_ARCHAEOLOGY_TABLE = registerBlockItem("ginkgo_archaeology_table", () -> BlockInit.GINKGO_ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_ginkgo_archaeology_table", () -> BlockInit.STRIPPED_GINKGO_ARCHAEOLOGY_TABLE.get());
 	
 	//Volcanic Stuff
-	public static final RegistryObject<BlockItem> VOLCANIC_ROCK = ModRegistry.ITEM_REGISTRY.register("volcanic_rock", () -> new BlockItem(BlockInit.VOLCANIC_ROCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_STAIRS = ModRegistry.ITEM_REGISTRY.register("volcanic_rock_stairs", () -> new BlockItem(BlockInit.VOLCANIC_ROCK_STAIRS.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_SLAB = ModRegistry.ITEM_REGISTRY.register("volcanic_rock_slab", () -> new BlockItem(BlockInit.VOLCANIC_ROCK_SLAB.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_WALL = ModRegistry.ITEM_REGISTRY.register("volcanic_rock_wall", () -> new BlockItem(BlockInit.VOLCANIC_ROCK_WALL.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> VOLCANIC_ROCK = registerBlockItem("volcanic_rock", () -> BlockInit.VOLCANIC_ROCK.get());	
+	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_STAIRS = registerBlockItem("volcanic_rock_stairs", () -> BlockInit.VOLCANIC_ROCK_STAIRS.get());	
+	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_SLAB = registerBlockItem("volcanic_rock_slab", () -> BlockInit.VOLCANIC_ROCK_SLAB.get());	
+	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_WALL = registerBlockItem("volcanic_rock_wall", () -> BlockInit.VOLCANIC_ROCK_WALL.get());	
 	
-	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK = ModRegistry.ITEM_REGISTRY.register("polished_volcanic_rock", () -> new BlockItem(BlockInit.POLISHED_VOLCANIC_ROCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_STAIRS = ModRegistry.ITEM_REGISTRY.register("polished_volcanic_rock_stairs", () -> new BlockItem(BlockInit.POLISHED_VOLCANIC_ROCK_STAIRS.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_SLAB = ModRegistry.ITEM_REGISTRY.register("polished_volcanic_rock_slab", () -> new BlockItem(BlockInit.POLISHED_VOLCANIC_ROCK_SLAB.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK = registerBlockItem("polished_volcanic_rock", () -> BlockInit.POLISHED_VOLCANIC_ROCK.get());	
+	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_STAIRS = registerBlockItem("polished_volcanic_rock_stairs", () -> BlockInit.POLISHED_VOLCANIC_ROCK_STAIRS.get());	
+	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_SLAB = registerBlockItem("polished_volcanic_rock_slab", () -> BlockInit.POLISHED_VOLCANIC_ROCK_SLAB.get());	
 
-	public static final RegistryObject<BlockItem> VOLCANIC_ASH = ModRegistry.ITEM_REGISTRY.register("volcanic_ash", () -> new BlockItem(BlockInit.VOLCANIC_ASH.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> VOLCANIC_ASH = registerBlockItem("volcanic_ash", () -> BlockInit.VOLCANIC_ASH.get());
 
 	//Permian
 	//Sand
-	public static final RegistryObject<BlockItem> PERMIAN_SAND = ModRegistry.ITEM_REGISTRY.register("permian_sand", () -> new BlockItem(BlockInit.PERMIAN_SAND.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> PERMIAN_SAND = registerBlockItem("permian_sand", () -> BlockInit.PERMIAN_SAND.get());
 
 	//Stone
-	public static final RegistryObject<BlockItem> PERMIAN_STONE = ModRegistry.ITEM_REGISTRY.register("permian_stone", () -> new BlockItem(BlockInit.PERMIAN_STONE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PERMIAN_STONE_STAIRS = ModRegistry.ITEM_REGISTRY.register("permian_stone_stairs", () -> new BlockItem(BlockInit.PERMIAN_STONE_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PERMIAN_STONE_SLAB = ModRegistry.ITEM_REGISTRY.register("permian_stone_slab", () -> new BlockItem(BlockInit.PERMIAN_STONE_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_STAIRS = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_stairs", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_SLAB = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_slab", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_WALL = ModRegistry.ITEM_REGISTRY.register("permian_cobblestone_wall", () -> new BlockItem(BlockInit.PERMIAN_COBBLESTONE_WALL.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> PERMIAN_STONE = registerBlockItem("permian_stone", () -> BlockInit.PERMIAN_STONE.get());
+	public static final RegistryObject<BlockItem> PERMIAN_STONE_STAIRS = registerBlockItem("permian_stone_stairs", () -> BlockInit.PERMIAN_STONE_STAIRS.get());
+	public static final RegistryObject<BlockItem> PERMIAN_STONE_SLAB = registerBlockItem("permian_stone_slab", () -> BlockInit.PERMIAN_STONE_SLAB.get());
+	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE = registerBlockItem("permian_cobblestone", () -> BlockInit.PERMIAN_COBBLESTONE.get());
+	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_STAIRS = registerBlockItem("permian_cobblestone_stairs", () -> BlockInit.PERMIAN_COBBLESTONE_STAIRS.get());
+	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_SLAB = registerBlockItem("permian_cobblestone_slab", () -> BlockInit.PERMIAN_COBBLESTONE_SLAB.get());
+	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_WALL = registerBlockItem("permian_cobblestone_wall", () -> BlockInit.PERMIAN_COBBLESTONE_WALL.get());
 
 	//Flora
-	public static final RegistryObject<BlockItem> SMALL_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("small_permian_desert_plant", () -> new BlockItem(BlockInit.SMALL_PERMIAN_DESERT_PLANT.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> MEDIUM_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("medium_permian_desert_plant", () -> new BlockItem(BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LARGE_PERMIAN_DESERT_PLANT = ModRegistry.ITEM_REGISTRY.register("large_permian_desert_plant", () -> new BlockItem(BlockInit.LARGE_PERMIAN_DESERT_PLANT.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> SMALL_PERMIAN_DESERT_PLANT = registerBlockItem("small_permian_desert_plant", () -> BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
+	public static final RegistryObject<BlockItem> MEDIUM_PERMIAN_DESERT_PLANT = registerBlockItem("medium_permian_desert_plant", () -> BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
+	public static final RegistryObject<BlockItem> LARGE_PERMIAN_DESERT_PLANT = registerBlockItem("large_permian_desert_plant", () -> BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
 
-	public static final RegistryObject<BlockItem> PERMIAN_GROUND_FERNS = ModRegistry.ITEM_REGISTRY.register("permian_ground_ferns", () -> new BlockItem(BlockInit.PERMIAN_GROUND_FERNS.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> PERMIAN_GROUND_FERNS = registerBlockItem("permian_ground_ferns", () -> BlockInit.PERMIAN_GROUND_FERNS.get());
 
 	//Conifer
-	public static final RegistryObject<BlockItem> CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("conifer_log", () -> new ModWoodBurnableItem(BlockInit.CONIFER_LOG.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("conifer_wood", () -> new ModWoodBurnableItem(BlockInit.CONIFER_WOOD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_log", () -> new ModWoodBurnableItem(BlockInit.STRIPPED_CONIFER_LOG.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_conifer_wood", () -> new ModWoodBurnableItem(BlockInit.STRIPPED_CONIFER_WOOD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_LEAVES = ModRegistry.ITEM_REGISTRY.register("conifer_leaves", () -> new BlockItem(BlockInit.CONIFER_LEAVES.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_SAPLING = ModRegistry.ITEM_REGISTRY.register("conifer_sapling", () -> new ModWoodBurnableItem(BlockInit.CONIFER_SAPLING.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_PLANKS = ModRegistry.ITEM_REGISTRY.register("conifer_planks", () -> new ModWoodBurnableItem(BlockInit.CONIFER_PLANKS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_STAIRS = ModRegistry.ITEM_REGISTRY.register("conifer_stairs", () -> new ModWoodBurnableItem(BlockInit.CONIFER_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_SLAB = ModRegistry.ITEM_REGISTRY.register("conifer_slab", () -> new ModSlabBurnableItem(BlockInit.CONIFER_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_FENCE = ModRegistry.ITEM_REGISTRY.register("conifer_fence", () -> new ModWoodBurnableItem(BlockInit.CONIFER_FENCE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_FENCE_GATE = ModRegistry.ITEM_REGISTRY.register("conifer_fence_gate", () -> new ModWoodBurnableItem(BlockInit.CONIFER_FENCE_GATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("conifer_pressure_plate", () -> new ModWoodBurnableItem(BlockInit.CONIFER_PRESSURE_PLATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_BUTTON = ModRegistry.ITEM_REGISTRY.register("conifer_button", () -> new ModWoodBurnableItem(BlockInit.CONIFER_BUTTON.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CONIFER_TRAPDOOR = ModRegistry.ITEM_REGISTRY.register("conifer_trapdoor", () -> new ModWoodBurnableItem(BlockInit.CONIFER_TRAPDOOR.get(), standardProperties())); 
-	public static final RegistryObject<BlockItem> CONIFER_DOOR = ModRegistry.ITEM_REGISTRY.register("conifer_door", () -> new ModWoodBurnableItem(BlockInit.CONIFER_DOOR.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CONIFER_LOG = registerBuringBlockItem("conifer_log", () -> BlockInit.CONIFER_LOG.get());
+	public static final RegistryObject<BlockItem> CONIFER_WOOD = registerBuringBlockItem("conifer_wood", () -> BlockInit.CONIFER_WOOD.get());
+	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_LOG = registerBuringBlockItem("stripped_conifer_log", () -> BlockInit.STRIPPED_CONIFER_LOG.get());
+	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_WOOD = registerBuringBlockItem("stripped_conifer_wood", () -> BlockInit.STRIPPED_CONIFER_WOOD.get());
+	public static final RegistryObject<BlockItem> CONIFER_LEAVES = registerBlockItem("conifer_leaves", () -> BlockInit.CONIFER_LEAVES.get());
+	public static final RegistryObject<BlockItem> CONIFER_SAPLING = registerBuringBlockItem("conifer_sapling", () -> BlockInit.CONIFER_SAPLING.get());
+	public static final RegistryObject<BlockItem> CONIFER_PLANKS = registerBuringBlockItem("conifer_planks", () -> BlockInit.CONIFER_PLANKS.get());
+	public static final RegistryObject<BlockItem> CONIFER_STAIRS = registerBuringBlockItem("conifer_stairs", () -> BlockInit.CONIFER_STAIRS.get());
+	public static final RegistryObject<BlockItem> CONIFER_SLAB = registerBuringSlabItem("conifer_slab", () -> BlockInit.CONIFER_SLAB.get());
+	public static final RegistryObject<BlockItem> CONIFER_FENCE = registerBuringBlockItem("conifer_fence", () -> BlockInit.CONIFER_FENCE.get());
+	public static final RegistryObject<BlockItem> CONIFER_FENCE_GATE = registerBuringBlockItem("conifer_fence_gate", () -> BlockInit.CONIFER_FENCE_GATE.get());
+	public static final RegistryObject<BlockItem> CONIFER_PRESSURE_PLATE = registerBuringBlockItem("conifer_pressure_plate", () -> BlockInit.CONIFER_PRESSURE_PLATE.get());
+	public static final RegistryObject<BlockItem> CONIFER_BUTTON = registerBuringBlockItem("conifer_button", () -> BlockInit.CONIFER_BUTTON.get());
+	public static final RegistryObject<BlockItem> CONIFER_TRAPDOOR = registerBuringBlockItem("conifer_trapdoor", () -> BlockInit.CONIFER_TRAPDOOR.get()); 
+	public static final RegistryObject<BlockItem> CONIFER_DOOR = registerBlockItem("conifer_door", () -> BlockInit.CONIFER_DOOR.get());
 	public static final RegistryObject<ModSignItem> CONIFER_SIGN = ModRegistry.ITEM_REGISTRY.register("conifer_sign", () -> new ModSignItem(BlockInit.CONIFER_SIGN.get(), BlockInit.CONIFER_WALL_SIGN.get(), standardProperties()));
-	public static final RegistryObject<ModBoatItem> CONIFER_BOAT = ModRegistry.ITEM_REGISTRY.register("conifer_boat", () -> new ModBoatItem(ModBoatType.CONIFER, standardProperties()));
+	public static final RegistryObject<ModBoatItem> CONIFER_BOAT = registerBoatItem("conifer_boat", ModBoatType.CONIFER);
 
 	//Ginkgo
-	public static final RegistryObject<BlockItem> GINKGO_LOG = ModRegistry.ITEM_REGISTRY.register("ginkgo_log", () -> new BlockItem(BlockInit.GINKGO_LOG.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_WOOD = ModRegistry.ITEM_REGISTRY.register("ginkgo_wood", () -> new BlockItem(BlockInit.GINKGO_WOOD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_LOG = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_log", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_LOG.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_WOOD = ModRegistry.ITEM_REGISTRY.register("stripped_ginkgo_wood", () -> new BlockItem(BlockInit.STRIPPED_GINKGO_WOOD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_LEAVES = ModRegistry.ITEM_REGISTRY.register("ginkgo_leaves", () -> new BlockItem(BlockInit.GINKGO_LEAVES.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_PLANKS = ModRegistry.ITEM_REGISTRY.register("ginkgo_planks", () -> new BlockItem(BlockInit.GINKGO_PLANKS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_STAIRS = ModRegistry.ITEM_REGISTRY.register("ginkgo_stairs", () -> new BlockItem(BlockInit.GINKGO_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_SLAB = ModRegistry.ITEM_REGISTRY.register("ginkgo_slab", () -> new BlockItem(BlockInit.GINKGO_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_FENCE = ModRegistry.ITEM_REGISTRY.register("ginkgo_fence", () -> new BlockItem(BlockInit.GINKGO_FENCE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_FENCE_GATE = ModRegistry.ITEM_REGISTRY.register("ginkgo_fence_gate", () -> new BlockItem(BlockInit.GINKGO_FENCE_GATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("ginkgo_pressure_plate", () -> new BlockItem(BlockInit.GINKGO_PRESSURE_PLATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_BUTTON = ModRegistry.ITEM_REGISTRY.register("ginkgo_button", () -> new BlockItem(BlockInit.GINKGO_BUTTON.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GINKGO_TRAPDOOR = ModRegistry.ITEM_REGISTRY.register("ginkgo_trapdoor", () -> new BlockItem(BlockInit.GINKGO_TRAPDOOR.get(), standardProperties())); 
-	public static final RegistryObject<BlockItem> GINKGO_DOOR = ModRegistry.ITEM_REGISTRY.register("ginkgo_door", () -> new BlockItem(BlockInit.GINKGO_DOOR.get(), standardProperties()));
-	public static final RegistryObject<SignItem> GINKGO_SIGN = ModRegistry.ITEM_REGISTRY.register("ginkgo_sign", () -> new SignItem(standardProperties(), BlockInit.GINKGO_SIGN.get(), BlockInit.GINKGO_WALL_SIGN.get()));
-	public static final RegistryObject<ModBoatItem> GINKGO_BOAT = ModRegistry.ITEM_REGISTRY.register("ginkgo_boat", () -> new ModBoatItem(ModBoatType.GINKGO, standardProperties()));
+	public static final RegistryObject<BlockItem> GINKGO_LOG = registerBuringBlockItem("ginkgo_log", () -> BlockInit.GINKGO_LOG.get());
+	public static final RegistryObject<BlockItem> GINKGO_WOOD = registerBuringBlockItem("ginkgo_wood", () -> BlockInit.GINKGO_WOOD.get());
+	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_LOG = registerBuringBlockItem("stripped_ginkgo_log", () -> BlockInit.STRIPPED_GINKGO_LOG.get());
+	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_WOOD = registerBuringBlockItem("stripped_ginkgo_wood", () -> BlockInit.STRIPPED_GINKGO_WOOD.get());
+	public static final RegistryObject<BlockItem> GINKGO_LEAVES = registerBlockItem("ginkgo_leaves", () -> BlockInit.GINKGO_LEAVES.get());
+	public static final RegistryObject<BlockItem> GINKGO_PLANKS = registerBuringBlockItem("ginkgo_planks", () -> BlockInit.GINKGO_PLANKS.get());
+	public static final RegistryObject<BlockItem> GINKGO_STAIRS = registerBuringBlockItem("ginkgo_stairs", () -> BlockInit.GINKGO_STAIRS.get());
+	public static final RegistryObject<BlockItem> GINKGO_SLAB = registerBuringSlabItem("ginkgo_slab", () -> BlockInit.GINKGO_SLAB.get());
+	public static final RegistryObject<BlockItem> GINKGO_FENCE = registerBuringBlockItem("ginkgo_fence", () -> BlockInit.GINKGO_FENCE.get());
+	public static final RegistryObject<BlockItem> GINKGO_FENCE_GATE = registerBuringBlockItem("ginkgo_fence_gate", () -> BlockInit.GINKGO_FENCE_GATE.get());
+	public static final RegistryObject<BlockItem> GINKGO_PRESSURE_PLATE = registerBuringBlockItem("ginkgo_pressure_plate", () -> BlockInit.GINKGO_PRESSURE_PLATE.get());
+	public static final RegistryObject<BlockItem> GINKGO_BUTTON = registerBuringBlockItem("ginkgo_button", () -> BlockInit.GINKGO_BUTTON.get());
+	public static final RegistryObject<BlockItem> GINKGO_TRAPDOOR = registerBuringBlockItem("ginkgo_trapdoor", () -> BlockInit.GINKGO_TRAPDOOR.get()); 
+	public static final RegistryObject<BlockItem> GINKGO_DOOR = registerBuringBlockItem("ginkgo_door", () -> BlockInit.GINKGO_DOOR.get());
+	public static final RegistryObject<ModSignItem> GINKGO_SIGN = ModRegistry.ITEM_REGISTRY.register("ginkgo_sign", () -> new ModSignItem(BlockInit.GINKGO_SIGN.get(), BlockInit.GINKGO_WALL_SIGN.get(), standardProperties()));
+	public static final RegistryObject<ModBoatItem> GINKGO_BOAT = registerBoatItem("ginkgo_boat", ModBoatType.GINKGO);
 	
 	//Light Concrete
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("light_concrete", () -> new BlockItem(BlockInit.LIGHT_CONCRETE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_STAIRS =  ModRegistry.ITEM_REGISTRY.register("light_concrete_stairs", () -> new BlockItem(BlockInit.LIGHT_CONCRETE_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_SLAB =  ModRegistry.ITEM_REGISTRY.register("light_concrete_slab", () -> new BlockItem(BlockInit.LIGHT_CONCRETE_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_WALL =  ModRegistry.ITEM_REGISTRY.register("light_concrete_wall", () -> new BlockItem(BlockInit.LIGHT_CONCRETE_WALL.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("light_concrete_pressure_plate", () -> new BlockItem(BlockInit.LIGHT_CONCRETE_PRESSURE_PLATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_BUTTON =  ModRegistry.ITEM_REGISTRY.register("light_concrete_button", () -> new BlockItem(BlockInit.LIGHT_CONCRETE_BUTTON.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  registerBlockItem("light_concrete", () -> BlockInit.LIGHT_CONCRETE.get());
+	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_STAIRS =  registerBlockItem("light_concrete_stairs", () -> BlockInit.LIGHT_CONCRETE_STAIRS.get());
+	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_SLAB =  registerBlockItem("light_concrete_slab", () -> BlockInit.LIGHT_CONCRETE_SLAB.get());
+	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_WALL =  registerBlockItem("light_concrete_wall", () -> BlockInit.LIGHT_CONCRETE_WALL.get());
+	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_PRESSURE_PLATE = registerBlockItem("light_concrete_pressure_plate", () -> BlockInit.LIGHT_CONCRETE_PRESSURE_PLATE.get());
+	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_BUTTON =  registerBlockItem("light_concrete_button", () -> BlockInit.LIGHT_CONCRETE_BUTTON.get());
 	
 	//Polished Light Concrete
-	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("polished_light_concrete", () -> new BlockItem(BlockInit.POLISHED_LIGHT_CONCRETE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE_STAIRS =  ModRegistry.ITEM_REGISTRY.register("polished_light_concrete_stairs", () -> new BlockItem(BlockInit.POLISHED_LIGHT_CONCRETE_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE_SLAB =  ModRegistry.ITEM_REGISTRY.register("polished_light_concrete_slab", () -> new BlockItem(BlockInit.POLISHED_LIGHT_CONCRETE_SLAB.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE =  registerBlockItem("polished_light_concrete", () -> BlockInit.POLISHED_LIGHT_CONCRETE.get());
+	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE_STAIRS =  registerBlockItem("polished_light_concrete_stairs", () -> BlockInit.POLISHED_LIGHT_CONCRETE_STAIRS.get());
+	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE_SLAB =  registerBlockItem("polished_light_concrete_slab", () -> BlockInit.POLISHED_LIGHT_CONCRETE_SLAB.get());
 	
 	//Dark Concrete
-	public static final RegistryObject<BlockItem> DARK_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("dark_concrete", () -> new BlockItem(BlockInit.DARK_CONCRETE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_STAIRS =  ModRegistry.ITEM_REGISTRY.register("dark_concrete_stairs", () -> new BlockItem(BlockInit.DARK_CONCRETE_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_SLAB =  ModRegistry.ITEM_REGISTRY.register("dark_concrete_slab", () -> new BlockItem(BlockInit.DARK_CONCRETE_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_WALL =  ModRegistry.ITEM_REGISTRY.register("dark_concrete_wall", () -> new BlockItem(BlockInit.DARK_CONCRETE_WALL.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("dark_concrete_pressure_plate", () -> new BlockItem(BlockInit.DARK_CONCRETE_PRESSURE_PLATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_BUTTON =  ModRegistry.ITEM_REGISTRY.register("dark_concrete_button", () -> new BlockItem(BlockInit.DARK_CONCRETE_BUTTON.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> DARK_CONCRETE =  registerBlockItem("dark_concrete", () -> BlockInit.DARK_CONCRETE.get());
+	public static final RegistryObject<BlockItem> DARK_CONCRETE_STAIRS =  registerBlockItem("dark_concrete_stairs", () -> BlockInit.DARK_CONCRETE_STAIRS.get());
+	public static final RegistryObject<BlockItem> DARK_CONCRETE_SLAB =  registerBlockItem("dark_concrete_slab", () -> BlockInit.DARK_CONCRETE_SLAB.get());
+	public static final RegistryObject<BlockItem> DARK_CONCRETE_WALL =  registerBlockItem("dark_concrete_wall", () -> BlockInit.DARK_CONCRETE_WALL.get());
+	public static final RegistryObject<BlockItem> DARK_CONCRETE_PRESSURE_PLATE = registerBlockItem("dark_concrete_pressure_plate", () -> BlockInit.DARK_CONCRETE_PRESSURE_PLATE.get());
+	public static final RegistryObject<BlockItem> DARK_CONCRETE_BUTTON =  registerBlockItem("dark_concrete_button", () -> BlockInit.DARK_CONCRETE_BUTTON.get());
 	
 	//Polished Dark Concrete
-	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE =  ModRegistry.ITEM_REGISTRY.register("polished_dark_concrete", () -> new BlockItem(BlockInit.POLISHED_DARK_CONCRETE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE_STAIRS =  ModRegistry.ITEM_REGISTRY.register("polished_dark_concrete_stairs", () -> new BlockItem(BlockInit.POLISHED_DARK_CONCRETE_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE_SLAB =  ModRegistry.ITEM_REGISTRY.register("polished_dark_concrete_slab", () -> new BlockItem(BlockInit.POLISHED_DARK_CONCRETE_SLAB.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE =  registerBlockItem("polished_dark_concrete", () -> BlockInit.POLISHED_DARK_CONCRETE.get());
+	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE_STAIRS =  registerBlockItem("polished_dark_concrete_stairs", () -> BlockInit.POLISHED_DARK_CONCRETE_STAIRS.get());
+	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE_SLAB =  registerBlockItem("polished_dark_concrete_slab", () -> BlockInit.POLISHED_DARK_CONCRETE_SLAB.get());
 
 	//Wooden Planks
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS =  ModRegistry.ITEM_REGISTRY.register("wooden_planks", () -> new BlockItem(BlockInit.WOODEN_PLANKS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_STAIRS =  ModRegistry.ITEM_REGISTRY.register("wooden_planks_stairs", () -> new BlockItem(BlockInit.WOODEN_PLANKS_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_SLAB =  ModRegistry.ITEM_REGISTRY.register("wooden_planks_slab", () -> new BlockItem(BlockInit.WOODEN_PLANKS_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_FENCE =  ModRegistry.ITEM_REGISTRY.register("wooden_planks_fence", () -> new BlockItem(BlockInit.WOODEN_PLANKS_FENCE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_FENCE_GATE =  ModRegistry.ITEM_REGISTRY.register("wooden_planks_fence_gate", () -> new BlockItem(BlockInit.WOODEN_PLANKS_FENCE_GATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("wooden_planks_pressure_plate", () -> new BlockItem(BlockInit.WOODEN_PLANKS_PRESSURE_PLATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_BUTTON =  ModRegistry.ITEM_REGISTRY.register("wooden_planks_button", () -> new BlockItem(BlockInit.WOODEN_PLANKS_BUTTON.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> WOODEN_PLANKS =  registerBlockItem("wooden_planks", () -> BlockInit.WOODEN_PLANKS.get());
+	public static final RegistryObject<BlockItem> WOODEN_PLANKS_STAIRS =  registerBlockItem("wooden_planks_stairs", () -> BlockInit.WOODEN_PLANKS_STAIRS.get());
+	public static final RegistryObject<BlockItem> WOODEN_PLANKS_SLAB =  registerBlockItem("wooden_planks_slab", () -> BlockInit.WOODEN_PLANKS_SLAB.get());
+	public static final RegistryObject<BlockItem> WOODEN_PLANKS_FENCE =  registerBlockItem("wooden_planks_fence", () -> BlockInit.WOODEN_PLANKS_FENCE.get());
+	public static final RegistryObject<BlockItem> WOODEN_PLANKS_FENCE_GATE =  registerBlockItem("wooden_planks_fence_gate", () -> BlockInit.WOODEN_PLANKS_FENCE_GATE.get());
+	public static final RegistryObject<BlockItem> WOODEN_PLANKS_PRESSURE_PLATE = registerBlockItem("wooden_planks_pressure_plate", () -> BlockInit.WOODEN_PLANKS_PRESSURE_PLATE.get());
+	public static final RegistryObject<BlockItem> WOODEN_PLANKS_BUTTON =  registerBlockItem("wooden_planks_button", () -> BlockInit.WOODEN_PLANKS_BUTTON.get());
 		
 	//Wooden Planks
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS =  ModRegistry.ITEM_REGISTRY.register("refined_wooden_planks", () -> new BlockItem(BlockInit.REFINED_WOODEN_PLANKS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_STAIRS =  ModRegistry.ITEM_REGISTRY.register("refined_wooden_planks_stairs", () -> new BlockItem(BlockInit.REFINED_WOODEN_PLANKS_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_SLAB =  ModRegistry.ITEM_REGISTRY.register("refined_wooden_planks_slab", () -> new BlockItem(BlockInit.REFINED_WOODEN_PLANKS_SLAB.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_FENCE =  ModRegistry.ITEM_REGISTRY.register("refined_wooden_planks_fence", () -> new BlockItem(BlockInit.REFINED_WOODEN_PLANKS_FENCE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_FENCE_GATE =  ModRegistry.ITEM_REGISTRY.register("refined_wooden_planks_fence_gate", () -> new BlockItem(BlockInit.REFINED_WOODEN_PLANKS_FENCE_GATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_PRESSURE_PLATE = ModRegistry.ITEM_REGISTRY.register("refined_wooden_planks_pressure_plate", () -> new BlockItem(BlockInit.REFINED_WOODEN_PLANKS_PRESSURE_PLATE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_BUTTON =  ModRegistry.ITEM_REGISTRY.register("refined_wooden_planks_button", () -> new BlockItem(BlockInit.REFINED_WOODEN_PLANKS_BUTTON.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS =  registerBlockItem("refined_wooden_planks", () -> BlockInit.REFINED_WOODEN_PLANKS.get());
+	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_STAIRS =  registerBlockItem("refined_wooden_planks_stairs", () -> BlockInit.REFINED_WOODEN_PLANKS_STAIRS.get());
+	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_SLAB =  registerBlockItem("refined_wooden_planks_slab", () -> BlockInit.REFINED_WOODEN_PLANKS_SLAB.get());
+	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_FENCE =  registerBlockItem("refined_wooden_planks_fence", () -> BlockInit.REFINED_WOODEN_PLANKS_FENCE.get());
+	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_FENCE_GATE =  registerBlockItem("refined_wooden_planks_fence_gate", () -> BlockInit.REFINED_WOODEN_PLANKS_FENCE_GATE.get());
+	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_PRESSURE_PLATE = registerBlockItem("refined_wooden_planks_pressure_plate", () -> BlockInit.REFINED_WOODEN_PLANKS_PRESSURE_PLATE.get());
+	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_BUTTON =  registerBlockItem("refined_wooden_planks_button", () -> BlockInit.REFINED_WOODEN_PLANKS_BUTTON.get());
 	
 	//Pavement
-	public static final RegistryObject<BlockItem> PAVEMENT =  ModRegistry.ITEM_REGISTRY.register("pavement", () -> new BlockItem(BlockInit.PAVEMENT.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PAVEMENT_SLOPE =  ModRegistry.ITEM_REGISTRY.register("pavement_slope", () -> new BlockItem(BlockInit.PAVEMENT_SLOPE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> RAISED_PAVEMENT =  ModRegistry.ITEM_REGISTRY.register("raised_pavement", () -> new BlockItem(BlockInit.RAISED_PAVEMENT.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> PAVEMENT =  registerBlockItem("pavement", () -> BlockInit.PAVEMENT.get());
+	public static final RegistryObject<BlockItem> PAVEMENT_SLOPE =  registerBlockItem("pavement_slope", () -> BlockInit.PAVEMENT_SLOPE.get());
+	public static final RegistryObject<BlockItem> RAISED_PAVEMENT =  registerBlockItem("raised_pavement", () -> BlockInit.RAISED_PAVEMENT.get());
 	
 	//Roads
-	public static final RegistryObject<BlockItem> GRAVEL_ROAD = ModRegistry.ITEM_REGISTRY.register("gravel_road", () -> new BlockItem(BlockInit.GRAVEL_ROAD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> RAISED_GRAVEL_ROAD = ModRegistry.ITEM_REGISTRY.register("raised_gravel_road", () -> new BlockItem(BlockInit.RAISED_GRAVEL_ROAD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> GRAVEL_ROAD = registerBlockItem("gravel_road", () -> BlockInit.GRAVEL_ROAD.get());
+	public static final RegistryObject<BlockItem> RAISED_GRAVEL_ROAD = registerBlockItem("raised_gravel_road", () -> BlockInit.RAISED_GRAVEL_ROAD.get());
 		
-	public static final RegistryObject<BlockItem> DIRT_ROAD = ModRegistry.ITEM_REGISTRY.register("dirt_road", () -> new BlockItem(BlockInit.DIRT_ROAD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> RAISED_DIRT_ROAD = ModRegistry.ITEM_REGISTRY.register("raised_dirt_road", () -> new BlockItem(BlockInit.RAISED_DIRT_ROAD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> DIRT_ROAD = registerBlockItem("dirt_road", () -> BlockInit.DIRT_ROAD.get());
+	public static final RegistryObject<BlockItem> RAISED_DIRT_ROAD = registerBlockItem("raised_dirt_road", () -> BlockInit.RAISED_DIRT_ROAD.get());
 			
-	public static final RegistryObject<BlockItem> PAVED_ROAD = ModRegistry.ITEM_REGISTRY.register("paved_road", () -> new BlockItem(BlockInit.PAVED_ROAD.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> RAISED_PAVED_ROAD = ModRegistry.ITEM_REGISTRY.register("raised_paved_road", () -> new BlockItem(BlockInit.RAISED_PAVED_ROAD.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> PAVED_ROAD = registerBlockItem("paved_road", () -> BlockInit.PAVED_ROAD.get());
+	public static final RegistryObject<BlockItem> RAISED_PAVED_ROAD = registerBlockItem("raised_paved_road", () -> BlockInit.RAISED_PAVED_ROAD.get());
 		
 	//Tile
-	public static final RegistryObject<BlockItem> TILE =  ModRegistry.ITEM_REGISTRY.register("tile", () -> new BlockItem(BlockInit.TILE.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> TILE_STAIRS =  ModRegistry.ITEM_REGISTRY.register("tile_stairs", () -> new BlockItem(BlockInit.TILE_STAIRS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> TILE_SLAB =  ModRegistry.ITEM_REGISTRY.register("tile_slab", () -> new BlockItem(BlockInit.TILE_SLAB.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> TILE =  registerBlockItem("tile", () -> BlockInit.TILE.get());
+	public static final RegistryObject<BlockItem> TILE_STAIRS =  registerBlockItem("tile_stairs", () -> BlockInit.TILE_STAIRS.get());
+	public static final RegistryObject<BlockItem> TILE_SLAB =  registerBlockItem("tile_slab", () -> BlockInit.TILE_SLAB.get());
 
 	//Metal Fence
-	public static final RegistryObject<BlockItem> METAL_FENCE = ModRegistry.ITEM_REGISTRY.register("metal_fence", () -> new BlockItem(BlockInit.METAL_FENCE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> METAL_FENCE = registerBlockItem("metal_fence", () -> BlockInit.METAL_FENCE.get());
 
 	//Clear Glass
-	public static final RegistryObject<BlockItem> CLEAR_GLASS = ModRegistry.ITEM_REGISTRY.register("clear_glass", () -> new BlockItem(BlockInit.CLEAR_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CLEAR_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("clear_glass_pane", () -> new BlockItem(BlockInit.CLEAR_GLASS_PANE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> CLEAR_GLASS = registerBlockItem("clear_glass", () -> BlockInit.CLEAR_GLASS.get());
+	public static final RegistryObject<BlockItem> CLEAR_GLASS_PANE = registerBlockItem("clear_glass_pane", () -> BlockInit.CLEAR_GLASS_PANE.get());
 
 	//Tinted Glass
-	public static final RegistryObject<BlockItem> TINTED_GLASS = ModRegistry.ITEM_REGISTRY.register("tinted_glass", () -> new BlockItem(BlockInit.TINTED_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> TINTED_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("tinted_glass_pane", () -> new BlockItem(BlockInit.TINTED_GLASS_PANE.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> TINTED_GLASS = registerBlockItem("tinted_glass", () -> BlockInit.TINTED_GLASS.get());
+	public static final RegistryObject<BlockItem> TINTED_GLASS_PANE = registerBlockItem("tinted_glass_pane", () -> BlockInit.TINTED_GLASS_PANE.get());
 	
 	//Coloured Glass
-	public static final RegistryObject<BlockItem> WHITE_GLASS = ModRegistry.ITEM_REGISTRY.register("white_glass", () -> new BlockItem(BlockInit.WHITE_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> WHITE_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("white_glass_pane", () -> new BlockItem(BlockInit.WHITE_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> WHITE_GLASS = registerBlockItem("white_glass", () -> BlockInit.WHITE_GLASS.get());
+	public static final RegistryObject<BlockItem> WHITE_GLASS_PANE = registerBlockItem("white_glass_pane", () -> BlockInit.WHITE_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> LIGHT_GREY_GLASS = ModRegistry.ITEM_REGISTRY.register("light_grey_glass", () -> new BlockItem(BlockInit.LIGHT_GREY_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIGHT_GREY_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("light_grey_glass_pane", () -> new BlockItem(BlockInit.LIGHT_GREY_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> LIGHT_GREY_GLASS = registerBlockItem("light_grey_glass", () -> BlockInit.LIGHT_GREY_GLASS.get());
+	public static final RegistryObject<BlockItem> LIGHT_GREY_GLASS_PANE = registerBlockItem("light_grey_glass_pane", () -> BlockInit.LIGHT_GREY_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> GREY_GLASS = ModRegistry.ITEM_REGISTRY.register("grey_glass", () -> new BlockItem(BlockInit.GREY_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GREY_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("grey_glass_pane", () -> new BlockItem(BlockInit.GREY_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> GREY_GLASS = registerBlockItem("grey_glass", () -> BlockInit.GREY_GLASS.get());
+	public static final RegistryObject<BlockItem> GREY_GLASS_PANE = registerBlockItem("grey_glass_pane", () -> BlockInit.GREY_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> BLACK_GLASS = ModRegistry.ITEM_REGISTRY.register("black_glass", () -> new BlockItem(BlockInit.BLACK_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> BLACK_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("black_glass_pane", () -> new BlockItem(BlockInit.BLACK_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> BLACK_GLASS = registerBlockItem("black_glass", () -> BlockInit.BLACK_GLASS.get());
+	public static final RegistryObject<BlockItem> BLACK_GLASS_PANE = registerBlockItem("black_glass_pane", () -> BlockInit.BLACK_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> RED_GLASS = ModRegistry.ITEM_REGISTRY.register("red_glass", () -> new BlockItem(BlockInit.RED_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> RED_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("red_glass_pane", () -> new BlockItem(BlockInit.RED_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> RED_GLASS = registerBlockItem("red_glass", () -> BlockInit.RED_GLASS.get());
+	public static final RegistryObject<BlockItem> RED_GLASS_PANE = registerBlockItem("red_glass_pane", () -> BlockInit.RED_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> ORANGE_GLASS = ModRegistry.ITEM_REGISTRY.register("orange_glass", () -> new BlockItem(BlockInit.ORANGE_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> ORANGE_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("orange_glass_pane", () -> new BlockItem(BlockInit.ORANGE_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> ORANGE_GLASS = registerBlockItem("orange_glass", () -> BlockInit.ORANGE_GLASS.get());
+	public static final RegistryObject<BlockItem> ORANGE_GLASS_PANE = registerBlockItem("orange_glass_pane", () -> BlockInit.ORANGE_GLASS_PANE.get());	
 	
-	public static final RegistryObject<BlockItem> YELLOW_GLASS = ModRegistry.ITEM_REGISTRY.register("yellow_glass", () -> new BlockItem(BlockInit.YELLOW_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> YELLOW_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("yellow_glass_pane", () -> new BlockItem(BlockInit.YELLOW_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> YELLOW_GLASS = registerBlockItem("yellow_glass", () -> BlockInit.YELLOW_GLASS.get());
+	public static final RegistryObject<BlockItem> YELLOW_GLASS_PANE = registerBlockItem("yellow_glass_pane", () -> BlockInit.YELLOW_GLASS_PANE.get());	
 	
-	public static final RegistryObject<BlockItem> LIME_GLASS = ModRegistry.ITEM_REGISTRY.register("lime_glass", () -> new BlockItem(BlockInit.LIME_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIME_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("lime_glass_pane", () -> new BlockItem(BlockInit.LIME_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> LIME_GLASS = registerBlockItem("lime_glass", () -> BlockInit.LIME_GLASS.get());
+	public static final RegistryObject<BlockItem> LIME_GLASS_PANE = registerBlockItem("lime_glass_pane", () -> BlockInit.LIME_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> GREEN_GLASS = ModRegistry.ITEM_REGISTRY.register("green_glass", () -> new BlockItem(BlockInit.GREEN_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GREEN_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("green_glass_pane", () -> new BlockItem(BlockInit.GREEN_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> GREEN_GLASS = registerBlockItem("green_glass", () -> BlockInit.GREEN_GLASS.get());
+	public static final RegistryObject<BlockItem> GREEN_GLASS_PANE = registerBlockItem("green_glass_pane", () -> BlockInit.GREEN_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> CYAN_GLASS = ModRegistry.ITEM_REGISTRY.register("cyan_glass", () -> new BlockItem(BlockInit.CYAN_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CYAN_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("cyan_glass_pane", () -> new BlockItem(BlockInit.CYAN_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> CYAN_GLASS = registerBlockItem("cyan_glass", () -> BlockInit.CYAN_GLASS.get());
+	public static final RegistryObject<BlockItem> CYAN_GLASS_PANE = registerBlockItem("cyan_glass_pane", () -> BlockInit.CYAN_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> LIGHT_BLUE_GLASS = ModRegistry.ITEM_REGISTRY.register("light_blue_glass", () -> new BlockItem(BlockInit.LIGHT_BLUE_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIGHT_BLUE_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("light_blue_glass_pane", () -> new BlockItem(BlockInit.LIGHT_BLUE_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> LIGHT_BLUE_GLASS = registerBlockItem("light_blue_glass", () -> BlockInit.LIGHT_BLUE_GLASS.get());
+	public static final RegistryObject<BlockItem> LIGHT_BLUE_GLASS_PANE = registerBlockItem("light_blue_glass_pane", () -> BlockInit.LIGHT_BLUE_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> BLUE_GLASS = ModRegistry.ITEM_REGISTRY.register("blue_glass", () -> new BlockItem(BlockInit.BLUE_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> BLUE_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("blue_glass_pane", () -> new BlockItem(BlockInit.BLUE_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> BLUE_GLASS = registerBlockItem("blue_glass", () -> BlockInit.BLUE_GLASS.get());
+	public static final RegistryObject<BlockItem> BLUE_GLASS_PANE = registerBlockItem("blue_glass_pane", () -> BlockInit.BLUE_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> PURPLE_GLASS = ModRegistry.ITEM_REGISTRY.register("purple_glass", () -> new BlockItem(BlockInit.PURPLE_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PURPLE_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("purple_glass_pane", () -> new BlockItem(BlockInit.PURPLE_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> PURPLE_GLASS = registerBlockItem("purple_glass", () -> BlockInit.PURPLE_GLASS.get());
+	public static final RegistryObject<BlockItem> PURPLE_GLASS_PANE = registerBlockItem("purple_glass_pane", () -> BlockInit.PURPLE_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> MAGENTA_GLASS = ModRegistry.ITEM_REGISTRY.register("magenta_glass", () -> new BlockItem(BlockInit.MAGENTA_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> MAGENTA_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("magenta_glass_pane", () -> new BlockItem(BlockInit.MAGENTA_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> MAGENTA_GLASS = registerBlockItem("magenta_glass", () -> BlockInit.MAGENTA_GLASS.get());
+	public static final RegistryObject<BlockItem> MAGENTA_GLASS_PANE = registerBlockItem("magenta_glass_pane", () -> BlockInit.MAGENTA_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> PINK_GLASS = ModRegistry.ITEM_REGISTRY.register("pink_glass", () -> new BlockItem(BlockInit.PINK_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> PINK_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("pink_glass_pane", () -> new BlockItem(BlockInit.PINK_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> PINK_GLASS = registerBlockItem("pink_glass", () -> BlockInit.PINK_GLASS.get());
+	public static final RegistryObject<BlockItem> PINK_GLASS_PANE = registerBlockItem("pink_glass_pane", () -> BlockInit.PINK_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> BROWN_GLASS = ModRegistry.ITEM_REGISTRY.register("brown_glass", () -> new BlockItem(BlockInit.BROWN_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> BROWN_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("brown_glass_pane", () -> new BlockItem(BlockInit.BROWN_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> BROWN_GLASS = registerBlockItem("brown_glass", () -> BlockInit.BROWN_GLASS.get());
+	public static final RegistryObject<BlockItem> BROWN_GLASS_PANE = registerBlockItem("brown_glass_pane", () -> BlockInit.BROWN_GLASS_PANE.get());	
 
-	public static final RegistryObject<BlockItem> SHADED_GLASS = ModRegistry.ITEM_REGISTRY.register("shaded_glass", () -> new BlockItem(BlockInit.SHADED_GLASS.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> SHADED_GLASS_PANE = ModRegistry.ITEM_REGISTRY.register("shaded_glass_pane", () -> new BlockItem(BlockInit.SHADED_GLASS_PANE.get(), standardProperties()));	
+	public static final RegistryObject<BlockItem> SHADED_GLASS = registerBlockItem("shaded_glass", () -> BlockInit.SHADED_GLASS.get());
+	public static final RegistryObject<BlockItem> SHADED_GLASS_PANE = registerBlockItem("shaded_glass_pane", () -> BlockInit.SHADED_GLASS_PANE.get());	
 	
 	//Coloured Blocks
-	public static final RegistryObject<BlockItem> RED_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("red_decoration_block", () -> new BlockItem(BlockInit.RED_DECORATION_BLOCK.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> ORANGE_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("orange_decoration_block", () -> new BlockItem(BlockInit.ORANGE_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> YELLOW_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("yellow_decoration_block", () -> new BlockItem(BlockInit.YELLOW_DECORATION_BLOCK.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> LIME_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("lime_decoration_block", () -> new BlockItem(BlockInit.LIME_DECORATION_BLOCK.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GREEN_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("green_decoration_block", () -> new BlockItem(BlockInit.GREEN_DECORATION_BLOCK.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> CYAN_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("cyan_decoration_block", () -> new BlockItem(BlockInit.CYAN_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> BLUE_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("blue_decoration_block", () -> new BlockItem(BlockInit.BLUE_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> LIGHT_BLUE_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("light_blue_decoration_block", () -> new BlockItem(BlockInit.LIGHT_BLUE_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> PURPLE_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("purple_decoration_block", () -> new BlockItem(BlockInit.PURPLE_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> MAGENTA_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("magenta_decoration_block", () -> new BlockItem(BlockInit.MAGENTA_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> PINK_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("pink_decoration_block", () -> new BlockItem(BlockInit.PINK_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> BROWN_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("brown_decoration_block", () -> new BlockItem(BlockInit.BROWN_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> GREY_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("grey_decoration_block", () -> new BlockItem(BlockInit.GREY_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> LIGHT_GREY_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("light_grey_decoration_block", () -> new BlockItem(BlockInit.LIGHT_GREY_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> WHITE_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("white_decoration_block", () -> new BlockItem(BlockInit.WHITE_DECORATION_BLOCK.get(), standardProperties()));	
-	public static final RegistryObject<BlockItem> BLACK_DECORATION_BLOCK = ModRegistry.ITEM_REGISTRY.register("black_decoration_block", () -> new BlockItem(BlockInit.BLACK_DECORATION_BLOCK.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> RED_DECORATION_BLOCK = registerBlockItem("red_decoration_block", () -> BlockInit.RED_DECORATION_BLOCK.get());
+	public static final RegistryObject<BlockItem> ORANGE_DECORATION_BLOCK = registerBlockItem("orange_decoration_block", () -> BlockInit.ORANGE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> YELLOW_DECORATION_BLOCK = registerBlockItem("yellow_decoration_block", () -> BlockInit.YELLOW_DECORATION_BLOCK.get());
+	public static final RegistryObject<BlockItem> LIME_DECORATION_BLOCK = registerBlockItem("lime_decoration_block", () -> BlockInit.LIME_DECORATION_BLOCK.get());
+	public static final RegistryObject<BlockItem> GREEN_DECORATION_BLOCK = registerBlockItem("green_decoration_block", () -> BlockInit.GREEN_DECORATION_BLOCK.get());
+	public static final RegistryObject<BlockItem> CYAN_DECORATION_BLOCK = registerBlockItem("cyan_decoration_block", () -> BlockInit.CYAN_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> BLUE_DECORATION_BLOCK = registerBlockItem("blue_decoration_block", () -> BlockInit.BLUE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> LIGHT_BLUE_DECORATION_BLOCK = registerBlockItem("light_blue_decoration_block", () -> BlockInit.LIGHT_BLUE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> PURPLE_DECORATION_BLOCK = registerBlockItem("purple_decoration_block", () -> BlockInit.PURPLE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> MAGENTA_DECORATION_BLOCK = registerBlockItem("magenta_decoration_block", () -> BlockInit.MAGENTA_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> PINK_DECORATION_BLOCK = registerBlockItem("pink_decoration_block", () -> BlockInit.PINK_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> BROWN_DECORATION_BLOCK = registerBlockItem("brown_decoration_block", () -> BlockInit.BROWN_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> GREY_DECORATION_BLOCK = registerBlockItem("grey_decoration_block", () -> BlockInit.GREY_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> LIGHT_GREY_DECORATION_BLOCK = registerBlockItem("light_grey_decoration_block", () -> BlockInit.LIGHT_GREY_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> WHITE_DECORATION_BLOCK = registerBlockItem("white_decoration_block", () -> BlockInit.WHITE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<BlockItem> BLACK_DECORATION_BLOCK = registerBlockItem("black_decoration_block", () -> BlockInit.BLACK_DECORATION_BLOCK.get());
 	
 	//Thatch
-	public static final RegistryObject<BlockItem> THATCH_BLOCK =  ModRegistry.ITEM_REGISTRY.register("thatch_block", () -> new BlockItem(BlockInit.THATCH_BLOCK.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> THATCH_BLOCK =  registerBlockItem("thatch_block", () -> BlockInit.THATCH_BLOCK.get());
 	
 	//Doors
-	public static final RegistryObject<BlockItem> OUTDOOR_TOILET_DOOR = ModRegistry.ITEM_REGISTRY.register("outdoor_toilet_door", () -> new BlockItem(BlockInit.OUTDOOR_TOILET_DOOR.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> GLASS_SHOP_DOOR = ModRegistry.ITEM_REGISTRY.register("glass_shop_door", () -> new BlockItem(BlockInit.GLASS_SHOP_DOOR.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> VISITOR_CENTRE_DOOR = ModRegistry.ITEM_REGISTRY.register("visitor_centre_door", () -> new BlockItem(BlockInit.VISITOR_CENTRE_DOOR.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> INNOVATION_CENTRE_DOOR = ModRegistry.ITEM_REGISTRY.register("innovation_centre_door", () -> new BlockItem(BlockInit.INNOVATION_CENTRE_DOOR.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> SECURITY_DOOR = ModRegistry.ITEM_REGISTRY.register("security_door", () -> new BlockItem(BlockInit.SECURITY_DOOR.get(), standardProperties()));
-	public static final RegistryObject<BlockItem> BACK_DOOR = ModRegistry.ITEM_REGISTRY.register("back_door", () -> new BlockItem(BlockInit.BACK_DOOR.get(), standardProperties()));
+	public static final RegistryObject<BlockItem> OUTDOOR_TOILET_DOOR = registerBlockItem("outdoor_toilet_door", () -> BlockInit.OUTDOOR_TOILET_DOOR.get());
+	public static final RegistryObject<BlockItem> GLASS_SHOP_DOOR = registerBlockItem("glass_shop_door", () -> BlockInit.GLASS_SHOP_DOOR.get());
+	public static final RegistryObject<BlockItem> VISITOR_CENTRE_DOOR = registerBlockItem("visitor_centre_door", () -> BlockInit.VISITOR_CENTRE_DOOR.get());
+	public static final RegistryObject<BlockItem> INNOVATION_CENTRE_DOOR = registerBlockItem("innovation_centre_door", () -> BlockInit.INNOVATION_CENTRE_DOOR.get());
+	public static final RegistryObject<BlockItem> SECURITY_DOOR = registerBlockItem("security_door", () -> BlockInit.SECURITY_DOOR.get());
+	public static final RegistryObject<BlockItem> BACK_DOOR = registerBlockItem("back_door", () -> BlockInit.BACK_DOOR.get());
 	
 	//Registry
 	
@@ -652,6 +653,28 @@ public class ItemInit
 	private static RegistryObject<Item> registerSpecialBone(String id)
 	{
 		return simpleItemRegister(id + "_special_bone", standardProperties());
+	}
+	
+	//Block Item Registers
+	//Block Item Register
+	private static RegistryObject<BlockItem> registerBlockItem(String id, NonNullSupplier<Block> block)
+	{
+		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModBlockItem(block, standardProperties()));
+	}
+	
+	private static RegistryObject<ModBoatItem> registerBoatItem(String id, ModBoatType type)
+	{
+		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModBoatItem(type, standardProperties()));
+	}
+	
+	private static RegistryObject<BlockItem> registerBuringSlabItem(String id, NonNullSupplier<Block> block)
+	{
+		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModSlabBurnableItem(block, standardProperties()));
+	}
+	
+	private static RegistryObject<BlockItem> registerBuringBlockItem(String id, NonNullSupplier<Block> block)
+	{
+		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModWoodBurnableItem(block, standardProperties()));
 	}
 	
 	public static void initItems() { }

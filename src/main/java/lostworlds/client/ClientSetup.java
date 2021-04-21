@@ -21,8 +21,11 @@ import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModID;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -37,6 +40,7 @@ public class ClientSetup
     @SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event)
 	{
+    	ItemRenderer itemRendererIn = Minecraft.getInstance().getItemRenderer();
     	//Containers
     	//Blocks
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_STONE_FOSSIL.get(), RenderType.translucent());
@@ -114,9 +118,10 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.GREAT_AUK_ENTITY.get(), GreatAukRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.OURANOSAURUS_ENTITY.get(), OuranosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.FUKUIVENATOR_ENTITY.get(), FukuivenatorRender::new);
-		//Egg
-//		RenderingRegistry.registerEntityRenderingHandler(EntityInit.GREAT_AUK_EGG_ENTITY.get(), () -> new SpriteRenderer(null, itemRendererIn));
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
+		//Eggs
+    	RenderingRegistry.registerEntityRenderingHandler(EntityInit.GREAT_AUK_EGG_ENTITY.get(), manager -> new SpriteRenderer<>(manager, itemRendererIn));
+
 	}
 }

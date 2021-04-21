@@ -13,11 +13,11 @@ import net.minecraft.world.World;
 
 public class ModSignItem extends WallOrFloorItem
 {
-	public ModSignItem(Block wallBlock, Block floorBlock, Properties properties) 
+	public ModSignItem(Block standingBlock, Block wallBlock, Properties properties) 
 	{
-		super(wallBlock, floorBlock, properties);
+		super(standingBlock, wallBlock, properties);
 	}
-	
+
 	protected boolean updateCustomBlockEntityTag(BlockPos pos, World worldIn, @Nullable PlayerEntity playerEntity, ItemStack stack, BlockState state) 
 	{
 		boolean flag = super.updateCustomBlockEntityTag(pos, worldIn, playerEntity, stack, state);
