@@ -132,10 +132,12 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.CARNOTAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.FUKUVENATOR_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.NAUTILUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.OURANOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_SPAWN_EGG.get().getDefaultInstance());

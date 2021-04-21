@@ -3,7 +3,6 @@ package lostworlds.client.event;
 import lostworlds.LostWorlds;
 import lostworlds.core.util.ModID;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -25,7 +24,7 @@ public class DevBuildLoad
 		else
 		{
 			PlayerEntity player = event.getPlayer();
-			event.getPlayer().sendMessage(new StringTextComponent(ModID.ID + ".loadEvent.player"), player.getUUID());
+			event.getPlayer().sendMessage(new TranslationTextComponent(ModID.ID + ".loadEvent.player"), player.getUUID());
 		}
 	}
 }

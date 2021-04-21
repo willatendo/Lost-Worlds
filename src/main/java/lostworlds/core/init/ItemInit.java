@@ -235,6 +235,9 @@ public class ItemInit
 
 	//Ouranosaurus
 	public static final RegistryObject<Item> OURANOSAURUS_SPAWN_EGG = registerSpawnEgg("ouranosaurus", () -> EntityInit.OURANOSAURUS_ENTITY.get(), 0x2b3187, 0x1da6e5);
+
+	//Fukuvenator
+	public static final RegistryObject<Item> FUKUVENATOR_SPAWN_EGG = registerSpawnEgg("fukuivenator", () -> EntityInit.FUKUIVENATOR_ENTITY.get(), 0xbb6ad8, 0x44284f);
 	
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());

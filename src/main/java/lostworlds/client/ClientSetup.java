@@ -4,6 +4,7 @@ import lostworlds.client.entity.render.AllosaurusRender;
 import lostworlds.client.entity.render.CarnotaurusRender;
 import lostworlds.client.entity.render.DimetrodonRender;
 import lostworlds.client.entity.render.EdaphosaurusRender;
+import lostworlds.client.entity.render.FukuivenatorRender;
 import lostworlds.client.entity.render.GiganotosaurusRender;
 import lostworlds.client.entity.render.GorgonopsRender;
 import lostworlds.client.entity.render.GreatAukRender;
@@ -112,6 +113,7 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.TETRACERATOPS_ENTITY.get(), TetraceratopsRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.GREAT_AUK_ENTITY.get(), GreatAukRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.OURANOSAURUS_ENTITY.get(), OuranosaurusRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.FUKUIVENATOR_ENTITY.get(), FukuivenatorRender::new);
 		//Egg
 //		RenderingRegistry.registerEntityRenderingHandler(EntityInit.GREAT_AUK_EGG_ENTITY.get(), () -> new SpriteRenderer(null, itemRendererIn));
 		//Boat

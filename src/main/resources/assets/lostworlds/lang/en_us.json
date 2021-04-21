@@ -154,6 +154,9 @@
 	//Ouranosaurus
 	"item.lostworlds.ouranosaurus_spawn_egg": "Ouranosaurus Spawn Egg",
 
+	//Fukuivenator
+	"item.lostworlds.fukuivenator_spawn_egg": "Fukuivenator Spawn Egg",
+
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
 
@@ -479,22 +482,20 @@
 	//Jurassic
 	"entity.lostworlds.allosaurus": "Allosaurus fragilis",
 	
-	//Cretaceous
+	//Cretaceous 
 	"entity.lostworlds.carnotaurus": "Carnotaurus sastrei",
 	"entity.lostworlds.tyrannosaurus": "Tyrannosaurus rex",
 	"entity.lostworlds.giganotosaurus": "Giganotosaurus carolinii",
 	"entity.lostworlds.suchomimus": "Suchomimus tenerensis",
 	"entity.lostworlds.ouranosaurus": "Ouranosaurus nigeriensis",
+	"entity.lostworlds.fukuivenator": "Fukuivenator paradoxus",
 	
 	//Modern
 	"entity.lostworlds.great_auk": "Pinguinus impennis",
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
-	
-	//Containers
-	"container.lostworlds.fossil_cleaner": "Fossil Cleaner",
-	
+		
 	//Biome
 	//Permian
 	"biome.lostworlds.flood_basalt_plains": "Flood Basalt Plains",

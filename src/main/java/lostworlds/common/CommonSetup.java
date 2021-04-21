@@ -33,6 +33,7 @@ public class CommonSetup
 			GlobalEntityTypeAttributes.put(EntityInit.TETRACERATOPS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).build());
 			GlobalEntityTypeAttributes.put(EntityInit.GREAT_AUK_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).add(Attributes.ATTACK_DAMAGE, 3.0D).build());
 			GlobalEntityTypeAttributes.put(EntityInit.OURANOSAURUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 25.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).build());
+			GlobalEntityTypeAttributes.put(EntityInit.FUKUIVENATOR_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 15.0D).add(Attributes.MOVEMENT_SPEED, 0.5D).add(Attributes.ATTACK_DAMAGE, 1.0D).build());
 		});
 	}
 }
