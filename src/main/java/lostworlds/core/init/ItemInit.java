@@ -220,8 +220,8 @@ public class ItemInit
 	//Tetraceratops
 	public static final RegistryObject<Item> TETRACERATOPS_DNA = registerDNA("tetraceratops");
 	public static final RegistryObject<Item> TETRACERATOPS_DNA_DISC = registerDisc("tetraceratops");
-	public static final RegistryObject<Item> TETRACERATOPS_MEAT = registerMeat("tetraceratops", FoodInit.RAW_LARGE_DINOSAUR_MEAT);
-	public static final RegistryObject<Item> TETRACERATOPS_COOKED_MEAT = registerCookedMeat("tetraceratops", FoodInit.COOKED_LARGE_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> TETRACERATOPS_MEAT = registerMeat("tetraceratops", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> TETRACERATOPS_COOKED_MEAT = registerCookedMeat("tetraceratops", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> TETRACERATOPS_SPAWN_EGG = registerSpawnEgg("tetraceratops", () -> EntityInit.TETRACERATOPS_ENTITY.get(), 0x873624, 0x543b11);
 	public static final RegistryObject<Item> TETRACERATOPS_ARM_BONE = registerArmBone("tetraceratops");
 	public static final RegistryObject<Item> TETRACERATOPS_LEG_BONE = registerLegBone("tetraceratops");
@@ -231,13 +231,25 @@ public class ItemInit
 	public static final RegistryObject<Item> TETRACERATOPS_SKULL_BONE = registerSkull("tetraceratops");
 	
 	//Great Auk
+	public static final RegistryObject<Item> GREAT_AUK_DNA = registerDNA("great_auk");
+	public static final RegistryObject<Item> GREAT_AUK_DNA_DISC = registerDisc("great_auk");
+	public static final RegistryObject<Item> GREAT_AUK_MEAT = registerMeat("great_auk", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> GREAT_AUK_COOKED_MEAT = registerCookedMeat("great_auk", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> GREAT_AUK_EGG = advancedItemRegister("great_auk_egg", new GreatAukEggItem(standardProperties().stacksTo(16)));
 	public static final RegistryObject<Item> GREAT_AUK_SPAWN_EGG = registerSpawnEgg("great_auk", () -> EntityInit.GREAT_AUK_ENTITY.get(), 0x000000, 0xFFFFFF);
 
 	//Ouranosaurus
+	public static final RegistryObject<Item> OURANOSAURUS_DNA = registerDNA("ouranosaurus");
+	public static final RegistryObject<Item> OURANOSAURUS_DNA_DISC = registerDisc("ouranosaurus");
+	public static final RegistryObject<Item> OURANOSAURUS_MEAT = registerMeat("ouranosaurus", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> OURANOSAURUS_COOKED_MEAT = registerCookedMeat("ouranosaurus", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> OURANOSAURUS_SPAWN_EGG = registerSpawnEgg("ouranosaurus", () -> EntityInit.OURANOSAURUS_ENTITY.get(), 0x2b3187, 0x1da6e5);
 
 	//Fukuvenator
+	public static final RegistryObject<Item> FUKUVENATOR_DNA = registerDNA("fukuivenator");
+	public static final RegistryObject<Item> FUKUVENATOR_DNA_DISC = registerDisc("fukuivenator");
+	public static final RegistryObject<Item> FUKUVENATOR_MEAT = registerMeat("fukuivenator", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> FUKUVENATOR_COOKED_MEAT = registerCookedMeat("fukuivenator", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> FUKUVENATOR_SPAWN_EGG = registerSpawnEgg("fukuivenator", () -> EntityInit.FUKUIVENATOR_ENTITY.get(), 0xbb6ad8, 0x44284f);
 	
 	//Mud Ball

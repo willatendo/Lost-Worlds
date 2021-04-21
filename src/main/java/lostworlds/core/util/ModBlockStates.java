@@ -107,7 +107,7 @@ public class ModBlockStates
 	public static final BlockState STRIPPED_GINKGO_LOG = BlockInit.STRIPPED_GINKGO_LOG.get().defaultBlockState();
 	public static final BlockState GINKGO_WOOD = BlockInit.GINKGO_WOOD.get().defaultBlockState();
 	public static final BlockState STRIPPED_GINKGO_WOOD = BlockInit.STRIPPED_GINKGO_WOOD.get().defaultBlockState();
-//	public static final BlockState GINKGO_LEAVES = BlockInit.GINKGO_LEAVES.get().defaultBlockState();
+	public static final BlockState GINKGO_LEAVES = BlockInit.GINKGO_LEAVES.get().defaultBlockState();
 //	public static final BlockState GINKGO_SAPLING = BlockInit.GINKGO_SAPLING.get().defaultBlockState();
 	public static final BlockState GINKGO_PLANKS = BlockInit.GINKGO_PLANKS.get().defaultBlockState();
 	public static final BlockState GINKGO_STAIRS = BlockInit.GINKGO_STAIRS.get().defaultBlockState();
