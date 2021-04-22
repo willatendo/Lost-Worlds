@@ -160,8 +160,8 @@
 	//Ouranosaurus
 	"item.lostworlds.ouranosaurus_dna": "Ouranosaurus DNA",
 	"item.lostworlds.ouranosaurus_dna_disc": "Storage Disc",
-	"toolTip.lostworlds.ouranosaurus_disc.holding_shift": "Storing: Ouranosaurus nigeriensis",
-	"toolTip.lostworlds.ouranosaurus_disc.not_holding_shift": "Hold Shift For More Information",
+	"toolTip.lostworlds.ouranosaurus_dna_disc.holding_shift": "Storing: Ouranosaurus nigeriensis",
+	"toolTip.lostworlds.ouranosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_ouranosaurus_meat": "Raw Ouranosaurus Meat",
 	"item.lostworlds.cooked_ouranosaurus_meat": "Cooked Ouranosaurus Meat",
 	"item.lostworlds.ouranosaurus_spawn_egg": "Ouranosaurus Spawn Egg",
@@ -174,6 +174,9 @@
 	"item.lostworlds.raw_fukuivenator_meat": "Raw Fukuivenator Meat",
 	"item.lostworlds.cooked_fukuivenator_meat": "Cooked Fukuivenator Meat",
 	"item.lostworlds.fukuivenator_spawn_egg": "Fukuivenator Spawn Egg",
+
+	//Psittacosaurus
+	"item.lostworlds.psittacosaurus_spawn_egg": "Psittacosaurus Spawn Egg",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -219,7 +222,43 @@
 	//Fossils
 	"block.lostworlds.stone_fossil": "Stone Fossil",
 	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
-	"block.lostworlds.plastered_stone_fossil": "Plastered Stone Fossil",
+
+	"block.lostworlds.terracotta_fossil": "Terracotta Fossil",
+	"block.lostworlds.exposed_terracotta_fossil": "Exposed Terracotta Fossil",
+	"block.lostworlds.red_terracotta_fossil": "Red Terracotta Fossil",
+	"block.lostworlds.exposed_red_terracotta_fossil": "Exposed Red Terracotta Fossil",
+	"block.lostworlds.orange_terracotta_fossil": "Orange Terracotta Fossil",
+	"block.lostworlds.exposed_orange_terracotta_fossil": "Exposed Orange Terracotta Fossil",
+	"block.lostworlds.yellow_terracotta_fossil": "Yellow Terracotta Fossil",
+	"block.lostworlds.exposed_yellow_terracotta_fossil": "Exposed Yellow Terracotta Fossil",
+	"block.lostworlds.lime_terracotta_fossil": "Lime Terracotta Fossil",
+	"block.lostworlds.exposed_lime_terracotta_fossil": "Exposed Lime Terracotta Fossil",
+	"block.lostworlds.green_terracotta_fossil": "Green Terracotta Fossil",
+	"block.lostworlds.exposed_green_terracotta_fossil": "Exposed Green Terracotta Fossil",
+	"block.lostworlds.cyan_terracotta_fossil": "Cyan Terracotta Fossil",
+	"block.lostworlds.exposed_cyan_terracotta_fossil": "Exposed Cyan Terracotta Fossil",
+	"block.lostworlds.light_blue_terracotta_fossil": "Light Blue Terracotta Fossil",
+	"block.lostworlds.exposed_light_blue_terracotta_fossil": "Exposed Light Blue Terracotta Fossil",
+	"block.lostworlds.blue_terracotta_fossil": "Blue Terracotta Fossil",
+	"block.lostworlds.exposed_blue_terracotta_fossil": "Exposed Blue Terracotta Fossil",
+	"block.lostworlds.magenta_terracotta_fossil": "Magenta Terracotta Fossil",
+	"block.lostworlds.exposed_magenta_terracotta_fossil": "Exposed Magenta Terracotta Fossil",
+	"block.lostworlds.purple_terracotta_fossil": "Purple Terracotta Fossil",
+	"block.lostworlds.exposed_purple_terracotta_fossil": "Exposed Purple Terracotta Fossil",
+	"block.lostworlds.pink_terracotta_fossil": "Pink Terracotta Fossil",
+	"block.lostworlds.exposed_pink_terracotta_fossil": "Exposed Pink Terracotta Fossil",
+	"block.lostworlds.brown_terracotta_fossil": "Brown Terracotta Fossil",
+	"block.lostworlds.exposed_brown_terracotta_fossil": "Exposed Brown Terracotta Fossil",
+	"block.lostworlds.black_terracotta_fossil": "Black Terracotta Fossil",
+	"block.lostworlds.exposed_black_terracotta_fossil": "Exposed Black Terracotta Fossil",
+	"block.lostworlds.grey_terracotta_fossil": "Grey Terracotta Fossil",
+	"block.lostworlds.exposed_grey_terracotta_fossil": "Exposed Grey Terracotta Fossil",
+	"block.lostworlds.light_grey_terracotta_fossil": "Light Grey Terracotta Fossil",
+	"block.lostworlds.exposed_light_grey_terracotta_fossil": "Exposed Light Grey Terracotta Fossil",
+	"block.lostworlds.white_terracotta_fossil": "White Terracotta Fossil",
+	"block.lostworlds.exposed_white_terracotta_fossil": "Exposed White Terracotta Fossil",
+
+	"block.lostworlds.plastered_fossil": "Plastered Fossil",
 
 	//Fossil Processing
 	"block.lostworlds.fossil_cleaner": "Fossil Cleaner",
@@ -507,6 +546,7 @@
 	"entity.lostworlds.suchomimus": "Suchomimus tenerensis",
 	"entity.lostworlds.ouranosaurus": "Ouranosaurus nigeriensis",
 	"entity.lostworlds.fukuivenator": "Fukuivenator paradoxus",
+	"entity.lostworlds.psittacosaurus": "Psittacosaurus mongoliensis",
 	
 	//Modern
 	"entity.lostworlds.great_auk": "Pinguinus impennis",
@@ -527,8 +567,8 @@
 	"biome.lostworlds.oil_sands_desert": "Oil Sands Desert",
 	
 	//On Load Event
-	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 7 Developer Edition. DO NOT REDISTRIBUTE.",
-	"lostworlds.loadEvent.player": "Willatendo, Jooji, and Lambdaraptor49 thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 7",
+	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 8 Developer Edition. DO NOT REDISTRIBUTE.",
+	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 8",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"

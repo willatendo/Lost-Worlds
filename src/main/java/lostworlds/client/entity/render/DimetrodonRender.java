@@ -35,7 +35,7 @@ public class DimetrodonRender extends GeoEntityRenderer<DimetrodonEntity>
 		{
 			stack.scale(0.3F, 0.3F, 0.3F);
 		}
-		stack.scale(0.9F, 0.9F, 0.9F);
+		stack.scale(0.9F, 0.9F, 0.9F); //Lenght, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

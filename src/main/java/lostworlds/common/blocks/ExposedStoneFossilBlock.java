@@ -119,7 +119,7 @@ public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 			Item item = player.getItemInHand(handIn).getItem();
 			if(item instanceof WetPaperItem)
 			{
-				worldIn.setBlockAndUpdate(pos, BlockInit.PLASTERED_STONE_FOSSIL.get().defaultBlockState().setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+				worldIn.setBlockAndUpdate(pos, BlockInit.PLASTERED_FOSSIL.get().defaultBlockState().setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 				worldIn.playSound(player, pos, SoundEvents.WOOL_PLACE, SoundCategory.BLOCKS, 0.7F, 1.0F);
 				
 				if(!player.abilities.instabuild)

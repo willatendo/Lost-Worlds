@@ -35,7 +35,7 @@ public class FukuivenatorRender extends GeoEntityRenderer<FukuivenatorEntity>
 		{
 			stack.scale(0.15F, 0.15F, 0.15F);
 		}
-		stack.scale(0.8F, 0.8F, 0.8F);
+		stack.scale(0.8F, 0.8F, 0.8F); //Lenght, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

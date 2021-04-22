@@ -35,7 +35,7 @@ public class AllosaurusRender extends GeoEntityRenderer<AllosaurusEntity>
 		{
 			stack.scale(0.15F, 0.15F, 0.15F);
 		}
-		stack.scale(1.4F, 1.5F, 1.5F);
+		stack.scale(1.4F, 1.5F, 1.5F); //Lenght, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

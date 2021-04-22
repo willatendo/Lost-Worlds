@@ -35,8 +35,7 @@ public class CarnotaurusRender extends GeoEntityRenderer<CarnotaurusEntity>
 		{
 			stack.scale(0.15F, 0.15F, 0.15F);
 		}
-		stack.scale(1.8F, 2.3F, 1.85F);
-		
+		stack.scale(1.8F, 2.3F, 1.85F); //Lenght, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

@@ -252,6 +252,13 @@ public class ItemInit
 	public static final RegistryObject<Item> FUKUVENATOR_COOKED_MEAT = registerCookedMeat("fukuivenator", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> FUKUVENATOR_SPAWN_EGG = registerSpawnEgg("fukuivenator", () -> EntityInit.FUKUIVENATOR_ENTITY.get(), 0xbb6ad8, 0x44284f);
 	
+	//Psittacosaurus
+	public static final RegistryObject<Item> PSITTACOSAURUS_DNA = registerDNA("psittacosaurus");
+	public static final RegistryObject<Item> PSITTACOSAURUS_DNA_DISC = registerDisc("psittacosaurus");
+	public static final RegistryObject<Item> PSITTACOSAURUS_MEAT = registerMeat("psittacosaurus", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> PSITTACOSAURUS_COOKED_MEAT = registerCookedMeat("psittacosaurus", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> PSITTACOSAURUS_SPAWN_EGG = registerSpawnEgg("psittacosaurus", () -> EntityInit.PSITTACOSAURUS_ENTITY.get(), 0x6d4d20, 0x434c16);
+		
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
 	
@@ -293,7 +300,43 @@ public class ItemInit
 	//Fossil
 	public static final RegistryObject<BlockItem> STONE_FOSSIL = registerBlockItem("stone_fossil", () -> BlockInit.STONE_FOSSIL.get());
 	public static final RegistryObject<BlockItem> EXPOSED_STONE_FOSSIL = registerBlockItem("exposed_stone_fossil", () -> BlockInit.EXPOSED_STONE_FOSSIL.get());
-	public static final RegistryObject<BlockItem> PLASTERED_STONE_FOSSIL = registerBlockItem("plastered_stone_fossil", () -> BlockInit.PLASTERED_STONE_FOSSIL.get());
+
+	public static final RegistryObject<BlockItem> TERRACOTTA_FOSSIL = registerBlockItem("terracotta_fossil", () -> BlockInit.TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_TERRACOTTA_FOSSIL = registerBlockItem("exposed_terracotta_fossil", () -> BlockInit.EXPOSED_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> RED_TERRACOTTA_FOSSIL = registerBlockItem("red_terracotta_fossil", () -> BlockInit.RED_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_RED_TERRACOTTA_FOSSIL = registerBlockItem("exposed_red_terracotta_fossil", () -> BlockInit.EXPOSED_RED_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> ORANGE_TERRACOTTA_FOSSIL = registerBlockItem("orange_terracotta_fossil", () -> BlockInit.ORANGE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_ORANGE_TERRACOTTA_FOSSIL = registerBlockItem("exposed_orange_terracotta_fossil", () -> BlockInit.EXPOSED_ORANGE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> YELLOW_TERRACOTTA_FOSSIL = registerBlockItem("yellow_terracotta_fossil", () -> BlockInit.YELLOW_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_YELLOW_TERRACOTTA_FOSSIL = registerBlockItem("exposed_yellow_terracotta_fossil", () -> BlockInit.EXPOSED_YELLOW_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> LIME_TERRACOTTA_FOSSIL = registerBlockItem("lime_terracotta_fossil", () -> BlockInit.LIME_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_LIME_TERRACOTTA_FOSSIL = registerBlockItem("exposed_lime_terracotta_fossil", () -> BlockInit.EXPOSED_LIME_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> GREEN_TERRACOTTA_FOSSIL = registerBlockItem("green_terracotta_fossil", () -> BlockInit.GREEN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_GREEN_TERRACOTTA_FOSSIL = registerBlockItem("exposed_green_terracotta_fossil", () -> BlockInit.EXPOSED_GREEN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> CYAN_TERRACOTTA_FOSSIL = registerBlockItem("cyan_terracotta_fossil", () -> BlockInit.CYAN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_CYAN_TERRACOTTA_FOSSIL = registerBlockItem("exposed_cyan_terracotta_fossil", () -> BlockInit.EXPOSED_CYAN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> LIGHT_BLUE_TERRACOTTA_FOSSIL = registerBlockItem("light_blue_terracotta_fossil", () -> BlockInit.LIGHT_BLUE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL = registerBlockItem("exposed_light_blue_terracotta_fossil", () -> BlockInit.EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> BLUE_TERRACOTTA_FOSSIL = registerBlockItem("blue_terracotta_fossil", () -> BlockInit.BLUE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_BLUE_TERRACOTTA_FOSSIL = registerBlockItem("exposed_blue_terracotta_fossil", () -> BlockInit.EXPOSED_BLUE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> MAGENTA_TERRACOTTA_FOSSIL = registerBlockItem("magenta_terracotta_fossil", () -> BlockInit.MAGENTA_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_MAGENTA_TERRACOTTA_FOSSIL = registerBlockItem("exposed_magenta_terracotta_fossil", () -> BlockInit.EXPOSED_MAGENTA_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> PURPLE_TERRACOTTA_FOSSIL = registerBlockItem("purple_terracotta_fossil", () -> BlockInit.PURPLE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_PURPLE_TERRACOTTA_FOSSIL = registerBlockItem("exposed_purple_terracotta_fossil", () -> BlockInit.EXPOSED_PURPLE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> PINK_TERRACOTTA_FOSSIL = registerBlockItem("pink_terracotta_fossil", () -> BlockInit.PINK_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_PINK_TERRACOTTA_FOSSIL = registerBlockItem("exposed_pink_terracotta_fossil", () -> BlockInit.EXPOSED_PINK_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> BROWN_TERRACOTTA_FOSSIL = registerBlockItem("brown_terracotta_fossil", () -> BlockInit.BROWN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_BROWN_TERRACOTTA_FOSSIL = registerBlockItem("exposed_brown_terracotta_fossil", () -> BlockInit.EXPOSED_BROWN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> BLACK_TERRACOTTA_FOSSIL = registerBlockItem("black_terracotta_fossil", () -> BlockInit.BLACK_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_BLACK_TERRACOTTA_FOSSIL = registerBlockItem("exposed_black_terracotta_fossil", () -> BlockInit.EXPOSED_BLACK_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> GREY_TERRACOTTA_FOSSIL = registerBlockItem("grey_terracotta_fossil", () -> BlockInit.GREY_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_GREY_TERRACOTTA_FOSSIL = registerBlockItem("exposed_grey_terracotta_fossil", () -> BlockInit.EXPOSED_GREY_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> LIGHT_GREY_TERRACOTTA_FOSSIL = registerBlockItem("light_grey_terracotta_fossil", () -> BlockInit.LIGHT_GREY_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL = registerBlockItem("exposed_light_grey_terracotta_fossil", () -> BlockInit.EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> WHITE_TERRACOTTA_FOSSIL = registerBlockItem("white_terracotta_fossil", () -> BlockInit.WHITE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<BlockItem> EXPOSED_WHITE_TERRACOTTA_FOSSIL = registerBlockItem("exposed_white_terracotta_fossil", () -> BlockInit.EXPOSED_WHITE_TERRACOTTA_FOSSIL.get());
+	
+	public static final RegistryObject<BlockItem> PLASTERED_FOSSIL = registerBlockItem("plastered_fossil", () -> BlockInit.PLASTERED_FOSSIL.get());
 
 	//Fossil Processing
 	

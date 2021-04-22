@@ -7,6 +7,7 @@ import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.pathfinding.GroundPathNavigator;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.pathfinding.SwimmerPathNavigator;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -71,7 +72,7 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 		{
 			this.moveRelative(this.getSpeed(), vec3d);
 			this.move(MoverType.SELF, this.getDeltaMovement());
-			this.setDeltaMovement(this.getDeltaMovement().scale(1.0D));
+			this.setDeltaMovement(this.getDeltaMovement().scale(0.1D));
 			if(this.getTarget() == null) 
 			{
 				this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
@@ -88,7 +89,7 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 	{
 		private final AbstractPrehistoricLandAndSeaEntity entity;
 		
-		public MoveHelperController(AbstractPrehistoricLandAndSeaEntity entity) 
+		MoveHelperController(AbstractPrehistoricLandAndSeaEntity entity) 
 		{
 			super(entity);
 			this.entity = entity;
@@ -96,44 +97,34 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 		
 		public void tick() 
 		{
-			if(this.entity.isInWater()) 
+			if(this.entity.isEyeInFluid(FluidTags.WATER)) 
 			{
 				this.entity.setDeltaMovement(this.entity.getDeltaMovement().add(0.0D, 0.005D, 0.0D));
 			}
 			
 			if(this.operation == MovementController.Action.MOVE_TO && !this.entity.getNavigation().isDone()) 
 			{
+				float f = (float)(this.speedModifier * this.entity.getAttributeValue(Attributes.MOVEMENT_SPEED));
+				this.entity.setSpeed(MathHelper.lerp(0.125F, this.entity.getSpeed(), f));
 				double d0 = this.wantedX - this.entity.getX();
 				double d1 = this.wantedY - this.entity.getY();
 				double d2 = this.wantedZ - this.entity.getZ();
-				double d3 = d0 * d0 + d1 * d1 + d2 * d2;
-				if (d3 < (double)2.5000003E-7F) 
+				if(d1 != 0.0D) 
 				{
-					this.mob.setZza(0.0F);
-				} 
-				else 
-				{
-					float f = (float)(MathHelper.atan2(d2, d0) * (double)(180F / (float)Math.PI)) - 90.0F;
-					this.entity.yRot = this.rotlerp(this.entity.yRot, f, 10.0F);
-					this.entity.yBodyRot = this.entity.yRot;
-					this.entity.yHeadRot = this.entity.yRot;
-					float f1 = (float)(this.speedModifier * this.entity.getAttributeValue(Attributes.MOVEMENT_SPEED));
-					if(this.entity.isInWater()) 
-					{
-						this.entity.setSpeed(f1 * 0.02F);
-						float f2 = -((float)(MathHelper.atan2(d1, (double)MathHelper.sqrt(d0 * d0 + d2 * d2)) * (double)(180F / (float)Math.PI)));
-						f2 = MathHelper.clamp(MathHelper.wrapDegrees(f2), -85.0F, 85.0F);
-						this.entity.xRot = this.rotlerp(this.entity.xRot, f2, 5.0F);
-						float f3 = MathHelper.cos(this.entity.xRot * ((float)Math.PI / 180F));
-						float f4 = MathHelper.sin(this.entity.xRot * ((float)Math.PI / 180F));
-						this.entity.zza = f3 * f1;
-						this.entity.yya = -f4 * f1;
-					} 
-					else 
-					{
-						this.entity.setSpeed(f1 * 0.1F);
-					}
+					double d3 = (double)MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+					this.entity.setDeltaMovement(this.entity.getDeltaMovement().add(0.0D, (double)this.entity.getSpeed() * (d1 / d3) * 0.1D, 0.0D));
 				}
+				
+				if(d0 != 0.0D || d2 != 0.0D) 
+				{
+					float f1 = (float)(MathHelper.atan2(d2, d0) * (double)(180F / (float)Math.PI)) - 90.0F;
+					this.entity.yRot = this.rotlerp(this.entity.yRot, f1, 90.0F);
+					this.entity.yBodyRot = this.entity.yRot;
+				}
+			} 
+			else 
+			{
+				this.entity.setSpeed(0.0F);
 			}
 		}
 	}

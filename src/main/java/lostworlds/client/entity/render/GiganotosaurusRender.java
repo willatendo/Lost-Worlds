@@ -35,7 +35,7 @@ public class GiganotosaurusRender extends GeoEntityRenderer<GiganotosauruEntity>
 		{
 			stack.scale(0.15F, 0.15F, 0.15F);
 		}
-		stack.scale(1.8F, 1.93F, 1.6F);
+		stack.scale(1.8F, 1.93F, 1.6F); //Lenght, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

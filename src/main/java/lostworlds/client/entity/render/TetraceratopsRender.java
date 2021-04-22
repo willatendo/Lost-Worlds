@@ -35,7 +35,7 @@ public class TetraceratopsRender extends GeoEntityRenderer<TetraceratopsEntity>
 		{
 			stack.scale(0.15F, 0.15F, 0.15F);
 		}
-		stack.scale(1.0F, 1.0F, 1.0F);
+		stack.scale(1.0F, 1.0F, 1.0F); //Lenght, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

@@ -152,6 +152,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.OURANOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.PSITTACOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.TETRACERATOPS_SPAWN_EGG.get().getDefaultInstance());
@@ -176,7 +177,41 @@ public class CreativeTab extends ItemGroup
 		//Fossils
 		item.add(ItemInit.STONE_FOSSIL.get().getDefaultInstance());
 		item.add(ItemInit.EXPOSED_STONE_FOSSIL.get().getDefaultInstance());
-		item.add(ItemInit.PLASTERED_STONE_FOSSIL.get().getDefaultInstance());
+		
+		item.add(ItemInit.TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.RED_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_RED_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.ORANGE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_ORANGE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.LIME_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_LIME_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.GREEN_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_GREEN_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.CYAN_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_CYAN_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.LIGHT_BLUE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.BLUE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_BLUE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.MAGENTA_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_MAGENTA_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.PURPLE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_PURPLE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.PINK_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_PINK_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.BROWN_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_BROWN_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.BLACK_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_BLACK_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.GREY_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_GREY_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.LIGHT_GREY_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.WHITE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		item.add(ItemInit.EXPOSED_WHITE_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
+		
+		item.add(ItemInit.PLASTERED_FOSSIL.get().getDefaultInstance());
 
 		//Fossil Processing
 		item.add(ItemInit.POWER_SUPPLY_BLOCK.get().getDefaultInstance());

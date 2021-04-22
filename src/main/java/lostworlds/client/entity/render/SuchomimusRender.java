@@ -35,7 +35,7 @@ public class SuchomimusRender extends GeoEntityRenderer<SuchomimusEntity>
 		{
 			stack.scale(0.15F, 0.15F, 0.15F);
 		}
-		stack.scale(1.5F, 1.25F, 1.15F);
+		stack.scale(1.5F, 1.25F, 1.15F); //Lenght, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

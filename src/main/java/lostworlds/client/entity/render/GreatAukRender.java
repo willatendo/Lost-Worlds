@@ -35,7 +35,7 @@ public class GreatAukRender extends GeoEntityRenderer<GreatAukEntity>
 		{
 			stack.scale(0.35F, 0.35F, 0.35F);
 		}
-		stack.scale(1.0F, 1.0F, 1.0F);
+		stack.scale(1.0F, 1.0F, 1.0F); //Lenght, Height, Width 
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

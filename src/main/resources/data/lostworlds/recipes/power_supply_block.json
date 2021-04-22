@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#@#",
+		"#$#"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stone_slab"
+		},
+		"@": {
+			"item": "minecraft:redstone_block"
+		},
+		"$": {
+			"item": "minecraft:repeater"
+		}
+	},
+	"result": {
+		"item": "lostworlds:power_supply_block"
+	}
+}

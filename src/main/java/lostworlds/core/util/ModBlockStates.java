@@ -11,7 +11,28 @@ public class ModBlockStates
 	//Fossils
 	public static final BlockState STONE_FOSSIL = BlockInit.STONE_FOSSIL.get().defaultBlockState();
 	public static final BlockState EXPOSED_STONE_FOSSIL = BlockInit.EXPOSED_STONE_FOSSIL.get().defaultBlockState();
-	public static final BlockState PLASTERED_STONE_FOSSIL = BlockInit.PLASTERED_STONE_FOSSIL.get().defaultBlockState();
+	
+	public static final BlockState TERRACOTTA_FOSSIL = BlockInit.TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState RED_TERRACOTTA_FOSSIL = BlockInit.RED_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_RED_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_RED_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState ORANGE_TERRACOTTA_FOSSIL = BlockInit.ORANGE_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_ORANGE_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_ORANGE_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_LIME_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_LIME_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_GREEN_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_GREEN_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_CYAN_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_CYAN_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_BLUE_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_BLUE_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_MAGENTA_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_MAGENTA_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_PURPLE_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_PURPLE_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_PINK_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_PINK_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_BROWN_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_BROWN_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_BLACK_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_BLACK_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_GREY_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_GREY_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	public static final BlockState EXPOSED_WHITE_TERRACOTTA_FOSSIL = BlockInit.EXPOSED_WHITE_TERRACOTTA_FOSSIL.get().defaultBlockState();
+	
+	public static final BlockState PLASTERED_STONE_FOSSIL = BlockInit.PLASTERED_FOSSIL.get().defaultBlockState();
 	
 	//Fossil Processing
 	
