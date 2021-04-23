@@ -9,11 +9,15 @@ import lostworlds.core.util.ModID;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.core.vanilla.properties.ModFlammables;
 import lostworlds.core.vanilla.properties.ModStrippables;
+import lostworlds.world.dimension.permian.PermianDimension;
+import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
 import lostworlds.world.feature.init.Mobs;
 import lostworlds.world.feature.init.Ores;
 import lostworlds.world.init.BiomeInit;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
@@ -22,6 +26,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -40,13 +45,7 @@ public class LostWorlds
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
 
         //Main Objects
-        ModRegistry.registry();
-        
-        //Dimensions
- //       PermianInit.init();
-        
-        //InGen
-//		InGenSecretes.init();
+        ModRegistry.registry();        
         
         //Lib - 3.0.30
         GeckoLib.initialize();
@@ -69,6 +68,16 @@ public class LostWorlds
     		ComposterBlock.add(0.6F, BlockInit.PERMIAN_GROUND_FERNS.get());
     		ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
     	});
+    	
+    	event.enqueueWork(() -> {
+    		PermianDimension.init();
+    	});
+    }
+    
+    public void clientSetup(FMLClientSetupEvent event) 
+    {
+        DimensionRenderInfo permian = new PermianDimensionRenderInfo();
+        DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "permian_render"), permian);
     }
     
     private void loadComplete(FMLLoadCompleteEvent event)
