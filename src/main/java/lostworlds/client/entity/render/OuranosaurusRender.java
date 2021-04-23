@@ -35,7 +35,7 @@ public class OuranosaurusRender extends GeoEntityRenderer<OuranosaurusEntity>
 		{
 			stack.scale(0.15F, 0.15F, 0.15F);
 		}
-		stack.scale(1.5F, 2.3F, 2.4F); //Lenght, Height, Width
+		stack.scale(1.5F, 2.3F, 1.4F); //Lenght, Height, Width
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}

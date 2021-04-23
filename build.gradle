@@ -15,9 +15,8 @@ version = '1.0.0'
 group = 'lostworlds'
 archivesBaseName = 'lostworlds'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8) 
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
 
     mappings channel: 'official', version: '1.16.5'
@@ -27,9 +26,9 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-
+						
+			property 'forge.logging.console.level', 'debug'
+			             
             mods {
                 lostworlds {
                     source sourceSets.main
@@ -39,23 +38,9 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
+             
             property 'forge.logging.console.level', 'debug'
-
-            mods {
-                lostworlds {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        data {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-
+             
             mods {
                 lostworlds {
                     source sourceSets.main
@@ -64,8 +49,6 @@ minecraft {
         }
     }
 }
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven { url 'https://repo.repsy.io/mvn/gandiber/geckolib' }
@@ -91,12 +74,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemodsareus",
-            "Specification-Version": "1",
+            "Specification-Title": "lostworlds",
+            "Specification-Vendor": "lostworlds",
+            "Specification-Version": "1.0.0",
             "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
+            "Implementation-Version": "1.0.0",
+            "Implementation-Vendor" :"lostworlds",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

@@ -1,11 +1,14 @@
 package lostworlds.common.entities;
 
-import lostworlds.common.entities.abstracts.AbstractAmphibianEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
+import lostworlds.core.init.EntityInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -14,7 +17,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class RhinesuchusEntity extends AbstractAmphibianEntity implements IAnimatable
+public class RhinesuchusEntity extends AbstractPrehistoricLandAndSeaEntity implements IAnimatable
 {
 	private AnimationFactory factory = new AnimationFactory(this);
 	
@@ -65,5 +68,11 @@ public class RhinesuchusEntity extends AbstractAmphibianEntity implements IAnima
 	protected SoundEvent getDeathSound() 
 	{
 		return SoundEvents.SLIME_BLOCK_HIT;
+	}
+
+	@Override
+	public AbstractPrehistoricAgeingEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricAgeingEntity prehistoricEntity) 
+	{
+		return EntityInit.RHINESUCHUS_ENTITY.get().create(serverWorld);
 	}
 }

@@ -28,7 +28,7 @@ import net.minecraft.world.World;
 
 public class TimeMachineBlock extends Block
 {
-	public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 8, 16);
+	public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 10, 16);
 	
 	public TimeMachineBlock(Properties properties) 
 	{

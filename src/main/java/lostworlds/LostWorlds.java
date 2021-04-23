@@ -43,7 +43,7 @@ public class LostWorlds
         ModRegistry.registry();
         
         //Dimensions
- //     PermianDimension.init();
+ //       PermianInit.init();
         
         //InGen
 //		InGenSecretes.init();
