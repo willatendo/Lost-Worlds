@@ -12,6 +12,7 @@ import lostworlds.common.items.ModSlabBurnableItem;
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.common.items.ModWoodBurnableItem;
 import lostworlds.common.items.WetPaperItem;
+import lostworlds.common.items.timebooks.PermianTimeBook;
 import lostworlds.common.tools.BrushItem;
 import lostworlds.core.ModItemGroup;
 import lostworlds.core.util.enums.ModItemTeir;
@@ -39,6 +40,8 @@ public class ItemInit
 	//Items
 	//Brush
 	public static final RegistryObject<Item> BRUSH = ModRegistry.ITEM_REGISTRY.register("brush", () -> new BrushItem(ModItemTeir.BRUSH, 1.5F, -3.0F, standardProperties()));
+	public static final RegistryObject<Item> IRON_BRUSH = ModRegistry.ITEM_REGISTRY.register("iron_brush", () -> new BrushItem(ModItemTeir.IRON_BRUSH, 1.5F, -3.0F, standardProperties()));
+	public static final RegistryObject<Item> DIAMOND_BRUSH = ModRegistry.ITEM_REGISTRY.register("diamond_brush", () -> new BrushItem(ModItemTeir.DIAMOND_BRUSH, 1.5F, -3.0F, standardProperties()));
 	
 	//Plaster
 	public static final RegistryObject<Item> WET_PAPER = advancedItemRegister("wet_paper", new WetPaperItem(standardProperties()));
@@ -48,6 +51,9 @@ public class ItemInit
 	
 	public static final RegistryObject<Item> EMPTY_VILE = simpleItemRegister("empty_vile", standardProperties());
 
+	//Time Books
+	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("permian_time_book", () -> new PermianTimeBook(standardProperties()));
+	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = registerDisc("procompsognathus");

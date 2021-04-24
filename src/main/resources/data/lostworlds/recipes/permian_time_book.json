@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#$@"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:book"
+		},
+		"$": {
+			"item": "minecraft:emerald"
+		},
+		"@": {
+			"item": "minecraft:sand"
+		}
+	},
+	"result": {
+		"item": "lostworlds:permian_time_book"
+	}
+}

@@ -15,7 +15,10 @@
 	
 	//Vile
 	"item.lostworlds.empty_vile": "Empty Vile",
-		
+
+	//Permian Time Book
+	"item.lostworlds.permian_time_book": "Permian Time Book",
+	
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
 	"item.lostworlds.procompsognathus_dna_disc": "Storage Disc",

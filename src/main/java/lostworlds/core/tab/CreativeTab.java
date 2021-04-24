@@ -59,9 +59,14 @@ public class CreativeTab extends ItemGroup
 		
 		//Dinosaur Items
 		item.add(ItemInit.BRUSH.get().getDefaultInstance());
+		item.add(ItemInit.IRON_BRUSH.get().getDefaultInstance());
+		item.add(ItemInit.DIAMOND_BRUSH.get().getDefaultInstance());
 		item.add(ItemInit.WET_PAPER.get().getDefaultInstance());
 		item.add(ItemInit.FEILD_GUIDE.get().getDefaultInstance());
 		item.add(ItemInit.MUD_BALL.get().getDefaultInstance());
+		
+		//Time Books
+		item.add(ItemInit.PERMIAN_TIME_BOOK.get().getDefaultInstance());
 		
 		//DNA
 		item.add(ItemInit.EMPTY_VILE.get().getDefaultInstance());
