@@ -42,6 +42,7 @@ import lostworlds.core.util.ModToolType;
 import lostworlds.core.util.ModWoodType;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.world.feature.tree.ConiferTree;
+import lostworlds.world.feature.tree.GinkgoTree;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -218,6 +219,7 @@ public class BlockInit
 	public static final RegistryObject<ConiferLog> GINKGO_WOOD = ModRegistry.BLOCK_REGISTRY.register("ginkgo_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ConiferLog> STRIPPED_GINKGO_WOOD = ModRegistry.BLOCK_REGISTRY.register("stripped_ginkgo_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<LeavesBlock> GINKGO_LEAVES = ModRegistry.BLOCK_REGISTRY.register("ginkgo_leaves", () -> new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.3F).noOcclusion().sound(SoundType.GRASS)));
+	public static final RegistryObject<SaplingBlock> GINKGO_SAPLING = ModRegistry.BLOCK_REGISTRY.register("ginkgo_sapling", () -> new SaplingBlock(new GinkgoTree(), AbstractBlock.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> GINKGO_PLANKS = ModRegistry.BLOCK_REGISTRY.register("ginkgo_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<StairsBlock> GINKGO_STAIRS = ModRegistry.BLOCK_REGISTRY.register("ginkgo_stairs", () -> new StairsBlock(() -> BlockInit.CONIFER_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<SlabBlock> GINKGO_SLAB = ModRegistry.BLOCK_REGISTRY.register("ginkgo_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));

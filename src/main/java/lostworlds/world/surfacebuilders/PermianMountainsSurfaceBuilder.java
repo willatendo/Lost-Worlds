@@ -20,6 +20,13 @@ public class PermianMountainsSurfaceBuilder extends SurfaceBuilder<SurfaceBuilde
 	@Override
 	public void apply(Random random, IChunk chunkIn, Biome biomeIn, int x, int z, int startHeight, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig config) 
 	{
-		SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed, ModSurfaceBuilders.PERMIAN_MOUNTAIN);
+		if(noise > 1.0D) 
+		{
+			SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed, ModSurfaceBuilders.PERMIAN_MOUNTAIN);
+		}
+		else
+		{
+			SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed, ModSurfaceBuilders.PERMIAN_PLAINS);
+		}
 	}
 }

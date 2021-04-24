@@ -86,9 +86,7 @@ public class ModBiomeMaker
 	public static Biome makeAFloodBasaltPlains() 
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
-		
-		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.GORGONOPS_ENTITY.get(), 1, 1, 1));
-		
+				
 		BiomeGenerationSettings.Builder biomegenerationsettings$builder = genSettings(SurfaceBuilderInit.NAKED_FLOOD_BASALT_SURFACE_BUILDER, ModSurfaceBuilders.FLOOD_BASALT_PLAINS);
 		DefaultBiomeFeatures.addDefaultCarvers(biomegenerationsettings$builder);
 		DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);

@@ -440,6 +440,7 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_LOG = registerBuringBlockItem("stripped_ginkgo_log", () -> BlockInit.STRIPPED_GINKGO_LOG.get());
 	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_WOOD = registerBuringBlockItem("stripped_ginkgo_wood", () -> BlockInit.STRIPPED_GINKGO_WOOD.get());
 	public static final RegistryObject<BlockItem> GINKGO_LEAVES = registerBlockItem("ginkgo_leaves", () -> BlockInit.GINKGO_LEAVES.get());
+	public static final RegistryObject<BlockItem> GINKGO_SAPLING = registerBuringBlockItem("ginkgo_sapling", () -> BlockInit.GINKGO_SAPLING.get());
 	public static final RegistryObject<BlockItem> GINKGO_PLANKS = registerBuringBlockItem("ginkgo_planks", () -> BlockInit.GINKGO_PLANKS.get());
 	public static final RegistryObject<BlockItem> GINKGO_STAIRS = registerBuringBlockItem("ginkgo_stairs", () -> BlockInit.GINKGO_STAIRS.get());
 	public static final RegistryObject<BlockItem> GINKGO_SLAB = registerBuringSlabItem("ginkgo_slab", () -> BlockInit.GINKGO_SLAB.get());

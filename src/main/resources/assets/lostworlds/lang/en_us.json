@@ -358,6 +358,7 @@
 	"block.lostworlds.ginkgo_wood": "Ginkgo Wood",
 	"block.lostworlds.stripped_ginkgo_wood": "Stripped Ginkgo Wood",
 	"block.lostworlds.ginkgo_leaves": "Ginkgo Leaves",
+	"block.lostworlds.ginkgo_sapling": "Ginkgo Sapling",
 	"block.lostworlds.ginkgo_planks": "Ginkgo Planks",
 	"block.lostworlds.ginkgo_stairs": "Ginkgo Stairs",
 	"block.lostworlds.ginkgo_slab": "Ginkgo Slab",
@@ -567,11 +568,10 @@
 	
 	//Modern Day
 	"biome.lostworlds.volcano": "Volcano",
-	"biome.lostworlds.oil_sands_desert": "Oil Sands Desert",
 	
 	//On Load Event
-	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 8 Developer Edition. DO NOT REDISTRIBUTE.",
-	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 8",
+	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 9 Developer Edition. DO NOT REDISTRIBUTE.",
+	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 9",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"
