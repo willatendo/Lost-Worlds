@@ -1,7 +1,10 @@
 {
 	//Items
 	//Brush
-	"item.lostworlds.brush": "Brush",
+	"item.lostworlds.leather_brush": "Leather Brush",
+	"item.lostworlds.iron_brush": "Iron Brush",
+	"item.lostworlds.gold_brush": "Gold Brush",
+	"item.lostworlds.diamond_brush": "Diamond Brush",
 	
 	//Plaster
 	"item.lostworlds.wet_paper": "Wet Paper",

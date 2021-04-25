@@ -10,17 +10,21 @@ import net.minecraft.util.LazyValue;
 
 public enum ModItemTeir implements IItemTier
 {
-	BRUSH(0, 34, 0.5F, 1.4F, 0, () -> 
+	LEATHER_BRUSH(0, 34, 0.5F, 1.4F, 0, () -> 
 	{
 		return Ingredient.of(Items.STRING);
 	}),
 	IRON_BRUSH(0, 254, 1.5F, 1.4F, 0, () -> 
 	{
-		return Ingredient.of(Items.IRON_INGOT);
+		return Ingredient.of(Items.STRING);
+	}),
+	GOLD_BRUSH(0, 51, 2.8F, 1.4F, 0, () -> 
+	{
+		return Ingredient.of(Items.STRING);
 	}),
 	DIAMOND_BRUSH(0, 1554, 2.5F, 1.4F, 0, () -> 
 	{
-		return Ingredient.of(Items.DIAMOND);
+		return Ingredient.of(Items.STRING);
 	}),
 	ANCIENT(2, 550, 5.0F, 10.0F, 5, () ->
 	{

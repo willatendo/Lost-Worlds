@@ -39,8 +39,9 @@ public class ItemInit
 {
 	//Items
 	//Brush
-	public static final RegistryObject<Item> BRUSH = ModRegistry.ITEM_REGISTRY.register("brush", () -> new BrushItem(ModItemTeir.BRUSH, 1.5F, -3.0F, standardProperties()));
+	public static final RegistryObject<Item> LEATHER_BRUSH = ModRegistry.ITEM_REGISTRY.register("leather_brush", () -> new BrushItem(ModItemTeir.LEATHER_BRUSH, 1.5F, -3.0F, standardProperties()));
 	public static final RegistryObject<Item> IRON_BRUSH = ModRegistry.ITEM_REGISTRY.register("iron_brush", () -> new BrushItem(ModItemTeir.IRON_BRUSH, 1.5F, -3.0F, standardProperties()));
+	public static final RegistryObject<Item> GOLD_BRUSH = ModRegistry.ITEM_REGISTRY.register("gold_brush", () -> new BrushItem(ModItemTeir.GOLD_BRUSH, 1.5F, -3.0F, standardProperties()));
 	public static final RegistryObject<Item> DIAMOND_BRUSH = ModRegistry.ITEM_REGISTRY.register("diamond_brush", () -> new BrushItem(ModItemTeir.DIAMOND_BRUSH, 1.5F, -3.0F, standardProperties()));
 	
 	//Plaster

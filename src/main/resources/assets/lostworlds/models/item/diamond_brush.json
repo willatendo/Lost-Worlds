@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/brush"
+		"layer0": "lostworlds:items/diamond_brush"
   }
 }

@@ -58,8 +58,9 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.RAM.get().getDefaultInstance());
 		
 		//Dinosaur Items
-		item.add(ItemInit.BRUSH.get().getDefaultInstance());
+		item.add(ItemInit.LEATHER_BRUSH.get().getDefaultInstance());
 		item.add(ItemInit.IRON_BRUSH.get().getDefaultInstance());
+		item.add(ItemInit.GOLD_BRUSH.get().getDefaultInstance());
 		item.add(ItemInit.DIAMOND_BRUSH.get().getDefaultInstance());
 		item.add(ItemInit.WET_PAPER.get().getDefaultInstance());
 		item.add(ItemInit.FEILD_GUIDE.get().getDefaultInstance());
@@ -310,7 +311,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.STRIPPED_GINKGO_LOG.get().getDefaultInstance());
 		item.add(ItemInit.STRIPPED_GINKGO_WOOD.get().getDefaultInstance());
 		item.add(ItemInit.GINKGO_LEAVES.get().getDefaultInstance());
-//		item.add(ItemInit.GINKGO_SAPLING.get().getDefaultInstance());
+		item.add(ItemInit.GINKGO_SAPLING.get().getDefaultInstance());
 		item.add(ItemInit.GINKGO_PLANKS.get().getDefaultInstance());
 		item.add(ItemInit.GINKGO_STAIRS.get().getDefaultInstance());
 		item.add(ItemInit.GINKGO_SLAB.get().getDefaultInstance());
