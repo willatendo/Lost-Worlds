@@ -38,6 +38,9 @@ public class BiomeInit
 	public static final RegistryObject<Biome> CONIFER_FOREST = createBiome("conifer_forest", ModBiomeMaker::makeAConiferForest);
 	public static final RegistryKey<Biome> CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "conifer_forest"));
 	
+	public static final RegistryObject<Biome> GINKGO_FOREST = createBiome("ginkgo_forest", ModBiomeMaker::makeAGinkgoForest);
+	public static final RegistryKey<Biome> GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "ginkgo_forest"));
+	
 	//Registry
     public static RegistryObject<Biome> createBiome(String name, Supplier<Biome> biome) 
     {
