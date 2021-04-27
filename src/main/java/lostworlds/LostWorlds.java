@@ -39,13 +39,13 @@ public class LostWorlds
     public static final Logger LOGGER = LogManager.getLogger();
     public static boolean DISABLE_IN_DEV = false;
 
-    public LostWorlds() 
+	public LostWorlds() 
     {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
 
         //Main Objects
-        ModRegistry.registry();        
+        ModRegistry.registry();  
         
         //Lib - 3.0.30
         GeckoLib.initialize();

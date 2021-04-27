@@ -2,6 +2,7 @@ package lostworlds.common.entities.abstracts;
 
 import javax.annotation.Nullable;
 
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ILivingEntityData;
@@ -24,9 +25,9 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 	protected int forcedAge;
 	protected int forcedAgeTimer;
 	
-	public AbstractPrehistoricAgeingEntity(EntityType<? extends AbstractPrehistoricAgeingEntity> entityIn, World worldIn) 
+	public AbstractPrehistoricAgeingEntity(EntityType<? extends AbstractPrehistoricAgeingEntity> entityIn, World worldIn, TimeEras timeEra) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, timeEra);
 	}
 	public ILivingEntityData finalizeSpawn(IServerWorld serverWorld, DifficultyInstance difficultyInstance, SpawnReason spawnReason, @Nullable ILivingEntityData entityData, @Nullable CompoundNBT nbt) 
 	{

@@ -6,6 +6,7 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.passive.CatEntity;
@@ -70,7 +71,7 @@ public class SuchomimusEntity extends AbstractPrehistoricLandAndSeaEntity implem
 
 	public SuchomimusEntity(EntityType<? extends SuchomimusEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, TimeEras.CRETACEOUS);
 	}
 	
 	@Override

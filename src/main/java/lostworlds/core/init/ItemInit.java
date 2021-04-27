@@ -11,6 +11,7 @@ import lostworlds.common.items.ModSignItem;
 import lostworlds.common.items.ModSlabBurnableItem;
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.common.items.ModWoodBurnableItem;
+import lostworlds.common.items.SyringeItem;
 import lostworlds.common.items.WetPaperItem;
 import lostworlds.common.items.timebooks.PermianTimeBook;
 import lostworlds.common.tools.BrushItem;
@@ -50,10 +51,16 @@ public class ItemInit
 	//Field Guide
 	public static final RegistryObject<Item> FEILD_GUIDE = ModRegistry.ITEM_REGISTRY.register("field_guide", () -> new FieldGuideItem(new Item.Properties()));
 	
+	//Syringe
+	public static final RegistryObject<Item> EMPTY_SYRINGE = advancedItemRegister("empty_syringe", new SyringeItem(standardProperties().stacksTo(1)));
+	public static final RegistryObject<Item> BLOOD_SYRINGE = simpleItemRegister("blood_syringe", standardProperties().stacksTo(1));
+	
+	//Viles
 	public static final RegistryObject<Item> EMPTY_VILE = simpleItemRegister("empty_vile", standardProperties());
+	public static final RegistryObject<Item> BLOOD_VILE = simpleItemRegister("blood_vile", standardProperties());
 
 	//Time Books
-	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("permian_time_book", () -> new PermianTimeBook(standardProperties()));
+	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("permian_time_book", () -> new PermianTimeBook(standardProperties().stacksTo(1)));
 	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
@@ -620,13 +627,13 @@ public class ItemInit
 	}
 	
 	//Advanced Item Register
-	private static RegistryObject<Item> advancedItemRegister(String id, Item item)
+	public static RegistryObject<Item> advancedItemRegister(String id, Item item)
 	{
 		return ModRegistry.ITEM_REGISTRY.register(id, () -> item);
 	}
 	
 	//Simple Item Register
-	private static RegistryObject<Item> simpleItemRegister(String id, Item.Properties properties)
+	public static RegistryObject<Item> simpleItemRegister(String id, Item.Properties properties)
 	{
 		return advancedItemRegister(id, new Item(properties));
 	}

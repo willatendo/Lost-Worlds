@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 import lostworlds.common.goal.ModFollowSchoolLeaderGoal;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.SpawnReason;
@@ -19,9 +20,9 @@ public abstract class AbstractPrehistoricGroupFishEntity extends AbstractPrehist
 	private AbstractPrehistoricGroupFishEntity leader;
 	private int schoolSize = 1;
 	
-	public AbstractPrehistoricGroupFishEntity(EntityType<? extends AbstractPrehistoricGroupFishEntity> entityIn, World worldIn) 
+	public AbstractPrehistoricGroupFishEntity(EntityType<? extends AbstractPrehistoricGroupFishEntity> entityIn, World worldIn, TimeEras timeEra) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, timeEra);
 	}
 	
 	protected void registerGoals() 

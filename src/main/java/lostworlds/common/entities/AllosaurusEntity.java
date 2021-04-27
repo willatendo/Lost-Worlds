@@ -6,6 +6,7 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -62,7 +63,7 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 	
 	public AllosaurusEntity(EntityType<? extends AllosaurusEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, TimeEras.JURASSIC);
 	}
 	
 	@Override
@@ -111,7 +112,7 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CarnotaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, DimetrodonEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, EdaphosaurusEntity.class, false));
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, GiganotosauruEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, GiganotosaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, GorgonopsEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, GreatAukEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ProcompsognathusEntity.class, false));

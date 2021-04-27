@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import lostworlds.common.events.PrehistoricBabySpawnEvent;
 import lostworlds.common.triggers.ModCriteriaTriggers;
 import lostworlds.core.init.BlockInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -38,9 +39,9 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 	private int inLove;
 	private UUID loveCause;
 	
-	public AbstractPrehistoricAnimalEntity(EntityType<? extends AbstractPrehistoricAnimalEntity> entityIn, World worldIn) 
+	public AbstractPrehistoricAnimalEntity(EntityType<? extends AbstractPrehistoricAnimalEntity> entityIn, World worldIn, TimeEras timeEra) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, timeEra);
 		this.setPathfindingMalus(PathNodeType.DANGER_FIRE, 16.0F);
 		this.setPathfindingMalus(PathNodeType.DAMAGE_FIRE, -1.0F);
 	}

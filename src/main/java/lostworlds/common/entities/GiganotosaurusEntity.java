@@ -6,6 +6,7 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -39,7 +40,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class GiganotosauruEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
+public class GiganotosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
 	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.RABBIT, Items.CHICKEN, Items.MUTTON, Items.COD, Items.SALMON, Items.TROPICAL_FISH, ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PALAEONISCUM_MEAT.get(), ItemInit.PROCOMPSOGNATHUS_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
@@ -61,9 +62,9 @@ public class GiganotosauruEntity extends AbstractPrehistoricAnimalEntity impleme
 		return PlayState.CONTINUE;
 	}
 
-	public GiganotosauruEntity(EntityType<? extends GiganotosauruEntity> entityIn, World worldIn) 
+	public GiganotosaurusEntity(EntityType<? extends GiganotosaurusEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, TimeEras.CRETACEOUS);
 	}
 
 	@Override

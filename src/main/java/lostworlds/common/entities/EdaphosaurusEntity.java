@@ -6,6 +6,7 @@ import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.SoundInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -45,7 +46,7 @@ public class EdaphosaurusEntity extends AbstractPrehistoricAnimalEntity implemen
 	
 	public EdaphosaurusEntity(EntityType<? extends EdaphosaurusEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, TimeEras.PERMIAN);
 	}
 
 	@Override

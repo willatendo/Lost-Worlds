@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.lwjgl.glfw.GLFW;
 
-import lostworlds.common.entities.ProcompsognathusEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.core.util.ModID;
 import lostworlds.core.util.TextUtil;
@@ -47,10 +46,6 @@ public class FieldGuideItem extends Item
 	{
 		if(entity instanceof AbstractPrehistoricEntity)
 		{
-			if(entity instanceof ProcompsognathusEntity)
-			{
-				
-			}
 			return ActionResultType.SUCCESS;
 		}
 		

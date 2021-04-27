@@ -3,6 +3,7 @@ package lostworlds.common.entities;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
 import lostworlds.core.init.EntityInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -23,7 +24,7 @@ public class RhinesuchusEntity extends AbstractPrehistoricLandAndSeaEntity imple
 	
 	public RhinesuchusEntity(EntityType<? extends RhinesuchusEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, TimeEras.PERMIAN);
 	}
 
 	@Override

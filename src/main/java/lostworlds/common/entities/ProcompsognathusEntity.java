@@ -6,6 +6,7 @@ import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.SoundInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -48,7 +49,7 @@ public class ProcompsognathusEntity extends AbstractPrehistoricAnimalEntity impl
 
 	public ProcompsognathusEntity(EntityType<? extends ProcompsognathusEntity> type, World worldIn) 
 	{
-		super(type, worldIn);
+		super(type, worldIn, TimeEras.TRIASSIC);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })

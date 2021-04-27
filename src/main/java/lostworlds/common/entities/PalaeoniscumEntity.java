@@ -2,6 +2,7 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricGroupFishEntity;
 import lostworlds.core.init.ItemInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -28,7 +29,7 @@ public class PalaeoniscumEntity extends AbstractPrehistoricGroupFishEntity imple
 	
 	public PalaeoniscumEntity(EntityType<? extends AbstractPrehistoricGroupFishEntity> type, World worldIn) 
 	{
-		super(type, worldIn);
+		super(type, worldIn, TimeEras.PERMIAN);
 		this.noCulling = true;
 	}
 

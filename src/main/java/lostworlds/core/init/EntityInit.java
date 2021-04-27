@@ -5,7 +5,7 @@ import lostworlds.common.entities.CarnotaurusEntity;
 import lostworlds.common.entities.DimetrodonEntity;
 import lostworlds.common.entities.EdaphosaurusEntity;
 import lostworlds.common.entities.FukuivenatorEntity;
-import lostworlds.common.entities.GiganotosauruEntity;
+import lostworlds.common.entities.GiganotosaurusEntity;
 import lostworlds.common.entities.GorgonopsEntity;
 import lostworlds.common.entities.GreatAukEggEntity;
 import lostworlds.common.entities.GreatAukEntity;
@@ -37,7 +37,7 @@ public class EntityInit
 	public static final RegistryObject<EntityType<CarnotaurusEntity>> CARNOTAURUS_ENTITY = registerEntity("carnotaurus", CarnotaurusEntity::new, EntityClassification.CREATURE, CarnotaurusEntity.class, 0.75F, 1.25F);
 	public static final RegistryObject<EntityType<TyrannosaurusEntity>> TYRANNOSAURUS_ENTITY = registerEntity("tyrannosaurus", TyrannosaurusEntity::new, EntityClassification.CREATURE, TyrannosaurusEntity.class, 1.0F, 1.75F);
 	public static final RegistryObject<EntityType<AllosaurusEntity>> ALLOSAURUS_ENTITY = registerEntity("allosaurus", AllosaurusEntity::new, EntityClassification.CREATURE, AllosaurusEntity.class, 1.25F, 1.75F);
-	public static final RegistryObject<EntityType<GiganotosauruEntity>> GIGANOTOSAURUS_ENTITY = registerEntity("giganotosaurus", GiganotosauruEntity::new, EntityClassification.CREATURE, GiganotosauruEntity.class, 1.6F, 1.75F);
+	public static final RegistryObject<EntityType<GiganotosaurusEntity>> GIGANOTOSAURUS_ENTITY = registerEntity("giganotosaurus", GiganotosaurusEntity::new, EntityClassification.CREATURE, GiganotosaurusEntity.class, 1.6F, 1.75F);
 	public static final RegistryObject<EntityType<SuchomimusEntity>> SUCHOMIMUS_ENTITY = registerEntity("suchomimus", SuchomimusEntity::new, EntityClassification.CREATURE, SuchomimusEntity.class, 2.0F, 1.75F);
 	public static final RegistryObject<EntityType<TetraceratopsEntity>> TETRACERATOPS_ENTITY = registerEntity("tetraceratops", TetraceratopsEntity::new, EntityClassification.CREATURE, TetraceratopsEntity.class, 0.25F, 0.25F);
 	public static final RegistryObject<EntityType<GreatAukEntity>> GREAT_AUK_ENTITY = registerEntity("great_auk", GreatAukEntity::new, EntityClassification.CREATURE, GreatAukEntity.class, 0.4F, 0.7F);

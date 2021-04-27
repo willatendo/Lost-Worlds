@@ -1,5 +1,6 @@
 package lostworlds.common.entities.abstracts;
 
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.attributes.Attributes;
@@ -16,9 +17,9 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 {
 	private boolean isLandNavigator;
 	
-	public AbstractPrehistoricLandAndSeaEntity(EntityType<? extends AbstractPrehistoricLandAndSeaEntity> entityIn, World worldIn) 
+	public AbstractPrehistoricLandAndSeaEntity(EntityType<? extends AbstractPrehistoricLandAndSeaEntity> entityIn, World worldIn, TimeEras timeEra) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, timeEra);
 		this.setPathfindingMalus(PathNodeType.WATER, 0.0F);
         this.setPathfindingMalus(PathNodeType.WATER_BORDER, 0.0F);
 		switchNavigator(false);

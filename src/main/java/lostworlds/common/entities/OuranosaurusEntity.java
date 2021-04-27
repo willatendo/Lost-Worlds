@@ -4,6 +4,7 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.item.ItemStack;
@@ -39,7 +40,7 @@ public class OuranosaurusEntity extends AbstractPrehistoricAnimalEntity implemen
 	
 	public OuranosaurusEntity(EntityType<? extends OuranosaurusEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, TimeEras.CRETACEOUS);
 	}
 
 	@Override

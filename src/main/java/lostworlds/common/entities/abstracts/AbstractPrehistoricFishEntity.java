@@ -2,6 +2,7 @@ package lostworlds.common.entities.abstracts;
 
 import java.util.Random;
 
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -44,9 +45,9 @@ public abstract class AbstractPrehistoricFishEntity extends AbstractPrehistoricE
 {
 	private static final DataParameter<Boolean> FROM_BUCKET = EntityDataManager.defineId(AbstractFishEntity.class, DataSerializers.BOOLEAN);
 	
-	public AbstractPrehistoricFishEntity(EntityType<? extends AbstractPrehistoricFishEntity> entityIn, World worldIn) 
+	public AbstractPrehistoricFishEntity(EntityType<? extends AbstractPrehistoricFishEntity> entityIn, World worldIn, TimeEras timeEra) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, timeEra);
 		this.setPathfindingMalus(PathNodeType.WATER, 0.0F);
 		this.moveControl = new AbstractPrehistoricFishEntity.MoveHelperController(this);
 	}

@@ -10,12 +10,14 @@ public class Mobs
 {
 	public static void addMobSpawning(BiomeLoadingEvent event)
 	{
-		if (event.getCategory() != Category.NETHER && event.getCategory() != Category.THEEND && event.getCategory() != Category.NONE)
+		if(event.getCategory() != Category.NETHER && event.getCategory() != Category.THEEND && event.getCategory() != Category.NONE)
 		{
-			if (event.getCategory() == Category.OCEAN)
+			if(event.getCategory() == Category.OCEAN)
 			{
 				event.getSpawns().addSpawn(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(EntityInit.NAUTILUS_ENTITY.get(), 1, 1, 1));
 			}
 		}
+		
+		
 	}
 }

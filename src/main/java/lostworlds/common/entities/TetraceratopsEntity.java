@@ -5,6 +5,7 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.item.ItemStack;
@@ -41,7 +42,7 @@ public class TetraceratopsEntity extends AbstractPrehistoricAnimalEntity impleme
 	
 	public TetraceratopsEntity(EntityType<? extends TetraceratopsEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn);
+		super(entityIn, worldIn, TimeEras.PERMIAN);
 	}
 	
 	@Override

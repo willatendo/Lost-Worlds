@@ -4,6 +4,7 @@ import java.util.EnumSet;
 
 import lostworlds.common.goal.ModSwimGoal;
 import lostworlds.common.goal.ModSwimSemiAquaticGoal;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -41,7 +42,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	protected boolean isAmphibian = false;
 	protected boolean isLandAndWater = false;
 
-	public AbstractPrehistoricEntity(EntityType<? extends AbstractPrehistoricEntity> entityIn, World worldIn) 
+	public AbstractPrehistoricEntity(EntityType<? extends AbstractPrehistoricEntity> entityIn, World worldIn, TimeEras timeEra) 
 	{
 		super(entityIn, worldIn);
 	}

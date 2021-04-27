@@ -2,6 +2,7 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricFishEntity;
 import lostworlds.core.init.ItemInit;
+import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -28,7 +29,7 @@ public class NautilusEntity extends AbstractPrehistoricFishEntity implements IAn
 
 	public NautilusEntity(EntityType<? extends AbstractPrehistoricFishEntity> type, World worldIn) 
 	{
-		super(type, worldIn);
+		super(type, worldIn, TimeEras.MIX_ERA);
 		this.noCulling = true;
 	}
 

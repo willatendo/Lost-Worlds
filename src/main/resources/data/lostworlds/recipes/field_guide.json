@@ -3,7 +3,7 @@
 	"group": "planks",
 	"ingredients": [
 		{
-			"tag": "lostworlds:prehistoric_bones"
+			"item": "minecraft:bone"
 		},
 		{
 			"item": "minecraft:book"
