@@ -11,6 +11,7 @@ import lostworlds.core.vanilla.properties.ModFlammables;
 import lostworlds.core.vanilla.properties.ModStrippables;
 import lostworlds.world.dimension.permian.PermianDimension;
 import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
+import lostworlds.world.feature.init.CarverFeatures;
 import lostworlds.world.feature.init.Mobs;
 import lostworlds.world.feature.init.Ores;
 import lostworlds.world.init.BiomeInit;
@@ -18,8 +19,10 @@ import net.minecraft.block.ComposterBlock;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -56,6 +59,7 @@ public class LostWorlds
         MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> Mobs.addMobSpawning(event));
     }
 
+	
     @SuppressWarnings("deprecation")
 	private void setup(final FMLCommonSetupEvent event)
     {
@@ -74,8 +78,14 @@ public class LostWorlds
     		PermianDimension.init();
     	});
     }
-    
-    public void clientSetup(FMLClientSetupEvent event) 
+
+	@SubscribeEvent
+	public void onRegisterWorldCarvers(Register<WorldCarver<?>> event)
+	{
+		CarverFeatures.Carvers.initWorldCarvers(event); 
+	}   
+
+	public void clientSetup(FMLClientSetupEvent event) 
     {
         DimensionRenderInfo permian = new PermianDimensionRenderInfo();
         DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "permian_render"), permian);

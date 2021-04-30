@@ -54,7 +54,7 @@ public class ModRegistry
 		RECIPE_SERIALISER_REGISTRY.register(bus);
 		ITEM_REGISTRY.register(bus);
 		PAINTING_REGISTRY.register(bus);
-		CONTAINER_REGISTRY.register(bus);
+		CONTAINER_REGISTRY.register(bus);	
 		TILE_ENTITY_REGISTRY.register(bus);
 		BLOCK_REGISTRY.register(bus);
 		FOLIAGE_PLACER_REGISTRY.register(bus);
