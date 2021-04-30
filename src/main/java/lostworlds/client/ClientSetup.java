@@ -22,11 +22,8 @@ import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModID;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -41,13 +38,33 @@ public class ClientSetup
     @SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event)
 	{
-    	ItemRenderer itemRendererIn = Minecraft.getInstance().getItemRenderer();
     	//Containers
     	//Blocks
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_STONE_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_SANDSTONE_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_RED_SANDSTONE_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_BLACK_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_BLUE_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_BROWN_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_CYAN_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_GREEN_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_GREY_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_LIME_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_MAGENTA_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_ORANGE_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_PINK_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_PURPLE_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_PURPLE_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_RED_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_WHITE_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_YELLOW_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.SMALL_PERMIAN_DESERT_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LARGE_PERMIAN_DESERT_PLANT.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.PERMIAN_SEAGRASS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_SAPLING.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.PERMIAN_GROUND_FERNS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CLEAR_GLASS.get(), RenderType.translucent());
@@ -123,7 +140,6 @@ public class ClientSetup
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 		//Eggs
-    	RenderingRegistry.registerEntityRenderingHandler(EntityInit.GREAT_AUK_EGG_ENTITY.get(), manager -> new SpriteRenderer<>(manager, itemRendererIn));
-
+		RenderFactory.addRender(EntityInit.GREAT_AUK_EGG_ENTITY.get(), RenderFactory.sprite());
 	}
 }

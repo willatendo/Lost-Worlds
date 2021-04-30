@@ -5,16 +5,13 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
-import lostworlds.core.init.SoundInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityPredicates;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -92,24 +89,6 @@ public class EdaphosaurusEntity extends AbstractPrehistoricAnimalEntity implemen
 	public boolean isFish() 
 	{
 		return false;
-	}
-	
-	@Override
-	protected SoundEvent getAmbientSound() 
-	{
-		return SoundInit.EDAPHOSAURUS_AMBIENT.get();
-	}
-	
-	@Override
-	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
-	{
-		return SoundInit.EDAPHOSAURUS_HURT.get();
-	}
-	
-	@Override
-	protected SoundEvent getDeathSound() 
-	{
-		return SoundInit.EDAPHOSAURUS_DEATH.get();
 	}
 
 	@Override

@@ -229,6 +229,12 @@
 	"block.lostworlds.stone_fossil": "Stone Fossil",
 	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
 
+	"block.lostworlds.sandstone_fossil": "Sandstone Fossil",
+	"block.lostworlds.exposed_sandstone_fossil": "Exposed Sandstone Fossil",
+
+	"block.lostworlds.red_sandstone_fossil": "Red Sandstone Fossil",
+	"block.lostworlds.exposed_red_sandstone_fossil": "Exposed Red Sandstone Fossil",
+
 	"block.lostworlds.terracotta_fossil": "Terracotta Fossil",
 	"block.lostworlds.exposed_terracotta_fossil": "Exposed Terracotta Fossil",
 	"block.lostworlds.red_terracotta_fossil": "Red Terracotta Fossil",
@@ -337,6 +343,12 @@
 	"block.lostworlds.large_permian_desert_plant": "Large Permian Desert Plant",
 
 	"block.lostworlds.permian_ground_ferns": "Permian Ground Ferns",
+	"block.lostworlds.dicksonia": "Dicksonia",
+	"block.lostworlds.tall_dicksonia": "Tall Dicksonia",
+	"block.lostworlds.permian_seagrass": "Permian Seagrass",
+	
+	"block.lostworlds.dead_sponge_colony": "Dead Sponge Colony",
+	"block.lostworlds.sponge_colony": "Sponge Colony",
 
 	"block.lostworlds.conifer_log": "Conifer Log",
 	"block.lostworlds.stripped_conifer_log": "Stripped Conifer Log",

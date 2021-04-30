@@ -34,7 +34,7 @@ public abstract class AbstractDinosaurEgg extends Block
 	
 	public static final VoxelShape SMALL = Block.box(7, 0, 7, 9, 4, 9);
 	public static final VoxelShape MEDIUM = Block.box(6, 0, 6, 10, 7, 10);
-	public static final VoxelShape LARGE = Block.box(5.25, 0, 5.25, 10.75, 8, 10.75);
+	public static final VoxelShape LARGE = Block.box(4, 0, 4, 12, 11, 12);
 	
 	public static final IntegerProperty HATCH = BlockStateProperties.HATCH;
 

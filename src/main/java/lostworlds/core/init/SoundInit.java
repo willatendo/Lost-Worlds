@@ -9,7 +9,7 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class SoundInit 
 {	
-	//Compy Sounds
+/*	//Compy Sounds
 	public static final RegistryObject<SoundEvent> COMPY_AMBIENT = ModRegistry.SOUND_REGISTRY.register("procompsognathus_ambient", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.procompsognathus.ambient")));
 	public static final RegistryObject<SoundEvent> COMPY_HURT = ModRegistry.SOUND_REGISTRY.register("procompsognathus_hurt", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.procompsognathus.hurt")));
 	public static final RegistryObject<SoundEvent> COMPY_DEATH = ModRegistry.SOUND_REGISTRY.register("procompsognathus_death", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.procompsognathus.death")));
@@ -32,7 +32,7 @@ public class SoundInit
 	//Carnotaurus
 	public static final RegistryObject<SoundEvent> CARNOTAURUS_AMBIENT = ModRegistry.SOUND_REGISTRY.register("carnotaurus_ambient", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.carnotaurus.ambient")));
 	public static final RegistryObject<SoundEvent> CARNOTAURUS_HURT = ModRegistry.SOUND_REGISTRY.register("carnotaurus_hurt", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.carnotaurus.hurt")));
-	public static final RegistryObject<SoundEvent> CARNOTAURUS_DEATH = ModRegistry.SOUND_REGISTRY.register("carnotaurus_death", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.carnotaurus.death")));
+	public static final RegistryObject<SoundEvent> CARNOTAURUS_DEATH = ModRegistry.SOUND_REGISTRY.register("carnotaurus_death", () -> new SoundEvent(new ResourceLocation(ModID.ID, "entity.carnotaurus.death")));*/
 		
 	//Music Disc
 	public static final Lazy<SoundEvent> LAZY_JP_MUSIC = Lazy.of(() -> new SoundEvent(new ResourceLocation(ModID.ID, "disc.jurassic_park")));

@@ -32,6 +32,19 @@ public class Ores
 			
 			//Fossil
 			event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.STONE_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(50)));				
+			if(event.getCategory().equals(Biome.Category.DESERT))
+			{
+				event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(ModFillerBlockType.SANDSTONE, BlockInit.SANDSTONE_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(50)));				
+			}
+			if(event.getCategory().equals(Biome.Category.MESA))
+			{
+				event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(ModFillerBlockType.TERRACOTTA, BlockInit.TERRACOTTA_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(10)));				
+				event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(ModFillerBlockType.WHITE_TERRACOTTA, BlockInit.WHITE_TERRACOTTA_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(10)));				
+				event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(ModFillerBlockType.LIGHT_GREY_TERRACOTTA, BlockInit.LIGHT_GREY_TERRACOTTA_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(10)));				
+				event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(ModFillerBlockType.BLACK_TERRACOTTA, BlockInit.BLACK_TERRACOTTA_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(10)));				
+				event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(ModFillerBlockType.RED_TERRACOTTA, BlockInit.RED_TERRACOTTA_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(10)));				
+				event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.NO_SURFACE_ORE.configured(new OreFeatureConfig(ModFillerBlockType.ORANGE_TERRACOTTA, BlockInit.ORANGE_TERRACOTTA_FOSSIL.get().defaultBlockState(), 1)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(30, 1, 100)).squared().count(10)));				
+			}
 		}
 	}
 		

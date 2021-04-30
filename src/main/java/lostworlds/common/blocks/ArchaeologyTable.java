@@ -77,7 +77,7 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
-		if (stateIn.getValue(WATERLOGGED)) 
+		if(stateIn.getValue(WATERLOGGED)) 
 		{
 			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}

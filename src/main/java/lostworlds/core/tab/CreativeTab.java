@@ -183,7 +183,13 @@ public class CreativeTab extends ItemGroup
 		//Fossils
 		item.add(ItemInit.STONE_FOSSIL.get().getDefaultInstance());
 		item.add(ItemInit.EXPOSED_STONE_FOSSIL.get().getDefaultInstance());
-		
+
+		item.add(ItemInit.SANDSTONE_FOSSIL.get().getDefaultInstance());
+		item.add(ItemInit.EXPOSED_SANDSTONE_FOSSIL.get().getDefaultInstance());
+
+		item.add(ItemInit.RED_SANDSTONE_FOSSIL.get().getDefaultInstance());
+		item.add(ItemInit.EXPOSED_RED_SANDSTONE_FOSSIL.get().getDefaultInstance());
+
 		item.add(ItemInit.TERRACOTTA_FOSSIL.get().getDefaultInstance());		
 		item.add(ItemInit.EXPOSED_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
 		item.add(ItemInit.RED_TERRACOTTA_FOSSIL.get().getDefaultInstance());		
@@ -264,6 +270,9 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.LARGE_PERMIAN_DESERT_PLANT.get().getDefaultInstance());
 
 		item.add(ItemInit.PERMIAN_GROUND_FERNS.get().getDefaultInstance());
+		item.add(ItemInit.DICKSONIA.get().getDefaultInstance());
+		item.add(ItemInit.TALL_DICKSONIA.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_SEAGRASS.get().getDefaultInstance());
 		
 		//Archaeology Tables
 		item.add(ItemInit.OAK_ARCHAEOLOGY_TABLE.get().getDefaultInstance());

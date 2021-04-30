@@ -103,6 +103,7 @@ public class ModBlockStates
 	public static final BlockState LARGE_PERMIAN_DESERT_PLANT = BlockInit.LARGE_PERMIAN_DESERT_PLANT.get().defaultBlockState();
 	
 	public static final BlockState PERMIAN_GROUND_FERNS = BlockInit.PERMIAN_GROUND_FERNS.get().defaultBlockState();
+	public static final BlockState PERMIAN_SEAGRASS = BlockInit.PERMIAN_SEAGRASS.get().defaultBlockState();
     
 	//Conifer
 	public static final BlockState CONIFER_LOG = BlockInit.CONIFER_LOG.get().defaultBlockState();

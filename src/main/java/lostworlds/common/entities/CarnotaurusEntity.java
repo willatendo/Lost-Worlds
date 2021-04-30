@@ -5,7 +5,6 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
-import lostworlds.core.init.SoundInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
@@ -35,8 +34,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -143,24 +140,6 @@ public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implement
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SquidEntity.class, false));	
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, false));	
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, DolphinEntity.class, false));
-	}
-	
-	@Override
-	protected SoundEvent getAmbientSound() 
-	{
-		return SoundInit.CARNOTAURUS_AMBIENT.get();
-	}
-	
-	@Override
-	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
-	{
-		return SoundInit.CARNOTAURUS_HURT.get();
-	}
-	
-	@Override
-	protected SoundEvent getDeathSound() 
-	{
-		return SoundInit.CARNOTAURUS_DEATH.get();
 	}
 	
 	@Override

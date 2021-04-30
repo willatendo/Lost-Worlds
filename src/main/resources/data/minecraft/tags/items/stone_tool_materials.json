@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"lostworlds:permian_cobblestone"
+		"lostworlds:permian_cobblestone",
+		"lostworlds:volcanic_rock"
   	]
 }

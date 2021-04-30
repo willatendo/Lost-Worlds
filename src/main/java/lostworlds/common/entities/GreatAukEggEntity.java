@@ -1,6 +1,7 @@
 package lostworlds.common.entities;
 
 import lostworlds.core.init.EntityInit;
+import lostworlds.core.init.ItemInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
@@ -32,9 +33,9 @@ public class GreatAukEggEntity extends ProjectileItemEntity
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	public void handleEntityEvent(byte b) 
+	public void handleEntityEvent(byte status) 
 	{
-		if(b == 3) 
+		if(status == 3) 
 		{
 			for(int i = 0; i < 8; ++i) 
 			{
@@ -79,6 +80,6 @@ public class GreatAukEggEntity extends ProjectileItemEntity
 	@Override
 	protected Item getDefaultItem() 
 	{
-		return null;
+		return ItemInit.GREAT_AUK_EGG.get();
 	}
 }
