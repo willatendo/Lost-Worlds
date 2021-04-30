@@ -7,7 +7,7 @@
 	],
 	"key": {
 		"#": {
-			"item": "minecraftlight_gray_dye"
+			"item": "minecraft:light_gray_dye"
 		},
 		"@": {
 			"item": "minecraft:iron_ingot"

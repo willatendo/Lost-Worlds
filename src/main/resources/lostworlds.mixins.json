@@ -2,7 +2,7 @@
   "required": true,
   "package": "lostworlds.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "byg.refmap.json",
+  "refmap": "lostworlds.refmap.json",
   "mixins": [
   ],
   "client": [

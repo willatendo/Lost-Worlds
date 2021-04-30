@@ -1,5 +1,6 @@
 package lostworlds.world.biome;
 
+import lostworlds.world.feature.init.CarverFeatures;
 import lostworlds.world.feature.init.Foliage;
 import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
@@ -35,8 +36,9 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Foliage.GINKGO_TREES);
 	}
 	
-	public static void addCavesAndCanyons(BiomeGenerationSettings.Builder builder)
+	public static void addCavesAndCanyons(BiomeGenerationSettings.Builder biomeIn)
 	{
-		
+		biomeIn.addCarver(GenerationStage.Carving.AIR, CarverFeatures.ConfiguredCarvers.CAVES);
+		biomeIn.addCarver(GenerationStage.Carving.AIR, CarverFeatures.ConfiguredCarvers.CANYONS);
 	}
 }
