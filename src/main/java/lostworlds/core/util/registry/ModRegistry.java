@@ -11,7 +11,6 @@ import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModID;
 import lostworlds.world.init.BiomeInit;
 import lostworlds.world.init.FoliagePlacerInit;
-import lostworlds.world.init.SurfaceBuilderInit;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.PaintingType;
@@ -23,7 +22,6 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.foliageplacer.FoliagePlacerType;
-import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -42,7 +40,6 @@ public class ModRegistry
 	public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ModID.ID);
 	public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_REGISTRY = DeferredRegister.create(ForgeRegistries.FOLIAGE_PLACER_TYPES, ModID.ID);
 	public static final DeferredRegister<EntityType<?>> ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModID.ID);
-	public static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDER_REGISTRY = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, ModID.ID);
 	public static final DeferredRegister<Biome> BIOME_REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, ModID.ID);
 	
 	public static void registry() 
@@ -59,7 +56,6 @@ public class ModRegistry
 		BLOCK_REGISTRY.register(bus);
 		FOLIAGE_PLACER_REGISTRY.register(bus);
 		ENTITY_REGISTRY.register(bus);
-		SURFACE_BUILDER_REGISTRY.register(bus);
 		BIOME_REGISTRY.register(bus);
 		
 		ParticleInit.initParticles();
@@ -71,7 +67,6 @@ public class ModRegistry
 		BlockInit.initBlocks();
 		FoliagePlacerInit.initFoliagePlacers();
 		EntityInit.initEntities();
-		SurfaceBuilderInit.initSurfaceBuilders();
 		BiomeInit.initBiomes();
 	}
 }

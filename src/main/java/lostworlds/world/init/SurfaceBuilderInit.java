@@ -1,30 +1,22 @@
 package lostworlds.world.init;
 
-import lostworlds.core.util.registry.ModRegistry;
-import lostworlds.world.surfacebuilders.FloodBasaltPlainsSurfaceBuilder;
-import lostworlds.world.surfacebuilders.PermianDesertSurfaceBuilder;
-import lostworlds.world.surfacebuilders.PermianMountainsSurfaceBuilder;
-import lostworlds.world.surfacebuilders.PermianPlainsSurfaceBuilder;
-import lostworlds.world.surfacebuilders.VolcanoSurfaceBuilder;
+import lostworlds.core.init.BlockInit;
+import net.minecraft.block.Blocks;
+import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
-import net.minecraftforge.fml.RegistryObject;
 
-@SuppressWarnings({"rawtypes", "unchecked"})
 public class SurfaceBuilderInit 
 {
-	public static final SurfaceBuilder NAKED_VOLCANO_SURFACE_BUILDER = new VolcanoSurfaceBuilder(SurfaceBuilderConfig.CODEC);
-	public static final SurfaceBuilder NAKED_PERMIAN_DESERT_SURFACE_BUILDER = new PermianDesertSurfaceBuilder(SurfaceBuilderConfig.CODEC);
-	public static final SurfaceBuilder NAKED_FLOOD_BASALT_SURFACE_BUILDER = new FloodBasaltPlainsSurfaceBuilder(SurfaceBuilderConfig.CODEC);
-	public static final SurfaceBuilder NAKED_PERMIAN_PLAINS_SURFACE_BUILDER = new PermianPlainsSurfaceBuilder(SurfaceBuilderConfig.CODEC);
-	public static final SurfaceBuilder NAKED_PERMIAN_MOUNTAIN_SURFACE_BUILDER = new PermianMountainsSurfaceBuilder(SurfaceBuilderConfig.CODEC);
+	public static final SurfaceBuilderConfig VOLCANO_SURFACE_BUILDER_CONFIG = new SurfaceBuilderConfig(BlockInit.VOLCANIC_ASH.get().defaultBlockState(), BlockInit.VOLCANIC_ROCK.get().defaultBlockState(), BlockInit.VOLCANIC_ROCK.get().defaultBlockState());
+	public static final SurfaceBuilderConfig PERMIAN_DESERT_CONFIG = new SurfaceBuilderConfig(BlockInit.PERMIAN_SAND.get().defaultBlockState(), BlockInit.PERMIAN_SAND.get().defaultBlockState(), BlockInit.PERMIAN_SAND.get().defaultBlockState());
+	public static final SurfaceBuilderConfig PERMIAN_FLOOD_BASALT_PLAINS_CONFIG = new SurfaceBuilderConfig(Blocks.BASALT.defaultBlockState(), BlockInit.VOLCANIC_ROCK.get().defaultBlockState(), Blocks.BASALT.defaultBlockState());
+	public static final SurfaceBuilderConfig PERMIAN_PLAINS_CONFIG = new SurfaceBuilderConfig(Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.SAND.defaultBlockState());
+	public static final SurfaceBuilderConfig PERMIAN_MOUNTAIN_CONFIG = new SurfaceBuilderConfig(BlockInit.PERMIAN_STONE.get().defaultBlockState(), BlockInit.PERMIAN_STONE.get().defaultBlockState(), BlockInit.PERMIAN_STONE.get().defaultBlockState());
 	
-	public static final RegistryObject<SurfaceBuilder<SurfaceBuilderConfig>> VOLCANO_SURFACE_BUILDER = ModRegistry.SURFACE_BUILDER_REGISTRY.register("volcano_surface_builder", () -> NAKED_VOLCANO_SURFACE_BUILDER);
-	public static final RegistryObject<SurfaceBuilder<SurfaceBuilderConfig>> PERMIAN_DESERT_SURFACE_BUILDER = ModRegistry.SURFACE_BUILDER_REGISTRY.register("permian_desert_surface_builder", () -> NAKED_PERMIAN_DESERT_SURFACE_BUILDER);
-	public static final RegistryObject<SurfaceBuilder<SurfaceBuilderConfig>> FLOOD_BASALT_SURFACE_BUILDER = ModRegistry.SURFACE_BUILDER_REGISTRY.register("flood_basalt_surface_builder", () -> NAKED_FLOOD_BASALT_SURFACE_BUILDER);
-	public static final RegistryObject<SurfaceBuilder<SurfaceBuilderConfig>> PERMIAN_PLAINS_SURFACE_BUILDER = ModRegistry.SURFACE_BUILDER_REGISTRY.register("permian_plains_surface_builder", () -> NAKED_PERMIAN_PLAINS_SURFACE_BUILDER);
-	public static final RegistryObject<SurfaceBuilder<SurfaceBuilderConfig>> PERMIAN_MOUNTAIN_SURFACE_BUILDER = ModRegistry.SURFACE_BUILDER_REGISTRY.register("permian_mountian_surface_builder", () -> NAKED_PERMIAN_MOUNTAIN_SURFACE_BUILDER);
-	
-	//Registry
-	public static void initSurfaceBuilders() { }
+	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> VOLCANO_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(VOLCANO_SURFACE_BUILDER_CONFIG);	
+	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> PERMIAN_DESERT_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_DESERT_CONFIG);	
+	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> PERMIAN_MOUNTAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_MOUNTAIN_CONFIG);	
+	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> PERMIAN_PLAINS_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_PLAINS_CONFIG);	
+	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> FLOOD_BASALT_PLAINS_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_FLOOD_BASALT_PLAINS_CONFIG);	
 }

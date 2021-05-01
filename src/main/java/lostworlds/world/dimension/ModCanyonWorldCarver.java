@@ -13,6 +13,6 @@ public class ModCanyonWorldCarver extends CanyonWorldCarver
 	public ModCanyonWorldCarver(Codec<ProbabilityConfig> config) 
 	{	
 		super(config);
-		replaceableBlocks = ImmutableSet.of(BlockInit.PERMIAN_SAND.get(), BlockInit.PERMIAN_STONE.get(), Blocks.DIRT);
+		this.replaceableBlocks = ImmutableSet.of(BlockInit.PERMIAN_SAND.get(), BlockInit.PERMIAN_STONE.get(), BlockInit.PERMIAN_COAL_ORE.get(), BlockInit.PERMIAN_DIAMOND_ORE.get(), BlockInit.PERMIAN_EMERALD_ORE.get(), BlockInit.PERMIAN_GOLD_ORE.get(), BlockInit.PERMIAN_IRON_ORE.get(), BlockInit.PERMIAN_LAPIS_ORE.get(), BlockInit.PERMIAN_REDSTONE_ORE.get(), Blocks.DIRT);
 	}
 }

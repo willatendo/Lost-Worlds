@@ -5,21 +5,19 @@
 		"rolls": 1,
 		"entries": [
 		{
-			"type": "minecraft:item",
-			"name": "lostworlds:permian_ground_ferns"
-		}],
-		"conditions": [
-		{
-			"condition": "minecraft:match_tool",
-			"predicate": {
-				"enchantments": [
+			"type": "minecraft:alternatives",
+			"children": [
+			{
+				"type": "minecraft:item",
+				"conditions": [
 				{
-					"enchantment": "minecraft:silk_touch",
-					"levels": {
-						"min": 1
+					"condition": "minecraft:match_tool",
+					"predicate": {
+						"item": "minecraft:shears"
 					}
-				}]
-			}
+				}],
+				"name": "lostworlds:permian_ground_ferns"
+			}]
 		}]
 	}]
 }

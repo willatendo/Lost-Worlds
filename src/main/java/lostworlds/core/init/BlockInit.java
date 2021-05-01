@@ -18,6 +18,7 @@ import lostworlds.common.blocks.LightGreyTerracottaFossilBlock;
 import lostworlds.common.blocks.LimeTerracottaFossilBlock;
 import lostworlds.common.blocks.MagentaTerracottaFossilBlock;
 import lostworlds.common.blocks.MediumPermianDesertPlant;
+import lostworlds.common.blocks.ModOreBlock;
 import lostworlds.common.blocks.ModStandingSignBlock;
 import lostworlds.common.blocks.ModWallSignBlock;
 import lostworlds.common.blocks.OrangeTerracottaFossilBlock;
@@ -68,6 +69,7 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.PaneBlock;
 import net.minecraft.block.PressurePlateBlock;
+import net.minecraft.block.RedstoneOreBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SaplingBlock;
@@ -210,6 +212,14 @@ public class BlockInit
 	public static final RegistryObject<Block> PERMIAN_STONE = ModRegistry.BLOCK_REGISTRY.register("permian_stone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<StairsBlock> PERMIAN_STONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("permian_stone_stairs", () -> new StairsBlock(() -> BlockInit.PERMIAN_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<SlabBlock> PERMIAN_STONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("permian_stone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	
+	public static final RegistryObject<ModOreBlock> PERMIAN_GOLD_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_gold_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+	public static final RegistryObject<ModOreBlock> PERMIAN_IRON_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_iron_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+	public static final RegistryObject<ModOreBlock> PERMIAN_COAL_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_coal_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+	public static final RegistryObject<ModOreBlock> PERMIAN_LAPIS_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_lapis_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));	
+	public static final RegistryObject<ModOreBlock> PERMIAN_DIAMOND_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_diamond_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));	
+	public static final RegistryObject<RedstoneOreBlock> PERMIAN_REDSTONE_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_redstone_ore", () -> new RedstoneOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));	
+	public static final RegistryObject<ModOreBlock> PERMIAN_EMERALD_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_emerald_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));	
 	
 	public static final RegistryObject<Block> PERMIAN_COBBLESTONE = ModRegistry.BLOCK_REGISTRY.register("permian_cobblestone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<StairsBlock> PERMIAN_COBBLESTONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("permian_cobblestone_stairs", () -> new StairsBlock(() -> BlockInit.PERMIAN_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));

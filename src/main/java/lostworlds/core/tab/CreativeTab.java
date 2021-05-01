@@ -144,6 +144,13 @@ public class CreativeTab extends ItemGroup
 		
 		//Bones
 		
+		//Spawn
+		item.add(ItemInit.NAUTILUS_SPAWN.get().getDefaultInstance());
+		item.add(ItemInit.NAUTILUS_SPAWN_BUCKET.get().getDefaultInstance());
+		item.add(ItemInit.PALAEONISCUM_SPAWN.get().getDefaultInstance());
+		item.add(ItemInit.PALAEONISCUM_SPAWN_BUCKET.get().getDefaultInstance());
+		item.add(ItemInit.RHINESUCHUS_SPAWN.get().getDefaultInstance());
+		item.add(ItemInit.RHINESUCHUS_SPAWN_BUCKET.get().getDefaultInstance());
 		
 		//Spawn Eggs
 		item.add(ItemInit.ALLOSAURUS_SPAWN_EGG.get().getDefaultInstance());
@@ -258,6 +265,14 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PERMIAN_STONE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_STONE_STAIRS.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_STONE_SLAB.get().getDefaultInstance());
+		
+		item.add(ItemInit.PERMIAN_COAL_ORE.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_DIAMOND_ORE.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_EMERALD_ORE.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_GOLD_ORE.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_IRON_ORE.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_LAPIS_ORE.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_REDSTONE_ORE.get().getDefaultInstance());
 		
 		item.add(ItemInit.PERMIAN_COBBLESTONE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_COBBLESTONE_STAIRS.get().getDefaultInstance());

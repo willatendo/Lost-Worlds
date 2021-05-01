@@ -1,5 +1,6 @@
 package lostworlds.world.feature;
 
+import lostworlds.core.init.BlockInit;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.feature.template.BlockMatchRuleTest;
 import net.minecraft.world.gen.feature.template.RuleTest;
@@ -16,4 +17,5 @@ public class ModFillerBlockType
 	public static final RuleTest RED_TERRACOTTA = new BlockMatchRuleTest(Blocks.RED_TERRACOTTA);
 	public static final RuleTest ORANGE_TERRACOTTA = new BlockMatchRuleTest(Blocks.ORANGE_TERRACOTTA);
 	public static final RuleTest SANDSTONE = new BlockMatchRuleTest(Blocks.SANDSTONE);
+	public static final RuleTest PERMIAN_STONE = new BlockMatchRuleTest(BlockInit.PERMIAN_STONE.get());
 }

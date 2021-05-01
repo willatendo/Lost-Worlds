@@ -424,6 +424,15 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> PERMIAN_STONE = registerBlockItem("permian_stone", () -> BlockInit.PERMIAN_STONE.get());
 	public static final RegistryObject<BlockItem> PERMIAN_STONE_STAIRS = registerBlockItem("permian_stone_stairs", () -> BlockInit.PERMIAN_STONE_STAIRS.get());
 	public static final RegistryObject<BlockItem> PERMIAN_STONE_SLAB = registerBlockItem("permian_stone_slab", () -> BlockInit.PERMIAN_STONE_SLAB.get());
+
+	public static final RegistryObject<BlockItem> PERMIAN_GOLD_ORE = registerBlockItem("permian_gold_ore", () -> BlockInit.PERMIAN_GOLD_ORE.get());
+	public static final RegistryObject<BlockItem> PERMIAN_IRON_ORE = registerBlockItem("permian_iron_ore", () -> BlockInit.PERMIAN_IRON_ORE.get());
+	public static final RegistryObject<BlockItem> PERMIAN_COAL_ORE = registerBlockItem("permian_coal_ore", () -> BlockInit.PERMIAN_COAL_ORE.get());
+	public static final RegistryObject<BlockItem> PERMIAN_LAPIS_ORE = registerBlockItem("permian_lapis_ore", () -> BlockInit.PERMIAN_LAPIS_ORE.get());
+	public static final RegistryObject<BlockItem> PERMIAN_DIAMOND_ORE = registerBlockItem("permian_diamond_ore", () -> BlockInit.PERMIAN_DIAMOND_ORE.get());
+	public static final RegistryObject<BlockItem> PERMIAN_REDSTONE_ORE = registerBlockItem("permian_redstone_ore", () -> BlockInit.PERMIAN_REDSTONE_ORE.get());
+	public static final RegistryObject<BlockItem> PERMIAN_EMERALD_ORE = registerBlockItem("permian_emerald_ore", () -> BlockInit.PERMIAN_EMERALD_ORE.get());
+
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE = registerBlockItem("permian_cobblestone", () -> BlockInit.PERMIAN_COBBLESTONE.get());
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_STAIRS = registerBlockItem("permian_cobblestone_stairs", () -> BlockInit.PERMIAN_COBBLESTONE_STAIRS.get());
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_SLAB = registerBlockItem("permian_cobblestone_slab", () -> BlockInit.PERMIAN_COBBLESTONE_SLAB.get());

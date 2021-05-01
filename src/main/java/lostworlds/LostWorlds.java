@@ -11,20 +11,24 @@ import lostworlds.core.vanilla.properties.ModFlammables;
 import lostworlds.core.vanilla.properties.ModStrippables;
 import lostworlds.world.dimension.permian.PermianDimension;
 import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
-import lostworlds.world.feature.init.Mobs;
-import lostworlds.world.feature.init.Ores;
 import lostworlds.world.init.BiomeInit;
+import lostworlds.world.init.MobSpawnFeature;
+import lostworlds.world.init.OrePlaceFeature;
+import lostworlds.world.init.WorldCarverInit;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
@@ -32,7 +36,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
 @Mod(ModID.ID)
-
+@Mod.EventBusSubscriber(modid = ModID.ID, bus = Bus.MOD)
 public class LostWorlds
 {
     public static final Logger LOGGER = LogManager.getLogger();
@@ -44,15 +48,15 @@ public class LostWorlds
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
 
         //Main Objects
-        ModRegistry.registry();  
-        
+        ModRegistry.registry(); 
+
         //Lib - 3.0.30
         GeckoLib.initialize();
         
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, Ores::generateOre);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OrePlaceFeature::generateOre);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
-        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> Mobs.addMobSpawning(event));
+        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> MobSpawnFeature.addMobSpawning(event));
     }
 
 	
@@ -74,6 +78,13 @@ public class LostWorlds
     		PermianDimension.init();
     	});
     }
+    
+    @SubscribeEvent
+	public static void onRegisterWorldCarvers(Register<WorldCarver<?>> event)
+	{
+		WorldCarverInit.init(event);
+	}
+
 
 	public void clientSetup(FMLClientSetupEvent event) 
     {

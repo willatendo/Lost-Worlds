@@ -92,7 +92,15 @@ public class ModBlockStates
 	public static final BlockState PERMIAN_STONE = BlockInit.PERMIAN_STONE.get().defaultBlockState();
 	public static final BlockState PERMIAN_STONE_STAIRS = BlockInit.PERMIAN_STONE_STAIRS.get().defaultBlockState();
 	public static final BlockState PERMIAN_STONE_SLAB = BlockInit.PERMIAN_STONE_SLAB.get().defaultBlockState();
-	
+
+	public static final BlockState PERMIAN_COAL_ORE = BlockInit.PERMIAN_COAL_ORE.get().defaultBlockState();
+	public static final BlockState PERMIAN_DIAMOND_ORE = BlockInit.PERMIAN_DIAMOND_ORE.get().defaultBlockState();
+	public static final BlockState PERMIAN_EMERALD_ORE = BlockInit.PERMIAN_EMERALD_ORE.get().defaultBlockState();
+	public static final BlockState PERMIAN_GOLD_ORE = BlockInit.PERMIAN_GOLD_ORE.get().defaultBlockState();
+	public static final BlockState PERMIAN_IRON_ORE = BlockInit.PERMIAN_IRON_ORE.get().defaultBlockState();
+	public static final BlockState PERMIAN_LAPIS_ORE = BlockInit.PERMIAN_LAPIS_ORE.get().defaultBlockState();
+	public static final BlockState PERMIAN_REDSTONE_ORE = BlockInit.PERMIAN_REDSTONE_ORE.get().defaultBlockState();
+
 	public static final BlockState PERMIAN_COBBLESTONE = BlockInit.PERMIAN_COBBLESTONE.get().defaultBlockState();
 	public static final BlockState PERMIAN_COBBLESTONE_STAIRS = BlockInit.PERMIAN_COBBLESTONE_STAIRS.get().defaultBlockState();
 	public static final BlockState PERMIAN_COBBLESTONE_SLAB = BlockInit.PERMIAN_COBBLESTONE_SLAB.get().defaultBlockState();
@@ -133,7 +141,7 @@ public class ModBlockStates
 	public static final BlockState GINKGO_WOOD = BlockInit.GINKGO_WOOD.get().defaultBlockState();
 	public static final BlockState STRIPPED_GINKGO_WOOD = BlockInit.STRIPPED_GINKGO_WOOD.get().defaultBlockState();
 	public static final BlockState GINKGO_LEAVES = BlockInit.GINKGO_LEAVES.get().defaultBlockState();
-//	public static final BlockState GINKGO_SAPLING = BlockInit.GINKGO_SAPLING.get().defaultBlockState();
+	public static final BlockState GINKGO_SAPLING = BlockInit.GINKGO_SAPLING.get().defaultBlockState();
 	public static final BlockState GINKGO_PLANKS = BlockInit.GINKGO_PLANKS.get().defaultBlockState();
 	public static final BlockState GINKGO_STAIRS = BlockInit.GINKGO_STAIRS.get().defaultBlockState();
 	public static final BlockState GINKGO_SLAB = BlockInit.GINKGO_SLAB.get().defaultBlockState();
