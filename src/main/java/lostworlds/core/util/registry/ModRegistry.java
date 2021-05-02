@@ -38,8 +38,8 @@ public class ModRegistry
 	public static final DeferredRegister<ContainerType<?>> CONTAINER_REGISTRY = DeferredRegister.create(ForgeRegistries.CONTAINERS, ModID.ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, ModID.ID);
 	public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ModID.ID);
-	public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_REGISTRY = DeferredRegister.create(ForgeRegistries.FOLIAGE_PLACER_TYPES, ModID.ID);
 	public static final DeferredRegister<EntityType<?>> ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModID.ID);
+	public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_REGISTRY = DeferredRegister.create(ForgeRegistries.FOLIAGE_PLACER_TYPES, ModID.ID);
 	public static final DeferredRegister<Biome> BIOME_REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, ModID.ID);
 	
 	public static void registry() 
@@ -54,8 +54,8 @@ public class ModRegistry
 		CONTAINER_REGISTRY.register(bus);	
 		TILE_ENTITY_REGISTRY.register(bus);
 		BLOCK_REGISTRY.register(bus);
-		FOLIAGE_PLACER_REGISTRY.register(bus);
 		ENTITY_REGISTRY.register(bus);
+		FOLIAGE_PLACER_REGISTRY.register(bus);
 		BIOME_REGISTRY.register(bus);
 		
 		ParticleInit.initParticles();
@@ -65,8 +65,8 @@ public class ModRegistry
 		PaintingInit.initPaintings();
 		TileEntityInit.initTileEntities();
 		BlockInit.initBlocks();
-		FoliagePlacerInit.initFoliagePlacers();
 		EntityInit.initEntities();
+		FoliagePlacerInit.initFoliagePlacers();
 		BiomeInit.initBiomes();
 	}
 }

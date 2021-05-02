@@ -325,6 +325,10 @@
 	"block.lostworlds.polished_volcanic_rock_slab": "Polished Volcanic Rock Slab",
 
 	"block.lostworlds.volcanic_ash": "Volcanic Ash",
+	
+	//Tunnel
+	"block.lostworlds.diictodon_burrow": "Diictodon Burrow",
+	"block.lostworlds.tunneled_soil": "Tunneled Soil",
 
 	//Permian
 	"block.lostworlds.permian_sand": "Permian Sand",
@@ -333,6 +337,7 @@
 	"block.lostworlds.permian_stone_stairs": "Permian Stone Stairs",
 	"block.lostworlds.permian_stone_slab": "Permian Stone Slab",
 
+	"block.lostworlds.permian_copper_ore": "Permian Copper Ore",
 	"block.lostworlds.permian_coal_ore": "Permian Coal Ore",
 	"block.lostworlds.permian_iron_ore": "Permian Iron Ore",
 	"block.lostworlds.permian_diamond_ore": "Permian Diamond Ore",

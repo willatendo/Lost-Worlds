@@ -10,9 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class CreativeTab extends ItemGroup
 {
-	public CreativeTab(String label) 
+	public CreativeTab() 
 	{
-		super(ModID.ID + "." + label);
+		super(ModID.ID + "." + ModID.ID);
 	}
 
 	@Override
@@ -257,6 +257,9 @@ public class CreativeTab extends ItemGroup
 		
 		item.add(ItemInit.VOLCANIC_ASH.get().getDefaultInstance());
 	
+		//Tunneled 
+		item.add(ItemInit.DIICTODON_BURROW.get().getDefaultInstance());
+
 		//Permian
 		//Sand
 		item.add(ItemInit.PERMIAN_SAND.get().getDefaultInstance());
@@ -267,6 +270,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PERMIAN_STONE_SLAB.get().getDefaultInstance());
 		
 		item.add(ItemInit.PERMIAN_COAL_ORE.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_COPPER_ORE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_DIAMOND_ORE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_EMERALD_ORE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_GOLD_ORE.get().getDefaultInstance());

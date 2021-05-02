@@ -416,6 +416,10 @@ public class ItemInit
 
 	public static final RegistryObject<BlockItem> VOLCANIC_ASH = registerBlockItem("volcanic_ash", () -> BlockInit.VOLCANIC_ASH.get());
 
+	//Tunnel
+	public static final RegistryObject<BlockItem> DIICTODON_BURROW = registerBlockItem("diictodon_burrow", () -> BlockInit.DIICTODON_BURROW.get());
+	public static final RegistryObject<BlockItem> TUNNELED_SOIL = registerBlockItem("tunneled_soil", () -> BlockInit.TUNNELED_SOIL.get());
+	
 	//Permian
 	//Sand
 	public static final RegistryObject<BlockItem> PERMIAN_SAND = registerBlockItem("permian_sand", () -> BlockInit.PERMIAN_SAND.get());
@@ -425,6 +429,7 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> PERMIAN_STONE_STAIRS = registerBlockItem("permian_stone_stairs", () -> BlockInit.PERMIAN_STONE_STAIRS.get());
 	public static final RegistryObject<BlockItem> PERMIAN_STONE_SLAB = registerBlockItem("permian_stone_slab", () -> BlockInit.PERMIAN_STONE_SLAB.get());
 
+	public static final RegistryObject<BlockItem> PERMIAN_COPPER_ORE = registerBlockItem("permian_copper_ore", () -> BlockInit.PERMIAN_COPPER_ORE.get());
 	public static final RegistryObject<BlockItem> PERMIAN_GOLD_ORE = registerBlockItem("permian_gold_ore", () -> BlockInit.PERMIAN_GOLD_ORE.get());
 	public static final RegistryObject<BlockItem> PERMIAN_IRON_ORE = registerBlockItem("permian_iron_ore", () -> BlockInit.PERMIAN_IRON_ORE.get());
 	public static final RegistryObject<BlockItem> PERMIAN_COAL_ORE = registerBlockItem("permian_coal_ore", () -> BlockInit.PERMIAN_COAL_ORE.get());

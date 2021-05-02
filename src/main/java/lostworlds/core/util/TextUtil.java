@@ -15,4 +15,11 @@ public class TextUtil
         textComponent.withStyle(color);
         return textComponent;
     }
+	
+	public static ITextComponent greyTextComponent(String i18n) 
+	{
+        TranslationTextComponent textComponent = new TranslationTextComponent(i18n);
+        textComponent.withStyle(TextFormatting.GRAY);
+        return textComponent;
+    }
 }

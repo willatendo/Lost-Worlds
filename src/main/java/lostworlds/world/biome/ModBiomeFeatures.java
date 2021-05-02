@@ -49,9 +49,4 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	{
 		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.PERMIAN_EMERALD);		
 	}
-	
-	public static void addCavesAndCanyons(BiomeGenerationSettings.Builder builder)
-	{
-
-	}
 }

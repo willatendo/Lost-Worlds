@@ -21,6 +21,7 @@ import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.passive.PolarBearEntity;
 import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.passive.horse.DonkeyEntity;
 import net.minecraft.entity.passive.horse.HorseEntity;
@@ -29,6 +30,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -41,7 +46,10 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.PORKCHOP, Items.CHICKEN, Items.BEEF, Items.MUTTON, Items.RABBIT, ItemInit.CARNOTAURUS_MEAT.get(), ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GIGANOTOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PROCOMPSOGNATHUS_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get(), ItemInit.SUCHOMIMUS_MEAT.get(), ItemInit.TETRACERATOPS_MEAT.get(), ItemInit.TYRANNOSAURUS_MEAT.get());
+    public static final String SEX_TAG = "Sex";
+    protected static final DataParameter<Byte> SEX = EntityDataManager.defineId(TameableEntity.class, DataSerializers.BYTE);
+    
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.PORKCHOP, Items.CHICKEN, Items.BEEF, Items.MUTTON, Items.RABBIT, ItemInit.CARNOTAURUS_MEAT.get(), ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GIGANOTOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PROCOMPSOGNATHUS_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get(), ItemInit.SUCHOMIMUS_MEAT.get(), ItemInit.TETRACERATOPS_MEAT.get(), ItemInit.TYRANNOSAURUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
@@ -101,6 +109,38 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 	{
 		return FOOD_ITEMS.test(stack);
 	}
+	
+	@Override
+	protected void defineSynchedData() 
+	{
+		super.defineSynchedData();
+        byte sex = (byte) random.nextInt(2);
+        this.entityData.define(SEX, sex);
+	}
+	
+	@Override
+	public void addAdditionalSaveData(CompoundNBT nbt) 
+	{
+		super.addAdditionalSaveData(nbt);
+		nbt.putByte(SEX_TAG, getSex());
+	}
+	
+	@Override
+	public void readAdditionalSaveData(CompoundNBT nbt) 
+	{
+		super.readAdditionalSaveData(nbt);
+		setSex(nbt.getByte(SEX_TAG));
+	}
+	
+	public byte getSex() 
+	{
+        return entityData.get(SEX);
+    }
+
+    public void setSex(byte sex) 
+    {
+    	entityData.set(SEX, sex);
+    }
 	
 	@Override
 	protected void registerGoals()

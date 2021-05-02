@@ -206,6 +206,10 @@ public class BlockInit
 	
 	public static final RegistryObject<SandBlock> VOLCANIC_ASH = ModRegistry.BLOCK_REGISTRY.register("volcanic_ash", () -> new SandBlock(0x888988, AbstractBlock.Properties.of(Material.SAND, MaterialColor.COLOR_GRAY).harvestTool(ToolType.SHOVEL).harvestLevel(1).strength(0.5F).sound(SoundType.SAND)));	
 	
+	//Tunnel
+	public static final RegistryObject<Block> DIICTODON_BURROW = ModRegistry.BLOCK_REGISTRY.register("diictodon_burrow", () -> new Block(AbstractBlock.Properties.of(Material.SAND, MaterialColor.SAND).harvestTool(ToolType.SHOVEL).strength(1.5F).sound(SoundType.SAND)));
+	public static final RegistryObject<Block> TUNNELED_SOIL = ModRegistry.BLOCK_REGISTRY.register("tunneled_soil", () -> new Block(AbstractBlock.Properties.of(Material.DIRT, MaterialColor.DIRT).strength(0.5F).sound(SoundType.GRAVEL)));
+	
 	//Permian Blocks
 	public static final RegistryObject<SandBlock> PERMIAN_SAND = ModRegistry.BLOCK_REGISTRY.register("permian_sand", () -> new SandBlock(0xaa915c, AbstractBlock.Properties.of(Material.SAND, MaterialColor.SAND).harvestTool(ToolType.SHOVEL).strength(1.5F).sound(SoundType.SAND)));
 	
@@ -213,6 +217,7 @@ public class BlockInit
 	public static final RegistryObject<StairsBlock> PERMIAN_STONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("permian_stone_stairs", () -> new StairsBlock(() -> BlockInit.PERMIAN_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<SlabBlock> PERMIAN_STONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("permian_stone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	
+	public static final RegistryObject<ModOreBlock> PERMIAN_COPPER_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_copper_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<ModOreBlock> PERMIAN_GOLD_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_gold_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<ModOreBlock> PERMIAN_IRON_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_iron_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<ModOreBlock> PERMIAN_COAL_ORE = ModRegistry.BLOCK_REGISTRY.register("permian_coal_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));

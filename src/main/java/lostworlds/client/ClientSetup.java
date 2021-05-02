@@ -142,6 +142,5 @@ public class ClientSetup
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 		//Eggs
-		RenderFactory.addRender(EntityInit.GREAT_AUK_EGG_ENTITY.get(), RenderFactory.sprite());
 	}
 }

@@ -39,7 +39,7 @@ import software.bernie.geckolib3.GeckoLib;
 @Mod.EventBusSubscriber(modid = ModID.ID, bus = Bus.MOD)
 public class LostWorlds
 {
-    public static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger(ModID.ID);
     public static boolean DISABLE_IN_DEV = false;
 
 	public LostWorlds() 
