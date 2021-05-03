@@ -16,10 +16,10 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 public class WorldCarverInit
 {
 	public static final WorldCarver<ProbabilityConfig> MOD_CAVES = new ModCaveWorldCarver(ProbabilityConfig.CODEC, 256);
-	public static final ConfiguredCarver<ProbabilityConfig> CONFIGURED_MOD_CAVES = MOD_CAVES.configured(new ProbabilityConfig(0.364896F));
+	public static final ConfiguredCarver<ProbabilityConfig> CONFIGURED_MOD_CAVES = MOD_CAVES.configured(new ProbabilityConfig(0.14285715F));
 	
 	public static final WorldCarver<ProbabilityConfig> MOD_CANYONS = new ModCanyonWorldCarver(ProbabilityConfig.CODEC);
-	public static final ConfiguredCarver<ProbabilityConfig> CONFIGURED_MOD_CANYONS = MOD_CANYONS.configured(new ProbabilityConfig(0.364896F));
+	public static final ConfiguredCarver<ProbabilityConfig> CONFIGURED_MOD_CANYONS = MOD_CANYONS.configured(new ProbabilityConfig(0.02F));
 	
 	public static <T extends IForgeRegistryEntry<T>> void register(IForgeRegistry<T> registry, String name, T object)
 	{

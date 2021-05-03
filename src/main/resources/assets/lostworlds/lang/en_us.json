@@ -21,7 +21,10 @@
 
 	//Permian Time Book
 	"item.lostworlds.permian_time_book": "Permian Time Book",
-	
+
+	//Time Lord's Staff	
+	"item.lostworlds.time_lords_staff": "Time Lord's Staff",
+
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
 	"item.lostworlds.procompsognathus_dna_disc": "Storage Disc",
@@ -330,7 +333,6 @@
 	"block.lostworlds.diictodon_burrow": "Diictodon Burrow",
 	"block.lostworlds.tunneled_soil": "Tunneled Soil",
 
-	//Permian
 	"block.lostworlds.permian_sand": "Permian Sand",
 
 	"block.lostworlds.permian_stone": "Permian Stone",
@@ -362,6 +364,11 @@
 	
 	"block.lostworlds.dead_sponge_colony": "Dead Sponge Colony",
 	"block.lostworlds.sponge_colony": "Sponge Colony",
+
+	//Jurassic
+	"block.lostworlds.jurassic_stone": "Jurassic Stone",
+	"block.lostworlds.jurassic_stone_stairs": "Jurassic Stone Stairs",
+	"block.lostworlds.jurassic_stone_slab": "Jurassic Stone Slab",
 
 	"block.lostworlds.conifer_log": "Conifer Log",
 	"block.lostworlds.stripped_conifer_log": "Stripped Conifer Log",

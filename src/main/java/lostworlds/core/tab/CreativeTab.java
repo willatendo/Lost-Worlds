@@ -293,6 +293,12 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.TALL_DICKSONIA.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_SEAGRASS.get().getDefaultInstance());
 		
+		//Jurassic
+		//Stone
+		item.add(ItemInit.JURASSIC_STONE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_STONE_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_STONE_SLAB.get().getDefaultInstance());
+		
 		//Archaeology Tables
 		item.add(ItemInit.OAK_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
 		item.add(ItemInit.STRIPPED_OAK_ARCHAEOLOGY_TABLE.get().getDefaultInstance());

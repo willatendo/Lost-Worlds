@@ -62,6 +62,9 @@ public class ItemInit
 	//Time Books
 	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("permian_time_book", () -> new PermianTimeBook(standardProperties().stacksTo(1)));
 	
+	//Time Lord's Staff
+	public static final RegistryObject<Item> TIME_LORDS_STAFF = simpleItemRegister("time_lords_staff", new Item.Properties().stacksTo(1));
+	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = registerDisc("procompsognathus");
@@ -455,6 +458,12 @@ public class ItemInit
 
 	public static final RegistryObject<BlockItem> DEAD_SPONGE_COLONY = registerBlockItem("dead_sponge_colony", () -> BlockInit.DEAD_SPONGE_COLONY.get());
 	public static final RegistryObject<BlockItem> SPONGE_COLONY = registerBlockItem("sponge_colony", () -> BlockInit.SPONGE_COLONY.get());
+	
+	//Jurassic
+	//Stone
+	public static final RegistryObject<BlockItem> JURASSIC_STONE = registerBlockItem("jurassic_stone", () -> BlockInit.JURASSIC_STONE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_STONE_STAIRS = registerBlockItem("jurassic_stone_stairs", () -> BlockInit.JURASSIC_STONE_STAIRS.get());
+	public static final RegistryObject<BlockItem> JURASSIC_STONE_SLAB = registerBlockItem("jurassic_stone_slab", () -> BlockInit.JURASSIC_STONE_SLAB.get());
 	
 	//Conifer
 	public static final RegistryObject<BlockItem> CONIFER_LOG = registerBuringBlockItem("conifer_log", () -> BlockInit.CONIFER_LOG.get());

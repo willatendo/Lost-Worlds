@@ -27,7 +27,7 @@ public class PermianBiomeProvider extends BiomeProvider
     private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeInit.CONIFER_FOREST_KEY, BiomeInit.FLOOD_BASALT_PLAINS_KEY, BiomeInit.PERMIAN_DESERT_KEY, BiomeInit.PERMIAN_MOUNTAINS_KEY, BiomeInit.PERMIAN_OCEAN_KEY, BiomeInit.PERMIAN_PLAINS_KEY, BiomeInit.GINKGO_FOREST_KEY);
 
     public PermianBiomeProvider(long seed, Registry<Biome> registry) 
-    {
+    {    	
         super(BIOMES.stream().map(define -> () -> registry.getOrThrow(define)));
         this.seed = seed;
         this.registry = registry;

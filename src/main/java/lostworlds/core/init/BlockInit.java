@@ -240,6 +240,11 @@ public class BlockInit
 	public static final RegistryObject<DoublePlantBlock> TALL_DICKSONIA = ModRegistry.BLOCK_REGISTRY.register("tall_dicksonia", () -> new DoublePlantBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<SeaGrassBlock> PERMIAN_SEAGRASS = ModRegistry.BLOCK_REGISTRY.register("permian_seagrass", () -> new SeaGrassBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	
+	//Jurassic Blocks
+	public static final RegistryObject<Block> JURASSIC_STONE = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<StairsBlock> JURASSIC_STONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_stairs", () -> new StairsBlock(() -> BlockInit.JURASSIC_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<SlabBlock> JURASSIC_STONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	
 	//Sponge Colony
 	public static final RegistryObject<DeadSpongeColonyBlock> DEAD_SPONGE_COLONY = ModRegistry.BLOCK_REGISTRY.register("dead_sponge_colony", () -> new DeadSpongeColonyBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.STONE).noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<SpongeColonyBlock> SPONGE_COLONY = ModRegistry.BLOCK_REGISTRY.register("sponge_colony", () -> new SpongeColonyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().noOcclusion().strength(1.5F, 6.0F).sound(SoundType.CORAL_BLOCK), BlockInit.DEAD_SPONGE_COLONY.get()));
