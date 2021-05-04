@@ -3,12 +3,15 @@ package lostworlds.world.init;
 import com.google.common.collect.ImmutableList;
 
 import lostworlds.core.util.ModBlockStates;
+import lostworlds.core.util.ModID;
 import lostworlds.world.feature.ModFillerBlockType;
 import lostworlds.world.feature.foliageplacer.GinkgoFoliagePlacer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureSpread;
@@ -20,6 +23,7 @@ import net.minecraft.world.gen.feature.ReplaceBlockConfig;
 import net.minecraft.world.gen.feature.TwoLayerFeature;
 import net.minecraft.world.gen.foliageplacer.SpruceFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
+import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.DepthAverageConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.NoiseDependant;
@@ -28,7 +32,7 @@ import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 
 public class ConfiguredFeatureInit 
 {
-	//Plants
+    //Plants
 	//Permian Desert Plant
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_SMALL = register("patch_permian_desert_plant_small", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_SMALL).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_MEDIUM = register("patch_permian_desert_plant_medium", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_MEDIUM).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
@@ -59,6 +63,19 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> PERMIAN_DIAMOND = register("permian_diamond", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.PERMIAN_STONE, ModBlockStates.PERMIAN_DIAMOND_ORE, 8)).range(16).squared());
 	public static final ConfiguredFeature<?, ?> PERMIAN_LAPIS = register("permian_lapis", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.PERMIAN_STONE, ModBlockStates.PERMIAN_LAPIS_ORE, 7)).decorated(Placement.DEPTH_AVERAGE.configured(new DepthAverageConfig(16, 16))).squared());
 	public static final ConfiguredFeature<?, ?> PERMIAN_EMERALD = register("permian_emerald", Feature.EMERALD_ORE.configured(new ReplaceBlockConfig(ModBlockStates.PERMIAN_STONE, ModBlockStates.PERMIAN_EMERALD_ORE)).decorated(Placement.EMERALD_ORE.configured(IPlacementConfig.NONE)));
+	
+	//Lakes
+	//Permian
+	public static final ConfiguredFeature<?, ?> PERMIAN_WATER_LAKE = FeatureInit.LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.WATER)).decorated(Placement.WATER_LAKE.configured(new ChanceConfig(4)));
+	public static final ConfiguredFeature<?, ?> PERMIAN_LAVA_LAKE = FeatureInit.LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.LAVA)).decorated(Placement.LAVA_LAKE.configured(new ChanceConfig(80)));
+	
+	public static void init()
+	{
+		Registry<ConfiguredFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_FEATURE;
+		
+		Registry.register(registry, new ResourceLocation(ModID.ID, "permian_water_lake"), PERMIAN_WATER_LAKE);
+		Registry.register(registry, new ResourceLocation(ModID.ID, "permian_lava_lake"), PERMIAN_LAVA_LAKE);
+	}
 	
 	public static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) 
 	{

@@ -12,6 +12,8 @@ import lostworlds.core.vanilla.properties.ModStrippables;
 import lostworlds.world.dimension.permian.PermianDimension;
 import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
 import lostworlds.world.init.BiomeInit;
+import lostworlds.world.init.ConfiguredFeatureInit;
+import lostworlds.world.init.FeatureInit;
 import lostworlds.world.init.MobSpawnFeature;
 import lostworlds.world.init.OrePlaceFeature;
 import lostworlds.world.init.WorldCarverInit;
@@ -20,6 +22,7 @@ import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.carver.WorldCarver;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.RegistryEvent.Register;
@@ -84,7 +87,13 @@ public class LostWorlds
 	{
 		WorldCarverInit.init(event);
 	}
-
+    
+    @SubscribeEvent
+	public static void onRegisterFeatures(Register<Feature<?>> event)
+	{
+		FeatureInit.init(event);
+		ConfiguredFeatureInit.init();
+	}
 
 	public void clientSetup(FMLClientSetupEvent event) 
     {

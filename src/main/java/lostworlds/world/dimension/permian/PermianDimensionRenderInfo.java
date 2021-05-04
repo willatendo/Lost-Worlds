@@ -32,7 +32,7 @@ public class PermianDimensionRenderInfo extends DimensionRenderInfo
     public ISkyRenderHandler getSkyRenderHandler() 
     {
         if (skyrender == null)
-            skyrender = new PermainSkyRender();
+            skyrender = new PermianSkyRender();
         return skyrender;
     }
 

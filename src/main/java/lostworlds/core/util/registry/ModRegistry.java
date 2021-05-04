@@ -63,7 +63,7 @@ public class ModRegistry
 		RecipeSerialiserInit.initRecipeSerialisers();
 		ItemInit.initItems();
 		PaintingInit.initPaintings();
-		TileEntityInit.initTileEntities();
+		TileEntityInit.initTileEntities(); 
 		BlockInit.initBlocks();
 		EntityInit.initEntities();
 		FoliagePlacerInit.initFoliagePlacers();

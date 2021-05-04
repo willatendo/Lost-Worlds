@@ -34,7 +34,7 @@ minecraft {
         client {
             workingDirectory project.file('run')
 						
-			arg "-mixin.config="+archivesBaseName+".mixins.json"
+			arg "-mixin.config=lostworlds.mixins.json"
 						
 			property 'forge.logging.console.level', 'debug'
 			             
@@ -48,7 +48,7 @@ minecraft {
         server {
             workingDirectory project.file('run')
             
-            arg "-mixin.config="+archivesBaseName+".mixins.json"
+			arg "-mixin.config=lostworlds.mixins.json"
                          
             property 'forge.logging.console.level', 'debug'
              
@@ -89,7 +89,7 @@ jar {
             "Specification-Title": "lostworlds",
             "Specification-Vendor": "lostworlds",
             "Specification-Version": "1.0.0",
-            "Implementation-Title": project.name,
+            "Implementation-Title": "lostworlds",
             "Implementation-Version": "1.0.0",
             "Implementation-Vendor" :"lostworlds",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),

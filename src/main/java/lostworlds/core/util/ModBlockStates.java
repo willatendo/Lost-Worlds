@@ -2,9 +2,15 @@ package lostworlds.core.util;
 
 import lostworlds.core.init.BlockInit;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 
 public class ModBlockStates 
 {
+	//Vanilla
+	public static final BlockState WATER = Blocks.WATER.defaultBlockState();
+	public static final BlockState LAVA = Blocks.LAVA.defaultBlockState();
+	
+	//Mod
 	//Ore
 	public static final BlockState COPPER_ORE = BlockInit.COPPER_ORE.get().defaultBlockState();
 	

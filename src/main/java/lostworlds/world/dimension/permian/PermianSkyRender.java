@@ -30,13 +30,13 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.ISkyRenderHandler;
 
-public class PermainSkyRender implements ISkyRenderHandler 
+public class PermianSkyRender implements ISkyRenderHandler 
 {
     private static final ResourceLocation SUN_TEXTURES = new ResourceLocation("minecraft:textures/environment/sun.png");
     private VertexBuffer starVBO;
     private final VertexFormat vertexBufferFormat = DefaultVertexFormats.POSITION;
 
-    public PermainSkyRender() 
+    public PermianSkyRender() 
     {
         generateStars();
     }

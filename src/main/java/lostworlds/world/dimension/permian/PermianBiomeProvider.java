@@ -21,11 +21,11 @@ public class PermianBiomeProvider extends BiomeProvider
 {
 	public static final Codec<PermianBiomeProvider> CODEC = RecordCodecBuilder.create((instance) -> instance.group(Codec.LONG.fieldOf("seed").orElse(PermianChunkGenerator.hackSeed).forGetter((obj) -> obj.seed), RegistryLookupCodec.create(Registry.BIOME_REGISTRY).forGetter((obj) -> obj.registry)).apply(instance, instance.stable(PermianBiomeProvider::new)));
 
-    private final long seed;
+	private final long seed;
     private final Registry<Biome> registry;
     private final Layer genBiomes;
     private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeInit.CONIFER_FOREST_KEY, BiomeInit.FLOOD_BASALT_PLAINS_KEY, BiomeInit.PERMIAN_DESERT_KEY, BiomeInit.PERMIAN_MOUNTAINS_KEY, BiomeInit.PERMIAN_OCEAN_KEY, BiomeInit.PERMIAN_PLAINS_KEY, BiomeInit.GINKGO_FOREST_KEY);
-
+    
     public PermianBiomeProvider(long seed, Registry<Biome> registry) 
     {    	
         super(BIOMES.stream().map(define -> () -> registry.getOrThrow(define)));

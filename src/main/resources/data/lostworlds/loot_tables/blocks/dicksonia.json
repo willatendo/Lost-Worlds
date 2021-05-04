@@ -16,7 +16,7 @@
 						"item": "minecraft:shears"
 					}
 				}],
-				"name": "lostworlds:permian_ground_ferns"
+				"name": "lostworlds:dicksonia"
 			},
 			{
 				"type": "minecraft:item",
@@ -37,7 +37,7 @@
 				{
 					"function": "minecraft:explosion_decay"
 				}],
-				"name": "lostworlds:permian_fern_leaf_litter"
+				"name": "minecraft:wheat_seeds"
 			}]
 		}]
 	}]

@@ -65,6 +65,9 @@ public class ItemInit
 	//Time Lord's Staff
 	public static final RegistryObject<Item> TIME_LORDS_STAFF = simpleItemRegister("time_lords_staff", new Item.Properties().stacksTo(1));
 	
+	//Leaf Litter
+	public static final RegistryObject<Item> PERMIAN_FERN_LEAF_LITTER = advancedItemRegister("permian_fern_leaf_litter", new Item(standardProperties().food(FoodInit.PERMIAN_FERN_LEAF_LITTER).stacksTo(16)));
+	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = registerDisc("procompsognathus");

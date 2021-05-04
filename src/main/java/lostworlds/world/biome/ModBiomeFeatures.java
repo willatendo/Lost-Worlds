@@ -49,4 +49,14 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	{
 		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.PERMIAN_EMERALD);		
 	}
+	
+	public static void addPermianWaterLakes(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.LAKES, ConfiguredFeatureInit.PERMIAN_WATER_LAKE);		
+	}
+	
+	public static void addPermianLavaLakes(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.LAKES, ConfiguredFeatureInit.PERMIAN_LAVA_LAKE);		
+	}
 }

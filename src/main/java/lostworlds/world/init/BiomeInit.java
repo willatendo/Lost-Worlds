@@ -41,6 +41,9 @@ public class BiomeInit
 	public static final RegistryObject<Biome> GINKGO_FOREST = createBiome("ginkgo_forest", ModBiomeMaker::makeAGinkgoForest);
 	public static final RegistryKey<Biome> GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "ginkgo_forest"));
 	
+	public static final RegistryObject<Biome> PERMIAN_RIVER = createBiome("permian_river", ModBiomeMaker::makeAPermianRiver);
+	public static final RegistryKey<Biome> PERMIAN_RIVER_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "permian_river"));
+	
 	//Registry
     public static RegistryObject<Biome> createBiome(String name, Supplier<Biome> biome) 
     {
