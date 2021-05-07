@@ -9,6 +9,8 @@ import lostworlds.core.util.ModID;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.core.vanilla.properties.ModFlammables;
 import lostworlds.core.vanilla.properties.ModStrippables;
+import lostworlds.world.dimension.jurassic.JurassicDimension;
+import lostworlds.world.dimension.jurassic.JurassicDimensionRenderInfo;
 import lostworlds.world.dimension.permian.PermianDimension;
 import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
 import lostworlds.world.init.BiomeInit;
@@ -77,8 +79,10 @@ public class LostWorlds
     		ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
     	});
     	
-    	event.enqueueWork(() -> {
+    	event.enqueueWork(() -> 
+    	{
     		PermianDimension.init();
+    		JurassicDimension.init();
     	});
     }
     
@@ -99,6 +103,9 @@ public class LostWorlds
     {
         DimensionRenderInfo permian = new PermianDimensionRenderInfo();
         DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "permian_render"), permian);
+        
+        DimensionRenderInfo jurassic = new JurassicDimensionRenderInfo();
+        DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "jurassic_render"), jurassic);
     }
     
     private void loadComplete(FMLLoadCompleteEvent event)

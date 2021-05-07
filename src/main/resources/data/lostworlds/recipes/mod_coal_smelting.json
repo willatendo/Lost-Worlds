@@ -1,9 +1,9 @@
 {
 	"type": "minecraft:smelting",
 	"ingredient": {
-		"item": "lostworlds:jurassic_copper_ore"
+		"tag": "forge:ores/coal"
 	},
-	"result": "lostworlds:copper_ingot",
+	"result": "minecraft:coal",
 	"experience": 0.5,
 	"cookingtime": 200
 }

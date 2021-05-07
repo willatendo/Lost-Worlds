@@ -44,6 +44,27 @@ public class BiomeInit
 	public static final RegistryObject<Biome> PERMIAN_RIVER = createBiome("permian_river", ModBiomeMaker::makeAPermianRiver);
 	public static final RegistryKey<Biome> PERMIAN_RIVER_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "permian_river"));
 	
+	public static final RegistryObject<Biome> JURASSIC_CONIFER_FOREST = createBiome("jurassic_conifer_forest", ModBiomeMaker::makeAJurassicConiferForest);
+	public static final RegistryKey<Biome> JURASSIC_CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_conifer_forest"));
+	
+	public static final RegistryObject<Biome> JURASSIC_GINKGO_FOREST = createBiome("jurassic_ginkgo_forest", ModBiomeMaker::makeAJurassicGinkgoForest);
+	public static final RegistryKey<Biome> JURASSIC_GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_ginkgo_forest"));
+	
+	public static final RegistryObject<Biome> JURASSIC_PLAINS = createBiome("jurassic_plains", ModBiomeMaker::makeAJurassicPlains);
+	public static final RegistryKey<Biome> JURASSIC_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_plains"));
+	
+	public static final RegistryObject<Biome> JURASSIC_DESERT = createBiome("jurassic_desert", ModBiomeMaker::makeAJurassicDesert);
+	public static final RegistryKey<Biome> JURASSIC_DESERT_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_desert"));
+	
+	public static final RegistryObject<Biome> JURASSIC_MOUNTAINS = createBiome("jurassic_mountains", ModBiomeMaker::makeAJurassicMountains);
+	public static final RegistryKey<Biome> JURASSIC_MOUNTAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_mountains"));
+	
+	public static final RegistryObject<Biome> JURASSIC_ERRODED_MOUNTAINS = createBiome("jurassic_erroded_mountains", ModBiomeMaker::makeAErrodedMountains);
+	public static final RegistryKey<Biome> JURASSIC_ERRODED_MOUNTAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_erroded_mountains"));
+	
+	public static final RegistryObject<Biome> JURASSIC_RIVER = createBiome("jurassic_river", ModBiomeMaker::makeAJurassicRiver);
+	public static final RegistryKey<Biome> JURASSIC_RIVER_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_river"));
+	
 	//Registry
     public static RegistryObject<Biome> createBiome(String name, Supplier<Biome> biome) 
     {

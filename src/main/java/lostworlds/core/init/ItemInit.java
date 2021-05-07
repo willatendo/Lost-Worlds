@@ -13,6 +13,7 @@ import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.common.items.ModWoodBurnableItem;
 import lostworlds.common.items.SyringeItem;
 import lostworlds.common.items.WetPaperItem;
+import lostworlds.common.items.timebooks.JurassicTimeBook;
 import lostworlds.common.items.timebooks.PermianTimeBook;
 import lostworlds.common.tools.BrushItem;
 import lostworlds.core.ModItemGroup;
@@ -61,6 +62,7 @@ public class ItemInit
 
 	//Time Books
 	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("permian_time_book", () -> new PermianTimeBook(standardProperties().stacksTo(1)));
+	public static final RegistryObject<Item> JURASSIC_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("jurassic_time_book", () -> new JurassicTimeBook(standardProperties().stacksTo(1)));
 	
 	//Time Lord's Staff
 	public static final RegistryObject<Item> TIME_LORDS_STAFF = simpleItemRegister("time_lords_staff", new Item.Properties().stacksTo(1));

@@ -1,31 +1,30 @@
-package lostworlds.world.dimension.permian;
+package lostworlds.world.dimension.jurassic;
 
 import lostworlds.world.init.BiomeInit;
 import net.minecraft.world.gen.INoiseRandom;
 import net.minecraft.world.gen.layer.traits.IAreaTransformer0;
 
-public class PermianBiomeLayer implements IAreaTransformer0 
+public class JurassicBiomeLayer implements IAreaTransformer0 
 {
-    private static final int UNCOMMON_BIOME_CHANCE = 8;
+	private static final int UNCOMMON_BIOME_CHANCE = 8;
     private static final int RARE_BIOME_CHANCE = 16;
     protected int[] commonBiomes = new int[]
     {
-    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_DESERT_KEY)
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_CONIFER_FOREST_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_GINKGO_FOREST_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_PLAINS_KEY),
     };
     protected int[] uncommonBiomes = (new int[]
     {
-    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_MOUNTAINS_KEY),
-    	PermianLayerUtil.getBiomeId(BiomeInit.FLOOD_BASALT_PLAINS_KEY)
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_MOUNTAINS_KEY)
     });
     protected int[] rareBiomes = (new int[]
     {
-    	PermianLayerUtil.getBiomeId(BiomeInit.CONIFER_FOREST_KEY),
-    	PermianLayerUtil.getBiomeId(BiomeInit.GINKGO_FOREST_KEY),
-    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_OCEAN_KEY),
-    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_PLAINS_KEY)
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_DESERT_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_ERRODED_MOUNTAINS_KEY)
     });
 
-    public PermianBiomeLayer() { }
+    public JurassicBiomeLayer() { }
 
     @Override
     public int applyPixel(INoiseRandom iNoiseRandom, int rand1, int rand2) 

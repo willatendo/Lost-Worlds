@@ -68,6 +68,7 @@ public class CreativeTab extends ItemGroup
 		
 		//Time Books
 		item.add(ItemInit.PERMIAN_TIME_BOOK.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_TIME_BOOK.get().getDefaultInstance());
 		
 		//DNA
 		item.add(ItemInit.EMPTY_VILE.get().getDefaultInstance());

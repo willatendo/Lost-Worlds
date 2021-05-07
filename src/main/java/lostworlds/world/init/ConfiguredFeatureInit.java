@@ -5,7 +5,6 @@ import com.google.common.collect.ImmutableList;
 import lostworlds.core.util.ModBlockStates;
 import lostworlds.core.util.ModID;
 import lostworlds.world.feature.ModFillerBlockType;
-import lostworlds.world.feature.foliageplacer.GinkgoFoliagePlacer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
@@ -29,6 +28,7 @@ import net.minecraft.world.gen.placement.DepthAverageConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.gen.trunkplacer.FancyTrunkPlacer;
 import net.minecraft.world.gen.trunkplacer.ForkyTrunkPlacer;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 
@@ -48,7 +48,7 @@ public class ConfiguredFeatureInit
 	//Trees
 	//Trees
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> CONIFER_TREE = register("conifer_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.CONIFER_LOG), new SimpleBlockStateProvider(ModBlockStates.CONIFER_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(2, 1), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
-	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> GINKGO_TREE = register("ginkgo_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.GINKGO_LOG), new SimpleBlockStateProvider(ModBlockStates.GINKGO_LEAVES), new GinkgoFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 6), new StraightTrunkPlacer(7, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
+	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> GINKGO_TREE = register("ginkgo_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.GINKGO_LOG), new SimpleBlockStateProvider(ModBlockStates.GINKGO_LEAVES), new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 3), new FancyTrunkPlacer(7, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ARAUCARIA_TREE = register("araucaria_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.CONIFER_LOG), new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LEAVES), new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 1), new ForkyTrunkPlacer(11, 2, 2), new TwoLayerFeature(1, 0, 2))).ignoreVines().build()));
 
 	public static final ConfiguredFeature<?, ?> CONIFER_TREES = register("conifer_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ConfiguredFeatureInit.CONIFER_TREE.weighted(0.5F)), ConfiguredFeatureInit.CONIFER_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
@@ -75,12 +75,19 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> PERMIAN_WATER_LAKE = FeatureInit.LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.WATER)).decorated(Placement.WATER_LAKE.configured(new ChanceConfig(4)));
 	public static final ConfiguredFeature<?, ?> PERMIAN_LAVA_LAKE = FeatureInit.LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.LAVA)).decorated(Placement.LAVA_LAKE.configured(new ChanceConfig(80)));
 	
+	//Jurassic
+	public static final ConfiguredFeature<?, ?> JURASSIC_WATER_LAKE = FeatureInit.JURASSIC_LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.WATER)).decorated(Placement.WATER_LAKE.configured(new ChanceConfig(4)));
+	public static final ConfiguredFeature<?, ?> JURASSIC_LAVA_LAKE = FeatureInit.JURASSIC_LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.LAVA)).decorated(Placement.LAVA_LAKE.configured(new ChanceConfig(80)));
+	
 	public static void init()
 	{
 		Registry<ConfiguredFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_FEATURE;
 		
 		Registry.register(registry, new ResourceLocation(ModID.ID, "permian_water_lake"), PERMIAN_WATER_LAKE);
 		Registry.register(registry, new ResourceLocation(ModID.ID, "permian_lava_lake"), PERMIAN_LAVA_LAKE);
+		
+		Registry.register(registry, new ResourceLocation(ModID.ID, "jurassic_water_lake"), JURASSIC_WATER_LAKE);
+		Registry.register(registry, new ResourceLocation(ModID.ID, "jurassic_lava_lake"), JURASSIC_LAVA_LAKE);
 	}
 	
 	public static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) 

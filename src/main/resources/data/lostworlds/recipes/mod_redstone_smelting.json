@@ -1,9 +1,9 @@
 {
 	"type": "minecraft:smelting",
 	"ingredient": {
-		"item": "lostworlds:copper_ore"
+		"tag": "forge:ores/redstone"
 	},
-	"result": "lostworlds:copper_ingot",
+	"result": "minecraft:redstone",
 	"experience": 0.5,
 	"cookingtime": 200
 }

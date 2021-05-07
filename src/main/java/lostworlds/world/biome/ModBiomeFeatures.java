@@ -65,4 +65,14 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	{
 		builder.addFeature(GenerationStage.Decoration.LAKES, ConfiguredFeatureInit.PERMIAN_LAVA_LAKE);		
 	}
+	
+	public static void addJurassicWaterLakes(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.LAKES, ConfiguredFeatureInit.JURASSIC_WATER_LAKE);		
+	}
+	
+	public static void addJurassicLavaLakes(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.LAKES, ConfiguredFeatureInit.JURASSIC_LAVA_LAKE);		
+	}
 }

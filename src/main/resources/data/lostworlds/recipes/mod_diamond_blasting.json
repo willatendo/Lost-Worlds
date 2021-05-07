@@ -1,9 +1,9 @@
 {
 	"type": "minecraft:blasting",
 	"ingredient": {
-		"item": "lostworlds:copper_ore"
+		"tag": "forge:ores/diamond"
 	},
-	"result": "lostworlds:copper_ingot",
+	"result": "minecraft:diamond",
 	"experience": 0.5,
 	"cookingtime": 100
 }
