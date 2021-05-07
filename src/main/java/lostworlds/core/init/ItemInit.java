@@ -449,6 +449,11 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_SLAB = registerBlockItem("permian_cobblestone_slab", () -> BlockInit.PERMIAN_COBBLESTONE_SLAB.get());
 	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_WALL = registerBlockItem("permian_cobblestone_wall", () -> BlockInit.PERMIAN_COBBLESTONE_WALL.get());
 
+	public static final RegistryObject<BlockItem> PERMIAN_STONE_BRICKS = registerBlockItem("permian_stone_bricks", () -> BlockInit.PERMIAN_STONE_BRICKS.get());
+	public static final RegistryObject<BlockItem> PERMIAN_STONE_BRICK_STAIRS = registerBlockItem("permian_stone_brick_stairs", () -> BlockInit.PERMIAN_STONE_BRICK_STAIRS.get());
+	public static final RegistryObject<BlockItem> PERMIAN_STONE_BRICK_SLAB = registerBlockItem("permian_stone_brick_slab", () -> BlockInit.PERMIAN_STONE_BRICK_SLAB.get());
+	public static final RegistryObject<BlockItem> PERMIAN_STONE_BRICK_WALL = registerBlockItem("permian_stone_brick_wall", () -> BlockInit.PERMIAN_STONE_BRICK_WALL.get());
+
 	//Flora
 	public static final RegistryObject<BlockItem> SMALL_PERMIAN_DESERT_PLANT = registerBlockItem("small_permian_desert_plant", () -> BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
 	public static final RegistryObject<BlockItem> MEDIUM_PERMIAN_DESERT_PLANT = registerBlockItem("medium_permian_desert_plant", () -> BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
@@ -467,6 +472,39 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> JURASSIC_STONE = registerBlockItem("jurassic_stone", () -> BlockInit.JURASSIC_STONE.get());
 	public static final RegistryObject<BlockItem> JURASSIC_STONE_STAIRS = registerBlockItem("jurassic_stone_stairs", () -> BlockInit.JURASSIC_STONE_STAIRS.get());
 	public static final RegistryObject<BlockItem> JURASSIC_STONE_SLAB = registerBlockItem("jurassic_stone_slab", () -> BlockInit.JURASSIC_STONE_SLAB.get());
+
+	public static final RegistryObject<BlockItem> JURASSIC_COPPER_ORE = registerBlockItem("jurassic_copper_ore", () -> BlockInit.JURASSIC_COPPER_ORE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_GOLD_ORE = registerBlockItem("jurassic_gold_ore", () -> BlockInit.JURASSIC_GOLD_ORE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_IRON_ORE = registerBlockItem("jurassic_iron_ore", () -> BlockInit.JURASSIC_IRON_ORE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_COAL_ORE = registerBlockItem("jurassic_coal_ore", () -> BlockInit.JURASSIC_COAL_ORE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_LAPIS_ORE = registerBlockItem("jurassic_lapis_ore", () -> BlockInit.JURASSIC_LAPIS_ORE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_DIAMOND_ORE = registerBlockItem("jurassic_diamond_ore", () -> BlockInit.JURASSIC_DIAMOND_ORE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_REDSTONE_ORE = registerBlockItem("jurassic_redstone_ore", () -> BlockInit.JURASSIC_REDSTONE_ORE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_EMERALD_ORE = registerBlockItem("jurassic_emerald_ore", () -> BlockInit.JURASSIC_EMERALD_ORE.get());
+	
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE = registerBlockItem("mossy_jurassic_stone", () -> BlockInit.MOSSY_JURASSIC_STONE.get());
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_STAIRS = registerBlockItem("mossy_jurassic_stone_stairs", () -> BlockInit.MOSSY_JURASSIC_STONE_STAIRS.get());
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_SLAB = registerBlockItem("mossy_jurassic_stone_slab", () -> BlockInit.MOSSY_JURASSIC_STONE_SLAB.get());
+	
+	public static final RegistryObject<BlockItem> JURASSIC_COBBLESTONE = registerBlockItem("jurassic_cobblestone", () -> BlockInit.JURASSIC_COBBLESTONE.get());
+	public static final RegistryObject<BlockItem> JURASSIC_COBBLESTONE_STAIRS = registerBlockItem("jurassic_cobblestone_stairs", () -> BlockInit.JURASSIC_COBBLESTONE_STAIRS.get());
+	public static final RegistryObject<BlockItem> JURASSIC_COBBLESTONE_SLAB = registerBlockItem("jurassic_cobblestone_slab", () -> BlockInit.JURASSIC_COBBLESTONE_SLAB.get());
+	public static final RegistryObject<BlockItem> JURASSIC_COBBLESTONE_WALL = registerBlockItem("jurassic_cobblestone_wall", () -> BlockInit.JURASSIC_COBBLESTONE_WALL.get());
+	
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_COBBLESTONE = registerBlockItem("mossy_jurassic_cobblestone", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE.get());
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_COBBLESTONE_STAIRS = registerBlockItem("mossy_jurassic_cobblestone_stairs", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_STAIRS.get());
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_COBBLESTONE_SLAB = registerBlockItem("mossy_jurassic_cobblestone_slab", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_SLAB.get());
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_COBBLESTONE_WALL = registerBlockItem("mossy_jurassic_cobblestone_wall", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_WALL.get());
+	
+	public static final RegistryObject<BlockItem> JURASSIC_STONE_BRICKS = registerBlockItem("jurassic_stone_bricks", () -> BlockInit.JURASSIC_STONE_BRICKS.get());
+	public static final RegistryObject<BlockItem> JURASSIC_STONE_BRICK_STAIRS = registerBlockItem("jurassic_stone_brick_stairs", () -> BlockInit.JURASSIC_STONE_BRICK_STAIRS.get());
+	public static final RegistryObject<BlockItem> JURASSIC_STONE_BRICK_SLAB = registerBlockItem("jurassic_stone_brick_slab", () -> BlockInit.JURASSIC_STONE_BRICK_SLAB.get());
+	public static final RegistryObject<BlockItem> JURASSIC_STONE_BRICK_WALL = registerBlockItem("jurassic_stone_brick_wall", () -> BlockInit.JURASSIC_STONE_BRICK_WALL.get());
+	
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_BRICKS = registerBlockItem("mossy_jurassic_stone_bricks", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICKS.get());
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_BRICK_STAIRS = registerBlockItem("mossy_jurassic_stone_brick_stairs", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_STAIRS.get());
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_BRICK_SLAB = registerBlockItem("mossy_jurassic_stone_brick_slab", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_SLAB.get());
+	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_BRICK_WALL = registerBlockItem("mossy_jurassic_stone_brick_wall", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_WALL.get());
 	
 	//Conifer
 	public static final RegistryObject<BlockItem> CONIFER_LOG = registerBuringBlockItem("conifer_log", () -> BlockInit.CONIFER_LOG.get());
@@ -505,6 +543,10 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> GINKGO_DOOR = registerBuringBlockItem("ginkgo_door", () -> BlockInit.GINKGO_DOOR.get());
 	public static final RegistryObject<ModSignItem> GINKGO_SIGN = ModRegistry.ITEM_REGISTRY.register("ginkgo_sign", () -> new ModSignItem(BlockInit.GINKGO_SIGN.get(), BlockInit.GINKGO_WALL_SIGN.get(), standardProperties()));
 	public static final RegistryObject<ModBoatItem> GINKGO_BOAT = registerBoatItem("ginkgo_boat", ModBoatType.GINKGO);
+
+	//Araucaria
+	public static final RegistryObject<BlockItem> ARAUCARIA_LEAVES = registerBlockItem("araucaria_leaves", () -> BlockInit.ARAUCARIA_LEAVES.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_SAPLING = registerBuringBlockItem("araucaria_sapling", () -> BlockInit.ARAUCARIA_SAPLING.get());
 	
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  registerBlockItem("light_concrete", () -> BlockInit.LIGHT_CONCRETE.get());

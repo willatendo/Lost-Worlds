@@ -355,6 +355,11 @@
 	"block.lostworlds.permian_cobblestone_stairs": "Permian Cobblestone Stairs",
 	"block.lostworlds.permian_cobblestone_slab": "Permian Cobblestone Slab",
 	"block.lostworlds.permian_cobblestone_wall": "Permian Cobblestone Wall",
+	
+	"block.lostworlds.permian_stone_bricks": "Permian Stone Bricks",
+	"block.lostworlds.permian_stone_brick_stairs": "Permian Stone Brick Stairs",
+	"block.lostworlds.permian_stone_brick_slab": "Permian Stone Brick Slab",
+	"block.lostworlds.permian_stone_brick_wall": "Permian Stone Brick Wall",
 
 	"block.lostworlds.small_permian_desert_plant": "Small Permian Desert Plant",
 	"block.lostworlds.medium_permian_desert_plant": "Medium Permian Desert Plant",
@@ -372,6 +377,39 @@
 	"block.lostworlds.jurassic_stone": "Jurassic Stone",
 	"block.lostworlds.jurassic_stone_stairs": "Jurassic Stone Stairs",
 	"block.lostworlds.jurassic_stone_slab": "Jurassic Stone Slab",
+	
+	"block.lostworlds.jurassic_cobblestone": "Jurassic Cobblestone",
+	"block.lostworlds.jurassic_cobblestone_stairs": "Jurassic Cobblestone Stairs",
+	"block.lostworlds.jurassic_cobblestone_slab": "Jurassic Cobblestone Slab",
+	"block.lostworlds.jurassic_cobblestone_wall": "Jurassic Cobblestone Wall",
+	
+	"block.lostworlds.jurassic_stone_bricks": "Jurassic Stone Bricks",
+	"block.lostworlds.jurassic_stone_brick_stairs": "Jurassic Stone Brick Stairs",
+	"block.lostworlds.jurassic_stone_brick_slab": "Jurassic Stone Brick Slab",
+	"block.lostworlds.jurassic_stone_brick_wall": "Jurassic Stone Brick Wall",
+	
+	"block.lostworlds.mossy_jurassic_stone": "Mossy Jurassic Stone",
+	"block.lostworlds.mossy_jurassic_stone_stairs": "Mossy Jurassic Stone Stairs",
+	"block.lostworlds.mossy_jurassic_stone_slab": "Mossy Jurassic Stone Slab",
+	
+	"block.lostworlds.mossy_jurassic_cobblestone": "Mossy Jurassic Cobblestone",
+	"block.lostworlds.mossy_jurassic_cobblestone_stairs": "Mossy Jurassic Cobblestone Stairs",
+	"block.lostworlds.mossy_jurassic_cobblestone_slab": "Mossy Jurassic Cobblestone Slab",
+	"block.lostworlds.mossy_jurassic_cobblestone_wall": "Mossy Jurassic Cobblestone Wall",
+	
+	"block.lostworlds.mossy_jurassic_stone_bricks": "Mossy Jurassic Stone Bricks",
+	"block.lostworlds.mossy_jurassic_stone_brick_stairs": "Mossy Jurassic Stone Brick Stairs",
+	"block.lostworlds.mossy_jurassic_stone_brick_slab": "Mossy Jurassic Stone Brick Slab",
+	"block.lostworlds.mossy_jurassic_stone_brick_wall": "Mossy Jurassic Stone Brick Wall",
+
+	"block.lostworlds.jurassic_copper_ore": "Jurassic Copper Ore",
+	"block.lostworlds.jurassic_coal_ore": "Jurassic Coal Ore",
+	"block.lostworlds.jurassic_iron_ore": "Jurassic Iron Ore",
+	"block.lostworlds.jurassic_diamond_ore": "Jurassic Diamond Ore",
+	"block.lostworlds.jurassic_emerald_ore": "Jurassic Emerald Ore",
+	"block.lostworlds.jurassic_gold_ore": "Jurassic Gold Ore",
+	"block.lostworlds.jurassic_redstone_ore": "Jurassic Redstone Ore",
+	"block.lostworlds.jurassic_lapis_ore": "Jurassic Lapis Ore",
 
 	"block.lostworlds.conifer_log": "Conifer Log",
 	"block.lostworlds.stripped_conifer_log": "Stripped Conifer Log",
@@ -408,6 +446,9 @@
 	"block.lostworlds.ginkgo_door": "Ginkgo Door",
 	"block.lostworlds.ginkgo_sign": "Ginkgo Sign",
 	"item.lostworlds.ginkgo_boat": "Ginkgo Boat",
+
+	"block.lostworlds.araucaria_leaves": "Araucaria Leaves",
+	"block.lostworlds.araucaria_sapling": "Araucaria Sapling",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",
@@ -590,7 +631,7 @@
 	"entity.lostworlds.fukuivenator": "Fukuivenator paradoxus",
 	"entity.lostworlds.psittacosaurus": "Psittacosaurus mongoliensis",
 	
-	//Modern
+	//Modern Extinct
 	"entity.lostworlds.great_auk": "Pinguinus impennis",
 
 	//Multi Era
@@ -603,6 +644,7 @@
 	"biome.lostworlds.permian_plains" :"Permian Plains",
 	"biome.lostworlds.permian_ocean" :"Permian Ocean",
 	"biome.lostworlds.conifer_forest" :"Conifer Forest",
+	"biome.lostworlds.ginkgo_forest" :"Ginkgo Forest",
 	
 	//Modern Day
 	"biome.lostworlds.volcano": "Volcano",

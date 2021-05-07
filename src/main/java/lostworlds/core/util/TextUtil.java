@@ -22,4 +22,10 @@ public class TextUtil
         textComponent.withStyle(TextFormatting.GRAY);
         return textComponent;
     }
+	
+	public static ITextComponent coloredText(TranslationTextComponent text, TextFormatting color) 
+	{
+        text.withStyle(color);
+        return text;
+    }
 }

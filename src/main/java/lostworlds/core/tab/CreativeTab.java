@@ -269,6 +269,16 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PERMIAN_STONE_STAIRS.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_STONE_SLAB.get().getDefaultInstance());
 		
+		item.add(ItemInit.PERMIAN_COBBLESTONE.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_COBBLESTONE_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_COBBLESTONE_SLAB.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_COBBLESTONE_WALL.get().getDefaultInstance());
+		
+		item.add(ItemInit.PERMIAN_STONE_BRICKS.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_STONE_BRICK_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_STONE_BRICK_SLAB.get().getDefaultInstance());
+		item.add(ItemInit.PERMIAN_STONE_BRICK_WALL.get().getDefaultInstance());
+		
 		item.add(ItemInit.PERMIAN_COAL_ORE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_COPPER_ORE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_DIAMOND_ORE.get().getDefaultInstance());
@@ -277,11 +287,6 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.PERMIAN_IRON_ORE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_LAPIS_ORE.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_REDSTONE_ORE.get().getDefaultInstance());
-		
-		item.add(ItemInit.PERMIAN_COBBLESTONE.get().getDefaultInstance());
-		item.add(ItemInit.PERMIAN_COBBLESTONE_STAIRS.get().getDefaultInstance());
-		item.add(ItemInit.PERMIAN_COBBLESTONE_SLAB.get().getDefaultInstance());
-		item.add(ItemInit.PERMIAN_COBBLESTONE_WALL.get().getDefaultInstance());
 		
 		//Flora
 		item.add(ItemInit.SMALL_PERMIAN_DESERT_PLANT.get().getDefaultInstance());
@@ -298,6 +303,39 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.JURASSIC_STONE.get().getDefaultInstance());
 		item.add(ItemInit.JURASSIC_STONE_STAIRS.get().getDefaultInstance());
 		item.add(ItemInit.JURASSIC_STONE_SLAB.get().getDefaultInstance());
+		
+		item.add(ItemInit.MOSSY_JURASSIC_STONE.get().getDefaultInstance());
+		item.add(ItemInit.MOSSY_JURASSIC_STONE_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.MOSSY_JURASSIC_STONE_SLAB.get().getDefaultInstance());
+		
+		item.add(ItemInit.JURASSIC_COBBLESTONE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_COBBLESTONE_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_COBBLESTONE_SLAB.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_COBBLESTONE_WALL.get().getDefaultInstance());
+		
+		item.add(ItemInit.MOSSY_JURASSIC_COBBLESTONE.get().getDefaultInstance());
+		item.add(ItemInit.MOSSY_JURASSIC_COBBLESTONE_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.MOSSY_JURASSIC_COBBLESTONE_SLAB.get().getDefaultInstance());
+		item.add(ItemInit.MOSSY_JURASSIC_COBBLESTONE_WALL.get().getDefaultInstance());
+		
+		item.add(ItemInit.JURASSIC_STONE_BRICKS.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_STONE_BRICK_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_STONE_BRICK_SLAB.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_STONE_BRICK_WALL.get().getDefaultInstance());
+		
+		item.add(ItemInit.MOSSY_JURASSIC_STONE_BRICKS.get().getDefaultInstance());
+		item.add(ItemInit.MOSSY_JURASSIC_STONE_BRICK_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.MOSSY_JURASSIC_STONE_BRICK_SLAB.get().getDefaultInstance());
+		item.add(ItemInit.MOSSY_JURASSIC_STONE_BRICK_WALL.get().getDefaultInstance());
+		
+		item.add(ItemInit.JURASSIC_COAL_ORE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_COPPER_ORE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_DIAMOND_ORE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_EMERALD_ORE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_GOLD_ORE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_IRON_ORE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_LAPIS_ORE.get().getDefaultInstance());
+		item.add(ItemInit.JURASSIC_REDSTONE_ORE.get().getDefaultInstance());
 		
 		//Archaeology Tables
 		item.add(ItemInit.OAK_ARCHAEOLOGY_TABLE.get().getDefaultInstance());

@@ -35,9 +35,15 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.GINKGO_TREES);
 	}
 	
+	public static void addAraucariaTree(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.ARAUCARIA_VEGETATION);
+	}
+	
 	public static void addPermianOres(BiomeGenerationSettings.Builder builder)
 	{
 		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.PERMIAN_COAL);
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.PERMIAN_COPPER);
 		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.PERMIAN_DIAMOND);
 		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.PERMIAN_GOLD);
 		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.PERMIAN_IRON);

@@ -1,3 +1,4 @@
+
 package lostworlds.core.init;
 
 import lostworlds.common.blocks.ArchaeologyTable;
@@ -54,6 +55,7 @@ import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolType;
 import lostworlds.core.util.ModWoodType;
 import lostworlds.core.util.registry.ModRegistry;
+import lostworlds.world.feature.tree.AraucariaTree;
 import lostworlds.world.feature.tree.ConiferTree;
 import lostworlds.world.feature.tree.GinkgoTree;
 import net.minecraft.block.AbstractBlock;
@@ -69,8 +71,8 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.PaneBlock;
 import net.minecraft.block.PressurePlateBlock;
-import net.minecraft.block.RedstoneOreBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
+import net.minecraft.block.RedstoneOreBlock;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.SeaGrassBlock;
@@ -231,6 +233,11 @@ public class BlockInit
 	public static final RegistryObject<SlabBlock> PERMIAN_COBBLESTONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("permian_cobblestone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<WallBlock> PERMIAN_COBBLESTONE_WALL = ModRegistry.BLOCK_REGISTRY.register("permian_cobblestone_wall", () -> new WallBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	
+	public static final RegistryObject<Block> PERMIAN_STONE_BRICKS = ModRegistry.BLOCK_REGISTRY.register("permian_stone_bricks", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<StairsBlock> PERMIAN_STONE_BRICK_STAIRS = ModRegistry.BLOCK_REGISTRY.register("permian_stone_brick_stairs", () -> new StairsBlock(() -> BlockInit.PERMIAN_STONE_BRICKS.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<SlabBlock> PERMIAN_STONE_BRICK_SLAB = ModRegistry.BLOCK_REGISTRY.register("permian_stone_brick_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<WallBlock> PERMIAN_STONE_BRICK_WALL = ModRegistry.BLOCK_REGISTRY.register("permian_stone_brick_wall", () -> new WallBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	
 	public static final RegistryObject<SmallPermianDesertPlant> SMALL_PERMIAN_DESERT_PLANT = ModRegistry.BLOCK_REGISTRY.register("small_permian_desert_plant", () -> new SmallPermianDesertPlant(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<MediumPermianDesertPlant> MEDIUM_PERMIAN_DESERT_PLANT = ModRegistry.BLOCK_REGISTRY.register("medium_permian_desert_plant", () -> new MediumPermianDesertPlant(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<LargePermianDesertPlant> LARGE_PERMIAN_DESERT_PLANT = ModRegistry.BLOCK_REGISTRY.register("large_permian_desert_plant", () -> new LargePermianDesertPlant(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
@@ -244,6 +251,39 @@ public class BlockInit
 	public static final RegistryObject<Block> JURASSIC_STONE = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
 	public static final RegistryObject<StairsBlock> JURASSIC_STONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_stairs", () -> new StairsBlock(() -> BlockInit.JURASSIC_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
 	public static final RegistryObject<SlabBlock> JURASSIC_STONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+
+	public static final RegistryObject<ModOreBlock> JURASSIC_COPPER_ORE = ModRegistry.BLOCK_REGISTRY.register("jurassic_copper_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+	public static final RegistryObject<ModOreBlock> JURASSIC_GOLD_ORE = ModRegistry.BLOCK_REGISTRY.register("jurassic_gold_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+	public static final RegistryObject<ModOreBlock> JURASSIC_IRON_ORE = ModRegistry.BLOCK_REGISTRY.register("jurassic_iron_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+	public static final RegistryObject<ModOreBlock> JURASSIC_COAL_ORE = ModRegistry.BLOCK_REGISTRY.register("jurassic_coal_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+	public static final RegistryObject<ModOreBlock> JURASSIC_LAPIS_ORE = ModRegistry.BLOCK_REGISTRY.register("jurassic_lapis_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));	
+	public static final RegistryObject<ModOreBlock> JURASSIC_DIAMOND_ORE = ModRegistry.BLOCK_REGISTRY.register("jurassic_diamond_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));	
+	public static final RegistryObject<RedstoneOreBlock> JURASSIC_REDSTONE_ORE = ModRegistry.BLOCK_REGISTRY.register("jurassic_redstone_ore", () -> new RedstoneOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));	
+	public static final RegistryObject<ModOreBlock> JURASSIC_EMERALD_ORE = ModRegistry.BLOCK_REGISTRY.register("jurassic_emerald_ore", () -> new ModOreBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));		
+	
+	public static final RegistryObject<Block> MOSSY_JURASSIC_STONE = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_stone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().randomTicks().strength(3.0F)));
+	public static final RegistryObject<StairsBlock> MOSSY_JURASSIC_STONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_stone_stairs", () -> new StairsBlock(() -> BlockInit.MOSSY_JURASSIC_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<SlabBlock> MOSSY_JURASSIC_STONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_stone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+
+	public static final RegistryObject<Block> JURASSIC_COBBLESTONE = ModRegistry.BLOCK_REGISTRY.register("jurassic_cobblestone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<StairsBlock> JURASSIC_COBBLESTONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("jurassic_cobblestone_stairs", () -> new StairsBlock(() -> BlockInit.JURASSIC_COBBLESTONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<SlabBlock> JURASSIC_COBBLESTONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("jurassic_cobblestone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<WallBlock> JURASSIC_COBBLESTONE_WALL = ModRegistry.BLOCK_REGISTRY.register("jurassic_cobblestone_wall", () -> new WallBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	
+	public static final RegistryObject<Block> MOSSY_JURASSIC_COBBLESTONE = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_cobblestone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<StairsBlock> MOSSY_JURASSIC_COBBLESTONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_cobblestone_stairs", () -> new StairsBlock(() -> BlockInit.MOSSY_JURASSIC_COBBLESTONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<SlabBlock> MOSSY_JURASSIC_COBBLESTONE_SLAB = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_cobblestone_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	public static final RegistryObject<WallBlock> MOSSY_JURASSIC_COBBLESTONE_WALL = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_cobblestone_wall", () -> new WallBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
+	
+	public static final RegistryObject<Block> JURASSIC_STONE_BRICKS = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_bricks", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<StairsBlock> JURASSIC_STONE_BRICK_STAIRS = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_brick_stairs", () -> new StairsBlock(() -> BlockInit.JURASSIC_STONE_BRICKS.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<SlabBlock> JURASSIC_STONE_BRICK_SLAB = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_brick_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<WallBlock> JURASSIC_STONE_BRICK_WALL = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_brick_wall", () -> new WallBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	
+	public static final RegistryObject<Block> MOSSY_JURASSIC_STONE_BRICKS = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_stone_bricks", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<StairsBlock> MOSSY_JURASSIC_STONE_BRICK_STAIRS = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_stone_brick_stairs", () -> new StairsBlock(() -> BlockInit.MOSSY_JURASSIC_STONE_BRICKS.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<SlabBlock> MOSSY_JURASSIC_STONE_BRICK_SLAB = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_stone_brick_slab", () -> new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<WallBlock> MOSSY_JURASSIC_STONE_BRICK_WALL = ModRegistry.BLOCK_REGISTRY.register("mossy_jurassic_stone_brick_wall", () -> new WallBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 	
 	//Sponge Colony
 	public static final RegistryObject<DeadSpongeColonyBlock> DEAD_SPONGE_COLONY = ModRegistry.BLOCK_REGISTRY.register("dead_sponge_colony", () -> new DeadSpongeColonyBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.STONE).noOcclusion().instabreak().sound(SoundType.GRASS)));
@@ -269,7 +309,7 @@ public class BlockInit
 	public static final RegistryObject<ModWallSignBlock> CONIFER_WALL_SIGN = ModRegistry.BLOCK_REGISTRY.register("conifer_wall_sign", () -> new ModWallSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission().dropsLike(BlockInit.CONIFER_SIGN.get()), ModWoodType.CONIFER));
 	
 	//Ginkgo
-	public static final RegistryObject<ConiferLog> GINKGO_LOG = ModRegistry.BLOCK_REGISTRY.register("ginkgo_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final RegistryObject<ConiferLog> GINKGO_LOG = ModRegistry.BLOCK_REGISTRY.register("ginkgo_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_GRAY).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ConiferLog> STRIPPED_GINKGO_LOG = ModRegistry.BLOCK_REGISTRY.register("stripped_ginkgo_log", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ConiferLog> GINKGO_WOOD = ModRegistry.BLOCK_REGISTRY.register("ginkgo_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<ConiferLog> STRIPPED_GINKGO_WOOD = ModRegistry.BLOCK_REGISTRY.register("stripped_ginkgo_wood", () -> new ConiferLog(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
@@ -287,6 +327,10 @@ public class BlockInit
 	public static final RegistryObject<ModStandingSignBlock> GINKGO_SIGN = ModRegistry.BLOCK_REGISTRY.register("ginkgo_sign", () -> new ModStandingSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission(), ModWoodType.GINKGO));
 	public static final RegistryObject<ModWallSignBlock> GINKGO_WALL_SIGN = ModRegistry.BLOCK_REGISTRY.register("ginkgo_wall_sign", () -> new ModWallSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission().dropsLike(BlockInit.GINKGO_SIGN.get()), ModWoodType.GINKGO));
 		
+	//Araucaria
+	public static final RegistryObject<LeavesBlock> ARAUCARIA_LEAVES = ModRegistry.BLOCK_REGISTRY.register("araucaria_leaves", () -> new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.3F).noOcclusion().sound(SoundType.GRASS)));
+	public static final RegistryObject<SaplingBlock> ARAUCARIA_SAPLING = ModRegistry.BLOCK_REGISTRY.register("araucaria_sapling", () -> new SaplingBlock(new AraucariaTree(), AbstractBlock.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+	
 	//Light Concrete
 	public static final RegistryObject<Block> LIGHT_CONCRETE = ModRegistry.BLOCK_REGISTRY.register("light_concrete", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops().strength(6.0F, 8.0F).sound(SoundType.STONE)));
 	public static final RegistryObject<StairsBlock> LIGHT_CONCRETE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("light_concrete_stairs", () -> new StairsBlock(BlockInit.LIGHT_CONCRETE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops().strength(6.0F, 8.0F).sound(SoundType.STONE)));

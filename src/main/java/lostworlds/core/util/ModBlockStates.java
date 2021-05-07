@@ -100,6 +100,7 @@ public class ModBlockStates
 	public static final BlockState PERMIAN_STONE_SLAB = BlockInit.PERMIAN_STONE_SLAB.get().defaultBlockState();
 
 	public static final BlockState PERMIAN_COAL_ORE = BlockInit.PERMIAN_COAL_ORE.get().defaultBlockState();
+	public static final BlockState PERMIAN_COPPER_ORE = BlockInit.PERMIAN_COPPER_ORE.get().defaultBlockState();
 	public static final BlockState PERMIAN_DIAMOND_ORE = BlockInit.PERMIAN_DIAMOND_ORE.get().defaultBlockState();
 	public static final BlockState PERMIAN_EMERALD_ORE = BlockInit.PERMIAN_EMERALD_ORE.get().defaultBlockState();
 	public static final BlockState PERMIAN_GOLD_ORE = BlockInit.PERMIAN_GOLD_ORE.get().defaultBlockState();
@@ -111,7 +112,7 @@ public class ModBlockStates
 	public static final BlockState PERMIAN_COBBLESTONE_STAIRS = BlockInit.PERMIAN_COBBLESTONE_STAIRS.get().defaultBlockState();
 	public static final BlockState PERMIAN_COBBLESTONE_SLAB = BlockInit.PERMIAN_COBBLESTONE_SLAB.get().defaultBlockState();
 	public static final BlockState PERMIAN_COBBLESTONE_WALL = BlockInit.PERMIAN_COBBLESTONE_WALL.get().defaultBlockState();
-
+	
 	public static final BlockState SMALL_PERMIAN_DESERT_PLANT = BlockInit.SMALL_PERMIAN_DESERT_PLANT.get().defaultBlockState();
 	public static final BlockState MEDIUM_PERMIAN_DESERT_PLANT = BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get().defaultBlockState();
 	public static final BlockState LARGE_PERMIAN_DESERT_PLANT = BlockInit.LARGE_PERMIAN_DESERT_PLANT.get().defaultBlockState();
@@ -159,6 +160,10 @@ public class ModBlockStates
 	public static final BlockState GINKGO_DOOR = BlockInit.GINKGO_DOOR.get().defaultBlockState();
 	public static final BlockState GINKGO_SIGN = BlockInit.GINKGO_SIGN.get().defaultBlockState();
 	public static final BlockState GINKGO_WALL_SIGN = BlockInit.GINKGO_WALL_SIGN.get().defaultBlockState();
+
+	//Araucaria
+	public static final BlockState ARAUCARIA_LEAVES = BlockInit.ARAUCARIA_LEAVES.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_SAPLING = BlockInit.ARAUCARIA_SAPLING.get().defaultBlockState();
 
 	//Light Concrete
 	public static final BlockState LIGHT_CONCRETE = BlockInit.LIGHT_CONCRETE.get().defaultBlockState();
