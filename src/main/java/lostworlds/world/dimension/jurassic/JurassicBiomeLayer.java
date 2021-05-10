@@ -13,6 +13,8 @@ public class JurassicBiomeLayer implements IAreaTransformer0
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_CONIFER_FOREST_KEY),
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_GINKGO_FOREST_KEY),
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_PLAINS_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_ISLANDS_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_OCEAN_KEY),
     };
     protected int[] uncommonBiomes = (new int[]
     {

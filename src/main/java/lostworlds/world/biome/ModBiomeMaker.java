@@ -118,6 +118,7 @@ public class ModBiomeMaker
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.DIRT_TERRAIN_SURFACE_BUILDER);
 		DefaultBiomeFeatures.addDefaultSoftDisks(builder);
 		
+		ModBiomeFeatures.addSingleConiferTree(builder);
 		ModBiomeFeatures.addPermianPlainsPlants(builder);
 		ModBiomeFeatures.addPermianOres(builder);
 		ModBiomeFeatures.addPermianWaterLakes(builder);
@@ -277,11 +278,8 @@ public class ModBiomeMaker
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.DIRT_TERRAIN_SURFACE_BUILDER);
-		ModBiomeFeatures.addJurassicWaterLakes(builder);
 		
-		ModBiomeFeatures.addPermianPlainsPlants(builder);
-		ModBiomeFeatures.addPermianOres(builder);
-		ModBiomeFeatures.addPermianWaterLakes(builder);
+		ModBiomeFeatures.addJurassicWaterLakes(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
@@ -330,7 +328,7 @@ public class ModBiomeMaker
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
 		
-		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(0.125F).scale(0.05F).temperature(3.75F).downfall(0.0F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x8e8144).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0xd1c5a1).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.DESERT).depth(0.125F).scale(0.05F).temperature(3.75F).downfall(0.0F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x8e8144).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
 	}
 	
 	public static Biome makeAJurassicRiver() 
@@ -342,6 +340,29 @@ public class ModBiomeMaker
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
 		
-		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.RIVER).depth(-0.5F).scale(0.0F).temperature(0.5F).downfall(0.5F).specialEffects((new BiomeAmbience.Builder()).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0xd1c5a1).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.RIVER).depth(-0.5F).scale(0.0F).temperature(0.5F).downfall(0.5F).specialEffects((new BiomeAmbience.Builder()).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+	}
+	
+	public static Biome makeAJurassicIslands() 
+	{
+		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+		
+		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.ISLANDS_SURFACE_BUILDER);
+		
+		ModBiomeFeatures.addJurassicWaterLakes(builder);
+
+		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
+		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
+
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.PLAINS).depth(1.0F).scale(1.0F).temperature(1.5F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+	}
+	
+	public static Biome makeAJurassicOcean() 
+	{
+		MobSpawnInfo.Builder mobspawninfo$builder = (new MobSpawnInfo.Builder());
+				
+		BiomeGenerationSettings.Builder builder = baseOceanGeneration(ConfiguredSurfaceBuilders.FULL_SAND, false, false, true);
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.SEAGRASS_DEEP_WARM);
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.RIVER).depth(-1.8F).scale(0.1F).temperature(0.5F).downfall(0.5F).specialEffects((new BiomeAmbience.Builder()).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
 	}
 }

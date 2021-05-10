@@ -31,7 +31,7 @@
 
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
-	"item.lostworlds.procompsognathus_dna_disc": "Storage Disc",
+	"item.lostworlds.procompsognathus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.procompsognathus_dna_disc.holding_shift": "Storing: Procompsognathus triassicus",
 	"toolTip.lostworlds.procompsognathus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.procompsognathus_egg": "Procompsognathus Egg",
@@ -41,7 +41,7 @@
 
 	//Palaeoniscum
 	"item.lostworlds.palaeoniscum_dna": "Palaeoniscum DNA",
-	"item.lostworlds.palaeoniscum_dna_disc": "Storage Disc",
+	"item.lostworlds.palaeoniscum_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.palaeoniscum_dna_disc.holding_shift": "Storing: Palaeoniscum freislbeni",
 	"toolTip.lostworlds.palaeoniscum_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.palaeoniscum_spawn": "Palaeoniscum Spawn",
@@ -53,7 +53,7 @@
 
 	//Nautilus
 	"item.lostworlds.nautilus_dna": "Nautilus DNA",	
-	"item.lostworlds.nautilus_dna_disc": "Storage Disc",
+	"item.lostworlds.nautilus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.nautilus_dna_disc.holding_shift": "Storing: Nautilus pompilius",
 	"toolTip.lostworlds.nautilus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.nautilus_spawn": "Nautilus Spawn",	
@@ -65,7 +65,7 @@
 	
 	//Rhinesuchus
 	"item.lostworlds.rhinesuchus_dna": "Rhinesuchus DNA",	
-	"item.lostworlds.rhinesuchus_dna_disc": "Storage Disc",
+	"item.lostworlds.rhinesuchus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.rhinesuchus_dna_disc.holding_shift": "Storing: Rhinesuches whaitsi",
 	"toolTip.lostworlds.rhinesuchus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.rhinesuchus_spawn": "Rhinesuchus Spawn",	
@@ -76,7 +76,7 @@
 	
 	//Dimetrodon
 	"item.lostworlds.dimetrodon_dna": "Dimetrodon DNA",		
-	"item.lostworlds.dimetrodon_dna_disc": "Storage Disc",
+	"item.lostworlds.dimetrodon_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.dimetrodon_dna_disc.holding_shift": "Storing: Dimetrodon limbatus",
 	"toolTip.lostworlds.dimetrodon_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.dimetrodon_egg": "Dimetrodon Egg",	
@@ -86,7 +86,7 @@
 
 	//Edaphosaurus
 	"item.lostworlds.edaphosaurus_dna": "Edaphosaurus DNA",	
-	"item.lostworlds.edaphosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.edaphosaurus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.edaphosaurus_dna_disc.holding_shift": "Storing: Edaphosaurus pogonias",
 	"toolTip.lostworlds.edaphosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.edaphosaurus_egg": "Edaphosaurus Egg",
@@ -96,7 +96,7 @@
 
 	//Gorgonops
 	"item.lostworlds.gorgonops_dna": "Gorgonops DNA",
-	"item.lostworlds.gorgonops_dna_disc": "Storage Disc",
+	"item.lostworlds.gorgonops_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.gorgonops_dna_disc.holding_shift": "Storing: Gorgonops whaitsi",
 	"toolTip.lostworlds.gorgonops_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.gorgonops_egg": "Gorgonops Egg",
@@ -106,7 +106,7 @@
 
 	//Carnotaurus
 	"item.lostworlds.carnotaurus_dna": "Carnotaurus DNA",
-	"item.lostworlds.carnotaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.carnotaurus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.carnotaurus_dna_disc.holding_shift": "Storing: Carnotaurus sastrei",
 	"toolTip.lostworlds.carnotaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.carnotaurus_egg": "Carnotaurus Egg",
@@ -116,7 +116,7 @@
 
 	//Tyrannosaurus	
 	"item.lostworlds.tyrannosaurus_dna": "Tyrannosaurus DNA",
-	"item.lostworlds.tyrannosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.tyrannosaurus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.tyrannosaurus_dna_disc.holding_shift": "Storing: Tyrannosaurus rex",
 	"toolTip.lostworlds.tyrannosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.tyrannosaurus_egg": "Tyrannosaurus Egg",
@@ -126,7 +126,7 @@
 
 	//Allosaurus	
 	"item.lostworlds.allosaurus_dna": "Allosaurus DNA",
-	"item.lostworlds.allosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.allosaurus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.allosaurus_dna_disc.holding_shift": "Storing: Allosaurus fragilis",
 	"toolTip.lostworlds.allosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_allosaurus_meat": "Raw Allosaurus Meat",
@@ -135,7 +135,7 @@
 	
 	//Giganotosaurus	
 	"item.lostworlds.giganotosaurus_dna": "Giganotosaurus DNA",
-	"item.lostworlds.giganotosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.giganotosaurus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.giganotosaurus_dna_disc.holding_shift": "Storing: Giganotosaurus carolinii",
 	"toolTip.lostworlds.giganotosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_giganotosaurus_meat": "Raw Giganotosaurus Meat",
@@ -144,7 +144,7 @@
 
 	//Suchomimus	
 	"item.lostworlds.suchomimus_dna": "Suchomimus DNA",
-	"item.lostworlds.suchomimus_dna_disc": "Storage Disc",
+	"item.lostworlds.suchomimus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.suchomimus_dna_disc.holding_shift": "Storing: Suchomimus tenerensis",
 	"toolTip.lostworlds.suchomimus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_suchomimus_meat": "Raw Suchomimus Meat",
@@ -153,7 +153,7 @@
 	
 	//Tetraceratops	
 	"item.lostworlds.tetraceratops_dna": "Tetraceratops DNA",
-	"item.lostworlds.tetraceratops_dna_disc": "Storage Disc",
+	"item.lostworlds.tetraceratops_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.tetraceratops_dna_disc.holding_shift": "Storing: Tetraceratops insignis",
 	"toolTip.lostworlds.tetraceratops_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_tetraceratops_meat": "Raw Tetraceratops Meat",
@@ -162,7 +162,7 @@
 
 	//Great Auk	
 	"item.lostworlds.great_auk_dna": "Great Auk DNA",
-	"item.lostworlds.great_auk_dna_disc": "Storage Disc",
+	"item.lostworlds.great_auk_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.great_auk_dna_disc.holding_shift": "Storing: Pinguinus impennis",
 	"toolTip.lostworlds.great_auk_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_great_auk_meat": "Raw Great Auk Meat",
@@ -172,7 +172,7 @@
 
 	//Ouranosaurus
 	"item.lostworlds.ouranosaurus_dna": "Ouranosaurus DNA",
-	"item.lostworlds.ouranosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.ouranosaurus_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.ouranosaurus_dna_disc.holding_shift": "Storing: Ouranosaurus nigeriensis",
 	"toolTip.lostworlds.ouranosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_ouranosaurus_meat": "Raw Ouranosaurus Meat",
@@ -181,7 +181,7 @@
 
 	//Fukuivenator
 	"item.lostworlds.fukuivenator_dna": "Fukuivenator DNA",
-	"item.lostworlds.fukuivenator_dna_disc": "Storage Disc",
+	"item.lostworlds.fukuivenator_dna_disc": "Storage Disk",
 	"toolTip.lostworlds.fukuivenator_dna_disc.holding_shift": "Storing: Fukuivenator paradoxus",
 	"toolTip.lostworlds.fukuivenator_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_fukuivenator_meat": "Raw Fukuivenator Meat",
@@ -213,7 +213,7 @@
 	"item.lostworlds.jp_music_disc.desc": "John Williams - Welcome to Jurassic Park",
 
 	//Storage
-	"item.lostworlds.storage_disc": "Storage Disc",
+	"item.lostworlds.storage_disc": "Storage Disk",
 	"toolTip.lostworlds.storage_disc.holding_shift": "Stores DNA Information For Computer Use",
 	"toolTip.lostworlds.storage_disc.not_holding_shift": "Hold Shift For More Information",
 
@@ -280,7 +280,6 @@
 	"block.lostworlds.plastered_fossil": "Plastered Fossil",
 
 	//Fossil Processing
-	"block.lostworlds.fossil_cleaner": "Fossil Cleaner",
 
 	"block.lostworlds.power_supply_block": "Power Supply Block",
 	"toolTip.lostworlds.power_supply_block": "A Fancier Way of Powering Your Machines",
@@ -622,6 +621,7 @@
 
 	//Jurassic
 	"entity.lostworlds.allosaurus": "Allosaurus fragilis",
+	"entity.lostworlds.cryolophosaurus": "Cryolophosaurus ellioti",
 	
 	//Cretaceous 
 	"entity.lostworlds.carnotaurus": "Carnotaurus sastrei",

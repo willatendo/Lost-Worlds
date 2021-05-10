@@ -30,9 +30,8 @@ public class PalaeoniscumEntity extends AbstractPrehistoricGroupFishEntity imple
 	public PalaeoniscumEntity(EntityType<? extends AbstractPrehistoricGroupFishEntity> type, World worldIn) 
 	{
 		super(type, worldIn, TimeEras.PERMIAN);
-		this.noCulling = true;
 	}
-
+	
 	@Override
 	public void registerControllers(AnimationData data) 
 	{

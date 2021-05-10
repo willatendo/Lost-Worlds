@@ -6,10 +6,12 @@ import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.EntityPredicates;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -85,6 +87,9 @@ public class OuranosaurusEntity extends AbstractPrehistoricAnimalEntity implemen
 		super.registerGoals();
 		this.goalSelector.addGoal(5, new PrehistoricBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
+		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, CarnotaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
+		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, GiganotosaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
+		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, TyrannosaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 	}
 	
 	@Override

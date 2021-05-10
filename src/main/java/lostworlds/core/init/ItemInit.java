@@ -288,6 +288,8 @@ public class ItemInit
 	public static final RegistryObject<Item> PSITTACOSAURUS_COOKED_MEAT = registerCookedMeat("psittacosaurus", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> PSITTACOSAURUS_SPAWN_EGG = registerSpawnEgg("psittacosaurus", () -> EntityInit.PSITTACOSAURUS_ENTITY.get(), 0x6d4d20, 0x434c16);
 		
+	public static final RegistryObject<Item> CRYOLOPHOSAURUS_SPAWN_EGG = registerSpawnEgg("cryolophosaurus", () -> EntityInit.CRYOLOPHOSAURUS_ENTITY.get(), 0xcec21e, 0xce791e);
+
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
 	

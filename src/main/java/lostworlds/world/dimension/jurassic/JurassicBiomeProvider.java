@@ -6,6 +6,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
+import lostworlds.world.init.BiomeInit;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.Util;
@@ -23,7 +24,7 @@ public class JurassicBiomeProvider extends BiomeProvider
 	private final long seed;
     private final Registry<Biome> registry;
     private final Layer genBiomes;
-    private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of();
+    private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeInit.JURASSIC_CONIFER_FOREST_KEY, BiomeInit.JURASSIC_GINKGO_FOREST_KEY, BiomeInit.JURASSIC_PLAINS_KEY, BiomeInit.JURASSIC_ISLANDS_KEY, BiomeInit.JURASSIC_OCEAN_KEY, BiomeInit.JURASSIC_MOUNTAINS_KEY, BiomeInit.JURASSIC_DESERT_KEY, BiomeInit.JURASSIC_ERRODED_MOUNTAINS_KEY);
     
     public JurassicBiomeProvider(long seed, Registry<Biome> registry) 
     {    	

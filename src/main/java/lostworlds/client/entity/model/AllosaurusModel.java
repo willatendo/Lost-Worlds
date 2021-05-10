@@ -11,8 +11,6 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 public class AllosaurusModel extends AnimatedGeoModel<AllosaurusEntity> 
 {	
 	private static final ResourceLocation MALE = new ResourceLocation(ModID.ID, "textures/model/entity/allosaurus/male.png");
-	private static final ResourceLocation FEMALE = new ResourceLocation(ModID.ID, "textures/model/entity/allosaurus/female.png");
-	private static final ResourceLocation BABY = new ResourceLocation(ModID.ID, "textures/model/entity/allosaurus/baby.png");
 	private ResourceLocation texture;
 	
 	@Override
@@ -38,20 +36,8 @@ public class AllosaurusModel extends AnimatedGeoModel<AllosaurusEntity>
 	{
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("Neck");
-		
-		if(entity.getSex() == 0)
-		{
-			texture = MALE;
-		}
-		if(entity.getSex() == 1)
-		{
-			texture = FEMALE;
-		}
-		
-		if(entity.isBaby())
-		{
-			texture = BABY;
-		}
+
+		texture = MALE;
 		
 		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);

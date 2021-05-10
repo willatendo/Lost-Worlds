@@ -35,6 +35,11 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.GINKGO_TREES);
 	}
 	
+	public static void addSingleConiferTree(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.SINGLE_CONIFER_TREE);
+	}
+	
 	public static void addAraucariaTree(BiomeGenerationSettings.Builder builder)
 	{
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.ARAUCARIA_VEGETATION);

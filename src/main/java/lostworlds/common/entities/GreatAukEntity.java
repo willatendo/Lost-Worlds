@@ -4,16 +4,18 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
 import lostworlds.common.goal.PrehistoricBreedGoal;
 import lostworlds.core.init.EntityInit;
-import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.passive.fish.CodEntity;
 import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.entity.passive.fish.TropicalFishEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.EntityPredicates;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -26,7 +28,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class GreatAukEntity extends AbstractPrehistoricLandAndSeaEntity implements IAnimatable
 {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.COD, Items.SALMON, Items.TROPICAL_FISH, ItemInit.PALAEONISCUM_MEAT.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.COD, Items.SALMON, Items.TROPICAL_FISH);
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
@@ -100,6 +102,7 @@ public class GreatAukEntity extends AbstractPrehistoricLandAndSeaEntity implemen
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CodEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SalmonEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, TropicalFishEntity.class, false));
+		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 	}
 	
 	@Override

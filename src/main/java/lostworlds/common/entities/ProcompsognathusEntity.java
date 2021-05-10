@@ -9,8 +9,6 @@ import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
-import net.minecraft.entity.passive.ChickenEntity;
-import net.minecraft.entity.passive.ParrotEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -69,8 +67,6 @@ public class ProcompsognathusEntity extends AbstractPrehistoricAnimalEntity impl
 		this.goalSelector.addGoal(5, new PrehistoricBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ChickenEntity.class, false));
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ParrotEntity.class, false));
 	}
 
 	@Override

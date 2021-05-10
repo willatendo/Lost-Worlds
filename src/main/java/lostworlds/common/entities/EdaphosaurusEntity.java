@@ -24,7 +24,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class EdaphosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.SMALL_PERMIAN_DESERT_PLANT.get(), ItemInit.MEDIUM_PERMIAN_DESERT_PLANT.get(), ItemInit.LARGE_PERMIAN_DESERT_PLANT.get(), ItemInit.CONIFER_SAPLING.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.SMALL_PERMIAN_DESERT_PLANT.get(), ItemInit.MEDIUM_PERMIAN_DESERT_PLANT.get(), ItemInit.LARGE_PERMIAN_DESERT_PLANT.get(), ItemInit.PERMIAN_GROUND_FERNS.get(), ItemInit.CONIFER_SAPLING.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 

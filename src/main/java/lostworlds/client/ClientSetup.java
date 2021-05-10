@@ -2,6 +2,7 @@ package lostworlds.client;
 
 import lostworlds.client.entity.render.AllosaurusRender;
 import lostworlds.client.entity.render.CarnotaurusRender;
+import lostworlds.client.entity.render.CryolophosaurusRender;
 import lostworlds.client.entity.render.DimetrodonRender;
 import lostworlds.client.entity.render.EdaphosaurusRender;
 import lostworlds.client.entity.render.FukuivenatorRender;
@@ -9,6 +10,7 @@ import lostworlds.client.entity.render.GiganotosaurusRender;
 import lostworlds.client.entity.render.GorgonopsRender;
 import lostworlds.client.entity.render.GreatAukRender;
 import lostworlds.client.entity.render.NautilusRender;
+import lostworlds.client.entity.render.OstromiaRender;
 import lostworlds.client.entity.render.OuranosaurusRender;
 import lostworlds.client.entity.render.PalaeoniscumRender;
 import lostworlds.client.entity.render.ProcompsognathusRender;
@@ -139,6 +141,8 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.OURANOSAURUS_ENTITY.get(), OuranosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.FUKUIVENATOR_ENTITY.get(), FukuivenatorRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PSITTACOSAURUS_ENTITY.get(), PsittacosaurusRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.CRYOLOPHOSAURUS_ENTITY.get(), CryolophosaurusRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.OSTROMIA_ENTITY.get(), OstromiaRender::new);
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 		//Eggs
