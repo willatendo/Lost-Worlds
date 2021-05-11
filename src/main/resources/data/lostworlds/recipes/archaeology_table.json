@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"$$$",
+		"###",
+		"@ @"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:andesite"
+		},
+		"@": {
+			"item": "minecraft:cyan_terracotta"
+		},
+		"$": {
+			"item": "minecraft:stone"
+		}
+	},
+	"result": {
+		"item": "lostworlds:archaeology_table"
+	}
+}

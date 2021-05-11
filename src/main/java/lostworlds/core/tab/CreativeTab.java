@@ -36,7 +36,7 @@ public class CreativeTab extends ItemGroup
 	@Override
 	public ResourceLocation getBackgroundImage() 
 	{
-		return new ResourceLocation(ModID.ID, "textures/gui/creative_tab/lostworlds_tab.png");
+		return ModID.lostWorlds("textures/gui/creative_tab/lostworlds_tab.png");
 	}
 	
 	@Override
@@ -339,23 +339,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.JURASSIC_REDSTONE_ORE.get().getDefaultInstance());
 		
 		//Archaeology Tables
-		item.add(ItemInit.OAK_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		item.add(ItemInit.STRIPPED_OAK_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		
-		item.add(ItemInit.BIRCH_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		item.add(ItemInit.STRIPPED_BIRCH_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		
-		item.add(ItemInit.SPRUCE_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		item.add(ItemInit.STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		
-		item.add(ItemInit.JUNGLE_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		item.add(ItemInit.STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		
-		item.add(ItemInit.ACACIA_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		item.add(ItemInit.STRIPPED_ACACIA_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		
-		item.add(ItemInit.DARK_OAK_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		item.add(ItemInit.STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
+		item.add(ItemInit.ARCHAEOLOGY_TABLE.get().getDefaultInstance());
 		
 		//Conifer
 		item.add(ItemInit.CONIFER_LOG.get().getDefaultInstance());
@@ -375,8 +359,6 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.CONIFER_DOOR.get().getDefaultInstance());
 		item.add(ItemInit.CONIFER_SIGN.get().getDefaultInstance());
 		item.add(ItemInit.CONIFER_BOAT.get().getDefaultInstance());
-		item.add(ItemInit.CONIFER_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		item.add(ItemInit.STRIPPED_CONIFER_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
 		
 		//Ginkgo
 		item.add(ItemInit.GINKGO_LOG.get().getDefaultInstance());
@@ -396,8 +378,15 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.GINKGO_DOOR.get().getDefaultInstance());
 		item.add(ItemInit.GINKGO_SIGN.get().getDefaultInstance());
 		item.add(ItemInit.GINKGO_BOAT.get().getDefaultInstance());
-		item.add(ItemInit.GINKGO_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
-		item.add(ItemInit.STRIPPED_GINKGO_ARCHAEOLOGY_TABLE.get().getDefaultInstance());
+		
+		//Araucaria
+		item.add(ItemInit.ARAUCARIA_LOG.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_WOOD.get().getDefaultInstance());
+		item.add(ItemInit.STRIPPED_ARAUCARIA_LOG.get().getDefaultInstance());
+		item.add(ItemInit.STRIPPED_ARAUCARIA_WOOD.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_LEAVES.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_SAPLING.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_PLANKS.get().getDefaultInstance());
 		
 		//Decoration Blocks
 		//Light Concrete

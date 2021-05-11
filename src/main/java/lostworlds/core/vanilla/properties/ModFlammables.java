@@ -14,22 +14,7 @@ public class ModFlammables
 	}
 	
 	public static void flammables() 
-	{
-		flammableBlock(BlockInit.ACACIA_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.BIRCH_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.CONIFER_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.DARK_OAK_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.JUNGLE_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.OAK_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.SPRUCE_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.STRIPPED_ACACIA_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.STRIPPED_BIRCH_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.STRIPPED_CONIFER_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.STRIPPED_OAK_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		flammableBlock(BlockInit.STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE.get(), 5, 5);
-		
+	{	
 		flammableBlock(BlockInit.CONIFER_BUTTON.get(), 5, 5);
 		flammableBlock(BlockInit.CONIFER_DOOR.get(), 5, 5);
 		flammableBlock(BlockInit.CONIFER_FENCE.get(), 5, 5);

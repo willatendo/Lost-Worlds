@@ -72,6 +72,15 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> PERMIAN_LAPIS = register("permian_lapis", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.PERMIAN_STONE, ModBlockStates.PERMIAN_LAPIS_ORE, 7)).decorated(Placement.DEPTH_AVERAGE.configured(new DepthAverageConfig(16, 16))).squared());
 	public static final ConfiguredFeature<?, ?> PERMIAN_EMERALD = register("permian_emerald", Feature.EMERALD_ORE.configured(new ReplaceBlockConfig(ModBlockStates.PERMIAN_STONE, ModBlockStates.PERMIAN_EMERALD_ORE)).decorated(Placement.EMERALD_ORE.configured(IPlacementConfig.NONE)));
 	
+	public static final ConfiguredFeature<?, ?> JURASSIC_COAL = register("jurassic_coal", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.JURASSIC_STONE, ModBlockStates.JURASSIC_COAL_ORE, 17)).range(128).squared().count(10));
+	public static final ConfiguredFeature<?, ?> JURASSIC_COPPER = register("jurassic_copper", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.JURASSIC_STONE, ModBlockStates.JURASSIC_COPPER_ORE, 7)).range(128).squared().count(10));
+	public static final ConfiguredFeature<?, ?> JURASSIC_IRON = register("jurassic_iron", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.JURASSIC_STONE, ModBlockStates.JURASSIC_IRON_ORE, 9)).range(64).squared().count(20));
+	public static final ConfiguredFeature<?, ?> JURASSIC_GOLD = register("jurassic_gold", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.JURASSIC_STONE, ModBlockStates.JURASSIC_GOLD_ORE, 9)).range(32).squared().count(2));
+	public static final ConfiguredFeature<?, ?> JURASSIC_REDSTONE = register("jurassic_redstone", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.JURASSIC_STONE, ModBlockStates.JURASSIC_REDSTONE_ORE, 8)).range(16).squared().count(8));
+	public static final ConfiguredFeature<?, ?> JURASSIC_DIAMOND = register("jurassic_diamond", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.JURASSIC_STONE, ModBlockStates.JURASSIC_DIAMOND_ORE, 8)).range(16).squared());
+	public static final ConfiguredFeature<?, ?> JURASSIC_LAPIS = register("jurassic_lapis", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.JURASSIC_STONE, ModBlockStates.JURASSIC_LAPIS_ORE, 7)).decorated(Placement.DEPTH_AVERAGE.configured(new DepthAverageConfig(16, 16))).squared());
+	public static final ConfiguredFeature<?, ?> JURASSIC_EMERALD = register("jurassic_emerald", Feature.EMERALD_ORE.configured(new ReplaceBlockConfig(ModBlockStates.PERMIAN_STONE, ModBlockStates.JURASSIC_EMERALD_ORE)).decorated(Placement.EMERALD_ORE.configured(IPlacementConfig.NONE)));
+	
 	//Lakes
 	//Permian
 	public static final ConfiguredFeature<?, ?> PERMIAN_WATER_LAKE = FeatureInit.LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.WATER)).decorated(Placement.WATER_LAKE.configured(new ChanceConfig(4)));

@@ -65,10 +65,10 @@ public class BiomeInit
 	public static final RegistryObject<Biome> JURASSIC_RIVER = createBiome("jurassic_river", ModBiomeMaker::makeAJurassicRiver);
 	public static final RegistryKey<Biome> JURASSIC_RIVER_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_river"));
 	
-	public static final RegistryObject<Biome> JURASSIC_ISLANDS = createBiome("jurassic_islands", ModBiomeMaker::makeAJurassicRiver);
+	public static final RegistryObject<Biome> JURASSIC_ISLANDS = createBiome("jurassic_islands", ModBiomeMaker::makeAJurassicIslands);
 	public static final RegistryKey<Biome> JURASSIC_ISLANDS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_islands"));
 	
-	public static final RegistryObject<Biome> JURASSIC_OCEAN = createBiome("jurassic_ocean", ModBiomeMaker::makeAJurassicRiver);
+	public static final RegistryObject<Biome> JURASSIC_OCEAN = createBiome("jurassic_ocean", ModBiomeMaker::makeAJurassicOcean);
 	public static final RegistryKey<Biome> JURASSIC_OCEAN_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_ocean"));
 	
 	//Registry

@@ -41,13 +41,8 @@ public class ModBiomeMaker
 	
 	private static BiomeGenerationSettings.Builder baseOceanGeneration(ConfiguredSurfaceBuilder<SurfaceBuilderConfig> p_244225_0_, boolean p_244225_1_, boolean p_244225_2_, boolean p_244225_3_) 
 	{
-		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(p_244225_0_).addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.WARM_OCEAN_VEGETATION);
-		DefaultBiomeFeatures.addDefaultUndergroundVariety(builder);
-		DefaultBiomeFeatures.addDefaultSoftDisks(builder);
-		DefaultBiomeFeatures.addDefaultSprings(builder);
-
-		ModBiomeFeatures.addPermianOres(builder);
-		
+		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(p_244225_0_);
+				
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
 		
@@ -220,7 +215,12 @@ public class ModBiomeMaker
 		mobspawninfo$builder.addSpawn(EntityClassification.WATER_AMBIENT, new MobSpawnInfo.Spawners(EntityInit.PALAEONISCUM_ENTITY.get(), 1, 4, 5));
 		
 		BiomeGenerationSettings.Builder builder = baseOceanGeneration(ConfiguredSurfaceBuilders.FULL_SAND, false, false, true);
-		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.SEAGRASS_DEEP_WARM);
+		
+		DefaultBiomeFeatures.addDefaultSeagrass(builder);
+		DefaultBiomeFeatures.addLukeWarmKelp(builder);
+
+		ModBiomeFeatures.addPermianOres(builder);
+		
 		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.RIVER).depth(-1.8F).scale(0.1F).temperature(0.5F).downfall(0.5F).specialEffects((new BiomeAmbience.Builder()).waterColor(4445678).waterFogColor(270131).fogColor(12638463).skyColor(calculateSkyColor(0.5F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
 	}
 	
@@ -236,6 +236,7 @@ public class ModBiomeMaker
 		
 		ModBiomeFeatures.addConiferTree(builder);
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
@@ -251,6 +252,7 @@ public class ModBiomeMaker
 		
 		ModBiomeFeatures.addGinkgoTree(builder);
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
@@ -266,6 +268,7 @@ public class ModBiomeMaker
 		
 		ModBiomeFeatures.addAraucariaTree(builder);
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
@@ -280,6 +283,7 @@ public class ModBiomeMaker
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.DIRT_TERRAIN_SURFACE_BUILDER);
 		
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
@@ -295,6 +299,7 @@ public class ModBiomeMaker
 		BiomeGenerationSettings.Builder builder = genSettings(SurfaceBuilderInit.NAKED_JURASSIC_MOUNTAIN, ModSurfaceBuilders.JURASSIC_STONE_MOUNTAIN_CONFIG);
 		
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
@@ -309,6 +314,7 @@ public class ModBiomeMaker
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.JURASSIC_ERRODED_MOUNTAIN_SURFACE_BUILDER);
 		
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
@@ -322,8 +328,8 @@ public class ModBiomeMaker
 						
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.GRAVEL_TERRAIN_SURFACE_BUILDER);
 
-		ModBiomeFeatures.addJurassicWaterLakes(builder);
 		ModBiomeFeatures.addJurassicLavaLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
@@ -336,7 +342,8 @@ public class ModBiomeMaker
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 						
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.GRAVEL_TERRAIN_SURFACE_BUILDER);
-				
+		ModBiomeFeatures.addJurassicOres(builder);
+			
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
 		
@@ -349,12 +356,16 @@ public class ModBiomeMaker
 		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.ISLANDS_SURFACE_BUILDER);
 		
+		DefaultBiomeFeatures.addDefaultSeagrass(builder);
+		DefaultBiomeFeatures.addLukeWarmKelp(builder);
+		
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
 
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
 
-		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.PLAINS).depth(1.0F).scale(1.0F).temperature(1.5F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.PLAINS).depth(-0.2F).scale(0.1F).temperature(1.5F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
 	}
 	
 	public static Biome makeAJurassicOcean() 
@@ -362,7 +373,11 @@ public class ModBiomeMaker
 		MobSpawnInfo.Builder mobspawninfo$builder = (new MobSpawnInfo.Builder());
 				
 		BiomeGenerationSettings.Builder builder = baseOceanGeneration(ConfiguredSurfaceBuilders.FULL_SAND, false, false, true);
-		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.SEAGRASS_DEEP_WARM);
+		
+		DefaultBiomeFeatures.addDefaultSeagrass(builder);
+		DefaultBiomeFeatures.addLukeWarmKelp(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
+		
 		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.RIVER).depth(-1.8F).scale(0.1F).temperature(0.5F).downfall(0.5F).specialEffects((new BiomeAmbience.Builder()).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
 	}
 }

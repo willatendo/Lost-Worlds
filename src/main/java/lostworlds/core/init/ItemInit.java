@@ -390,30 +390,7 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> TIME_MACHINE = registerBlockItem("time_machine", () -> BlockInit.TIME_MACHINE.get());
 	
 	//Museum Stuff
-	public static final RegistryObject<BlockItem> OAK_ARCHAEOLOGY_TABLE = registerBlockItem("oak_archaeology_table", () -> BlockInit.OAK_ARCHAEOLOGY_TABLE.get());
-	public static final RegistryObject<BlockItem> STRIPPED_OAK_ARCHAEOLOGY_TABLE =registerBlockItem("stripped_oak_archaeology_table", () -> BlockInit.STRIPPED_OAK_ARCHAEOLOGY_TABLE.get());
-	
-	public static final RegistryObject<BlockItem> BIRCH_ARCHAEOLOGY_TABLE = registerBlockItem("birch_archaeology_table", () -> BlockInit.BIRCH_ARCHAEOLOGY_TABLE.get());
-	public static final RegistryObject<BlockItem> STRIPPED_BIRCH_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_birch_archaeology_table", () -> BlockInit.STRIPPED_BIRCH_ARCHAEOLOGY_TABLE.get());
-	
-	public static final RegistryObject<BlockItem> JUNGLE_ARCHAEOLOGY_TABLE = registerBlockItem("jungle_archaeology_table", () -> BlockInit.JUNGLE_ARCHAEOLOGY_TABLE.get());
-	public static final RegistryObject<BlockItem> STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_jungle_archaeology_table", () -> BlockInit.STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE.get());
-	
-	public static final RegistryObject<BlockItem> SPRUCE_ARCHAEOLOGY_TABLE = registerBlockItem("spruce_archaeology_table", () -> BlockInit.SPRUCE_ARCHAEOLOGY_TABLE.get());
-	public static final RegistryObject<BlockItem> STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_spruce_archaeology_table", () -> BlockInit.STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE.get());
-	
-	public static final RegistryObject<BlockItem> ACACIA_ARCHAEOLOGY_TABLE = registerBlockItem("acacia_archaeology_table", () -> BlockInit.ACACIA_ARCHAEOLOGY_TABLE.get());
-	public static final RegistryObject<BlockItem> STRIPPED_ACACIA_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_acacia_archaeology_table", () -> BlockInit.STRIPPED_ACACIA_ARCHAEOLOGY_TABLE.get());
-	
-	public static final RegistryObject<BlockItem> DARK_OAK_ARCHAEOLOGY_TABLE = registerBlockItem("dark_oak_archaeology_table", () -> BlockInit.DARK_OAK_ARCHAEOLOGY_TABLE.get());
-	public static final RegistryObject<BlockItem> STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_dark_oak_archaeology_table", () -> BlockInit.STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE.get());
-	
-	public static final RegistryObject<BlockItem> CONIFER_ARCHAEOLOGY_TABLE = registerBlockItem("conifer_archaeology_table", () -> BlockInit.CONIFER_ARCHAEOLOGY_TABLE.get());
-	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_conifer_archaeology_table", () -> BlockInit.STRIPPED_CONIFER_ARCHAEOLOGY_TABLE.get());
-	
-	public static final RegistryObject<BlockItem> GINKGO_ARCHAEOLOGY_TABLE = registerBlockItem("ginkgo_archaeology_table", () -> BlockInit.GINKGO_ARCHAEOLOGY_TABLE.get());
-	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_ARCHAEOLOGY_TABLE = registerBlockItem("stripped_ginkgo_archaeology_table", () -> BlockInit.STRIPPED_GINKGO_ARCHAEOLOGY_TABLE.get());
-	
+	public static final RegistryObject<BlockItem> ARCHAEOLOGY_TABLE = registerBlockItem("archaeology_table", () -> BlockInit.ARCHAEOLOGY_TABLE.get());
 	//Volcanic Stuff
 	public static final RegistryObject<BlockItem> VOLCANIC_ROCK = registerBlockItem("volcanic_rock", () -> BlockInit.VOLCANIC_ROCK.get());	
 	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_STAIRS = registerBlockItem("volcanic_rock_stairs", () -> BlockInit.VOLCANIC_ROCK_STAIRS.get());	
@@ -549,8 +526,13 @@ public class ItemInit
 	public static final RegistryObject<ModBoatItem> GINKGO_BOAT = registerBoatItem("ginkgo_boat", ModBoatType.GINKGO);
 
 	//Araucaria
+	public static final RegistryObject<BlockItem> ARAUCARIA_LOG = registerBuringBlockItem("araucaria_log", () -> BlockInit.ARAUCARIA_LOG.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_WOOD = registerBuringBlockItem("araucaria_wood", () -> BlockInit.ARAUCARIA_WOOD.get());
+	public static final RegistryObject<BlockItem> STRIPPED_ARAUCARIA_LOG = registerBuringBlockItem("stripped_araucaria_log", () -> BlockInit.STRIPPED_ARAUCARIA_LOG.get());
+	public static final RegistryObject<BlockItem> STRIPPED_ARAUCARIA_WOOD = registerBuringBlockItem("stripped_araucaria_wood", () -> BlockInit.STRIPPED_ARAUCARIA_WOOD.get());
 	public static final RegistryObject<BlockItem> ARAUCARIA_LEAVES = registerBlockItem("araucaria_leaves", () -> BlockInit.ARAUCARIA_LEAVES.get());
 	public static final RegistryObject<BlockItem> ARAUCARIA_SAPLING = registerBuringBlockItem("araucaria_sapling", () -> BlockInit.ARAUCARIA_SAPLING.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_PLANKS = registerBuringBlockItem("araucaria_planks", () -> BlockInit.ARAUCARIA_PLANKS.get());
 	
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  registerBlockItem("light_concrete", () -> BlockInit.LIGHT_CONCRETE.get());

@@ -59,26 +59,7 @@ public class ModBlockStates
 	public static final BlockState NESTING_BLOCK = BlockInit.NESTING_BLOCK.get().defaultBlockState();
 
 	//Museum Stuff
-	public static final BlockState OAK_ARCHAEOLOGY_TABLE = BlockInit.OAK_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	public static final BlockState STRIPPED_OAK_ARCHAEOLOGY_TABLE = BlockInit.STRIPPED_OAK_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	
-	public static final BlockState BIRCH_ARCHAEOLOGY_TABLE = BlockInit.BIRCH_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	public static final BlockState STRIPPED_BIRCH_ARCHAEOLOGY_TABLE = BlockInit.STRIPPED_BIRCH_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	
-	public static final BlockState JUNGLE_ARCHAEOLOGY_TABLE = BlockInit.JUNGLE_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	public static final BlockState STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE = BlockInit.STRIPPED_JUNGLE_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	
-	public static final BlockState SPRUCE_ARCHAEOLOGY_TABLE = BlockInit.SPRUCE_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	public static final BlockState STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE = BlockInit.STRIPPED_SPRUCE_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-
-	public static final BlockState ACACIA_ARCHAEOLOGY_TABLE = BlockInit.ACACIA_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	public static final BlockState STRIPPED_ACACIA_ARCHAEOLOGY_TABLE = BlockInit.STRIPPED_ACACIA_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	
-	public static final BlockState DARK_OAK_ARCHAEOLOGY_TABLE = BlockInit.DARK_OAK_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	public static final BlockState STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE = BlockInit.STRIPPED_DARK_OAK_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	
-	public static final BlockState CONIFER_ARCHAEOLOGY_TABLE = BlockInit.CONIFER_ARCHAEOLOGY_TABLE.get().defaultBlockState();
-	public static final BlockState STRIPPED_CONIFER_ARCHAEOLOGY_TABLE = BlockInit.STRIPPED_CONIFER_ARCHAEOLOGY_TABLE.get().defaultBlockState();
+	public static final BlockState ARCHAEOLOGY_TABLE = BlockInit.ARCHAEOLOGY_TABLE.get().defaultBlockState();
 	
 	//Volcanic Stuff
 	public static final BlockState VOLCANIC_ROCK = BlockInit.VOLCANIC_ROCK.get().defaultBlockState();
@@ -122,6 +103,17 @@ public class ModBlockStates
 
 	public static final BlockState DICKSONIA = BlockInit.DICKSONIA.get().defaultBlockState();
 	public static final BlockState TALL_DICKSONIA = BlockInit.TALL_DICKSONIA.get().defaultBlockState();
+
+	public static final BlockState JURASSIC_STONE = BlockInit.JURASSIC_STONE.get().defaultBlockState();
+	
+	public static final BlockState JURASSIC_COAL_ORE = BlockInit.JURASSIC_COAL_ORE.get().defaultBlockState();
+	public static final BlockState JURASSIC_COPPER_ORE = BlockInit.JURASSIC_COPPER_ORE.get().defaultBlockState();
+	public static final BlockState JURASSIC_DIAMOND_ORE = BlockInit.JURASSIC_DIAMOND_ORE.get().defaultBlockState();
+	public static final BlockState JURASSIC_EMERALD_ORE = BlockInit.JURASSIC_EMERALD_ORE.get().defaultBlockState();
+	public static final BlockState JURASSIC_GOLD_ORE = BlockInit.JURASSIC_GOLD_ORE.get().defaultBlockState();
+	public static final BlockState JURASSIC_IRON_ORE = BlockInit.JURASSIC_IRON_ORE.get().defaultBlockState();
+	public static final BlockState JURASSIC_LAPIS_ORE = BlockInit.JURASSIC_LAPIS_ORE.get().defaultBlockState();
+	public static final BlockState JURASSIC_REDSTONE_ORE = BlockInit.JURASSIC_REDSTONE_ORE.get().defaultBlockState();
 
 	//Conifer
 	public static final BlockState CONIFER_LOG = BlockInit.CONIFER_LOG.get().defaultBlockState();

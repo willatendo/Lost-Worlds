@@ -60,6 +60,22 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	{
 		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.PERMIAN_EMERALD);		
 	}
+
+	public static void addJurassicOres(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.JURASSIC_COAL);
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.JURASSIC_COPPER);
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.JURASSIC_DIAMOND);
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.JURASSIC_GOLD);
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.JURASSIC_IRON);
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.JURASSIC_LAPIS);
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.JURASSIC_REDSTONE);
+	}
+	
+	public static void addJurassicEmerald(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ConfiguredFeatureInit.JURASSIC_EMERALD);		
+	}
 	
 	public static void addPermianWaterLakes(BiomeGenerationSettings.Builder builder)
 	{

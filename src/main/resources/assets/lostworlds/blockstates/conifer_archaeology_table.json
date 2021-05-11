@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "lostworlds:block/conifer_archaeology_table" },
-        "facing=south": { "model": "lostworlds:block/conifer_archaeology_table", "y": 180 },
-        "facing=west":  { "model": "lostworlds:block/conifer_archaeology_table", "y": 270 },
-        "facing=east":  { "model": "lostworlds:block/conifer_archaeology_table", "y": 90 }
-    }
-}

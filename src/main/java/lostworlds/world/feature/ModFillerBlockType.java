@@ -18,4 +18,5 @@ public class ModFillerBlockType
 	public static final RuleTest ORANGE_TERRACOTTA = new BlockMatchRuleTest(Blocks.ORANGE_TERRACOTTA);
 	public static final RuleTest SANDSTONE = new BlockMatchRuleTest(Blocks.SANDSTONE);
 	public static final RuleTest PERMIAN_STONE = new BlockMatchRuleTest(BlockInit.PERMIAN_STONE.get());
+	public static final RuleTest JURASSIC_STONE = new BlockMatchRuleTest(BlockInit.JURASSIC_STONE.get());
 }

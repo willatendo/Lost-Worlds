@@ -297,29 +297,7 @@
 	"toolTip.lostworlds.time_machine.not_holding_shift": "Hold Shift For More Information",
 
 	//Museum Stuff
-	"block.lostworlds.oak_archaeology_table": "Oak Archaeology Table",
-	"block.lostworlds.stripped_oak_archaeology_table": "Stripped Oak Archaeology Table",
-	
-	"block.lostworlds.birch_archaeology_table": "Birch Archaeology Table",
-	"block.lostworlds.stripped_birch_archaeology_table": "Stripped Birch Archaeology Table",
-	
-	"block.lostworlds.jungle_archaeology_table": "Jungle Archaeology Table",
-	"block.lostworlds.stripped_jungle_archaeology_table": "Stripped Jungle Archaeology Table",
-	
-	"block.lostworlds.spruce_archaeology_table": "Spruce Archaeology Table",
-	"block.lostworlds.stripped_spruce_archaeology_table": "Stripped Spruce Archaeology Table",
-	
-	"block.lostworlds.acacia_archaeology_table": "Acacia Archaeology Table",
-	"block.lostworlds.stripped_acacia_archaeology_table": "Stripped Acacia Archaeology Table",
-	
-	"block.lostworlds.dark_oak_archaeology_table": "Dark Oak Archaeology Table",
-	"block.lostworlds.stripped_dark_oak_archaeology_table": "Stripped Dark Oak Archaeology Table",
-	
-	"block.lostworlds.conifer_archaeology_table": "Conifer Archaeology Table",
-	"block.lostworlds.stripped_conifer_archaeology_table": "Stripped Conifer Archaeology Table",	
-	
-	"block.lostworlds.ginkgo_archaeology_table": "Ginkgo Archaeology Table",
-	"block.lostworlds.stripped_ginkgo_archaeology_table": "Stripped Ginkgo Archaeology Table",	
+	"block.lostworlds.archaeology_table": "Archaeology Table",
 		
 	//Volcanic Rock
 	"block.lostworlds.volcanic_rock": "Volcanic Rock",
@@ -447,9 +425,14 @@
 	"block.lostworlds.ginkgo_door": "Ginkgo Door",
 	"block.lostworlds.ginkgo_sign": "Ginkgo Sign",
 	"item.lostworlds.ginkgo_boat": "Ginkgo Boat",
-
+	
+	"block.lostworlds.araucaria_log": "Araucaria Log",
+	"block.lostworlds.stripped_araucaria_log": "Stripped Araucaria Log",
+	"block.lostworlds.araucaria_wood": "Araucaria Wood",
+	"block.lostworlds.stripped_araucaria_wood": "Stripped Araucaria Wood",
 	"block.lostworlds.araucaria_leaves": "Araucaria Leaves",
 	"block.lostworlds.araucaria_sapling": "Araucaria Sapling",
+	"block.lostworlds.araucaria_planks": "Araucaria Planks",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",
@@ -635,6 +618,9 @@
 	
 	//Modern Extinct
 	"entity.lostworlds.great_auk": "Pinguinus impennis",
+
+	//Modern
+	"entity.minecraft.villager.lostworlds.archaeologist": "Archaeologist",
 
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
