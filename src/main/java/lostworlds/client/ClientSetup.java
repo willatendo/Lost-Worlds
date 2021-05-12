@@ -121,6 +121,9 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_LEAVES.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_DOOR.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_TRAPDOOR.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_LEAVES.get(), RenderType.translucent());	
+		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_DOOR.get(), RenderType.translucent());	
+		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_TRAPDOOR.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.ARCHAEOLOGY_TABLE.get(), RenderType.translucent());
 		//Sign
 		ClientRegistry.bindTileEntityRenderer(TileEntityInit.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);

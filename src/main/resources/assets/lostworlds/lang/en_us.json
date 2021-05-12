@@ -432,6 +432,16 @@
 	"block.lostworlds.araucaria_leaves": "Araucaria Leaves",
 	"block.lostworlds.araucaria_sapling": "Araucaria Sapling",
 	"block.lostworlds.araucaria_planks": "Araucaria Planks",
+	"block.lostworlds.araucaria_stairs": "Araucaria Stairs",
+	"block.lostworlds.araucaria_slab": "Araucaria Slab",
+	"block.lostworlds.araucaria_fence": "Araucaria Fence",
+	"block.lostworlds.araucaria_fence_gate": "Araucaria Fence Gate",
+	"block.lostworlds.araucaria_pressure_plate": "Araucaria Pressure Plate",
+	"block.lostworlds.araucaria_button": "Araucaria Button",
+	"block.lostworlds.araucaria_door": "Araucaria Door",
+	"block.lostworlds.araucaria_trapdoor": "Araucaria Trapdoor",
+	"block.lostworlds.araucaria_sign": "Araucaria Sign",
+	"item.lostworlds.araucaria_boat": "Araucaria Boat",
 
 	//Light Concrete
 	"block.lostworlds.light_concrete": "Light Concrete",

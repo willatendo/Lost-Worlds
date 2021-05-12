@@ -533,6 +533,16 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> ARAUCARIA_LEAVES = registerBlockItem("araucaria_leaves", () -> BlockInit.ARAUCARIA_LEAVES.get());
 	public static final RegistryObject<BlockItem> ARAUCARIA_SAPLING = registerBuringBlockItem("araucaria_sapling", () -> BlockInit.ARAUCARIA_SAPLING.get());
 	public static final RegistryObject<BlockItem> ARAUCARIA_PLANKS = registerBuringBlockItem("araucaria_planks", () -> BlockInit.ARAUCARIA_PLANKS.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_STAIRS = registerBuringBlockItem("araucaria_stairs", () -> BlockInit.ARAUCARIA_STAIRS.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_SLAB = registerBuringBlockItem("araucaria_slab", () -> BlockInit.ARAUCARIA_SLAB.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_FENCE = registerBuringBlockItem("araucaria_fence", () -> BlockInit.ARAUCARIA_FENCE.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_FENCE_GATE = registerBuringBlockItem("araucaria_fence_gate", () -> BlockInit.ARAUCARIA_FENCE_GATE.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_PRESSURE_PLATE = registerBuringBlockItem("araucaria_pressure_plate", () -> BlockInit.ARAUCARIA_PRESSURE_PLATE.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_BUTTON = registerBuringBlockItem("araucaria_button", () -> BlockInit.ARAUCARIA_BUTTON.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_TRAPDOOR = registerBuringBlockItem("araucaria_trapdoor", () -> BlockInit.ARAUCARIA_TRAPDOOR.get());
+	public static final RegistryObject<BlockItem> ARAUCARIA_DOOR = registerBuringBlockItem("araucaria_door", () -> BlockInit.ARAUCARIA_DOOR.get());
+	public static final RegistryObject<ModSignItem> ARAUCARIA_SIGN = ModRegistry.ITEM_REGISTRY.register("araucaria_sign", () -> new ModSignItem(BlockInit.ARAUCARIA_SIGN.get(), BlockInit.ARAUCARIA_WALL_SIGN.get(), standardProperties()));
+	public static final RegistryObject<ModBoatItem> ARAUCARIA_BOAT = registerBoatItem("araucaria_boat", ModBoatType.ARAUCARIA);
 	
 	//Light Concrete
 	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  registerBlockItem("light_concrete", () -> BlockInit.LIGHT_CONCRETE.get());

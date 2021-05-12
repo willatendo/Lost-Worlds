@@ -50,6 +50,9 @@ public class BiomeInit
 	public static final RegistryObject<Biome> JURASSIC_GINKGO_FOREST = createBiome("jurassic_ginkgo_forest", ModBiomeMaker::makeAJurassicGinkgoForest);
 	public static final RegistryKey<Biome> JURASSIC_GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_ginkgo_forest"));
 	
+	public static final RegistryObject<Biome> JURASSIC_ARAUCARIA_FOREST = createBiome("jurassic_araucaria_forest", ModBiomeMaker::makeAJurassicAraucariaForest);
+	public static final RegistryKey<Biome> JURASSIC_ARAUCARIA_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_araucaria_forest"));
+	
 	public static final RegistryObject<Biome> JURASSIC_PLAINS = createBiome("jurassic_plains", ModBiomeMaker::makeAJurassicPlains);
 	public static final RegistryKey<Biome> JURASSIC_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_plains"));
 	

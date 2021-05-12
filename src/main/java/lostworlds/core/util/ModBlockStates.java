@@ -152,10 +152,25 @@ public class ModBlockStates
 	public static final BlockState GINKGO_DOOR = BlockInit.GINKGO_DOOR.get().defaultBlockState();
 	public static final BlockState GINKGO_SIGN = BlockInit.GINKGO_SIGN.get().defaultBlockState();
 	public static final BlockState GINKGO_WALL_SIGN = BlockInit.GINKGO_WALL_SIGN.get().defaultBlockState();
-
+	
 	//Araucaria
+	public static final BlockState ARAUCARIA_LOG = BlockInit.ARAUCARIA_LOG.get().defaultBlockState();
+	public static final BlockState STRIPPED_ARAUCARIA_LOG = BlockInit.STRIPPED_ARAUCARIA_LOG.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_WOOD = BlockInit.ARAUCARIA_WOOD.get().defaultBlockState();
+	public static final BlockState STRIPPED_ARAUCARIA_WOOD = BlockInit.STRIPPED_ARAUCARIA_WOOD.get().defaultBlockState();
 	public static final BlockState ARAUCARIA_LEAVES = BlockInit.ARAUCARIA_LEAVES.get().defaultBlockState();
 	public static final BlockState ARAUCARIA_SAPLING = BlockInit.ARAUCARIA_SAPLING.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_PLANKS = BlockInit.ARAUCARIA_PLANKS.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_STAIRS = BlockInit.ARAUCARIA_STAIRS.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_SLAB = BlockInit.ARAUCARIA_SLAB.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_FENCE = BlockInit.ARAUCARIA_FENCE.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_FENCE_GATE = BlockInit.ARAUCARIA_FENCE_GATE.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_PRESSURE_PLATE = BlockInit.ARAUCARIA_PRESSURE_PLATE.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_BUTTON = BlockInit.ARAUCARIA_BUTTON.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_TRAPDOOR = BlockInit.ARAUCARIA_TRAPDOOR.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_DOOR = BlockInit.ARAUCARIA_DOOR.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_SIGN = BlockInit.ARAUCARIA_SIGN.get().defaultBlockState();
+	public static final BlockState ARAUCARIA_WALL_SIGN = BlockInit.ARAUCARIA_WALL_SIGN.get().defaultBlockState();
 
 	//Light Concrete
 	public static final BlockState LIGHT_CONCRETE = BlockInit.LIGHT_CONCRETE.get().defaultBlockState();

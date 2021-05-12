@@ -387,6 +387,14 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.ARAUCARIA_LEAVES.get().getDefaultInstance());
 		item.add(ItemInit.ARAUCARIA_SAPLING.get().getDefaultInstance());
 		item.add(ItemInit.ARAUCARIA_PLANKS.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_STAIRS.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_SLAB.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_FENCE.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_FENCE_GATE.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_PRESSURE_PLATE.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_BUTTON.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_TRAPDOOR.get().getDefaultInstance());
+		item.add(ItemInit.ARAUCARIA_DOOR.get().getDefaultInstance());
 		
 		//Decoration Blocks
 		//Light Concrete

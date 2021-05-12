@@ -64,6 +64,8 @@ public class ModBoatEntity extends BoatEntity
 				return ItemInit.CONIFER_BOAT.get();
 			case GINKGO:
 				return ItemInit.GINKGO_BOAT.get();
+			case ARAUCARIA:
+				return ItemInit.ARAUCARIA_BOAT.get();
 		}
 	}
 	
@@ -75,6 +77,8 @@ public class ModBoatEntity extends BoatEntity
         		return BlockInit.CONIFER_PLANKS.get();
         	case GINKGO:
         		return BlockInit.GINKGO_PLANKS.get();
+        	case ARAUCARIA:
+				return BlockInit.ARAUCARIA_PLANKS.get();
         }
 	}
 	
@@ -214,7 +218,8 @@ public class ModBoatEntity extends BoatEntity
     public enum ModBoatType 
     {
     	CONIFER("conifer"),
-    	GINKGO("gingko");
+    	GINKGO("gingko"),
+    	ARAUCARIA("araucaria");
     	
     	private final String name;
 
