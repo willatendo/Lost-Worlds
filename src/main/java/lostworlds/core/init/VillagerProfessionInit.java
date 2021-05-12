@@ -14,7 +14,7 @@ import net.minecraftforge.fml.RegistryObject;
 public class VillagerProfessionInit 
 {
 	public static final RegistryObject<VillagerProfession> ARCHAEOLOGIST = register("archaeologist", () -> PointsOfInterestInit.ARCHAEOLOGY_TABLE_POI.get(), SoundEvents.VILLAGER_WORK_MASON);
-	
+
 	static RegistryObject<VillagerProfession> register(String id, NonNullSupplier<PointOfInterestType> poi, @Nullable SoundEvent sounds) 
 	{
 		return ModRegistry.VILLAGER_PROFESSIONS_REGISTRY.register(id, () -> new ModVillagerProfession(id, poi, sounds));
