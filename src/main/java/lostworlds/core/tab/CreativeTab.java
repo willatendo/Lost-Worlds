@@ -74,7 +74,9 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.EMPTY_VILE.get().getDefaultInstance());
 		item.add(ItemInit.ALLOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_DNA.get().getDefaultInstance());
+		item.add(ItemInit.CRYOLOPHOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_DNA.get().getDefaultInstance());
+		item.add(ItemInit.DIICTODON_DNA.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.FUKUVENATOR_DNA.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_DNA.get().getDefaultInstance());
@@ -84,6 +86,8 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.OURANOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_DNA.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_DNA.get().getDefaultInstance());
+		item.add(ItemInit.PROTOSUCHUS_DNA.get().getDefaultInstance());
+		item.add(ItemInit.PSITTACOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.TETRACERATOPS_DNA.get().getDefaultInstance());
@@ -93,7 +97,9 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.STORAGE_DISC.get().getDefaultInstance());
 		item.add(ItemInit.ALLOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.CRYOLOPHOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.DIICTODON_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.FUKUVENATOR_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_DNA_DISC.get().getDefaultInstance());
@@ -103,6 +109,8 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.OURANOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.PROTOSUCHUS_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.PSITTACOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.TYRANNOSAURUS_DNA_DISC.get().getDefaultInstance());
@@ -110,7 +118,9 @@ public class CreativeTab extends ItemGroup
 		//Meat
 		item.add(ItemInit.ALLOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.CRYOLOPHOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.DIICTODON_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.FUKUVENATOR_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_MEAT.get().getDefaultInstance());
@@ -120,6 +130,8 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.OURANOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.PROTOSUCHUS_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.PSITTACOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.TETRACERATOPS_MEAT.get().getDefaultInstance());
@@ -128,7 +140,9 @@ public class CreativeTab extends ItemGroup
 		//Cooked Meat
 		item.add(ItemInit.ALLOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_COOKED_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.CRYOLOPHOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_COOKED_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.DIICTODON_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.FUKUVENATOR_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_COOKED_MEAT.get().getDefaultInstance());
@@ -138,6 +152,8 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.OURANOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_COOKED_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.PROTOSUCHUS_COOKED_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.PSITTACOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.TETRACERATOPS_COOKED_MEAT.get().getDefaultInstance());
@@ -156,7 +172,9 @@ public class CreativeTab extends ItemGroup
 		//Spawn Eggs
 		item.add(ItemInit.ALLOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.CRYOLOPHOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.DIICTODON_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.FUKUVENATOR_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_SPAWN_EGG.get().getDefaultInstance());
@@ -166,6 +184,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.OURANOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.PROTOSUCHUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PSITTACOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_SPAWN_EGG.get().getDefaultInstance());

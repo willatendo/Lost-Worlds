@@ -95,6 +95,7 @@ public class GorgonopsEntity extends AbstractPrehistoricAnimalEntity implements 
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, EdaphosaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, RhinesuchusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, TetraceratopsEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, DiictodonEntity.class, false));
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, DimetrodonEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 	}
 

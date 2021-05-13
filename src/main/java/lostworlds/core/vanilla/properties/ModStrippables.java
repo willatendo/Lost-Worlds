@@ -20,5 +20,7 @@ public class ModStrippables
 		add(BlockInit.CONIFER_WOOD.get(), BlockInit.STRIPPED_CONIFER_WOOD.get());
 		add(BlockInit.GINKGO_LOG.get(), BlockInit.STRIPPED_GINKGO_LOG.get());
 		add(BlockInit.GINKGO_WOOD.get(), BlockInit.STRIPPED_GINKGO_WOOD.get());
+		add(BlockInit.ARAUCARIA_LOG.get(), BlockInit.STRIPPED_ARAUCARIA_LOG.get());
+		add(BlockInit.ARAUCARIA_WOOD.get(), BlockInit.STRIPPED_ARAUCARIA_WOOD.get());
 	}
 }

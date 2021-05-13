@@ -189,7 +189,40 @@
 	"item.lostworlds.fukuivenator_spawn_egg": "Fukuivenator Spawn Egg",
 
 	//Psittacosaurus
+	"item.lostworlds.psittacosaurus_dna": "Psittacosaurus DNA",
+	"item.lostworlds.psittacosaurus_dna_disc": "Storage Disk",
+	"toolTip.lostworlds.psittacosaurus_dna_disc.holding_shift": "Storing: Psittacosaurus mongoliensis",
+	"toolTip.lostworlds.psittacosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_psittacosaurus_meat": "Raw Psittacosaurus Meat",
+	"item.lostworlds.cooked_psittacosaurus_meat": "Cooked Psittacosaurus Meat",
 	"item.lostworlds.psittacosaurus_spawn_egg": "Psittacosaurus Spawn Egg",
+	
+	//Cryolophosaurus
+	"item.lostworlds.cryolophosaurus_dna": "Cryolophosaurus DNA",
+	"item.lostworlds.cryolophosaurus_dna_disc": "Storage Disk",
+	"toolTip.lostworlds.cryolophosaurus_dna_disc.holding_shift": "Storing: Cryolophosaurus mongoliensis",
+	"toolTip.lostworlds.cryolophosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_cryolophosaurus_meat": "Raw Cryolophosaurus Meat",
+	"item.lostworlds.cooked_cryolophosaurus_meat": "Cooked Cryolophosaurus Meat",
+	"item.lostworlds.cryolophosaurus_spawn_egg": "Cryolophosaurus Spawn Egg",
+
+	//Protosuchus
+	"item.lostworlds.protosuchus_dna": "Protosuchus DNA",
+	"item.lostworlds.protosuchus_dna_disc": "Storage Disk",
+	"toolTip.lostworlds.protosuchus_dna_disc.holding_shift": "Storing: Protosuchus mongoliensis",
+	"toolTip.lostworlds.protosuchus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_protosuchus_meat": "Raw Protosuchus Meat",
+	"item.lostworlds.cooked_protosuchus_meat": "Cooked Protosuchus Meat",
+	"item.lostworlds.protosuchus_spawn_egg": "Protosuchus Spawn Egg",
+
+	//Diictodon
+	"item.lostworlds.diictodon_dna": "Diictodon DNA",
+	"item.lostworlds.diictodon_dna_disc": "Storage Disk",
+	"toolTip.lostworlds.diictodon_dna_disc.holding_shift": "Storing: Diictodon psittacops",
+	"toolTip.lostworlds.diictodon_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_diictodon_meat": "Raw Diictodon Meat",
+	"item.lostworlds.cooked_diictodon_meat": "Cooked Diictodon Meat",
+	"item.lostworlds.diictodon_spawn_egg": "Diictodon Spawn Egg",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -603,6 +636,7 @@
 	//Entities
 	//Permian
 	"entity.lostworlds.dimetrodon": "Dimetrodon limbatus",
+	"entity.lostworlds.diictodon": "Diictodon psittacops",
 	"entity.lostworlds.palaeoniscum": "Palaeoniscum freislbeni",
 	"entity.lostworlds.rhinesuchus": "Rhinesuches whaitsi",
 	"entity.lostworlds.edaphosaurus": "Edaphosaurus pogonias",
@@ -615,6 +649,8 @@
 	//Jurassic
 	"entity.lostworlds.allosaurus": "Allosaurus fragilis",
 	"entity.lostworlds.cryolophosaurus": "Cryolophosaurus ellioti",
+	"entity.lostworlds.ostromia": "Ostromia crassipes",
+	"entity.lostworlds.protosuchus": "Protosuchus richardsoni",
 	
 	//Cretaceous 
 	"entity.lostworlds.carnotaurus": "Carnotaurus sastrei",

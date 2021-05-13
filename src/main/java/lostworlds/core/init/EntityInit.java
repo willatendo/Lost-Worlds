@@ -3,6 +3,7 @@ package lostworlds.core.init;
 import lostworlds.common.entities.AllosaurusEntity;
 import lostworlds.common.entities.CarnotaurusEntity;
 import lostworlds.common.entities.CryolophosaurusEntity;
+import lostworlds.common.entities.DiictodonEntity;
 import lostworlds.common.entities.DimetrodonEntity;
 import lostworlds.common.entities.EdaphosaurusEntity;
 import lostworlds.common.entities.FukuivenatorEntity;
@@ -16,6 +17,7 @@ import lostworlds.common.entities.OstromiaEntity;
 import lostworlds.common.entities.OuranosaurusEntity;
 import lostworlds.common.entities.PalaeoniscumEntity;
 import lostworlds.common.entities.ProcompsognathusEntity;
+import lostworlds.common.entities.ProtosuchusEntity;
 import lostworlds.common.entities.PsittacosaurusEntity;
 import lostworlds.common.entities.RhinesuchusEntity;
 import lostworlds.common.entities.SuchomimusEntity;
@@ -49,6 +51,8 @@ public class EntityInit
 	public static final RegistryObject<EntityType<PsittacosaurusEntity>> PSITTACOSAURUS_ENTITY = registerEntity("pisttacosaurus", PsittacosaurusEntity::new, EntityClassification.CREATURE, PsittacosaurusEntity.class, 0.5F, 0.5F);
 	public static final RegistryObject<EntityType<CryolophosaurusEntity>> CRYOLOPHOSAURUS_ENTITY = registerEntity("cryolophosaurus", CryolophosaurusEntity::new, EntityClassification.CREATURE, CryolophosaurusEntity.class, 0.75F, 1.9F);
 	public static final RegistryObject<EntityType<OstromiaEntity>> OSTROMIA_ENTITY = registerEntity("ostromia", OstromiaEntity::new, EntityClassification.CREATURE, OstromiaEntity.class, 0.5F, 0.5F);
+	public static final RegistryObject<EntityType<ProtosuchusEntity>> PROTOSUCHUS_ENTITY = registerEntity("protosuchus", ProtosuchusEntity::new, EntityClassification.CREATURE, ProtosuchusEntity.class, 0.5F, 0.5F);
+	public static final RegistryObject<EntityType<DiictodonEntity>> DIICTODON_ENTITY = registerEntity("diictodon", DiictodonEntity::new, EntityClassification.CREATURE, DiictodonEntity.class, 0.25F, 0.25F);
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);

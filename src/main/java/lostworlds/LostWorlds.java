@@ -77,7 +77,9 @@ public class LostWorlds
     		ComposterBlock.add(0.8F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
     		ComposterBlock.add(0.6F, BlockInit.PERMIAN_GROUND_FERNS.get());
     		ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
-    	});
+    		ComposterBlock.add(0.6F, BlockInit.ARAUCARIA_SAPLING.get());
+    		ComposterBlock.add(0.6F, BlockInit.GINKGO_SAPLING.get());
+   	});
     	
     	event.enqueueWork(() -> 
     	{

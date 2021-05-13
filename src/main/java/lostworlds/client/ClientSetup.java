@@ -3,6 +3,7 @@ package lostworlds.client;
 import lostworlds.client.entity.render.AllosaurusRender;
 import lostworlds.client.entity.render.CarnotaurusRender;
 import lostworlds.client.entity.render.CryolophosaurusRender;
+import lostworlds.client.entity.render.DiictodonRender;
 import lostworlds.client.entity.render.DimetrodonRender;
 import lostworlds.client.entity.render.EdaphosaurusRender;
 import lostworlds.client.entity.render.FukuivenatorRender;
@@ -14,6 +15,7 @@ import lostworlds.client.entity.render.OstromiaRender;
 import lostworlds.client.entity.render.OuranosaurusRender;
 import lostworlds.client.entity.render.PalaeoniscumRender;
 import lostworlds.client.entity.render.ProcompsognathusRender;
+import lostworlds.client.entity.render.ProtosuchusRender;
 import lostworlds.client.entity.render.PsittacosaurusRender;
 import lostworlds.client.entity.render.RhinesuchusRender;
 import lostworlds.client.entity.render.SuchomimusRender;
@@ -70,6 +72,8 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.DICKSONIA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.TALL_DICKSONIA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_SAPLING.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_SAPLING.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_SAPLING.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.PERMIAN_GROUND_FERNS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CLEAR_GLASS.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.CLEAR_GLASS_PANE.get(), RenderType.translucent());
@@ -147,6 +151,8 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PSITTACOSAURUS_ENTITY.get(), PsittacosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.CRYOLOPHOSAURUS_ENTITY.get(), CryolophosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.OSTROMIA_ENTITY.get(), OstromiaRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PROTOSUCHUS_ENTITY.get(), ProtosuchusRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.DIICTODON_ENTITY.get(), DiictodonRender::new);
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 		//Eggs

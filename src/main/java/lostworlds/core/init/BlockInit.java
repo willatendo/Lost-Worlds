@@ -40,6 +40,7 @@ import lostworlds.common.blocks.WhiteTerracottaFossilBlock;
 import lostworlds.common.blocks.YellowTerracottaFossilBlock;
 import lostworlds.common.blocks.eggs.AllosaurusEggBlock;
 import lostworlds.common.blocks.eggs.CarnotaurusEggBlock;
+import lostworlds.common.blocks.eggs.CryolophosaurusEggBlock;
 import lostworlds.common.blocks.eggs.DimetrodonEggBlock;
 import lostworlds.common.blocks.eggs.EdaphosaurusEggBlock;
 import lostworlds.common.blocks.eggs.FukuivenatorEggBlock;
@@ -161,6 +162,7 @@ public class BlockInit
 	public static final RegistryObject<OuranosaurusEggBlock> OURANOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("ouranosaurus_egg", () -> new OuranosaurusEggBlock());
 	public static final RegistryObject<FukuivenatorEggBlock> FUKUVENATOR_EGG = ModRegistry.BLOCK_REGISTRY.register("fukuivenator_egg", () -> new FukuivenatorEggBlock());
 	public static final RegistryObject<PsittacosaurusEggBlock> PSITTACOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("psittacosaurus_egg", () -> new PsittacosaurusEggBlock());
+	public static final RegistryObject<CryolophosaurusEggBlock> CRYOLOPHOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("cryolophosaurus_egg", () -> new CryolophosaurusEggBlock());
 	
 	//Mud
 	public static final RegistryObject<Block> MUD = ModRegistry.BLOCK_REGISTRY.register("mud", () -> new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
