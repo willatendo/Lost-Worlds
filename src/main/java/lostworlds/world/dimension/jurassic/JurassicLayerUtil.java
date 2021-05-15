@@ -10,8 +10,11 @@ import net.minecraft.world.gen.LazyAreaLayerContext;
 import net.minecraft.world.gen.area.IArea;
 import net.minecraft.world.gen.area.IAreaFactory;
 import net.minecraft.world.gen.area.LazyArea;
+import net.minecraft.world.gen.layer.BiomeLayer;
+import net.minecraft.world.gen.layer.IslandLayer;
 import net.minecraft.world.gen.layer.Layer;
 import net.minecraft.world.gen.layer.LayerUtil;
+import net.minecraft.world.gen.layer.ShoreLayer;
 import net.minecraft.world.gen.layer.SmoothLayer;
 import net.minecraft.world.gen.layer.ZoomLayer;
 
@@ -30,7 +33,7 @@ public class JurassicLayerUtil
         biomeRegistry = registry;
 
         IAreaFactory<T> biomes = new JurassicBiomeLayer().run(contextFactory.apply(1L));
-
+        IAreaFactory<T> iareafactory = IslandLayer.INSTANCE.run(contextFactory.apply(1L));
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1000), biomes);
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1001), biomes);
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1002), biomes);
@@ -39,7 +42,17 @@ public class JurassicLayerUtil
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1005), biomes);
 
         biomes = LayerUtil.zoom(1000L, ZoomLayer.NORMAL, biomes, 1, contextFactory);
-
+        
+        IAreaFactory<T> lvt_7_1_ = (new BiomeLayer(false)).run(contextFactory.apply(200L), iareafactory);
+        
+        for(int i = 0; i < 4; ++i) 
+        {
+        	if(i == 1 || 4 == 1) 
+        	{
+        		lvt_7_1_ = ShoreLayer.INSTANCE.run(contextFactory.apply(1000L), lvt_7_1_);
+        	}
+        }
+        
         IAreaFactory<T> riverLayer = JurassicRiverLayer.INSTANCE.run(contextFactory.apply(1L), biomes);
         riverLayer = SmoothLayer.INSTANCE.run(contextFactory.apply(7000L), riverLayer);
         biomes = JurassicRiverMixLayer.INSTANCE.run(contextFactory.apply(100L), biomes, riverLayer);

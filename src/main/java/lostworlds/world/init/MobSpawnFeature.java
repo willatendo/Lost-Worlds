@@ -12,7 +12,7 @@ public class MobSpawnFeature
 	{
 		if(event.getCategory() != Category.NETHER && event.getCategory() != Category.THEEND && event.getCategory() != Category.NONE)
 		{
-			if(event.getDepth() == -1.8F)
+			if(event.getCategory() == Category.OCEAN)
 			{
 				event.getSpawns().addSpawn(EntityClassification.WATER_CREATURE, new MobSpawnInfo.Spawners(EntityInit.NAUTILUS_ENTITY.get(), 1, 1, 1));
 			}

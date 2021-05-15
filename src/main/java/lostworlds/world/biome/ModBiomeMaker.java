@@ -73,6 +73,7 @@ public class ModBiomeMaker
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 				
 		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.GORGONOPS_ENTITY.get(), 1, 1, 1));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.DIICTODON_ENTITY.get(), 1, 2, 7));
 		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.PERMIAN_DESERT_SURFACE_BUILDER);
 
@@ -342,6 +343,7 @@ public class ModBiomeMaker
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 						
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.GRAVEL_TERRAIN_SURFACE_BUILDER);
+		
 		ModBiomeFeatures.addJurassicOres(builder);
 			
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
@@ -357,7 +359,6 @@ public class ModBiomeMaker
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.ISLANDS_SURFACE_BUILDER);
 		
 		DefaultBiomeFeatures.addDefaultSeagrass(builder);
-		DefaultBiomeFeatures.addLukeWarmKelp(builder);
 		
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
 		ModBiomeFeatures.addJurassicOres(builder);
@@ -366,6 +367,21 @@ public class ModBiomeMaker
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
 
 		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.PLAINS).depth(-0.2F).scale(0.1F).temperature(1.5F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x87a545).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+	}
+
+	public static Biome makeAJurassicBeach() 
+	{
+		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+		
+		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.JURASSIC_STONE_TERRAIN_SURFACE_BUILDER);
+		
+		ModBiomeFeatures.addJurassicWaterLakes(builder);
+		ModBiomeFeatures.addJurassicOres(builder);
+
+		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
+		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
+		
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.BEACH).depth(0.0F).scale(0.025F).temperature(0.8F).downfall(0.4F).specialEffects((new BiomeAmbience.Builder()).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
 	}
 	
 	public static Biome makeAJurassicOcean() 
@@ -379,5 +395,84 @@ public class ModBiomeMaker
 		ModBiomeFeatures.addJurassicOres(builder);
 		
 		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.RIVER).depth(-1.8F).scale(0.1F).temperature(0.5F).downfall(0.5F).specialEffects((new BiomeAmbience.Builder()).waterColor(0x1b6cb7).waterFogColor(0x1560a5).fogColor(0x355177).skyColor(0x1b4266).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+	}
+	
+	public static Biome makeAOverworldConiferForest() 
+	{
+		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+
+		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
+		
+		DefaultBiomeFeatures.addDefaultOverworldLandStructures(builder);
+		builder.addStructureStart(StructureFeatures.RUINED_PORTAL_STANDARD);
+		DefaultBiomeFeatures.addDefaultCarvers(builder);
+		DefaultBiomeFeatures.addDefaultLakes(builder);
+		DefaultBiomeFeatures.addDefaultMonsterRoom(builder);
+		DefaultBiomeFeatures.addForestFlowers(builder);
+		DefaultBiomeFeatures.addDefaultUndergroundVariety(builder);
+		DefaultBiomeFeatures.addDefaultOres(builder);
+		DefaultBiomeFeatures.addDefaultSoftDisks(builder);
+		DefaultBiomeFeatures.addDefaultGrass(builder);
+		DefaultBiomeFeatures.addDefaultMushrooms(builder);
+		DefaultBiomeFeatures.addDefaultExtraVegetation(builder);
+		DefaultBiomeFeatures.addDefaultSprings(builder);
+		DefaultBiomeFeatures.addSurfaceFreezing(builder);
+
+		ModBiomeFeatures.addConiferTree(builder);
+		
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.7F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(0.7F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+	}
+	
+	public static Biome makeAOverworldGinkgoForest() 
+	{
+		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+
+		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
+		
+		DefaultBiomeFeatures.addDefaultOverworldLandStructures(builder);
+		builder.addStructureStart(StructureFeatures.RUINED_PORTAL_STANDARD);
+		DefaultBiomeFeatures.addDefaultCarvers(builder);
+		DefaultBiomeFeatures.addDefaultLakes(builder);
+		DefaultBiomeFeatures.addDefaultMonsterRoom(builder);
+		DefaultBiomeFeatures.addForestFlowers(builder);
+		DefaultBiomeFeatures.addDefaultUndergroundVariety(builder);
+		DefaultBiomeFeatures.addDefaultOres(builder);
+		DefaultBiomeFeatures.addDefaultSoftDisks(builder);
+		DefaultBiomeFeatures.addDefaultGrass(builder);
+		DefaultBiomeFeatures.addDefaultMushrooms(builder);
+		DefaultBiomeFeatures.addDefaultExtraVegetation(builder);
+		DefaultBiomeFeatures.addDefaultSprings(builder);
+		DefaultBiomeFeatures.addSurfaceFreezing(builder);
+
+		ModBiomeFeatures.addGinkgoTree(builder);
+		
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.7F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(0.7F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+	}
+	
+	public static Biome makeAOverworldAraucariaForest() 
+	{
+		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+
+		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
+		
+		DefaultBiomeFeatures.addDefaultOverworldLandStructures(builder);
+		builder.addStructureStart(StructureFeatures.RUINED_PORTAL_STANDARD);
+		DefaultBiomeFeatures.addDefaultCarvers(builder);
+		DefaultBiomeFeatures.addDefaultLakes(builder);
+		DefaultBiomeFeatures.addDefaultMonsterRoom(builder);
+		DefaultBiomeFeatures.addForestFlowers(builder);
+		DefaultBiomeFeatures.addDefaultUndergroundVariety(builder);
+		DefaultBiomeFeatures.addDefaultOres(builder);
+		DefaultBiomeFeatures.addDefaultSoftDisks(builder);
+		DefaultBiomeFeatures.addDefaultGrass(builder);
+		DefaultBiomeFeatures.addDefaultMushrooms(builder);
+		DefaultBiomeFeatures.addDefaultExtraVegetation(builder);
+		DefaultBiomeFeatures.addDefaultSprings(builder);
+		DefaultBiomeFeatures.addSurfaceFreezing(builder);
+
+		ModBiomeFeatures.addAraucariaTree(
+				builder);
+		
+		return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.7F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(0.7F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
 	}
 }
