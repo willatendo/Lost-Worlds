@@ -14,5 +14,5 @@ public class ModBlockClusterFeatureConfig
 	
 	public static final BlockClusterFeatureConfig DEFAULT_DICKSONIA = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.DICKSONIA), SimpleBlockPlacer.INSTANCE)).tries(32).build();
 	public static final BlockClusterFeatureConfig DEFAULT_TALL_DICKSONIA = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.TALL_DICKSONIA), new DoublePlantBlockPlacer())).tries(64).noProjection().build();
-	public static final BlockClusterFeatureConfig DEFAULT_PERMIAN_GROUND_FERNS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.PERMIAN_GROUND_FERNS), SimpleBlockPlacer.INSTANCE)).tries(32).build();
+	public static final BlockClusterFeatureConfig DEFAULT_GROUND_FERNS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.GROUND_FERNS), SimpleBlockPlacer.INSTANCE)).tries(32).build();
 }

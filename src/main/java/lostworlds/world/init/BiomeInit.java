@@ -71,9 +71,6 @@ public class BiomeInit
 	public static final RegistryObject<Biome> JURASSIC_ISLANDS = createBiome("jurassic_islands", ModBiomeMaker::makeAJurassicIslands);
 	public static final RegistryKey<Biome> JURASSIC_ISLANDS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_islands"));
 	
-	public static final RegistryObject<Biome> JURASSIC_BEACH = createBiome("jurassic_beach", ModBiomeMaker::makeAJurassicBeach);
-	public static final RegistryKey<Biome> JURASSIC_BEACH_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_beach"));
-	
 	public static final RegistryObject<Biome> JURASSIC_OCEAN = createBiome("jurassic_ocean", ModBiomeMaker::makeAJurassicOcean);
 	public static final RegistryKey<Biome> JURASSIC_OCEAN_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModID.ID, "jurassic_ocean"));
 	
@@ -106,7 +103,7 @@ public class BiomeInit
     	if(event.getName().equals(OVERWORLD_CONIFER_FOREST.get().getRegistryName())) 
     	{
     		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_CONIFER_FOREST_KEY, 3));
-    		BiomeDictionary.addTypes(OVERWORLD_CONIFER_FOREST_KEY, Type.FOREST);
+    		BiomeDictionary.addTypes(OVERWORLD_CONIFER_FOREST_KEY, Type.FOREST, Type.CONIFEROUS);
     	}
     	
     	if(event.getName().equals(OVERWORLD_GINKGO_FOREST.get().getRegistryName())) 

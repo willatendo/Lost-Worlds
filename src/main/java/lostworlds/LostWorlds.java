@@ -16,7 +16,6 @@ import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
 import lostworlds.world.init.BiomeInit;
 import lostworlds.world.init.ConfiguredFeatureInit;
 import lostworlds.world.init.FeatureInit;
-import lostworlds.world.init.MobSpawnFeature;
 import lostworlds.world.init.OrePlaceFeature;
 import lostworlds.world.init.WorldCarverInit;
 import net.minecraft.block.ComposterBlock;
@@ -28,7 +27,6 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.RegistryEvent.Register;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
@@ -61,7 +59,6 @@ public class LostWorlds
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OrePlaceFeature::generateOre);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
-        MinecraftForge.EVENT_BUS.addListener((BiomeLoadingEvent event) -> MobSpawnFeature.addMobSpawning(event));
     }
 
 	
@@ -75,7 +72,7 @@ public class LostWorlds
     		ComposterBlock.add(0.4F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
     		ComposterBlock.add(0.6F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
     		ComposterBlock.add(0.8F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
-    		ComposterBlock.add(0.6F, BlockInit.PERMIAN_GROUND_FERNS.get());
+    		ComposterBlock.add(0.6F, BlockInit.GROUND_FERNS.get());
     		ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
     		ComposterBlock.add(0.6F, BlockInit.ARAUCARIA_SAPLING.get());
     		ComposterBlock.add(0.6F, BlockInit.GINKGO_SAPLING.get());

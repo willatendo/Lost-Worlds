@@ -27,8 +27,6 @@ public class DevBuildLoad
 		{
 			PlayerEntity player = event.getPlayer();
 			event.getPlayer().sendMessage(TextUtil.coloredText(new TranslationTextComponent(ModID.ID + ".loadEvent.player"), TextFormatting.GOLD), player.getUUID());
-					
-					;
 		}
 	}
 }

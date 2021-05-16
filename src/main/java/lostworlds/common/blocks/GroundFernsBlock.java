@@ -17,11 +17,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IForgeShearable;
 
-public class PermianGroundFernsBlock extends BushBlock implements IGrowable, IForgeShearable
+public class GroundFernsBlock extends BushBlock implements IGrowable, IForgeShearable
 {
 	protected static final VoxelShape VOXEL_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D);
 
-	public PermianGroundFernsBlock(Properties properties) 
+	public GroundFernsBlock(Properties properties) 
 	{
 		super(properties);
 	}	

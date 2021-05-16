@@ -19,7 +19,8 @@ public class ModSurfaceBuilders
 	public static final SurfaceBuilderConfig PERMIAN_FLOOD_BASALT_CONFIG = new SurfaceBuilderConfig(Blocks.BASALT.defaultBlockState(), Blocks.BASALT.defaultBlockState(), Blocks.BASALT.defaultBlockState());
 	public static final SurfaceBuilderConfig JURASSIC_STONE_CONFIG = new SurfaceBuilderConfig(BlockInit.JURASSIC_STONE.get().defaultBlockState(), BlockInit.JURASSIC_STONE.get().defaultBlockState(), BlockInit.JURASSIC_STONE.get().defaultBlockState());
 	public static final SurfaceBuilderConfig ISLANDS_CONFIG = new SurfaceBuilderConfig(Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.SAND.defaultBlockState());
-	
+	public static final SurfaceBuilderConfig JURASSIC_OCEAN_CONFIG = new SurfaceBuilderConfig(BlockInit.JURASSIC_STONE.get().defaultBlockState(), BlockInit.JURASSIC_STONE.get().defaultBlockState(), Blocks.SAND.defaultBlockState());
+
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> VOLCANO_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(VOLCANO_SURFACE_BUILDER_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> PERMIAN_DESERT_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_DESERT_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> PERMIAN_MOUNTAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_MOUNTAIN_CONFIG);	
@@ -29,5 +30,6 @@ public class ModSurfaceBuilders
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> GRAVEL_TERRAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(GRAVEL_TERRAIN_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> JURASSIC_STONE_TERRAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(JURASSIC_STONE_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> ISLANDS_SURFACE_BUILDER = SurfaceBuilder.SWAMP.configured(ISLANDS_CONFIG);	
+	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> JURASSIC_OCEAN_SURFACE_BUILDER = SurfaceBuilder.SWAMP.configured(JURASSIC_OCEAN_CONFIG);	
 }
 	

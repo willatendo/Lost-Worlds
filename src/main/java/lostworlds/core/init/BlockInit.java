@@ -13,6 +13,7 @@ import lostworlds.common.blocks.ExposedStoneFossilBlock;
 import lostworlds.common.blocks.ExposedTerracottaFossilBlock;
 import lostworlds.common.blocks.GreenTerracottaFossilBlock;
 import lostworlds.common.blocks.GreyTerracottaFossilBlock;
+import lostworlds.common.blocks.GroundFernsBlock;
 import lostworlds.common.blocks.LargePermianDesertPlant;
 import lostworlds.common.blocks.LightBlueTerracottaFossilBlock;
 import lostworlds.common.blocks.LightGreyTerracottaFossilBlock;
@@ -23,7 +24,6 @@ import lostworlds.common.blocks.ModOreBlock;
 import lostworlds.common.blocks.ModStandingSignBlock;
 import lostworlds.common.blocks.ModWallSignBlock;
 import lostworlds.common.blocks.OrangeTerracottaFossilBlock;
-import lostworlds.common.blocks.PermianGroundFernsBlock;
 import lostworlds.common.blocks.PinkTerracottaFossilBlock;
 import lostworlds.common.blocks.PlasteredFossilBlock;
 import lostworlds.common.blocks.PowerSupplyBlock;
@@ -222,7 +222,7 @@ public class BlockInit
 	public static final RegistryObject<MediumPermianDesertPlant> MEDIUM_PERMIAN_DESERT_PLANT = ModRegistry.BLOCK_REGISTRY.register("medium_permian_desert_plant", () -> new MediumPermianDesertPlant(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().strength(5.0F, 6.0F).sound(SoundType.GRASS)));
 	public static final RegistryObject<LargePermianDesertPlant> LARGE_PERMIAN_DESERT_PLANT = ModRegistry.BLOCK_REGISTRY.register("large_permian_desert_plant", () -> new LargePermianDesertPlant(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().strength(5.0F, 6.0F).sound(SoundType.GRASS)));
 
-	public static final RegistryObject<PermianGroundFernsBlock> PERMIAN_GROUND_FERNS = ModRegistry.BLOCK_REGISTRY.register("permian_ground_ferns", () -> new PermianGroundFernsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<GroundFernsBlock> GROUND_FERNS = ModRegistry.BLOCK_REGISTRY.register("ground_ferns", () -> new GroundFernsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<TallGrassBlock> DICKSONIA = ModRegistry.BLOCK_REGISTRY.register("dicksonia", () -> new TallGrassBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<DoublePlantBlock> TALL_DICKSONIA = ModRegistry.BLOCK_REGISTRY.register("tall_dicksonia", () -> new DoublePlantBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<SeaGrassBlock> PERMIAN_SEAGRASS = ModRegistry.BLOCK_REGISTRY.register("permian_seagrass", () -> new SeaGrassBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));

@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:blocks/permian_ground_ferns"
+		"layer0": "lostworlds:items/fern_litter"
   }
 }

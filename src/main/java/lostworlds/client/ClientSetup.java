@@ -74,7 +74,7 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_SAPLING.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_SAPLING.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_SAPLING.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.PERMIAN_GROUND_FERNS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.GROUND_FERNS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CLEAR_GLASS.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.CLEAR_GLASS_PANE.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.TINTED_GLASS.get(), RenderType.translucent());

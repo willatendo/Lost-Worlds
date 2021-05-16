@@ -10,8 +10,6 @@ import net.minecraft.world.gen.LazyAreaLayerContext;
 import net.minecraft.world.gen.area.IArea;
 import net.minecraft.world.gen.area.IAreaFactory;
 import net.minecraft.world.gen.area.LazyArea;
-import net.minecraft.world.gen.layer.BiomeLayer;
-import net.minecraft.world.gen.layer.IslandLayer;
 import net.minecraft.world.gen.layer.Layer;
 import net.minecraft.world.gen.layer.LayerUtil;
 import net.minecraft.world.gen.layer.ShoreLayer;
@@ -33,7 +31,6 @@ public class JurassicLayerUtil
         biomeRegistry = registry;
 
         IAreaFactory<T> biomes = new JurassicBiomeLayer().run(contextFactory.apply(1L));
-        IAreaFactory<T> iareafactory = IslandLayer.INSTANCE.run(contextFactory.apply(1L));
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1000), biomes);
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1001), biomes);
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1002), biomes);
@@ -43,7 +40,7 @@ public class JurassicLayerUtil
 
         biomes = LayerUtil.zoom(1000L, ZoomLayer.NORMAL, biomes, 1, contextFactory);
         
-        IAreaFactory<T> lvt_7_1_ = (new BiomeLayer(false)).run(contextFactory.apply(200L), iareafactory);
+        IAreaFactory<T> lvt_7_1_ = (new JurassicBiomeLayer()).run(contextFactory.apply(200L));
         
         for(int i = 0; i < 4; ++i) 
         {

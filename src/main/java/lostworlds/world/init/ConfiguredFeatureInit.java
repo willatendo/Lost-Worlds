@@ -21,6 +21,7 @@ import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.ReplaceBlockConfig;
 import net.minecraft.world.gen.feature.TwoLayerFeature;
+import net.minecraft.world.gen.foliageplacer.AcaciaFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.SpruceFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
@@ -41,7 +42,7 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_LARGE = register("patch_permian_desert_plant_large", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_LARGE).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	
 	//Lush Permian Plants
-	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_GROUND_FERNS = register("patch_permian_ground_ferns", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMIAN_GROUND_FERNS_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+	public static final ConfiguredFeature<?, ?> PATCH_GROUND_FERNS = register("patch_ground_ferns", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_GROUND_FERNS_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_DICKSONIA = register("patch_dicksonia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_DICKSONIA).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_TALL_DICKSONIA = register("patch_tall_dicksonia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_TALL_DICKSONIA).decorated(Features.Placements.ADD_32).decorated(Features.Placements.HEIGHTMAP).squared().decorated(Placement.COUNT_NOISE.configured(new NoiseDependant(-0.8D, 0, 7))));
 
@@ -50,9 +51,9 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> CONIFER_TREE = register("conifer_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.CONIFER_LOG), new SimpleBlockStateProvider(ModBlockStates.CONIFER_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(2, 1), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> GINKGO_TREE = register("ginkgo_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.GINKGO_LOG), new SimpleBlockStateProvider(ModBlockStates.GINKGO_LEAVES), new GinkgoFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 7), new StraightTrunkPlacer(7, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ARAUCARIA_TREE = register("araucaria_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LOG), new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LEAVES), new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 1), new ForkyTrunkPlacer(11, 2, 2), new TwoLayerFeature(1, 0, 2))).ignoreVines().build()));
+	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ARAUCARIA_TREE_SMALL = register("araucaria_tree_small", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LOG), new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LEAVES), new AcaciaFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0)), new StraightTrunkPlacer(5, 2, 2), new TwoLayerFeature(1, 0, 2))).ignoreVines().build()));
 
 	public static final ConfiguredFeature<?, ?> SINGLE_CONIFER_TREE = register("single_conifer_tree", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ConfiguredFeatureInit.CONIFER_TREE.weighted(0.5F)), ConfiguredFeatureInit.CONIFER_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
-
 	public static final ConfiguredFeature<?, ?> CONIFER_TREES = register("conifer_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ConfiguredFeatureInit.CONIFER_TREE.weighted(0.5F)), ConfiguredFeatureInit.CONIFER_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> GINKGO_TREES = register("ginkgo_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ConfiguredFeatureInit.GINKGO_TREE.weighted(0.5F)), ConfiguredFeatureInit.GINKGO_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> ARAUCARIA_TREES = register("araucaria_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ConfiguredFeatureInit.ARAUCARIA_TREE.weighted(0.5F)), ConfiguredFeatureInit.ARAUCARIA_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
@@ -60,6 +61,7 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> CONIFER_VEGETATION = register("conifer_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(CONIFER_TREE.weighted(0.33333334F)), CONIFER_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> GINKGO_VEGETATION = register("gingko_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(GINKGO_TREE.weighted(0.33333334F)), GINKGO_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> ARAUCARIA_VEGETATION = register("araucaria_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ARAUCARIA_TREE.weighted(0.33333334F)), ARAUCARIA_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
+	public static final ConfiguredFeature<?, ?> ARAUCARIA_VEGETATION_SMALL = register("araucaria_vegetation_small", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ARAUCARIA_TREE_SMALL.weighted(0.33333334F)), ARAUCARIA_TREE_SMALL)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 
 	//Ores
 	//Permian

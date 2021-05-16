@@ -27,7 +27,7 @@
 	"item.lostworlds.time_lords_staff": "Time Lord's Staff",
 
 	//Permian Fern Leaf Litter
-	"item.lostworlds.permian_fern_leaf_litter": "Permian Fern Leaf Litter",
+	"item.lostworlds.fern_litter": "Fern Litter",
 
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
@@ -377,7 +377,7 @@
 	"block.lostworlds.medium_permian_desert_plant": "Medium Permian Desert Plant",
 	"block.lostworlds.large_permian_desert_plant": "Large Permian Desert Plant",
 
-	"block.lostworlds.permian_ground_ferns": "Permian Ground Ferns",
+	"block.lostworlds.ground_ferns": "Ground Ferns",
 	"block.lostworlds.dicksonia": "Dicksonia",
 	"block.lostworlds.tall_dicksonia": "Tall Dicksonia",
 	"block.lostworlds.permian_seagrass": "Permian Seagrass",
@@ -686,6 +686,11 @@
 	//On Load Event
 	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 9 Developer Edition. DO NOT REDISTRIBUTE.",
 	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 9",
+	
+	//On Book Used
+	"lostworlds.transport_to_overworld": "Transporting Player Back Home!",
+	"lostworlds.transport_to_jurassic": "Transporting Player to the Jurassic!",
+	"lostworlds.transport_to_permian": "Transporting Player to the Permian!",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"

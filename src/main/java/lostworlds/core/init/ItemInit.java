@@ -68,7 +68,7 @@ public class ItemInit
 	public static final RegistryObject<Item> TIME_LORDS_STAFF = simpleItemRegister("time_lords_staff", new Item.Properties().stacksTo(1));
 	
 	//Leaf Litter
-	public static final RegistryObject<Item> PERMIAN_FERN_LEAF_LITTER = advancedItemRegister("permian_fern_leaf_litter", new Item(standardProperties().food(FoodInit.PERMIAN_FERN_LEAF_LITTER).stacksTo(16)));
+	public static final RegistryObject<Item> FERN_LITTER = advancedItemRegister("fern_litter", new Item(standardProperties().food(FoodInit.FERN_LITTER).stacksTo(16)));
 	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
@@ -381,7 +381,7 @@ public class ItemInit
 	public static final RegistryObject<BlockItem> MEDIUM_PERMIAN_DESERT_PLANT = registerBlockItem("medium_permian_desert_plant", () -> BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
 	public static final RegistryObject<BlockItem> LARGE_PERMIAN_DESERT_PLANT = registerBlockItem("large_permian_desert_plant", () -> BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
 
-	public static final RegistryObject<BlockItem> PERMIAN_GROUND_FERNS = registerBlockItem("permian_ground_ferns", () -> BlockInit.PERMIAN_GROUND_FERNS.get());
+	public static final RegistryObject<BlockItem> GROUND_FERNS = registerBlockItem("ground_ferns", () -> BlockInit.GROUND_FERNS.get());
 	public static final RegistryObject<BlockItem> DICKSONIA = registerBlockItem("dicksonia", () -> BlockInit.DICKSONIA.get());
 	public static final RegistryObject<BlockItem> TALL_DICKSONIA = registerBlockItem("tall_dicksonia", () -> BlockInit.TALL_DICKSONIA.get());
 	public static final RegistryObject<BlockItem> PERMIAN_SEAGRASS = registerBlockItem("permian_seagrass", () -> BlockInit.PERMIAN_SEAGRASS.get());

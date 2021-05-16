@@ -6,7 +6,7 @@ import net.minecraft.potion.Effects;
 
 public class FoodInit 
 {
-	public static final Food PERMIAN_FERN_LEAF_LITTER = new Food.Builder().nutrition(3).saturationMod(0.7F).fast().build();
+	public static final Food FERN_LITTER = new Food.Builder().nutrition(3).saturationMod(0.7F).fast().build();
 
 	public static final Food RAW_SMALL_DINOSAUR_MEAT = new Food.Builder().effect(() -> new EffectInstance(Effects.POISON, 100), 0.25F).nutrition(1).saturationMod(0.0F).build();
 	public static final Food COOKED_SMALL_DINOSAUR_MEAT = new Food.Builder().nutrition(2).saturationMod(0.26F).build();

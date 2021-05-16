@@ -14,9 +14,9 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_PERMIAN_DESERT_PLANT_LARGE);
 	}
 	
-	public static void addPermianPlainsPlants(BiomeGenerationSettings.Builder builder) 
+	public static void addGroundFerns(BiomeGenerationSettings.Builder builder) 
 	{
-		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_PERMIAN_GROUND_FERNS);
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_GROUND_FERNS);
 	}
 	
 	public static void addDicksonia(BiomeGenerationSettings.Builder builder) 
@@ -43,6 +43,7 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	public static void addAraucariaTree(BiomeGenerationSettings.Builder builder)
 	{
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.ARAUCARIA_VEGETATION);
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.ARAUCARIA_VEGETATION_SMALL);
 	}
 	
 	public static void addPermianOres(BiomeGenerationSettings.Builder builder)

@@ -313,7 +313,7 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.MEDIUM_PERMIAN_DESERT_PLANT.get().getDefaultInstance());
 		item.add(ItemInit.LARGE_PERMIAN_DESERT_PLANT.get().getDefaultInstance());
 
-		item.add(ItemInit.PERMIAN_GROUND_FERNS.get().getDefaultInstance());
+		item.add(ItemInit.GROUND_FERNS.get().getDefaultInstance());
 		item.add(ItemInit.DICKSONIA.get().getDefaultInstance());
 		item.add(ItemInit.TALL_DICKSONIA.get().getDefaultInstance());
 		item.add(ItemInit.PERMIAN_SEAGRASS.get().getDefaultInstance());

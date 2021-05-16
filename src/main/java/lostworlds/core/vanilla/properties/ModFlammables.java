@@ -48,5 +48,22 @@ public class ModFlammables
 		flammableBlock(BlockInit.GINKGO_WOOD.get(), 5, 5);
 		flammableBlock(BlockInit.STRIPPED_GINKGO_LOG.get(), 5, 5);
 		flammableBlock(BlockInit.STRIPPED_GINKGO_WOOD.get(), 5, 5);
+		
+		flammableBlock(BlockInit.ARAUCARIA_BUTTON.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_DOOR.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_FENCE.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_FENCE_GATE.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_LEAVES.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_LOG.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_PLANKS.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_PRESSURE_PLATE.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_SIGN.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_SLAB.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_STAIRS.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_TRAPDOOR.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_WALL_SIGN.get(), 5, 5);
+		flammableBlock(BlockInit.ARAUCARIA_WOOD.get(), 5, 5);
+		flammableBlock(BlockInit.STRIPPED_ARAUCARIA_LOG.get(), 5, 5);
+		flammableBlock(BlockInit.STRIPPED_ARAUCARIA_WOOD.get(), 5, 5);
 	}
 }
