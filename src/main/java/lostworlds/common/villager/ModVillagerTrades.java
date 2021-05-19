@@ -16,8 +16,9 @@ public class ModVillagerTrades
 	{
         if(event.getType() == VillagerProfessionInit.ARCHAEOLOGIST.get())
         {
-        	event.getTrades().get(1).add((new ModVillagerTradesBuilder(16, 10, 0.05F).setEmeraldPrice(5).setForSale(ItemInit.ARCHAEOLOGY_TABLE.get(), 1, 2).build()));
-        	event.getTrades().get(2).add((new ModVillagerTradesBuilder(1, 10, 0.05F).setEmeraldPrice(20).setForSale(ItemInit.JP_MUSIC_DISC.get(), 1, 1).build()));
+        	event.getTrades().get(1).add((new ModVillagerTradesBuilder(1, 10, 0.05F).setEmeraldPrice(5).setForSale(ItemInit.ARCHAEOLOGY_TABLE.get(), 1, 2).build()));
+        	event.getTrades().get(1).add((new ModVillagerTradesBuilder(5, 10, 0.05F).setEmeraldPrice(5).setForSale(Items.CLAY, 1, 2).build()));
+        	event.getTrades().get(1).add((new ModVillagerTradesBuilder(30, 10, 0.05F).setEmeraldPrice(5).setForSale(Items.CLAY_BALL, 1, 2).build()));
         	event.getTrades().get(3).add((new ModVillagerTradesBuilder(1, 10, 0.05F).setEmeraldPrice(64).setEmeraldPrice(64).setForSale(ItemInit.PERMIAN_TIME_BOOK.get(), 1, 1).build()));
         	event.getTrades().get(3).add((new ModVillagerTradesBuilder(1, 10, 0.05F).setEmeraldPrice(64).setEmeraldPrice(64).setForSale(ItemInit.JURASSIC_TIME_BOOK.get(), 1, 1).build()));
         	event.getTrades().get(4).add((new ModVillagerTradesBuilder(1, 14, 0.05F).setEmeraldPrice(64).setForSale(Items.LODESTONE, 1, 1).build()));

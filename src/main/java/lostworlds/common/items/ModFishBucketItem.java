@@ -14,14 +14,14 @@ public class ModFishBucketItem extends FishBucketItem
 	private final Lazy<? extends EntityType<?>> entityTypeSupplier;
 
 	@SuppressWarnings("deprecation")
-	public ModFishBucketItem(final String textID, final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
+	public ModFishBucketItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
-		super(null, fluid,new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
+		super(null, fluid, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 	}
 
 	@SuppressWarnings("deprecation")
-	public ModFishBucketItem(final String textID, final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
+	public ModFishBucketItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
 		super(null, fluid, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);

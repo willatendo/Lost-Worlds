@@ -19,6 +19,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FieldGuideItem extends Item
 {
@@ -28,6 +30,7 @@ public class FieldGuideItem extends Item
 	}
 	
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
 	{
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);

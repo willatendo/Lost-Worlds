@@ -1,10 +1,8 @@
 {
-	"disc.jurassic_park": {
-		"category": "disc",
-		"subtitle": "jurassic_park",
+	"lazy": {
 		"sounds": [
 			{
-				"name": "lostworlds:discs/jurassic_park",
+				"name": "lostworlds:disc/disc",
 				"stream": true
 			}
 		]

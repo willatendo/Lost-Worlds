@@ -42,56 +42,56 @@ import software.bernie.geckolib3.GeckoLib;
 @Mod.EventBusSubscriber(modid = ModID.ID, bus = Bus.MOD)
 public class LostWorlds
 {
-    public static final Logger LOGGER = LogManager.getLogger(ModID.ID);
-    public static boolean DISABLE_IN_DEV = false;
+	public static final Logger LOGGER = LogManager.getLogger(ModID.ID);
+	public static boolean DISABLE_IN_DEV = false;
 
 	public LostWorlds() 
-    {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
+	{
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
 
-        //Main Objects
-        ModRegistry.registry(); 
-        
-        //Lib - 3.0.30
-        GeckoLib.initialize();
-        
-        MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OrePlaceFeature::generateOre);
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
-    }
+		//Main Objects
+		ModRegistry.registry(); 
+		
+		//Lib - 3.0.30
+		GeckoLib.initialize();
+		
+		MinecraftForge.EVENT_BUS.register(this);
+		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OrePlaceFeature::generateOre);
+		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
+	}
 
 	
-    @SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation")
 	private void setup(final FMLCommonSetupEvent event)
-    {
-    	DeferredWorkQueue.runLater(() -> 
-    	{
-    		ComposterBlock.add(0.6F, BlockInit.CONIFER_LEAVES.get());
-    		ComposterBlock.add(0.6F, BlockInit.GINKGO_LEAVES.get());
-    		ComposterBlock.add(0.4F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
-    		ComposterBlock.add(0.6F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
-    		ComposterBlock.add(0.8F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
-    		ComposterBlock.add(0.6F, BlockInit.GROUND_FERNS.get());
-    		ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
-    		ComposterBlock.add(0.6F, BlockInit.ARAUCARIA_SAPLING.get());
-    		ComposterBlock.add(0.6F, BlockInit.GINKGO_SAPLING.get());
-   	});
-    	
-    	event.enqueueWork(() -> 
-    	{
-    		PermianDimension.init();
-    		JurassicDimension.init();
-    	});
-    }
-    
-    @SubscribeEvent
+	{
+		DeferredWorkQueue.runLater(() -> 
+		{
+			ComposterBlock.add(0.6F, BlockInit.CONIFER_LEAVES.get());
+			ComposterBlock.add(0.6F, BlockInit.GINKGO_LEAVES.get());
+			ComposterBlock.add(0.4F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
+			ComposterBlock.add(0.6F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
+			ComposterBlock.add(0.8F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
+			ComposterBlock.add(0.6F, BlockInit.GROUND_FERNS.get());
+			ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
+			ComposterBlock.add(0.6F, BlockInit.ARAUCARIA_SAPLING.get());
+			ComposterBlock.add(0.6F, BlockInit.GINKGO_SAPLING.get());
+		});
+		
+		event.enqueueWork(() -> 
+		{
+			PermianDimension.init();
+			JurassicDimension.init();
+		});
+	}
+	
+	@SubscribeEvent
 	public static void onRegisterWorldCarvers(Register<WorldCarver<?>> event)
 	{
 		WorldCarverInit.init(event);
 	}
-    
-    @SubscribeEvent
+	
+	@SubscribeEvent
 	public static void onRegisterFeatures(Register<Feature<?>> event)
 	{
 		FeatureInit.init(event);
@@ -99,22 +99,22 @@ public class LostWorlds
 	}
 
 	public void clientSetup(FMLClientSetupEvent event) 
-    {
-        DimensionRenderInfo permian = new PermianDimensionRenderInfo();
-        DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "permian_render"), permian);
-        
-        DimensionRenderInfo jurassic = new JurassicDimensionRenderInfo();
-        DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "jurassic_render"), jurassic);
-    }
-    
-    private void loadComplete(FMLLoadCompleteEvent event)
-    {
-    	ModStrippables.strippingMap();
-    	ModFlammables.flammables();
-    }
-    
-    @SubscribeEvent
-    public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
+	{
+		DimensionRenderInfo permian = new PermianDimensionRenderInfo();
+		DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "permian_render"), permian);
+		
+		DimensionRenderInfo jurassic = new JurassicDimensionRenderInfo();
+		DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "jurassic_render"), jurassic);
+	}
+	
+	private void loadComplete(FMLLoadCompleteEvent event)
+	{
+		ModStrippables.strippingMap();
+		ModFlammables.flammables();
+	}
+	
+	@SubscribeEvent
+	public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
 	{
 		ModSpawnEggItem.initSpawnEggs();
 	}

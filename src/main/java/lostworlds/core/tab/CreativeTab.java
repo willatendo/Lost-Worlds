@@ -200,9 +200,6 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.CRYSTAL_SCARAB_AXE.get().getDefaultInstance());
 		item.add(ItemInit.CRYSTAL_SCARAB_HOE.get().getDefaultInstance());
 		
-		//Music Discs
-		item.add(ItemInit.JP_MUSIC_DISC.get().getDefaultInstance());
-		
 		//Blocks
 		//Ores
 		item.add(ItemInit.COPPER_ORE.get().getDefaultInstance());

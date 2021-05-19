@@ -28,7 +28,6 @@ import net.minecraft.item.Food;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
-import net.minecraft.item.MusicDiscItem;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ShovelItem;
@@ -36,7 +35,6 @@ import net.minecraft.item.SwordItem;
 import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
 
-@SuppressWarnings("deprecation")
 public class ItemInit 
 {
 	//Items
@@ -234,7 +232,7 @@ public class ItemInit
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = simpleItemRegister("mud_ball", standardProperties());
 	
-	//Copper
+	//Copper	
 	public static final RegistryObject<Item> COPPER_INGOT = simpleItemRegister("copper_ingot", standardProperties());
 	public static final RegistryObject<Item> COPPER_NUGGET = simpleItemRegister("copper_nugget", standardProperties());
 	
@@ -247,10 +245,7 @@ public class ItemInit
 	public static final RegistryObject<Item> MOTHERBOARD = simpleItemRegister("motherboard", standardProperties());
 	public static final RegistryObject<Item> CPU = simpleItemRegister("cpu", standardProperties());
 	public static final RegistryObject<Item> RAM = simpleItemRegister("ram", standardProperties());	
-	
-	//Music
-	public static final RegistryObject<Item> JP_MUSIC_DISC = advancedItemRegister("jp_music_disc", new MusicDiscItem(15, SoundInit.LAZY_JP_MUSIC.get(), standardProperties().stacksTo(1).rarity(Rarity.RARE)));
-	
+		
 	//Storage
 	public static final RegistryObject<Item> STORAGE_DISC = advancedItemRegister("storage_disc", new DiscItem("storage_disc", standardProperties().stacksTo(1)));
 		
@@ -680,7 +675,7 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerSpawnBucket(String id, NonNullSupplier<EntityType<?>> entity)
 	{
-		return advancedItemRegister(id + "_spawn_bucket", new ModFishBucketItem(id, entity, Fluids.WATER));
+		return advancedItemRegister(id + "_spawn_bucket", new ModFishBucketItem(entity, Fluids.WATER));
 	}
 	
 	private static RegistryObject<Item> registerMeat(String type, Food food) 
@@ -710,7 +705,7 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerEntityBucket(String id, NonNullSupplier<EntityType<?>> entity)
 	{
-		return advancedItemRegister(id + "_bucket", new ModFishBucketItem(id, entity, Fluids.WATER));
+		return advancedItemRegister(id + "_bucket", new ModFishBucketItem(entity, Fluids.WATER));
 	}
 	
 	//Bones
