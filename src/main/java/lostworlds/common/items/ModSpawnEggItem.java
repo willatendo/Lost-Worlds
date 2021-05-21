@@ -27,14 +27,14 @@ public class ModSpawnEggItem extends SpawnEggItem
 
 	public ModSpawnEggItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour) 
 	{
-		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
+		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ModItemGroup.LOST_WORLDS_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 		UNADDED_EGGS.add(this);
 	}
 
 	public ModSpawnEggItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour) 
 	{
-		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
+		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ModItemGroup.LOST_WORLDS_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 		UNADDED_EGGS.add(this);
 	}

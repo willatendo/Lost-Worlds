@@ -693,5 +693,11 @@
 	"lostworlds.transport_to_permian": "Transporting Player to the Permian!",
 	
 	//Item Group	
-	"itemGroup.lostworlds.lostworlds": "Lost Worlds"
+	"itemGroup.lostworlds.lostworlds": "Lost Worlds",
+	"itemGroup.lostworlds.lostworlds_fossils": "Lost Worlds Fossils",
+	"itemGroup.lostworlds.lostworlds_decoratives": "Lost Worlds Decoratives",
+	"itemGroup.lostworlds.lostworlds_nature": "Lost Worlds Nature",
+	"itemGroup.lostworlds.lostworlds_machines": "Lost Worlds Machines",
+	"itemGroup.lostworlds.lostworlds_tools": "Lost Worlds Tools",
+	"itemGroup.lostworlds.lostworlds_items": "Lost Worlds Items"
 }

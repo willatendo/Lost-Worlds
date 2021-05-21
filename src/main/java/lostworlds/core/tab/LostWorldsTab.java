@@ -8,9 +8,9 @@ import net.minecraft.item.Items;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 
-public class CreativeTab extends ItemGroup
+public class LostWorldsTab extends ItemGroup
 {
-	public CreativeTab() 
+	public LostWorldsTab() 
 	{
 		super(ModID.ID + "." + ModID.ID);
 	}
@@ -36,7 +36,13 @@ public class CreativeTab extends ItemGroup
 	@Override
 	public ResourceLocation getBackgroundImage() 
 	{
-		return ModID.lostWorlds("textures/gui/creative_tab/lostworlds_tab.png");
+		return ModID.lostWorlds("textures/gui/creative_tab/lostworlds_tab_search.png");
+	}
+	
+	@Override
+	public ResourceLocation getTabsImage() 
+	{
+		return ModID.lostWorlds("textures/gui/creative_tab/lostworlds_tabs.png");
 	}
 	
 	@Override
@@ -313,7 +319,6 @@ public class CreativeTab extends ItemGroup
 		item.add(ItemInit.GROUND_FERNS.get().getDefaultInstance());
 		item.add(ItemInit.DICKSONIA.get().getDefaultInstance());
 		item.add(ItemInit.TALL_DICKSONIA.get().getDefaultInstance());
-		item.add(ItemInit.PERMIAN_SEAGRASS.get().getDefaultInstance());
 		
 		//Jurassic
 		//Stone

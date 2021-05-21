@@ -16,14 +16,14 @@ public class ModFishBucketItem extends FishBucketItem
 	@SuppressWarnings("deprecation")
 	public ModFishBucketItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
-		super(null, fluid, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
+		super(null, fluid, new Item.Properties().tab(ModItemGroup.LOST_WORLDS_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 	}
 
 	@SuppressWarnings("deprecation")
 	public ModFishBucketItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
-		super(null, fluid, new Item.Properties().tab(ModItemGroup.TAB).stacksTo(1));
+		super(null, fluid, new Item.Properties().tab(ModItemGroup.LOST_WORLDS_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 	}
 	
