@@ -11,7 +11,6 @@ import lostworlds.common.items.ModSignItem;
 import lostworlds.common.items.ModSlabBurnableItem;
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.common.items.ModWoodBurnableItem;
-import lostworlds.common.items.SyringeItem;
 import lostworlds.common.items.WetPaperItem;
 import lostworlds.common.items.timebooks.JurassicTimeBook;
 import lostworlds.common.items.timebooks.PermianTimeBook;
@@ -51,7 +50,7 @@ public class ItemInit
 	public static final RegistryObject<Item> FEILD_GUIDE = ModRegistry.ITEM_REGISTRY.register("field_guide", () -> new FieldGuideItem(new Item.Properties()));
 	
 	//Syringe
-	public static final RegistryObject<Item> EMPTY_SYRINGE = advancedItemRegister("empty_syringe", new SyringeItem(standardProperties().stacksTo(1)));
+	public static final RegistryObject<Item> EMPTY_SYRINGE = simpleItemRegister("empty_syringe", standardProperties().stacksTo(1));
 	public static final RegistryObject<Item> BLOOD_SYRINGE = simpleItemRegister("blood_syringe", standardProperties().stacksTo(1));
 	
 	//Viles
@@ -59,11 +58,11 @@ public class ItemInit
 	public static final RegistryObject<Item> BLOOD_VILE = simpleItemRegister("blood_vile", standardProperties());
 
 	//Time Books
-	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("permian_time_book", () -> new PermianTimeBook(standardProperties().stacksTo(1)));
-	public static final RegistryObject<Item> JURASSIC_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("jurassic_time_book", () -> new JurassicTimeBook(standardProperties().stacksTo(1)));
+	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("permian_time_book", () -> new PermianTimeBook(standardProperties().stacksTo(1).rarity(Rarity.RARE)));
+	public static final RegistryObject<Item> JURASSIC_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("jurassic_time_book", () -> new JurassicTimeBook(standardProperties().stacksTo(1).rarity(Rarity.RARE)));
 	
 	//Time Lord's Staff
-	public static final RegistryObject<Item> TIME_LORDS_STAFF = simpleItemRegister("time_lords_staff", new Item.Properties().stacksTo(1));
+	public static final RegistryObject<Item> TIME_LORDS_STAFF = simpleItemRegister("time_lords_staff", new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
 	
 	//Leaf Litter
 	public static final RegistryObject<Item> FERN_LITTER = advancedItemRegister("fern_litter", new Item(standardProperties().food(FoodInit.FERN_LITTER).stacksTo(16)));
