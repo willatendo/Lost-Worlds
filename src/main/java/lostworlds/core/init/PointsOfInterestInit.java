@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,5 +21,5 @@ public class PointsOfInterestInit
 	public static final RegistryObject<PointOfInterestType> ARCHAEOLOGY_TABLE_POI = ModRegistry.POINTS_OF_INTEREST_REGISTRY.register("archaeology_table_poi", () -> new PointOfInterestType("archaeology_table_poi", getBlockStates(BlockInit.ARCHAEOLOGY_TABLE.get()), 1, 1));
 	
 	//Registry
-	public static void initPointsOfInterest() { }
+	public static void initPointsOfInterest() { ModUtil.LOGGER.debug("Registering: Mod Points Of Interest"); }
 }

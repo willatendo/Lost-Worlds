@@ -54,6 +54,7 @@ import lostworlds.common.blocks.eggs.TetraceratopsEggBlock;
 import lostworlds.common.blocks.eggs.TyrannosaurusEggBlock;
 import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolType;
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.ModWoodType;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.world.feature.tree.AraucariaTree;
@@ -76,7 +77,6 @@ import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.RedstoneOreBlock;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SaplingBlock;
-import net.minecraft.block.SeaGrassBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
@@ -144,7 +144,7 @@ public class BlockInit
 	public static final RegistryObject<PlasteredFossilBlock> PLASTERED_FOSSIL = ModRegistry.BLOCK_REGISTRY.register("plastered_fossil", () -> new PlasteredFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().sound(SoundType.WOOL).noOcclusion()));
 
 	//Fossil Processing	
-	
+	public static final RegistryObject<Block> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
 	
 	public static final RegistryObject<PowerSupplyBlock> POWER_SUPPLY_BLOCK = ModRegistry.BLOCK_REGISTRY.register("power_supply_block", () -> new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	
@@ -225,7 +225,7 @@ public class BlockInit
 	public static final RegistryObject<GroundFernsBlock> GROUND_FERNS = ModRegistry.BLOCK_REGISTRY.register("ground_ferns", () -> new GroundFernsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<TallGrassBlock> DICKSONIA = ModRegistry.BLOCK_REGISTRY.register("dicksonia", () -> new TallGrassBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<DoublePlantBlock> TALL_DICKSONIA = ModRegistry.BLOCK_REGISTRY.register("tall_dicksonia", () -> new DoublePlantBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
-	public static final RegistryObject<SeaGrassBlock> PERMIAN_SEAGRASS = ModRegistry.BLOCK_REGISTRY.register("permian_seagrass", () -> new SeaGrassBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<TallGrassBlock> CYCAD = ModRegistry.BLOCK_REGISTRY.register("cycad", () -> new TallGrassBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	
 	//Jurassic Blocks
 	public static final RegistryObject<Block> JURASSIC_STONE = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
@@ -483,5 +483,5 @@ public class BlockInit
 	public static final RegistryObject<DoorBlock> BACK_DOOR = ModRegistry.BLOCK_REGISTRY.register("back_door", () -> new DoorBlock(AbstractBlock.Properties.copy(Blocks.IRON_DOOR)));
 	
 	//Registry
-	public static void initBlocks() { }
+	public static void initBlocks() { ModUtil.LOGGER.debug("Registering: Mod Blocks"); }
 }

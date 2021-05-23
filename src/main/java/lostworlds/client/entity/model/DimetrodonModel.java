@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.DimetrodonEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class DimetrodonModel extends AnimatedGeoModel<DimetrodonEntity>
 	@Override
 	public ResourceLocation getModelLocation(DimetrodonEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/dimetrodon.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/dimetrodon.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(DimetrodonEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/dimetrodon.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/dimetrodon.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(DimetrodonEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/dimetrodon.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/dimetrodon.animations.json");
 	}
 	
 	@Override

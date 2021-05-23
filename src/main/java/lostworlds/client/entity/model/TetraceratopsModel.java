@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.TetraceratopsEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class TetraceratopsModel extends AnimatedGeoModel<TetraceratopsEntity>
 	@Override
 	public ResourceLocation getModelLocation(TetraceratopsEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/tetraceratops.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/tetraceratops.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(TetraceratopsEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/tetraceratops.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/tetraceratops.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(TetraceratopsEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/tetraceratops.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/tetraceratops.animations.json");
 	}
 
 	@Override

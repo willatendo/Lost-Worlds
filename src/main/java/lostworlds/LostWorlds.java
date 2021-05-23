@@ -1,11 +1,8 @@
 package lostworlds;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.init.BlockInit;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.core.vanilla.properties.ModFlammables;
 import lostworlds.core.vanilla.properties.ModStrippables;
@@ -38,27 +35,29 @@ import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
-@Mod(ModID.ID)
-@Mod.EventBusSubscriber(modid = ModID.ID, bus = Bus.MOD)
+@Mod(ModUtil.ID)
+@Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD)
 public class LostWorlds
 {
-	public static final Logger LOGGER = LogManager.getLogger(ModID.ID);
 	public static boolean DISABLE_IN_DEV = false;
 
 	public LostWorlds() 
 	{
+		ModUtil.LOGGER.debug("Loading: The Lost Worlds");
+		
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
 
-		//Main Objects
 		ModRegistry.registry(); 
 		
-		//Lib - 3.0.30
+		//Lib - V. 3.0.30
 		GeckoLib.initialize();
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OrePlaceFeature::generateOre);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
+
+		ModUtil.LOGGER.debug("Finished: The Lost Worlds");
 	}
 
 	
@@ -67,6 +66,8 @@ public class LostWorlds
 	{
 		DeferredWorkQueue.runLater(() -> 
 		{
+			ModUtil.LOGGER.debug("Loading: Registering Compostables");
+			
 			ComposterBlock.add(0.6F, BlockInit.CONIFER_LEAVES.get());
 			ComposterBlock.add(0.6F, BlockInit.GINKGO_LEAVES.get());
 			ComposterBlock.add(0.4F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
@@ -76,46 +77,72 @@ public class LostWorlds
 			ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
 			ComposterBlock.add(0.6F, BlockInit.ARAUCARIA_SAPLING.get());
 			ComposterBlock.add(0.6F, BlockInit.GINKGO_SAPLING.get());
+			
+			ModUtil.LOGGER.debug("Finished: Registering Compostables");
 		});
 		
 		event.enqueueWork(() -> 
 		{
+			ModUtil.LOGGER.debug("Loading: Making Dimension Pieces");
+
 			PermianDimension.init();
 			JurassicDimension.init();
+
+			ModUtil.LOGGER.debug("Finished: Making Dimension Pieces");
 		});
 	}
 	
 	@SubscribeEvent
 	public static void onRegisterWorldCarvers(Register<WorldCarver<?>> event)
 	{
+		ModUtil.LOGGER.debug("Loading: Making World Carvers");
+
 		WorldCarverInit.init(event);
+
+		ModUtil.LOGGER.debug("Finished: Making World Carvers");
 	}
 	
 	@SubscribeEvent
 	public static void onRegisterFeatures(Register<Feature<?>> event)
 	{
+		ModUtil.LOGGER.debug("Loading: Making Features");
+
 		FeatureInit.init(event);
 		ConfiguredFeatureInit.init();
+
+		ModUtil.LOGGER.debug("Finished: Making Features");
 	}
 
 	public void clientSetup(FMLClientSetupEvent event) 
 	{
+		ModUtil.LOGGER.debug("Loading: Dimension Renders");
+
 		DimensionRenderInfo permian = new PermianDimensionRenderInfo();
-		DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "permian_render"), permian);
+		DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModUtil.ID, "permian_render"), permian);
 		
 		DimensionRenderInfo jurassic = new JurassicDimensionRenderInfo();
-		DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModID.ID, "jurassic_render"), jurassic);
+		DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModUtil.ID, "jurassic_render"), jurassic);
+
+		ModUtil.LOGGER.debug("Finished: Dimension Renders");
 	}
 	
 	private void loadComplete(FMLLoadCompleteEvent event)
 	{
+		ModUtil.LOGGER.debug("Loading: Vanilla Maps");
+
 		ModStrippables.strippingMap();
 		ModFlammables.flammables();
+		
+		ModUtil.LOGGER.debug("Finished: Vanilla Maps");
 	}
 	
 	@SubscribeEvent
 	public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
 	{
+		ModUtil.LOGGER.debug("Loading: Spawn Eggs");
+		
 		ModSpawnEggItem.initSpawnEggs();
+		
+		ModUtil.LOGGER.debug("Finished: Spawn Eggs");
 	}
 }

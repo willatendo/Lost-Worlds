@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.lwjgl.glfw.GLFW;
 
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.TextUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
@@ -28,11 +28,11 @@ public class WetPaperItem extends Item
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT))
 		{
-			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + ".wet_paper.holding_shift", TextFormatting.GRAY));
+			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModUtil.ID + ".wet_paper.holding_shift", TextFormatting.GRAY));
 		}
 		else
 		{
-			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + ".wet_paper.not_holding_shift", TextFormatting.GRAY));
+			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModUtil.ID + ".wet_paper.not_holding_shift", TextFormatting.GRAY));
 		}
 	}
 }

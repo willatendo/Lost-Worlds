@@ -1,6 +1,6 @@
 package lostworlds.world.init;
 
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import lostworlds.world.dimension.ModCanyonWorldCarver;
 import lostworlds.world.dimension.ModCaveWorldCarver;
 import net.minecraft.util.registry.Registry;
@@ -23,7 +23,7 @@ public class WorldCarverInit
 	
 	public static <T extends IForgeRegistryEntry<T>> void register(IForgeRegistry<T> registry, String name, T object)
 	{
-		object.setRegistryName(ModID.lostWorlds(name));
+		object.setRegistryName(ModUtil.rL(name));
 		registry.register(object);
 	}
 	

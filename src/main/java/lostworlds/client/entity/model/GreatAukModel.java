@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.GreatAukEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class GreatAukModel extends AnimatedGeoModel<GreatAukEntity>
 	@Override
 	public ResourceLocation getModelLocation(GreatAukEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/great_auk.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/great_auk.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(GreatAukEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/great_auk.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/great_auk.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(GreatAukEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/great_auk.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/great_auk.animations.json");
 	}
 
 	@Override

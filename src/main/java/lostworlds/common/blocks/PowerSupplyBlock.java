@@ -2,7 +2,7 @@ package lostworlds.common.blocks;
 
 import java.util.List;
 
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneBlock;
@@ -39,7 +39,7 @@ public class PowerSupplyBlock extends RedstoneBlock
 	public void appendHoverText(ItemStack stack, IBlockReader blockReader, List<ITextComponent> textComponent, ITooltipFlag flag) 
 	{
 		super.appendHoverText(stack, blockReader, textComponent, flag);
-		textComponent.add(new TranslationTextComponent("toolTip." + ModID.ID + ".power_supply_block"));
+		textComponent.add(new TranslationTextComponent("toolTip." + ModUtil.ID + ".power_supply_block"));
 	}
 	
 	@Override

@@ -1,7 +1,7 @@
 package lostworlds.core.tab;
 
 import lostworlds.core.init.ItemInit;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -12,7 +12,7 @@ public class LostWorldsTab extends ItemGroup
 {
 	public LostWorldsTab() 
 	{
-		super(ModID.ID + "." + ModID.ID);
+		super(ModUtil.ID + "." + ModUtil.ID);
 	}
 
 	@Override
@@ -36,13 +36,13 @@ public class LostWorldsTab extends ItemGroup
 	@Override
 	public ResourceLocation getBackgroundImage() 
 	{
-		return ModID.lostWorlds("textures/gui/creative_tab/lostworlds_tab_search.png");
+		return ModUtil.rL("textures/gui/creative_tab/lostworlds_tab_search.png");
 	}
 	
 	@Override
 	public ResourceLocation getTabsImage() 
 	{
-		return ModID.lostWorlds("textures/gui/creative_tab/lostworlds_tabs.png");
+		return ModUtil.rL("textures/gui/creative_tab/lostworlds_tabs.png");
 	}
 	
 	@Override

@@ -2,7 +2,7 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
-import lostworlds.common.goal.PrehistoricBreedGoal;
+import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
@@ -87,7 +87,7 @@ public class OstromiaEntity extends AbstractPrehistoricAnimalEntity implements I
 	protected void registerGoals()
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(5, new PrehistoricBreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, CryolophosaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, AllosaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));

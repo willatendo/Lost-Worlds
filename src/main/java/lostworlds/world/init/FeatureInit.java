@@ -1,6 +1,6 @@
 package lostworlds.world.init;
 
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import lostworlds.world.feature.lake.JurassicLakesFeature;
 import lostworlds.world.feature.lake.PermianLakesFeature;
 import net.minecraft.util.ResourceLocation;
@@ -23,7 +23,7 @@ public class FeatureInit
 	
 	public static <T extends IForgeRegistryEntry<T>> T register(IForgeRegistry<T> registry, T entry, String registryKey) 
     {
-        entry.setRegistryName(new ResourceLocation(ModID.ID, registryKey));
+        entry.setRegistryName(new ResourceLocation(ModUtil.ID, registryKey));
         registry.register(entry);
         return entry;
     }

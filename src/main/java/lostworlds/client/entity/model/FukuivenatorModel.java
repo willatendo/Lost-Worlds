@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.FukuivenatorEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class FukuivenatorModel extends AnimatedGeoModel<FukuivenatorEntity>
 	@Override
 	public ResourceLocation getModelLocation(FukuivenatorEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/fukuivenator.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/fukuivenator.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(FukuivenatorEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/fukuivenator.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/fukuivenator.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(FukuivenatorEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/fukuivenator.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/fukuivenator.animations.json");
 	}
 
 	@Override

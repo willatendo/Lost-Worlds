@@ -5,7 +5,7 @@ import java.util.List;
 import org.lwjgl.glfw.GLFW;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.TextUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
@@ -36,11 +36,11 @@ public class FieldGuideItem extends Item
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT))
 		{
-			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + ".field_guide.holding_shift", TextFormatting.GRAY));
+			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModUtil.ID + ".field_guide.holding_shift", TextFormatting.GRAY));
 		}
 		else
 		{
-			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + ".field_guide.not_holding_shift", TextFormatting.GRAY));
+			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModUtil.ID + ".field_guide.not_holding_shift", TextFormatting.GRAY));
 		}
 	}
 	

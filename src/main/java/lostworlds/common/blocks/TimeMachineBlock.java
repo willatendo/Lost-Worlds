@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import org.lwjgl.glfw.GLFW;
 
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.TextUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
@@ -57,11 +57,11 @@ public class TimeMachineBlock extends ContainerBlock
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT))
 		{
-			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + ".time_machine.holding_shift", TextFormatting.GOLD));
+			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModUtil.ID + ".time_machine.holding_shift", TextFormatting.GOLD));
 		}
 		else
 		{
-			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModID.ID + ".time_machine.not_holding_shift", TextFormatting.GRAY));
+			tooltip.add(TextUtil.coloredTextComponent("toolTip." + ModUtil.ID + ".time_machine.not_holding_shift", TextFormatting.GRAY));
 		}
 	}
 	

@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.ProtosuchusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
@@ -10,15 +10,15 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
 public class ProtosuchusModel extends AnimatedGeoModel<ProtosuchusEntity> 
 {	
-	private static final ResourceLocation MALE = new ResourceLocation(ModID.ID, "textures/model/entity/protosuchus/male.png");
-	private static final ResourceLocation FEMALE = new ResourceLocation(ModID.ID, "textures/model/entity/protosuchus/female.png");
-	private static final ResourceLocation BABY = new ResourceLocation(ModID.ID, "textures/model/entity/protosuchus/baby.png");
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/protosuchus/male.png");
+	private static final ResourceLocation FEMALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/protosuchus/female.png");
+	private static final ResourceLocation BABY = new ResourceLocation(ModUtil.ID, "textures/model/entity/protosuchus/baby.png");
 	private ResourceLocation texture;
 	
 	@Override
 	public ResourceLocation getModelLocation(ProtosuchusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/protosuchus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/protosuchus.geo.json");
 	}
 	
 	@Override
@@ -30,7 +30,7 @@ public class ProtosuchusModel extends AnimatedGeoModel<ProtosuchusEntity>
 	@Override
 	public ResourceLocation getAnimationFileLocation(ProtosuchusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/protosuchus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/protosuchus.animations.json");
 	}
 
 	@Override

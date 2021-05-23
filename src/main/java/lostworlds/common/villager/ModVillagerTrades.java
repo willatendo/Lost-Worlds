@@ -2,13 +2,13 @@ package lostworlds.common.villager;
 
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.VillagerProfessionInit;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.item.Items;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = ModID.ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModVillagerTrades
 {
 	@SubscribeEvent

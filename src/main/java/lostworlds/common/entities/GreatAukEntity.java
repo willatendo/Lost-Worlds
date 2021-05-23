@@ -2,7 +2,7 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
-import lostworlds.common.goal.PrehistoricBreedGoal;
+import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
@@ -97,7 +97,7 @@ public class GreatAukEntity extends AbstractPrehistoricLandAndSeaEntity implemen
 	protected void registerGoals()
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(5, new PrehistoricBreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 //		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CodEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SalmonEntity.class, false));

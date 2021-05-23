@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.CarnotaurusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class CarnotaurusModel extends AnimatedGeoModel<CarnotaurusEntity>
 	@Override
 	public ResourceLocation getModelLocation(CarnotaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/carnotaurus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/carnotaurus.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(CarnotaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/carnotaurus.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/carnotaurus.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(CarnotaurusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/carnotaurus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/carnotaurus.animations.json");
 	}
 
 	@Override

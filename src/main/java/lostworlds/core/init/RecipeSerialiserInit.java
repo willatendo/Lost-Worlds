@@ -2,6 +2,7 @@ package lostworlds.core.init;
 
 import lostworlds.common.recipe.FossilCleanerRecipe;
 import lostworlds.common.recipe.FossilCleanerRecipeSerialiser;
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.interfaces.IFossilCleanerRecipe;
 import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.item.crafting.IRecipe;
@@ -34,5 +35,5 @@ public class RecipeSerialiserInit
 	{	
 		return (T) Registry.register(Registry.RECIPE_TYPE, recipeTypeId, new RecipeType<>());
 	}
-	public static void initRecipeSerialisers() { }
+	public static void initRecipeSerialisers() { ModUtil.LOGGER.debug("Registering: Recipes"); }
 }

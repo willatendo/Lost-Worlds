@@ -3,7 +3,7 @@ package lostworlds.world.init;
 import com.google.common.collect.ImmutableList;
 
 import lostworlds.core.util.ModBlockStates;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import lostworlds.world.feature.ModFillerBlockType;
 import lostworlds.world.feature.foliageplacer.GinkgoFoliagePlacer;
 import net.minecraft.util.ResourceLocation;
@@ -36,13 +36,11 @@ import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 public class ConfiguredFeatureInit 
 {
     //Plants
-	//Permian Desert Plant
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_SMALL = register("patch_permian_desert_plant_small", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_SMALL).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_MEDIUM = register("patch_permian_desert_plant_medium", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_MEDIUM).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_LARGE = register("patch_permian_desert_plant_large", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_LARGE).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
-	
-	//Lush Permian Plants
 	public static final ConfiguredFeature<?, ?> PATCH_GROUND_FERNS = register("patch_ground_ferns", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_GROUND_FERNS_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+	public static final ConfiguredFeature<?, ?> PATCH_FERNS = register("patch_ferns", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_FERNS_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_DICKSONIA = register("patch_dicksonia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_DICKSONIA).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_TALL_DICKSONIA = register("patch_tall_dicksonia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_TALL_DICKSONIA).decorated(Features.Placements.ADD_32).decorated(Features.Placements.HEIGHTMAP).squared().decorated(Placement.COUNT_NOISE.configured(new NoiseDependant(-0.8D, 0, 7))));
 
@@ -96,15 +94,15 @@ public class ConfiguredFeatureInit
 	{
 		Registry<ConfiguredFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_FEATURE;
 		
-		Registry.register(registry, new ResourceLocation(ModID.ID, "permian_water_lake"), PERMIAN_WATER_LAKE);
-		Registry.register(registry, new ResourceLocation(ModID.ID, "permian_lava_lake"), PERMIAN_LAVA_LAKE);
+		Registry.register(registry, new ResourceLocation(ModUtil.ID, "permian_water_lake"), PERMIAN_WATER_LAKE);
+		Registry.register(registry, new ResourceLocation(ModUtil.ID, "permian_lava_lake"), PERMIAN_LAVA_LAKE);
 		
-		Registry.register(registry, new ResourceLocation(ModID.ID, "jurassic_water_lake"), JURASSIC_WATER_LAKE);
-		Registry.register(registry, new ResourceLocation(ModID.ID, "jurassic_lava_lake"), JURASSIC_LAVA_LAKE);
+		Registry.register(registry, new ResourceLocation(ModUtil.ID, "jurassic_water_lake"), JURASSIC_WATER_LAKE);
+		Registry.register(registry, new ResourceLocation(ModUtil.ID, "jurassic_lava_lake"), JURASSIC_LAVA_LAKE);
 	}
 	
 	public static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) 
 	{
-		return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, id, configuredFeature);
+		return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ModUtil.rL(id), configuredFeature);
 	}
 }

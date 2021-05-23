@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.SuchomimusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class SuchomimusModel extends AnimatedGeoModel<SuchomimusEntity>
 	@Override
 	public ResourceLocation getModelLocation(SuchomimusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/suchomimus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/suchomimus.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(SuchomimusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/suchomimus.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/suchomimus.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(SuchomimusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/suchomimus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/suchomimus.animations.json");
 	}
 
 	@Override

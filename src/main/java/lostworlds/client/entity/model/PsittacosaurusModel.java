@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.PsittacosaurusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class PsittacosaurusModel extends AnimatedGeoModel<PsittacosaurusEntity>
 	@Override
 	public ResourceLocation getModelLocation(PsittacosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/psittacosaurus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/psittacosaurus.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(PsittacosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/psittacosaurus.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/psittacosaurus.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(PsittacosaurusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/psittacosaurus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/psittacosaurus.animations.json");
 	}
 
 	@Override

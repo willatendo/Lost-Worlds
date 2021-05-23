@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.DiictodonEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class DiictodonModel extends AnimatedGeoModel<DiictodonEntity>
 	@Override
 	public ResourceLocation getModelLocation(DiictodonEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/diictodon.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/diictodon.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(DiictodonEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/diictodon.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/diictodon.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(DiictodonEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/diictodon.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/diictodon.animations.json");
 	}
 	
 	@Override

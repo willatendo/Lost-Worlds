@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.GiganotosaurusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class GiganotosaurusModel extends AnimatedGeoModel<GiganotosaurusEntity>
 	@Override
 	public ResourceLocation getModelLocation(GiganotosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/giganotosaurus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/giganotosaurus.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(GiganotosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/giganotosaurus.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/giganotosaurus.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(GiganotosaurusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/giganotosaurus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/giganotosaurus.animations.json");
 	}
 
 	@Override

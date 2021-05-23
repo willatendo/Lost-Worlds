@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.EdaphosaurusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -13,18 +13,18 @@ public class EdaphosaurusModel extends AnimatedGeoModel<EdaphosaurusEntity>
 	@Override
 	public ResourceLocation getModelLocation(EdaphosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/edaphosaurus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/edaphosaurus.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(EdaphosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/edaphosaurus.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/edaphosaurus.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(EdaphosaurusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/edaphosaurus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/edaphosaurus.animations.json");
 	}
 }

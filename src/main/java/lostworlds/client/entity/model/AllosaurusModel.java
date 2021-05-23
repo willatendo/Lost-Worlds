@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.AllosaurusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
@@ -10,13 +10,13 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
 public class AllosaurusModel extends AnimatedGeoModel<AllosaurusEntity> 
 {	
-	private static final ResourceLocation MALE = new ResourceLocation(ModID.ID, "textures/model/entity/allosaurus/male.png");
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/allosaurus/male.png");
 	private ResourceLocation texture;
 	
 	@Override
 	public ResourceLocation getModelLocation(AllosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/allosaurus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/allosaurus.geo.json");
 	}
 	
 	@Override
@@ -28,7 +28,7 @@ public class AllosaurusModel extends AnimatedGeoModel<AllosaurusEntity>
 	@Override
 	public ResourceLocation getAnimationFileLocation(AllosaurusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/allosaurus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/allosaurus.animations.json");
 	}
 
 	@Override

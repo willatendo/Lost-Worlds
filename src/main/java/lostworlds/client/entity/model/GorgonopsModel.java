@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.GorgonopsEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class GorgonopsModel extends AnimatedGeoModel<GorgonopsEntity>
 	@Override
 	public ResourceLocation getModelLocation(GorgonopsEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/gorgonops.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/gorgonops.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(GorgonopsEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/gorgonops.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/gorgonops.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(GorgonopsEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/gorgonops.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/gorgonops.animations.json");
 	}
 	
 	@Override

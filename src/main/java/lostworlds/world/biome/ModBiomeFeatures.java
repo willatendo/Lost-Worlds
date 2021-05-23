@@ -17,6 +17,7 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	public static void addGroundFerns(BiomeGenerationSettings.Builder builder) 
 	{
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_GROUND_FERNS);
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_FERNS);
 	}
 	
 	public static void addDicksonia(BiomeGenerationSettings.Builder builder) 

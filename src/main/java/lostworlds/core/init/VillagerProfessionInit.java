@@ -3,6 +3,7 @@ package lostworlds.core.init;
 import javax.annotation.Nullable;
 
 import lostworlds.common.villager.ModVillagerProfession;
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.util.SoundEvent;
@@ -20,5 +21,5 @@ public class VillagerProfessionInit
 		return ModRegistry.VILLAGER_PROFESSIONS_REGISTRY.register(id, () -> new ModVillagerProfession(id, poi, sounds));
 	}
 	
-	public static void initVillageProfession() { }
+	public static void initVillageProfession() { ModUtil.LOGGER.debug("Registering: Mod Villager Professions"); }
 }

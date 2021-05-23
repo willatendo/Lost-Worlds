@@ -99,7 +99,6 @@ public class ModBlockStates
 	public static final BlockState LARGE_PERMIAN_DESERT_PLANT = BlockInit.LARGE_PERMIAN_DESERT_PLANT.get().defaultBlockState();
 	
 	public static final BlockState GROUND_FERNS = BlockInit.GROUND_FERNS.get().defaultBlockState();
-	public static final BlockState PERMIAN_SEAGRASS = BlockInit.PERMIAN_SEAGRASS.get().defaultBlockState();
 
 	public static final BlockState DICKSONIA = BlockInit.DICKSONIA.get().defaultBlockState();
 	public static final BlockState TALL_DICKSONIA = BlockInit.TALL_DICKSONIA.get().defaultBlockState();

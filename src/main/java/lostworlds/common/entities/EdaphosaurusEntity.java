@@ -2,7 +2,7 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
-import lostworlds.common.goal.PrehistoricBreedGoal;
+import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
@@ -62,7 +62,7 @@ public class EdaphosaurusEntity extends AbstractPrehistoricAnimalEntity implemen
 	protected void registerGoals() 
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(3, new PrehistoricBreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(3, new ModBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(4, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
 		this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, DimetrodonEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 	}

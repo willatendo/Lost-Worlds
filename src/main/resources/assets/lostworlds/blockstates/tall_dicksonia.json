@@ -1,10 +1,10 @@
 {
  	"variants": {
  		"half=lower": {
- 			"model": "lostworlds:block/tall_dicksonia_bottom"
+ 			"model": "lostworlds:block/dicksonia_stem"
     	},
     	"half=upper": {
- 			"model": "lostworlds:block/tall_dicksonia_top"
+ 			"model": "lostworlds:block/dicksonia_top"
     	}
   	}
 }

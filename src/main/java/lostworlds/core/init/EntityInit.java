@@ -23,6 +23,7 @@ import lostworlds.common.entities.RhinesuchusEntity;
 import lostworlds.common.entities.SuchomimusEntity;
 import lostworlds.common.entities.TetraceratopsEntity;
 import lostworlds.common.entities.TyrannosaurusEntity;
+import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
@@ -63,5 +64,5 @@ public class EntityInit
 		return ModRegistry.ENTITY_REGISTRY.register(name, () -> EntityType.Builder.of(entity, entitytype).sized(width, height).build(name));
 	}
 	
-	public static void initEntities() { }
+	public static void initEntities() { ModUtil.LOGGER.debug("Registering: Mod Entities"); }
 }

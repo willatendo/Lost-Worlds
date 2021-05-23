@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.OuranosaurusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,19 +16,19 @@ public class OuranosaurusModel extends AnimatedGeoModel<OuranosaurusEntity>
 	@Override
 	public ResourceLocation getModelLocation(OuranosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/ouranosaurus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/ouranosaurus.geo.json");
 	}
 	
 	@Override
 	public ResourceLocation getTextureLocation(OuranosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "textures/model/entity/ouranosaurus.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/ouranosaurus.png");
 	}
 	
 	@Override
 	public ResourceLocation getAnimationFileLocation(OuranosaurusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/ouranosaurus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/ouranosaurus.animations.json");
 	}
 
 	@Override

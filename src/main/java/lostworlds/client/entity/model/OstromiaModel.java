@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.OstromiaEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
@@ -10,13 +10,13 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
 public class OstromiaModel extends AnimatedGeoModel<OstromiaEntity> 
 {	
-	private static final ResourceLocation MALE = new ResourceLocation(ModID.ID, "textures/model/entity/ostromia/male.png");
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/ostromia/male.png");
 	private ResourceLocation texture;
 	
 	@Override
 	public ResourceLocation getModelLocation(OstromiaEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/ostromia.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/ostromia.geo.json");
 	}
 	
 	@Override
@@ -28,7 +28,7 @@ public class OstromiaModel extends AnimatedGeoModel<OstromiaEntity>
 	@Override
 	public ResourceLocation getAnimationFileLocation(OstromiaEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/ostromia.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/ostromia.animations.json");
 	}
 
 	@Override

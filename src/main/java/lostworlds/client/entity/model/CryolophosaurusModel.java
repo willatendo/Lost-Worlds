@@ -1,7 +1,7 @@
 package lostworlds.client.entity.model;
 
 import lostworlds.common.entities.CryolophosaurusEntity;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
@@ -10,15 +10,15 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
 public class CryolophosaurusModel extends AnimatedGeoModel<CryolophosaurusEntity> 
 {	
-	private static final ResourceLocation MALE = new ResourceLocation(ModID.ID, "textures/model/entity/cryolophosaurus/male.png");
-	private static final ResourceLocation FEMALE = new ResourceLocation(ModID.ID, "textures/model/entity/cryolophosaurus/female.png");
-	private static final ResourceLocation BABY = new ResourceLocation(ModID.ID, "textures/model/entity/cryolophosaurus/baby.png");
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/cryolophosaurus/male.png");
+	private static final ResourceLocation FEMALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/cryolophosaurus/female.png");
+	private static final ResourceLocation BABY = new ResourceLocation(ModUtil.ID, "textures/model/entity/cryolophosaurus/baby.png");
 	private ResourceLocation texture;
 	
 	@Override
 	public ResourceLocation getModelLocation(CryolophosaurusEntity object) 
 	{
-		return new ResourceLocation(ModID.ID, "geo/cryolophosaurus.geo.json");
+		return new ResourceLocation(ModUtil.ID, "geo/cryolophosaurus.geo.json");
 	}
 	
 	@Override
@@ -30,7 +30,7 @@ public class CryolophosaurusModel extends AnimatedGeoModel<CryolophosaurusEntity
 	@Override
 	public ResourceLocation getAnimationFileLocation(CryolophosaurusEntity animatable) 
 	{
-		return new ResourceLocation(ModID.ID, "animations/cryolophosaurus.animations.json");
+		return new ResourceLocation(ModUtil.ID, "animations/cryolophosaurus.animations.json");
 	}
 
 	@Override

@@ -1,18 +1,17 @@
 package lostworlds.client.event;
 
 import lostworlds.core.init.ItemInit;
-import lostworlds.core.util.ModID;
+import lostworlds.core.util.ModUtil;
 import lostworlds.world.dimension.jurassic.JurassicDimension;
 import lostworlds.world.dimension.permian.PermianDimension;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-@Mod.EventBusSubscriber(modid = ModID.ID, value = Dist.CLIENT, bus = Bus.FORGE)
+@Mod.EventBusSubscriber(modid = ModUtil.ID, value = Dist.CLIENT, bus = Bus.FORGE)
 public class TimeBookUse 
 {
 	@SubscribeEvent
@@ -24,11 +23,11 @@ public class TimeBookUse
 			
 			if(player.level.dimension() == JurassicDimension.JURASSIC_WORLD)
 			{
-				event.getPlayer().sendMessage(new TranslationTextComponent(ModID.ID + ".transport_to_overworld"), player.getUUID());
+				event.getPlayer().sendMessage(ModUtil.tTC("transport_to_overworld"), player.getUUID());
 			}
 			else
 			{
-				event.getPlayer().sendMessage(new TranslationTextComponent(ModID.ID + ".transport_to_jurassic"), player.getUUID());
+				event.getPlayer().sendMessage(ModUtil.tTC("transport_to_jurassic"), player.getUUID());
 			}
 		}
 	}
@@ -42,11 +41,11 @@ public class TimeBookUse
 			
 			if(player.level.dimension() == PermianDimension.PERMIAN_WORLD)
 			{
-				event.getPlayer().sendMessage(new TranslationTextComponent(ModID.ID + ".transport_to_overworld"), player.getUUID());
+				event.getPlayer().sendMessage(ModUtil.tTC("transport_to_overworld"), player.getUUID());
 			}
 			else
 			{
-				event.getPlayer().sendMessage(new TranslationTextComponent(ModID.ID + ".transport_to_permian"), player.getUUID());
+				event.getPlayer().sendMessage(ModUtil.tTC("transport_to_permian"), player.getUUID());
 			}
 		}
 	}

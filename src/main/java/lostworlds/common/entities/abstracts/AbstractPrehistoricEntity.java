@@ -20,7 +20,9 @@ import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -35,8 +37,11 @@ import net.minecraft.world.World;
 public abstract class AbstractPrehistoricEntity extends CreatureEntity
 {
  	public static final DataParameter<Boolean> ATTACKING = EntityDataManager.defineId(AbstractPrehistoricEntity.class, DataSerializers.BOOLEAN);	
+    protected static final DataParameter<Byte> SEX = EntityDataManager.defineId(TameableEntity.class, DataSerializers.BYTE);
 	
-	protected boolean isHostile;
+    public static final String SEX_TAG = "Sex";
+
+    protected boolean isHostile;
 	protected boolean isScaredOfPlayer;
 	protected boolean isFish = false;
 	protected boolean isAmphibian = false;
@@ -99,8 +104,34 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	protected void defineSynchedData() 
 	{
 		super.defineSynchedData();
+		byte sex = (byte) random.nextInt(2);
+        this.entityData.define(SEX, sex);
 		this.getEntityData().define(ATTACKING, Boolean.FALSE);
 	}
+	
+	@Override
+	public void addAdditionalSaveData(CompoundNBT nbt) 
+	{
+		super.addAdditionalSaveData(nbt);
+		nbt.putByte(SEX_TAG, getSex());
+	}
+	
+	@Override
+	public void readAdditionalSaveData(CompoundNBT nbt) 
+	{
+		super.readAdditionalSaveData(nbt);
+		setSex(nbt.getByte(SEX_TAG));
+	}
+	
+	public byte getSex() 
+	{
+        return entityData.get(SEX);
+    }
+
+    public void setSex(byte sex) 
+    {
+    	entityData.set(SEX, sex);
+    }
 	
 	public void setAttacking(boolean attacking) 
 	{

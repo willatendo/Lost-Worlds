@@ -2,19 +2,14 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
-import lostworlds.common.goal.PrehistoricBreedGoal;
+import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -27,9 +22,6 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class ProtosuchusEntity extends AbstractPrehistoricLandAndSeaEntity implements IAnimatable
 {
-	public static final String SEX_TAG = "Sex";
-    protected static final DataParameter<Byte> SEX = EntityDataManager.defineId(TameableEntity.class, DataSerializers.BYTE);
-    
     private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE, ItemInit.ALLOSAURUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
@@ -95,43 +87,11 @@ public class ProtosuchusEntity extends AbstractPrehistoricLandAndSeaEntity imple
 		return FOOD_ITEMS.test(stack);
 	}
 	
-	@Override
-	protected void defineSynchedData() 
-	{
-		super.defineSynchedData();
-        byte sex = (byte) random.nextInt(2);
-        this.entityData.define(SEX, sex);
-	}
-	
-	@Override
-	public void addAdditionalSaveData(CompoundNBT nbt) 
-	{
-		super.addAdditionalSaveData(nbt);
-		nbt.putByte(SEX_TAG, getSex());
-	}
-	
-	@Override
-	public void readAdditionalSaveData(CompoundNBT nbt) 
-	{
-		super.readAdditionalSaveData(nbt);
-		setSex(nbt.getByte(SEX_TAG));
-	}
-	
-	public byte getSex() 
-	{
-        return entityData.get(SEX);
-    }
-
-    public void setSex(byte sex) 
-    {
-    	entityData.set(SEX, sex);
-    }
-	
     @Override
 	protected void registerGoals()
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(5, new PrehistoricBreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 	}
 
 	@Override
