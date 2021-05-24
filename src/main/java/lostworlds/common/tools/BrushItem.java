@@ -6,7 +6,7 @@ import com.google.common.collect.Sets;
 
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModMaterials;
-import lostworlds.core.util.ModToolType;
+import lostworlds.core.util.ModToolTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
@@ -21,7 +21,7 @@ public class BrushItem extends ToolItem
 
 	public BrushItem(IItemTier tier, float attackDamageIn, float attackSpeedIn, Properties properties) 
 	{
-		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON_BLOCKS, properties.addToolType(ModToolType.BRUSH, tier.getLevel()));
+		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON_BLOCKS, properties.addToolType(ModToolTypes.BRUSH, tier.getLevel()));
 	}
 	
 	public float getDestroySpeed(ItemStack stack, BlockState state) 

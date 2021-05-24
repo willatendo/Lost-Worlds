@@ -220,5 +220,4 @@ public class JurassicSkyRender implements ISkyRenderHandler
 
 		return biome.map(biomeRegistryKey -> 0.5F).orElseGet(() -> world.getStarBrightness(par1));
 	}
-
 }

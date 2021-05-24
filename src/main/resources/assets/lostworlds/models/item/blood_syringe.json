@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/empty_vile"
+		"layer0": "lostworlds:items/blood_syringe"
   }
 }

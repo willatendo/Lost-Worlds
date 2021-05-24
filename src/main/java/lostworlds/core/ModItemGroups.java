@@ -11,7 +11,7 @@ import lostworlds.core.tab.SpawnTab;
 import lostworlds.core.tab.ToolsTab;
 import net.minecraft.item.ItemGroup;
 
-public class ModItemGroup
+public class ModItemGroups
 {
 	public static final ItemGroup FOSSILS_TAB = new FossilsTab();
 	public static final ItemGroup CREATURES_TAB = new CreaturesTab();

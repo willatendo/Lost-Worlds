@@ -15,9 +15,14 @@
 	"item.lostworlds.field_guide": "Field Guide",	
 	"toolTip.lostworlds.field_guide.holding_shift": "Tells basic information about a used on prehistoric creature, as well as thier stats",
 	"toolTip.lostworlds.field_guide.not_holding_shift": "Hold Shift For More Information",
+
+	//Syringe
+	"item.lostworlds.empty_syringe": "Empty Syringe",
+	"item.lostworlds.blood_syringe": "Blood Syringe",	
 	
 	//Vile
 	"item.lostworlds.empty_vile": "Empty Vile",
+	"item.lostworlds.blood_vile": "Blood Vile",
 
 	//Permian Time Book
 	"item.lostworlds.permian_time_book": "Permian Time Book",
@@ -348,6 +353,10 @@
 	"block.lostworlds.diictodon_burrow": "Diictodon Burrow",
 	"block.lostworlds.tunneled_soil": "Tunneled Soil",
 
+	//Mossy Dirt
+	"block.lostworlds.mossy_dirt": "Mossy Dirt",
+
+	//Permian
 	"block.lostworlds.permian_sand": "Permian Sand",
 
 	"block.lostworlds.permian_stone": "Permian Stone",
@@ -688,16 +697,18 @@
 	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 9",
 	
 	//On Book Used
-	"lostworlds.transport_to_overworld": "Transporting Player Back Home!",
-	"lostworlds.transport_to_jurassic": "Transporting Player to the Jurassic!",
-	"lostworlds.transport_to_permian": "Transporting Player to the Permian!",
+	"lostworlds.transport_to_overworld": "Transporting \u00A7bPlayer \u00A7fBack \u00A76Home \u00A7f!",
+	"lostworlds.transport_to_jurassic": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Jurassic \u00A7f!",
+	"lostworlds.transport_to_permian": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Permian \u00A7f!",
 	
 	//Item Group	
-	"itemGroup.lostworlds.lostworlds": "Lost Worlds",
 	"itemGroup.lostworlds.lostworlds_fossils": "Lost Worlds Fossils",
-	"itemGroup.lostworlds.lostworlds_decoratives": "Lost Worlds Decoratives",
+	"itemGroup.lostworlds.lostworlds_creatures": "Lost Worlds Creatures",
 	"itemGroup.lostworlds.lostworlds_nature": "Lost Worlds Nature",
 	"itemGroup.lostworlds.lostworlds_machines": "Lost Worlds Machines",
+	"itemGroup.lostworlds.lostworlds_decoratives": "Lost Worlds Decoratives",
 	"itemGroup.lostworlds.lostworlds_tools": "Lost Worlds Tools",
-	"itemGroup.lostworlds.lostworlds_items": "Lost Worlds Items"
+	"itemGroup.lostworlds.lostworlds_items": "Lost Worlds Items",
+	"itemGroup.lostworlds.lostworlds_spawn": "Lost Worlds Spawn",
+	"itemGroup.lostworlds.lostworlds": "Lost Worlds"
 }

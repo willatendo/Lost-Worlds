@@ -39,8 +39,6 @@ import software.bernie.geckolib3.GeckoLib;
 @Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD)
 public class LostWorlds
 {
-	public static boolean DISABLE_IN_DEV = false;
-
 	public LostWorlds() 
 	{
 		ModUtil.LOGGER.debug("Loading: The Lost Worlds");
@@ -129,7 +127,7 @@ public class LostWorlds
 	private void loadComplete(FMLLoadCompleteEvent event)
 	{
 		ModUtil.LOGGER.debug("Loading: Vanilla Maps");
-
+		
 		ModStrippables.strippingMap();
 		ModFlammables.flammables();
 		

@@ -15,7 +15,7 @@ import lostworlds.common.items.WetPaperItem;
 import lostworlds.common.items.timebooks.JurassicTimeBook;
 import lostworlds.common.items.timebooks.PermianTimeBook;
 import lostworlds.common.tools.BrushItem;
-import lostworlds.core.ModItemGroup;
+import lostworlds.core.ModItemGroups;
 import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.enums.ModItemTeir;
 import lostworlds.core.util.registry.ModRegistry;
@@ -40,34 +40,34 @@ public class ItemInit
 {
 	//Items
 	//Brush
-	public static final RegistryObject<Item> LEATHER_BRUSH = ModRegistry.ITEM_REGISTRY.register("leather_brush", () -> new BrushItem(ModItemTeir.LEATHER_BRUSH, 1.5F, -3.0F, properties().tab(ModItemGroup.TOOLS_TAB)));
-	public static final RegistryObject<Item> IRON_BRUSH = ModRegistry.ITEM_REGISTRY.register("iron_brush", () -> new BrushItem(ModItemTeir.IRON_BRUSH, 1.5F, -3.0F, properties().tab(ModItemGroup.TOOLS_TAB)));
-	public static final RegistryObject<Item> GOLD_BRUSH = ModRegistry.ITEM_REGISTRY.register("gold_brush", () -> new BrushItem(ModItemTeir.GOLD_BRUSH, 1.5F, -3.0F, properties().tab(ModItemGroup.TOOLS_TAB)));
-	public static final RegistryObject<Item> DIAMOND_BRUSH = ModRegistry.ITEM_REGISTRY.register("diamond_brush", () -> new BrushItem(ModItemTeir.DIAMOND_BRUSH, 1.5F, -3.0F, properties().tab(ModItemGroup.TOOLS_TAB)));
+	public static final RegistryObject<Item> LEATHER_BRUSH = brushItemRegister("leather_brush", ModItemTeir.LEATHER_BRUSH);
+	public static final RegistryObject<Item> IRON_BRUSH = brushItemRegister("iron_brush", ModItemTeir.IRON_BRUSH);
+	public static final RegistryObject<Item> GOLD_BRUSH = brushItemRegister("gold_brush", ModItemTeir.GOLD_BRUSH);
+	public static final RegistryObject<Item> DIAMOND_BRUSH = brushItemRegister("diamond_brush", ModItemTeir.DIAMOND_BRUSH);
 	
 	//Plaster
-	public static final RegistryObject<Item> WET_PAPER = itemRegister("wet_paper", new WetPaperItem(properties().tab(ModItemGroup.ITEMS_TAB)));
+	public static final RegistryObject<Item> WET_PAPER = itemRegister("wet_paper", new WetPaperItem(properties().tab(ModItemGroups.ITEMS_TAB)));
 
 	//Field Guide
-	public static final RegistryObject<Item> FEILD_GUIDE = ModRegistry.ITEM_REGISTRY.register("field_guide", () -> new FieldGuideItem(properties().tab(ModItemGroup.ITEMS_TAB)));
+	public static final RegistryObject<Item> FEILD_GUIDE = itemRegister("field_guide", new FieldGuideItem(properties().tab(ModItemGroups.ITEMS_TAB)));
 	
 	//Syringe
-	public static final RegistryObject<Item> EMPTY_SYRINGE = plainItemRegister("empty_syringe", properties().stacksTo(1).tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> BLOOD_SYRINGE = plainItemRegister("blood_syringe", properties().stacksTo(1).tab(ModItemGroup.ITEMS_TAB));
+	public static final RegistryObject<Item> EMPTY_SYRINGE = plainItemRegister("empty_syringe", properties().stacksTo(1).tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> BLOOD_SYRINGE = plainItemRegister("blood_syringe", properties().stacksTo(1).tab(ModItemGroups.ITEMS_TAB));
 	
 	//Viles
-	public static final RegistryObject<Item> EMPTY_VILE = plainItemRegister("empty_vile", properties().tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> BLOOD_VILE = plainItemRegister("blood_vile", properties().tab(ModItemGroup.ITEMS_TAB));
+	public static final RegistryObject<Item> EMPTY_VILE = plainItemRegister("empty_vile", properties().tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> BLOOD_VILE = plainItemRegister("blood_vile", properties().tab(ModItemGroups.ITEMS_TAB));
 
 	//Time Books
-	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("permian_time_book", () -> new PermianTimeBook(properties().stacksTo(1).rarity(Rarity.RARE).tab(ModItemGroup.ITEMS_TAB)));
-	public static final RegistryObject<Item> JURASSIC_TIME_BOOK = ModRegistry.ITEM_REGISTRY.register("jurassic_time_book", () -> new JurassicTimeBook(properties().stacksTo(1).rarity(Rarity.RARE).tab(ModItemGroup.ITEMS_TAB)));
+	public static final RegistryObject<Item> PERMIAN_TIME_BOOK = itemRegister("permian_time_book", new PermianTimeBook(properties().stacksTo(1).rarity(Rarity.RARE).tab(ModItemGroups.ITEMS_TAB)));
+	public static final RegistryObject<Item> JURASSIC_TIME_BOOK = itemRegister("jurassic_time_book", new JurassicTimeBook(properties().stacksTo(1).rarity(Rarity.RARE).tab(ModItemGroups.ITEMS_TAB)));
 	
 	//Time Lord's Staff
 	public static final RegistryObject<Item> TIME_LORDS_STAFF = plainItemRegister("time_lords_staff", new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
 	
 	//Leaf Litter
-	public static final RegistryObject<Item> FERN_LITTER = itemRegister("fern_litter", new Item(properties().food(FoodInit.FERN_LITTER).stacksTo(16).tab(ModItemGroup.ITEMS_TAB)));
+	public static final RegistryObject<Item> FERN_LITTER = itemRegister("fern_litter", new Item(properties().food(FoodInit.FERN_LITTER).stacksTo(16).tab(ModItemGroups.ITEMS_TAB)));
 	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNAItem("procompsognathus");
@@ -231,411 +231,414 @@ public class ItemInit
 	public static final RegistryObject<Item> DIICTODON_SPAWN_EGG = registerFishSpawnItemEgg("diictodon", () -> EntityInit.DIICTODON_ENTITY.get(), 0x8e7022, 0x7a4334);
 	
 	//Mud Ball
-	public static final RegistryObject<Item> MUD_BALL = plainItemRegister("mud_ball", properties().tab(ModItemGroup.ITEMS_TAB));
+	public static final RegistryObject<Item> MUD_BALL = plainItemRegister("mud_ball", properties().tab(ModItemGroups.ITEMS_TAB));
 	
 	//Copper	
-	public static final RegistryObject<Item> COPPER_INGOT = plainItemRegister("copper_ingot", properties().tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> COPPER_NUGGET = plainItemRegister("copper_nugget", properties().tab(ModItemGroup.ITEMS_TAB));
+	public static final RegistryObject<Item> COPPER_INGOT = plainItemRegister("copper_ingot", properties().tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> COPPER_NUGGET = plainItemRegister("copper_nugget", properties().tab(ModItemGroups.ITEMS_TAB));
 	
 	//Electronics
-	public static final RegistryObject<Item> COPPER_WIRE = plainItemRegister("copper_wire", properties().tab(ModItemGroup.ITEMS_TAB));	
-	public static final RegistryObject<Item> COMPUTER_FAN = plainItemRegister("computer_fan", properties().tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> COMPUTER_SCREEN = plainItemRegister("computer_screen", properties().tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> COMPUTER_FRAME = plainItemRegister("computer_frame", properties().tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> COMPUTER_STORAGE_PORT = plainItemRegister("computer_storage_port", properties().tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> MOTHERBOARD = plainItemRegister("motherboard", properties().tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> CPU = plainItemRegister("cpu", properties().tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> RAM = plainItemRegister("ram", properties().tab(ModItemGroup.ITEMS_TAB));	
+	public static final RegistryObject<Item> COPPER_WIRE = plainItemRegister("copper_wire", properties().tab(ModItemGroups.ITEMS_TAB));	
+	public static final RegistryObject<Item> COMPUTER_FAN = plainItemRegister("computer_fan", properties().tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> COMPUTER_SCREEN = plainItemRegister("computer_screen", properties().tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> COMPUTER_FRAME = plainItemRegister("computer_frame", properties().tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> COMPUTER_STORAGE_PORT = plainItemRegister("computer_storage_port", properties().tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> MOTHERBOARD = plainItemRegister("motherboard", properties().tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> CPU = plainItemRegister("cpu", properties().tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> RAM = plainItemRegister("ram", properties().tab(ModItemGroups.ITEMS_TAB));	
 		
 	//Storage
-	public static final RegistryObject<Item> STORAGE_DISC = itemRegister("storage_disc", new DiscItem("storage_disc", properties().stacksTo(1).tab(ModItemGroup.ITEMS_TAB)));
+	public static final RegistryObject<Item> STORAGE_DISC = itemRegister("storage_disc", new DiscItem("storage_disc", properties().stacksTo(1).tab(ModItemGroups.ITEMS_TAB)));
 		
 	//Crystal Scarab	
-	public static final RegistryObject<Item> BROKEN_CRYSTAL_SCARAB_GEM = plainItemRegister("broken_crystal_scarab_gem", properties().rarity(Rarity.RARE).tab(ModItemGroup.ITEMS_TAB));
-	public static final RegistryObject<Item> CRYSTAL_SCARAB_GEM = plainItemRegister("crystal_scarab_gem", properties().rarity(Rarity.EPIC).tab(ModItemGroup.ITEMS_TAB));
+	public static final RegistryObject<Item> BROKEN_CRYSTAL_SCARAB_GEM = plainItemRegister("broken_crystal_scarab_gem", properties().rarity(Rarity.RARE).tab(ModItemGroups.ITEMS_TAB));
+	public static final RegistryObject<Item> CRYSTAL_SCARAB_GEM = plainItemRegister("crystal_scarab_gem", properties().rarity(Rarity.EPIC).tab(ModItemGroups.ITEMS_TAB));
 	
 	//Crystal Scarab Tools
-	public static final RegistryObject<Item> CRYSTAL_SCARAB_SWORD = itemRegister("crystal_scarab_sword", new SwordItem(ModItemTeir.SCARAB, 50, -2.4F, properties().rarity(Rarity.EPIC).tab(ModItemGroup.TOOLS_TAB)));
-	public static final RegistryObject<Item> CRYSTAL_SCARAB_SHOVEL = itemRegister("crystal_scarab_shovel", new ShovelItem(ModItemTeir.SCARAB, 12.0F, -3.0F, properties().rarity(Rarity.EPIC).tab(ModItemGroup.TOOLS_TAB)));
-	public static final RegistryObject<Item> CRYSTAL_SCARAB_PICKAXE = itemRegister("crystal_scarab_pickaxe", new PickaxeItem(ModItemTeir.SCARAB, 32, -2.8F, properties().rarity(Rarity.EPIC).tab(ModItemGroup.TOOLS_TAB)));
-	public static final RegistryObject<Item> CRYSTAL_SCARAB_AXE = itemRegister("crystal_scarab_axe", new AxeItem(ModItemTeir.SCARAB, 70.0F, -3.2F, properties().rarity(Rarity.EPIC).tab(ModItemGroup.TOOLS_TAB)));
-	public static final RegistryObject<Item> CRYSTAL_SCARAB_HOE = itemRegister("crystal_scarab_hoe", new HoeItem(ModItemTeir.SCARAB, 10, -3.0F, properties().rarity(Rarity.EPIC).tab(ModItemGroup.TOOLS_TAB)));
+	public static final RegistryObject<Item> CRYSTAL_SCARAB_SWORD = itemRegister("crystal_scarab_sword", new SwordItem(ModItemTeir.SCARAB, 50, -2.4F, properties().rarity(Rarity.EPIC).tab(ModItemGroups.TOOLS_TAB)));
+	public static final RegistryObject<Item> CRYSTAL_SCARAB_SHOVEL = itemRegister("crystal_scarab_shovel", new ShovelItem(ModItemTeir.SCARAB, 12.0F, -3.0F, properties().rarity(Rarity.EPIC).tab(ModItemGroups.TOOLS_TAB)));
+	public static final RegistryObject<Item> CRYSTAL_SCARAB_PICKAXE = itemRegister("crystal_scarab_pickaxe", new PickaxeItem(ModItemTeir.SCARAB, 32, -2.8F, properties().rarity(Rarity.EPIC).tab(ModItemGroups.TOOLS_TAB)));
+	public static final RegistryObject<Item> CRYSTAL_SCARAB_AXE = itemRegister("crystal_scarab_axe", new AxeItem(ModItemTeir.SCARAB, 70.0F, -3.2F, properties().rarity(Rarity.EPIC).tab(ModItemGroups.TOOLS_TAB)));
+	public static final RegistryObject<Item> CRYSTAL_SCARAB_HOE = itemRegister("crystal_scarab_hoe", new HoeItem(ModItemTeir.SCARAB, 10, -3.0F, properties().rarity(Rarity.EPIC).tab(ModItemGroups.TOOLS_TAB)));
 		
 	//Blocks
 	//Ore
-	public static final RegistryObject<BlockItem> COPPER_ORE = registerBlockItem("copper_ore", () -> BlockInit.COPPER_ORE.get(), ModItemGroup.ITEMS_TAB);
+	public static final RegistryObject<Item> COPPER_ORE = registerBlockItem("copper_ore", () -> BlockInit.COPPER_ORE.get(), ModItemGroups.ITEMS_TAB);
 	
 	//Fossil
-	public static final RegistryObject<BlockItem> STONE_FOSSIL = registerFossilBlockItem("stone_fossil", () -> BlockInit.STONE_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_STONE_FOSSIL = registerFossilBlockItem("exposed_stone_fossil", () -> BlockInit.EXPOSED_STONE_FOSSIL.get());
+	public static final RegistryObject<Item> STONE_FOSSIL = registerFossilBlockItem("stone_fossil", () -> BlockInit.STONE_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_STONE_FOSSIL = registerFossilBlockItem("exposed_stone_fossil", () -> BlockInit.EXPOSED_STONE_FOSSIL.get());
 
-	public static final RegistryObject<BlockItem> SANDSTONE_FOSSIL = registerFossilBlockItem("sandstone_fossil", () -> BlockInit.SANDSTONE_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_SANDSTONE_FOSSIL = registerFossilBlockItem("exposed_sandstone_fossil", () -> BlockInit.EXPOSED_SANDSTONE_FOSSIL.get());
+	public static final RegistryObject<Item> SANDSTONE_FOSSIL = registerFossilBlockItem("sandstone_fossil", () -> BlockInit.SANDSTONE_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_SANDSTONE_FOSSIL = registerFossilBlockItem("exposed_sandstone_fossil", () -> BlockInit.EXPOSED_SANDSTONE_FOSSIL.get());
 	
-	public static final RegistryObject<BlockItem> RED_SANDSTONE_FOSSIL = registerFossilBlockItem("red_sandstone_fossil", () -> BlockInit.RED_SANDSTONE_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_RED_SANDSTONE_FOSSIL = registerFossilBlockItem("exposed_red_sandstone_fossil", () -> BlockInit.EXPOSED_RED_SANDSTONE_FOSSIL.get());
+	public static final RegistryObject<Item> RED_SANDSTONE_FOSSIL = registerFossilBlockItem("red_sandstone_fossil", () -> BlockInit.RED_SANDSTONE_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_RED_SANDSTONE_FOSSIL = registerFossilBlockItem("exposed_red_sandstone_fossil", () -> BlockInit.EXPOSED_RED_SANDSTONE_FOSSIL.get());
 
-	public static final RegistryObject<BlockItem> TERRACOTTA_FOSSIL = registerFossilBlockItem("terracotta_fossil", () -> BlockInit.TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_terracotta_fossil", () -> BlockInit.EXPOSED_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> RED_TERRACOTTA_FOSSIL = registerFossilBlockItem("red_terracotta_fossil", () -> BlockInit.RED_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_RED_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_red_terracotta_fossil", () -> BlockInit.EXPOSED_RED_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> ORANGE_TERRACOTTA_FOSSIL = registerFossilBlockItem("orange_terracotta_fossil", () -> BlockInit.ORANGE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_ORANGE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_orange_terracotta_fossil", () -> BlockInit.EXPOSED_ORANGE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> YELLOW_TERRACOTTA_FOSSIL = registerFossilBlockItem("yellow_terracotta_fossil", () -> BlockInit.YELLOW_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_YELLOW_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_yellow_terracotta_fossil", () -> BlockInit.EXPOSED_YELLOW_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> LIME_TERRACOTTA_FOSSIL = registerFossilBlockItem("lime_terracotta_fossil", () -> BlockInit.LIME_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_LIME_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_lime_terracotta_fossil", () -> BlockInit.EXPOSED_LIME_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> GREEN_TERRACOTTA_FOSSIL = registerFossilBlockItem("green_terracotta_fossil", () -> BlockInit.GREEN_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_GREEN_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_green_terracotta_fossil", () -> BlockInit.EXPOSED_GREEN_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> CYAN_TERRACOTTA_FOSSIL = registerFossilBlockItem("cyan_terracotta_fossil", () -> BlockInit.CYAN_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_CYAN_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_cyan_terracotta_fossil", () -> BlockInit.EXPOSED_CYAN_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> LIGHT_BLUE_TERRACOTTA_FOSSIL = registerFossilBlockItem("light_blue_terracotta_fossil", () -> BlockInit.LIGHT_BLUE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_light_blue_terracotta_fossil", () -> BlockInit.EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> BLUE_TERRACOTTA_FOSSIL = registerFossilBlockItem("blue_terracotta_fossil", () -> BlockInit.BLUE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_BLUE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_blue_terracotta_fossil", () -> BlockInit.EXPOSED_BLUE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> MAGENTA_TERRACOTTA_FOSSIL = registerFossilBlockItem("magenta_terracotta_fossil", () -> BlockInit.MAGENTA_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_MAGENTA_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_magenta_terracotta_fossil", () -> BlockInit.EXPOSED_MAGENTA_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> PURPLE_TERRACOTTA_FOSSIL = registerFossilBlockItem("purple_terracotta_fossil", () -> BlockInit.PURPLE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_PURPLE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_purple_terracotta_fossil", () -> BlockInit.EXPOSED_PURPLE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> PINK_TERRACOTTA_FOSSIL = registerFossilBlockItem("pink_terracotta_fossil", () -> BlockInit.PINK_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_PINK_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_pink_terracotta_fossil", () -> BlockInit.EXPOSED_PINK_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> BROWN_TERRACOTTA_FOSSIL = registerFossilBlockItem("brown_terracotta_fossil", () -> BlockInit.BROWN_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_BROWN_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_brown_terracotta_fossil", () -> BlockInit.EXPOSED_BROWN_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> BLACK_TERRACOTTA_FOSSIL = registerFossilBlockItem("black_terracotta_fossil", () -> BlockInit.BLACK_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_BLACK_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_black_terracotta_fossil", () -> BlockInit.EXPOSED_BLACK_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> GREY_TERRACOTTA_FOSSIL = registerFossilBlockItem("grey_terracotta_fossil", () -> BlockInit.GREY_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_GREY_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_grey_terracotta_fossil", () -> BlockInit.EXPOSED_GREY_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> LIGHT_GREY_TERRACOTTA_FOSSIL = registerFossilBlockItem("light_grey_terracotta_fossil", () -> BlockInit.LIGHT_GREY_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_light_grey_terracotta_fossil", () -> BlockInit.EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> WHITE_TERRACOTTA_FOSSIL = registerFossilBlockItem("white_terracotta_fossil", () -> BlockInit.WHITE_TERRACOTTA_FOSSIL.get());
-	public static final RegistryObject<BlockItem> EXPOSED_WHITE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_white_terracotta_fossil", () -> BlockInit.EXPOSED_WHITE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> TERRACOTTA_FOSSIL = registerFossilBlockItem("terracotta_fossil", () -> BlockInit.TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_terracotta_fossil", () -> BlockInit.EXPOSED_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> RED_TERRACOTTA_FOSSIL = registerFossilBlockItem("red_terracotta_fossil", () -> BlockInit.RED_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_RED_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_red_terracotta_fossil", () -> BlockInit.EXPOSED_RED_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> ORANGE_TERRACOTTA_FOSSIL = registerFossilBlockItem("orange_terracotta_fossil", () -> BlockInit.ORANGE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_ORANGE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_orange_terracotta_fossil", () -> BlockInit.EXPOSED_ORANGE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> YELLOW_TERRACOTTA_FOSSIL = registerFossilBlockItem("yellow_terracotta_fossil", () -> BlockInit.YELLOW_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_YELLOW_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_yellow_terracotta_fossil", () -> BlockInit.EXPOSED_YELLOW_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> LIME_TERRACOTTA_FOSSIL = registerFossilBlockItem("lime_terracotta_fossil", () -> BlockInit.LIME_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_LIME_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_lime_terracotta_fossil", () -> BlockInit.EXPOSED_LIME_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> GREEN_TERRACOTTA_FOSSIL = registerFossilBlockItem("green_terracotta_fossil", () -> BlockInit.GREEN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_GREEN_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_green_terracotta_fossil", () -> BlockInit.EXPOSED_GREEN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> CYAN_TERRACOTTA_FOSSIL = registerFossilBlockItem("cyan_terracotta_fossil", () -> BlockInit.CYAN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_CYAN_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_cyan_terracotta_fossil", () -> BlockInit.EXPOSED_CYAN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> LIGHT_BLUE_TERRACOTTA_FOSSIL = registerFossilBlockItem("light_blue_terracotta_fossil", () -> BlockInit.LIGHT_BLUE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_light_blue_terracotta_fossil", () -> BlockInit.EXPOSED_LIGHT_BLUE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> BLUE_TERRACOTTA_FOSSIL = registerFossilBlockItem("blue_terracotta_fossil", () -> BlockInit.BLUE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_BLUE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_blue_terracotta_fossil", () -> BlockInit.EXPOSED_BLUE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> MAGENTA_TERRACOTTA_FOSSIL = registerFossilBlockItem("magenta_terracotta_fossil", () -> BlockInit.MAGENTA_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_MAGENTA_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_magenta_terracotta_fossil", () -> BlockInit.EXPOSED_MAGENTA_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> PURPLE_TERRACOTTA_FOSSIL = registerFossilBlockItem("purple_terracotta_fossil", () -> BlockInit.PURPLE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_PURPLE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_purple_terracotta_fossil", () -> BlockInit.EXPOSED_PURPLE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> PINK_TERRACOTTA_FOSSIL = registerFossilBlockItem("pink_terracotta_fossil", () -> BlockInit.PINK_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_PINK_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_pink_terracotta_fossil", () -> BlockInit.EXPOSED_PINK_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> BROWN_TERRACOTTA_FOSSIL = registerFossilBlockItem("brown_terracotta_fossil", () -> BlockInit.BROWN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_BROWN_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_brown_terracotta_fossil", () -> BlockInit.EXPOSED_BROWN_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> BLACK_TERRACOTTA_FOSSIL = registerFossilBlockItem("black_terracotta_fossil", () -> BlockInit.BLACK_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_BLACK_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_black_terracotta_fossil", () -> BlockInit.EXPOSED_BLACK_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> GREY_TERRACOTTA_FOSSIL = registerFossilBlockItem("grey_terracotta_fossil", () -> BlockInit.GREY_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_GREY_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_grey_terracotta_fossil", () -> BlockInit.EXPOSED_GREY_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> LIGHT_GREY_TERRACOTTA_FOSSIL = registerFossilBlockItem("light_grey_terracotta_fossil", () -> BlockInit.LIGHT_GREY_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_light_grey_terracotta_fossil", () -> BlockInit.EXPOSED_LIGHT_GREY_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> WHITE_TERRACOTTA_FOSSIL = registerFossilBlockItem("white_terracotta_fossil", () -> BlockInit.WHITE_TERRACOTTA_FOSSIL.get());
+	public static final RegistryObject<Item> EXPOSED_WHITE_TERRACOTTA_FOSSIL = registerFossilBlockItem("exposed_white_terracotta_fossil", () -> BlockInit.EXPOSED_WHITE_TERRACOTTA_FOSSIL.get());
 	
-	public static final RegistryObject<BlockItem> PLASTERED_FOSSIL = registerFossilBlockItem("plastered_fossil", () -> BlockInit.PLASTERED_FOSSIL.get());
+	public static final RegistryObject<Item> PLASTERED_FOSSIL = registerFossilBlockItem("plastered_fossil", () -> BlockInit.PLASTERED_FOSSIL.get());
 
 	//Fossil Processing
-	public static final RegistryObject<BlockItem> FOSSIL_CLEANER = registerMachinesBlockItem("fossil_cleaner", () -> BlockInit.FOSSIL_CLEANER.get());	
+	public static final RegistryObject<Item> FOSSIL_CLEANER = registerMachinesBlockItem("fossil_cleaner", () -> BlockInit.FOSSIL_CLEANER.get());	
 	
-	public static final RegistryObject<BlockItem> POWER_SUPPLY_BLOCK = registerMachinesBlockItem("power_supply_block", () -> BlockInit.POWER_SUPPLY_BLOCK.get());
+	public static final RegistryObject<Item> POWER_SUPPLY_BLOCK = registerMachinesBlockItem("power_supply_block", () -> BlockInit.POWER_SUPPLY_BLOCK.get());
 
 	//Mud
-	public static final RegistryObject<BlockItem> MUD = registerNatureBlockItem("mud", () -> BlockInit.MUD.get());
+	public static final RegistryObject<Item> MUD = registerNatureBlockItem("mud", () -> BlockInit.MUD.get());
 
 	//Nesting Block
-	public static final RegistryObject<BlockItem> NESTING_BLOCK = registerNatureBlockItem("nesting_block", () -> BlockInit.NESTING_BLOCK.get());
+	public static final RegistryObject<Item> NESTING_BLOCK = registerNatureBlockItem("nesting_block", () -> BlockInit.NESTING_BLOCK.get());
 
 	//Time Machine
-	public static final RegistryObject<BlockItem> TIME_MACHINE = registerMachinesBlockItem("time_machine", () -> BlockInit.TIME_MACHINE.get());
+	public static final RegistryObject<Item> TIME_MACHINE = registerMachinesBlockItem("time_machine", () -> BlockInit.TIME_MACHINE.get());
 	
 	//Museum Stuff
-	public static final RegistryObject<BlockItem> ARCHAEOLOGY_TABLE = registerMachinesBlockItem("archaeology_table", () -> BlockInit.ARCHAEOLOGY_TABLE.get());
+	public static final RegistryObject<Item> ARCHAEOLOGY_TABLE = registerMachinesBlockItem("archaeology_table", () -> BlockInit.ARCHAEOLOGY_TABLE.get());
 	//Volcanic Stuff
-	public static final RegistryObject<BlockItem> VOLCANIC_ROCK = registerDecorativeBlockItem("volcanic_rock", () -> BlockInit.VOLCANIC_ROCK.get());	
-	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_STAIRS = registerDecorativeBlockItem("volcanic_rock_stairs", () -> BlockInit.VOLCANIC_ROCK_STAIRS.get());	
-	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_SLAB = registerDecorativeBlockItem("volcanic_rock_slab", () -> BlockInit.VOLCANIC_ROCK_SLAB.get());	
-	public static final RegistryObject<BlockItem> VOLCANIC_ROCK_WALL = registerDecorativeBlockItem("volcanic_rock_wall", () -> BlockInit.VOLCANIC_ROCK_WALL.get());	
+	public static final RegistryObject<Item> VOLCANIC_ROCK = registerDecorativeBlockItem("volcanic_rock", () -> BlockInit.VOLCANIC_ROCK.get());	
+	public static final RegistryObject<Item> VOLCANIC_ROCK_STAIRS = registerDecorativeBlockItem("volcanic_rock_stairs", () -> BlockInit.VOLCANIC_ROCK_STAIRS.get());	
+	public static final RegistryObject<Item> VOLCANIC_ROCK_SLAB = registerDecorativeBlockItem("volcanic_rock_slab", () -> BlockInit.VOLCANIC_ROCK_SLAB.get());	
+	public static final RegistryObject<Item> VOLCANIC_ROCK_WALL = registerDecorativeBlockItem("volcanic_rock_wall", () -> BlockInit.VOLCANIC_ROCK_WALL.get());	
 	
-	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK = registerDecorativeBlockItem("polished_volcanic_rock", () -> BlockInit.POLISHED_VOLCANIC_ROCK.get());	
-	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_STAIRS = registerDecorativeBlockItem("polished_volcanic_rock_stairs", () -> BlockInit.POLISHED_VOLCANIC_ROCK_STAIRS.get());	
-	public static final RegistryObject<BlockItem> POLISHED_VOLCANIC_ROCK_SLAB = registerDecorativeBlockItem("polished_volcanic_rock_slab", () -> BlockInit.POLISHED_VOLCANIC_ROCK_SLAB.get());	
+	public static final RegistryObject<Item> POLISHED_VOLCANIC_ROCK = registerDecorativeBlockItem("polished_volcanic_rock", () -> BlockInit.POLISHED_VOLCANIC_ROCK.get());	
+	public static final RegistryObject<Item> POLISHED_VOLCANIC_ROCK_STAIRS = registerDecorativeBlockItem("polished_volcanic_rock_stairs", () -> BlockInit.POLISHED_VOLCANIC_ROCK_STAIRS.get());	
+	public static final RegistryObject<Item> POLISHED_VOLCANIC_ROCK_SLAB = registerDecorativeBlockItem("polished_volcanic_rock_slab", () -> BlockInit.POLISHED_VOLCANIC_ROCK_SLAB.get());	
 
-	public static final RegistryObject<BlockItem> VOLCANIC_ASH = registerDecorativeBlockItem("volcanic_ash", () -> BlockInit.VOLCANIC_ASH.get());
+	public static final RegistryObject<Item> VOLCANIC_ASH = registerDecorativeBlockItem("volcanic_ash", () -> BlockInit.VOLCANIC_ASH.get());
 
 	//Tunnel
-	public static final RegistryObject<BlockItem> DIICTODON_BURROW = registerNatureBlockItem("diictodon_burrow", () -> BlockInit.DIICTODON_BURROW.get());
-	public static final RegistryObject<BlockItem> TUNNELED_SOIL = registerNatureBlockItem("tunneled_soil", () -> BlockInit.TUNNELED_SOIL.get());
+	public static final RegistryObject<Item> DIICTODON_BURROW = registerNatureBlockItem("diictodon_burrow", () -> BlockInit.DIICTODON_BURROW.get());
+	public static final RegistryObject<Item> TUNNELED_SOIL = registerNatureBlockItem("tunneled_soil", () -> BlockInit.TUNNELED_SOIL.get());
+
+	//Mossy Dirt
+	public static final RegistryObject<Item> MOSSY_DIRT = registerDecorativeBlockItem("mossy_dirt", () -> BlockInit.MOSSY_DIRT.get());
 	
 	//Permian
 	//Sand
-	public static final RegistryObject<BlockItem> PERMIAN_SAND = registerDecorativeBlockItem("permian_sand", () -> BlockInit.PERMIAN_SAND.get());
+	public static final RegistryObject<Item> PERMIAN_SAND = registerDecorativeBlockItem("permian_sand", () -> BlockInit.PERMIAN_SAND.get());
 
 	//Stone
-	public static final RegistryObject<BlockItem> PERMIAN_STONE = registerDecorativeBlockItem("permian_stone", () -> BlockInit.PERMIAN_STONE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_STONE_STAIRS = registerDecorativeBlockItem("permian_stone_stairs", () -> BlockInit.PERMIAN_STONE_STAIRS.get());
-	public static final RegistryObject<BlockItem> PERMIAN_STONE_SLAB = registerDecorativeBlockItem("permian_stone_slab", () -> BlockInit.PERMIAN_STONE_SLAB.get());
+	public static final RegistryObject<Item> PERMIAN_STONE = registerDecorativeBlockItem("permian_stone", () -> BlockInit.PERMIAN_STONE.get());
+	public static final RegistryObject<Item> PERMIAN_STONE_STAIRS = registerDecorativeBlockItem("permian_stone_stairs", () -> BlockInit.PERMIAN_STONE_STAIRS.get());
+	public static final RegistryObject<Item> PERMIAN_STONE_SLAB = registerDecorativeBlockItem("permian_stone_slab", () -> BlockInit.PERMIAN_STONE_SLAB.get());
 
-	public static final RegistryObject<BlockItem> PERMIAN_COPPER_ORE = registerDecorativeBlockItem("permian_copper_ore", () -> BlockInit.PERMIAN_COPPER_ORE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_GOLD_ORE = registerDecorativeBlockItem("permian_gold_ore", () -> BlockInit.PERMIAN_GOLD_ORE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_IRON_ORE = registerDecorativeBlockItem("permian_iron_ore", () -> BlockInit.PERMIAN_IRON_ORE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_COAL_ORE = registerDecorativeBlockItem("permian_coal_ore", () -> BlockInit.PERMIAN_COAL_ORE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_LAPIS_ORE = registerDecorativeBlockItem("permian_lapis_ore", () -> BlockInit.PERMIAN_LAPIS_ORE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_DIAMOND_ORE = registerDecorativeBlockItem("permian_diamond_ore", () -> BlockInit.PERMIAN_DIAMOND_ORE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_REDSTONE_ORE = registerDecorativeBlockItem("permian_redstone_ore", () -> BlockInit.PERMIAN_REDSTONE_ORE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_EMERALD_ORE = registerDecorativeBlockItem("permian_emerald_ore", () -> BlockInit.PERMIAN_EMERALD_ORE.get());
+	public static final RegistryObject<Item> PERMIAN_COPPER_ORE = registerDecorativeBlockItem("permian_copper_ore", () -> BlockInit.PERMIAN_COPPER_ORE.get());
+	public static final RegistryObject<Item> PERMIAN_GOLD_ORE = registerDecorativeBlockItem("permian_gold_ore", () -> BlockInit.PERMIAN_GOLD_ORE.get());
+	public static final RegistryObject<Item> PERMIAN_IRON_ORE = registerDecorativeBlockItem("permian_iron_ore", () -> BlockInit.PERMIAN_IRON_ORE.get());
+	public static final RegistryObject<Item> PERMIAN_COAL_ORE = registerDecorativeBlockItem("permian_coal_ore", () -> BlockInit.PERMIAN_COAL_ORE.get());
+	public static final RegistryObject<Item> PERMIAN_LAPIS_ORE = registerDecorativeBlockItem("permian_lapis_ore", () -> BlockInit.PERMIAN_LAPIS_ORE.get());
+	public static final RegistryObject<Item> PERMIAN_DIAMOND_ORE = registerDecorativeBlockItem("permian_diamond_ore", () -> BlockInit.PERMIAN_DIAMOND_ORE.get());
+	public static final RegistryObject<Item> PERMIAN_REDSTONE_ORE = registerDecorativeBlockItem("permian_redstone_ore", () -> BlockInit.PERMIAN_REDSTONE_ORE.get());
+	public static final RegistryObject<Item> PERMIAN_EMERALD_ORE = registerDecorativeBlockItem("permian_emerald_ore", () -> BlockInit.PERMIAN_EMERALD_ORE.get());
 
-	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE = registerDecorativeBlockItem("permian_cobblestone", () -> BlockInit.PERMIAN_COBBLESTONE.get());
-	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_STAIRS = registerDecorativeBlockItem("permian_cobblestone_stairs", () -> BlockInit.PERMIAN_COBBLESTONE_STAIRS.get());
-	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_SLAB = registerDecorativeBlockItem("permian_cobblestone_slab", () -> BlockInit.PERMIAN_COBBLESTONE_SLAB.get());
-	public static final RegistryObject<BlockItem> PERMIAN_COBBLESTONE_WALL = registerDecorativeBlockItem("permian_cobblestone_wall", () -> BlockInit.PERMIAN_COBBLESTONE_WALL.get());
+	public static final RegistryObject<Item> PERMIAN_COBBLESTONE = registerDecorativeBlockItem("permian_cobblestone", () -> BlockInit.PERMIAN_COBBLESTONE.get());
+	public static final RegistryObject<Item> PERMIAN_COBBLESTONE_STAIRS = registerDecorativeBlockItem("permian_cobblestone_stairs", () -> BlockInit.PERMIAN_COBBLESTONE_STAIRS.get());
+	public static final RegistryObject<Item> PERMIAN_COBBLESTONE_SLAB = registerDecorativeBlockItem("permian_cobblestone_slab", () -> BlockInit.PERMIAN_COBBLESTONE_SLAB.get());
+	public static final RegistryObject<Item> PERMIAN_COBBLESTONE_WALL = registerDecorativeBlockItem("permian_cobblestone_wall", () -> BlockInit.PERMIAN_COBBLESTONE_WALL.get());
 
-	public static final RegistryObject<BlockItem> PERMIAN_STONE_BRICKS = registerDecorativeBlockItem("permian_stone_bricks", () -> BlockInit.PERMIAN_STONE_BRICKS.get());
-	public static final RegistryObject<BlockItem> PERMIAN_STONE_BRICK_STAIRS = registerDecorativeBlockItem("permian_stone_brick_stairs", () -> BlockInit.PERMIAN_STONE_BRICK_STAIRS.get());
-	public static final RegistryObject<BlockItem> PERMIAN_STONE_BRICK_SLAB = registerDecorativeBlockItem("permian_stone_brick_slab", () -> BlockInit.PERMIAN_STONE_BRICK_SLAB.get());
-	public static final RegistryObject<BlockItem> PERMIAN_STONE_BRICK_WALL = registerDecorativeBlockItem("permian_stone_brick_wall", () -> BlockInit.PERMIAN_STONE_BRICK_WALL.get());
+	public static final RegistryObject<Item> PERMIAN_STONE_BRICKS = registerDecorativeBlockItem("permian_stone_bricks", () -> BlockInit.PERMIAN_STONE_BRICKS.get());
+	public static final RegistryObject<Item> PERMIAN_STONE_BRICK_STAIRS = registerDecorativeBlockItem("permian_stone_brick_stairs", () -> BlockInit.PERMIAN_STONE_BRICK_STAIRS.get());
+	public static final RegistryObject<Item> PERMIAN_STONE_BRICK_SLAB = registerDecorativeBlockItem("permian_stone_brick_slab", () -> BlockInit.PERMIAN_STONE_BRICK_SLAB.get());
+	public static final RegistryObject<Item> PERMIAN_STONE_BRICK_WALL = registerDecorativeBlockItem("permian_stone_brick_wall", () -> BlockInit.PERMIAN_STONE_BRICK_WALL.get());
 
 	//Flora
-	public static final RegistryObject<BlockItem> SMALL_PERMIAN_DESERT_PLANT = registerNatureBlockItem("small_permian_desert_plant", () -> BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
-	public static final RegistryObject<BlockItem> MEDIUM_PERMIAN_DESERT_PLANT = registerNatureBlockItem("medium_permian_desert_plant", () -> BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
-	public static final RegistryObject<BlockItem> LARGE_PERMIAN_DESERT_PLANT = registerNatureBlockItem("large_permian_desert_plant", () -> BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
+	public static final RegistryObject<Item> SMALL_PERMIAN_DESERT_PLANT = registerNatureBlockItem("small_permian_desert_plant", () -> BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
+	public static final RegistryObject<Item> MEDIUM_PERMIAN_DESERT_PLANT = registerNatureBlockItem("medium_permian_desert_plant", () -> BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
+	public static final RegistryObject<Item> LARGE_PERMIAN_DESERT_PLANT = registerNatureBlockItem("large_permian_desert_plant", () -> BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
 
-	public static final RegistryObject<BlockItem> GROUND_FERNS = registerNatureBlockItem("ground_ferns", () -> BlockInit.GROUND_FERNS.get());
-	public static final RegistryObject<BlockItem> DICKSONIA = registerNatureBlockItem("dicksonia", () -> BlockInit.DICKSONIA.get());
-	public static final RegistryObject<BlockItem> TALL_DICKSONIA = registerNatureBlockItem("tall_dicksonia", () -> BlockInit.TALL_DICKSONIA.get());
-	public static final RegistryObject<BlockItem> CYCAD = registerNatureBlockItem("cycad", () -> BlockInit.CYCAD.get());
+	public static final RegistryObject<Item> GROUND_FERNS = registerNatureBlockItem("ground_ferns", () -> BlockInit.GROUND_FERNS.get());
+	public static final RegistryObject<Item> DICKSONIA = registerNatureBlockItem("dicksonia", () -> BlockInit.DICKSONIA.get());
+	public static final RegistryObject<Item> TALL_DICKSONIA = registerNatureBlockItem("tall_dicksonia", () -> BlockInit.TALL_DICKSONIA.get());
+	public static final RegistryObject<Item> CYCAD = registerNatureBlockItem("cycad", () -> BlockInit.CYCAD.get());
 
-	public static final RegistryObject<BlockItem> DEAD_SPONGE_COLONY = registerNatureBlockItem("dead_sponge_colony", () -> BlockInit.DEAD_SPONGE_COLONY.get());
-	public static final RegistryObject<BlockItem> SPONGE_COLONY = registerNatureBlockItem("sponge_colony", () -> BlockInit.SPONGE_COLONY.get());
+	public static final RegistryObject<Item> DEAD_SPONGE_COLONY = registerNatureBlockItem("dead_sponge_colony", () -> BlockInit.DEAD_SPONGE_COLONY.get());
+	public static final RegistryObject<Item> SPONGE_COLONY = registerNatureBlockItem("sponge_colony", () -> BlockInit.SPONGE_COLONY.get());
 	
 	//Jurassic
 	//Stone
-	public static final RegistryObject<BlockItem> JURASSIC_STONE = registerDecorativeBlockItem("jurassic_stone", () -> BlockInit.JURASSIC_STONE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_STONE_STAIRS = registerDecorativeBlockItem("jurassic_stone_stairs", () -> BlockInit.JURASSIC_STONE_STAIRS.get());
-	public static final RegistryObject<BlockItem> JURASSIC_STONE_SLAB = registerDecorativeBlockItem("jurassic_stone_slab", () -> BlockInit.JURASSIC_STONE_SLAB.get());
+	public static final RegistryObject<Item> JURASSIC_STONE = registerDecorativeBlockItem("jurassic_stone", () -> BlockInit.JURASSIC_STONE.get());
+	public static final RegistryObject<Item> JURASSIC_STONE_STAIRS = registerDecorativeBlockItem("jurassic_stone_stairs", () -> BlockInit.JURASSIC_STONE_STAIRS.get());
+	public static final RegistryObject<Item> JURASSIC_STONE_SLAB = registerDecorativeBlockItem("jurassic_stone_slab", () -> BlockInit.JURASSIC_STONE_SLAB.get());
 
-	public static final RegistryObject<BlockItem> JURASSIC_COPPER_ORE = registerDecorativeBlockItem("jurassic_copper_ore", () -> BlockInit.JURASSIC_COPPER_ORE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_GOLD_ORE = registerDecorativeBlockItem("jurassic_gold_ore", () -> BlockInit.JURASSIC_GOLD_ORE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_IRON_ORE = registerDecorativeBlockItem("jurassic_iron_ore", () -> BlockInit.JURASSIC_IRON_ORE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_COAL_ORE = registerDecorativeBlockItem("jurassic_coal_ore", () -> BlockInit.JURASSIC_COAL_ORE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_LAPIS_ORE = registerDecorativeBlockItem("jurassic_lapis_ore", () -> BlockInit.JURASSIC_LAPIS_ORE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_DIAMOND_ORE = registerDecorativeBlockItem("jurassic_diamond_ore", () -> BlockInit.JURASSIC_DIAMOND_ORE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_REDSTONE_ORE = registerDecorativeBlockItem("jurassic_redstone_ore", () -> BlockInit.JURASSIC_REDSTONE_ORE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_EMERALD_ORE = registerDecorativeBlockItem("jurassic_emerald_ore", () -> BlockInit.JURASSIC_EMERALD_ORE.get());
+	public static final RegistryObject<Item> JURASSIC_COPPER_ORE = registerDecorativeBlockItem("jurassic_copper_ore", () -> BlockInit.JURASSIC_COPPER_ORE.get());
+	public static final RegistryObject<Item> JURASSIC_GOLD_ORE = registerDecorativeBlockItem("jurassic_gold_ore", () -> BlockInit.JURASSIC_GOLD_ORE.get());
+	public static final RegistryObject<Item> JURASSIC_IRON_ORE = registerDecorativeBlockItem("jurassic_iron_ore", () -> BlockInit.JURASSIC_IRON_ORE.get());
+	public static final RegistryObject<Item> JURASSIC_COAL_ORE = registerDecorativeBlockItem("jurassic_coal_ore", () -> BlockInit.JURASSIC_COAL_ORE.get());
+	public static final RegistryObject<Item> JURASSIC_LAPIS_ORE = registerDecorativeBlockItem("jurassic_lapis_ore", () -> BlockInit.JURASSIC_LAPIS_ORE.get());
+	public static final RegistryObject<Item> JURASSIC_DIAMOND_ORE = registerDecorativeBlockItem("jurassic_diamond_ore", () -> BlockInit.JURASSIC_DIAMOND_ORE.get());
+	public static final RegistryObject<Item> JURASSIC_REDSTONE_ORE = registerDecorativeBlockItem("jurassic_redstone_ore", () -> BlockInit.JURASSIC_REDSTONE_ORE.get());
+	public static final RegistryObject<Item> JURASSIC_EMERALD_ORE = registerDecorativeBlockItem("jurassic_emerald_ore", () -> BlockInit.JURASSIC_EMERALD_ORE.get());
 	
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE = registerDecorativeBlockItem("mossy_jurassic_stone", () -> BlockInit.MOSSY_JURASSIC_STONE.get());
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_STAIRS = registerDecorativeBlockItem("mossy_jurassic_stone_stairs", () -> BlockInit.MOSSY_JURASSIC_STONE_STAIRS.get());
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_SLAB = registerDecorativeBlockItem("mossy_jurassic_stone_slab", () -> BlockInit.MOSSY_JURASSIC_STONE_SLAB.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_STONE = registerDecorativeBlockItem("mossy_jurassic_stone", () -> BlockInit.MOSSY_JURASSIC_STONE.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_STONE_STAIRS = registerDecorativeBlockItem("mossy_jurassic_stone_stairs", () -> BlockInit.MOSSY_JURASSIC_STONE_STAIRS.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_STONE_SLAB = registerDecorativeBlockItem("mossy_jurassic_stone_slab", () -> BlockInit.MOSSY_JURASSIC_STONE_SLAB.get());
 	
-	public static final RegistryObject<BlockItem> JURASSIC_COBBLESTONE = registerDecorativeBlockItem("jurassic_cobblestone", () -> BlockInit.JURASSIC_COBBLESTONE.get());
-	public static final RegistryObject<BlockItem> JURASSIC_COBBLESTONE_STAIRS = registerDecorativeBlockItem("jurassic_cobblestone_stairs", () -> BlockInit.JURASSIC_COBBLESTONE_STAIRS.get());
-	public static final RegistryObject<BlockItem> JURASSIC_COBBLESTONE_SLAB = registerDecorativeBlockItem("jurassic_cobblestone_slab", () -> BlockInit.JURASSIC_COBBLESTONE_SLAB.get());
-	public static final RegistryObject<BlockItem> JURASSIC_COBBLESTONE_WALL = registerDecorativeBlockItem("jurassic_cobblestone_wall", () -> BlockInit.JURASSIC_COBBLESTONE_WALL.get());
+	public static final RegistryObject<Item> JURASSIC_COBBLESTONE = registerDecorativeBlockItem("jurassic_cobblestone", () -> BlockInit.JURASSIC_COBBLESTONE.get());
+	public static final RegistryObject<Item> JURASSIC_COBBLESTONE_STAIRS = registerDecorativeBlockItem("jurassic_cobblestone_stairs", () -> BlockInit.JURASSIC_COBBLESTONE_STAIRS.get());
+	public static final RegistryObject<Item> JURASSIC_COBBLESTONE_SLAB = registerDecorativeBlockItem("jurassic_cobblestone_slab", () -> BlockInit.JURASSIC_COBBLESTONE_SLAB.get());
+	public static final RegistryObject<Item> JURASSIC_COBBLESTONE_WALL = registerDecorativeBlockItem("jurassic_cobblestone_wall", () -> BlockInit.JURASSIC_COBBLESTONE_WALL.get());
 	
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_COBBLESTONE = registerDecorativeBlockItem("mossy_jurassic_cobblestone", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE.get());
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_COBBLESTONE_STAIRS = registerDecorativeBlockItem("mossy_jurassic_cobblestone_stairs", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_STAIRS.get());
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_COBBLESTONE_SLAB = registerDecorativeBlockItem("mossy_jurassic_cobblestone_slab", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_SLAB.get());
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_COBBLESTONE_WALL = registerDecorativeBlockItem("mossy_jurassic_cobblestone_wall", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_WALL.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_COBBLESTONE = registerDecorativeBlockItem("mossy_jurassic_cobblestone", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_COBBLESTONE_STAIRS = registerDecorativeBlockItem("mossy_jurassic_cobblestone_stairs", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_STAIRS.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_COBBLESTONE_SLAB = registerDecorativeBlockItem("mossy_jurassic_cobblestone_slab", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_SLAB.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_COBBLESTONE_WALL = registerDecorativeBlockItem("mossy_jurassic_cobblestone_wall", () -> BlockInit.MOSSY_JURASSIC_COBBLESTONE_WALL.get());
 	
-	public static final RegistryObject<BlockItem> JURASSIC_STONE_BRICKS = registerDecorativeBlockItem("jurassic_stone_bricks", () -> BlockInit.JURASSIC_STONE_BRICKS.get());
-	public static final RegistryObject<BlockItem> JURASSIC_STONE_BRICK_STAIRS = registerDecorativeBlockItem("jurassic_stone_brick_stairs", () -> BlockInit.JURASSIC_STONE_BRICK_STAIRS.get());
-	public static final RegistryObject<BlockItem> JURASSIC_STONE_BRICK_SLAB = registerDecorativeBlockItem("jurassic_stone_brick_slab", () -> BlockInit.JURASSIC_STONE_BRICK_SLAB.get());
-	public static final RegistryObject<BlockItem> JURASSIC_STONE_BRICK_WALL = registerDecorativeBlockItem("jurassic_stone_brick_wall", () -> BlockInit.JURASSIC_STONE_BRICK_WALL.get());
+	public static final RegistryObject<Item> JURASSIC_STONE_BRICKS = registerDecorativeBlockItem("jurassic_stone_bricks", () -> BlockInit.JURASSIC_STONE_BRICKS.get());
+	public static final RegistryObject<Item> JURASSIC_STONE_BRICK_STAIRS = registerDecorativeBlockItem("jurassic_stone_brick_stairs", () -> BlockInit.JURASSIC_STONE_BRICK_STAIRS.get());
+	public static final RegistryObject<Item> JURASSIC_STONE_BRICK_SLAB = registerDecorativeBlockItem("jurassic_stone_brick_slab", () -> BlockInit.JURASSIC_STONE_BRICK_SLAB.get());
+	public static final RegistryObject<Item> JURASSIC_STONE_BRICK_WALL = registerDecorativeBlockItem("jurassic_stone_brick_wall", () -> BlockInit.JURASSIC_STONE_BRICK_WALL.get());
 	
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_BRICKS = registerDecorativeBlockItem("mossy_jurassic_stone_bricks", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICKS.get());
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_BRICK_STAIRS = registerDecorativeBlockItem("mossy_jurassic_stone_brick_stairs", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_STAIRS.get());
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_BRICK_SLAB = registerDecorativeBlockItem("mossy_jurassic_stone_brick_slab", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_SLAB.get());
-	public static final RegistryObject<BlockItem> MOSSY_JURASSIC_STONE_BRICK_WALL = registerDecorativeBlockItem("mossy_jurassic_stone_brick_wall", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_WALL.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_STONE_BRICKS = registerDecorativeBlockItem("mossy_jurassic_stone_bricks", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICKS.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_STONE_BRICK_STAIRS = registerDecorativeBlockItem("mossy_jurassic_stone_brick_stairs", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_STAIRS.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_STONE_BRICK_SLAB = registerDecorativeBlockItem("mossy_jurassic_stone_brick_slab", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_SLAB.get());
+	public static final RegistryObject<Item> MOSSY_JURASSIC_STONE_BRICK_WALL = registerDecorativeBlockItem("mossy_jurassic_stone_brick_wall", () -> BlockInit.MOSSY_JURASSIC_STONE_BRICK_WALL.get());
 	
 	//Conifer
-	public static final RegistryObject<BlockItem> CONIFER_LOG = registerBuringBlockItem("conifer_log", () -> BlockInit.CONIFER_LOG.get());
-	public static final RegistryObject<BlockItem> CONIFER_WOOD = registerBuringBlockItem("conifer_wood", () -> BlockInit.CONIFER_WOOD.get());
-	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_LOG = registerBuringBlockItem("stripped_conifer_log", () -> BlockInit.STRIPPED_CONIFER_LOG.get());
-	public static final RegistryObject<BlockItem> STRIPPED_CONIFER_WOOD = registerBuringBlockItem("stripped_conifer_wood", () -> BlockInit.STRIPPED_CONIFER_WOOD.get());
-	public static final RegistryObject<BlockItem> CONIFER_LEAVES = registerDecorativeBlockItem("conifer_leaves", () -> BlockInit.CONIFER_LEAVES.get());
-	public static final RegistryObject<BlockItem> CONIFER_SAPLING = registerBuringBlockItem("conifer_sapling", () -> BlockInit.CONIFER_SAPLING.get());
-	public static final RegistryObject<BlockItem> CONIFER_PLANKS = registerBuringBlockItem("conifer_planks", () -> BlockInit.CONIFER_PLANKS.get());
-	public static final RegistryObject<BlockItem> CONIFER_STAIRS = registerBuringBlockItem("conifer_stairs", () -> BlockInit.CONIFER_STAIRS.get());
-	public static final RegistryObject<BlockItem> CONIFER_SLAB = registerBuringSlabItem("conifer_slab", () -> BlockInit.CONIFER_SLAB.get());
-	public static final RegistryObject<BlockItem> CONIFER_FENCE = registerBuringBlockItem("conifer_fence", () -> BlockInit.CONIFER_FENCE.get());
-	public static final RegistryObject<BlockItem> CONIFER_FENCE_GATE = registerBuringBlockItem("conifer_fence_gate", () -> BlockInit.CONIFER_FENCE_GATE.get());
-	public static final RegistryObject<BlockItem> CONIFER_PRESSURE_PLATE = registerBuringBlockItem("conifer_pressure_plate", () -> BlockInit.CONIFER_PRESSURE_PLATE.get());
-	public static final RegistryObject<BlockItem> CONIFER_BUTTON = registerBuringBlockItem("conifer_button", () -> BlockInit.CONIFER_BUTTON.get());
-	public static final RegistryObject<BlockItem> CONIFER_TRAPDOOR = registerBuringBlockItem("conifer_trapdoor", () -> BlockInit.CONIFER_TRAPDOOR.get()); 
-	public static final RegistryObject<BlockItem> CONIFER_DOOR = registerDecorativeBlockItem("conifer_door", () -> BlockInit.CONIFER_DOOR.get());
+	public static final RegistryObject<Item> CONIFER_LOG = registerBuringBlockItem("conifer_log", () -> BlockInit.CONIFER_LOG.get());
+	public static final RegistryObject<Item> CONIFER_WOOD = registerBuringBlockItem("conifer_wood", () -> BlockInit.CONIFER_WOOD.get());
+	public static final RegistryObject<Item> STRIPPED_CONIFER_LOG = registerBuringBlockItem("stripped_conifer_log", () -> BlockInit.STRIPPED_CONIFER_LOG.get());
+	public static final RegistryObject<Item> STRIPPED_CONIFER_WOOD = registerBuringBlockItem("stripped_conifer_wood", () -> BlockInit.STRIPPED_CONIFER_WOOD.get());
+	public static final RegistryObject<Item> CONIFER_LEAVES = registerDecorativeBlockItem("conifer_leaves", () -> BlockInit.CONIFER_LEAVES.get());
+	public static final RegistryObject<Item> CONIFER_SAPLING = registerBuringBlockItem("conifer_sapling", () -> BlockInit.CONIFER_SAPLING.get());
+	public static final RegistryObject<Item> CONIFER_PLANKS = registerBuringBlockItem("conifer_planks", () -> BlockInit.CONIFER_PLANKS.get());
+	public static final RegistryObject<Item> CONIFER_STAIRS = registerBuringBlockItem("conifer_stairs", () -> BlockInit.CONIFER_STAIRS.get());
+	public static final RegistryObject<Item> CONIFER_SLAB = registerBuringSlabItem("conifer_slab", () -> BlockInit.CONIFER_SLAB.get());
+	public static final RegistryObject<Item> CONIFER_FENCE = registerBuringBlockItem("conifer_fence", () -> BlockInit.CONIFER_FENCE.get());
+	public static final RegistryObject<Item> CONIFER_FENCE_GATE = registerBuringBlockItem("conifer_fence_gate", () -> BlockInit.CONIFER_FENCE_GATE.get());
+	public static final RegistryObject<Item> CONIFER_PRESSURE_PLATE = registerBuringBlockItem("conifer_pressure_plate", () -> BlockInit.CONIFER_PRESSURE_PLATE.get());
+	public static final RegistryObject<Item> CONIFER_BUTTON = registerBuringBlockItem("conifer_button", () -> BlockInit.CONIFER_BUTTON.get());
+	public static final RegistryObject<Item> CONIFER_TRAPDOOR = registerBuringBlockItem("conifer_trapdoor", () -> BlockInit.CONIFER_TRAPDOOR.get()); 
+	public static final RegistryObject<Item> CONIFER_DOOR = registerDecorativeBlockItem("conifer_door", () -> BlockInit.CONIFER_DOOR.get());
 	public static final RegistryObject<ModSignItem> CONIFER_SIGN = ModRegistry.ITEM_REGISTRY.register("conifer_sign", () -> new ModSignItem(BlockInit.CONIFER_SIGN.get(), BlockInit.CONIFER_WALL_SIGN.get(), properties()));
 	public static final RegistryObject<ModBoatItem> CONIFER_BOAT = registerBoatItem("conifer_boat", ModBoatType.CONIFER);
 
 	//Ginkgo
-	public static final RegistryObject<BlockItem> GINKGO_LOG = registerBuringBlockItem("ginkgo_log", () -> BlockInit.GINKGO_LOG.get());
-	public static final RegistryObject<BlockItem> GINKGO_WOOD = registerBuringBlockItem("ginkgo_wood", () -> BlockInit.GINKGO_WOOD.get());
-	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_LOG = registerBuringBlockItem("stripped_ginkgo_log", () -> BlockInit.STRIPPED_GINKGO_LOG.get());
-	public static final RegistryObject<BlockItem> STRIPPED_GINKGO_WOOD = registerBuringBlockItem("stripped_ginkgo_wood", () -> BlockInit.STRIPPED_GINKGO_WOOD.get());
-	public static final RegistryObject<BlockItem> GINKGO_LEAVES = registerDecorativeBlockItem("ginkgo_leaves", () -> BlockInit.GINKGO_LEAVES.get());
-	public static final RegistryObject<BlockItem> GINKGO_SAPLING = registerBuringBlockItem("ginkgo_sapling", () -> BlockInit.GINKGO_SAPLING.get());
-	public static final RegistryObject<BlockItem> GINKGO_PLANKS = registerBuringBlockItem("ginkgo_planks", () -> BlockInit.GINKGO_PLANKS.get());
-	public static final RegistryObject<BlockItem> GINKGO_STAIRS = registerBuringBlockItem("ginkgo_stairs", () -> BlockInit.GINKGO_STAIRS.get());
-	public static final RegistryObject<BlockItem> GINKGO_SLAB = registerBuringSlabItem("ginkgo_slab", () -> BlockInit.GINKGO_SLAB.get());
-	public static final RegistryObject<BlockItem> GINKGO_FENCE = registerBuringBlockItem("ginkgo_fence", () -> BlockInit.GINKGO_FENCE.get());
-	public static final RegistryObject<BlockItem> GINKGO_FENCE_GATE = registerBuringBlockItem("ginkgo_fence_gate", () -> BlockInit.GINKGO_FENCE_GATE.get());
-	public static final RegistryObject<BlockItem> GINKGO_PRESSURE_PLATE = registerBuringBlockItem("ginkgo_pressure_plate", () -> BlockInit.GINKGO_PRESSURE_PLATE.get());
-	public static final RegistryObject<BlockItem> GINKGO_BUTTON = registerBuringBlockItem("ginkgo_button", () -> BlockInit.GINKGO_BUTTON.get());
-	public static final RegistryObject<BlockItem> GINKGO_TRAPDOOR = registerBuringBlockItem("ginkgo_trapdoor", () -> BlockInit.GINKGO_TRAPDOOR.get()); 
-	public static final RegistryObject<BlockItem> GINKGO_DOOR = registerBuringBlockItem("ginkgo_door", () -> BlockInit.GINKGO_DOOR.get());
+	public static final RegistryObject<Item> GINKGO_LOG = registerBuringBlockItem("ginkgo_log", () -> BlockInit.GINKGO_LOG.get());
+	public static final RegistryObject<Item> GINKGO_WOOD = registerBuringBlockItem("ginkgo_wood", () -> BlockInit.GINKGO_WOOD.get());
+	public static final RegistryObject<Item> STRIPPED_GINKGO_LOG = registerBuringBlockItem("stripped_ginkgo_log", () -> BlockInit.STRIPPED_GINKGO_LOG.get());
+	public static final RegistryObject<Item> STRIPPED_GINKGO_WOOD = registerBuringBlockItem("stripped_ginkgo_wood", () -> BlockInit.STRIPPED_GINKGO_WOOD.get());
+	public static final RegistryObject<Item> GINKGO_LEAVES = registerDecorativeBlockItem("ginkgo_leaves", () -> BlockInit.GINKGO_LEAVES.get());
+	public static final RegistryObject<Item> GINKGO_SAPLING = registerBuringBlockItem("ginkgo_sapling", () -> BlockInit.GINKGO_SAPLING.get());
+	public static final RegistryObject<Item> GINKGO_PLANKS = registerBuringBlockItem("ginkgo_planks", () -> BlockInit.GINKGO_PLANKS.get());
+	public static final RegistryObject<Item> GINKGO_STAIRS = registerBuringBlockItem("ginkgo_stairs", () -> BlockInit.GINKGO_STAIRS.get());
+	public static final RegistryObject<Item> GINKGO_SLAB = registerBuringSlabItem("ginkgo_slab", () -> BlockInit.GINKGO_SLAB.get());
+	public static final RegistryObject<Item> GINKGO_FENCE = registerBuringBlockItem("ginkgo_fence", () -> BlockInit.GINKGO_FENCE.get());
+	public static final RegistryObject<Item> GINKGO_FENCE_GATE = registerBuringBlockItem("ginkgo_fence_gate", () -> BlockInit.GINKGO_FENCE_GATE.get());
+	public static final RegistryObject<Item> GINKGO_PRESSURE_PLATE = registerBuringBlockItem("ginkgo_pressure_plate", () -> BlockInit.GINKGO_PRESSURE_PLATE.get());
+	public static final RegistryObject<Item> GINKGO_BUTTON = registerBuringBlockItem("ginkgo_button", () -> BlockInit.GINKGO_BUTTON.get());
+	public static final RegistryObject<Item> GINKGO_TRAPDOOR = registerBuringBlockItem("ginkgo_trapdoor", () -> BlockInit.GINKGO_TRAPDOOR.get()); 
+	public static final RegistryObject<Item> GINKGO_DOOR = registerBuringBlockItem("ginkgo_door", () -> BlockInit.GINKGO_DOOR.get());
 	public static final RegistryObject<ModSignItem> GINKGO_SIGN = ModRegistry.ITEM_REGISTRY.register("ginkgo_sign", () -> new ModSignItem(BlockInit.GINKGO_SIGN.get(), BlockInit.GINKGO_WALL_SIGN.get(), properties()));
 	public static final RegistryObject<ModBoatItem> GINKGO_BOAT = registerBoatItem("ginkgo_boat", ModBoatType.GINKGO);
 
 	//Araucaria
-	public static final RegistryObject<BlockItem> ARAUCARIA_LOG = registerBuringBlockItem("araucaria_log", () -> BlockInit.ARAUCARIA_LOG.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_WOOD = registerBuringBlockItem("araucaria_wood", () -> BlockInit.ARAUCARIA_WOOD.get());
-	public static final RegistryObject<BlockItem> STRIPPED_ARAUCARIA_LOG = registerBuringBlockItem("stripped_araucaria_log", () -> BlockInit.STRIPPED_ARAUCARIA_LOG.get());
-	public static final RegistryObject<BlockItem> STRIPPED_ARAUCARIA_WOOD = registerBuringBlockItem("stripped_araucaria_wood", () -> BlockInit.STRIPPED_ARAUCARIA_WOOD.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_LEAVES = registerDecorativeBlockItem("araucaria_leaves", () -> BlockInit.ARAUCARIA_LEAVES.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_SAPLING = registerBuringBlockItem("araucaria_sapling", () -> BlockInit.ARAUCARIA_SAPLING.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_PLANKS = registerBuringBlockItem("araucaria_planks", () -> BlockInit.ARAUCARIA_PLANKS.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_STAIRS = registerBuringBlockItem("araucaria_stairs", () -> BlockInit.ARAUCARIA_STAIRS.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_SLAB = registerBuringBlockItem("araucaria_slab", () -> BlockInit.ARAUCARIA_SLAB.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_FENCE = registerBuringBlockItem("araucaria_fence", () -> BlockInit.ARAUCARIA_FENCE.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_FENCE_GATE = registerBuringBlockItem("araucaria_fence_gate", () -> BlockInit.ARAUCARIA_FENCE_GATE.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_PRESSURE_PLATE = registerBuringBlockItem("araucaria_pressure_plate", () -> BlockInit.ARAUCARIA_PRESSURE_PLATE.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_BUTTON = registerBuringBlockItem("araucaria_button", () -> BlockInit.ARAUCARIA_BUTTON.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_TRAPDOOR = registerBuringBlockItem("araucaria_trapdoor", () -> BlockInit.ARAUCARIA_TRAPDOOR.get());
-	public static final RegistryObject<BlockItem> ARAUCARIA_DOOR = registerBuringBlockItem("araucaria_door", () -> BlockInit.ARAUCARIA_DOOR.get());
+	public static final RegistryObject<Item> ARAUCARIA_LOG = registerBuringBlockItem("araucaria_log", () -> BlockInit.ARAUCARIA_LOG.get());
+	public static final RegistryObject<Item> ARAUCARIA_WOOD = registerBuringBlockItem("araucaria_wood", () -> BlockInit.ARAUCARIA_WOOD.get());
+	public static final RegistryObject<Item> STRIPPED_ARAUCARIA_LOG = registerBuringBlockItem("stripped_araucaria_log", () -> BlockInit.STRIPPED_ARAUCARIA_LOG.get());
+	public static final RegistryObject<Item> STRIPPED_ARAUCARIA_WOOD = registerBuringBlockItem("stripped_araucaria_wood", () -> BlockInit.STRIPPED_ARAUCARIA_WOOD.get());
+	public static final RegistryObject<Item> ARAUCARIA_LEAVES = registerDecorativeBlockItem("araucaria_leaves", () -> BlockInit.ARAUCARIA_LEAVES.get());
+	public static final RegistryObject<Item> ARAUCARIA_SAPLING = registerBuringBlockItem("araucaria_sapling", () -> BlockInit.ARAUCARIA_SAPLING.get());
+	public static final RegistryObject<Item> ARAUCARIA_PLANKS = registerBuringBlockItem("araucaria_planks", () -> BlockInit.ARAUCARIA_PLANKS.get());
+	public static final RegistryObject<Item> ARAUCARIA_STAIRS = registerBuringBlockItem("araucaria_stairs", () -> BlockInit.ARAUCARIA_STAIRS.get());
+	public static final RegistryObject<Item> ARAUCARIA_SLAB = registerBuringBlockItem("araucaria_slab", () -> BlockInit.ARAUCARIA_SLAB.get());
+	public static final RegistryObject<Item> ARAUCARIA_FENCE = registerBuringBlockItem("araucaria_fence", () -> BlockInit.ARAUCARIA_FENCE.get());
+	public static final RegistryObject<Item> ARAUCARIA_FENCE_GATE = registerBuringBlockItem("araucaria_fence_gate", () -> BlockInit.ARAUCARIA_FENCE_GATE.get());
+	public static final RegistryObject<Item> ARAUCARIA_PRESSURE_PLATE = registerBuringBlockItem("araucaria_pressure_plate", () -> BlockInit.ARAUCARIA_PRESSURE_PLATE.get());
+	public static final RegistryObject<Item> ARAUCARIA_BUTTON = registerBuringBlockItem("araucaria_button", () -> BlockInit.ARAUCARIA_BUTTON.get());
+	public static final RegistryObject<Item> ARAUCARIA_TRAPDOOR = registerBuringBlockItem("araucaria_trapdoor", () -> BlockInit.ARAUCARIA_TRAPDOOR.get());
+	public static final RegistryObject<Item> ARAUCARIA_DOOR = registerBuringBlockItem("araucaria_door", () -> BlockInit.ARAUCARIA_DOOR.get());
 	public static final RegistryObject<ModSignItem> ARAUCARIA_SIGN = ModRegistry.ITEM_REGISTRY.register("araucaria_sign", () -> new ModSignItem(BlockInit.ARAUCARIA_SIGN.get(), BlockInit.ARAUCARIA_WALL_SIGN.get(), properties()));
 	public static final RegistryObject<ModBoatItem> ARAUCARIA_BOAT = registerBoatItem("araucaria_boat", ModBoatType.ARAUCARIA);
 	
 	//Light Concrete
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE =  registerDecorativeBlockItem("light_concrete", () -> BlockInit.LIGHT_CONCRETE.get());
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_STAIRS =  registerDecorativeBlockItem("light_concrete_stairs", () -> BlockInit.LIGHT_CONCRETE_STAIRS.get());
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_SLAB =  registerDecorativeBlockItem("light_concrete_slab", () -> BlockInit.LIGHT_CONCRETE_SLAB.get());
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_WALL =  registerDecorativeBlockItem("light_concrete_wall", () -> BlockInit.LIGHT_CONCRETE_WALL.get());
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_PRESSURE_PLATE = registerDecorativeBlockItem("light_concrete_pressure_plate", () -> BlockInit.LIGHT_CONCRETE_PRESSURE_PLATE.get());
-	public static final RegistryObject<BlockItem> LIGHT_CONCRETE_BUTTON =  registerDecorativeBlockItem("light_concrete_button", () -> BlockInit.LIGHT_CONCRETE_BUTTON.get());
+	public static final RegistryObject<Item> LIGHT_CONCRETE =  registerDecorativeBlockItem("light_concrete", () -> BlockInit.LIGHT_CONCRETE.get());
+	public static final RegistryObject<Item> LIGHT_CONCRETE_STAIRS =  registerDecorativeBlockItem("light_concrete_stairs", () -> BlockInit.LIGHT_CONCRETE_STAIRS.get());
+	public static final RegistryObject<Item> LIGHT_CONCRETE_SLAB =  registerDecorativeBlockItem("light_concrete_slab", () -> BlockInit.LIGHT_CONCRETE_SLAB.get());
+	public static final RegistryObject<Item> LIGHT_CONCRETE_WALL =  registerDecorativeBlockItem("light_concrete_wall", () -> BlockInit.LIGHT_CONCRETE_WALL.get());
+	public static final RegistryObject<Item> LIGHT_CONCRETE_PRESSURE_PLATE = registerDecorativeBlockItem("light_concrete_pressure_plate", () -> BlockInit.LIGHT_CONCRETE_PRESSURE_PLATE.get());
+	public static final RegistryObject<Item> LIGHT_CONCRETE_BUTTON =  registerDecorativeBlockItem("light_concrete_button", () -> BlockInit.LIGHT_CONCRETE_BUTTON.get());
 	
 	//Polished Light Concrete
-	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE =  registerDecorativeBlockItem("polished_light_concrete", () -> BlockInit.POLISHED_LIGHT_CONCRETE.get());
-	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE_STAIRS =  registerDecorativeBlockItem("polished_light_concrete_stairs", () -> BlockInit.POLISHED_LIGHT_CONCRETE_STAIRS.get());
-	public static final RegistryObject<BlockItem> POLISHED_LIGHT_CONCRETE_SLAB =  registerDecorativeBlockItem("polished_light_concrete_slab", () -> BlockInit.POLISHED_LIGHT_CONCRETE_SLAB.get());
+	public static final RegistryObject<Item> POLISHED_LIGHT_CONCRETE =  registerDecorativeBlockItem("polished_light_concrete", () -> BlockInit.POLISHED_LIGHT_CONCRETE.get());
+	public static final RegistryObject<Item> POLISHED_LIGHT_CONCRETE_STAIRS =  registerDecorativeBlockItem("polished_light_concrete_stairs", () -> BlockInit.POLISHED_LIGHT_CONCRETE_STAIRS.get());
+	public static final RegistryObject<Item> POLISHED_LIGHT_CONCRETE_SLAB =  registerDecorativeBlockItem("polished_light_concrete_slab", () -> BlockInit.POLISHED_LIGHT_CONCRETE_SLAB.get());
 	
 	//Dark Concrete
-	public static final RegistryObject<BlockItem> DARK_CONCRETE =  registerDecorativeBlockItem("dark_concrete", () -> BlockInit.DARK_CONCRETE.get());
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_STAIRS =  registerDecorativeBlockItem("dark_concrete_stairs", () -> BlockInit.DARK_CONCRETE_STAIRS.get());
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_SLAB =  registerDecorativeBlockItem("dark_concrete_slab", () -> BlockInit.DARK_CONCRETE_SLAB.get());
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_WALL =  registerDecorativeBlockItem("dark_concrete_wall", () -> BlockInit.DARK_CONCRETE_WALL.get());
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_PRESSURE_PLATE = registerDecorativeBlockItem("dark_concrete_pressure_plate", () -> BlockInit.DARK_CONCRETE_PRESSURE_PLATE.get());
-	public static final RegistryObject<BlockItem> DARK_CONCRETE_BUTTON =  registerDecorativeBlockItem("dark_concrete_button", () -> BlockInit.DARK_CONCRETE_BUTTON.get());
+	public static final RegistryObject<Item> DARK_CONCRETE =  registerDecorativeBlockItem("dark_concrete", () -> BlockInit.DARK_CONCRETE.get());
+	public static final RegistryObject<Item> DARK_CONCRETE_STAIRS =  registerDecorativeBlockItem("dark_concrete_stairs", () -> BlockInit.DARK_CONCRETE_STAIRS.get());
+	public static final RegistryObject<Item> DARK_CONCRETE_SLAB =  registerDecorativeBlockItem("dark_concrete_slab", () -> BlockInit.DARK_CONCRETE_SLAB.get());
+	public static final RegistryObject<Item> DARK_CONCRETE_WALL =  registerDecorativeBlockItem("dark_concrete_wall", () -> BlockInit.DARK_CONCRETE_WALL.get());
+	public static final RegistryObject<Item> DARK_CONCRETE_PRESSURE_PLATE = registerDecorativeBlockItem("dark_concrete_pressure_plate", () -> BlockInit.DARK_CONCRETE_PRESSURE_PLATE.get());
+	public static final RegistryObject<Item> DARK_CONCRETE_BUTTON =  registerDecorativeBlockItem("dark_concrete_button", () -> BlockInit.DARK_CONCRETE_BUTTON.get());
 	
 	//Polished Dark Concrete
-	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE =  registerDecorativeBlockItem("polished_dark_concrete", () -> BlockInit.POLISHED_DARK_CONCRETE.get());
-	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE_STAIRS =  registerDecorativeBlockItem("polished_dark_concrete_stairs", () -> BlockInit.POLISHED_DARK_CONCRETE_STAIRS.get());
-	public static final RegistryObject<BlockItem> POLISHED_DARK_CONCRETE_SLAB =  registerDecorativeBlockItem("polished_dark_concrete_slab", () -> BlockInit.POLISHED_DARK_CONCRETE_SLAB.get());
+	public static final RegistryObject<Item> POLISHED_DARK_CONCRETE =  registerDecorativeBlockItem("polished_dark_concrete", () -> BlockInit.POLISHED_DARK_CONCRETE.get());
+	public static final RegistryObject<Item> POLISHED_DARK_CONCRETE_STAIRS =  registerDecorativeBlockItem("polished_dark_concrete_stairs", () -> BlockInit.POLISHED_DARK_CONCRETE_STAIRS.get());
+	public static final RegistryObject<Item> POLISHED_DARK_CONCRETE_SLAB =  registerDecorativeBlockItem("polished_dark_concrete_slab", () -> BlockInit.POLISHED_DARK_CONCRETE_SLAB.get());
 
 	//Wooden Planks
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS =  registerDecorativeBlockItem("wooden_planks", () -> BlockInit.WOODEN_PLANKS.get());
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_STAIRS =  registerDecorativeBlockItem("wooden_planks_stairs", () -> BlockInit.WOODEN_PLANKS_STAIRS.get());
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_SLAB =  registerDecorativeBlockItem("wooden_planks_slab", () -> BlockInit.WOODEN_PLANKS_SLAB.get());
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_FENCE =  registerDecorativeBlockItem("wooden_planks_fence", () -> BlockInit.WOODEN_PLANKS_FENCE.get());
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_FENCE_GATE =  registerDecorativeBlockItem("wooden_planks_fence_gate", () -> BlockInit.WOODEN_PLANKS_FENCE_GATE.get());
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_PRESSURE_PLATE = registerDecorativeBlockItem("wooden_planks_pressure_plate", () -> BlockInit.WOODEN_PLANKS_PRESSURE_PLATE.get());
-	public static final RegistryObject<BlockItem> WOODEN_PLANKS_BUTTON =  registerDecorativeBlockItem("wooden_planks_button", () -> BlockInit.WOODEN_PLANKS_BUTTON.get());
+	public static final RegistryObject<Item> WOODEN_PLANKS =  registerDecorativeBlockItem("wooden_planks", () -> BlockInit.WOODEN_PLANKS.get());
+	public static final RegistryObject<Item> WOODEN_PLANKS_STAIRS =  registerDecorativeBlockItem("wooden_planks_stairs", () -> BlockInit.WOODEN_PLANKS_STAIRS.get());
+	public static final RegistryObject<Item> WOODEN_PLANKS_SLAB =  registerDecorativeBlockItem("wooden_planks_slab", () -> BlockInit.WOODEN_PLANKS_SLAB.get());
+	public static final RegistryObject<Item> WOODEN_PLANKS_FENCE =  registerDecorativeBlockItem("wooden_planks_fence", () -> BlockInit.WOODEN_PLANKS_FENCE.get());
+	public static final RegistryObject<Item> WOODEN_PLANKS_FENCE_GATE =  registerDecorativeBlockItem("wooden_planks_fence_gate", () -> BlockInit.WOODEN_PLANKS_FENCE_GATE.get());
+	public static final RegistryObject<Item> WOODEN_PLANKS_PRESSURE_PLATE = registerDecorativeBlockItem("wooden_planks_pressure_plate", () -> BlockInit.WOODEN_PLANKS_PRESSURE_PLATE.get());
+	public static final RegistryObject<Item> WOODEN_PLANKS_BUTTON =  registerDecorativeBlockItem("wooden_planks_button", () -> BlockInit.WOODEN_PLANKS_BUTTON.get());
 		
 	//Wooden Planks
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS =  registerDecorativeBlockItem("refined_wooden_planks", () -> BlockInit.REFINED_WOODEN_PLANKS.get());
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_STAIRS =  registerDecorativeBlockItem("refined_wooden_planks_stairs", () -> BlockInit.REFINED_WOODEN_PLANKS_STAIRS.get());
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_SLAB =  registerDecorativeBlockItem("refined_wooden_planks_slab", () -> BlockInit.REFINED_WOODEN_PLANKS_SLAB.get());
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_FENCE =  registerDecorativeBlockItem("refined_wooden_planks_fence", () -> BlockInit.REFINED_WOODEN_PLANKS_FENCE.get());
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_FENCE_GATE =  registerDecorativeBlockItem("refined_wooden_planks_fence_gate", () -> BlockInit.REFINED_WOODEN_PLANKS_FENCE_GATE.get());
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_PRESSURE_PLATE = registerDecorativeBlockItem("refined_wooden_planks_pressure_plate", () -> BlockInit.REFINED_WOODEN_PLANKS_PRESSURE_PLATE.get());
-	public static final RegistryObject<BlockItem> REFINED_WOODEN_PLANKS_BUTTON =  registerDecorativeBlockItem("refined_wooden_planks_button", () -> BlockInit.REFINED_WOODEN_PLANKS_BUTTON.get());
+	public static final RegistryObject<Item> REFINED_WOODEN_PLANKS =  registerDecorativeBlockItem("refined_wooden_planks", () -> BlockInit.REFINED_WOODEN_PLANKS.get());
+	public static final RegistryObject<Item> REFINED_WOODEN_PLANKS_STAIRS =  registerDecorativeBlockItem("refined_wooden_planks_stairs", () -> BlockInit.REFINED_WOODEN_PLANKS_STAIRS.get());
+	public static final RegistryObject<Item> REFINED_WOODEN_PLANKS_SLAB =  registerDecorativeBlockItem("refined_wooden_planks_slab", () -> BlockInit.REFINED_WOODEN_PLANKS_SLAB.get());
+	public static final RegistryObject<Item> REFINED_WOODEN_PLANKS_FENCE =  registerDecorativeBlockItem("refined_wooden_planks_fence", () -> BlockInit.REFINED_WOODEN_PLANKS_FENCE.get());
+	public static final RegistryObject<Item> REFINED_WOODEN_PLANKS_FENCE_GATE =  registerDecorativeBlockItem("refined_wooden_planks_fence_gate", () -> BlockInit.REFINED_WOODEN_PLANKS_FENCE_GATE.get());
+	public static final RegistryObject<Item> REFINED_WOODEN_PLANKS_PRESSURE_PLATE = registerDecorativeBlockItem("refined_wooden_planks_pressure_plate", () -> BlockInit.REFINED_WOODEN_PLANKS_PRESSURE_PLATE.get());
+	public static final RegistryObject<Item> REFINED_WOODEN_PLANKS_BUTTON =  registerDecorativeBlockItem("refined_wooden_planks_button", () -> BlockInit.REFINED_WOODEN_PLANKS_BUTTON.get());
 	
 	//Pavement
-	public static final RegistryObject<BlockItem> PAVEMENT =  registerDecorativeBlockItem("pavement", () -> BlockInit.PAVEMENT.get());
-	public static final RegistryObject<BlockItem> PAVEMENT_SLOPE =  registerDecorativeBlockItem("pavement_slope", () -> BlockInit.PAVEMENT_SLOPE.get());
-	public static final RegistryObject<BlockItem> RAISED_PAVEMENT =  registerDecorativeBlockItem("raised_pavement", () -> BlockInit.RAISED_PAVEMENT.get());
+	public static final RegistryObject<Item> PAVEMENT =  registerDecorativeBlockItem("pavement", () -> BlockInit.PAVEMENT.get());
+	public static final RegistryObject<Item> PAVEMENT_SLOPE =  registerDecorativeBlockItem("pavement_slope", () -> BlockInit.PAVEMENT_SLOPE.get());
+	public static final RegistryObject<Item> RAISED_PAVEMENT =  registerDecorativeBlockItem("raised_pavement", () -> BlockInit.RAISED_PAVEMENT.get());
 	
 	//Roads
-	public static final RegistryObject<BlockItem> GRAVEL_ROAD = registerDecorativeBlockItem("gravel_road", () -> BlockInit.GRAVEL_ROAD.get());
-	public static final RegistryObject<BlockItem> RAISED_GRAVEL_ROAD = registerDecorativeBlockItem("raised_gravel_road", () -> BlockInit.RAISED_GRAVEL_ROAD.get());
+	public static final RegistryObject<Item> GRAVEL_ROAD = registerDecorativeBlockItem("gravel_road", () -> BlockInit.GRAVEL_ROAD.get());
+	public static final RegistryObject<Item> RAISED_GRAVEL_ROAD = registerDecorativeBlockItem("raised_gravel_road", () -> BlockInit.RAISED_GRAVEL_ROAD.get());
 		
-	public static final RegistryObject<BlockItem> DIRT_ROAD = registerDecorativeBlockItem("dirt_road", () -> BlockInit.DIRT_ROAD.get());
-	public static final RegistryObject<BlockItem> RAISED_DIRT_ROAD = registerDecorativeBlockItem("raised_dirt_road", () -> BlockInit.RAISED_DIRT_ROAD.get());
+	public static final RegistryObject<Item> DIRT_ROAD = registerDecorativeBlockItem("dirt_road", () -> BlockInit.DIRT_ROAD.get());
+	public static final RegistryObject<Item> RAISED_DIRT_ROAD = registerDecorativeBlockItem("raised_dirt_road", () -> BlockInit.RAISED_DIRT_ROAD.get());
 			
-	public static final RegistryObject<BlockItem> PAVED_ROAD = registerDecorativeBlockItem("paved_road", () -> BlockInit.PAVED_ROAD.get());
-	public static final RegistryObject<BlockItem> RAISED_PAVED_ROAD = registerDecorativeBlockItem("raised_paved_road", () -> BlockInit.RAISED_PAVED_ROAD.get());
+	public static final RegistryObject<Item> PAVED_ROAD = registerDecorativeBlockItem("paved_road", () -> BlockInit.PAVED_ROAD.get());
+	public static final RegistryObject<Item> RAISED_PAVED_ROAD = registerDecorativeBlockItem("raised_paved_road", () -> BlockInit.RAISED_PAVED_ROAD.get());
 		
 	//Tile
-	public static final RegistryObject<BlockItem> TILE =  registerDecorativeBlockItem("tile", () -> BlockInit.TILE.get());
-	public static final RegistryObject<BlockItem> TILE_STAIRS =  registerDecorativeBlockItem("tile_stairs", () -> BlockInit.TILE_STAIRS.get());
-	public static final RegistryObject<BlockItem> TILE_SLAB =  registerDecorativeBlockItem("tile_slab", () -> BlockInit.TILE_SLAB.get());
+	public static final RegistryObject<Item> TILE =  registerDecorativeBlockItem("tile", () -> BlockInit.TILE.get());
+	public static final RegistryObject<Item> TILE_STAIRS =  registerDecorativeBlockItem("tile_stairs", () -> BlockInit.TILE_STAIRS.get());
+	public static final RegistryObject<Item> TILE_SLAB =  registerDecorativeBlockItem("tile_slab", () -> BlockInit.TILE_SLAB.get());
 
 	//Metal Fence
-	public static final RegistryObject<BlockItem> METAL_FENCE = registerDecorativeBlockItem("metal_fence", () -> BlockInit.METAL_FENCE.get());
+	public static final RegistryObject<Item> METAL_FENCE = registerDecorativeBlockItem("metal_fence", () -> BlockInit.METAL_FENCE.get());
 
 	//Clear Glass
-	public static final RegistryObject<BlockItem> CLEAR_GLASS = registerDecorativeBlockItem("clear_glass", () -> BlockInit.CLEAR_GLASS.get());
-	public static final RegistryObject<BlockItem> CLEAR_GLASS_PANE = registerDecorativeBlockItem("clear_glass_pane", () -> BlockInit.CLEAR_GLASS_PANE.get());
+	public static final RegistryObject<Item> CLEAR_GLASS = registerDecorativeBlockItem("clear_glass", () -> BlockInit.CLEAR_GLASS.get());
+	public static final RegistryObject<Item> CLEAR_GLASS_PANE = registerDecorativeBlockItem("clear_glass_pane", () -> BlockInit.CLEAR_GLASS_PANE.get());
 
 	//Tinted Glass
-	public static final RegistryObject<BlockItem> TINTED_GLASS = registerDecorativeBlockItem("tinted_glass", () -> BlockInit.TINTED_GLASS.get());
-	public static final RegistryObject<BlockItem> TINTED_GLASS_PANE = registerDecorativeBlockItem("tinted_glass_pane", () -> BlockInit.TINTED_GLASS_PANE.get());
+	public static final RegistryObject<Item> TINTED_GLASS = registerDecorativeBlockItem("tinted_glass", () -> BlockInit.TINTED_GLASS.get());
+	public static final RegistryObject<Item> TINTED_GLASS_PANE = registerDecorativeBlockItem("tinted_glass_pane", () -> BlockInit.TINTED_GLASS_PANE.get());
 	
 	//Coloured Glass
-	public static final RegistryObject<BlockItem> WHITE_GLASS = registerDecorativeBlockItem("white_glass", () -> BlockInit.WHITE_GLASS.get());
-	public static final RegistryObject<BlockItem> WHITE_GLASS_PANE = registerDecorativeBlockItem("white_glass_pane", () -> BlockInit.WHITE_GLASS_PANE.get());	
+	public static final RegistryObject<Item> WHITE_GLASS = registerDecorativeBlockItem("white_glass", () -> BlockInit.WHITE_GLASS.get());
+	public static final RegistryObject<Item> WHITE_GLASS_PANE = registerDecorativeBlockItem("white_glass_pane", () -> BlockInit.WHITE_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> LIGHT_GREY_GLASS = registerDecorativeBlockItem("light_grey_glass", () -> BlockInit.LIGHT_GREY_GLASS.get());
-	public static final RegistryObject<BlockItem> LIGHT_GREY_GLASS_PANE = registerDecorativeBlockItem("light_grey_glass_pane", () -> BlockInit.LIGHT_GREY_GLASS_PANE.get());	
+	public static final RegistryObject<Item> LIGHT_GREY_GLASS = registerDecorativeBlockItem("light_grey_glass", () -> BlockInit.LIGHT_GREY_GLASS.get());
+	public static final RegistryObject<Item> LIGHT_GREY_GLASS_PANE = registerDecorativeBlockItem("light_grey_glass_pane", () -> BlockInit.LIGHT_GREY_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> GREY_GLASS = registerDecorativeBlockItem("grey_glass", () -> BlockInit.GREY_GLASS.get());
-	public static final RegistryObject<BlockItem> GREY_GLASS_PANE = registerDecorativeBlockItem("grey_glass_pane", () -> BlockInit.GREY_GLASS_PANE.get());	
+	public static final RegistryObject<Item> GREY_GLASS = registerDecorativeBlockItem("grey_glass", () -> BlockInit.GREY_GLASS.get());
+	public static final RegistryObject<Item> GREY_GLASS_PANE = registerDecorativeBlockItem("grey_glass_pane", () -> BlockInit.GREY_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> BLACK_GLASS = registerDecorativeBlockItem("black_glass", () -> BlockInit.BLACK_GLASS.get());
-	public static final RegistryObject<BlockItem> BLACK_GLASS_PANE = registerDecorativeBlockItem("black_glass_pane", () -> BlockInit.BLACK_GLASS_PANE.get());	
+	public static final RegistryObject<Item> BLACK_GLASS = registerDecorativeBlockItem("black_glass", () -> BlockInit.BLACK_GLASS.get());
+	public static final RegistryObject<Item> BLACK_GLASS_PANE = registerDecorativeBlockItem("black_glass_pane", () -> BlockInit.BLACK_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> RED_GLASS = registerDecorativeBlockItem("red_glass", () -> BlockInit.RED_GLASS.get());
-	public static final RegistryObject<BlockItem> RED_GLASS_PANE = registerDecorativeBlockItem("red_glass_pane", () -> BlockInit.RED_GLASS_PANE.get());	
+	public static final RegistryObject<Item> RED_GLASS = registerDecorativeBlockItem("red_glass", () -> BlockInit.RED_GLASS.get());
+	public static final RegistryObject<Item> RED_GLASS_PANE = registerDecorativeBlockItem("red_glass_pane", () -> BlockInit.RED_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> ORANGE_GLASS = registerDecorativeBlockItem("orange_glass", () -> BlockInit.ORANGE_GLASS.get());
-	public static final RegistryObject<BlockItem> ORANGE_GLASS_PANE = registerDecorativeBlockItem("orange_glass_pane", () -> BlockInit.ORANGE_GLASS_PANE.get());	
+	public static final RegistryObject<Item> ORANGE_GLASS = registerDecorativeBlockItem("orange_glass", () -> BlockInit.ORANGE_GLASS.get());
+	public static final RegistryObject<Item> ORANGE_GLASS_PANE = registerDecorativeBlockItem("orange_glass_pane", () -> BlockInit.ORANGE_GLASS_PANE.get());	
 	
-	public static final RegistryObject<BlockItem> YELLOW_GLASS = registerDecorativeBlockItem("yellow_glass", () -> BlockInit.YELLOW_GLASS.get());
-	public static final RegistryObject<BlockItem> YELLOW_GLASS_PANE = registerDecorativeBlockItem("yellow_glass_pane", () -> BlockInit.YELLOW_GLASS_PANE.get());	
+	public static final RegistryObject<Item> YELLOW_GLASS = registerDecorativeBlockItem("yellow_glass", () -> BlockInit.YELLOW_GLASS.get());
+	public static final RegistryObject<Item> YELLOW_GLASS_PANE = registerDecorativeBlockItem("yellow_glass_pane", () -> BlockInit.YELLOW_GLASS_PANE.get());	
 	
-	public static final RegistryObject<BlockItem> LIME_GLASS = registerDecorativeBlockItem("lime_glass", () -> BlockInit.LIME_GLASS.get());
-	public static final RegistryObject<BlockItem> LIME_GLASS_PANE = registerDecorativeBlockItem("lime_glass_pane", () -> BlockInit.LIME_GLASS_PANE.get());	
+	public static final RegistryObject<Item> LIME_GLASS = registerDecorativeBlockItem("lime_glass", () -> BlockInit.LIME_GLASS.get());
+	public static final RegistryObject<Item> LIME_GLASS_PANE = registerDecorativeBlockItem("lime_glass_pane", () -> BlockInit.LIME_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> GREEN_GLASS = registerDecorativeBlockItem("green_glass", () -> BlockInit.GREEN_GLASS.get());
-	public static final RegistryObject<BlockItem> GREEN_GLASS_PANE = registerDecorativeBlockItem("green_glass_pane", () -> BlockInit.GREEN_GLASS_PANE.get());	
+	public static final RegistryObject<Item> GREEN_GLASS = registerDecorativeBlockItem("green_glass", () -> BlockInit.GREEN_GLASS.get());
+	public static final RegistryObject<Item> GREEN_GLASS_PANE = registerDecorativeBlockItem("green_glass_pane", () -> BlockInit.GREEN_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> CYAN_GLASS = registerDecorativeBlockItem("cyan_glass", () -> BlockInit.CYAN_GLASS.get());
-	public static final RegistryObject<BlockItem> CYAN_GLASS_PANE = registerDecorativeBlockItem("cyan_glass_pane", () -> BlockInit.CYAN_GLASS_PANE.get());	
+	public static final RegistryObject<Item> CYAN_GLASS = registerDecorativeBlockItem("cyan_glass", () -> BlockInit.CYAN_GLASS.get());
+	public static final RegistryObject<Item> CYAN_GLASS_PANE = registerDecorativeBlockItem("cyan_glass_pane", () -> BlockInit.CYAN_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> LIGHT_BLUE_GLASS = registerDecorativeBlockItem("light_blue_glass", () -> BlockInit.LIGHT_BLUE_GLASS.get());
-	public static final RegistryObject<BlockItem> LIGHT_BLUE_GLASS_PANE = registerDecorativeBlockItem("light_blue_glass_pane", () -> BlockInit.LIGHT_BLUE_GLASS_PANE.get());	
+	public static final RegistryObject<Item> LIGHT_BLUE_GLASS = registerDecorativeBlockItem("light_blue_glass", () -> BlockInit.LIGHT_BLUE_GLASS.get());
+	public static final RegistryObject<Item> LIGHT_BLUE_GLASS_PANE = registerDecorativeBlockItem("light_blue_glass_pane", () -> BlockInit.LIGHT_BLUE_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> BLUE_GLASS = registerDecorativeBlockItem("blue_glass", () -> BlockInit.BLUE_GLASS.get());
-	public static final RegistryObject<BlockItem> BLUE_GLASS_PANE = registerDecorativeBlockItem("blue_glass_pane", () -> BlockInit.BLUE_GLASS_PANE.get());	
+	public static final RegistryObject<Item> BLUE_GLASS = registerDecorativeBlockItem("blue_glass", () -> BlockInit.BLUE_GLASS.get());
+	public static final RegistryObject<Item> BLUE_GLASS_PANE = registerDecorativeBlockItem("blue_glass_pane", () -> BlockInit.BLUE_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> PURPLE_GLASS = registerDecorativeBlockItem("purple_glass", () -> BlockInit.PURPLE_GLASS.get());
-	public static final RegistryObject<BlockItem> PURPLE_GLASS_PANE = registerDecorativeBlockItem("purple_glass_pane", () -> BlockInit.PURPLE_GLASS_PANE.get());	
+	public static final RegistryObject<Item> PURPLE_GLASS = registerDecorativeBlockItem("purple_glass", () -> BlockInit.PURPLE_GLASS.get());
+	public static final RegistryObject<Item> PURPLE_GLASS_PANE = registerDecorativeBlockItem("purple_glass_pane", () -> BlockInit.PURPLE_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> MAGENTA_GLASS = registerDecorativeBlockItem("magenta_glass", () -> BlockInit.MAGENTA_GLASS.get());
-	public static final RegistryObject<BlockItem> MAGENTA_GLASS_PANE = registerDecorativeBlockItem("magenta_glass_pane", () -> BlockInit.MAGENTA_GLASS_PANE.get());	
+	public static final RegistryObject<Item> MAGENTA_GLASS = registerDecorativeBlockItem("magenta_glass", () -> BlockInit.MAGENTA_GLASS.get());
+	public static final RegistryObject<Item> MAGENTA_GLASS_PANE = registerDecorativeBlockItem("magenta_glass_pane", () -> BlockInit.MAGENTA_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> PINK_GLASS = registerDecorativeBlockItem("pink_glass", () -> BlockInit.PINK_GLASS.get());
-	public static final RegistryObject<BlockItem> PINK_GLASS_PANE = registerDecorativeBlockItem("pink_glass_pane", () -> BlockInit.PINK_GLASS_PANE.get());	
+	public static final RegistryObject<Item> PINK_GLASS = registerDecorativeBlockItem("pink_glass", () -> BlockInit.PINK_GLASS.get());
+	public static final RegistryObject<Item> PINK_GLASS_PANE = registerDecorativeBlockItem("pink_glass_pane", () -> BlockInit.PINK_GLASS_PANE.get());	
 		
-	public static final RegistryObject<BlockItem> BROWN_GLASS = registerDecorativeBlockItem("brown_glass", () -> BlockInit.BROWN_GLASS.get());
-	public static final RegistryObject<BlockItem> BROWN_GLASS_PANE = registerDecorativeBlockItem("brown_glass_pane", () -> BlockInit.BROWN_GLASS_PANE.get());	
+	public static final RegistryObject<Item> BROWN_GLASS = registerDecorativeBlockItem("brown_glass", () -> BlockInit.BROWN_GLASS.get());
+	public static final RegistryObject<Item> BROWN_GLASS_PANE = registerDecorativeBlockItem("brown_glass_pane", () -> BlockInit.BROWN_GLASS_PANE.get());	
 
-	public static final RegistryObject<BlockItem> SHADED_GLASS = registerDecorativeBlockItem("shaded_glass", () -> BlockInit.SHADED_GLASS.get());
-	public static final RegistryObject<BlockItem> SHADED_GLASS_PANE = registerDecorativeBlockItem("shaded_glass_pane", () -> BlockInit.SHADED_GLASS_PANE.get());	
+	public static final RegistryObject<Item> SHADED_GLASS = registerDecorativeBlockItem("shaded_glass", () -> BlockInit.SHADED_GLASS.get());
+	public static final RegistryObject<Item> SHADED_GLASS_PANE = registerDecorativeBlockItem("shaded_glass_pane", () -> BlockInit.SHADED_GLASS_PANE.get());	
 	
 	//Coloured Blocks
-	public static final RegistryObject<BlockItem> RED_DECORATION_BLOCK = registerDecorativeBlockItem("red_decoration_block", () -> BlockInit.RED_DECORATION_BLOCK.get());
-	public static final RegistryObject<BlockItem> ORANGE_DECORATION_BLOCK = registerDecorativeBlockItem("orange_decoration_block", () -> BlockInit.ORANGE_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> YELLOW_DECORATION_BLOCK = registerDecorativeBlockItem("yellow_decoration_block", () -> BlockInit.YELLOW_DECORATION_BLOCK.get());
-	public static final RegistryObject<BlockItem> LIME_DECORATION_BLOCK = registerDecorativeBlockItem("lime_decoration_block", () -> BlockInit.LIME_DECORATION_BLOCK.get());
-	public static final RegistryObject<BlockItem> GREEN_DECORATION_BLOCK = registerDecorativeBlockItem("green_decoration_block", () -> BlockInit.GREEN_DECORATION_BLOCK.get());
-	public static final RegistryObject<BlockItem> CYAN_DECORATION_BLOCK = registerDecorativeBlockItem("cyan_decoration_block", () -> BlockInit.CYAN_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> BLUE_DECORATION_BLOCK = registerDecorativeBlockItem("blue_decoration_block", () -> BlockInit.BLUE_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> LIGHT_BLUE_DECORATION_BLOCK = registerDecorativeBlockItem("light_blue_decoration_block", () -> BlockInit.LIGHT_BLUE_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> PURPLE_DECORATION_BLOCK = registerDecorativeBlockItem("purple_decoration_block", () -> BlockInit.PURPLE_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> MAGENTA_DECORATION_BLOCK = registerDecorativeBlockItem("magenta_decoration_block", () -> BlockInit.MAGENTA_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> PINK_DECORATION_BLOCK = registerDecorativeBlockItem("pink_decoration_block", () -> BlockInit.PINK_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> BROWN_DECORATION_BLOCK = registerDecorativeBlockItem("brown_decoration_block", () -> BlockInit.BROWN_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> GREY_DECORATION_BLOCK = registerDecorativeBlockItem("grey_decoration_block", () -> BlockInit.GREY_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> LIGHT_GREY_DECORATION_BLOCK = registerDecorativeBlockItem("light_grey_decoration_block", () -> BlockInit.LIGHT_GREY_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> WHITE_DECORATION_BLOCK = registerDecorativeBlockItem("white_decoration_block", () -> BlockInit.WHITE_DECORATION_BLOCK.get());	
-	public static final RegistryObject<BlockItem> BLACK_DECORATION_BLOCK = registerDecorativeBlockItem("black_decoration_block", () -> BlockInit.BLACK_DECORATION_BLOCK.get());
+	public static final RegistryObject<Item> RED_DECORATION_BLOCK = registerDecorativeBlockItem("red_decoration_block", () -> BlockInit.RED_DECORATION_BLOCK.get());
+	public static final RegistryObject<Item> ORANGE_DECORATION_BLOCK = registerDecorativeBlockItem("orange_decoration_block", () -> BlockInit.ORANGE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> YELLOW_DECORATION_BLOCK = registerDecorativeBlockItem("yellow_decoration_block", () -> BlockInit.YELLOW_DECORATION_BLOCK.get());
+	public static final RegistryObject<Item> LIME_DECORATION_BLOCK = registerDecorativeBlockItem("lime_decoration_block", () -> BlockInit.LIME_DECORATION_BLOCK.get());
+	public static final RegistryObject<Item> GREEN_DECORATION_BLOCK = registerDecorativeBlockItem("green_decoration_block", () -> BlockInit.GREEN_DECORATION_BLOCK.get());
+	public static final RegistryObject<Item> CYAN_DECORATION_BLOCK = registerDecorativeBlockItem("cyan_decoration_block", () -> BlockInit.CYAN_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> BLUE_DECORATION_BLOCK = registerDecorativeBlockItem("blue_decoration_block", () -> BlockInit.BLUE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> LIGHT_BLUE_DECORATION_BLOCK = registerDecorativeBlockItem("light_blue_decoration_block", () -> BlockInit.LIGHT_BLUE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> PURPLE_DECORATION_BLOCK = registerDecorativeBlockItem("purple_decoration_block", () -> BlockInit.PURPLE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> MAGENTA_DECORATION_BLOCK = registerDecorativeBlockItem("magenta_decoration_block", () -> BlockInit.MAGENTA_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> PINK_DECORATION_BLOCK = registerDecorativeBlockItem("pink_decoration_block", () -> BlockInit.PINK_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> BROWN_DECORATION_BLOCK = registerDecorativeBlockItem("brown_decoration_block", () -> BlockInit.BROWN_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> GREY_DECORATION_BLOCK = registerDecorativeBlockItem("grey_decoration_block", () -> BlockInit.GREY_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> LIGHT_GREY_DECORATION_BLOCK = registerDecorativeBlockItem("light_grey_decoration_block", () -> BlockInit.LIGHT_GREY_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> WHITE_DECORATION_BLOCK = registerDecorativeBlockItem("white_decoration_block", () -> BlockInit.WHITE_DECORATION_BLOCK.get());	
+	public static final RegistryObject<Item> BLACK_DECORATION_BLOCK = registerDecorativeBlockItem("black_decoration_block", () -> BlockInit.BLACK_DECORATION_BLOCK.get());
 	
 	//Thatch
-	public static final RegistryObject<BlockItem> THATCH_BLOCK =  registerDecorativeBlockItem("thatch_block", () -> BlockInit.THATCH_BLOCK.get());
+	public static final RegistryObject<Item> THATCH_BLOCK =  registerDecorativeBlockItem("thatch_block", () -> BlockInit.THATCH_BLOCK.get());
 	
 	//Doors
-	public static final RegistryObject<BlockItem> OUTDOOR_TOILET_DOOR = registerDecorativeBlockItem("outdoor_toilet_door", () -> BlockInit.OUTDOOR_TOILET_DOOR.get());
-	public static final RegistryObject<BlockItem> GLASS_SHOP_DOOR = registerDecorativeBlockItem("glass_shop_door", () -> BlockInit.GLASS_SHOP_DOOR.get());
-	public static final RegistryObject<BlockItem> VISITOR_CENTRE_DOOR = registerDecorativeBlockItem("visitor_centre_door", () -> BlockInit.VISITOR_CENTRE_DOOR.get());
-	public static final RegistryObject<BlockItem> INNOVATION_CENTRE_DOOR = registerDecorativeBlockItem("innovation_centre_door", () -> BlockInit.INNOVATION_CENTRE_DOOR.get());
-	public static final RegistryObject<BlockItem> SECURITY_DOOR = registerDecorativeBlockItem("security_door", () -> BlockInit.SECURITY_DOOR.get());
-	public static final RegistryObject<BlockItem> BACK_DOOR = registerDecorativeBlockItem("back_door", () -> BlockInit.BACK_DOOR.get());
+	public static final RegistryObject<Item> OUTDOOR_TOILET_DOOR = registerDecorativeBlockItem("outdoor_toilet_door", () -> BlockInit.OUTDOOR_TOILET_DOOR.get());
+	public static final RegistryObject<Item> GLASS_SHOP_DOOR = registerDecorativeBlockItem("glass_shop_door", () -> BlockInit.GLASS_SHOP_DOOR.get());
+	public static final RegistryObject<Item> VISITOR_CENTRE_DOOR = registerDecorativeBlockItem("visitor_centre_door", () -> BlockInit.VISITOR_CENTRE_DOOR.get());
+	public static final RegistryObject<Item> INNOVATION_CENTRE_DOOR = registerDecorativeBlockItem("innovation_centre_door", () -> BlockInit.INNOVATION_CENTRE_DOOR.get());
+	public static final RegistryObject<Item> SECURITY_DOOR = registerDecorativeBlockItem("security_door", () -> BlockInit.SECURITY_DOOR.get());
+	public static final RegistryObject<Item> BACK_DOOR = registerDecorativeBlockItem("back_door", () -> BlockInit.BACK_DOOR.get());
 	
 	//Registry
 	public static Properties properties()
@@ -653,19 +656,24 @@ public class ItemInit
 		return itemRegister(id, new Item(properties));
 	}
 	
+	private static RegistryObject<Item> brushItemRegister(String id, ModItemTeir teir)
+	{
+		return ModRegistry.ITEM_REGISTRY.register(id, () -> new BrushItem(teir, 1.5F, -3.0F, properties().tab(ModItemGroups.TOOLS_TAB)));
+	}
+	
 	private static RegistryObject<Item> registerDNAItem(String type) 
 	{
-		return plainItemRegister(type + "_dna", properties().tab(ModItemGroup.CREATURES_TAB).stacksTo(8));
+		return plainItemRegister(type + "_dna", properties().tab(ModItemGroups.CREATURES_TAB).stacksTo(8));
 	}
 	
 	private static RegistryObject<Item> registerDNADiscItem(String type)
 	{
-		return itemRegister(type + "_dna_disc", new DiscItem(type + "_dna_disc", properties().tab(ModItemGroup.CREATURES_TAB).stacksTo(1)));
+		return itemRegister(type + "_dna_disc", new DiscItem(type + "_dna_disc", properties().tab(ModItemGroups.CREATURES_TAB).stacksTo(1)));
 	}
 	
 	private static RegistryObject<Item> registerFishSpawnItem(String id)
 	{
-		return plainItemRegister(id + "_spawn", properties().tab(ModItemGroup.CREATURES_TAB));
+		return plainItemRegister(id + "_spawn", properties().tab(ModItemGroups.CREATURES_TAB));
 	}
 	
 	private static RegistryObject<Item> registerSpawnItemBucket(String id, NonNullSupplier<EntityType<?>> entity)
@@ -741,29 +749,29 @@ public class ItemInit
 	
 	//Block Item Registers
 	//Block Item Register
-	private static RegistryObject<BlockItem> registerBlockItem(String id, NonNullSupplier<Block> block, ItemGroup group)
+	private static RegistryObject<Item> registerBlockItem(String id, NonNullSupplier<Block> block, ItemGroup group)
 	{
-		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModBlockItem(block, new Item.Properties().tab(group)));
+		return itemRegister(id, new ModBlockItem(block, new Item.Properties().tab(group)));
 	}
 	
-	private static RegistryObject<BlockItem> registerFossilBlockItem(String id, NonNullSupplier<Block> block)
+	private static RegistryObject<Item> registerFossilBlockItem(String id, NonNullSupplier<Block> block)
 	{
-		return registerBlockItem(id, block, ModItemGroup.FOSSILS_TAB);
+		return registerBlockItem(id, block, ModItemGroups.FOSSILS_TAB);
 	}
 	
-	private static RegistryObject<BlockItem> registerDecorativeBlockItem(String id, NonNullSupplier<Block> block)
+	private static RegistryObject<Item> registerDecorativeBlockItem(String id, NonNullSupplier<Block> block)
 	{
-		return registerBlockItem(id, block, ModItemGroup.DECORATIVES_TAB);
+		return registerBlockItem(id, block, ModItemGroups.DECORATIVES_TAB);
 	}
 	
-	private static RegistryObject<BlockItem> registerNatureBlockItem(String id, NonNullSupplier<Block> block)
+	private static RegistryObject<Item> registerNatureBlockItem(String id, NonNullSupplier<Block> block)
 	{
-		return registerBlockItem(id, block, ModItemGroup.NATURE_TAB);
+		return registerBlockItem(id, block, ModItemGroups.NATURE_TAB);
 	}
 	
-	private static RegistryObject<BlockItem> registerMachinesBlockItem(String id, NonNullSupplier<Block> block)
+	private static RegistryObject<Item> registerMachinesBlockItem(String id, NonNullSupplier<Block> block)
 	{
-		return registerBlockItem(id, block, ModItemGroup.MACHINES_TAB);
+		return registerBlockItem(id, block, ModItemGroups.MACHINES_TAB);
 	}
 	
 	private static RegistryObject<ModBoatItem> registerBoatItem(String id, ModBoatType type)
@@ -771,14 +779,14 @@ public class ItemInit
 		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModBoatItem(type, properties()));
 	}
 	
-	private static RegistryObject<BlockItem> registerBuringSlabItem(String id, NonNullSupplier<Block> block)
+	private static RegistryObject<Item> registerBuringSlabItem(String id, NonNullSupplier<Block> block)
 	{
-		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModSlabBurnableItem(block, properties().tab(ModItemGroup.DECORATIVES_TAB)));
+		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModSlabBurnableItem(block, properties().tab(ModItemGroups.DECORATIVES_TAB)));
 	}
 	
-	private static RegistryObject<BlockItem> registerBuringBlockItem(String id, NonNullSupplier<Block> block)
+	private static RegistryObject<Item> registerBuringBlockItem(String id, NonNullSupplier<Block> block)
 	{
-		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModWoodBurnableItem(block, properties().tab(ModItemGroup.DECORATIVES_TAB)));
+		return ModRegistry.ITEM_REGISTRY.register(id, () -> new ModWoodBurnableItem(block, properties().tab(ModItemGroups.DECORATIVES_TAB)));
 	}
 	
 	public static void initItems() { ModUtil.LOGGER.debug("Registering: Mod Items"); }

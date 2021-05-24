@@ -2,9 +2,11 @@ package lostworlds.world.init;
 
 import com.google.common.collect.ImmutableList;
 
+import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModBlockStates;
 import lostworlds.core.util.ModUtil;
 import lostworlds.world.feature.ModFillerBlockType;
+import lostworlds.world.feature.SurfacePlaceConfig;
 import lostworlds.world.feature.foliageplacer.GinkgoFoliagePlacer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -61,6 +63,8 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> ARAUCARIA_VEGETATION = register("araucaria_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ARAUCARIA_TREE.weighted(0.33333334F)), ARAUCARIA_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> ARAUCARIA_VEGETATION_SMALL = register("araucaria_vegetation_small", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ARAUCARIA_TREE_SMALL.weighted(0.33333334F)), ARAUCARIA_TREE_SMALL)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 
+	public static final ConfiguredFeature<?, ?> DIICTODON_BURROW = register("diictodon_burrow", FeatureInit.SURFACE_BLOCK.configured(new SurfacePlaceConfig(BlockInit.PERMIAN_SAND.get().defaultBlockState(), BlockInit.DIICTODON_BURROW.get().defaultBlockState())));
+	
 	//Ores
 	//Permian
 	public static final ConfiguredFeature<?, ?> PERMIAN_COAL = register("permian_coal", Feature.ORE.configured(new OreFeatureConfig(ModFillerBlockType.PERMIAN_STONE, ModBlockStates.PERMIAN_COAL_ORE, 17)).range(128).squared().count(10));

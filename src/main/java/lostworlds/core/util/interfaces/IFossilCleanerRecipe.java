@@ -14,8 +14,6 @@ public interface IFossilCleanerRecipe extends IRecipe<RecipeWrapper>
 {
 	ResourceLocation RECIPE_TYPE_ID = new ResourceLocation(ModUtil.ID, "fossil_cleaner");
 	
-	
-	
 	@Nonnull
 	@Override
 	default IRecipeType<?> getType() 

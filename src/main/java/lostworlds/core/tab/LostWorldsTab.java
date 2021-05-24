@@ -282,6 +282,10 @@ public class LostWorldsTab extends ItemGroup
 	
 		//Tunneled 
 		item.add(ItemInit.DIICTODON_BURROW.get().getDefaultInstance());
+		item.add(ItemInit.TUNNELED_SOIL.get().getDefaultInstance());
+
+		//Permian
+		item.add(ItemInit.MOSSY_DIRT.get().getDefaultInstance());
 
 		//Permian
 		//Sand

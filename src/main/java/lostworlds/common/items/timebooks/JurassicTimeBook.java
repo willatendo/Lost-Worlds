@@ -1,5 +1,6 @@
 package lostworlds.common.items.timebooks;
 
+import lostworlds.core.util.ModUtil;
 import lostworlds.world.dimension.jurassic.JurassicDimension;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -32,6 +33,14 @@ public class JurassicTimeBook extends Item
             	if(serverworld1 != null && !entity.isPassenger()) 
                 {
                     entity.changeDimension(serverworld1, new ModTeleporter(serverworld1));
+                    if(registrykey.equals(JurassicDimension.JURASSIC_WORLD))
+                    {
+                    	entity.sendMessage(ModUtil.tTC("transport_to_jurassic"), entity.getUUID());
+                    }
+                    else
+                    {
+                    	entity.sendMessage(ModUtil.tTC("transport_to_overworld"), entity.getUUID());
+                    }
                 }
 			}
 		}

@@ -2,6 +2,7 @@ package lostworlds.world.biome;
 
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ParticleInit;
+import lostworlds.world.init.ConfiguredFeatureInit;
 import lostworlds.world.init.ModSurfaceBuilders;
 import lostworlds.world.init.SurfaceBuilderInit;
 import lostworlds.world.init.WorldCarverInit;
@@ -51,10 +52,10 @@ public class ModBiomeMaker
 	public static Biome makeAVolcanoBiome() 
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+		DefaultBiomeFeatures.commonSpawns(mobspawninfo$builder);
 		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.VOLCANO_SURFACE_BUILDER);
 		DefaultBiomeFeatures.addDefaultOverworldLandStructures(builder);
-		DefaultBiomeFeatures.addDefaultCarvers(builder);
 		builder.addStructureStart(StructureFeatures.RUINED_PORTAL_MOUNTAIN);
 		DefaultBiomeFeatures.addDefaultCarvers(builder);
 		DefaultBiomeFeatures.addDefaultMonsterRoom(builder);
@@ -64,7 +65,9 @@ public class ModBiomeMaker
 		DefaultBiomeFeatures.addExtraEmeralds(builder);
 		DefaultBiomeFeatures.addDesertLakes(builder);
 		
-		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.EXTREME_HILLS).depth(1.0F).scale(0.5F).temperature(5.0F).downfall(0.3F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x1c1c1c1c).waterColor(0x333333).waterFogColor(0x0c0c0c).fogColor(0x636363).skyColor(0x262525).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
+		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_VOLCANO_CAVES);
+		
+		return (new Biome.Builder()).precipitation(Biome.RainType.NONE).biomeCategory(Biome.Category.EXTREME_HILLS).depth(1.0F).scale(0.5F).temperature(5.0F).downfall(0.3F).specialEffects((new BiomeAmbience.Builder()).grassColorOverride(0x777777).waterColor(0x6c777a).waterFogColor(0x555e60).fogColor(0x2f3030).skyColor(0x4b5a60).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).ambientParticle(new ParticleEffectAmbience(ParticleTypes.WHITE_ASH, 0.00625F)).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(builder.build()).build();
 	}
 	
 	public static Biome makeAPermianDesert() 
@@ -79,6 +82,8 @@ public class ModBiomeMaker
 		ModBiomeFeatures.addPermianDesertPlants(builder);
 		ModBiomeFeatures.addPermianOres(builder);
 		ModBiomeFeatures.addPermianLavaLakes(builder);
+		
+		builder.addFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION, ConfiguredFeatureInit.DIICTODON_BURROW);
 		
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CAVES);
 		builder.addCarver(GenerationStage.Carving.AIR, WorldCarverInit.CONFIGURED_MOD_CANYONS);
