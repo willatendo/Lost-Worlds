@@ -33,6 +33,7 @@
 
 	//Permian Fern Leaf Litter
 	"item.lostworlds.fern_litter": "Fern Litter",
+	"item.lostworlds.cooked_fern_litter": "Boiled Fern Litter",
 
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",

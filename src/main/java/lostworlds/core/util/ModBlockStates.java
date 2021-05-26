@@ -44,14 +44,6 @@ public class ModBlockStates
 	
 	public static final BlockState POWER_SUPPLY_BLOCK = BlockInit.POWER_SUPPLY_BLOCK.get().defaultBlockState();
 	
-	//Eggs
-	public static final BlockState PROCOMPSOGNATHUS_EGG = BlockInit.PROCOMPSOGNATHUS_EGG.get().defaultBlockState();
-	public static final BlockState DIMETRODON_EGG = BlockInit.DIMETRODON_EGG.get().defaultBlockState();
-	public static final BlockState EDAPHOSAURUS_EGG = BlockInit.EDAPHOSAURUS_EGG.get().defaultBlockState();
-	public static final BlockState GORGONOPS_EGG = BlockInit.GORGONOPS_EGG.get().defaultBlockState();
-	public static final BlockState CARNOTAURUS_EGG = BlockInit.GORGONOPS_EGG.get().defaultBlockState();
-	public static final BlockState TYRANNOSAURUS_EGG = BlockInit.TYRANNOSAURUS_EGG.get().defaultBlockState();
-	
 	//Mud
 	public static final BlockState MUD = BlockInit.MUD.get().defaultBlockState();
 

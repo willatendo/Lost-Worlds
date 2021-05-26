@@ -31,8 +31,9 @@
 	//Time Lord's Staff	
 	"item.lostworlds.time_lords_staff": "Time Lord's Staff",
 
-	//Permian Fern Leaf Litter
+	//Fern Litter
 	"item.lostworlds.fern_litter": "Fern Litter",
+	"item.lostworlds.cooked_fern_litter": "Cooked Fern Litter",
 
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",

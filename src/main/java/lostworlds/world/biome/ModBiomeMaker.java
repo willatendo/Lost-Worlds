@@ -214,6 +214,12 @@ public class ModBiomeMaker
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 		
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.ALLOSAURUS_ENTITY.get(), 2, 1, 1));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.KENTROSAURUS_ENTITY.get(), 2, 3, 7));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.OSTROMIA_ENTITY.get(), 2, 1, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
+		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.MOSSY_DIRT_TERRAIN_SURFACE_BUILDER);
 		
 		ModBiomeFeatures.addConiferTree(builder);
@@ -231,6 +237,12 @@ public class ModBiomeMaker
 	public static Biome makeAJurassicGinkgoForest() 
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+		
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.ALLOSAURUS_ENTITY.get(), 2, 1, 1));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.KENTROSAURUS_ENTITY.get(), 2, 3, 7));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.OSTROMIA_ENTITY.get(), 2, 1, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
 		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.MOSSY_DIRT_TERRAIN_SURFACE_BUILDER);
 		
@@ -250,6 +262,12 @@ public class ModBiomeMaker
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 		
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.ALLOSAURUS_ENTITY.get(), 2, 1, 1));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.KENTROSAURUS_ENTITY.get(), 2, 3, 7));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.OSTROMIA_ENTITY.get(), 2, 1, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
+		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.MOSSY_DIRT_TERRAIN_SURFACE_BUILDER);
 		
 		ModBiomeFeatures.addAraucariaTree(builder);
@@ -267,6 +285,12 @@ public class ModBiomeMaker
 	public static Biome makeAJurassicPlains() 
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+		
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.ALLOSAURUS_ENTITY.get(), 2, 1, 1));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.KENTROSAURUS_ENTITY.get(), 2, 3, 7));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.OSTROMIA_ENTITY.get(), 2, 1, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
 		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.MOSSY_DIRT_TERRAIN_SURFACE_BUILDER);
 		
@@ -286,6 +310,12 @@ public class ModBiomeMaker
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 		
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CRYOLOPHOSAURUS_ENTITY.get(), 2, 2, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.KENTROSAURUS_ENTITY.get(), 2, 3, 7));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.OSTROMIA_ENTITY.get(), 2, 1, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
+		
 		@SuppressWarnings("unchecked")
 		BiomeGenerationSettings.Builder builder = genSettings(SurfaceBuilderInit.NAKED_JURASSIC_MOUNTAIN, ModSurfaceBuilders.JURASSIC_STONE_MOUNTAIN_CONFIG);
 		
@@ -304,6 +334,12 @@ public class ModBiomeMaker
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 		
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CRYOLOPHOSAURUS_ENTITY.get(), 2, 2, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.KENTROSAURUS_ENTITY.get(), 2, 3, 7));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.OSTROMIA_ENTITY.get(), 2, 1, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
+		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.JURASSIC_ERRODED_MOUNTAIN_SURFACE_BUILDER);
 		
 		ModBiomeFeatures.addJurassicWaterLakes(builder);
@@ -321,7 +357,13 @@ public class ModBiomeMaker
 	public static Biome makeAJurassicDesert() 
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
-						
+		
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.ALLOSAURUS_ENTITY.get(), 2, 1, 1));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.KENTROSAURUS_ENTITY.get(), 2, 3, 7));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.OSTROMIA_ENTITY.get(), 2, 1, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
+		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.GRAVEL_TERRAIN_SURFACE_BUILDER);
 
 		ModBiomeFeatures.addJurassicOres(builder);
@@ -351,6 +393,12 @@ public class ModBiomeMaker
 	public static Biome makeAJurassicIslands() 
 	{
 		MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+		
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.ALLOSAURUS_ENTITY.get(), 2, 1, 1));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.KENTROSAURUS_ENTITY.get(), 2, 3, 7));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.OSTROMIA_ENTITY.get(), 2, 1, 3));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
+		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
 		
 		BiomeGenerationSettings.Builder builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ModSurfaceBuilders.ISLANDS_SURFACE_BUILDER);
 		

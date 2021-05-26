@@ -11,7 +11,7 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class ModFishBucketItem extends FishBucketItem
 {
-	private final Lazy<? extends EntityType<?>> entityTypeSupplier;
+	public final Lazy<? extends EntityType<?>> entityTypeSupplier;
 
 	@SuppressWarnings("deprecation")
 	public ModFishBucketItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 

@@ -79,6 +79,7 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.LYCOPHYTA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CEPHALOTAXUS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DILLHOFFIA.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_DILLHOFFIA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DUISBERGIA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_SAPLING.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_SAPLING.get(), RenderType.cutout());

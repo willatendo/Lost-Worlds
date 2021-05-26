@@ -41,20 +41,6 @@ import lostworlds.common.blocks.TerracottaFossilBlock;
 import lostworlds.common.blocks.TimeMachineBlock;
 import lostworlds.common.blocks.WhiteTerracottaFossilBlock;
 import lostworlds.common.blocks.YellowTerracottaFossilBlock;
-import lostworlds.common.blocks.eggs.AllosaurusEggBlock;
-import lostworlds.common.blocks.eggs.CarnotaurusEggBlock;
-import lostworlds.common.blocks.eggs.CryolophosaurusEggBlock;
-import lostworlds.common.blocks.eggs.DimetrodonEggBlock;
-import lostworlds.common.blocks.eggs.EdaphosaurusEggBlock;
-import lostworlds.common.blocks.eggs.FukuivenatorEggBlock;
-import lostworlds.common.blocks.eggs.GiganotosaurusEggBlock;
-import lostworlds.common.blocks.eggs.GorgonopsEggBlock;
-import lostworlds.common.blocks.eggs.OuranosaurusEggBlock;
-import lostworlds.common.blocks.eggs.ProcompsognathusEggBlock;
-import lostworlds.common.blocks.eggs.PsittacosaurusEggBlock;
-import lostworlds.common.blocks.eggs.SuchomimusEggBlock;
-import lostworlds.common.blocks.eggs.TetraceratopsEggBlock;
-import lostworlds.common.blocks.eggs.TyrannosaurusEggBlock;
 import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolTypes;
 import lostworlds.core.util.ModUtil;
@@ -71,6 +57,7 @@ import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.GlassBlock;
 import net.minecraft.block.HayBlock;
 import net.minecraft.block.LeavesBlock;
@@ -151,21 +138,7 @@ public class BlockInit
 	
 	public static final RegistryObject<PowerSupplyBlock> POWER_SUPPLY_BLOCK = ModRegistry.BLOCK_REGISTRY.register("power_supply_block", () -> new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	
-	//Egg
-	public static final RegistryObject<ProcompsognathusEggBlock> PROCOMPSOGNATHUS_EGG = ModRegistry.BLOCK_REGISTRY.register("procompsognathus_egg", () -> new ProcompsognathusEggBlock());
-	public static final RegistryObject<DimetrodonEggBlock> DIMETRODON_EGG = ModRegistry.BLOCK_REGISTRY.register("dimetrodon_egg", () -> new DimetrodonEggBlock());
-	public static final RegistryObject<EdaphosaurusEggBlock> EDAPHOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("edaphosaurus_egg", () -> new EdaphosaurusEggBlock());
-	public static final RegistryObject<GorgonopsEggBlock> GORGONOPS_EGG = ModRegistry.BLOCK_REGISTRY.register("gorgonops_egg", () -> new GorgonopsEggBlock());
-	public static final RegistryObject<CarnotaurusEggBlock> CARNOTAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("carnotaurus_egg", () -> new CarnotaurusEggBlock());
-	public static final RegistryObject<TyrannosaurusEggBlock> TYRANNOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("tyrannosaurus_egg", () -> new TyrannosaurusEggBlock());
-	public static final RegistryObject<AllosaurusEggBlock> ALLOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("allosaurus_egg", () -> new AllosaurusEggBlock());
-	public static final RegistryObject<GiganotosaurusEggBlock> GIGANOTOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("giganotosaurus_egg", () -> new GiganotosaurusEggBlock());
-	public static final RegistryObject<SuchomimusEggBlock> SUCHOMIMUS_EGG = ModRegistry.BLOCK_REGISTRY.register("suchomimus_egg", () -> new SuchomimusEggBlock());
-	public static final RegistryObject<TetraceratopsEggBlock> TETRACERATOPS_EGG = ModRegistry.BLOCK_REGISTRY.register("tetraceratops_egg", () -> new TetraceratopsEggBlock());
-	public static final RegistryObject<OuranosaurusEggBlock> OURANOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("ouranosaurus_egg", () -> new OuranosaurusEggBlock());
-	public static final RegistryObject<FukuivenatorEggBlock> FUKUVENATOR_EGG = ModRegistry.BLOCK_REGISTRY.register("fukuivenator_egg", () -> new FukuivenatorEggBlock());
-	public static final RegistryObject<PsittacosaurusEggBlock> PSITTACOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("psittacosaurus_egg", () -> new PsittacosaurusEggBlock());
-	public static final RegistryObject<CryolophosaurusEggBlock> CRYOLOPHOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("cryolophosaurus_egg", () -> new CryolophosaurusEggBlock());
+	//Eggs (Coming soon)
 	
 	//Mud
 	public static final RegistryObject<Block> MUD = ModRegistry.BLOCK_REGISTRY.register("mud", () -> new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
@@ -237,6 +210,7 @@ public class BlockInit
 	public static final RegistryObject<ModBushBlock> CEPHALOTAXUS = ModRegistry.BLOCK_REGISTRY.register("cephalotaxus", () -> new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<ModBushBlock> LYCOPHYTA = ModRegistry.BLOCK_REGISTRY.register("lycophyta", () -> new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<FlowerBlock> DILLHOFFIA = ModRegistry.BLOCK_REGISTRY.register("dillhoffia", () -> new FlowerBlock(Effects.BLINDNESS, 7, AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<FlowerPotBlock> POTTED_DILLHOFFIA = ModRegistry.BLOCK_REGISTRY.register("potted_dillhoffia", () -> new FlowerPotBlock(DILLHOFFIA.get(), AbstractBlock.Properties.of(Material.DECORATION).instabreak().noOcclusion()));
 
 	//Jurassic Blocks
 	public static final RegistryObject<Block> JURASSIC_STONE = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));

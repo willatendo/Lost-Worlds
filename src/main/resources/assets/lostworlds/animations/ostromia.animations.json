@@ -1,189 +1,6 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.cryolophosaurus.idle": {
-			"loop": true,
-			"animation_length": 1,
-			"bones": {
-				"body": {
-					"position": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.25": {
-							"vector": [0, -0.25, 0]
-						},
-						"0.75": {
-							"vector": [0, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"arm1": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.25": {
-							"vector": [5, 0, 0]
-						},
-						"0.75": {
-							"vector": [-5, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"arm2": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.25": {
-							"vector": [5, 0, 0]
-						},
-						"0.75": {
-							"vector": [-5, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"tail": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.25": {
-							"vector": [0, -17.5, 0]
-						},
-						"0.75": {
-							"vector": [0, 17.5, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				}
-			}
-		},
-		"animation.cryolophosaurus.walk": {
-			"loop": true,
-			"animation_length": 1,
-			"bones": {
-				"Cryolophosaurus": {
-					"rotation": {
-						"vector": [7.5, 0, 0]
-					}
-				},
-				"neck": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [5, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"arm1": {
-					"rotation": {
-						"vector": [-10, 0, 0]
-					}
-				},
-				"arm2": {
-					"rotation": {
-						"vector": [-10, 0, 0]
-					}
-				},
-				"tail": {
-					"rotation": {
-						"0.0": {
-							"vector": [-7.5, 0, 0]
-						},
-						"0.25": {
-							"vector": [-7.5, 7.5, 0]
-						},
-						"0.75": {
-							"vector": [-7.5, -7.5, 0]
-						},
-						"1.0": {
-							"vector": [-7.5, 0, 0]
-						}
-					}
-				},
-				"leg1": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.25": {
-							"vector": [-15, -5, 0]
-						},
-						"0.75": {
-							"vector": [20, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"leg2": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.25": {
-							"vector": [20, 0, 0]
-						},
-						"0.75": {
-							"vector": [-15, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				}
-			}
-		},
-		"animation.cryolophosaurus.attack": {
-			"animation_length": 0.75,
-			"bones": {
-				"neck": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [47.5, 0, 0]
-						},
-						"0.75": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"jaw": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.4583": {
-							"vector": [37.5, 0, 0]
-						},
-						"0.75": {
-							"vector": [0, 0, 0]
-						}
-					}
-				}
-			}
-		},
 		"animation.ostromia.walk": {
 			"loop": true,
 			"animation_length": 1,
@@ -230,6 +47,57 @@
 						},
 						"0.75": {
 							"vector": [20, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.ostromia.idle": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0.25, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"tail": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, -22.5, 0]
+						},
+						"0.75": {
+							"vector": [0, 22.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"tailpart1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, -25, 0]
+						},
+						"0.75": {
+							"vector": [0, 25, 0]
 						},
 						"1.0": {
 							"vector": [0, 0, 0]
