@@ -1,9 +1,12 @@
 # Lost-Worlds
 
-The Lost Worlds is a Forge mod that adds a plethera of dinosaurs and other creatures, as well as plenty of other past-related features.
+## Description
 
-Developers:
-* Lead Developer:
+The Lost Worlds is a Minecraft Dinosaur Mod with the goal of high quality work on the newest verisons of Minecraft! The Lost Worlds adds tonnes of new content from exploring the Lost Worlds like the Permian and Jurassic, to finding fossils underground and extracting them to make new dinosaurs! The Lost Worlds also adds tonnes of Archaeology to the game! Adding a story and lot's to uncover about the Minecraft World.
+
+## Developers:
+
+* Lead Developer/Programer:
   * Willatendo
 * 3d Artists:
   * Jooji
@@ -12,6 +15,10 @@ Developers:
 * Item and Block Textures:
   * Emilosaurus65
 
-To help make this mod, you can simply branch the GitHub repository. Then, you'll need to delete everything exept what is nessisary for what you are helping with. I will then combine the branch with this one! Then, I'll add you to the project!
+## Want to Help?
+
+The Lost Worlds is a big, ambitous mod, and I can always use some help! Contacting me on Discord (Lost Worlds Server https://discord.gg/QFqbJFT8YK) would be prefered!
+
+If that is unavalable to you, you can contact me through Curse Forge, too.
 
 To find what I need help with, go to my Trello: https://trello.com/b/NK7Xs5eh/lost-worlds
