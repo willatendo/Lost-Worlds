@@ -16,7 +16,7 @@ public class PalaeoniscumModel extends AnimatedGeoModel<PalaeoniscumEntity>
 	@Override
 	public ResourceLocation getTextureLocation(PalaeoniscumEntity object) 
 	{
-		return new ResourceLocation(ModUtil.ID, "textures/model/entity/palaeoniscum.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/palaeoniscum/texture.png");
 	}
 	
 	@Override

@@ -19,7 +19,7 @@ public class NautilusModel extends AnimatedGeoModel<NautilusEntity>
 	@Override
 	public ResourceLocation getTextureLocation(NautilusEntity object) 
 	{
-		return new ResourceLocation(ModUtil.ID, "textures/model/entity/nautilus.png");
+		return new ResourceLocation(ModUtil.ID, "textures/model/entity/nautilus/texture.png");
 	}
 	
 	@Override

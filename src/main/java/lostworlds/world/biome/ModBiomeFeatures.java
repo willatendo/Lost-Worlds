@@ -2,10 +2,9 @@ package lostworlds.world.biome;
 
 import lostworlds.world.init.ConfiguredFeatureInit;
 import net.minecraft.world.biome.BiomeGenerationSettings;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
 
-public class ModBiomeFeatures extends DefaultBiomeFeatures
+public class ModBiomeFeatures
 {
 	public static void addPermianDesertPlants(BiomeGenerationSettings.Builder builder) 
 	{
@@ -14,16 +13,63 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_PERMIAN_DESERT_PLANT_LARGE);
 	}
 	
-	public static void addGroundFerns(BiomeGenerationSettings.Builder builder) 
+	public static void addAllJurassicPlants(BiomeGenerationSettings.Builder builder) 
+	{
+		ModBiomeFeatures.addCephalotaxus(builder);
+		ModBiomeFeatures.addCycad(builder);
+		ModBiomeFeatures.addDicksonia(builder);
+		ModBiomeFeatures.addDillhoffia(builder);
+		ModBiomeFeatures.addDuisbergia(builder);
+		ModBiomeFeatures.addFerns(builder);
+		ModBiomeFeatures.addLycophyta(builder);
+		ModBiomeFeatures.addOsmunda(builder);	
+	}
+	
+	public static void addFerns(BiomeGenerationSettings.Builder builder) 
 	{
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_GROUND_FERNS);
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_FERNS);
+	}
+	
+	public static void addGroundFerns(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_GROUND_FERNS);
 	}
 	
 	public static void addDicksonia(BiomeGenerationSettings.Builder builder) 
 	{
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_DICKSONIA);
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_TALL_DICKSONIA);
+	}
+	
+	public static void addCycad(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_CYCAD);
+	}
+	
+	public static void addOsmunda(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_OSUMNDA);
+	}
+	
+	public static void addDuisbergia(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_DUISBERGIA);
+	}
+	
+	public static void addCephalotaxus(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_CEPHALOTAXUS);
+	}
+	
+	public static void addLycophyta(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_LYCOPHYTA);
+	}
+	
+	public static void addDillhoffia(BiomeGenerationSettings.Builder builder) 
+	{
+		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_DILLHOFFIA);
 	}
 	
 	public static void addConiferTree(BiomeGenerationSettings.Builder builder)
@@ -97,5 +143,10 @@ public class ModBiomeFeatures extends DefaultBiomeFeatures
 	public static void addJurassicLavaLakes(BiomeGenerationSettings.Builder builder)
 	{
 		builder.addFeature(GenerationStage.Decoration.LAKES, ConfiguredFeatureInit.JURASSIC_LAVA_LAKE);		
+	}
+	
+	public static void addDiictodonBurrow(BiomeGenerationSettings.Builder builder)
+	{
+		builder.addFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION, ConfiguredFeatureInit.DIICTODON_BURROW);		
 	}
 }

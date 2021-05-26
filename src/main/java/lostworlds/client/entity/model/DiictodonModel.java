@@ -13,6 +13,9 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 @OnlyIn(Dist.CLIENT)
 public class DiictodonModel extends AnimatedGeoModel<DiictodonEntity> 
 {
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/diictodon/male.png");
+	private ResourceLocation texture;
+
 	@Override
 	public ResourceLocation getModelLocation(DiictodonEntity object) 
 	{
@@ -22,7 +25,7 @@ public class DiictodonModel extends AnimatedGeoModel<DiictodonEntity>
 	@Override
 	public ResourceLocation getTextureLocation(DiictodonEntity object) 
 	{
-		return new ResourceLocation(ModUtil.ID, "textures/model/entity/diictodon.png");
+		return texture;
 	}
 	
 	@Override
@@ -37,6 +40,8 @@ public class DiictodonModel extends AnimatedGeoModel<DiictodonEntity>
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("head");
 
+		texture = MALE;
+		
 		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
 		head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));

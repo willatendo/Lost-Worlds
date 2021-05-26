@@ -1,22 +1,22 @@
 package lostworlds.core.tab;
 
+import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 
-public class LoreTab extends ItemGroup
+public class FoodTab extends ItemGroup
 {
-	public LoreTab() 
+	public FoodTab() 
 	{
-		super(ModUtil.ID + "." + ModUtil.ID + "_lore");
+		super(ModUtil.ID + "." + ModUtil.ID + "_food");
 	}
 
 	@Override
 	public ItemStack makeIcon() 
 	{
-		return Items.PAPER.getDefaultInstance();
+		return ItemInit.CHILESAURUS_COOKED_MEAT.get().getDefaultInstance();
 	}
 	
 	@Override

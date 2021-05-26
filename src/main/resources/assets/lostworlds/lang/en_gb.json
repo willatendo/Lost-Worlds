@@ -15,9 +15,14 @@
 	"item.lostworlds.field_guide": "Field Guide",	
 	"toolTip.lostworlds.field_guide.holding_shift": "Tells basic information about a used on prehistoric creature, as well as thier stats",
 	"toolTip.lostworlds.field_guide.not_holding_shift": "Hold Shift For More Information",
+
+	//Syringe
+	"item.lostworlds.empty_syringe": "Empty Syringe",
+	"item.lostworlds.blood_syringe": "Blood Syringe",	
 	
 	//Vile
 	"item.lostworlds.empty_vile": "Empty Vile",
+	"item.lostworlds.blood_vile": "Blood Vile",
 
 	//Permian Time Book
 	"item.lostworlds.permian_time_book": "Permian Time Book",
@@ -205,6 +210,15 @@
 	"item.lostworlds.raw_cryolophosaurus_meat": "Raw Cryolophosaurus Meat",
 	"item.lostworlds.cooked_cryolophosaurus_meat": "Cooked Cryolophosaurus Meat",
 	"item.lostworlds.cryolophosaurus_spawn_egg": "Cryolophosaurus Spawn Egg",
+	
+	//Ostromia
+	"item.lostworlds.ostromia_dna": "Ostromia DNA",
+	"item.lostworlds.ostromia_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.ostromia_dna_disc.holding_shift": "Storing: Ostromia crassipes",
+	"toolTip.lostworlds.ostromia_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_ostromia_meat": "Raw Ostromia Meat",
+	"item.lostworlds.cooked_ostromia_meat": "Cooked Ostromia Meat",
+	"item.lostworlds.ostromia_spawn_egg": "Ostromia Spawn Egg",
 
 	//Protosuchus
 	"item.lostworlds.protosuchus_dna": "Protosuchus DNA",
@@ -223,6 +237,24 @@
 	"item.lostworlds.raw_diictodon_meat": "Raw Diictodon Meat",
 	"item.lostworlds.cooked_diictodon_meat": "Cooked Diictodon Meat",
 	"item.lostworlds.diictodon_spawn_egg": "Diictodon Spawn Egg",
+	
+	//Kentrosaurus
+	"item.lostworlds.kentrosaurus_dna": "Kentrosaurus DNA",
+	"item.lostworlds.kentrosaurus_dna_disc": "Storage Disc",
+	"toolTip.lostworlds.kentrosaurus_dna_disc.holding_shift": "Storing: Kentrosaurus aethiopicus",
+	"toolTip.lostworlds.kentrosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_kentrosaurus_meat": "Raw Kentrosaurus Meat",
+	"item.lostworlds.cooked_kentrosaurus_meat": "Cooked Kentrosaurus Meat",
+	"item.lostworlds.kentrosaurus_spawn_egg": "Kentrosaurus Spawn Egg",
+
+	//Chilesaurus
+	"item.lostworlds.chilesaurus_dna": "Chilesaurus DNA",
+	"item.lostworlds.chilesaurus_dna_disc": "Storage Disk",
+	"toolTip.lostworlds.chilesaurus_dna_disc.holding_shift": "Storing: Chilesaurus diegosuarezi",
+	"toolTip.lostworlds.chilesaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_chilesaurus_meat": "Raw Chilesaurus Meat",
+	"item.lostworlds.cooked_chilesaurus_meat": "Cooked Chilesaurus Meat",
+	"item.lostworlds.chilesaurus_spawn_egg": "Chilesaurus Spawn Egg",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -385,6 +417,11 @@
 	"block.lostworlds.dicksonia": "Dicksonia",
 	"block.lostworlds.tall_dicksonia": "Tall Dicksonia",
 	"block.lostworlds.cycad": "Cycad",
+	"block.lostworlds.osmunda": "Osmunda",
+	"block.lostworlds.duisbergia": "Duisbergia",
+	"block.lostworlds.cephalotaxus": "Cephalotaxus",
+	"block.lostworlds.lycophyta": "Lycophyta",
+	"block.lostworlds.dillhoffia": "Dillhoffia",
 	
 	"block.lostworlds.dead_sponge_colony": "Dead Sponge Colony",
 	"block.lostworlds.sponge_colony": "Sponge Colony",
@@ -705,5 +742,6 @@
 	"itemGroup.lostworlds.lostworlds_tools": "Lost Worlds Tools",
 	"itemGroup.lostworlds.lostworlds_items": "Lost Worlds Items",
 	"itemGroup.lostworlds.lostworlds_spawn": "Lost Worlds Spawn",
+	"itemGroup.lostworlds.lostworlds_food": "Lost Worlds Food",
 	"itemGroup.lostworlds.lostworlds": "Lost Worlds"
 }

@@ -2,6 +2,7 @@ package lostworlds.core;
 
 import lostworlds.core.tab.CreaturesTab;
 import lostworlds.core.tab.DecorativesTab;
+import lostworlds.core.tab.FoodTab;
 import lostworlds.core.tab.FossilsTab;
 import lostworlds.core.tab.ItemsTab;
 import lostworlds.core.tab.LostWorldsTab;
@@ -21,5 +22,6 @@ public class ModItemGroups
 	public static final ItemGroup TOOLS_TAB = new ToolsTab();
 	public static final ItemGroup ITEMS_TAB = new ItemsTab();
 	public static final ItemGroup SPAWN_TAB = new SpawnTab();
+	public static final ItemGroup FOOD_TAB = new FoodTab();
 	public static final ItemGroup LOST_WORLDS_TAB = new LostWorldsTab();
 }

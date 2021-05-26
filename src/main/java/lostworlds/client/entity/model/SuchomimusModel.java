@@ -13,6 +13,9 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 @OnlyIn(Dist.CLIENT)
 public class SuchomimusModel extends AnimatedGeoModel<SuchomimusEntity> 
 {
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/suchomimus/male.png");
+	private ResourceLocation texture;
+	
 	@Override
 	public ResourceLocation getModelLocation(SuchomimusEntity object) 
 	{
@@ -22,7 +25,7 @@ public class SuchomimusModel extends AnimatedGeoModel<SuchomimusEntity>
 	@Override
 	public ResourceLocation getTextureLocation(SuchomimusEntity object) 
 	{
-		return new ResourceLocation(ModUtil.ID, "textures/model/entity/suchomimus.png");
+		return texture;
 	}
 	
 	@Override
@@ -36,6 +39,8 @@ public class SuchomimusModel extends AnimatedGeoModel<SuchomimusEntity>
 	{
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("Neck");
+		
+		texture = MALE;
 
 		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);

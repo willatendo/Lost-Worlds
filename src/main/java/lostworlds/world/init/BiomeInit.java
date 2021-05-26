@@ -16,15 +16,12 @@ import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.fml.RegistryObject;
 
 public class BiomeInit 
-{
-	public static final RegistryObject<Biome> VOLCANO = createBiome("volcano", ModBiomeMaker::makeAVolcanoBiome);
-	public static final RegistryKey<Biome> VOLCANO_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "volcano"));
-	
+{	
 	public static final RegistryObject<Biome> PERMIAN_DESERT = createBiome("permian_desert", ModBiomeMaker::makeAPermianDesert);
 	public static final RegistryKey<Biome> PERMIAN_DESERT_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_desert"));
 	
-	public static final RegistryObject<Biome> FLOOD_BASALT_PLAINS = createBiome("flood_basalt_plains", ModBiomeMaker::makeAFloodBasaltPlains);
-	public static final RegistryKey<Biome> FLOOD_BASALT_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "flood_basalt_plains"));
+	public static final RegistryObject<Biome> FLOOD_BASALT_PLAINS = createBiome("permian_flood_basalt_plains", ModBiomeMaker::makeAPermainFloodBasaltPlains);
+	public static final RegistryKey<Biome> FLOOD_BASALT_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_flood_basalt_plains"));
 	
 	public static final RegistryObject<Biome> PERMIAN_PLAINS = createBiome("permian_plains", ModBiomeMaker::makeAPermianPlains);
 	public static final RegistryKey<Biome> PERMIAN_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_plains"));
@@ -35,11 +32,11 @@ public class BiomeInit
 	public static final RegistryObject<Biome> PERMIAN_MOUNTAINS = createBiome("permian_mountains", ModBiomeMaker::makeAPermianMountains);
 	public static final RegistryKey<Biome> PERMIAN_MOUNTAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_mountains"));
 	
-	public static final RegistryObject<Biome> CONIFER_FOREST = createBiome("conifer_forest", ModBiomeMaker::makeAConiferForest);
-	public static final RegistryKey<Biome> CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "conifer_forest"));
+	public static final RegistryObject<Biome> CONIFER_FOREST = createBiome("permian_conifer_forest", ModBiomeMaker::makeAPermianConiferForest);
+	public static final RegistryKey<Biome> CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_conifer_forest"));
 	
-	public static final RegistryObject<Biome> GINKGO_FOREST = createBiome("ginkgo_forest", ModBiomeMaker::makeAGinkgoForest);
-	public static final RegistryKey<Biome> GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "ginkgo_forest"));
+	public static final RegistryObject<Biome> GINKGO_FOREST = createBiome("permian_ginkgo_forest", ModBiomeMaker::makeAPermianGinkgoForest);
+	public static final RegistryKey<Biome> GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_ginkgo_forest"));
 	
 	public static final RegistryObject<Biome> PERMIAN_RIVER = createBiome("permian_river", ModBiomeMaker::makeAPermianRiver);
 	public static final RegistryKey<Biome> PERMIAN_RIVER_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_river"));
@@ -82,6 +79,9 @@ public class BiomeInit
 	
 	public static final RegistryObject<Biome> OVERWORLD_ARAUCARIA_FOREST = createBiome("overworld_araucaria_forest", ModBiomeMaker::makeAOverworldAraucariaForest);
 	public static final RegistryKey<Biome> OVERWORLD_ARAUCARIA_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "overworld_araucaria_forest"));
+
+	public static final RegistryObject<Biome> VOLCANO = createBiome("volcano", ModBiomeMaker::makeAVolcanoBiome);
+	public static final RegistryKey<Biome> VOLCANO_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "volcano"));
 	
 	//Registry
     public static RegistryObject<Biome> createBiome(String name, Supplier<Biome> biome) 

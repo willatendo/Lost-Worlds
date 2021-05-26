@@ -70,6 +70,7 @@ import net.minecraft.block.DoorBlock;
 import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.GlassBlock;
 import net.minecraft.block.HayBlock;
 import net.minecraft.block.LeavesBlock;
@@ -88,6 +89,7 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.block.WoodButtonBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -230,7 +232,12 @@ public class BlockInit
 	public static final RegistryObject<ModBushBlock> DICKSONIA = ModRegistry.BLOCK_REGISTRY.register("dicksonia", () -> new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<DoublePlantBlock> TALL_DICKSONIA = ModRegistry.BLOCK_REGISTRY.register("tall_dicksonia", () -> new DoublePlantBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<ModBushBlock> CYCAD = ModRegistry.BLOCK_REGISTRY.register("cycad", () -> new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
-	
+	public static final RegistryObject<ModBushBlock> OSMUNDA = ModRegistry.BLOCK_REGISTRY.register("osmunda", () -> new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<DoublePlantBlock> DUISBERGIA = ModRegistry.BLOCK_REGISTRY.register("duisbergia", () -> new DoublePlantBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<ModBushBlock> CEPHALOTAXUS = ModRegistry.BLOCK_REGISTRY.register("cephalotaxus", () -> new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<ModBushBlock> LYCOPHYTA = ModRegistry.BLOCK_REGISTRY.register("lycophyta", () -> new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final RegistryObject<FlowerBlock> DILLHOFFIA = ModRegistry.BLOCK_REGISTRY.register("dillhoffia", () -> new FlowerBlock(Effects.BLINDNESS, 7, AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+
 	//Jurassic Blocks
 	public static final RegistryObject<Block> JURASSIC_STONE = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone", () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
 	public static final RegistryObject<StairsBlock> JURASSIC_STONE_STAIRS = ModRegistry.BLOCK_REGISTRY.register("jurassic_stone_stairs", () -> new StairsBlock(() -> BlockInit.JURASSIC_STONE.get().defaultBlockState(), AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));

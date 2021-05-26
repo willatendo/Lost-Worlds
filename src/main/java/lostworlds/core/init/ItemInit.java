@@ -216,6 +216,13 @@ public class ItemInit
 	public static final RegistryObject<Item> CRYOLOPHOSAURUS_COOKED_MEAT = registerCookedMeat("cryolophosaurus", FoodInit.COOKED_MEDIUM_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> CRYOLOPHOSAURUS_SPAWN_EGG = registerFishSpawnItemEgg("cryolophosaurus", () -> EntityInit.CRYOLOPHOSAURUS_ENTITY.get(), 0xcec21e, 0xce791e);
 
+	//Ostromia
+	public static final RegistryObject<Item> OSTROMIA_DNA = registerDNAItem("ostromia");
+	public static final RegistryObject<Item> OSTROMIA_DNA_DISC = registerDNADiscItem("ostromia");
+	public static final RegistryObject<Item> OSTROMIA_MEAT = registerRawMeat("ostromia", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> OSTROMIA_COOKED_MEAT = registerCookedMeat("ostromia", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> OSTROMIA_SPAWN_EGG = registerFishSpawnItemEgg("ostromia", () -> EntityInit.OSTROMIA_ENTITY.get(), 0x3c8370, 0x1f3970);
+	
 	//Protosuchus
 	public static final RegistryObject<Item> PROTOSUCHUS_DNA = registerDNAItem("protosuchus");
 	public static final RegistryObject<Item> PROTOSUCHUS_DNA_DISC = registerDNADiscItem("protosuchus");
@@ -229,6 +236,20 @@ public class ItemInit
 	public static final RegistryObject<Item> DIICTODON_MEAT = registerRawMeat("diictodon", FoodInit.RAW_MEDIUM_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> DIICTODON_COOKED_MEAT = registerCookedMeat("diictodon", FoodInit.COOKED_MEDIUM_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> DIICTODON_SPAWN_EGG = registerFishSpawnItemEgg("diictodon", () -> EntityInit.DIICTODON_ENTITY.get(), 0x8e7022, 0x7a4334);
+	
+	//Kentrosaurus
+	public static final RegistryObject<Item> KENTROSAURUS_DNA = registerDNAItem("kentrosaurus");
+	public static final RegistryObject<Item> KENTROSAURUS_DNA_DISC = registerDNADiscItem("kentrosaurus");
+	public static final RegistryObject<Item> KENTROSAURUS_MEAT = registerRawMeat("kentrosaurus", FoodInit.RAW_MEDIUM_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> KENTROSAURUS_COOKED_MEAT = registerCookedMeat("kentrosaurus", FoodInit.COOKED_MEDIUM_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> KENTROSAURUS_SPAWN_EGG = registerFishSpawnItemEgg("kentrosaurus", () -> EntityInit.KENTROSAURUS_ENTITY.get(), 0xd99760, 0x612c00);
+	
+	//Chilesaurus
+	public static final RegistryObject<Item> CHILESAURUS_DNA = registerDNAItem("chilesaurus");
+	public static final RegistryObject<Item> CHILESAURUS_DNA_DISC = registerDNADiscItem("chilesaurus");
+	public static final RegistryObject<Item> CHILESAURUS_MEAT = registerRawMeat("chilesaurus", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> CHILESAURUS_COOKED_MEAT = registerCookedMeat("chilesaurus", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> CHILESAURUS_SPAWN_EGG = registerFishSpawnItemEgg("chilesaurus", () -> EntityInit.CHILESAURUS_ENTITY.get(), 0xb08533, 0x283c3f);
 	
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = plainItemRegister("mud_ball", properties().tab(ModItemGroups.ITEMS_TAB));
@@ -384,6 +405,11 @@ public class ItemInit
 	public static final RegistryObject<Item> DICKSONIA = registerNatureBlockItem("dicksonia", () -> BlockInit.DICKSONIA.get());
 	public static final RegistryObject<Item> TALL_DICKSONIA = registerNatureBlockItem("tall_dicksonia", () -> BlockInit.TALL_DICKSONIA.get());
 	public static final RegistryObject<Item> CYCAD = registerNatureBlockItem("cycad", () -> BlockInit.CYCAD.get());
+	public static final RegistryObject<Item> OSMUNDA = registerNatureBlockItem("osmunda", () -> BlockInit.OSMUNDA.get());
+	public static final RegistryObject<Item> DUISBERGIA = registerNatureBlockItem("duisbergia", () -> BlockInit.DUISBERGIA.get());
+	public static final RegistryObject<Item> CEPHALOTAXUS = registerNatureBlockItem("cephalotaxus", () -> BlockInit.CEPHALOTAXUS.get());
+	public static final RegistryObject<Item> LYCOPHYTA = registerNatureBlockItem("lycophyta", () -> BlockInit.LYCOPHYTA.get());
+	public static final RegistryObject<Item> DILLHOFFIA = registerNatureBlockItem("dillhoffia", () -> BlockInit.DILLHOFFIA.get());
 
 	public static final RegistryObject<Item> DEAD_SPONGE_COLONY = registerNatureBlockItem("dead_sponge_colony", () -> BlockInit.DEAD_SPONGE_COLONY.get());
 	public static final RegistryObject<Item> SPONGE_COLONY = registerNatureBlockItem("sponge_colony", () -> BlockInit.SPONGE_COLONY.get());
@@ -683,22 +709,22 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerRawMeat(String type, Food food) 
 	{
-		return plainItemRegister("raw_" + type + "_meat", properties().food(food));
+		return plainItemRegister("raw_" + type + "_meat", properties().food(food).tab(ModItemGroups.FOOD_TAB));
 	}
 	
 	private static RegistryObject<Item> registerRawFishMeat(String type, Food food) 
 	{
-		return plainItemRegister(type, properties().food(food));
+		return plainItemRegister(type, properties().food(food).tab(ModItemGroups.FOOD_TAB));
 	}
 	
 	private static RegistryObject<Item> registerCookedMeat(String type, Food food) 
 	{
-		return plainItemRegister("cooked_" + type + "_meat", properties().food(food));
+		return plainItemRegister("cooked_" + type + "_meat", properties().food(food).tab(ModItemGroups.FOOD_TAB));
 	}
 	
 	private static RegistryObject<Item> registerCookedFishMeat(String type, Food food) 
 	{
-		return plainItemRegister("cooked_" + type, properties().food(food));
+		return plainItemRegister("cooked_" + type, properties().food(food).tab(ModItemGroups.FOOD_TAB));
 	}
 	
 	private static RegistryObject<Item> registerFishSpawnItemEgg(String id, NonNullSupplier<EntityType<?>> entity, int primaryColour, int secondaryColour)

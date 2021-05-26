@@ -41,10 +41,24 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_SMALL = register("patch_permian_desert_plant_small", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_SMALL).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_MEDIUM = register("patch_permian_desert_plant_medium", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_MEDIUM).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_LARGE = register("patch_permian_desert_plant_large", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_LARGE).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+	
 	public static final ConfiguredFeature<?, ?> PATCH_GROUND_FERNS = register("patch_ground_ferns", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_GROUND_FERNS_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_FERNS = register("patch_ferns", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_FERNS_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+	
 	public static final ConfiguredFeature<?, ?> PATCH_DICKSONIA = register("patch_dicksonia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_DICKSONIA).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_TALL_DICKSONIA = register("patch_tall_dicksonia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_TALL_DICKSONIA).decorated(Features.Placements.ADD_32).decorated(Features.Placements.HEIGHTMAP).squared().decorated(Placement.COUNT_NOISE.configured(new NoiseDependant(-0.8D, 0, 7))));
+
+	public static final ConfiguredFeature<?, ?> PATCH_CYCAD = register("patch_cycad", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_CYCAD_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+
+	public static final ConfiguredFeature<?, ?> PATCH_OSUMNDA = register("patch_osmunda", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_OSMUNDA_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+
+	public static final ConfiguredFeature<?, ?> PATCH_DUISBERGIA = register("patch_duisbergia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_DUISBERGIA_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+
+	public static final ConfiguredFeature<?, ?> PATCH_CEPHALOTAXUS = register("patch_cephalotaxus", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_CEPHALOTAXUS_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+
+	public static final ConfiguredFeature<?, ?> PATCH_LYCOPHYTA = register("patch_lycophyta", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_LYCOPHYTA_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
+
+	public static final ConfiguredFeature<?, ?> PATCH_DILLHOFFIA = register("patch_dillhoffia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_DILLHOFFIA_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 
 	//Trees
 	//Trees
@@ -63,7 +77,7 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> ARAUCARIA_VEGETATION = register("araucaria_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ARAUCARIA_TREE.weighted(0.33333334F)), ARAUCARIA_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> ARAUCARIA_VEGETATION_SMALL = register("araucaria_vegetation_small", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ARAUCARIA_TREE_SMALL.weighted(0.33333334F)), ARAUCARIA_TREE_SMALL)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 
-	public static final ConfiguredFeature<?, ?> DIICTODON_BURROW = register("diictodon_burrow", FeatureInit.SURFACE_BLOCK.configured(new SurfacePlaceConfig(BlockInit.PERMIAN_SAND.get().defaultBlockState(), BlockInit.DIICTODON_BURROW.get().defaultBlockState())));
+	public static final ConfiguredFeature<?, ?> DIICTODON_BURROW = register("diictodon_burrow", FeatureInit.SURFACE_BLOCK.configured(new SurfacePlaceConfig(BlockInit.DIICTODON_BURROW.get().defaultBlockState(), BlockInit.PERMIAN_SAND.get().defaultBlockState())));
 	
 	//Ores
 	//Permian

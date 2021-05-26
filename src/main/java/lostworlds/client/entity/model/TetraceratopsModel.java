@@ -13,6 +13,9 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 @OnlyIn(Dist.CLIENT)
 public class TetraceratopsModel extends AnimatedGeoModel<TetraceratopsEntity> 
 {
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/tetraceratops/male.png");
+	private ResourceLocation texture;
+	
 	@Override
 	public ResourceLocation getModelLocation(TetraceratopsEntity object) 
 	{
@@ -22,7 +25,7 @@ public class TetraceratopsModel extends AnimatedGeoModel<TetraceratopsEntity>
 	@Override
 	public ResourceLocation getTextureLocation(TetraceratopsEntity object) 
 	{
-		return new ResourceLocation(ModUtil.ID, "textures/model/entity/tetraceratops.png");
+		return texture;
 	}
 	
 	@Override
@@ -37,6 +40,8 @@ public class TetraceratopsModel extends AnimatedGeoModel<TetraceratopsEntity>
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("head");
 
+		texture = MALE;
+		
 		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
 		head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));

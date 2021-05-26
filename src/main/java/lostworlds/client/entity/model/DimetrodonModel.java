@@ -13,6 +13,9 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 @OnlyIn(Dist.CLIENT)
 public class DimetrodonModel extends AnimatedGeoModel<DimetrodonEntity> 
 {
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/dimetrodon/male.png");
+	private ResourceLocation texture;
+	
 	@Override
 	public ResourceLocation getModelLocation(DimetrodonEntity object) 
 	{
@@ -22,7 +25,7 @@ public class DimetrodonModel extends AnimatedGeoModel<DimetrodonEntity>
 	@Override
 	public ResourceLocation getTextureLocation(DimetrodonEntity object) 
 	{
-		return new ResourceLocation(ModUtil.ID, "textures/model/entity/dimetrodon.png");
+		return texture;
 	}
 	
 	@Override
@@ -36,6 +39,8 @@ public class DimetrodonModel extends AnimatedGeoModel<DimetrodonEntity>
 	{
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("head");
+		
+		texture = MALE;
 
 		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);

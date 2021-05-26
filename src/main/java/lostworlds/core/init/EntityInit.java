@@ -2,6 +2,7 @@ package lostworlds.core.init;
 
 import lostworlds.common.entities.AllosaurusEntity;
 import lostworlds.common.entities.CarnotaurusEntity;
+import lostworlds.common.entities.ChilesaurusEntity;
 import lostworlds.common.entities.CryolophosaurusEntity;
 import lostworlds.common.entities.DiictodonEntity;
 import lostworlds.common.entities.DimetrodonEntity;
@@ -11,6 +12,7 @@ import lostworlds.common.entities.GiganotosaurusEntity;
 import lostworlds.common.entities.GorgonopsEntity;
 import lostworlds.common.entities.GreatAukEggEntity;
 import lostworlds.common.entities.GreatAukEntity;
+import lostworlds.common.entities.KentrosaurusEntity;
 import lostworlds.common.entities.ModBoatEntity;
 import lostworlds.common.entities.NautilusEntity;
 import lostworlds.common.entities.OstromiaEntity;
@@ -54,6 +56,8 @@ public class EntityInit
 	public static final RegistryObject<EntityType<OstromiaEntity>> OSTROMIA_ENTITY = registerEntity("ostromia", OstromiaEntity::new, EntityClassification.CREATURE, OstromiaEntity.class, 0.5F, 0.5F);
 	public static final RegistryObject<EntityType<ProtosuchusEntity>> PROTOSUCHUS_ENTITY = registerEntity("protosuchus", ProtosuchusEntity::new, EntityClassification.CREATURE, ProtosuchusEntity.class, 0.5F, 0.5F);
 	public static final RegistryObject<EntityType<DiictodonEntity>> DIICTODON_ENTITY = registerEntity("diictodon", DiictodonEntity::new, EntityClassification.CREATURE, DiictodonEntity.class, 0.25F, 0.25F);
+	public static final RegistryObject<EntityType<KentrosaurusEntity>> KENTROSAURUS_ENTITY = registerEntity("kentrosaurus", KentrosaurusEntity::new, EntityClassification.CREATURE, KentrosaurusEntity.class, 0.5F, 0.5F);
+	public static final RegistryObject<EntityType<ChilesaurusEntity>> CHILESAURUS_ENTITY = registerEntity("chilesaurus", ChilesaurusEntity::new, EntityClassification.CREATURE, ChilesaurusEntity.class, 0.25F, 0.25F);
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);

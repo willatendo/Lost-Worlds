@@ -10,6 +10,9 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
 public class RhinesuchusModel extends AnimatedGeoModel<RhinesuchusEntity>
 {
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/rhinesuchus/male.png");
+	private ResourceLocation texture;
+	
 	@Override
 	public ResourceLocation getModelLocation(RhinesuchusEntity object) 
 	{
@@ -19,7 +22,7 @@ public class RhinesuchusModel extends AnimatedGeoModel<RhinesuchusEntity>
 	@Override
 	public ResourceLocation getTextureLocation(RhinesuchusEntity object) 
 	{
-		return new ResourceLocation(ModUtil.ID, "textures/model/entity/rhinesuchus.png");
+		return texture;
 	}
 	
 	@Override
@@ -34,6 +37,8 @@ public class RhinesuchusModel extends AnimatedGeoModel<RhinesuchusEntity>
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("head");
 
+		texture = MALE;
+		
 		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
 		head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));

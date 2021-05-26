@@ -13,6 +13,9 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 @OnlyIn(Dist.CLIENT)
 public class GiganotosaurusModel extends AnimatedGeoModel<GiganotosaurusEntity> 
 {
+	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/giganotosaurus/male.png");
+	private ResourceLocation texture;
+	
 	@Override
 	public ResourceLocation getModelLocation(GiganotosaurusEntity object) 
 	{
@@ -22,7 +25,7 @@ public class GiganotosaurusModel extends AnimatedGeoModel<GiganotosaurusEntity>
 	@Override
 	public ResourceLocation getTextureLocation(GiganotosaurusEntity object) 
 	{
-		return new ResourceLocation(ModUtil.ID, "textures/model/entity/giganotosaurus.png");
+		return texture;
 	}
 	
 	@Override
@@ -37,6 +40,8 @@ public class GiganotosaurusModel extends AnimatedGeoModel<GiganotosaurusEntity>
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("neck");
 
+		texture = MALE;
+		
 		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
 		head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));

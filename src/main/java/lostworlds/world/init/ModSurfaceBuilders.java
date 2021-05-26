@@ -25,7 +25,7 @@ public class ModSurfaceBuilders
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> PERMIAN_DESERT_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_DESERT_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> PERMIAN_MOUNTAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_MOUNTAIN_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> JURASSIC_ERRODED_MOUNTAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(JURASSIC_ERRODED_MOUNTAIN_CONFIG);	
-	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> DIRT_TERRAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(DIRT_TERRAIN_CONFIG);	
+	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> MOSSY_DIRT_TERRAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(DIRT_TERRAIN_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> PERMIAN_FLOOD_BASALT_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(PERMIAN_FLOOD_BASALT_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> GRAVEL_TERRAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(GRAVEL_TERRAIN_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> JURASSIC_STONE_TERRAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(JURASSIC_STONE_CONFIG);	

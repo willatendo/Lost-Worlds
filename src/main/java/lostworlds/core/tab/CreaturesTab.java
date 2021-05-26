@@ -10,7 +10,7 @@ public class CreaturesTab extends ItemGroup
 {
 	public CreaturesTab() 
 	{
-		super(ModUtil.ID + "." + ModUtil.ID + "_creature");
+		super(ModUtil.ID + "." + ModUtil.ID + "_creatures");
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
+import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
@@ -25,7 +26,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE);
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE, ItemInit.OSTROMIA_MEAT.get(), ItemInit.KENTROSAURUS_MEAT.get(), ItemInit.CHILESAURUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
@@ -95,6 +96,7 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CryolophosaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, OstromiaEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, KentrosaurusEntity.class, false));
 	}
 
 	@Override
