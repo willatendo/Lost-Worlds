@@ -2,9 +2,15 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
+import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
+import net.minecraft.entity.ai.goal.TemptGoal;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -20,11 +26,18 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class RhinesuchusEntity extends AbstractPrehistoricLandAndSeaEntity implements IAnimatable
 {
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE);
 	private AnimationFactory factory = new AnimationFactory(this);
 	
 	public RhinesuchusEntity(EntityType<? extends RhinesuchusEntity> entityIn, World worldIn) 
 	{
 		super(entityIn, worldIn, TimeEras.PERMIAN);
+	}
+	
+	@Override
+	public boolean isHostile() 
+	{
+		return true;
 	}
 
 	@Override
@@ -45,6 +58,15 @@ public class RhinesuchusEntity extends AbstractPrehistoricLandAndSeaEntity imple
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rhinesuchus.idol", true));
 			return PlayState.CONTINUE;
 		}
+	}
+	
+	@Override
+	protected void registerGoals()
+	{
+		super.registerGoals();
+		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
 	}
 	
 	@Override

@@ -39,6 +39,18 @@ public class QuintuplePlantBlock extends ModBushBlock
 		{
 			return quintupleblockhalfs == QuintupleBlockHalfs.BOTTOM && direction == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, newPos);
 		}
+		if(direction.getAxis() != Direction.Axis.Y || quintupleblockhalfs == QuintupleBlockHalfs.MIDDLE_BOTTOM != (direction == Direction.UP) || newState.is(this) && newState.getValue(HALFS) != quintupleblockhalfs) 
+		{
+			return quintupleblockhalfs == QuintupleBlockHalfs.MIDDLE_BOTTOM && direction == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, newPos);
+		}
+		if(direction.getAxis() != Direction.Axis.Y || quintupleblockhalfs == QuintupleBlockHalfs.MIDDLE_MIDDLE != (direction == Direction.UP) || newState.is(this) && newState.getValue(HALFS) != quintupleblockhalfs) 
+		{
+			return quintupleblockhalfs == QuintupleBlockHalfs.MIDDLE_MIDDLE && direction == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, newPos);
+		}
+		if(direction.getAxis() != Direction.Axis.Y || quintupleblockhalfs == QuintupleBlockHalfs.MIDDLE_TOP != (direction == Direction.UP) || newState.is(this) && newState.getValue(HALFS) != quintupleblockhalfs) 
+		{
+			return quintupleblockhalfs == QuintupleBlockHalfs.MIDDLE_TOP && direction == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, newPos);
+		}
 		else 
 		{
 			return Blocks.AIR.defaultBlockState();
@@ -55,6 +67,9 @@ public class QuintuplePlantBlock extends ModBushBlock
 	public void setPlacedBy(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) 
 	{
 		world.setBlock(pos.above().above().above().above(), this.defaultBlockState().setValue(HALFS, QuintupleBlockHalfs.TOP), 3);
+		world.setBlock(pos.above().above().above(), this.defaultBlockState().setValue(HALFS, QuintupleBlockHalfs.MIDDLE_TOP), 3);
+		world.setBlock(pos.above().above(), this.defaultBlockState().setValue(HALFS, QuintupleBlockHalfs.MIDDLE_MIDDLE), 3);	
+		world.setBlock(pos.above(), this.defaultBlockState().setValue(HALFS, QuintupleBlockHalfs.MIDDLE_BOTTOM), 3);
 	}
 	
 	public boolean canSurvive(BlockState state, IWorldReader worldReader, BlockPos pos) 

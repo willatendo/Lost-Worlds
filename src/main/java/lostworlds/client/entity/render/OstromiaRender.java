@@ -16,7 +16,7 @@ public class OstromiaRender extends GeoEntityRenderer<OstromiaEntity>
 	public OstromiaRender(EntityRendererManager renderManager) 
 	{
 		super(renderManager, new OstromiaModel());
-		this.shadowRadius = 0.5F;
+		this.shadowRadius = 0.25F;
 	}
 	
 	@Override

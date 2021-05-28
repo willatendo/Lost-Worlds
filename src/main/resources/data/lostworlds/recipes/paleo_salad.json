@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"$&$",
+		"$#$",
+		"$&$"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:bowl"
+		},
+		"$": {
+			"tag": "lostworlds:food_seeds"
+		},
+		"&": {
+			"item": "lostworlds:cooked_fern_litter"
+		}
+	},
+	"result": {
+		"item": "lostworlds:paleo_salad"
+	}
+}

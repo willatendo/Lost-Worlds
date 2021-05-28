@@ -4,12 +4,9 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
-import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
@@ -25,7 +22,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class ProcompsognathusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {	
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.RABBIT, Items.CHICKEN, Items.MUTTON, Items.COD, Items.SALMON, Items.TROPICAL_FISH, ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PALAEONISCUM_MEAT.get(), ItemInit.PROCOMPSOGNATHUS_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE);
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
@@ -66,7 +63,6 @@ public class ProcompsognathusEntity extends AbstractPrehistoricAnimalEntity impl
 		super.registerGoals();
 		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
 	}
 
 	@Override

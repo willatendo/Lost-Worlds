@@ -3,6 +3,7 @@
 import lostworlds.common.entities.ModBoatEntity.ModBoatType;
 import lostworlds.common.items.DiscItem;
 import lostworlds.common.items.FieldGuideItem;
+import lostworlds.common.items.FoodSeedsItem;
 import lostworlds.common.items.GreatAukEggItem;
 import lostworlds.common.items.ModBlockItem;
 import lostworlds.common.items.ModBoatItem;
@@ -49,7 +50,7 @@ public class ItemInit
 	public static final RegistryObject<Item> WET_PAPER = itemRegister("wet_paper", new WetPaperItem(properties().tab(ModItemGroups.ITEMS_TAB)));
 
 	//Field Guide
-	public static final RegistryObject<Item> FEILD_GUIDE = itemRegister("field_guide", new FieldGuideItem(properties().tab(ModItemGroups.ITEMS_TAB)));
+	public static final RegistryObject<Item> FEILD_GUIDE = itemRegister("field_guide", new FieldGuideItem(properties().stacksTo(1).tab(ModItemGroups.ITEMS_TAB)));
 	
 	//Syringe
 	public static final RegistryObject<Item> EMPTY_SYRINGE = plainItemRegister("empty_syringe", properties().stacksTo(1).tab(ModItemGroups.ITEMS_TAB));
@@ -67,9 +68,18 @@ public class ItemInit
 	public static final RegistryObject<Item> TIME_LORDS_STAFF = plainItemRegister("time_lords_staff", new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
 	
 	//Leaf Litter
-	public static final RegistryObject<Item> FERN_LITTER = itemRegister("fern_litter", new Item(properties().food(FoodInit.FERN_LITTER).stacksTo(16).tab(ModItemGroups.ITEMS_TAB)));
-	public static final RegistryObject<Item> COOKED_FERN_LITTER = itemRegister("cooked_fern_litter", new Item(properties().food(FoodInit.BOILED_FERN_LITTER).stacksTo(16).tab(ModItemGroups.ITEMS_TAB)));
+	public static final RegistryObject<Item> FERN_LITTER = plainItemRegister("fern_litter", properties().food(FoodInit.FERN_LITTER).stacksTo(16).tab(ModItemGroups.FOOD_TAB));
+	public static final RegistryObject<Item> COOKED_FERN_LITTER = plainItemRegister("cooked_fern_litter", properties().food(FoodInit.BOILED_FERN_LITTER).stacksTo(16).tab(ModItemGroups.FOOD_TAB));
 	
+	public static final RegistryObject<Item> CYCAD_SEEDS = itemRegister("cycad_seeds", new FoodSeedsItem(properties().food(FoodInit.SEED).stacksTo(16).tab(ModItemGroups.FOOD_TAB)));
+	public static final RegistryObject<Item> OSMUNDA_SEEDS = itemRegister("osmunda_seeds", new FoodSeedsItem(properties().food(FoodInit.SEED).stacksTo(16).tab(ModItemGroups.FOOD_TAB)));
+	public static final RegistryObject<Item> DUISBERGIA_SEEDS = itemRegister("duisbergia_seeds", new FoodSeedsItem(properties().food(FoodInit.SEED).stacksTo(16).tab(ModItemGroups.FOOD_TAB)));
+	public static final RegistryObject<Item> CEPHALOTAXUS_SEEDS = itemRegister("cephalotaxus_seeds", new FoodSeedsItem(properties().food(FoodInit.SEED).stacksTo(16).tab(ModItemGroups.FOOD_TAB)));
+	public static final RegistryObject<Item> LYCOPHYTA_SEEDS = itemRegister("lycophyta_seeds", new FoodSeedsItem(properties().food(FoodInit.SEED).stacksTo(16).tab(ModItemGroups.FOOD_TAB)));
+	public static final RegistryObject<Item> DILLHOFFIA_SEEDS = itemRegister("dillhoffia_seeds", new FoodSeedsItem(properties().food(FoodInit.SEED).stacksTo(16).tab(ModItemGroups.FOOD_TAB)));
+	
+	public static final RegistryObject<Item> PALEO_SALAD = plainItemRegister("paleo_salad", properties().food(FoodInit.SEED).stacksTo(8).tab(ModItemGroups.FOOD_TAB));
+
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNAItem("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = registerDNADiscItem("procompsognathus");
@@ -238,6 +248,13 @@ public class ItemInit
 	public static final RegistryObject<Item> CHILESAURUS_COOKED_MEAT = registerCookedMeat("chilesaurus", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> CHILESAURUS_SPAWN_EGG = registerFishSpawnItemEgg("chilesaurus", () -> EntityInit.CHILESAURUS_ENTITY.get(), 0xb08533, 0x283c3f);
 	
+	/*//Ophthalmosaurus
+	public static final RegistryObject<Item> OPHTHALMOSAURUS_DNA = registerDNAItem("ophthalmosaurus");
+	public static final RegistryObject<Item> OPHTHALMOSAURUS_DNA_DISC = registerDNADiscItem("ophthalmosaurus");
+	public static final RegistryObject<Item> OPHTHALMOSAURUS_MEAT = registerRawMeat("ophthalmosaurus", FoodInit.RAW_MEDIUM_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> OPHTHALMOSAURUS_COOKED_MEAT = registerCookedMeat("ophthalmosaurus", FoodInit.RAW_MEDIUM_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> OPHTHALMOSAURUS_SPAWN_EGG = registerFishSpawnItemEgg("ophthalmosaurus", () -> EntityInit.OPHTHALMOSAURUS_ENTITY.get(), 0x75767c, 0x2e3948);*/
+	
 	//Mud Ball
 	public static final RegistryObject<Item> MUD_BALL = plainItemRegister("mud_ball", properties().tab(ModItemGroups.ITEMS_TAB));
 	
@@ -321,7 +338,7 @@ public class ItemInit
 	public static final RegistryObject<Item> PLASTERED_FOSSIL = registerFossilBlockItem("plastered_fossil", () -> BlockInit.PLASTERED_FOSSIL.get());
 
 	//Fossil Processing
-	public static final RegistryObject<Item> FOSSIL_CLEANER = registerMachinesBlockItem("fossil_cleaner", () -> BlockInit.FOSSIL_CLEANER.get());	
+	//public static final RegistryObject<Item> FOSSIL_CLEANER = registerMachinesBlockItem("fossil_cleaner", () -> BlockInit.FOSSIL_CLEANER.get());	
 	
 	public static final RegistryObject<Item> POWER_SUPPLY_BLOCK = registerMachinesBlockItem("power_supply_block", () -> BlockInit.POWER_SUPPLY_BLOCK.get());
 

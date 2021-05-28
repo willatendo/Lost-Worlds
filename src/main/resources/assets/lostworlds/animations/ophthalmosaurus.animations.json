@@ -1,0 +1,215 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ophthalmosaurus.swim": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"Ophthalmosaurus": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"frontleftfin": {
+					"rotation": {
+						"vector": [0, 0, -62.5]
+					}
+				},
+				"frontrightfin": {
+					"rotation": {
+						"vector": [0, 0, 62.5]
+					}
+				},
+				"backleftfin": {
+					"rotation": {
+						"vector": [0, 0, -62.5]
+					}
+				},
+				"backrightfin": {
+					"rotation": {
+						"vector": [0, 0, 62.5]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 22.5, 0]
+						},
+						"0.75": {
+							"vector": [0, -22.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.ophthalmosaurus.attack": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"Ophthalmosaurus": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"frontleftfin": {
+					"rotation": {
+						"vector": [0, 0, -62.5]
+					}
+				},
+				"frontrightfin": {
+					"rotation": {
+						"vector": [0, 0, 62.5]
+					}
+				},
+				"backleftfin": {
+					"rotation": {
+						"vector": [0, 0, -62.5]
+					}
+				},
+				"backrightfin": {
+					"rotation": {
+						"vector": [0, 0, 62.5]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 22.5, 0]
+						},
+						"0.75": {
+							"vector": [0, -22.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.6667": {
+							"vector": [12.5, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.ophthalmosaurus.idle": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"Ophthalmosaurus": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"frontleftfin": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -62.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -42.5]
+						},
+						"1.0": {
+							"vector": [0, 0, -62.5]
+						}
+					}
+				},
+				"frontrightfin": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 62.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 42.5]
+						},
+						"1.0": {
+							"vector": [0, 0, 62.5]
+						}
+					}
+				},
+				"backleftfin": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -62.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -42.5]
+						},
+						"1.0": {
+							"vector": [0, 0, -62.5]
+						}
+					}
+				},
+				"backrightfin": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 62.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 42.5]
+						},
+						"1.0": {
+							"vector": [0, 0, 62.5]
+						}
+					}
+				},
+				"tail": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 5, 0]
+						},
+						"0.75": {
+							"vector": [0, -5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}

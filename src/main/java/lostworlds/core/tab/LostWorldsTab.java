@@ -68,18 +68,41 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.IRON_BRUSH.get().getDefaultInstance());
 		item.add(ItemInit.GOLD_BRUSH.get().getDefaultInstance());
 		item.add(ItemInit.DIAMOND_BRUSH.get().getDefaultInstance());
+		
 		item.add(ItemInit.WET_PAPER.get().getDefaultInstance());
 		item.add(ItemInit.FEILD_GUIDE.get().getDefaultInstance());
+		
+		item.add(ItemInit.EMPTY_SYRINGE.get().getDefaultInstance());
+		item.add(ItemInit.BLOOD_SYRINGE.get().getDefaultInstance());
+		
+		item.add(ItemInit.EMPTY_VILE.get().getDefaultInstance());
+		item.add(ItemInit.BLOOD_VILE.get().getDefaultInstance());
+		
+		item.add(ItemInit.STORAGE_DISC.get().getDefaultInstance());
+
 		item.add(ItemInit.MUD_BALL.get().getDefaultInstance());
 		
 		//Time Books
 		item.add(ItemInit.PERMIAN_TIME_BOOK.get().getDefaultInstance());
 		item.add(ItemInit.JURASSIC_TIME_BOOK.get().getDefaultInstance());
-		
+
+		//Plant Food
+		item.add(ItemInit.FERN_LITTER.get().getDefaultInstance());
+		item.add(ItemInit.COOKED_FERN_LITTER.get().getDefaultInstance());
+
+		item.add(ItemInit.CYCAD_SEEDS.get().getDefaultInstance());
+		item.add(ItemInit.OSMUNDA_SEEDS.get().getDefaultInstance());
+		item.add(ItemInit.DUISBERGIA_SEEDS.get().getDefaultInstance());
+		item.add(ItemInit.CEPHALOTAXUS_SEEDS.get().getDefaultInstance());
+		item.add(ItemInit.LYCOPHYTA_SEEDS.get().getDefaultInstance());
+		item.add(ItemInit.DILLHOFFIA_SEEDS.get().getDefaultInstance());
+
+		item.add(ItemInit.PALEO_SALAD.get().getDefaultInstance());
+
 		//DNA
-		item.add(ItemInit.EMPTY_VILE.get().getDefaultInstance());
 		item.add(ItemInit.ALLOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_DNA.get().getDefaultInstance());
+		item.add(ItemInit.CHILESAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.CRYOLOPHOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_DNA.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_DNA.get().getDefaultInstance());
@@ -88,7 +111,9 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.GIGANOTOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_DNA.get().getDefaultInstance());
+		item.add(ItemInit.KENTROSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.NAUTILUS_DNA.get().getDefaultInstance());
+		item.add(ItemInit.OSTROMIA_DNA.get().getDefaultInstance());
 		item.add(ItemInit.OURANOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_DNA.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_DNA.get().getDefaultInstance());
@@ -100,9 +125,9 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.TYRANNOSAURUS_DNA.get().getDefaultInstance());
 		
 		//Storage Discs
-		item.add(ItemInit.STORAGE_DISC.get().getDefaultInstance());
 		item.add(ItemInit.ALLOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.CHILESAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.CRYOLOPHOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_DNA_DISC.get().getDefaultInstance());
@@ -111,7 +136,9 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.GIGANOTOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.KENTROSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.NAUTILUS_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.OSTROMIA_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.OURANOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_DNA_DISC.get().getDefaultInstance());
@@ -119,11 +146,13 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.PSITTACOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.RHINESUCHUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.SUCHOMIMUS_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.TETRACERATOPS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.TYRANNOSAURUS_DNA_DISC.get().getDefaultInstance());
 		
 		//Meat
 		item.add(ItemInit.ALLOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.CHILESAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.CRYOLOPHOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_MEAT.get().getDefaultInstance());
@@ -132,7 +161,9 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.GIGANOTOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.KENTROSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.NAUTILUS_TENTICAL.get().getDefaultInstance());
+		item.add(ItemInit.OSTROMIA_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.OURANOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_MEAT.get().getDefaultInstance());
@@ -146,6 +177,7 @@ public class LostWorldsTab extends ItemGroup
 		//Cooked Meat
 		item.add(ItemInit.ALLOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_COOKED_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.CHILESAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.CRYOLOPHOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_COOKED_MEAT.get().getDefaultInstance());
@@ -154,7 +186,9 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.GIGANOTOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_COOKED_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.KENTROSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.COOKED_NAUTILUS_TENTICAL.get().getDefaultInstance());
+		item.add(ItemInit.OSTROMIA_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.OURANOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_COOKED_MEAT.get().getDefaultInstance());
@@ -178,6 +212,7 @@ public class LostWorldsTab extends ItemGroup
 		//Spawn Eggs
 		item.add(ItemInit.ALLOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.CARNOTAURUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.CHILESAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.CRYOLOPHOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.DIMETRODON_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_SPAWN_EGG.get().getDefaultInstance());
@@ -186,7 +221,9 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.GIGANOTOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_SPAWN_EGG.get().getDefaultInstance());
-		item.add(ItemInit.NAUTILUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.KENTROSAURUS_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.NAUTILUS_TENTICAL.get().getDefaultInstance());
+		item.add(ItemInit.OSTROMIA_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.OURANOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PALAEONISCUM_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.PROCOMPSOGNATHUS_SPAWN_EGG.get().getDefaultInstance());
@@ -200,6 +237,7 @@ public class LostWorldsTab extends ItemGroup
 		//Scarab
 		item.add(ItemInit.BROKEN_CRYSTAL_SCARAB_GEM.get().getDefaultInstance());
 		item.add(ItemInit.CRYSTAL_SCARAB_GEM.get().getDefaultInstance());
+		
 		item.add(ItemInit.CRYSTAL_SCARAB_SWORD.get().getDefaultInstance());
 		item.add(ItemInit.CRYSTAL_SCARAB_SHOVEL.get().getDefaultInstance());
 		item.add(ItemInit.CRYSTAL_SCARAB_PICKAXE.get().getDefaultInstance());
@@ -256,8 +294,10 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.PLASTERED_FOSSIL.get().getDefaultInstance());
 
 		//Fossil Processing
+		
+		
 		item.add(ItemInit.POWER_SUPPLY_BLOCK.get().getDefaultInstance());
-	
+			
 		//Time Machine
 		item.add(ItemInit.TIME_MACHINE.get().getDefaultInstance());
 		
@@ -279,13 +319,22 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.POLISHED_VOLCANIC_ROCK_STAIRS.get().getDefaultInstance());
 		
 		item.add(ItemInit.VOLCANIC_ASH.get().getDefaultInstance());
-	
+			
 		//Tunneled 
 		item.add(ItemInit.DIICTODON_BURROW.get().getDefaultInstance());
 		item.add(ItemInit.TUNNELED_SOIL.get().getDefaultInstance());
-
-		//Permian
+		
 		item.add(ItemInit.MOSSY_DIRT.get().getDefaultInstance());
+
+		item.add(ItemInit.GROUND_FERNS.get().getDefaultInstance());
+		item.add(ItemInit.DICKSONIA.get().getDefaultInstance());
+		item.add(ItemInit.TALL_DICKSONIA.get().getDefaultInstance());
+		item.add(ItemInit.CYCAD.get().getDefaultInstance());
+		item.add(ItemInit.OSMUNDA.get().getDefaultInstance());
+		item.add(ItemInit.DUISBERGIA.get().getDefaultInstance());
+		item.add(ItemInit.CEPHALOTAXUS.get().getDefaultInstance());
+		item.add(ItemInit.LYCOPHYTA.get().getDefaultInstance());
+		item.add(ItemInit.DILLHOFFIA.get().getDefaultInstance());
 
 		//Permian
 		//Sand
