@@ -135,6 +135,10 @@ public class BlockInit
 
 	//Fossil Processing	
 	public static final RegistryObject<Block> FOSSIL_CLEANER = ModRegistry.BLOCK_REGISTRY.register("fossil_cleaner", () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> FOSSIL_GRINDER = ModRegistry.BLOCK_REGISTRY.register("fossil_grinder", () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> DNA_EXTRACTOR = ModRegistry.BLOCK_REGISTRY.register("dna_extractor", () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> ANALYSER = ModRegistry.BLOCK_REGISTRY.register("analyser", () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> DNA_INSERTER = ModRegistry.BLOCK_REGISTRY.register("dna_inserter", () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
 	
 	public static final RegistryObject<PowerSupplyBlock> POWER_SUPPLY_BLOCK = ModRegistry.BLOCK_REGISTRY.register("power_supply_block", () -> new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	

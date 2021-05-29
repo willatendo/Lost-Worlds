@@ -20,11 +20,17 @@ public class BiomeInit
 	public static final RegistryObject<Biome> PERMIAN_DESERT = createBiome("permian_desert", ModBiomeMaker::makeAPermianDesert);
 	public static final RegistryKey<Biome> PERMIAN_DESERT_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_desert"));
 	
+	public static final RegistryObject<Biome> PERMIAN_DESERT_HILLS = createBiome("permian_desert_hills", ModBiomeMaker::makeAPermianDesertHills);
+	public static final RegistryKey<Biome> PERMIAN_DESERT_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_desert_hills"));
+	
 	public static final RegistryObject<Biome> FLOOD_BASALT_PLAINS = createBiome("permian_flood_basalt_plains", ModBiomeMaker::makeAPermainFloodBasaltPlains);
 	public static final RegistryKey<Biome> FLOOD_BASALT_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_flood_basalt_plains"));
 	
 	public static final RegistryObject<Biome> PERMIAN_PLAINS = createBiome("permian_plains", ModBiomeMaker::makeAPermianPlains);
 	public static final RegistryKey<Biome> PERMIAN_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_plains"));
+	
+	public static final RegistryObject<Biome> PERMIAN_PLAINS_HILLS = createBiome("permian_plains_hills", ModBiomeMaker::makeAPermianPlainsHills);
+	public static final RegistryKey<Biome> PERMIAN_PLAINS_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_plains_hills"));
 	
 	public static final RegistryObject<Biome> PERMIAN_OCEAN = createBiome("permian_ocean", ModBiomeMaker::makeAPermianOcean);
 	public static final RegistryKey<Biome> PERMIAN_OCEAN_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_ocean"));
@@ -35,8 +41,14 @@ public class BiomeInit
 	public static final RegistryObject<Biome> CONIFER_FOREST = createBiome("permian_conifer_forest", ModBiomeMaker::makeAPermianConiferForest);
 	public static final RegistryKey<Biome> CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_conifer_forest"));
 	
+	public static final RegistryObject<Biome> CONIFER_FOREST_HILLS = createBiome("permian_conifer_forest_hills", ModBiomeMaker::makeAPermianConiferForestHills);
+	public static final RegistryKey<Biome> CONIFER_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_conifer_forest_hills"));
+	
 	public static final RegistryObject<Biome> GINKGO_FOREST = createBiome("permian_ginkgo_forest", ModBiomeMaker::makeAPermianGinkgoForest);
 	public static final RegistryKey<Biome> GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_ginkgo_forest"));
+	
+	public static final RegistryObject<Biome> GINKGO_FOREST_HILLS = createBiome("permian_ginkgo_forest_hills", ModBiomeMaker::makeAPermianGinkgoForestHills);
+	public static final RegistryKey<Biome> GINKGO_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_ginkgo_forest_hills"));
 	
 	public static final RegistryObject<Biome> PERMIAN_RIVER = createBiome("permian_river", ModBiomeMaker::makeAPermianRiver);
 	public static final RegistryKey<Biome> PERMIAN_RIVER_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_river"));
@@ -44,17 +56,32 @@ public class BiomeInit
 	public static final RegistryObject<Biome> JURASSIC_CONIFER_FOREST = createBiome("jurassic_conifer_forest", ModBiomeMaker::makeAJurassicConiferForest);
 	public static final RegistryKey<Biome> JURASSIC_CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_conifer_forest"));
 	
+	public static final RegistryObject<Biome> JURASSIC_CONIFER_FOREST_HILLS = createBiome("jurassic_conifer_forest_hills", ModBiomeMaker::makeAJurassicConiferForestHills);
+	public static final RegistryKey<Biome> JURASSIC_CONIFER_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_conifer_forest_hills"));
+	
 	public static final RegistryObject<Biome> JURASSIC_GINKGO_FOREST = createBiome("jurassic_ginkgo_forest", ModBiomeMaker::makeAJurassicGinkgoForest);
 	public static final RegistryKey<Biome> JURASSIC_GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_ginkgo_forest"));
+	
+	public static final RegistryObject<Biome> JURASSIC_GINKGO_FOREST_HILLS = createBiome("jurassic_ginkgo_forest_hills", ModBiomeMaker::makeAJurassicGinkgoForestHills);
+	public static final RegistryKey<Biome> JURASSIC_GINKGO_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_ginkgo_forest_hills"));
 	
 	public static final RegistryObject<Biome> JURASSIC_ARAUCARIA_FOREST = createBiome("jurassic_araucaria_forest", ModBiomeMaker::makeAJurassicAraucariaForest);
 	public static final RegistryKey<Biome> JURASSIC_ARAUCARIA_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_araucaria_forest"));
 	
+	public static final RegistryObject<Biome> JURASSIC_ARAUCARIA_FOREST_HILLS = createBiome("jurassic_araucaria_forest_hills", ModBiomeMaker::makeAJurassicAraucariaForestHills);
+	public static final RegistryKey<Biome> JURASSIC_ARAUCARIA_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_araucaria_forest_hills"));
+	
 	public static final RegistryObject<Biome> JURASSIC_PLAINS = createBiome("jurassic_plains", ModBiomeMaker::makeAJurassicPlains);
 	public static final RegistryKey<Biome> JURASSIC_PLAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_plains"));
 	
+	public static final RegistryObject<Biome> JURASSIC_PLAINS_HILLS = createBiome("jurassic_plains_hills", ModBiomeMaker::makeAJurassicPlainsHills);
+	public static final RegistryKey<Biome> JURASSIC_PLAINS_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_plains_hills"));
+	
 	public static final RegistryObject<Biome> JURASSIC_DESERT = createBiome("jurassic_desert", ModBiomeMaker::makeAJurassicDesert);
 	public static final RegistryKey<Biome> JURASSIC_DESERT_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_desert"));
+	
+	public static final RegistryObject<Biome> JURASSIC_DESERT_HILLS = createBiome("jurassic_desert_hills", ModBiomeMaker::makeAJurassicDesertHills);
+	public static final RegistryKey<Biome> JURASSIC_DESERT_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_desert_hills"));
 	
 	public static final RegistryObject<Biome> JURASSIC_MOUNTAINS = createBiome("jurassic_mountains", ModBiomeMaker::makeAJurassicMountains);
 	public static final RegistryKey<Biome> JURASSIC_MOUNTAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_mountains"));
@@ -74,12 +101,21 @@ public class BiomeInit
 	public static final RegistryObject<Biome> OVERWORLD_CONIFER_FOREST = createBiome("overworld_conifer_forest", ModBiomeMaker::makeAOverworldConiferForest);
 	public static final RegistryKey<Biome> OVERWORLD_CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "overworld_conifer_forest"));
 	
+	public static final RegistryObject<Biome> OVERWORLD_CONIFER_FOREST_HILLS = createBiome("overworld_conifer_forest_hills", ModBiomeMaker::makeAOverworldConiferForestHills);
+	public static final RegistryKey<Biome> OVERWORLD_CONIFER_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "overworld_conifer_forest_hills"));
+	
 	public static final RegistryObject<Biome> OVERWORLD_GINKGO_FOREST = createBiome("overworld_ginkgo_forest", ModBiomeMaker::makeAOverworldGinkgoForest);
 	public static final RegistryKey<Biome> OVERWORLD_GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "overworld_ginkgo_forest"));
+	
+	public static final RegistryObject<Biome> OVERWORLD_GINKGO_FOREST_HILLS = createBiome("overworld_ginkgo_forest_hills", ModBiomeMaker::makeAOverworldGinkgoForestHills);
+	public static final RegistryKey<Biome> OVERWORLD_GINKGO_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "overworld_ginkgo_forest_hills"));
 	
 	public static final RegistryObject<Biome> OVERWORLD_ARAUCARIA_FOREST = createBiome("overworld_araucaria_forest", ModBiomeMaker::makeAOverworldAraucariaForest);
 	public static final RegistryKey<Biome> OVERWORLD_ARAUCARIA_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "overworld_araucaria_forest"));
 
+	public static final RegistryObject<Biome> OVERWORLD_ARAUCARIA_FOREST_HILLS = createBiome("overworld_araucaria_forest_hills", ModBiomeMaker::makeAOverworldAraucariaForestHills);
+	public static final RegistryKey<Biome> OVERWORLD_ARAUCARIA_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "overworld_araucaria_forest_hills"));
+	
 	public static final RegistryObject<Biome> VOLCANO = createBiome("volcano", ModBiomeMaker::makeAVolcanoBiome);
 	public static final RegistryKey<Biome> VOLCANO_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "volcano"));
 	
@@ -106,16 +142,34 @@ public class BiomeInit
     		BiomeDictionary.addTypes(OVERWORLD_CONIFER_FOREST_KEY, Type.FOREST, Type.CONIFEROUS);
     	}
     	
+    	if(event.getName().equals(OVERWORLD_CONIFER_FOREST_HILLS.get().getRegistryName())) 
+    	{
+    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_CONIFER_FOREST_HILLS_KEY, 3));
+    		BiomeDictionary.addTypes(OVERWORLD_CONIFER_FOREST_HILLS_KEY, Type.FOREST, Type.CONIFEROUS, Type.HILLS);
+    	}
+    	
     	if(event.getName().equals(OVERWORLD_GINKGO_FOREST.get().getRegistryName())) 
     	{
     		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_GINKGO_FOREST_KEY, 3));
     		BiomeDictionary.addTypes(OVERWORLD_GINKGO_FOREST_KEY, Type.FOREST);
     	}
     	
+    	if(event.getName().equals(OVERWORLD_GINKGO_FOREST_HILLS.get().getRegistryName())) 
+    	{
+    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_GINKGO_FOREST_HILLS_KEY, 3));
+    		BiomeDictionary.addTypes(OVERWORLD_GINKGO_FOREST_HILLS_KEY, Type.FOREST, Type.HILLS);
+    	}
+    	
     	if(event.getName().equals(OVERWORLD_ARAUCARIA_FOREST.get().getRegistryName())) 
     	{
     		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_ARAUCARIA_FOREST_KEY, 3));
     		BiomeDictionary.addTypes(OVERWORLD_ARAUCARIA_FOREST_KEY, Type.FOREST);
+    	}
+    	
+    	if(event.getName().equals(OVERWORLD_ARAUCARIA_FOREST_HILLS.get().getRegistryName())) 
+    	{
+    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_ARAUCARIA_FOREST_HILLS_KEY, 3));
+    		BiomeDictionary.addTypes(OVERWORLD_ARAUCARIA_FOREST_HILLS_KEY, Type.FOREST, Type.HILLS);
     	}
     }
 }

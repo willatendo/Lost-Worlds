@@ -1,18 +1,14 @@
 package lostworlds.common.entities.abstracts;
 
-import java.util.Random;
-
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.Pose;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.controller.MovementController;
@@ -37,7 +33,6 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
@@ -145,11 +140,6 @@ public abstract class AbstractPrehistoricFishEntity extends AbstractPrehistoricE
 	public boolean requiresCustomPersistence() 
 	{
 		return super.requiresCustomPersistence() || this.fromBucket();
-	}
-	
-	public static boolean checkFishSpawnRules(EntityType<? extends AbstractPrehistoricFishEntity> entityIn, IWorld world, SpawnReason spawnReason, BlockPos pos, Random rand) 
-	{
-		return world.getBlockState(pos).is(Blocks.WATER) && world.getBlockState(pos.above()).is(Blocks.WATER);
 	}
 	
 	public boolean removeWhenFarAway(double doub) 

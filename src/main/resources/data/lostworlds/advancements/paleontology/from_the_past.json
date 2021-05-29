@@ -1,0 +1,33 @@
+{
+	"parent": "lostworlds:paleontology/leather_brush",
+	"display": {
+		"icon": {
+			"item": "lostworlds:plastered_fossil"
+		},
+		"title": {
+			"translate": "lostworlds.advancements.paleontology.from_the_past.title"
+		},
+		"description": {
+			"translate": "lostworlds.advancements.paleontology.from_the_past.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"get_stone": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+			"items": [
+				{
+					"item": "lostworlds:plastered_fossil"
+				}]
+			}	
+		}
+	},
+	"requirements": [
+	[
+		"get_stone"
+	]]
+}

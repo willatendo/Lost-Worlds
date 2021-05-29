@@ -5,12 +5,10 @@ import java.util.EnumSet;
 import lostworlds.common.goal.ModSwimGoal;
 import lostworlds.common.goal.ModSwimSemiAquaticGoal;
 import lostworlds.core.util.enums.TimeEras;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
@@ -34,7 +32,6 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public abstract class AbstractPrehistoricEntity extends CreatureEntity
@@ -73,22 +70,10 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 		return true;
 	}
 	
+	@Override
 	public boolean removeWhenFarAway(double doubleIn) 
 	{
 		return false;
-	}
-	
-	@Override
-	public boolean checkSpawnRules(IWorld world, SpawnReason reason) 
-	{
-		if(isLandAndWater())
-		{
-			return true;
-		}
-		else
-		{
-			return !world.getBlockState(blockPosition().below()).is(Blocks.WATER) || !world.getBlockState(blockPosition().below()).is(Blocks.AIR);
-		}
 	}
 	
 	public boolean isHostile() 

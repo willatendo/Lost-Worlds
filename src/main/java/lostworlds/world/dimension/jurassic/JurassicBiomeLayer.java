@@ -11,19 +11,24 @@ public class JurassicBiomeLayer implements IAreaTransformer0
     protected int[] commonBiomes = new int[]
     {
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_CONIFER_FOREST_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_CONIFER_FOREST_HILLS_KEY),
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_GINKGO_FOREST_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_GINKGO_FOREST_HILLS_KEY),
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_ARAUCARIA_FOREST_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_ARAUCARIA_FOREST_HILLS_KEY),
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_PLAINS_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_PLAINS_HILLS_KEY),
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_ISLANDS_KEY),
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_OCEAN_KEY),
     };
     protected int[] uncommonBiomes = (new int[]
     {
-    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_MOUNTAINS_KEY)
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_MOUNTAINS_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_DESERT_KEY),
+    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_DESERT_HILLS_KEY)
     });
     protected int[] rareBiomes = (new int[]
     {
-    	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_DESERT_KEY),
     	JurassicLayerUtil.getBiomeId(BiomeInit.JURASSIC_ERRODED_MOUNTAINS_KEY)
     });
 

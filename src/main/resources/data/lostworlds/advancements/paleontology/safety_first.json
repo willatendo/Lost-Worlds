@@ -1,0 +1,33 @@
+{
+	"parent": "lostworlds:paleontology/prehistoric_food",
+	"display": {
+		"icon": {
+			"item": "lostworlds:cooked_fern_litter"
+		},
+		"title": {
+			"translate": "lostworlds.advancements.paleontology.safety_first.title"
+		},
+		"description": {
+			"translate": "lostworlds.advancements.paleontology.safety_first.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"get_stone": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+			"items": [
+				{
+					"item": "lostworlds:cooked_fern_litter"
+				}]
+			}	
+		}
+	},
+	"requirements": [
+	[
+		"get_stone"
+	]]
+}

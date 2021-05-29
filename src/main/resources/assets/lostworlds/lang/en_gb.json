@@ -1009,8 +1009,12 @@
 
 	"lostworlds.field_guide.danger": "Danger:",
 	"lostworlds.field_guide.diet": "Diet:",
+	"lostworlds.field_guide.sex": "Sex:",
 	"lostworlds.field_guide.time_era": "Time Era:",
 	"lostworlds.field_guide.type": "Type:",
+
+	"lostworlds.field_guide.sex_male": "Male",
+	"lostworlds.field_guide.sex_female": "Female",
 		
 	//Biome
 	//Permian
@@ -1026,12 +1030,49 @@
 	
 	//On Load Event
 	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 9 Developer Edition. DO NOT REDISTRIBUTE.",
-	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 9",
+	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 9.1",
 	
 	//On Book Used
-	"lostworlds.transport_to_overworld": "Transporting Player Back Home!",
-	"lostworlds.transport_to_jurassic": "Transporting Player to the Jurassic!",
-	"lostworlds.transport_to_permian": "Transporting Player to the Permian!",
+	"lostworlds.transport_to_overworld": "Transporting \u00A7bPlayer \u00A7fBack \u00A76Home\u00A7f!",
+	"lostworlds.transport_to_jurassic": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Jurassic\u00A7f!",
+	"lostworlds.transport_to_permian": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Permian\u00A7f!",
+	"lostworlds.doesnt_work": "Cannot Transport \u00A7bPlayer \u00A7fin This Dimension!",
+
+	"lostworlds.advancements.paleontology.root.title": "Paleontology",
+	"lostworlds.advancements.paleontology.root.description": "You played paleontology side of the mod!",
+
+	"lostworlds.advancements.paleontology.from_the_past.title": "From The Past",
+	"lostworlds.advancements.paleontology.from_the_past.description": "You got a fossil!",
+
+	"lostworlds.advancements.paleontology.leather_brush.title": "Leather Brush",
+	"lostworlds.advancements.paleontology.leather_brush.description": "Get a leather brush!",
+
+	"lostworlds.advancements.paleontology.upgraded.title": "Upgraded",
+	"lostworlds.advancements.paleontology.upgraded.description": "Get a iron brush!",
+
+	"lostworlds.advancements.paleontology.golden.title": "Golden",
+	"lostworlds.advancements.paleontology.golden.description": "Get a gold brush!",
+
+	"lostworlds.advancements.paleontology.diamond.title": "Diamond",
+	"lostworlds.advancements.paleontology.diamond.description": "Get a diamond brush!",
+
+	"lostworlds.advancements.paleontology.ancient_seeds.title": "Ancient Seeds",
+	"lostworlds.advancements.paleontology.ancient_seeds.description": "Get some ancient seeds!",
+
+	"lostworlds.advancements.paleontology.knowledge.title": "Knowledge",
+	"lostworlds.advancements.paleontology.knowledge.description": "Get a field guide!",
+
+	"lostworlds.advancements.paleontology.paleo_salad.title": "Paleo Salad",
+	"lostworlds.advancements.paleontology.paleo_salad.description": "Make paleo salad!",
+
+	"lostworlds.advancements.paleontology.prehistoric_food.title": "Prehistoric Food",
+	"lostworlds.advancements.paleontology.prehistoric_food.description": "Get some food from the Jurassic!",
+
+	"lostworlds.advancements.paleontology.safety_first.title": "Safety First!",
+	"lostworlds.advancements.paleontology.safety_first.description": "Cook fern litter to kill the poison!",
+
+	"lostworlds.advancements.paleontology.baby_time_lord.title": "Baby Time Lord",
+	"lostworlds.advancements.paleontology.baby_time_lord.description": "Get a time book!",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds_fossils": "Lost Worlds Fossils",

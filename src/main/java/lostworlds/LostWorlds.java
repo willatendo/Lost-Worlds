@@ -67,6 +67,7 @@ public class LostWorlds
 			ModUtil.LOGGER.debug("Loading: Registering Compostables");
 			
 			ComposterBlock.add(0.6F, BlockInit.CONIFER_LEAVES.get());
+			ComposterBlock.add(0.6F, BlockInit.ARAUCARIA_LEAVES.get());
 			ComposterBlock.add(0.6F, BlockInit.GINKGO_LEAVES.get());
 			ComposterBlock.add(0.4F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
 			ComposterBlock.add(0.6F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());

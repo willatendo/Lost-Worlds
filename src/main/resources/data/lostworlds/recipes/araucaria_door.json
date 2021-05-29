@@ -11,6 +11,7 @@
 		}
 	},
 	"result": {
-		"item": "lostworlds:araucaria_door"
+		"item": "lostworlds:araucaria_door",
+		"count": 3
 	}
 }

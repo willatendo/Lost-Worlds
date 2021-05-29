@@ -1,4 +1,4 @@
- package lostworlds.core.init; 
+package lostworlds.core.init; 
 
 import lostworlds.common.entities.ModBoatEntity.ModBoatType;
 import lostworlds.common.items.DiscItem;
@@ -78,7 +78,7 @@ public class ItemInit
 	public static final RegistryObject<Item> LYCOPHYTA_SEEDS = itemRegister("lycophyta_seeds", new FoodSeedsItem(properties().food(FoodInit.SEED).stacksTo(16).tab(ModItemGroups.FOOD_TAB)));
 	public static final RegistryObject<Item> DILLHOFFIA_SEEDS = itemRegister("dillhoffia_seeds", new FoodSeedsItem(properties().food(FoodInit.SEED).stacksTo(16).tab(ModItemGroups.FOOD_TAB)));
 	
-	public static final RegistryObject<Item> PALEO_SALAD = plainItemRegister("paleo_salad", properties().food(FoodInit.SEED).stacksTo(8).tab(ModItemGroups.FOOD_TAB));
+	public static final RegistryObject<Item> PALEO_SALAD = plainItemRegister("paleo_salad", properties().food(FoodInit.PALEO_SALAD).stacksTo(8).tab(ModItemGroups.FOOD_TAB));
 
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNAItem("procompsognathus");

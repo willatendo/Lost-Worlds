@@ -10,7 +10,8 @@ public class PermianBiomeLayer implements IAreaTransformer0
     private static final int RARE_BIOME_CHANCE = 16;
     protected int[] commonBiomes = new int[]
     {
-    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_DESERT_KEY)
+    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_DESERT_KEY),
+    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_DESERT_HILLS_KEY)
     };
     protected int[] uncommonBiomes = (new int[]
     {
@@ -20,9 +21,12 @@ public class PermianBiomeLayer implements IAreaTransformer0
     protected int[] rareBiomes = (new int[]
     {
     	PermianLayerUtil.getBiomeId(BiomeInit.CONIFER_FOREST_KEY),
+    	PermianLayerUtil.getBiomeId(BiomeInit.CONIFER_FOREST_HILLS_KEY),
     	PermianLayerUtil.getBiomeId(BiomeInit.GINKGO_FOREST_KEY),
+    	PermianLayerUtil.getBiomeId(BiomeInit.GINKGO_FOREST_HILLS_KEY),
     	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_OCEAN_KEY),
-    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_PLAINS_KEY)
+    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_PLAINS_KEY),
+    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_PLAINS_HILLS_KEY)
     });
 
     public PermianBiomeLayer() { }

@@ -30,7 +30,11 @@ public class PermianTimeBook extends Item
                 MinecraftServer minecraftserver = serverworld.getServer();
                 RegistryKey<World> registrykey = entity.level.dimension() == PermianDimension.PERMIAN_WORLD ? World.OVERWORLD : PermianDimension.PERMIAN_WORLD;
                 ServerWorld serverworld1 = minecraftserver.getLevel(registrykey);
-            	if(serverworld1 != null && !entity.isPassenger()) 
+                if(entity.level.dimension() == World.NETHER || entity.level.dimension() == World.END)
+                {
+                	entity.sendMessage(ModUtil.tTC("doesnt_work"), entity.getUUID());
+                }
+                else if(serverworld1 != null && !entity.isPassenger()) 
                 {
                     entity.changeDimension(serverworld1, new ModTeleporter(serverworld1));
                     if(registrykey.equals(PermianDimension.PERMIAN_WORLD))

@@ -1,0 +1,33 @@
+{
+	"parent": "lostworlds:paleontology/golden",
+	"display": {
+		"icon": {
+			"item": "lostworlds:diamond_brush"
+		},
+		"title": {
+			"translate": "lostworlds.advancements.paleontology.diamond.title"
+		},
+		"description": {
+			"translate": "lostworlds.advancements.paleontology.diamond.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"get_stone": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+			"items": [
+				{
+					"item": "lostworlds:diamond_brush"
+				}]
+			}	
+		}
+	},
+	"requirements": [
+	[
+		"get_stone"
+	]]
+}

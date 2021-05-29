@@ -30,6 +30,6 @@ public class ModSurfaceBuilders
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> GRAVEL_TERRAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(GRAVEL_TERRAIN_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> JURASSIC_STONE_TERRAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(JURASSIC_STONE_CONFIG);	
 	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> ISLANDS_SURFACE_BUILDER = SurfaceBuilder.SWAMP.configured(ISLANDS_CONFIG);	
-	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> JURASSIC_OCEAN_SURFACE_BUILDER = SurfaceBuilder.SWAMP.configured(JURASSIC_OCEAN_CONFIG);	
+	public static final ConfiguredSurfaceBuilder<SurfaceBuilderConfig> JURASSIC_OCEAN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.configured(JURASSIC_OCEAN_CONFIG);	
 }
 	

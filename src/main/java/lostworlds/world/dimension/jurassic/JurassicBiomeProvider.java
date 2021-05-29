@@ -24,7 +24,7 @@ public class JurassicBiomeProvider extends BiomeProvider
 	private final long seed;
     private final Registry<Biome> registry;
     private final Layer genBiomes;
-    private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeInit.JURASSIC_CONIFER_FOREST_KEY, BiomeInit.JURASSIC_GINKGO_FOREST_KEY, BiomeInit.JURASSIC_PLAINS_KEY, BiomeInit.JURASSIC_ISLANDS_KEY, BiomeInit.JURASSIC_OCEAN_KEY, BiomeInit.JURASSIC_MOUNTAINS_KEY, BiomeInit.JURASSIC_DESERT_KEY, BiomeInit.JURASSIC_ERRODED_MOUNTAINS_KEY, BiomeInit.JURASSIC_ARAUCARIA_FOREST_KEY);
+    private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeInit.JURASSIC_CONIFER_FOREST_KEY, BiomeInit.JURASSIC_CONIFER_FOREST_HILLS_KEY, BiomeInit.JURASSIC_GINKGO_FOREST_KEY, BiomeInit.JURASSIC_GINKGO_FOREST_HILLS_KEY, BiomeInit.JURASSIC_PLAINS_KEY, BiomeInit.JURASSIC_PLAINS_HILLS_KEY, BiomeInit.JURASSIC_ISLANDS_KEY, BiomeInit.JURASSIC_OCEAN_KEY, BiomeInit.JURASSIC_MOUNTAINS_KEY, BiomeInit.JURASSIC_DESERT_KEY, BiomeInit.JURASSIC_DESERT_HILLS_KEY, BiomeInit.JURASSIC_ERRODED_MOUNTAINS_KEY, BiomeInit.JURASSIC_ARAUCARIA_FOREST_KEY, BiomeInit.JURASSIC_ARAUCARIA_FOREST_HILLS_KEY);
     
     public JurassicBiomeProvider(long seed, Registry<Biome> registry) 
     {    	

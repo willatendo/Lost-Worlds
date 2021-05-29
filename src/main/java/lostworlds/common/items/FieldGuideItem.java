@@ -1,6 +1,6 @@
 package lostworlds.common.items;
 
-import lostworlds.client.screen.FieldGuideScreens;
+import lostworlds.client.screen.fieldguides.FieldGuideScreens;
 import lostworlds.common.entities.AllosaurusEntity;
 import lostworlds.common.entities.CarnotaurusEntity;
 import lostworlds.common.entities.ChilesaurusEntity;
@@ -33,7 +33,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
 
 public class FieldGuideItem extends Item
-{
+{	
 	public FieldGuideItem(Properties properties) 
 	{
 		super(properties);
