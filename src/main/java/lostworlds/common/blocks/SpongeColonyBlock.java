@@ -21,17 +21,19 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.util.Lazy;
+import net.minecraftforge.common.util.NonNullSupplier;
 
 public class SpongeColonyBlock extends Block implements IWaterLoggable
 {
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 7, 16);
-	private final Block deadBlock;
+	private final Lazy<? extends Block> deadBlock;
 
-	public SpongeColonyBlock(Properties properties, Block deadBlock) 
+	public SpongeColonyBlock(Properties properties, NonNullSupplier<? extends Block> deadBlock) 
 	{
 		super(properties);
-		this.deadBlock = deadBlock;
+		this.deadBlock = Lazy.of(deadBlock::get);
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(false)));
 	}
 	
@@ -47,7 +49,7 @@ public class SpongeColonyBlock extends Block implements IWaterLoggable
 	{
 		if(!this.scanForWater(world, pos)) 
 		{
-			world.setBlock(pos, this.deadBlock.defaultBlockState(), 2);
+			world.setBlock(pos, this.deadBlock.get().defaultBlockState(), 2);
 		}
 	}
 	

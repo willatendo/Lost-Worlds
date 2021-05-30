@@ -12,5 +12,5 @@
   "has_raids": false,
   "logical_height": 256,
   "infiniburn": "minecraft:infiniburn_overworld",
-  "effects": "lostworlds:jurassiv_render"
+  "effects": "lostworlds:jurassic_render"
 }

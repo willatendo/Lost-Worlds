@@ -47,6 +47,9 @@
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
 	"item.lostworlds.procompsognathus_dna_disc": "Storage Disc",
+	"item.lostworlds.procompsognathus_soft_tissue": "Procompsognathus Soft Tissue",
+	"item.lostworlds.syringe_of_procompsognathus_blood": "Syringe of Procompsognathus Blood",
+	"item.lostworlds.vile_of_procompsognathus_blood": "Vile of Procompsognathus Blood",
 	"toolTip.lostworlds.procompsognathus_dna_disc.holding_shift": "Storing: Procompsognathus triassicus",
 	"toolTip.lostworlds.procompsognathus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.procompsognathus_egg": "Procompsognathus Egg",
@@ -57,6 +60,9 @@
 	//Palaeoniscum
 	"item.lostworlds.palaeoniscum_dna": "Palaeoniscum DNA",
 	"item.lostworlds.palaeoniscum_dna_disc": "Storage Disc",
+	"item.lostworlds.palaeoniscum_soft_tissue": "Palaeoniscum Soft Tissue",
+	"item.lostworlds.syringe_of_palaeoniscum_blood": "Syringe of Palaeoniscum Blood",
+	"item.lostworlds.vile_of_palaeoniscum_blood": "Vile of Palaeoniscum Blood",
 	"toolTip.lostworlds.palaeoniscum_dna_disc.holding_shift": "Storing: Palaeoniscum freislbeni",
 	"toolTip.lostworlds.palaeoniscum_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.palaeoniscum_spawn": "Palaeoniscum Spawn",
@@ -69,6 +75,9 @@
 	//Nautilus
 	"item.lostworlds.nautilus_dna": "Nautilus DNA",	
 	"item.lostworlds.nautilus_dna_disc": "Storage Disc",
+	"item.lostworlds.nautilus_soft_tissue": "Nautilus Soft Tissue",
+	"item.lostworlds.syringe_of_nautilus_blood": "Syringe of Nautilus Blood",
+	"item.lostworlds.vile_of_nautilus_blood": "Vile of Nautilus Blood",
 	"toolTip.lostworlds.nautilus_dna_disc.holding_shift": "Storing: Nautilus pompilius",
 	"toolTip.lostworlds.nautilus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.nautilus_spawn": "Nautilus Spawn",	
@@ -81,6 +90,9 @@
 	//Rhinesuchus
 	"item.lostworlds.rhinesuchus_dna": "Rhinesuchus DNA",	
 	"item.lostworlds.rhinesuchus_dna_disc": "Storage Disc",
+	"item.lostworlds.rhinesuchus_soft_tissue": "Rhinesuchus Soft Tissue",
+	"item.lostworlds.syringe_of_rhinesuchus_blood": "Syringe of Rhinesuchus Blood",
+	"item.lostworlds.vile_of_rhinesuchus_blood": "Vile of Rhinesuchus Blood",
 	"toolTip.lostworlds.rhinesuchus_dna_disc.holding_shift": "Storing: Rhinesuches whaitsi",
 	"toolTip.lostworlds.rhinesuchus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.rhinesuchus_spawn": "Rhinesuchus Spawn",	
@@ -92,6 +104,9 @@
 	//Dimetrodon
 	"item.lostworlds.dimetrodon_dna": "Dimetrodon DNA",		
 	"item.lostworlds.dimetrodon_dna_disc": "Storage Disc",
+	"item.lostworlds.dimetrodon_soft_tissue": "Dimetrodon Soft Tissue",
+	"item.lostworlds.syringe_of_dimetrodon_blood": "Syringe of Dimetrodon Blood",
+	"item.lostworlds.vile_of_dimetrodon_blood": "Vile of Dimetrodon Blood",
 	"toolTip.lostworlds.dimetrodon_dna_disc.holding_shift": "Storing: Dimetrodon limbatus",
 	"toolTip.lostworlds.dimetrodon_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.dimetrodon_egg": "Dimetrodon Egg",	
@@ -102,6 +117,9 @@
 	//Edaphosaurus
 	"item.lostworlds.edaphosaurus_dna": "Edaphosaurus DNA",	
 	"item.lostworlds.edaphosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.edaphosaurus_soft_tissue": "Edaphosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_edaphosaurus_blood": "Syringe of Edaphosaurus Blood",
+	"item.lostworlds.vile_of_edaphosaurus_blood": "Vile of Edaphosaurus Blood",
 	"toolTip.lostworlds.edaphosaurus_dna_disc.holding_shift": "Storing: Edaphosaurus pogonias",
 	"toolTip.lostworlds.edaphosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.edaphosaurus_egg": "1 Egg",
@@ -112,6 +130,9 @@
 	//Gorgonops
 	"item.lostworlds.gorgonops_dna": "Gorgonops DNA",
 	"item.lostworlds.gorgonops_dna_disc": "Storage Disc",
+	"item.lostworlds.gorgonops_soft_tissue": "Gorgonops Soft Tissue",
+	"item.lostworlds.syringe_of_gorgonops_blood": "Syringe of Gorgonops Blood",
+	"item.lostworlds.vile_of_gorgonops_blood": "Vile of Gorgonops Blood",
 	"toolTip.lostworlds.gorgonops_dna_disc.holding_shift": "Storing: Gorgonops whaitsi",
 	"toolTip.lostworlds.gorgonops_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.gorgonops_egg": "Gorgonops Egg",
@@ -122,6 +143,9 @@
 	//Carnotaurus
 	"item.lostworlds.carnotaurus_dna": "Carnotaurus DNA",
 	"item.lostworlds.carnotaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.carnotaurus_soft_tissue": "Carnotaurus Soft Tissue",
+	"item.lostworlds.syringe_of_carnotaurus_blood": "Syringe of Carnotaurus Blood",
+	"item.lostworlds.vile_of_carnotaurus_blood": "Vile of Carnotaurus Blood",
 	"toolTip.lostworlds.carnotaurus_dna_disc.holding_shift": "Storing: Carnotaurus sastrei",
 	"toolTip.lostworlds.carnotaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.carnotaurus_egg": "Carnotaurus Egg",
@@ -132,6 +156,9 @@
 	//Tyrannosaurus	
 	"item.lostworlds.tyrannosaurus_dna": "Tyrannosaurus DNA",
 	"item.lostworlds.tyrannosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.tyrannosaurus_soft_tissue": "Tyrannosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_tyrannosaurus_blood": "Syringe of Tyrannosaurus Blood",
+	"item.lostworlds.vile_of_tyrannosaurus_blood": "Vile of Tyrannosaurus Blood",
 	"toolTip.lostworlds.tyrannosaurus_dna_disc.holding_shift": "Storing: Tyrannosaurus rex",
 	"toolTip.lostworlds.tyrannosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"block.lostworlds.tyrannosaurus_egg": "Tyrannosaurus Egg",
@@ -142,6 +169,9 @@
 	//Allosaurus	
 	"item.lostworlds.allosaurus_dna": "Allosaurus DNA",
 	"item.lostworlds.allosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.allosaurus_soft_tissue": "Allosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_allosaurus_blood": "Syringe of Allosaurus Blood",
+	"item.lostworlds.vile_of_allosaurus_blood": "Vile of Allosaurus Blood",
 	"toolTip.lostworlds.allosaurus_dna_disc.holding_shift": "Storing: Allosaurus fragilis",
 	"toolTip.lostworlds.allosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_allosaurus_meat": "Raw Allosaurus Meat",
@@ -151,6 +181,9 @@
 	//Giganotosaurus	
 	"item.lostworlds.giganotosaurus_dna": "Giganotosaurus DNA",
 	"item.lostworlds.giganotosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.giganotosaurus_soft_tissue": "Giganotosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_giganotosaurus_blood": "Syringe of Giganotosaurus Blood",
+	"item.lostworlds.vile_of_giganotosaurus_blood": "Vile of Giganotosaurus Blood",
 	"toolTip.lostworlds.giganotosaurus_dna_disc.holding_shift": "Storing: Giganotosaurus carolinii",
 	"toolTip.lostworlds.giganotosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_giganotosaurus_meat": "Raw Giganotosaurus Meat",
@@ -160,6 +193,9 @@
 	//Suchomimus	
 	"item.lostworlds.suchomimus_dna": "Suchomimus DNA",
 	"item.lostworlds.suchomimus_dna_disc": "Storage Disc",
+	"item.lostworlds.suchomimus_soft_tissue": "Suchomimus Soft Tissue",
+	"item.lostworlds.syringe_of_suchomimus_blood": "Syringe of Suchomimus Blood",
+	"item.lostworlds.vile_of_suchomimus_blood": "Vile of Suchomimus Blood",
 	"toolTip.lostworlds.suchomimus_dna_disc.holding_shift": "Storing: Suchomimus tenerensis",
 	"toolTip.lostworlds.suchomimus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_suchomimus_meat": "Raw Suchomimus Meat",
@@ -169,6 +205,9 @@
 	//Tetraceratops	
 	"item.lostworlds.tetraceratops_dna": "Tetraceratops DNA",
 	"item.lostworlds.tetraceratops_dna_disc": "Storage Disc",
+	"item.lostworlds.tetraceratops_soft_tissue": "Tetraceratops Soft Tissue",
+	"item.lostworlds.syringe_of_tetraceratops_blood": "Syringe of Tetraceratops Blood",
+	"item.lostworlds.vile_of_tetraceratops_blood": "Vile of Tetraceratops Blood",
 	"toolTip.lostworlds.tetraceratops_dna_disc.holding_shift": "Storing: Tetraceratops insignis",
 	"toolTip.lostworlds.tetraceratops_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_tetraceratops_meat": "Raw Tetraceratops Meat",
@@ -178,6 +217,9 @@
 	//Great Auk	
 	"item.lostworlds.great_auk_dna": "Great Auk DNA",
 	"item.lostworlds.great_auk_dna_disc": "Storage Disc",
+	"item.lostworlds.great_auk_soft_tissue": "Great Auk Soft Tissue",
+	"item.lostworlds.syringe_of_great_auk_blood": "Syringe of Great Auk Blood",
+	"item.lostworlds.vile_of_great_auk_blood": "Vile of Great Auk Blood",
 	"toolTip.lostworlds.great_auk_dna_disc.holding_shift": "Storing: Pinguinus impennis",
 	"toolTip.lostworlds.great_auk_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_great_auk_meat": "Raw Great Auk Meat",
@@ -188,6 +230,9 @@
 	//Ouranosaurus
 	"item.lostworlds.ouranosaurus_dna": "Ouranosaurus DNA",
 	"item.lostworlds.ouranosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.ouranosaurus_soft_tissue": "Ouranosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_ouranosaurus_blood": "Syringe of Ouranosaurus Blood",
+	"item.lostworlds.vile_of_ouranosaurus_blood": "Vile of Ouranosaurus Blood",
 	"toolTip.lostworlds.ouranosaurus_dna_disc.holding_shift": "Storing: Ouranosaurus nigeriensis",
 	"toolTip.lostworlds.ouranosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_ouranosaurus_meat": "Raw Ouranosaurus Meat",
@@ -197,6 +242,9 @@
 	//Fukuivenator
 	"item.lostworlds.fukuivenator_dna": "Fukuivenator DNA",
 	"item.lostworlds.fukuivenator_dna_disc": "Storage Disc",
+	"item.lostworlds.fukuivenator_soft_tissue": "Fukuivenator Soft Tissue",
+	"item.lostworlds.syringe_of_fukuivenator_blood": "Syringe of Fukuivenator Blood",
+	"item.lostworlds.vile_of_fukuivenator_blood": "Vile of Fukuivenator Blood",
 	"toolTip.lostworlds.fukuivenator_dna_disc.holding_shift": "Storing: Fukuivenator paradoxus",
 	"toolTip.lostworlds.fukuivenator_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_fukuivenator_meat": "Raw Fukuivenator Meat",
@@ -206,6 +254,9 @@
 	//Psittacosaurus
 	"item.lostworlds.psittacosaurus_dna": "Psittacosaurus DNA",
 	"item.lostworlds.psittacosaurus_dna_disc": "Storage Disk",
+	"item.lostworlds.psittacosaurus_soft_tissue": "Psittacosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_psittacosaurus_blood": "Syringe of Psittacosaurus Blood",
+	"item.lostworlds.vile_of_psittacosaurus_blood": "Vile of Psittacosaurus Blood",
 	"toolTip.lostworlds.psittacosaurus_dna_disc.holding_shift": "Storing: Psittacosaurus mongoliensis",
 	"toolTip.lostworlds.psittacosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_psittacosaurus_meat": "Raw Psittacosaurus Meat",
@@ -215,6 +266,9 @@
 	//Cryolophosaurus
 	"item.lostworlds.cryolophosaurus_dna": "Cryolophosaurus DNA",
 	"item.lostworlds.cryolophosaurus_dna_disc": "Storage Disk",
+	"item.lostworlds.cryolophosaurus_soft_tissue": "Cryolophosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_cryolophosaurus_blood": "Syringe of Cryolophosaurus Blood",
+	"item.lostworlds.vile_of_cryolophosaurus_blood": "Vile of Cryolophosaurus Blood",
 	"toolTip.lostworlds.cryolophosaurus_dna_disc.holding_shift": "Storing: Cryolophosaurus ellioti",
 	"toolTip.lostworlds.cryolophosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_cryolophosaurus_meat": "Raw Cryolophosaurus Meat",
@@ -224,6 +278,9 @@
 	//Ostromia
 	"item.lostworlds.ostromia_dna": "Ostromia DNA",
 	"item.lostworlds.ostromia_dna_disc": "Storage Disc",
+	"item.lostworlds.ostromia_soft_tissue": "Ostromia Soft Tissue",
+	"item.lostworlds.syringe_of_ostromia_blood": "Syringe of Ostromia Blood",
+	"item.lostworlds.vile_of_ostromia_blood": "Vile of Ostromia Blood",
 	"toolTip.lostworlds.ostromia_dna_disc.holding_shift": "Storing: Ostromia crassipes",
 	"toolTip.lostworlds.ostromia_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_ostromia_meat": "Raw Ostromia Meat",
@@ -233,6 +290,9 @@
 	//Protosuchus
 	"item.lostworlds.protosuchus_dna": "Protosuchus DNA",
 	"item.lostworlds.protosuchus_dna_disc": "Storage Disc",
+	"item.lostworlds.protosuchus_soft_tissue": "Protosuchus Soft Tissue",
+	"item.lostworlds.syringe_of_protosuchus_blood": "Syringe of Protosuchus Blood",
+	"item.lostworlds.vile_of_protosuchus_blood": "Vile of Protosuchus Blood",
 	"toolTip.lostworlds.protosuchus_dna_disc.holding_shift": "Storing: Protosuchus richardsoni",
 	"toolTip.lostworlds.protosuchus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_protosuchus_meat": "Raw Protosuchus Meat",
@@ -242,6 +302,9 @@
 	//Diictodon
 	"item.lostworlds.diictodon_dna": "Diictodon DNA",
 	"item.lostworlds.diictodon_dna_disc": "Storage Disc",
+	"item.lostworlds.diictodon_soft_tissue": "Diictodon Soft Tissue",
+	"item.lostworlds.syringe_of_diictodon_blood": "Syringe of Diictodon Blood",
+	"item.lostworlds.vile_of_diictodon_blood": "Vile of Diictodon Blood",
 	"toolTip.lostworlds.diictodon_dna_disc.holding_shift": "Storing: Diictodon psittacops",
 	"toolTip.lostworlds.diictodon_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_diictodon_meat": "Raw Diictodon Meat",
@@ -251,6 +314,9 @@
 	//Kentrosaurus
 	"item.lostworlds.kentrosaurus_dna": "Kentrosaurus DNA",
 	"item.lostworlds.kentrosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.kentrosaurus_soft_tissue": "Kentrosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_kentrosaurus_blood": "Syringe of Kentrosaurus Blood",
+	"item.lostworlds.vile_of_kentrosaurus_blood": "Vile of Kentrosaurus Blood",
 	"toolTip.lostworlds.kentrosaurus_dna_disc.holding_shift": "Storing: Kentrosaurus aethiopicus",
 	"toolTip.lostworlds.kentrosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_kentrosaurus_meat": "Raw Kentrosaurus Meat",
@@ -260,20 +326,14 @@
 	//Chilesaurus
 	"item.lostworlds.chilesaurus_dna": "Chilesaurus DNA",
 	"item.lostworlds.chilesaurus_dna_disc": "Storage Disk",
+	"item.lostworlds.chilesaurus_soft_tissue": "Chilesaurus Soft Tissue",
+	"item.lostworlds.syringe_of_chilesaurus_blood": "Syringe of Chilesaurus Blood",
+	"item.lostworlds.vile_of_chilesaurus_blood": "Vile of Chilesaurus Blood",
 	"toolTip.lostworlds.chilesaurus_dna_disc.holding_shift": "Storing: Chilesaurus diegosuarezi",
 	"toolTip.lostworlds.chilesaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
 	"item.lostworlds.raw_chilesaurus_meat": "Raw Chilesaurus Meat",
 	"item.lostworlds.cooked_chilesaurus_meat": "Cooked Chilesaurus Meat",
 	"item.lostworlds.chilesaurus_spawn_egg": "Chilesaurus Spawn Egg",
-	
-	//Ophthalmosaurus
-	"item.lostworlds.ophthalmosaurus_dna": "Ophthalmosaurus DNA",
-	"item.lostworlds.ophthalmosaurus_dna_disc": "Storage Disk",
-	"toolTip.lostworlds.ophthalmosaurus_dna_disc.holding_shift": "Storing: Ophthalmosaurus icenicus",
-	"toolTip.lostworlds.ophthalmosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
-	"item.lostworlds.raw_ophthalmosaurus_meat": "Raw Ophthalmosaurus Meat",
-	"item.lostworlds.cooked_ophthalmosaurus_meat": "Cooked Ophthalmosaurus Meat",
-	"item.lostworlds.ophthalmosaurus_spawn_egg": "Ophthalmosaurus Spawn Egg",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -1073,6 +1133,48 @@
 
 	"lostworlds.advancements.paleontology.baby_time_lord.title": "Baby Time Lord",
 	"lostworlds.advancements.paleontology.baby_time_lord.description": "Get a time book!",
+
+	"lostworlds.advancements.paleontology.the_broken_kt_boundary.title": "The Broken K-T Boundary",
+	"lostworlds.advancements.paleontology.the_broken_kt_boundary.description": "Obtain DNA!",
+
+	"lostworlds.advancements.paleontology.digitalisation.title": "Digitalisation",
+	"lostworlds.advancements.paleontology.digitalisation.description": "Store DNA on a disc!",
+
+	"lostworlds.advancements.paleontology.long_lost_skin.title": "Long Lost Skin",
+	"lostworlds.advancements.paleontology.long_lost_skin.description": "Find soft tiussue from grinding up fossils!",
+
+	"lostworlds.advancements.paleontology.broken_heart.title": "Broken Heart",
+	"lostworlds.advancements.paleontology.broken_heart.description": "Find a broken crystal scarab gem, the heart of ancient civilisations!",
+
+	"lostworlds.advancements.paleontology.the_gem.title": "The Gem",
+	"lostworlds.advancements.paleontology.the_gem.description": "Repair a broken crystal scarab gem!",
+
+	"lostworlds.advancements.paleontology.cheat.title": "Cheat!",
+	"lostworlds.advancements.paleontology.cheat.description": "Take blood from an ancient, or modern creatuure to clone it!",
+
+	"lostworlds.advancements.paleontology.for_storage.title": "For Storage!",
+	"lostworlds.advancements.paleontology.for_storage.description": "Make a vile!",
+
+	"lostworlds.advancements.paleontology.tech_up.title": "Tech Up!",
+	"lostworlds.advancements.paleontology.tech_up.description": "Obtain copper ore!",
+
+	"lostworlds.advancements.paleontology.electrified.title": "Eletrified",
+	"lostworlds.advancements.paleontology.electrified.description": "Obtain copper wire!",
+
+	"lostworlds.advancements.paleontology.the_brain.title": "The Brain",
+	"lostworlds.advancements.paleontology.the_brain.description": "Craft a motherboard!",
+
+	"lostworlds.advancements.paleontology.the_eyes.title": "The Eyes?",
+	"lostworlds.advancements.paleontology.the_eyes.description": "Craft a computer screen!",
+
+	"lostworlds.advancements.paleontology.the_dot_dot_dot.title": "The ...",
+	"lostworlds.advancements.paleontology.the_dot_dot_dot.description": "Craft a computer fan!",
+
+	"lostworlds.advancements.paleontology.the_heart.title": "The Heart",
+	"lostworlds.advancements.paleontology.the_heart.description": "Craft a cpu!",
+
+	"lostworlds.advancements.paleontology.the_body.title": "The Body",
+	"lostworlds.advancements.paleontology.the_body.description": "Craft a computer frame!",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds_fossils": "Lost Worlds Fossils",

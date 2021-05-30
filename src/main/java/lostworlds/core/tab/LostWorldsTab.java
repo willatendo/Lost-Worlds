@@ -73,10 +73,8 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.FEILD_GUIDE.get().getDefaultInstance());
 		
 		item.add(ItemInit.EMPTY_SYRINGE.get().getDefaultInstance());
-		item.add(ItemInit.BLOOD_SYRINGE.get().getDefaultInstance());
 		
 		item.add(ItemInit.EMPTY_VILE.get().getDefaultInstance());
-		item.add(ItemInit.BLOOD_VILE.get().getDefaultInstance());
 		
 		item.add(ItemInit.STORAGE_DISC.get().getDefaultInstance());
 
@@ -107,7 +105,7 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.DIMETRODON_DNA.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_DNA.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_DNA.get().getDefaultInstance());
-		item.add(ItemInit.FUKUVENATOR_DNA.get().getDefaultInstance());
+		item.add(ItemInit.FUKUIVENATOR_DNA.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_DNA.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_DNA.get().getDefaultInstance());
@@ -132,7 +130,7 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.DIMETRODON_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_DNA_DISC.get().getDefaultInstance());
-		item.add(ItemInit.FUKUVENATOR_DNA_DISC.get().getDefaultInstance());
+		item.add(ItemInit.FUKUIVENATOR_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_DNA_DISC.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_DNA_DISC.get().getDefaultInstance());
@@ -157,7 +155,7 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.DIMETRODON_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_MEAT.get().getDefaultInstance());
-		item.add(ItemInit.FUKUVENATOR_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.FUKUIVENATOR_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_MEAT.get().getDefaultInstance());
@@ -182,7 +180,7 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.DIMETRODON_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_COOKED_MEAT.get().getDefaultInstance());
-		item.add(ItemInit.FUKUVENATOR_COOKED_MEAT.get().getDefaultInstance());
+		item.add(ItemInit.FUKUIVENATOR_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_COOKED_MEAT.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_COOKED_MEAT.get().getDefaultInstance());
@@ -217,7 +215,7 @@ public class LostWorldsTab extends ItemGroup
 		item.add(ItemInit.DIMETRODON_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.DIICTODON_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.EDAPHOSAURUS_SPAWN_EGG.get().getDefaultInstance());
-		item.add(ItemInit.FUKUVENATOR_SPAWN_EGG.get().getDefaultInstance());
+		item.add(ItemInit.FUKUIVENATOR_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GIGANOTOSAURUS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GORGONOPS_SPAWN_EGG.get().getDefaultInstance());
 		item.add(ItemInit.GREAT_AUK_SPAWN_EGG.get().getDefaultInstance());

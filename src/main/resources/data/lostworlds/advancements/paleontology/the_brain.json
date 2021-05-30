@@ -1,0 +1,33 @@
+{
+	"parent": "lostworlds:paleontology/electrified",
+	"display": {
+		"icon": {
+			"item": "lostworlds:motherboard"
+		},
+		"title": {
+			"translate": "lostworlds.advancements.paleontology.the_brain.title"
+		},
+		"description": {
+			"translate": "lostworlds.advancements.paleontology.the_brain.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"get_stone": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+			"items": [
+				{
+					"item": "lostworlds:motherboard"
+				}]
+			}	
+		}
+	},
+	"requirements": [
+	[
+		"get_stone"
+	]]
+}

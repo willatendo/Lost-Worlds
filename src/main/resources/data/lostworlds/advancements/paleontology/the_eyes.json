@@ -1,0 +1,33 @@
+{
+	"parent": "lostworlds:paleontology/electrified",
+	"display": {
+		"icon": {
+			"item": "lostworlds:computer_screen"
+		},
+		"title": {
+			"translate": "lostworlds.advancements.paleontology.the_eyes.title"
+		},
+		"description": {
+			"translate": "lostworlds.advancements.paleontology.the_eyes.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"get_stone": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+			"items": [
+				{
+					"item": "lostworlds:computer_screen"
+				}]
+			}	
+		}
+	},
+	"requirements": [
+	[
+		"get_stone"
+	]]
+}
