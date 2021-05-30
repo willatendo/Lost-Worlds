@@ -38,17 +38,17 @@ public class BiomeInit
 	public static final RegistryObject<Biome> PERMIAN_MOUNTAINS = createBiome("permian_mountains", ModBiomeMaker::makeAPermianMountains);
 	public static final RegistryKey<Biome> PERMIAN_MOUNTAINS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_mountains"));
 	
-	public static final RegistryObject<Biome> CONIFER_FOREST = createBiome("permian_conifer_forest", ModBiomeMaker::makeAPermianConiferForest);
-	public static final RegistryKey<Biome> CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_conifer_forest"));
+	public static final RegistryObject<Biome> PERMIAN_CONIFER_FOREST = createBiome("permian_conifer_forest", ModBiomeMaker::makeAPermianConiferForest);
+	public static final RegistryKey<Biome> PERMIAN_CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_conifer_forest"));
 	
-	public static final RegistryObject<Biome> CONIFER_FOREST_HILLS = createBiome("permian_conifer_forest_hills", ModBiomeMaker::makeAPermianConiferForestHills);
-	public static final RegistryKey<Biome> CONIFER_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_conifer_forest_hills"));
+	public static final RegistryObject<Biome> PERMIAN_CONIFER_FOREST_HILLS = createBiome("permian_conifer_forest_hills", ModBiomeMaker::makeAPermianConiferForestHills);
+	public static final RegistryKey<Biome> PERMIAN_CONIFER_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_conifer_forest_hills"));
 	
-	public static final RegistryObject<Biome> GINKGO_FOREST = createBiome("permian_ginkgo_forest", ModBiomeMaker::makeAPermianGinkgoForest);
-	public static final RegistryKey<Biome> GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_ginkgo_forest"));
+	public static final RegistryObject<Biome> PERMIAN_GINKGO_FOREST = createBiome("permian_ginkgo_forest", ModBiomeMaker::makeAPermianGinkgoForest);
+	public static final RegistryKey<Biome> PERMIAN_GINKGO_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_ginkgo_forest"));
 	
-	public static final RegistryObject<Biome> GINKGO_FOREST_HILLS = createBiome("permian_ginkgo_forest_hills", ModBiomeMaker::makeAPermianGinkgoForestHills);
-	public static final RegistryKey<Biome> GINKGO_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_ginkgo_forest_hills"));
+	public static final RegistryObject<Biome> PERMIAN_GINKGO_FOREST_HILLS = createBiome("permian_ginkgo_forest_hills", ModBiomeMaker::makeAPermianGinkgoForestHills);
+	public static final RegistryKey<Biome> PERMIAN_GINKGO_FOREST_HILLS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_ginkgo_forest_hills"));
 	
 	public static final RegistryObject<Biome> PERMIAN_RIVER = createBiome("permian_river", ModBiomeMaker::makeAPermianRiver);
 	public static final RegistryKey<Biome> PERMIAN_RIVER_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "permian_river"));
@@ -94,6 +94,9 @@ public class BiomeInit
 	
 	public static final RegistryObject<Biome> JURASSIC_ISLANDS = createBiome("jurassic_islands", ModBiomeMaker::makeAJurassicIslands);
 	public static final RegistryKey<Biome> JURASSIC_ISLANDS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_islands"));
+	
+	public static final RegistryObject<Biome> JURASSIC_SHORE = createBiome("jurassic_shore", ModBiomeMaker::makeAJurassicShore);
+	public static final RegistryKey<Biome> JURASSIC_SHORE_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_shore"));
 	
 	public static final RegistryObject<Biome> JURASSIC_OCEAN = createBiome("jurassic_ocean", ModBiomeMaker::makeAJurassicOcean);
 	public static final RegistryKey<Biome> JURASSIC_OCEAN_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_ocean"));

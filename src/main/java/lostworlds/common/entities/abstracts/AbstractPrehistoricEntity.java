@@ -1,14 +1,17 @@
 package lostworlds.common.entities.abstracts;
 
 import java.util.EnumSet;
+import java.util.Random;
 
 import lostworlds.common.goal.ModSwimGoal;
 import lostworlds.common.goal.ModSwimSemiAquaticGoal;
 import lostworlds.core.util.enums.TimeEras;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
@@ -28,10 +31,13 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.GroundPathNavigator;
 import net.minecraft.pathfinding.PathNavigator;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityPredicates;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public abstract class AbstractPrehistoricEntity extends CreatureEntity
@@ -99,6 +105,22 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	public boolean isLandAndWater()
 	{
 		return this.isLandAndWater;
+	}
+	
+	public boolean checkAnimalSpawnRules(EntityType<? extends AbstractPrehistoricEntity> entity, IWorld world, SpawnReason reason, BlockPos pos, Random rand) 
+	{
+		if(isFish())
+		{
+			return world.getBlockState(pos.above()).is(Blocks.WATER) && world.getBlockState(pos).is(Blocks.WATER);
+		}
+		if(isLandAndWater())
+		{
+			return world.getBlockState(pos.above()).is(Blocks.WATER) && world.getBlockState(pos).is(Blocks.WATER) || world.getBlockState(pos.above()).is(BlockTags.VALID_SPAWN) && world.getBlockState(pos).is(Blocks.AIR);
+		}
+		else
+		{
+			return world.getBlockState(pos.above()).is(BlockTags.VALID_SPAWN) && world.getBlockState(pos).is(Blocks.AIR);
+		}
 	}
 	
 	@Override

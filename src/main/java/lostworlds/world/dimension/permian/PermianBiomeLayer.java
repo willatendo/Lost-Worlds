@@ -20,10 +20,10 @@ public class PermianBiomeLayer implements IAreaTransformer0
     });
     protected int[] rareBiomes = (new int[]
     {
-    	PermianLayerUtil.getBiomeId(BiomeInit.CONIFER_FOREST_KEY),
-    	PermianLayerUtil.getBiomeId(BiomeInit.CONIFER_FOREST_HILLS_KEY),
-    	PermianLayerUtil.getBiomeId(BiomeInit.GINKGO_FOREST_KEY),
-    	PermianLayerUtil.getBiomeId(BiomeInit.GINKGO_FOREST_HILLS_KEY),
+    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_CONIFER_FOREST_KEY),
+    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_CONIFER_FOREST_HILLS_KEY),
+    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_GINKGO_FOREST_KEY),
+    	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_GINKGO_FOREST_HILLS_KEY),
     	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_OCEAN_KEY),
     	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_PLAINS_KEY),
     	PermianLayerUtil.getBiomeId(BiomeInit.PERMIAN_PLAINS_HILLS_KEY)

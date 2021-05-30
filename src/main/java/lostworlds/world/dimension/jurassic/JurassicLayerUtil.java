@@ -12,7 +12,6 @@ import net.minecraft.world.gen.area.IAreaFactory;
 import net.minecraft.world.gen.area.LazyArea;
 import net.minecraft.world.gen.layer.Layer;
 import net.minecraft.world.gen.layer.LayerUtil;
-import net.minecraft.world.gen.layer.ShoreLayer;
 import net.minecraft.world.gen.layer.SmoothLayer;
 import net.minecraft.world.gen.layer.ZoomLayer;
 
@@ -39,17 +38,13 @@ public class JurassicLayerUtil
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1005), biomes);
 
         biomes = LayerUtil.zoom(1000L, ZoomLayer.NORMAL, biomes, 1, contextFactory);
-        
-        IAreaFactory<T> lvt_7_1_ = (new JurassicBiomeLayer()).run(contextFactory.apply(200L));
-        
-        for(int i = 0; i < 4; ++i) 
-        {
-        	if(i == 1 || 4 == 1) 
-        	{
-        		lvt_7_1_ = ShoreLayer.INSTANCE.run(contextFactory.apply(1000L), lvt_7_1_);
-        	}
-        }
-        
+              
+        JurassicAraucariaHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
+        JurassicConiferHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
+        JurassicDesertHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
+        JurassicGinkgoHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
+        JurassicPlainsHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
+
         IAreaFactory<T> riverLayer = JurassicRiverLayer.INSTANCE.run(contextFactory.apply(1L), biomes);
         riverLayer = SmoothLayer.INSTANCE.run(contextFactory.apply(7000L), riverLayer);
         biomes = JurassicRiverMixLayer.INSTANCE.run(contextFactory.apply(100L), biomes, riverLayer);
@@ -62,5 +57,15 @@ public class JurassicLayerUtil
         biomeRegistry = registry;
         IAreaFactory<LazyArea> areaFactory = makeLayers((contextSeed) -> new LazyAreaLayerContext(25, seed, contextSeed), registry);
         return new Layer(areaFactory);
+    }
+    
+    protected static boolean isOcean(int i) 
+    {
+    	return i == 44 || i == 45 || i == 0 || i == 46 || i == 10 || i == 47 || i == 48 || i == 24 || i == 49 || i == 50;
+    }
+    
+    protected static boolean isShallowOcean(int i) 
+    {
+    	return i == 44 || i == 45 || i == 0 || i == 46 || i == 10;
     }
 }

@@ -1,17 +1,14 @@
 package lostworlds.common.entities.abstracts;
 
-import java.util.Random;
 import java.util.UUID;
 
 import javax.annotation.Nullable;
 
 import lostworlds.common.events.PrehistoricBabySpawnEvent;
 import lostworlds.common.triggers.ModCriteriaTriggers;
-import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.item.ExperienceOrbEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -26,7 +23,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -116,11 +112,6 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		super.readAdditionalSaveData(nbt);
 		this.inLove = nbt.getInt("InLove");
 		this.loveCause = nbt.hasUUID("LoveCause") ? nbt.getUUID("LoveCause") : null;
-	}
-	
-	public static boolean checkAnimalSpawnRules(EntityType<? extends AbstractPrehistoricAnimalEntity> entity, IWorld world, SpawnReason spawnReason, BlockPos pos, Random rand) 
-	{
-		return world.getBlockState(pos.below()).is(BlockInit.NESTING_BLOCK.get()) && world.getRawBrightness(pos, 0) > 8;
 	}
 	
 	public int getAmbientSoundInterval() 
