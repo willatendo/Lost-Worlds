@@ -1,6 +1,7 @@
 package lostworlds.core.util.registry;
 
 import lostworlds.core.init.BlockInit;
+import lostworlds.core.init.ContainerInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.PaintingInit;
@@ -77,6 +78,7 @@ public class ModRegistry
 		RecipeSerialiserInit.initRecipeSerialisers();
 		ItemInit.initItems();
 		PaintingInit.initPaintings();
+		ContainerInit.initContianers();
 		TileEntityInit.initTileEntities(); 
 		BlockInit.initBlocks();
 		PointsOfInterestInit.initPointsOfInterest();;

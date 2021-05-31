@@ -6,23 +6,24 @@ import javax.annotation.Nullable;
 
 import org.lwjgl.glfw.GLFW;
 
+import lostworlds.common.container.TimeMachineContainer;
+import lostworlds.common.tileentity.TimeMachineTileEntity;
 import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.TextUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ContainerBlock;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.util.InputMappings;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.container.EnchantmentContainer;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathType;
-import net.minecraft.tileentity.EnchantingTableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -37,7 +38,8 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class TimeMachineBlock extends ContainerBlock
+@SuppressWarnings("deprecation")
+public class TimeMachineBlock extends ContainerBlock implements ITileEntityProvider	
 {
 	public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 10, 16);
 	
@@ -79,7 +81,7 @@ public class TimeMachineBlock extends ContainerBlock
 	
 	public TileEntity newBlockEntity(IBlockReader reader) 
 	{
-		return new EnchantingTableTileEntity();
+		return new TimeMachineTileEntity();
 	}
 		
 	@Override
@@ -100,12 +102,12 @@ public class TimeMachineBlock extends ContainerBlock
 	public INamedContainerProvider getMenuProvider(BlockState state, World world, BlockPos pos) 
 	{
 		TileEntity tileentity = world.getBlockEntity(pos);
-		if(tileentity instanceof EnchantingTableTileEntity) 
+		if(tileentity instanceof TimeMachineTileEntity) 
 		{
 			ITextComponent itextcomponent = ((INameable)tileentity).getDisplayName();
 			return new SimpleNamedContainerProvider((p_220147_2_, p_220147_3_, p_220147_4_) -> 
 			{
-				return new EnchantmentContainer(p_220147_2_, p_220147_3_, IWorldPosCallable.create(world, pos));
+				return new TimeMachineContainer(p_220147_2_, p_220147_3_, IWorldPosCallable.create(world, pos));
 			}, itextcomponent);
 		} 
 		else 
@@ -119,9 +121,9 @@ public class TimeMachineBlock extends ContainerBlock
 		if(stack.hasCustomHoverName()) 
 		{
 			TileEntity tileentity = world.getBlockEntity(pos);
-			if(tileentity instanceof EnchantingTableTileEntity) 
+			if(tileentity instanceof TimeMachineTileEntity) 
 			{
-				((EnchantingTableTileEntity)tileentity).setCustomName(stack.getHoverName());
+				((TimeMachineTileEntity)tileentity).setCustomName(stack.getHoverName());
 			}
 		}
 	}

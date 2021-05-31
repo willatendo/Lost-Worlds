@@ -1098,6 +1098,9 @@
 	"lostworlds.transport_to_permian": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Permian\u00A7f!",
 	"lostworlds.doesnt_work": "Cannot Transport \u00A7bPlayer \u00A7fin This Dimension!",
 
+	//Time Machine
+	"lostworlds.container.time_machine": "Time Machine",
+
 	"lostworlds.advancements.paleontology.root.title": "Paleontology",
 	"lostworlds.advancements.paleontology.root.description": "You played paleontology side of the mod!",
 

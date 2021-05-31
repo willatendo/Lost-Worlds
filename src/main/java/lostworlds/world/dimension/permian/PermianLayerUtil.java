@@ -37,11 +37,6 @@ public class PermianLayerUtil
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1003), biomes);
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1004), biomes);
         biomes = ZoomLayer.NORMAL.run(contextFactory.apply(1005), biomes);
-        
-        PermianConiferHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
-        PermianDesertHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
-        PermianGinkgoHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
-        PermianPlainsHillLayer.INSTANCE.run(contextFactory.apply(100L), biomes);
 
         biomes = LayerUtil.zoom(1000L, ZoomLayer.NORMAL, biomes, 1, contextFactory);
 
