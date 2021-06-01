@@ -2,6 +2,7 @@ package lostworlds.world.init;
 
 import java.util.function.Supplier;
 
+import lostworlds.LostWorldsConfig;
 import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.world.biome.ModBiomeMaker;
@@ -95,9 +96,6 @@ public class BiomeInit
 	public static final RegistryObject<Biome> JURASSIC_ISLANDS = createBiome("jurassic_islands", ModBiomeMaker::makeAJurassicIslands);
 	public static final RegistryKey<Biome> JURASSIC_ISLANDS_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_islands"));
 	
-	public static final RegistryObject<Biome> JURASSIC_SHORE = createBiome("jurassic_shore", ModBiomeMaker::makeAJurassicShore);
-	public static final RegistryKey<Biome> JURASSIC_SHORE_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_shore"));
-	
 	public static final RegistryObject<Biome> JURASSIC_OCEAN = createBiome("jurassic_ocean", ModBiomeMaker::makeAJurassicOcean);
 	public static final RegistryKey<Biome> JURASSIC_OCEAN_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_ocean"));
 	
@@ -133,46 +131,52 @@ public class BiomeInit
     //Generation
     public static void addBiomesToOverworld(BiomeLoadingEvent event)
     {
-    	if(event.getName().equals(VOLCANO.get().getRegistryName())) 
+    	if(LostWorldsConfig.COMMON.shouldForestsSpawnInOverworld.get())
     	{
-    		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(VOLCANO_KEY, 1));
-    		BiomeDictionary.addTypes(VOLCANO_KEY, Type.HOT, Type.MOUNTAIN, Type.RARE);
+    		if(event.getName().equals(OVERWORLD_CONIFER_FOREST.get().getRegistryName())) 
+        	{
+        		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_CONIFER_FOREST_KEY, LostWorldsConfig.COMMON.coniferWeight.get()));
+        		BiomeDictionary.addTypes(OVERWORLD_CONIFER_FOREST_KEY, Type.FOREST, Type.CONIFEROUS);
+        	}
+        	
+        	if(event.getName().equals(OVERWORLD_CONIFER_FOREST_HILLS.get().getRegistryName())) 
+        	{
+        		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_CONIFER_FOREST_HILLS_KEY, LostWorldsConfig.COMMON.coniferWeight.get()));
+        		BiomeDictionary.addTypes(OVERWORLD_CONIFER_FOREST_HILLS_KEY, Type.FOREST, Type.CONIFEROUS, Type.HILLS);
+        	}
+        	
+        	if(event.getName().equals(OVERWORLD_GINKGO_FOREST.get().getRegistryName())) 
+        	{
+        		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_GINKGO_FOREST_KEY, LostWorldsConfig.COMMON.ginkgoWeight.get()));
+        		BiomeDictionary.addTypes(OVERWORLD_GINKGO_FOREST_KEY, Type.FOREST);
+        	}
+        	
+        	if(event.getName().equals(OVERWORLD_GINKGO_FOREST_HILLS.get().getRegistryName())) 
+        	{
+        		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_GINKGO_FOREST_HILLS_KEY, LostWorldsConfig.COMMON.ginkgoWeight.get()));
+        		BiomeDictionary.addTypes(OVERWORLD_GINKGO_FOREST_HILLS_KEY, Type.FOREST, Type.HILLS);
+        	}
+        	
+        	if(event.getName().equals(OVERWORLD_ARAUCARIA_FOREST.get().getRegistryName())) 
+        	{
+        		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_ARAUCARIA_FOREST_KEY, LostWorldsConfig.COMMON.araucariaWeight.get()));
+        		BiomeDictionary.addTypes(OVERWORLD_ARAUCARIA_FOREST_KEY, Type.FOREST);
+        	}
+        	
+        	if(event.getName().equals(OVERWORLD_ARAUCARIA_FOREST_HILLS.get().getRegistryName())) 
+        	{
+        		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_ARAUCARIA_FOREST_HILLS_KEY, LostWorldsConfig.COMMON.araucariaWeight.get()));
+        		BiomeDictionary.addTypes(OVERWORLD_ARAUCARIA_FOREST_HILLS_KEY, Type.FOREST, Type.HILLS);
+        	}
     	}
     	
-    	if(event.getName().equals(OVERWORLD_CONIFER_FOREST.get().getRegistryName())) 
+    	if(LostWorldsConfig.COMMON.shouldVolcanoSpawnInOverworld.get())
     	{
-    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_CONIFER_FOREST_KEY, 3));
-    		BiomeDictionary.addTypes(OVERWORLD_CONIFER_FOREST_KEY, Type.FOREST, Type.CONIFEROUS);
-    	}
-    	
-    	if(event.getName().equals(OVERWORLD_CONIFER_FOREST_HILLS.get().getRegistryName())) 
-    	{
-    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_CONIFER_FOREST_HILLS_KEY, 3));
-    		BiomeDictionary.addTypes(OVERWORLD_CONIFER_FOREST_HILLS_KEY, Type.FOREST, Type.CONIFEROUS, Type.HILLS);
-    	}
-    	
-    	if(event.getName().equals(OVERWORLD_GINKGO_FOREST.get().getRegistryName())) 
-    	{
-    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_GINKGO_FOREST_KEY, 3));
-    		BiomeDictionary.addTypes(OVERWORLD_GINKGO_FOREST_KEY, Type.FOREST);
-    	}
-    	
-    	if(event.getName().equals(OVERWORLD_GINKGO_FOREST_HILLS.get().getRegistryName())) 
-    	{
-    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_GINKGO_FOREST_HILLS_KEY, 3));
-    		BiomeDictionary.addTypes(OVERWORLD_GINKGO_FOREST_HILLS_KEY, Type.FOREST, Type.HILLS);
-    	}
-    	
-    	if(event.getName().equals(OVERWORLD_ARAUCARIA_FOREST.get().getRegistryName())) 
-    	{
-    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_ARAUCARIA_FOREST_KEY, 3));
-    		BiomeDictionary.addTypes(OVERWORLD_ARAUCARIA_FOREST_KEY, Type.FOREST);
-    	}
-    	
-    	if(event.getName().equals(OVERWORLD_ARAUCARIA_FOREST_HILLS.get().getRegistryName())) 
-    	{
-    		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(OVERWORLD_ARAUCARIA_FOREST_HILLS_KEY, 3));
-    		BiomeDictionary.addTypes(OVERWORLD_ARAUCARIA_FOREST_HILLS_KEY, Type.FOREST, Type.HILLS);
+    		if(event.getName().equals(VOLCANO.get().getRegistryName())) 
+    		{
+    			BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(VOLCANO_KEY, 1));
+    			BiomeDictionary.addTypes(VOLCANO_KEY, Type.HOT, Type.MOUNTAIN, Type.RARE);
+    		}
     	}
     }
 }

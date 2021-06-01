@@ -140,6 +140,10 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_TRAPDOOR.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.ARCHAEOLOGY_TABLE.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.FOSSIL_CLEANER.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.FOSSIL_GRINDER.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.DNA_EXTRACTOR.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.ANALYSER.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.DNA_INJECTOR.get(), RenderType.translucent());
 		
 		//Sign
 		ClientRegistry.bindTileEntityRenderer(TileEntityInit.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);

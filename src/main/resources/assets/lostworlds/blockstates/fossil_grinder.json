@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lostworlds:block/fossil_grinder" },
+        "facing=south": { "model": "lostworlds:block/fossil_grinder", "y": 180 },
+        "facing=west":  { "model": "lostworlds:block/fossil_grinder", "y": 270 },
+        "facing=east":  { "model": "lostworlds:block/fossil_grinder", "y": 90 }
+    }
+}

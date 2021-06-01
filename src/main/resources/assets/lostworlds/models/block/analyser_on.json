@@ -8,7 +8,7 @@
 		"5": "lostworlds:blocks/machine_button_red",
 		"8": "block/redstone_lamp",
 		"9": "block/redstone_lamp_on",
-		"12": "lostworlds:items/vile",
+		"12": "lostworlds:items/empty_vile",
 		"13": "lostworlds:items/computer_storage_port",
 		"14": "lostworlds:items/storage_disc",
 		"particle": "block/glass"

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lostworlds:block/analyser" },
+        "facing=south": { "model": "lostworlds:block/analyser", "y": 180 },
+        "facing=west":  { "model": "lostworlds:block/analyser", "y": 270 },
+        "facing=east":  { "model": "lostworlds:block/analyser", "y": 90 }
+    }
+}

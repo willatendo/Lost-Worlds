@@ -8,7 +8,7 @@
 		"5": "lostworlds:blocks/machine_button_red",
 		"8": "block/redstone_lamp",
 		"11": "block/gold_block",
-		"12": "lostworlds:items/vile"
+		"12": "lostworlds:items/empty_vile"
 	},
 	"elements": [
 		{

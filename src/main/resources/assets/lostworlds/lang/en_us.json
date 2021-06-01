@@ -31,7 +31,7 @@
 
 	//Fern Litter
 	"item.lostworlds.fern_litter": "Fern Litter",
-	"item.lostworlds.cooked_fern_litter": "Cooked Fern Litter",
+	"item.lostworlds.cooked_fern_litter": "Boiled Fern Litter",
 
 	"item.lostworlds.cycad_seeds": "Cycad Seeds",
 	"item.lostworlds.osmunda_seeds": "Osmunda Seeds",
@@ -357,7 +357,7 @@
 	"item.lostworlds.jp_music_disc.desc": "John Williams - Welcome to Jurassic Park",
 
 	//Storage
-	"item.lostworlds.storage_disc": "Storage Disk",
+	"item.lostworlds.storage_disc": "Storage Disc",
 	"toolTip.lostworlds.storage_disc.holding_shift": "Stores DNA Information For Computer Use",
 	"toolTip.lostworlds.storage_disc.not_holding_shift": "Hold Shift For More Information",
 
@@ -424,6 +424,11 @@
 	"block.lostworlds.plastered_fossil": "Plastered Fossil",
 
 	//Fossil Processing
+	"block.lostworlds.fossil_cleaner": "Fossil Cleaner",
+	"block.lostworlds.fossil_grinder": "Fossil Grinder",
+	"block.lostworlds.dna_extractor": "DNA Extractor",
+	"block.lostworlds.analyser": "Analyser",
+	"block.lostworlds.dna_injector": "DNA Injector",
 
 	"block.lostworlds.power_supply_block": "Power Supply Block",
 	"toolTip.lostworlds.power_supply_block": "A Fancier Way of Powering Your Machines",
@@ -788,7 +793,7 @@
 
 	//Modern
 	"entity.minecraft.villager.lostworlds.archaeologist": "Archaeologist",
-
+	
 	//Multi Era
 	"entity.lostworlds.nautilus": "Nautilus pompilius",
 	
@@ -1071,25 +1076,51 @@
 	"lostworlds.field_guide.sex": "Sex:",
 	"lostworlds.field_guide.time_era": "Time Era:",
 	"lostworlds.field_guide.type": "Type:",
-
-	"lostworlds.field_guide.sex_male": "Male",
-	"lostworlds.field_guide.sex_female": "Female",
 		
 	//Biome
 	//Permian
-	"biome.lostworlds.flood_basalt_plains": "Flood Basalt Plains",
+	"biome.lostworlds.permian_flood_basalt_plains": "PermianFlood Basalt Plains",
 	"biome.lostworlds.permian_desert" :"Permian Desert",
+	"biome.lostworlds.permian_desert_hills" :"Permian Desert Hills",
 	"biome.lostworlds.permian_plains" :"Permian Plains",
+	"biome.lostworlds.permian_plains_hills" :"Permian Plains Hills",
+	"biome.lostworlds.permian_river" :"Permian River",
+	"biome.lostworlds.permian_mountains" :"Permian Mountains",
 	"biome.lostworlds.permian_ocean" :"Permian Ocean",
-	"biome.lostworlds.conifer_forest" :"Conifer Forest",
-	"biome.lostworlds.ginkgo_forest" :"Ginkgo Forest",
+	"biome.lostworlds.permian_conifer_forest" :"Permian Conifer Forest",
+	"biome.lostworlds.permian_conifer_forest_hills" :"Permian Conifer Forest Hills",
+	"biome.lostworlds.permian_ginkgo_forest" :"Permian Ginkgo Forest",
+	"biome.lostworlds.permian_ginkgo_forest_hills": "Permian Ginkgo Forest Hills",
+	
+	//Jurassic
+	"biome.lostworlds.jurassic_conifer_forest" :"Jurassic Conifer Forest",
+	"biome.lostworlds.jurassic_conifer_forest_hills" :"Jurassic Conifer Forest Hills",
+	"biome.lostworlds.jurassic_ginkgo_forest" :"Jurassic Ginkgo Forest",
+	"biome.lostworlds.jurassic_ginkgo_forest_hills" :"Jurassic Ginkgo Forest Hills",
+	"biome.lostworlds.jurassic_araucaria_forest" :"Jurassic Araucaria Forest",
+	"biome.lostworlds.jurassic_araucaria_forest_hills" :"Jurassic Araucaria Forest Hills",
+	"biome.lostworlds.jurassic_islands" :"Jurassic Islands",
+	"biome.lostworlds.jurassic_desert" :"Jurassic Desert",
+	"biome.lostworlds.jurassic_desert_hills" :"Jurassic Desert Hills",
+	"biome.lostworlds.jurassic_plains" :"Jurassic Plains",
+	"biome.lostworlds.jurassic_plains_hills" :"Jurassic Plains Hills",
+	"biome.lostworlds.jurassic_mountains" :"Jurassic Mountains",
+	"biome.lostworlds.jurassic_erroded_mountains" :"Jurassic Erroded Mountains",
+	"biome.lostworlds.jurassic_river" :"Jurassic River",
+	"biome.lostworlds.jurassic_ocean" :"Jurassic Ocean",
 	
 	//Modern Day
+	"biome.lostworlds.overworld_conifer_forest" :"Overworld Conifer Forest",
+	"biome.lostworlds.overworld_conifer_forest_hills" :"Overworld Conifer Forest Hills",
+	"biome.lostworlds.overworld_ginkgo_forest" :"Overworld Ginkgo Forest",
+	"biome.lostworlds.overworld_ginkgo_forest_hills" :"Overworld Ginkgo Forest Hills",
+	"biome.lostworlds.overworld_araucaria_forest" :"Overworld Araucaria Forest",
+	"biome.lostworlds.overworld_araucaria_forest_hills" :"Overworld Araucaria Forest Hills",
 	"biome.lostworlds.volcano": "Volcano",
 	
 	//On Load Event
-	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 9 Developer Edition. DO NOT REDISTRIBUTE.",
-	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 9.1",
+	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 10 Developer Edition. DO NOT REDISTRIBUTE.",
+	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 10",
 	
 	//On Book Used
 	"lostworlds.transport_to_overworld": "Transporting \u00A7bPlayer \u00A7fBack \u00A76Home\u00A7f!",
@@ -1100,6 +1131,7 @@
 	//Time Machine
 	"lostworlds.container.time_machine": "Time Machine",
 
+	//Advancements
 	"lostworlds.advancements.paleontology.root.title": "Paleontology",
 	"lostworlds.advancements.paleontology.root.description": "You played paleontology side of the mod!",
 
@@ -1139,14 +1171,14 @@
 	"lostworlds.advancements.paleontology.the_broken_kt_boundary.title": "The Broken K-T Boundary",
 	"lostworlds.advancements.paleontology.the_broken_kt_boundary.description": "Obtain DNA!",
 
-	"lostworlds.advancements.paleontology.digitalisation.title": "Digitalization",
+	"lostworlds.advancements.paleontology.digitalisation.title": "Digitalisation",
 	"lostworlds.advancements.paleontology.digitalisation.description": "Store DNA on a disc!",
 
 	"lostworlds.advancements.paleontology.long_lost_skin.title": "Long Lost Skin",
 	"lostworlds.advancements.paleontology.long_lost_skin.description": "Find soft tiussue from grinding up fossils!",
 
 	"lostworlds.advancements.paleontology.broken_heart.title": "Broken Heart",
-	"lostworlds.advancements.paleontology.broken_heart.description": "Find a broken crystal scarab gem, the heart of ancient civilizations!",
+	"lostworlds.advancements.paleontology.broken_heart.description": "Find a broken crystal scarab gem, the heart of ancient civilisations!",
 
 	"lostworlds.advancements.paleontology.the_gem.title": "The Gem",
 	"lostworlds.advancements.paleontology.the_gem.description": "Repair a broken crystal scarab gem!",

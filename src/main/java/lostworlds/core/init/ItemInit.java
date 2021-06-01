@@ -408,7 +408,11 @@ public class ItemInit
 	public static final RegistryObject<Item> PLASTERED_FOSSIL = registerFossilsTab("plastered_fossil", () -> BlockInit.PLASTERED_FOSSIL.get());
 
 	//Fossil Processing
-	//public static final RegistryObject<Item> FOSSIL_CLEANER = registerMachinesTab("fossil_cleaner", () -> BlockInit.FOSSIL_CLEANER.get());	
+	public static final RegistryObject<Item> FOSSIL_CLEANER = registerMachinesTab("fossil_cleaner", () -> BlockInit.FOSSIL_CLEANER.get());
+	public static final RegistryObject<Item> FOSSIL_GRINDER = registerMachinesTab("fossil_grinder", () -> BlockInit.FOSSIL_GRINDER.get());
+	public static final RegistryObject<Item> DNA_EXTRACTOR = registerMachinesTab("dna_extractor", () -> BlockInit.DNA_EXTRACTOR.get());
+	public static final RegistryObject<Item> ANALYSER = registerMachinesTab("analyser", () -> BlockInit.ANALYSER.get());
+	public static final RegistryObject<Item> DNA_INJECTOR = registerMachinesTab("dna_injector", () -> BlockInit.DNA_INJECTOR.get());
 	
 	public static final RegistryObject<Item> POWER_SUPPLY_BLOCK = registerMachinesTab("power_supply_block", () -> BlockInit.POWER_SUPPLY_BLOCK.get());
 

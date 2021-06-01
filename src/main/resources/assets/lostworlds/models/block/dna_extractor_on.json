@@ -9,7 +9,7 @@
 		"8": "block/redstone_lamp",
 		"9": "block/redstone_lamp_on",
 		"11": "block/gold_block",
-		"12": "lostworlds:items/vile"
+		"12": "lostworlds:items/empty_vile"
 	},
 	"elements": [
 		{
