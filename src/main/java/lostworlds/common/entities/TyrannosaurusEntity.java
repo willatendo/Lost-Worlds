@@ -11,7 +11,6 @@ import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -25,7 +24,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class TyrannosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.RABBIT, Items.CHICKEN, Items.MUTTON, Items.COD, Items.SALMON, Items.TROPICAL_FISH, ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PALAEONISCUM_MEAT.get(), ItemInit.PROCOMPSOGNATHUS_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.CARNOTAURUS_MEAT.get(), ItemInit.GIGANOTOSAURUS_MEAT.get(), ItemInit.OURANOSAURUS_MEAT.get(), ItemInit.PSITTACOSAURUS_MEAT.get(), ItemInit.SUCHOMIMUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
@@ -93,6 +92,7 @@ public class TyrannosaurusEntity extends AbstractPrehistoricAnimalEntity impleme
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, CarnotaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, FukuivenatorEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, GiganotosaurusEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, LiaoningosaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, OuranosaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PsittacosaurusEntity.class, false));
 	}

@@ -11,7 +11,6 @@ import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -25,7 +24,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE, ItemInit.FUKUIVENATOR_MEAT.get(), ItemInit.GIGANOTOSAURUS_MEAT.get(), ItemInit.OURANOSAURUS_MEAT.get(), ItemInit.PSITTACOSAURUS_DNA.get(), ItemInit.SUCHOMIMUS_MEAT.get(), ItemInit.TYRANNOSAURUS_MEAT.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.FUKUIVENATOR_MEAT.get(), ItemInit.GIGANOTOSAURUS_MEAT.get(), ItemInit.OURANOSAURUS_MEAT.get(), ItemInit.PSITTACOSAURUS_MEAT.get(), ItemInit.SUCHOMIMUS_MEAT.get(), ItemInit.TYRANNOSAURUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
@@ -92,6 +91,7 @@ public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implement
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, FukuivenatorEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, GiganotosaurusEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, LiaoningosaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, OuranosaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PsittacosaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, SuchomimusEntity.class, false));

@@ -1,6 +1,5 @@
-package lostworlds.world.init;
+package lostworlds.core.init;
 
-import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModBlockStates;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.blockplacer.DoublePlantBlockPlacer;

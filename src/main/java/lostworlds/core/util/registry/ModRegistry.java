@@ -1,20 +1,20 @@
 package lostworlds.core.util.registry;
 
+import lostworlds.core.init.BiomeInit;
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.ContainerInit;
 import lostworlds.core.init.EntityInit;
+import lostworlds.core.init.FoliagePlacerInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.PaintingInit;
 import lostworlds.core.init.ParticleInit;
 import lostworlds.core.init.PointsOfInterestInit;
 import lostworlds.core.init.RecipeSerialiserInit;
+import lostworlds.core.init.StructureInit;
+import lostworlds.core.init.SurfaceBuilderInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.init.VillagerProfessionInit;
 import lostworlds.core.util.ModUtil;
-import lostworlds.world.init.BiomeInit;
-import lostworlds.world.init.FoliagePlacerInit;
-import lostworlds.world.init.StructureInit;
-import lostworlds.world.init.SurfaceBuilderInit;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.PaintingType;

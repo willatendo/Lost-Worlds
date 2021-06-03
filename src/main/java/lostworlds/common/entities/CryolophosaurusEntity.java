@@ -13,7 +13,6 @@ import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.EntityPredicates;
 import net.minecraft.world.World;
@@ -28,7 +27,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class CryolophosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {   
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE, ItemInit.OSTROMIA_MEAT.get(), ItemInit.KENTROSAURUS_MEAT.get(), ItemInit.CHILESAURUS_MEAT.get());
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.ALLOSAURUS_MEAT.get(), ItemInit.CHILESAURUS_MEAT.get(), ItemInit.KENTROSAURUS_MEAT.get(), ItemInit.OSTROMIA_MEAT.get(), ItemInit.PROTOSUCHUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
@@ -96,9 +95,10 @@ public class CryolophosaurusEntity extends AbstractPrehistoricAnimalEntity imple
 		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, OstromiaEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ChilesaurusEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, KentrosaurusEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, OstromiaEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ProtosuchusEntity.class, false));
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, AllosaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 	}
 

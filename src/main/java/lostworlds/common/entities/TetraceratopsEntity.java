@@ -22,7 +22,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class TetraceratopsEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.DIMETRODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PALAEONISCUM_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.DIMETRODON_MEAT.get(), ItemInit.DIICTODON_MEAT.get(), ItemInit.EDAPHOSAURUS_MEAT.get(), ItemInit.GORGONOPS_MEAT.get(), ItemInit.PALAEONISCUM_MEAT.get(), ItemInit.RHINESUCHUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)

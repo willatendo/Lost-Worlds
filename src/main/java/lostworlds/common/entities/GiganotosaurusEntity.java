@@ -12,7 +12,6 @@ import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -26,7 +25,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class GiganotosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE, ItemInit.CARNOTAURUS_MEAT.get(), ItemInit.FUKUIVENATOR_MEAT.get(), ItemInit.GIGANOTOSAURUS_MEAT.get(), ItemInit.OURANOSAURUS_MEAT.get(), ItemInit.PSITTACOSAURUS_DNA.get(), ItemInit.SUCHOMIMUS_MEAT.get(), ItemInit.TYRANNOSAURUS_MEAT.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.CARNOTAURUS_MEAT.get(), ItemInit.FUKUIVENATOR_MEAT.get(), ItemInit.OURANOSAURUS_MEAT.get(), ItemInit.PSITTACOSAURUS_MEAT.get(), ItemInit.SUCHOMIMUS_MEAT.get(), ItemInit.TYRANNOSAURUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)

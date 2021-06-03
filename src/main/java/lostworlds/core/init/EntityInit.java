@@ -13,6 +13,7 @@ import lostworlds.common.entities.GorgonopsEntity;
 import lostworlds.common.entities.GreatAukEggEntity;
 import lostworlds.common.entities.GreatAukEntity;
 import lostworlds.common.entities.KentrosaurusEntity;
+import lostworlds.common.entities.LiaoningosaurusEntity;
 import lostworlds.common.entities.ModBoatEntity;
 import lostworlds.common.entities.NautilusEntity;
 import lostworlds.common.entities.OstromiaEntity;
@@ -53,11 +54,12 @@ public class EntityInit
 	public static final RegistryObject<EntityType<FukuivenatorEntity>> FUKUIVENATOR_ENTITY = registerEntity("fukuivenator", FukuivenatorEntity::new, EntityClassification.CREATURE, FukuivenatorEntity.class, 0.5F, 0.6F);
 	public static final RegistryObject<EntityType<PsittacosaurusEntity>> PSITTACOSAURUS_ENTITY = registerEntity("pisttacosaurus", PsittacosaurusEntity::new, EntityClassification.CREATURE, PsittacosaurusEntity.class, 0.5F, 0.5F);
 	public static final RegistryObject<EntityType<CryolophosaurusEntity>> CRYOLOPHOSAURUS_ENTITY = registerEntity("cryolophosaurus", CryolophosaurusEntity::new, EntityClassification.CREATURE, CryolophosaurusEntity.class, 0.75F, 1.9F);
-	public static final RegistryObject<EntityType<OstromiaEntity>> OSTROMIA_ENTITY = registerEntity("ostromia", OstromiaEntity::new, EntityClassification.CREATURE, OstromiaEntity.class, 0.5F, 0.5F);
+	public static final RegistryObject<EntityType<OstromiaEntity>> OSTROMIA_ENTITY = registerEntity("ostromia", OstromiaEntity::new, EntityClassification.CREATURE, OstromiaEntity.class, 0.3F, 0.3F);
 	public static final RegistryObject<EntityType<ProtosuchusEntity>> PROTOSUCHUS_ENTITY = registerEntity("protosuchus", ProtosuchusEntity::new, EntityClassification.CREATURE, ProtosuchusEntity.class, 0.5F, 0.5F);
 	public static final RegistryObject<EntityType<DiictodonEntity>> DIICTODON_ENTITY = registerEntity("diictodon", DiictodonEntity::new, EntityClassification.CREATURE, DiictodonEntity.class, 0.25F, 0.25F);
 	public static final RegistryObject<EntityType<KentrosaurusEntity>> KENTROSAURUS_ENTITY = registerEntity("kentrosaurus", KentrosaurusEntity::new, EntityClassification.CREATURE, KentrosaurusEntity.class, 0.5F, 0.5F);
 	public static final RegistryObject<EntityType<ChilesaurusEntity>> CHILESAURUS_ENTITY = registerEntity("chilesaurus", ChilesaurusEntity::new, EntityClassification.CREATURE, ChilesaurusEntity.class, 0.25F, 0.25F);
+	public static final RegistryObject<EntityType<LiaoningosaurusEntity>> LIAONINGOSAURUS_ENTITY = registerEntity("liaoningosaurus", LiaoningosaurusEntity::new, EntityClassification.CREATURE, LiaoningosaurusEntity.class, 0.5F, 0.5F);
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);

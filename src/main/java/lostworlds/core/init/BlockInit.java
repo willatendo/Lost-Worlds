@@ -1,15 +1,20 @@
 package lostworlds.core.init;
 
+import lostworlds.common.blocks.AnalyserBlock;
 import lostworlds.common.blocks.ArchaeologyTable;
 import lostworlds.common.blocks.BlackTerracottaFossilBlock;
 import lostworlds.common.blocks.BlueTerracottaFossilBlock;
 import lostworlds.common.blocks.BrownTerracottaFossilBlock;
 import lostworlds.common.blocks.ConiferLog;
 import lostworlds.common.blocks.CyanTerracottaFossilBlock;
+import lostworlds.common.blocks.DNAExtractorBlock;
+import lostworlds.common.blocks.DNAInjector;
 import lostworlds.common.blocks.DeadSpongeColonyBlock;
 import lostworlds.common.blocks.ExposedSandstoneFossilBlock;
 import lostworlds.common.blocks.ExposedStoneFossilBlock;
 import lostworlds.common.blocks.ExposedTerracottaFossilBlock;
+import lostworlds.common.blocks.FossilCleanerBlock;
+import lostworlds.common.blocks.FossilGrinderBlock;
 import lostworlds.common.blocks.GreenTerracottaFossilBlock;
 import lostworlds.common.blocks.GreyTerracottaFossilBlock;
 import lostworlds.common.blocks.GroundFernsBlock;
@@ -32,7 +37,6 @@ import lostworlds.common.blocks.PowerSupplyBlock;
 import lostworlds.common.blocks.PurpleTerracottaFossilBlock;
 import lostworlds.common.blocks.RedSandstoneFossilBlock;
 import lostworlds.common.blocks.RedTerracottaFossilBlock;
-import lostworlds.common.blocks.RotateableTestBlock;
 import lostworlds.common.blocks.SandstoneFossilBlock;
 import lostworlds.common.blocks.SmallPermianDesertPlant;
 import lostworlds.common.blocks.SpongeColonyBlock;
@@ -133,11 +137,11 @@ public class BlockInit
 	public static final RegistryObject<Block> PLASTERED_FOSSIL = register("plastered_fossil", new PlasteredFossilBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().sound(SoundType.WOOL).noOcclusion()));
 
 	//Fossil Processing	
-	public static final RegistryObject<Block> FOSSIL_CLEANER = register("fossil_cleaner", new RotateableTestBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
-	public static final RegistryObject<Block> FOSSIL_GRINDER = register("fossil_grinder", new RotateableTestBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
-	public static final RegistryObject<Block> DNA_EXTRACTOR = register("dna_extractor", new RotateableTestBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
-	public static final RegistryObject<Block> ANALYSER = register("analyser", new RotateableTestBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
-	public static final RegistryObject<Block> DNA_INJECTOR = register("dna_injector", new RotateableTestBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> FOSSIL_CLEANER = register("fossil_cleaner", new FossilCleanerBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> FOSSIL_GRINDER = register("fossil_grinder", new FossilGrinderBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> DNA_EXTRACTOR = register("dna_extractor", new DNAExtractorBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> ANALYSER = register("analyser", new AnalyserBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> DNA_INJECTOR = register("dna_injector", new DNAInjector(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
 	
 	public static final RegistryObject<Block> POWER_SUPPLY_BLOCK = register("power_supply_block", new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	

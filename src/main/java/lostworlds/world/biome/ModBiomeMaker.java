@@ -1,10 +1,10 @@
 package lostworlds.world.biome;
 
 import lostworlds.core.init.EntityInit;
+import lostworlds.core.init.ModSurfaceBuilders;
 import lostworlds.core.init.ParticleInit;
-import lostworlds.world.init.ModSurfaceBuilders;
-import lostworlds.world.init.SurfaceBuilderInit;
-import lostworlds.world.init.WorldCarverInit;
+import lostworlds.core.init.SurfaceBuilderInit;
+import lostworlds.core.init.WorldCarverInit;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.MathHelper;

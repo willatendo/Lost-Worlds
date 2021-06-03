@@ -1,4 +1,4 @@
-package lostworlds.core;
+package lostworlds.core.init;
 
 import lostworlds.core.tab.CreaturesTab;
 import lostworlds.core.tab.DecorativesTab;
@@ -12,7 +12,7 @@ import lostworlds.core.tab.SpawnTab;
 import lostworlds.core.tab.ToolsTab;
 import net.minecraft.item.ItemGroup;
 
-public class ModItemGroups
+public class ItemGroupInit
 {
 	public static final ItemGroup FOSSILS_TAB = new FossilsTab();
 	public static final ItemGroup CREATURES_TAB = new CreaturesTab();

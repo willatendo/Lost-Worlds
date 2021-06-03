@@ -286,4 +286,17 @@ public class FieldGuideLang
 	public static final ITextComponent CHILESAURUS_DIET = ModUtil.tTC("chilesaurus.field_guide.diet");
 	public static final ITextComponent CHILESAURUS_TYPE = ModUtil.tTC("chilesaurus.field_guide.type");
 	public static final ITextComponent CHILESAURUS_TIME_ERA = ModUtil.tTC("chilesaurus.field_guide.time_era");
+	
+	public static final ITextComponent LIAONINGOSAURUS_ENTRY_NAME = ModUtil.tTC("liaoningosaurus.field_guide.name");
+	public static final ITextComponent LIAONINGOSAURUS_ENTRY_SPECIES_NAME = ModUtil.tTC("liaoningosaurus.field_guide.species_name");
+	public static final ITextComponent LIAONINGOSAURUS_ENTRY_LINE_ONE = ModUtil.tTC("liaoningosaurus.field_guide.entry_line_one");
+	public static final ITextComponent LIAONINGOSAURUS_ENTRY_LINE_TWO = ModUtil.tTC("liaoningosaurus.field_guide.entry_line_two");
+	public static final ITextComponent LIAONINGOSAURUS_ENTRY_LINE_THREE = ModUtil.tTC("liaoningosaurus.field_guide.entry_line_three");
+	public static final ITextComponent LIAONINGOSAURUS_ENTRY_LINE_FOUR = ModUtil.tTC("liaoningosaurus.field_guide.entry_line_four");
+	public static final ITextComponent LIAONINGOSAURUS_ENTRY_LINE_FIVE = ModUtil.tTC("liaoningosaurus.field_guide.entry_line_five");
+	public static final ITextComponent LIAONINGOSAURUS_ENTRY_LINE_SIX = ModUtil.tTC("liaoningosaurus.field_guide.entry_line_six");
+	public static final ITextComponent LIAONINGOSAURUS_DANGER = ModUtil.tTC("liaoningosaurus.field_guide.danger");
+	public static final ITextComponent LIAONINGOSAURUS_DIET = ModUtil.tTC("liaoningosaurus.field_guide.diet");
+	public static final ITextComponent LIAONINGOSAURUS_TYPE = ModUtil.tTC("liaoningosaurus.field_guide.type");
+	public static final ITextComponent LIAONINGOSAURUS_TIME_ERA = ModUtil.tTC("liaoningosaurus.field_guide.time_era");
 }

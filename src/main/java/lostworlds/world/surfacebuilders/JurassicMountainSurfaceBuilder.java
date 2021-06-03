@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.mojang.serialization.Codec;
 
-import lostworlds.world.init.ModSurfaceBuilders;
+import lostworlds.core.init.ModSurfaceBuilders;
 import net.minecraft.block.BlockState;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;

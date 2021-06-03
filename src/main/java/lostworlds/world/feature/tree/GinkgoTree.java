@@ -2,7 +2,7 @@ package lostworlds.world.feature.tree;
 
 import java.util.Random;
 
-import lostworlds.world.init.ConfiguredFeatureInit;
+import lostworlds.core.init.ConfiguredFeatureInit;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;

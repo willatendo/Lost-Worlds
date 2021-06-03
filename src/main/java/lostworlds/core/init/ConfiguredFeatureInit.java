@@ -1,8 +1,7 @@
-package lostworlds.world.init;
+package lostworlds.core.init;
 
 import com.google.common.collect.ImmutableList;
 
-import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModBlockStates;
 import lostworlds.core.util.ModUtil;
 import lostworlds.world.feature.ModFillerBlockType;

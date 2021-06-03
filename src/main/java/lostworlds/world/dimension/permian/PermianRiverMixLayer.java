@@ -1,6 +1,6 @@
 package lostworlds.world.dimension.permian;
 
-import lostworlds.world.init.BiomeInit;
+import lostworlds.core.init.BiomeInit;
 import net.minecraft.world.gen.INoiseRandom;
 import net.minecraft.world.gen.area.IArea;
 import net.minecraft.world.gen.layer.traits.IAreaTransformer2;

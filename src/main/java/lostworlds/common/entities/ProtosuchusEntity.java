@@ -8,7 +8,6 @@ import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -22,7 +21,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class ProtosuchusEntity extends AbstractPrehistoricLandAndSeaEntity implements IAnimatable
 {
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BONE, ItemInit.ALLOSAURUS_MEAT.get());
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.ALLOSAURUS_MEAT.get(), ItemInit.CHILESAURUS_MEAT.get(), ItemInit.CRYOLOPHOSAURUS_MEAT.get(), ItemInit.KENTROSAURUS_MEAT.get(), ItemInit.OSTROMIA_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 

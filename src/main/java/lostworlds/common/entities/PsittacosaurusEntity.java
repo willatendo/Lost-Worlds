@@ -4,6 +4,7 @@ import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
+import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
@@ -24,7 +25,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class PsittacosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.GRASS, Items.FERN);
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.FERN, Items.GRASS, ItemInit.GROUND_FERNS.get(), ItemInit.DICKSONIA.get(), ItemInit.TALL_DICKSONIA.get(), ItemInit.CYCAD.get(),ItemInit.CYCAD_SEEDS.get(), ItemInit.OSMUNDA.get(), ItemInit.OSMUNDA_SEEDS.get(), ItemInit.DUISBERGIA.get(), ItemInit.DUISBERGIA_SEEDS.get(), ItemInit.CEPHALOTAXUS.get(),ItemInit.CEPHALOTAXUS_SEEDS.get(), ItemInit.LYCOPHYTA.get(), ItemInit.LYCOPHYTA_SEEDS.get(), ItemInit.DILLHOFFIA.get(), ItemInit.DILLHOFFIA_SEEDS.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 

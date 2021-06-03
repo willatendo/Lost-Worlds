@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import lostworlds.core.ModItemGroups;
+import lostworlds.core.init.ItemGroupInit;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.dispenser.IBlockSource;
@@ -27,14 +27,14 @@ public class ModSpawnEggItem extends SpawnEggItem
 
 	public ModSpawnEggItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour) 
 	{
-		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ModItemGroups.SPAWN_TAB).stacksTo(1));
+		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ItemGroupInit.SPAWN_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 		UNADDED_EGGS.add(this);
 	}
 
 	public ModSpawnEggItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour) 
 	{
-		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ModItemGroups.SPAWN_TAB).stacksTo(1));
+		super(null, primaryColour, secondaryColour, new Item.Properties().tab(ItemGroupInit.SPAWN_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 		UNADDED_EGGS.add(this);
 	}

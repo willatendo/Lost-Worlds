@@ -335,6 +335,18 @@
 	"item.lostworlds.cooked_chilesaurus_meat": "Cooked Chilesaurus Meat",
 	"item.lostworlds.chilesaurus_spawn_egg": "Chilesaurus Spawn Egg",
 
+	//Liaoningosaurus
+	"item.lostworlds.liaoningosaurus_dna": "Liaoningosaurus DNA",
+	"item.lostworlds.liaoningosaurus_dna_disc": "Storage Disk",
+	"item.lostworlds.liaoningosaurus_soft_tissue": "Liaoningosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_liaoningosaurus_blood": "Syringe of Liaoningosaurus Blood",
+	"item.lostworlds.vile_of_liaoningosaurus_blood": "Vile of Liaoningosaurus Blood",
+	"toolTip.lostworlds.liaoningosaurus_dna_disc.holding_shift": "Storing: Liaoningosaurus paradoxus",
+	"toolTip.lostworlds.liaoningosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_liaoningosaurus_meat": "Raw Liaoningosaurus Meat",
+	"item.lostworlds.cooked_liaoningosaurus_meat": "Cooked Liaoningosaurus Meat",
+	"item.lostworlds.liaoningosaurus_spawn_egg": "Liaoningosaurus Spawn Egg",
+
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
 
@@ -1070,6 +1082,19 @@
 	"lostworlds.chilesaurus.field_guide.diet": "Herbivore",
 	"lostworlds.chilesaurus.field_guide.time_era": "Jurassic",
 	"lostworlds.chilesaurus.field_guide.type": "Chilesaurus",
+	
+	"lostworlds.liaoningosaurus.field_guide.name": "Liaoningosaurus",
+	"lostworlds.liaoningosaurus.field_guide.species_name": "paradoxus",
+	"lostworlds.liaoningosaurus.field_guide.entry_line_one": "Liaoningosaurus is a small ankylosaurus from",
+	"lostworlds.liaoningosaurus.field_guide.entry_line_two": "the Cretaceous. It's the a very small and",
+	"lostworlds.liaoningosaurus.field_guide.entry_line_three": "unique.",
+	"lostworlds.liaoningosaurus.field_guide.entry_line_four": "",
+	"lostworlds.liaoningosaurus.field_guide.entry_line_five": "",
+	"lostworlds.liaoningosaurus.field_guide.entry_line_six": "",
+	"lostworlds.liaoningosaurus.field_guide.danger": "Passive",
+	"lostworlds.liaoningosaurus.field_guide.diet": "Herbivore",
+	"lostworlds.liaoningosaurus.field_guide.time_era": "Cretaceous",
+	"lostworlds.liaoningosaurus.field_guide.type": "Ankylosaurus",
 
 	"lostworlds.field_guide.danger": "Danger:",
 	"lostworlds.field_guide.diet": "Diet:",
@@ -1130,6 +1155,7 @@
 
 	//Time Machine
 	"lostworlds.container.time_machine": "Time Machine",
+	"lostworlds.container.fossil_cleaner": "Fossil Cleaner",
 
 	//Advancements
 	"lostworlds.advancements.paleontology.root.title": "Paleontology",

@@ -7,9 +7,11 @@ import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.EntityPredicates;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -40,7 +42,7 @@ public class DiictodonEntity extends AbstractPrehistoricAnimalEntity implements 
 	
 	public DiictodonEntity(EntityType<? extends DiictodonEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn, TimeEras.JURASSIC);
+		super(entityIn, worldIn, TimeEras.PERMIAN);
 	}
 
 	@Override
@@ -85,6 +87,7 @@ public class DiictodonEntity extends AbstractPrehistoricAnimalEntity implements 
 		super.registerGoals();
 		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
+		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, GorgonopsEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 	}
 	
 	@Override

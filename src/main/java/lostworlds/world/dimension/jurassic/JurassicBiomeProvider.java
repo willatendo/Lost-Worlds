@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import lostworlds.world.init.BiomeInit;
+import lostworlds.core.init.BiomeInit;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.Util;

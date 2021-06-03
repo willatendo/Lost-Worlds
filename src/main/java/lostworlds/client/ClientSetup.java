@@ -12,6 +12,7 @@ import lostworlds.client.entity.render.GiganotosaurusRender;
 import lostworlds.client.entity.render.GorgonopsRender;
 import lostworlds.client.entity.render.GreatAukRender;
 import lostworlds.client.entity.render.KentrosaurusRender;
+import lostworlds.client.entity.render.LiaoningosaurusRender;
 import lostworlds.client.entity.render.NautilusRender;
 import lostworlds.client.entity.render.OstromiaRender;
 import lostworlds.client.entity.render.OuranosaurusRender;
@@ -23,11 +24,14 @@ import lostworlds.client.entity.render.RhinesuchusRender;
 import lostworlds.client.entity.render.SuchomimusRender;
 import lostworlds.client.entity.render.TetraceratopsRender;
 import lostworlds.client.entity.render.TyrannosaurusRender;
+import lostworlds.client.screen.machines.FossilCleanerScreen;
 import lostworlds.common.entities.ModBoatRender;
 import lostworlds.core.init.BlockInit;
+import lostworlds.core.init.ContainerInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModUtil;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
@@ -149,6 +153,7 @@ public class ClientSetup
 		ClientRegistry.bindTileEntityRenderer(TileEntityInit.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
 
 		//ScreenManager.register(ContainerInit.TIME_MACHINE_CONTAINER.get(), TimeMachineScreen::new);
+		ScreenManager.register(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), FossilCleanerScreen::new);
 
 		//EntitiesS
 		//Mobs
@@ -175,6 +180,7 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.DIICTODON_ENTITY.get(), DiictodonRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.KENTROSAURUS_ENTITY.get(), KentrosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.CHILESAURUS_ENTITY.get(), ChilesaurusRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.LIAONINGOSAURUS_ENTITY.get(), LiaoningosaurusRender::new);
 		
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);

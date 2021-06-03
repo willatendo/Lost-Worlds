@@ -1,6 +1,6 @@
 package lostworlds.common.items;
 
-import lostworlds.core.ModItemGroups;
+import lostworlds.core.init.ItemGroupInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.FishBucketItem;
@@ -16,14 +16,14 @@ public class ModFishBucketItem extends FishBucketItem
 	@SuppressWarnings("deprecation")
 	public ModFishBucketItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
-		super(null, fluid, new Item.Properties().tab(ModItemGroups.CREATURES_TAB).stacksTo(1));
+		super(null, fluid, new Item.Properties().tab(ItemGroupInit.CREATURES_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 	}
 
 	@SuppressWarnings("deprecation")
 	public ModFishBucketItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
-		super(null, fluid, new Item.Properties().tab(ModItemGroups.CREATURES_TAB).stacksTo(1));
+		super(null, fluid, new Item.Properties().tab(ItemGroupInit.CREATURES_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 	}
 	

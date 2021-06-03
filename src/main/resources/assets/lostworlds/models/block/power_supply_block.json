@@ -1,11 +1,10 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "Minecraft:block/redstone_block",
-		"1": "Minecraft:block/polished_andesite",
-		"2": "Minecraft:block/iron_block",
+		"0": "block/redstone_block",
+		"1": "block/polished_andesite",
+		"2": "block/iron_block",
 		"3": "lostworlds:blocks/black_decoration_block",
-		"particle": "Minecraft:block/redstone_block"
+		"particle": "block/redstone_block"
 	},
 	"elements": [
 		{

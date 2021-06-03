@@ -1,31 +1,28 @@
 package lostworlds.common.goal;
 
 import java.util.EnumSet;
-import java.util.Set;
-
-import com.google.common.collect.Sets;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricLandAndSeaEntity;
 import net.minecraft.entity.EntityPredicate;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
 
-public class ModLandAndWaterFollowGoal extends Goal 
+public class ModLandAndWaterTemptGoal extends Goal 
 {
 	private static final EntityPredicate TEMPT_TARGETING = (new EntityPredicate()).range(10.0D).allowSameTeam().allowInvulnerable();
 	private final AbstractPrehistoricLandAndSeaEntity entity;
 	private final double speedModifier;
 	private PlayerEntity player;
 	private int calmDown;
-	private final Set<Item> items;
+	private final Ingredient followItems;
 
-	ModLandAndWaterFollowGoal(AbstractPrehistoricLandAndSeaEntity entity, double speed, Item followItem) 
+	public ModLandAndWaterTemptGoal(AbstractPrehistoricLandAndSeaEntity entity, double speed, Ingredient followItems) 
 	{
 		this.entity = entity;
 		this.speedModifier = speed;
-		this.items = Sets.newHashSet(followItem);
+		this.followItems = followItems;
 		this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
 	}
 
@@ -52,7 +49,7 @@ public class ModLandAndWaterFollowGoal extends Goal
 
 	private boolean shouldFollowItem(ItemStack stack) 
 	{
-		return this.items.contains(stack.getItem());
+		return this.followItems.test(stack);
 	}
 
 	public boolean canContinueToUse() 

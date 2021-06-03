@@ -13,6 +13,7 @@ import lostworlds.common.entities.GiganotosaurusEntity;
 import lostworlds.common.entities.GorgonopsEntity;
 import lostworlds.common.entities.GreatAukEntity;
 import lostworlds.common.entities.KentrosaurusEntity;
+import lostworlds.common.entities.LiaoningosaurusEntity;
 import lostworlds.common.entities.OstromiaEntity;
 import lostworlds.common.entities.OuranosaurusEntity;
 import lostworlds.common.entities.ProcompsognathusEntity;
@@ -127,6 +128,10 @@ public class FieldGuideItem extends Item
 			if(entity instanceof ChilesaurusEntity)
 			{
 				DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FieldGuideScreens::chilesaurusEntry);
+			}
+			if(entity instanceof LiaoningosaurusEntity)
+			{
+				DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FieldGuideScreens::liaoningosaurusEntry);
 			}
 			return ActionResultType.SUCCESS;
 		}

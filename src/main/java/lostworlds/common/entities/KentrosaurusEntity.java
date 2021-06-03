@@ -34,7 +34,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class KentrosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable, IAngerable
 {
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.DICKSONIA.get(), ItemInit.TALL_DICKSONIA.get(), ItemInit.CYCAD.get(), ItemInit.GROUND_FERNS.get(), ItemInit.OSMUNDA.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.GROUND_FERNS.get(), ItemInit.DICKSONIA.get(), ItemInit.TALL_DICKSONIA.get(), ItemInit.CYCAD.get(), ItemInit.OSMUNDA.get(), ItemInit.DUISBERGIA.get(), ItemInit.CEPHALOTAXUS.get(), ItemInit.LYCOPHYTA.get(), ItemInit.DILLHOFFIA.get());
     private static final RangedInteger PERSISTENT_ANGER_TIME = TickRangeConverter.rangeOfSeconds(20, 39);
 	private AnimationFactory factory = new AnimationFactory(this);
 	private int remainingPersistentAngerTime;

@@ -12,6 +12,7 @@ import lostworlds.common.entities.GiganotosaurusEntity;
 import lostworlds.common.entities.GorgonopsEntity;
 import lostworlds.common.entities.GreatAukEntity;
 import lostworlds.common.entities.KentrosaurusEntity;
+import lostworlds.common.entities.LiaoningosaurusEntity;
 import lostworlds.common.entities.NautilusEntity;
 import lostworlds.common.entities.OstromiaEntity;
 import lostworlds.common.entities.OuranosaurusEntity;
@@ -101,7 +102,7 @@ public class SyringeItem extends Item
 		if(entity instanceof TyrannosaurusEntity)
 		{
 			playerEntity.playSound(SoundEvents.PLAYER_HURT, 1.0F, 1.0F);
-			ItemStack blood = new ItemStack(ItemInit.PALAEONISCUM_BLOOD_SYRINGE.get());
+			ItemStack blood = new ItemStack(ItemInit.TYRANNOSAURUS_BLOOD_SYRINGE.get());
 			playerEntity.setItemInHand(hand, blood);
 			return ActionResultType.SUCCESS;
 		}
@@ -200,6 +201,13 @@ public class SyringeItem extends Item
 		{
 			playerEntity.playSound(SoundEvents.PLAYER_HURT, 1.0F, 1.0F);
 			ItemStack blood = new ItemStack(ItemInit.CHILESAURUS_BLOOD_SYRINGE.get());
+			playerEntity.setItemInHand(hand, blood);
+			return ActionResultType.SUCCESS;
+		}
+		if(entity instanceof LiaoningosaurusEntity)
+		{
+			playerEntity.playSound(SoundEvents.PLAYER_HURT, 1.0F, 1.0F);
+			ItemStack blood = new ItemStack(ItemInit.LIAONINGOSAURUS_BLOOD_SYRINGE.get());
 			playerEntity.setItemInHand(hand, blood);
 			return ActionResultType.SUCCESS;
 		}

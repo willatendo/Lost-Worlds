@@ -1,7 +1,12 @@
 package lostworlds;
 
 import lostworlds.common.items.ModSpawnEggItem;
+import lostworlds.core.init.BiomeInit;
 import lostworlds.core.init.BlockInit;
+import lostworlds.core.init.ConfiguredFeatureInit;
+import lostworlds.core.init.FeatureInit;
+import lostworlds.core.init.ModOreFeatures;
+import lostworlds.core.init.WorldCarverInit;
 import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.core.vanilla.properties.ModFlammables;
@@ -10,11 +15,6 @@ import lostworlds.world.dimension.jurassic.JurassicDimension;
 import lostworlds.world.dimension.jurassic.JurassicDimensionRenderInfo;
 import lostworlds.world.dimension.permian.PermianDimension;
 import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
-import lostworlds.world.init.BiomeInit;
-import lostworlds.world.init.ConfiguredFeatureInit;
-import lostworlds.world.init.FeatureInit;
-import lostworlds.world.init.OrePlaceFeature;
-import lostworlds.world.init.WorldCarverInit;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.entity.EntityType;
@@ -54,7 +54,7 @@ public class LostWorlds
 		GeckoLib.initialize();
 		
 		MinecraftForge.EVENT_BUS.register(this);
-		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OrePlaceFeature::generateOre);
+		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, ModOreFeatures::generateOre);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
 		
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LostWorldsConfig.commonSpec);

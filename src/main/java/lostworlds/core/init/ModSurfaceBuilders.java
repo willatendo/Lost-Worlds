@@ -1,6 +1,5 @@
-package lostworlds.world.init;
+package lostworlds.core.init;
 
-import lostworlds.core.init.BlockInit;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;

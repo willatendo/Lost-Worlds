@@ -1,7 +1,6 @@
-package lostworlds.world.init;
+package lostworlds.core.init;
 
 import lostworlds.LostWorldsConfig;
-import lostworlds.core.init.EntityInit;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.world.biome.Biome;

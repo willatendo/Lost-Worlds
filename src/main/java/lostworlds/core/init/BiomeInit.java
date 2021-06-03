@@ -1,4 +1,4 @@
-package lostworlds.world.init;
+package lostworlds.core.init;
 
 import java.util.function.Supplier;
 

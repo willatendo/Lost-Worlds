@@ -1,6 +1,5 @@
-package lostworlds.world.init;
+package lostworlds.core.init;
 
-import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModBlockStates;
 import lostworlds.world.feature.ModFillerBlockType;
 import net.minecraft.block.BlockState;
@@ -14,7 +13,7 @@ import net.minecraft.world.gen.placement.TopSolidRangeConfig;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
-public class OrePlaceFeature 
+public class ModOreFeatures 
 {
 	public static void generateOre(BiomeLoadingEvent event)
 	{

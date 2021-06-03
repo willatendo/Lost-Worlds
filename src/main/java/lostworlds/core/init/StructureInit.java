@@ -1,4 +1,4 @@
-package lostworlds.world.init;
+package lostworlds.core.init;
 
 public class StructureInit 
 {

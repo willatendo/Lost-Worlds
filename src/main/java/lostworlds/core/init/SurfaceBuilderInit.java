@@ -1,4 +1,4 @@
-package lostworlds.world.init;
+package lostworlds.core.init;
 
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.world.surfacebuilders.JurassicMountainSurfaceBuilder;

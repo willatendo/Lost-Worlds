@@ -25,10 +25,9 @@ import net.minecraft.world.IWorld;
 
 public class ArchaeologyTable extends Block implements IWaterLoggable
 {
-	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	protected static final Map<Block, Map<Direction, VoxelShape>> SHAPES = new HashMap<Block, Map<Direction, VoxelShape>>();
 	public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
-	
+	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;	
 	private static final VoxelShape VOXEL_SHAPE = Block.box(0, 0, 2, 16, 14, 16);
 
 	public ArchaeologyTable(Properties properties) 
@@ -45,6 +44,14 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		return SHAPES.get(this).get(state.getValue(HORIZONTAL_FACING));
 	}
 
+	@Override
+	public BlockState getStateForPlacement(BlockItemUseContext context) 
+	{
+		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+		boolean flag = fluidstate.getType() == Fluids.WATER;
+		return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
+	}
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
@@ -56,14 +63,6 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 	public BlockState rotate(BlockState state, IWorld world, BlockPos pos, Rotation direction) 
 	{
 		return state.setValue(HORIZONTAL_FACING, direction.rotate(state.getValue(HORIZONTAL_FACING)));
-	}
-
-	@Override
-	public BlockState getStateForPlacement(BlockItemUseContext context) 
-	{
-		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-		boolean flag = fluidstate.getType() == Fluids.WATER;
-		return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
 	}
 	
 	@Override
@@ -115,5 +114,5 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		{
 			facingMap.put(direction, calculateShapes(direction, shape));
 		}
-	}	
+	}
 }

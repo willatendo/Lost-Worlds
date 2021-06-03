@@ -5,6 +5,7 @@ import lostworlds.core.util.ModUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 
 public class LostWorldsTab extends BaseTab
 {
@@ -23,6 +24,12 @@ public class LostWorldsTab extends BaseTab
 	public boolean hasSearchBar() 
 	{
 		return true;
+	}
+	
+	@Override
+	public ResourceLocation getBackgroundImage() 
+	{
+		return ModUtil.rL("textures/gui/creative_tab/lostworlds_tab_search.png");
 	}
 	
 	@Override
