@@ -1,71 +1,62 @@
 package lostworlds.common.recipe;
 
-import lostworlds.core.init.RecipeSerialiserInit;
-import lostworlds.core.util.interfaces.IFossilCleanerRecipe;
+import java.util.NavigableMap;
+import java.util.Random;
+import java.util.TreeMap;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraftforge.items.wrapper.RecipeWrapper;
 
-public class FossilCleanerRecipe implements IFossilCleanerRecipe 
+public class FossilCleanerRecipe 
 {
-	private final ResourceLocation id;
-	private Ingredient input;
-	private final ItemStack output;
-
-	public FossilCleanerRecipe(ResourceLocation id, Ingredient input, ItemStack output) 
+	private ItemStack stack;
+	private NavigableMap<Float, ItemStack> outputMap = new TreeMap<Float, ItemStack>();
+	private float totalWeight;
+	
+	public FossilCleanerRecipe(Item input) 
 	{
-		this.id = id;
-		this.output = output;
-		this.input = input;
+		this.stack = new ItemStack(input);
 	}
-
-	@Override
-	public boolean matches(RecipeWrapper inv, World worldIn) 
+	
+	@SuppressWarnings("deprecation")
+	public FossilCleanerRecipe(Block input) 
 	{
-		if (this.input.test(inv.getItem(0))) 
+		this(Item.byBlock(input));
+	}
+	
+	public FossilCleanerRecipe addOutput(ItemStack stack, float weight)
+	{
+		totalWeight += weight;
+		outputMap.put(totalWeight, stack);
+		return this;
+	}
+	
+	public ItemStack getInput()
+	{
+		return stack;
+	}
+	
+	public ItemStack generateOutput(Random random)
+	{
+		if(totalWeight < 100)
 		{
-			return true;
+			if(random.nextFloat() >= totalWeight * 0.01F)
+			{
+				return ItemStack.EMPTY;
+			}
 		}
-		return false;
+		float entry = random.nextFloat() * totalWeight;
+		return outputMap.higherEntry(entry).getValue().copy();
 	}
-
-	@Override
-	public ItemStack assemble(RecipeWrapper inv) 
+	
+	public NavigableMap<Float, ItemStack> getDisplayMap()
 	{
-		return this.output;
+		return outputMap;
 	}
-
-	@Override
-	public ItemStack getResultItem() 
+	
+	public Float getTotalWeight()
 	{
-		return this.output;
-	}
-
-	@Override
-	public ResourceLocation getId() 
-	{
-		return this.id;
-	}
-
-	@Override
-	public IRecipeSerializer<?> getSerializer() 
-	{
-		return RecipeSerialiserInit.EXAMPLE_SERIALIZER.get();
-	}
-
-	@Override
-	public Ingredient getInput() 
-	{
-		return this.input;
-	}
-
-	@Override
-	public NonNullList<Ingredient> getIngredients() 
-	{
-		return NonNullList.of(null, this.input);
+		return totalWeight;
 	}
 }

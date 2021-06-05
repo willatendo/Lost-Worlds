@@ -3,7 +3,6 @@ package lostworlds.common.tileentity;
 import javax.annotation.Nullable;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lostworlds.common.blocks.FossilCleanerBlock;
 import lostworlds.common.container.FossilCleanerContainer;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModUtil;
@@ -16,17 +15,15 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.crafting.FurnaceRecipe;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.INameable;
+import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
 public class FossilCleanerTileEntity extends TileEntity implements IInventory, INamedContainerProvider, INameable, ITickableTileEntity	
@@ -40,16 +37,10 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	private int cleaningTotalTime;
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
-	protected final IRecipeType<?> recipeType = IRecipeType.SMELTING;
 	
 	public FossilCleanerTileEntity() 
 	{
 		super(TileEntityInit.FOSSIL_CLEANER_TILE_ENTITY.get());
-	}
-	
-	private boolean isOn() 
-	{
-		return this.onTime > 0;
 	}
 	
 	@Override
@@ -77,7 +68,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	
 	@Override
 	public void tick() 
-	{
+	{/*
 		boolean flag = this.isOn();
 		boolean flag1 = false;
 		if(this.isOn()) 
@@ -90,8 +81,6 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 			ItemStack itemstack = this.items.get(1);
 			if(this.isOn() || !itemstack.isEmpty() && !this.items.get(0).isEmpty()) 
 			{
-				@SuppressWarnings("unchecked")
-				IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<FurnaceRecipe>)this.recipeType, this, this.level).orElse(null);
 				if(!this.isOn() && this.canCleanWith(irecipe)) 
 				{
 					this.onTime = this.getCleanDuration(itemstack);
@@ -113,7 +102,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 					}
 				}
 				
-				if(this.isOn() && this.canCleanWith(irecipe)) 
+				if(this.isOn() && this.canCleanWith(irecipe) && this.level.hasNeighborSignal(this.getBlockPos())) 
 				{
 					++this.cleaningProgress;
 					if(this.cleaningProgress == this.cleaningTotalTime) 
@@ -144,7 +133,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		if(flag1) 
 		{
 			this.setChanged();
-		}
+		}*/
 	}
 	
 	protected boolean canCleanWith(@Nullable IRecipe<?> recipe) 
@@ -183,6 +172,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void cleanWith(@Nullable IRecipe<?> recipe) 
 	{
 		if(recipe != null && this.canCleanWith(recipe)) 
@@ -217,12 +207,6 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		{
 			return 2200;
 		}
-	}
-	
-	@SuppressWarnings("unchecked")
-	protected int getTotalCleanTime() 
-	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType<FurnaceRecipe>)this.recipeType, this, this.level).map(FurnaceRecipe::getCookingTime).orElse(2200);
 	}
 	
 	public static boolean isFuel(ItemStack stack) 
@@ -288,7 +272,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		
 		if (i == 0 && !flag) 
 		{
-			this.cleaningTotalTime = this.getTotalCleanTime();
+			//this.cleaningTotalTime = this.getTotalCleanTime();
 			this.cleaningProgress = 0;
 			this.setChanged();
 		}
@@ -355,7 +339,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new FossilCleanerContainer(windowId, playerInv, this);
+		return new FossilCleanerContainer(windowId, playerInv, this, new IntArray(4));
 	}
 
 	@Override
@@ -365,9 +349,8 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	}
 
 	@Override
-	public ITextComponent getDisplayName() {
+	public ITextComponent getDisplayName() 
+	{
 		return this.getName();
-		
 	}
-	
 }

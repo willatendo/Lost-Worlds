@@ -1,5 +1,5 @@
 {
-	"parent": "lostworlds:paleontology/root",
+	"parent": "lostworlds:paleontology/like_indiana_jones",
 	"display": {
 		"icon": {
 			"item": "lostworlds:broken_crystal_scarab_gem"

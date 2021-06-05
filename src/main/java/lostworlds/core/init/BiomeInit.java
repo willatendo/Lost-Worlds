@@ -99,6 +99,9 @@ public class BiomeInit
 	public static final RegistryObject<Biome> JURASSIC_OCEAN = createBiome("jurassic_ocean", ModBiomeMaker::makeAJurassicOcean);
 	public static final RegistryKey<Biome> JURASSIC_OCEAN_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_ocean"));
 	
+	public static final RegistryObject<Biome> JURASSIC_SHORE = createBiome("jurassic_shore", ModBiomeMaker::makeAJurassicShore);
+	public static final RegistryKey<Biome> JURASSIC_SHORE_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "jurassic_shore"));
+	
 	public static final RegistryObject<Biome> OVERWORLD_CONIFER_FOREST = createBiome("overworld_conifer_forest", ModBiomeMaker::makeAOverworldConiferForest);
 	public static final RegistryKey<Biome> OVERWORLD_CONIFER_FOREST_KEY = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(ModUtil.ID, "overworld_conifer_forest"));
 	

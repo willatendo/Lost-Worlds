@@ -1235,6 +1235,15 @@
 
 	"lostworlds.advancements.paleontology.the_body.title": "The Body",
 	"lostworlds.advancements.paleontology.the_body.description": "Craft a computer frame!",
+
+	"lostworlds.advancements.paleontology.like_indiana_jones.title": "Indiana Jones",
+	"lostworlds.advancements.paleontology.like_indiana_jones.description": "Craft an archaeology table!",
+
+	"lostworlds.advancements.paleontology.the_permian.title": "The Permian",
+	"lostworlds.advancements.paleontology.the_permian.description": "Acquired a permian time book!",
+
+	"lostworlds.advancements.paleontology.the_jurassic.title": "The Jurassic",
+	"lostworlds.advancements.paleontology.the_jurassic.description": "Acquired a jurassic time book!",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds_fossils": "Lost Worlds Fossils",

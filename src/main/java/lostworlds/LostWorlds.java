@@ -1,5 +1,7 @@
 package lostworlds;
 
+import com.google.common.collect.Maps;
+
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.init.BiomeInit;
 import lostworlds.core.init.BlockInit;
@@ -9,15 +11,17 @@ import lostworlds.core.init.ModOreFeatures;
 import lostworlds.core.init.WorldCarverInit;
 import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.registry.ModRegistry;
-import lostworlds.core.vanilla.properties.ModFlammables;
-import lostworlds.core.vanilla.properties.ModStrippables;
 import lostworlds.world.dimension.jurassic.JurassicDimension;
 import lostworlds.world.dimension.jurassic.JurassicDimensionRenderInfo;
 import lostworlds.world.dimension.permian.PermianDimension;
 import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.block.FireBlock;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.AxeItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.Feature;
@@ -33,7 +37,6 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -46,13 +49,12 @@ public class LostWorlds
 		ModUtil.LOGGER.debug("Loading: The Lost Worlds");
 		
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
 
 		ModRegistry.registry(); 
 		
 		//Lib - V. 3.0.30
 		GeckoLib.initialize();
-		
+				
 		MinecraftForge.EVENT_BUS.register(this);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, ModOreFeatures::generateOre);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
@@ -70,16 +72,74 @@ public class LostWorlds
 		{
 			ModUtil.LOGGER.debug("Loading: Registering Compostables");
 			
-			ComposterBlock.add(0.6F, BlockInit.CONIFER_LEAVES.get());
-			ComposterBlock.add(0.6F, BlockInit.ARAUCARIA_LEAVES.get());
-			ComposterBlock.add(0.6F, BlockInit.GINKGO_LEAVES.get());
-			ComposterBlock.add(0.4F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
-			ComposterBlock.add(0.6F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
-			ComposterBlock.add(0.8F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
-			ComposterBlock.add(0.6F, BlockInit.GROUND_FERNS.get());
-			ComposterBlock.add(0.6F, BlockInit.CONIFER_SAPLING.get());
-			ComposterBlock.add(0.6F, BlockInit.ARAUCARIA_SAPLING.get());
-			ComposterBlock.add(0.6F, BlockInit.GINKGO_SAPLING.get());
+			ComposterBlock.add(0.3F, BlockInit.CONIFER_LEAVES.get());
+			ComposterBlock.add(0.3F, BlockInit.ARAUCARIA_LEAVES.get());
+			ComposterBlock.add(0.3F, BlockInit.GINKGO_LEAVES.get());
+			ComposterBlock.add(0.3F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
+			ComposterBlock.add(0.4F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
+			ComposterBlock.add(0.5F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
+			ComposterBlock.add(0.3F, BlockInit.GROUND_FERNS.get());
+			ComposterBlock.add(0.3F, BlockInit.CONIFER_SAPLING.get());
+			ComposterBlock.add(0.3F, BlockInit.ARAUCARIA_SAPLING.get());
+			ComposterBlock.add(0.3F, BlockInit.GINKGO_SAPLING.get());
+			
+			add(BlockInit.CONIFER_BUTTON.get(), 5, 5);
+			add(BlockInit.CONIFER_DOOR.get(), 5, 5);
+			add(BlockInit.CONIFER_FENCE.get(), 5, 5);
+			add(BlockInit.CONIFER_FENCE_GATE.get(), 5, 5);
+			add(BlockInit.CONIFER_LEAVES.get(), 5, 5);
+			add(BlockInit.CONIFER_LOG.get(), 5, 5);
+			add(BlockInit.CONIFER_PLANKS.get(), 5, 5);
+			add(BlockInit.CONIFER_PRESSURE_PLATE.get(), 5, 5);
+			add(BlockInit.CONIFER_SIGN.get(), 5, 5);
+			add(BlockInit.CONIFER_SLAB.get(), 5, 5);
+			add(BlockInit.CONIFER_STAIRS.get(), 5, 5);
+			add(BlockInit.CONIFER_TRAPDOOR.get(), 5, 5);
+			add(BlockInit.CONIFER_WALL_SIGN.get(), 5, 5);
+			add(BlockInit.CONIFER_WOOD.get(), 5, 5);
+			add(BlockInit.STRIPPED_CONIFER_LOG.get(), 5, 5);
+			add(BlockInit.STRIPPED_CONIFER_WOOD.get(), 5, 5);
+			
+			add(BlockInit.GINKGO_BUTTON.get(), 5, 5);
+			add(BlockInit.GINKGO_DOOR.get(), 5, 5);
+			add(BlockInit.GINKGO_FENCE.get(), 5, 5);
+			add(BlockInit.GINKGO_FENCE_GATE.get(), 5, 5);
+			add(BlockInit.GINKGO_LEAVES.get(), 5, 5);
+			add(BlockInit.GINKGO_LOG.get(), 5, 5);
+			add(BlockInit.GINKGO_PLANKS.get(), 5, 5);
+			add(BlockInit.GINKGO_PRESSURE_PLATE.get(), 5, 5);
+			add(BlockInit.GINKGO_SIGN.get(), 5, 5);
+			add(BlockInit.GINKGO_SLAB.get(), 5, 5);
+			add(BlockInit.GINKGO_STAIRS.get(), 5, 5);
+			add(BlockInit.GINKGO_TRAPDOOR.get(), 5, 5);
+			add(BlockInit.GINKGO_WALL_SIGN.get(), 5, 5);
+			add(BlockInit.GINKGO_WOOD.get(), 5, 5);
+			add(BlockInit.STRIPPED_GINKGO_LOG.get(), 5, 5);
+			add(BlockInit.STRIPPED_GINKGO_WOOD.get(), 5, 5);
+			
+			add(BlockInit.ARAUCARIA_BUTTON.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_DOOR.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_FENCE.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_FENCE_GATE.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_LEAVES.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_LOG.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_PLANKS.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_PRESSURE_PLATE.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_SIGN.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_SLAB.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_STAIRS.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_TRAPDOOR.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_WALL_SIGN.get(), 5, 5);
+			add(BlockInit.ARAUCARIA_WOOD.get(), 5, 5);
+			add(BlockInit.STRIPPED_ARAUCARIA_LOG.get(), 5, 5);
+			add(BlockInit.STRIPPED_ARAUCARIA_WOOD.get(), 5, 5);
+			
+			add(BlockInit.CONIFER_LOG.get(), BlockInit.STRIPPED_CONIFER_LOG.get());
+			add(BlockInit.CONIFER_WOOD.get(), BlockInit.STRIPPED_CONIFER_WOOD.get());
+			add(BlockInit.GINKGO_LOG.get(), BlockInit.STRIPPED_GINKGO_LOG.get());
+			add(BlockInit.GINKGO_WOOD.get(), BlockInit.STRIPPED_GINKGO_WOOD.get());
+			add(BlockInit.ARAUCARIA_LOG.get(), BlockInit.STRIPPED_ARAUCARIA_LOG.get());
+			add(BlockInit.ARAUCARIA_WOOD.get(), BlockInit.STRIPPED_ARAUCARIA_WOOD.get());
 			
 			ModUtil.LOGGER.debug("Finished: Registering Compostables");
 		});
@@ -92,7 +152,7 @@ public class LostWorlds
 			JurassicDimension.init();
 
 			ModUtil.LOGGER.debug("Finished: Making Dimension Pieces");
-		});
+		});	
 	}
 	
 	@SubscribeEvent
@@ -129,16 +189,6 @@ public class LostWorlds
 		ModUtil.LOGGER.debug("Finished: Dimension Renders");
 	}
 	
-	private void loadComplete(FMLLoadCompleteEvent event)
-	{
-		ModUtil.LOGGER.debug("Loading: Vanilla Maps");
-		
-		ModStrippables.strippingMap();
-		ModFlammables.flammables();
-		
-		ModUtil.LOGGER.debug("Finished: Vanilla Maps");
-	}
-	
 	@SubscribeEvent
 	public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
 	{
@@ -147,5 +197,17 @@ public class LostWorlds
 		ModSpawnEggItem.initSpawnEggs();
 		
 		ModUtil.LOGGER.debug("Finished: Spawn Eggs");
+	}
+	
+	public static void add(Block logBlock, Block strippedLogBlock)
+	{
+		AxeItem.STRIPABLES = Maps.newHashMap(AxeItem.STRIPABLES);
+		AxeItem.STRIPABLES.put(logBlock, strippedLogBlock);
+	}
+	
+	public static void add(Block block, int encouragement, int flammability) 
+	{
+		FireBlock fire = (FireBlock) Blocks.FIRE;
+		fire.setFlammable(block, encouragement, flammability);
 	}
 }

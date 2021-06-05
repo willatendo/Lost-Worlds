@@ -1,6 +1,6 @@
 package lostworlds.common.container;
 
-import lostworlds.client.slot.FossilCleanerFuelSlot;
+import lostworlds.common.slot.FossilCleanerFuelSlot;
 import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import lostworlds.core.init.ContainerInit;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,29 +11,18 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.FurnaceResultSlot;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipe;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.world.World;
+import net.minecraft.util.IIntArray;
+import net.minecraft.util.IntArray;
 
 public class FossilCleanerContainer extends Container
 {
 	private final IInventory container;
-	private final World level;
-	private final IRecipeType<FurnaceRecipe> recipeType = IRecipeType.SMELTING;
 	
-	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
-	{
-		super(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), windowID);
-		this.level = null;
-		this.container = null;
- 	}
-	
-	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, FossilCleanerTileEntity tile) 
+	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, IInventory tile, IIntArray array) 
 	{
 		super(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), windowID);
 		this.container = tile;
-		this.level = playerInv.player.level;
 		
 		this.addSlot(new Slot(tile, 0, 56, 17));
 		this.addSlot(new FossilCleanerFuelSlot(this, tile, 1, 56, 54));
@@ -51,7 +40,14 @@ public class FossilCleanerContainer extends Container
 		{
 			this.addSlot(new Slot(playerInv, k, 8 + k * 18, 142));
 		}
+		
+		this.addDataSlots(array);
 	}
+	
+	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
+	{
+		this(windowID, playerInv, new Inventory(3), new IntArray(4));
+ 	}
 
 	@Override
 	public boolean stillValid(PlayerEntity player) 
@@ -129,10 +125,10 @@ public class FossilCleanerContainer extends Container
 		return itemstack;
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected boolean canSmelt(ItemStack stack) 
 	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
+		return false;
+		//return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
 	}
 	
 	public boolean isFuel(ItemStack stack) 

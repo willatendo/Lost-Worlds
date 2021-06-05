@@ -253,7 +253,7 @@
 
 	//Psittacosaurus
 	"item.lostworlds.psittacosaurus_dna": "Psittacosaurus DNA",
-	"item.lostworlds.psittacosaurus_dna_disc": "Storage Disk",
+	"item.lostworlds.psittacosaurus_dna_disc": "Storage Disc",
 	"item.lostworlds.psittacosaurus_soft_tissue": "Psittacosaurus Soft Tissue",
 	"item.lostworlds.syringe_of_psittacosaurus_blood": "Syringe of Psittacosaurus Blood",
 	"item.lostworlds.vile_of_psittacosaurus_blood": "Vile of Psittacosaurus Blood",
@@ -265,7 +265,7 @@
 	
 	//Cryolophosaurus
 	"item.lostworlds.cryolophosaurus_dna": "Cryolophosaurus DNA",
-	"item.lostworlds.cryolophosaurus_dna_disc": "Storage Disk",
+	"item.lostworlds.cryolophosaurus_dna_disc": "Storage Disc",
 	"item.lostworlds.cryolophosaurus_soft_tissue": "Cryolophosaurus Soft Tissue",
 	"item.lostworlds.syringe_of_cryolophosaurus_blood": "Syringe of Cryolophosaurus Blood",
 	"item.lostworlds.vile_of_cryolophosaurus_blood": "Vile of Cryolophosaurus Blood",
@@ -325,7 +325,7 @@
 
 	//Chilesaurus
 	"item.lostworlds.chilesaurus_dna": "Chilesaurus DNA",
-	"item.lostworlds.chilesaurus_dna_disc": "Storage Disk",
+	"item.lostworlds.chilesaurus_dna_disc": "Storage Disc",
 	"item.lostworlds.chilesaurus_soft_tissue": "Chilesaurus Soft Tissue",
 	"item.lostworlds.syringe_of_chilesaurus_blood": "Syringe of Chilesaurus Blood",
 	"item.lostworlds.vile_of_chilesaurus_blood": "Vile of Chilesaurus Blood",
@@ -1235,6 +1235,15 @@
 
 	"lostworlds.advancements.paleontology.the_body.title": "The Body",
 	"lostworlds.advancements.paleontology.the_body.description": "Craft a computer frame!",
+
+	"lostworlds.advancements.paleontology.like_indiana_jones.title": "Indiana Jones",
+	"lostworlds.advancements.paleontology.like_indiana_jones.description": "Craft an archaeology table!",
+
+	"lostworlds.advancements.paleontology.the_permian.title": "The Permian",
+	"lostworlds.advancements.paleontology.the_permian.description": "Acquired a permian time book!",
+
+	"lostworlds.advancements.paleontology.the_jurassic.title": "The Jurassic",
+	"lostworlds.advancements.paleontology.the_jurassic.description": "Acquired a jurassic time book!",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds_fossils": "Lost Worlds Fossils",

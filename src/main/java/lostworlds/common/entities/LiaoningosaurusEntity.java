@@ -34,13 +34,12 @@ public class LiaoningosaurusEntity extends AbstractPrehistoricAnimalEntity imple
 		if(event.isMoving())
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.liaoningosaurus.walk", true));
-			return PlayState.CONTINUE;
 		}
 		else
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.liaoningosaurus.idle", true));
-			return PlayState.CONTINUE;
 		}	
+		return PlayState.CONTINUE;
 	}
 	
 	public LiaoningosaurusEntity(EntityType<? extends LiaoningosaurusEntity> entityIn, World worldIn) 
@@ -90,6 +89,7 @@ public class LiaoningosaurusEntity extends AbstractPrehistoricAnimalEntity imple
 		super.registerGoals();
 		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
+		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, CarnotaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, CarnotaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, TyrannosaurusEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));

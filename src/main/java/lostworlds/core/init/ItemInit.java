@@ -64,7 +64,7 @@ public class ItemInit
 	public static final RegistryObject<Item> JURASSIC_TIME_BOOK = register("jurassic_time_book", new JurassicTimeBook(properties().stacksTo(1).rarity(Rarity.RARE).tab(ItemGroupInit.ITEMS_TAB)));
 	
 	//Time Lord's Staff
-	public static final RegistryObject<Item> TIME_LORDS_STAFF = register("time_lords_staff", new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
+	//public static final RegistryObject<Item> TIME_LORDS_STAFF = register("time_lords_staff", new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
 	
 	//Leaf Litter
 	public static final RegistryObject<Item> FERN_LITTER = register("fern_litter", properties().food(FoodInit.FERN_LITTER).stacksTo(16).tab(ItemGroupInit.FOOD_TAB));
@@ -89,6 +89,13 @@ public class ItemInit
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_COOKED_MEAT = registerCookedMeat("procompsognathus", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_SPAWN_EGG = register("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), 0x125611, 0x143025);
 	
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_SKULL = registerSkull("procompsognathus");
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_ARM_BONE = registerArmBone("procompsognathus");
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_LEG_BONE = registerLegBone("procompsognathus");
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_FOOT_BONE = registerFootBone("procompsognathus");
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_HAND_BONE = registerHandBone("procompsognathus");
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_RIB_BONE = registerRibBone("procompsognathus");
+
 	//Palaeoniscum
 	public static final RegistryObject<Item> PALAEONISCUM_DNA = registerDNA("palaeoniscum");
 	public static final RegistryObject<Item> PALAEONISCUM_DNA_DISC = registerDNADisc("palaeoniscum");
@@ -852,6 +859,36 @@ public class ItemInit
 	private static RegistryObject<Item> registerFishBucket(String id, NonNullSupplier<? extends EntityType<?>> entity)
 	{
 		return register(id + "_bucket", new ModFishBucketItem(entity, Fluids.WATER));
+	}
+	
+	private static RegistryObject<Item> registerSkull(String id)
+	{
+		return register(id + "_skull", ItemGroupInit.CREATURES_TAB);
+	}
+	
+	private static RegistryObject<Item> registerArmBone(String id)
+	{
+		return register(id + "_arm_bone", ItemGroupInit.CREATURES_TAB);
+	}
+	
+	private static RegistryObject<Item> registerLegBone(String id)
+	{
+		return register(id + "_leg_bone", ItemGroupInit.CREATURES_TAB);
+	}
+	
+	private static RegistryObject<Item> registerFootBone(String id)
+	{
+		return register(id + "_foot_bone", ItemGroupInit.CREATURES_TAB);
+	}
+	
+	private static RegistryObject<Item> registerHandBone(String id)
+	{
+		return register(id + "_hand_bone", ItemGroupInit.CREATURES_TAB);
+	}
+	
+	private static RegistryObject<Item> registerRibBone(String id)
+	{
+		return register(id + "_rib_bone", ItemGroupInit.CREATURES_TAB);
 	}
 	
 	private static RegistryObject<Item> register(String id, NonNullSupplier<? extends Block> block, ItemGroup group)

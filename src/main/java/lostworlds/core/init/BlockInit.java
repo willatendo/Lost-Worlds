@@ -8,7 +8,7 @@ import lostworlds.common.blocks.BrownTerracottaFossilBlock;
 import lostworlds.common.blocks.ConiferLog;
 import lostworlds.common.blocks.CyanTerracottaFossilBlock;
 import lostworlds.common.blocks.DNAExtractorBlock;
-import lostworlds.common.blocks.DNAInjector;
+import lostworlds.common.blocks.DNAInjectorBlock;
 import lostworlds.common.blocks.DeadSpongeColonyBlock;
 import lostworlds.common.blocks.ExposedSandstoneFossilBlock;
 import lostworlds.common.blocks.ExposedStoneFossilBlock;
@@ -141,7 +141,7 @@ public class BlockInit
 	public static final RegistryObject<Block> FOSSIL_GRINDER = register("fossil_grinder", new FossilGrinderBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
 	public static final RegistryObject<Block> DNA_EXTRACTOR = register("dna_extractor", new DNAExtractorBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
 	public static final RegistryObject<Block> ANALYSER = register("analyser", new AnalyserBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
-	public static final RegistryObject<Block> DNA_INJECTOR = register("dna_injector", new DNAInjector(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+	public static final RegistryObject<Block> DNA_INJECTOR = register("dna_injector", new DNAInjectorBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(3.0f, 6.0F).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
 	
 	public static final RegistryObject<Block> POWER_SUPPLY_BLOCK = register("power_supply_block", new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	

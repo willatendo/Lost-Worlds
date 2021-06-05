@@ -1,4 +1,4 @@
-package lostworlds.client.slot;
+package lostworlds.common.slot;
 
 import lostworlds.common.container.FossilCleanerContainer;
 import net.minecraft.inventory.IInventory;
