@@ -1158,92 +1158,92 @@
 	"lostworlds.container.fossil_cleaner": "Fossil Cleaner",
 
 	//Advancements
-	"lostworlds.advancements.paleontology.root.title": "Paleontology",
-	"lostworlds.advancements.paleontology.root.description": "You played paleontology side of the mod!",
+	"lostworlds.advancements.lostworlds.root.title": "Lost Worlds",
+	"lostworlds.advancements.lostworlds.root.description": "You played the Lost Worlds mod!",
 
-	"lostworlds.advancements.paleontology.from_the_past.title": "From The Past",
-	"lostworlds.advancements.paleontology.from_the_past.description": "You got a fossil!",
+	"lostworlds.advancements.lostworlds.baby_time_lord.title": "Baby Time Lord",
+	"lostworlds.advancements.lostworlds.baby_time_lord.description": "Acquire a Time Book, the mystical work of the Time Lord.",
 
-	"lostworlds.advancements.paleontology.leather_brush.title": "Leather Brush",
-	"lostworlds.advancements.paleontology.leather_brush.description": "Get a leather brush!",
+	"lostworlds.advancements.lostworlds.the_permian.title": "The Permian",
+	"lostworlds.advancements.lostworlds.the_permian.description": "Acquire a Permian Time Book, volume 1 of the Time Lord's works.",
 
-	"lostworlds.advancements.paleontology.upgraded.title": "Upgraded",
-	"lostworlds.advancements.paleontology.upgraded.description": "Get a iron brush!",
-
-	"lostworlds.advancements.paleontology.golden.title": "Golden",
-	"lostworlds.advancements.paleontology.golden.description": "Get a gold brush!",
-
-	"lostworlds.advancements.paleontology.diamond.title": "Diamond",
-	"lostworlds.advancements.paleontology.diamond.description": "Get a diamond brush!",
-
-	"lostworlds.advancements.paleontology.ancient_seeds.title": "Ancient Seeds",
-	"lostworlds.advancements.paleontology.ancient_seeds.description": "Get some ancient seeds!",
-
-	"lostworlds.advancements.paleontology.knowledge.title": "Knowledge",
-	"lostworlds.advancements.paleontology.knowledge.description": "Get a field guide!",
-
-	"lostworlds.advancements.paleontology.paleo_salad.title": "Paleo Salad",
-	"lostworlds.advancements.paleontology.paleo_salad.description": "Make paleo salad!",
-
-	"lostworlds.advancements.paleontology.prehistoric_food.title": "Prehistoric Food",
-	"lostworlds.advancements.paleontology.prehistoric_food.description": "Get some food from the Jurassic!",
-
-	"lostworlds.advancements.paleontology.safety_first.title": "Safety First!",
-	"lostworlds.advancements.paleontology.safety_first.description": "Cook fern litter to kill the poison!",
-
-	"lostworlds.advancements.paleontology.baby_time_lord.title": "Baby Time Lord",
-	"lostworlds.advancements.paleontology.baby_time_lord.description": "Get a time book!",
-
-	"lostworlds.advancements.paleontology.the_broken_kt_boundary.title": "The Broken K-T Boundary",
-	"lostworlds.advancements.paleontology.the_broken_kt_boundary.description": "Obtain DNA!",
-
-	"lostworlds.advancements.paleontology.digitalisation.title": "Digitalisation",
-	"lostworlds.advancements.paleontology.digitalisation.description": "Store DNA on a disc!",
-
-	"lostworlds.advancements.paleontology.long_lost_skin.title": "Long Lost Skin",
-	"lostworlds.advancements.paleontology.long_lost_skin.description": "Find soft tiussue from grinding up fossils!",
-
-	"lostworlds.advancements.paleontology.broken_heart.title": "Broken Heart",
-	"lostworlds.advancements.paleontology.broken_heart.description": "Find a broken crystal scarab gem, the heart of ancient civilisations!",
-
-	"lostworlds.advancements.paleontology.the_gem.title": "The Gem",
-	"lostworlds.advancements.paleontology.the_gem.description": "Repair a broken crystal scarab gem!",
-
-	"lostworlds.advancements.paleontology.cheat.title": "Cheat!",
-	"lostworlds.advancements.paleontology.cheat.description": "Take blood from an ancient, or modern creatuure to clone it!",
-
-	"lostworlds.advancements.paleontology.for_storage.title": "For Storage!",
-	"lostworlds.advancements.paleontology.for_storage.description": "Make a vile!",
-
-	"lostworlds.advancements.paleontology.tech_up.title": "Tech Up!",
-	"lostworlds.advancements.paleontology.tech_up.description": "Obtain copper ore!",
-
-	"lostworlds.advancements.paleontology.electrified.title": "Eletrified",
-	"lostworlds.advancements.paleontology.electrified.description": "Obtain copper wire!",
-
-	"lostworlds.advancements.paleontology.the_brain.title": "The Brain",
-	"lostworlds.advancements.paleontology.the_brain.description": "Craft a motherboard!",
-
-	"lostworlds.advancements.paleontology.the_eyes.title": "The Eyes?",
-	"lostworlds.advancements.paleontology.the_eyes.description": "Craft a computer screen!",
-
-	"lostworlds.advancements.paleontology.the_dot_dot_dot.title": "The ...",
-	"lostworlds.advancements.paleontology.the_dot_dot_dot.description": "Craft a computer fan!",
-
-	"lostworlds.advancements.paleontology.the_heart.title": "The Heart",
-	"lostworlds.advancements.paleontology.the_heart.description": "Craft a cpu!",
-
-	"lostworlds.advancements.paleontology.the_body.title": "The Body",
-	"lostworlds.advancements.paleontology.the_body.description": "Craft a computer frame!",
-
-	"lostworlds.advancements.paleontology.like_indiana_jones.title": "Indiana Jones",
-	"lostworlds.advancements.paleontology.like_indiana_jones.description": "Craft an archaeology table!",
-
-	"lostworlds.advancements.paleontology.the_permian.title": "The Permian",
-	"lostworlds.advancements.paleontology.the_permian.description": "Acquired a permian time book!",
-
-	"lostworlds.advancements.paleontology.the_jurassic.title": "The Jurassic",
-	"lostworlds.advancements.paleontology.the_jurassic.description": "Acquired a jurassic time book!",
+	"lostworlds.advancements.lostworlds.the_jurassic.title": "The Jurassic",
+	"lostworlds.advancements.lostworlds.the_jurassic.description": "Acquire a Jurassic Time Book, volume 2 of the Time Lord's works.",
+ 
+	"lostworlds.advancements.lostworlds.like_indiana_jones.title": "Like Indiana Jones",
+	"lostworlds.advancements.lostworlds.like_indiana_jones.description": "Acquire an archaeology table, the start of the archaeology side.",
+ 
+	"lostworlds.advancements.lostworlds.assembly_required.title": "Assembly Required",
+	"lostworlds.advancements.lostworlds.assembly_required.description": "Acquire the broken crystal scarab gem. It may need to be polished a bit.",
+ 
+	"lostworlds.advancements.lostworlds.lost_heart.title": "Lost Heart",
+	"lostworlds.advancements.lostworlds.lost_heart.description": "Acquire the heart of ancient empires, the crystal scarab gem.",
+ 
+	"lostworlds.advancements.lostworlds.ungodly_dedication.title": "Ungodly Dedication",
+	"lostworlds.advancements.lostworlds.ungodly_dedication.description": "Improve a neatherite hoe into a crystal scarab hoe.",
+ 
+	"lostworlds.advancements.lostworlds.crystal_sword.title": "Crystal Sword",
+	"lostworlds.advancements.lostworlds.crystal_sword.description": "Improve a neatherite sword into a crystal scarab sword.",
+ 
+	"lostworlds.advancements.lostworlds.the_strongest_pick.title": "The Strongest Pick",
+	"lostworlds.advancements.lostworlds.the_strongest_pick.description": "Improve a neatherite pickaxe into a crystal scarab pickaxe.",
+ 
+	"lostworlds.advancements.lostworlds.execution_style.title": "Execution-Style",
+	"lostworlds.advancements.lostworlds.execution_style.description": "Improve a neatherite axe into a crystal scarab axe.",
+ 
+	"lostworlds.advancements.lostworlds.shovel_thats_all.title": "Shovel.... That's All",
+	"lostworlds.advancements.lostworlds.shovel_thats_all.description": "Improve a neatherite shovel into a crystal scarab shovel.",
+ 
+	"lostworlds.advancements.lostworlds.the_first_steps.title": "The First Steps",
+	"lostworlds.advancements.lostworlds.the_first_steps.description": "Acquire a leather brush.",
+ 
+	"lostworlds.advancements.lostworlds.safe_pickup.title": "Safe Pickup",
+	"lostworlds.advancements.lostworlds.safe_pickup.description": "Acquire wet paper.",
+ 
+	"lostworlds.advancements.lostworlds.from_the_past.title": "From the Past",
+	"lostworlds.advancements.lostworlds.from_the_past.description": "Acquire a plastered fossil.",
+ 
+	"lostworlds.advancements.lostworlds.knowledge.title": "Knowledge",
+	"lostworlds.advancements.lostworlds.knowledge.description": "Buy a feild guide.",
+ 
+	"lostworlds.advancements.lostworlds.prehistoric_food.title": "Prehistoric Food",
+	"lostworlds.advancements.lostworlds.prehistoric_food.description": "Acquire some fern litter, nutritious so long as you're not poisoned.",
+ 
+	"lostworlds.advancements.lostworlds.safety_first.title": "Safety First",
+	"lostworlds.advancements.lostworlds.safety_first.description": "Cook away the poison in fern litter.",
+ 
+	"lostworlds.advancements.lostworlds.paleo_salad.title": "Paleo Salad",
+	"lostworlds.advancements.lostworlds.paleo_salad.description": "Toss some fern litter and seeds together.",
+ 
+	"lostworlds.advancements.lostworlds.ancient_seeds.title": "Ancient Seeds",
+	"lostworlds.advancements.lostworlds.ancient_seeds.description": "Acquire ancient seeds. They're very good in salads.",
+ 
+	"lostworlds.advancements.lostworlds.just_a_trace.title": "Just a Trace",
+	"lostworlds.advancements.lostworlds.just_a_trace.description": "Acquire soft tissue, the last trace of DNA of the Dinosaurs.",
+ 
+	"lostworlds.advancements.lostworlds.the_broken_kt_boundary.title": "The Broken K-T Boundary",
+	"lostworlds.advancements.lostworlds.the_broken_kt_boundary.description": "Acquire DNA.",
+ 
+	"lostworlds.advancements.lostworlds.digitalisation.title": "Digitalisation",
+	"lostworlds.advancements.lostworlds.digitalisation.description": "Store DNA on a disc.",
+ 
+	"lostworlds.advancements.lostworlds.cheat.title": "Cheat!",
+	"lostworlds.advancements.lostworlds.cheat.description": "Take a creature's blood to skip the process.",
+ 
+	"lostworlds.advancements.lostworlds.upgraded.title": "Upgraded",
+	"lostworlds.advancements.lostworlds.upgraded.description": "Acquire an iron brush.",
+ 
+	"lostworlds.advancements.lostworlds.golden.title": "Golden",
+	"lostworlds.advancements.lostworlds.golden.description": "Acquire an gold brush.",
+ 
+	"lostworlds.advancements.lostworlds.diamond.title": "Diamond",
+	"lostworlds.advancements.lostworlds.diamond.description": "Acquire an diamond brush.",
+ 
+	"lostworlds.advancements.lostworlds.building_jurassic_park.title": "Building Jurassic Park",
+	"lostworlds.advancements.lostworlds.building_jurassic_park.description": "Start building the foundations of Jurassic Park with light concrete.",
+ 
+	"lostworlds.advancements.lostworlds.building_jurassic_world.title": "Building Jurassic World",
+	"lostworlds.advancements.lostworlds.building_jurassic_world.description": "Start building the foundations of Jurassic World with dark concrete.",
 	
 	//Item Group	
 	"itemGroup.lostworlds.lostworlds_fossils": "Lost Worlds Fossils",

@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/electrified",
+	"parent": "lostworlds:lostworlds/root",
 	"display": {
 		"icon": {
-			"item": "lostworlds:computer_frame"
+			"item": "lostworlds:copper_ore"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.the_body.title"
+			"translate": "lostworlds.advancements.paleontology.tech_up.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.the_body.description"
+			"translate": "lostworlds.advancements.paleontology.tech_up.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -21,7 +21,7 @@
 			"conditions": {
 			"items": [
 				{
-					"item": "lostworlds:computer_frame"
+					"item": "lostworlds:copper_ore"
 				}]
 			}	
 		}

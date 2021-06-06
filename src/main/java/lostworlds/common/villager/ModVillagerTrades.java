@@ -27,18 +27,18 @@ public class ModVillagerTrades
 	{
 		VillagerTrades.ITrade[] level1 = new VillagerTrades.ITrade[] 
 		{
-			new VillagerTrades.ItemsForEmeraldsTrade(Items.CLAY_BALL, 16, 20, 12),
-			new VillagerTrades.ItemsForEmeraldsTrade(Items.CLAY, 1, 10, 12),
-			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.ARCHAEOLOGY_TABLE.get(), 1, 1, 20)
+			new VillagerTrades.ItemsForEmeraldsTrade(Items.CLAY_BALL, 2, 20, 12),
+			new VillagerTrades.ItemsForEmeraldsTrade(Items.CLAY, 16, 10, 12),
+			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.ARCHAEOLOGY_TABLE.get(), 15, 1, 20)
 		};
 		VillagerTrades.ITrade[] level2 = new VillagerTrades.ITrade[] 
 		{
-			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.FEILD_GUIDE.get(), 1, 1, 20),
-			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.WET_PAPER.get(), 16, 5, 12)
+			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.FEILD_GUIDE.get(), 25, 1, 20),
+			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.WET_PAPER.get(), 3, 5, 12)
 		};
 		VillagerTrades.ITrade[] level3 = new VillagerTrades.ITrade[] 
 		{
-			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.LEATHER_BRUSH.get(), 1, 1, 20)
+			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.LEATHER_BRUSH.get(), 16, 1, 20)
 		};
 		VillagerTrades.ITrade[] level4 = new VillagerTrades.ITrade[] 
 		{

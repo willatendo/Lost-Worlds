@@ -1,0 +1,33 @@
+{
+	"parent": "lostworlds:lostworlds/lost_heart",
+	"display": {
+		"icon": {
+			"item": "lostworlds:crystal_scarab_hoe"
+		},
+		"title": {
+			"translate": "lostworlds.advancements.lostworlds.ungodly_dedication.title"
+		},
+		"description": {
+			"translate": "lostworlds.advancements.lostworlds.ungodly_dedication.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"advancement_criteria": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+			"items": [
+				{
+					"item": "lostworlds:crystal_scarab_hoe"
+				}]
+			}	
+		}
+	},
+	"requirements": [
+	[
+		"advancement_criteria"
+	]]
+}

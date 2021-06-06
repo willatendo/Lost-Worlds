@@ -1,22 +1,22 @@
 {
-	"parent": "lostworlds:paleontology/broken_heart",
+	"parent": "lostworlds:lostworlds/assembly_required",
 	"display": {
 		"icon": {
 			"item": "lostworlds:crystal_scarab_gem"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.the_gem.title"
+			"translate": "lostworlds.advancements.lostworlds.lost_heart.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.the_gem.description"
+			"translate": "lostworlds.advancements.lostworlds.lost_heart.description"
 		},
-		"frame": "goal",
+		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true,
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

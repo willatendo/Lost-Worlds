@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/long_lost_skin",
+	"parent": "lostworlds:lostworlds/just_a_trace",
 	"display": {
 		"icon": {
 			"item": "lostworlds:tyrannosaurus_dna"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.the_broken_kt_boundary.title"
+			"translate": "lostworlds.advancements.lostworlds.the_broken_kt_boundary.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.the_broken_kt_boundary.description"
+			"translate": "lostworlds.advancements.lostworlds.the_broken_kt_boundary.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -16,7 +16,7 @@
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

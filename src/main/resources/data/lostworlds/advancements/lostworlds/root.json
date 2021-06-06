@@ -4,10 +4,10 @@
 			"item": "lostworlds:exposed_stone_fossil"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.root.title"
+			"translate": "lostworlds.advancements.lostworlds.root.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.root.description"
+			"translate": "lostworlds.advancements.lostworlds.root.description"
 		},
 		"frame": "task",
 		"show_toast": false,
@@ -16,7 +16,7 @@
 		"background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
 	},
 	"criteria": {
-		"crafting_table": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"crafting_table"
+		"advancement_criteria"
 	]]
 }

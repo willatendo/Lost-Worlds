@@ -1,16 +1,16 @@
 {
-	"parent": "lostworlds:paleontology/electrified",
+	"parent": "lostworlds:lostworlds/baby_time_lord",
 	"display": {
 		"icon": {
-			"item": "lostworlds:computer_screen"
+			"item": "lostworlds:jurassic_time_book"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.the_eyes.title"
+			"translate": "lostworlds.advancements.lostworlds.the_jurassic.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.the_eyes.description"
+			"translate": "lostworlds.advancements.lostworlds.the_jurassic.description"
 		},
-		"frame": "task",
+		"frame": "goal",
 		"show_toast": true,
 		"announce_to_chat": true,
 		"hidden": true
@@ -21,7 +21,7 @@
 			"conditions": {
 			"items": [
 				{
-					"item": "lostworlds:computer_screen"
+					"item": "lostworlds:jurassic_time_book"
 				}]
 			}	
 		}

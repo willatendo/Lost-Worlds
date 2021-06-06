@@ -1,5 +1,8 @@
 package lostworlds;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.common.collect.Maps;
 
 import lostworlds.common.items.ModSpawnEggItem;
@@ -16,12 +19,15 @@ import lostworlds.world.dimension.jurassic.JurassicDimensionRenderInfo;
 import lostworlds.world.dimension.permian.PermianDimension;
 import lostworlds.world.dimension.permian.PermianDimensionRenderInfo;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.block.FireBlock;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.Feature;
@@ -70,7 +76,7 @@ public class LostWorlds
 	{
 		DeferredWorkQueue.runLater(() -> 
 		{
-			ModUtil.LOGGER.debug("Loading: Registering Compostables");
+			ModUtil.LOGGER.debug("Loading: Adding Things to Maps");
 			
 			ComposterBlock.add(0.3F, BlockInit.CONIFER_LEAVES.get());
 			ComposterBlock.add(0.3F, BlockInit.ARAUCARIA_LEAVES.get());
@@ -141,7 +147,11 @@ public class LostWorlds
 			add(BlockInit.ARAUCARIA_LOG.get(), BlockInit.STRIPPED_ARAUCARIA_LOG.get());
 			add(BlockInit.ARAUCARIA_WOOD.get(), BlockInit.STRIPPED_ARAUCARIA_WOOD.get());
 			
-			ModUtil.LOGGER.debug("Finished: Registering Compostables");
+			add(BlockInit.MOSSY_DIRT.get());
+
+			farm(BlockInit.MOSSY_DIRT.get());
+
+			ModUtil.LOGGER.debug("Finished: Adding Things to Maps");
 		});
 		
 		event.enqueueWork(() -> 
@@ -209,5 +219,18 @@ public class LostWorlds
 	{
 		FireBlock fire = (FireBlock) Blocks.FIRE;
 		fire.setFlammable(block, encouragement, flammability);
+	}
+	
+	public static void add(Block grass)
+	{
+		Map<Block, BlockState> FLATTENABLES = new HashMap<>(ShovelItem.FLATTENABLES);
+		FLATTENABLES.put(grass, Blocks.GRASS_PATH.defaultBlockState());
+		ShovelItem.FLATTENABLES = FLATTENABLES;
+	}
+	
+	public static void farm(Block grass)
+	{
+		HoeItem.TILLABLES = Maps.newHashMap(HoeItem.TILLABLES);
+		HoeItem.TILLABLES.put(grass, Blocks.FARMLAND.defaultBlockState());
 	}
 }

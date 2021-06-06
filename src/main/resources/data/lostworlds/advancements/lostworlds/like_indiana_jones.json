@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/root",
+	"parent": "lostworlds:lostworlds/root",
 	"display": {
 		"icon": {
 			"item": "lostworlds:archaeology_table"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.like_indiana_jones.title"
+			"translate": "lostworlds.advancements.lostworlds.like_indiana_jones.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.like_indiana_jones.description"
+			"translate": "lostworlds.advancements.lostworlds.like_indiana_jones.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -16,7 +16,7 @@
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

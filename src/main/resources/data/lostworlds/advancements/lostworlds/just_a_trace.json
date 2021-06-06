@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/from_the_past",
+	"parent": "lostworlds:lostworlds/from_the_past",
 	"display": {
 		"icon": {
 			"item": "lostworlds:tyrannosaurus_soft_tissue"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.long_lost_skin.title"
+			"translate": "lostworlds.advancements.lostworlds.just_a_trace.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.long_lost_skin.description"
+			"translate": "lostworlds.advancements.lostworlds.just_a_trace.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -16,7 +16,7 @@
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

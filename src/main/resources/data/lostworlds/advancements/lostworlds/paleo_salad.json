@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/safety_first",
+	"parent": "lostworlds:lostworlds/safety_first",
 	"display": {
 		"icon": {
 			"item": "lostworlds:paleo_salad"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.paleo_salad.title"
+			"translate": "lostworlds.advancements.lostworlds.paleo_salad.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.paleo_salad.description"
+			"translate": "lostworlds.advancements.lostworlds.paleo_salad.description"
 		},
 		"frame": "goal",
 		"show_toast": true,
@@ -16,7 +16,7 @@
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

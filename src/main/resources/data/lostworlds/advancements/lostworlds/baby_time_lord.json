@@ -1,22 +1,22 @@
 {
-	"parent": "lostworlds:paleontology/root",
+	"parent": "lostworlds:lostworlds/root",
 	"display": {
 		"icon": {
 			"item": "lostworlds:permian_time_book"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.baby_time_lord.title"
+			"translate": "lostworlds.advancements.lostworlds.baby_time_lord.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.baby_time_lord.description"
+			"translate": "lostworlds.advancements.lostworlds.baby_time_lord.description"
 		},
-		"frame": "goal",
+		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true,
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

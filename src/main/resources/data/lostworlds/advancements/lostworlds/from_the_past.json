@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/leather_brush",
+	"parent": "lostworlds:lostworlds/safe_pickup",
 	"display": {
 		"icon": {
 			"item": "lostworlds:plastered_fossil"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.from_the_past.title"
+			"translate": "lostworlds.advancements.lostworlds.from_the_past.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.from_the_past.description"
+			"translate": "lostworlds.advancements.lostworlds.from_the_past.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -16,7 +16,7 @@
 		"hidden": false
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

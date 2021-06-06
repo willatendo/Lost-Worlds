@@ -39,7 +39,6 @@ public class LostWorldsTab extends BaseTab
 	{
 		for(RegistryObject<Item> item : ModRegistry.ITEM_REGISTRY.getEntries()) 
 		{
-			
 			itemStacks.add(item.get().getDefaultInstance());
 		}
 	}

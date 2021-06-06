@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/leather_brush",
+	"parent": "lostworlds:lostworlds/upgraded",
 	"display": {
 		"icon": {
-			"item": "lostworlds:iron_brush"
+			"item": "lostworlds:gold_brush"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.upgraded.title"
+			"translate": "lostworlds.advancements.lostworlds.golden.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.upgraded.description"
+			"translate": "lostworlds.advancements.lostworlds.golden.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -16,18 +16,18 @@
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
 				{
-					"item": "lostworlds:iron_brush"
+					"item": "lostworlds:gold_brush"
 				}]
 			}	
 		}
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

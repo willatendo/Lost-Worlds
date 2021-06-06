@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/the_broken_kt_boundary",
+	"parent": "lostworlds:lostworlds/the_broken_kt_boundary",
 	"display": {
 		"icon": {
 			"item": "lostworlds:tyrannosaurus_dna_disc"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.digitalisation.title"
+			"translate": "lostworlds.advancements.lostworlds.digitalisation.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.digitalisation.description"
+			"translate": "lostworlds.advancements.lostworlds.digitalisation.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -16,7 +16,7 @@
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/from_the_past",
+	"parent": "lostworlds:lostworlds/from_the_past",
 	"display": {
 		"icon": {
 			"item": "lostworlds:fern_litter"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.prehistoric_food.title"
+			"translate": "lostworlds.advancements.lostworlds.prehistoric_food.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.prehistoric_food.description"
+			"translate": "lostworlds.advancements.lostworlds.prehistoric_food.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -16,7 +16,7 @@
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }

@@ -1,0 +1,30 @@
+{
+	"parent": "lostworlds:lostworlds/root",
+	"display": {
+		"icon": {
+			"item": "lostworlds:light_concrete"
+		},
+		"title": {
+			"translate": "lostworlds.advancements.lostworlds.building_jurassic_park.title"
+		},
+		"description": {
+			"translate": "lostworlds.advancements.lostworlds.building_jurassic_park.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"advancement_criteria": {
+			"trigger": "minecraft:placed_block",
+			"conditions": {
+			"block": "lostworlds:light_concrete"
+			}	
+		}
+	},
+	"requirements": [
+	[
+		"advancement_criteria"
+	]]
+}

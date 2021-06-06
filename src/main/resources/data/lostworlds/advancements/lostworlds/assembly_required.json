@@ -1,14 +1,14 @@
 {
-	"parent": "lostworlds:paleontology/like_indiana_jones",
+	"parent": "lostworlds:lostworlds/like_indiana_jones",
 	"display": {
 		"icon": {
 			"item": "lostworlds:broken_crystal_scarab_gem"
 		},
 		"title": {
-			"translate": "lostworlds.advancements.paleontology.broken_heart.title"
+			"translate": "lostworlds.advancements.lostworlds.assembly_required.title"
 		},
 		"description": {
-			"translate": "lostworlds.advancements.paleontology.broken_heart.description"
+			"translate": "lostworlds.advancements.lostworlds.assembly_required.description"
 		},
 		"frame": "task",
 		"show_toast": true,
@@ -16,7 +16,7 @@
 		"hidden": true
 	},
 	"criteria": {
-		"get_stone": {
+		"advancement_criteria": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 			"items": [
@@ -28,6 +28,6 @@
 	},
 	"requirements": [
 	[
-		"get_stone"
+		"advancement_criteria"
 	]]
 }
