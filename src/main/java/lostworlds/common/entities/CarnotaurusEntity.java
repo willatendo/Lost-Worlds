@@ -2,6 +2,7 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
@@ -29,7 +30,12 @@ public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implement
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
 	{
-		if(event.isMoving())
+		if(this.entityData.get(AbstractPrehistoricEntity.ATTACKING))
+		{
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.carnotaurus.attack", true));
+			return PlayState.CONTINUE;
+		}
+		else if(event.isMoving())
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.carnotaurus.walk", true));
 			return PlayState.CONTINUE;

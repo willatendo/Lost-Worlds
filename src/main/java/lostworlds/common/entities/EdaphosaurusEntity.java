@@ -31,7 +31,7 @@ public class EdaphosaurusEntity extends AbstractPrehistoricAnimalEntity implemen
 	{
 		if(!(animationSpeed > -0.15F && animationSpeed < 0.15F))
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.edaphosaurus.walking", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.edaphosaurus.walk", true));
 			return PlayState.CONTINUE;
 		}
 		else

@@ -47,30 +47,8 @@
 					]
 				},
 				{
-					"name": "frontLeftLeg",
-					"parent": "dimetrodon",
-					"pivot": [4, 4.85, -3.75],
-					"rotation": [-40, 0, 0],
-					"cubes": [
-						{"origin": [2.25, 3.1, -4.75], "size": [3, 4, 4], "pivot": [3.5, 3.1, -3.5], "rotation": [50, 0, 0], "uv": [74, 32]},
-						{"origin": [2.5, -2.9, -4.75], "size": [3, 4, 2], "pivot": [3.5, -0.4, -3.25], "rotation": [-50, 0, 0], "uv": [78, 69]},
-						{"origin": [3, 0.1, -5], "size": [2, 5, 3], "uv": [66, 78]}
-					]
-				},
-				{
-					"name": "frontRightLeg",
-					"parent": "dimetrodon",
-					"pivot": [-4, 4.85, -3.75],
-					"rotation": [-40, 0, 0],
-					"cubes": [
-						{"origin": [-5.25, 3.1, -4.75], "size": [3, 4, 4], "pivot": [-3.5, 3.1, -3.5], "rotation": [50, 0, 0], "uv": [74, 32]},
-						{"origin": [-5.5, -2.9, -4.75], "size": [3, 4, 2], "pivot": [-3.5, -0.4, -3.25], "rotation": [-50, 0, 0], "uv": [78, 69]},
-						{"origin": [-5, 0.1, -5], "size": [2, 5, 3], "uv": [66, 78]}
-					]
-				},
-				{
 					"name": "head",
-					"parent": "dimetrodon",
+					"parent": "body",
 					"pivot": [0, 6.85, -8.25],
 					"rotation": [7.5, 0, 0],
 					"cubes": [
@@ -100,7 +78,7 @@
 				},
 				{
 					"name": "sail",
-					"parent": "dimetrodon",
+					"parent": "body",
 					"pivot": [0, 10.35, -7.25],
 					"rotation": [10, 0, 0],
 					"cubes": [
@@ -181,12 +159,34 @@
 				},
 				{
 					"name": "tail",
-					"parent": "dimetrodon",
+					"parent": "body",
 					"pivot": [0, 4.68333, 21.66667],
 					"cubes": [
 						{"origin": [-2, 4.6, 18.5], "size": [4, 3, 18], "pivot": [0, 5.1, 21], "rotation": [-7.5, 0, 0], "uv": [48, 48]},
 						{"origin": [-1.5, 2.6, 36.25], "size": [3, 3, 6], "uv": [66, 69]},
 						{"origin": [-1, 2.85, 42.25], "size": [2, 2, 6], "uv": [14, 70]}
+					]
+				},
+				{
+					"name": "frontLeftLeg",
+					"parent": "dimetrodon",
+					"pivot": [4, 4.85, -3.75],
+					"rotation": [-40, 0, 0],
+					"cubes": [
+						{"origin": [2.25, 3.1, -4.75], "size": [3, 4, 4], "pivot": [3.5, 3.1, -3.5], "rotation": [50, 0, 0], "uv": [74, 32]},
+						{"origin": [2.5, -2.9, -4.75], "size": [3, 4, 2], "pivot": [3.5, -0.4, -3.25], "rotation": [-50, 0, 0], "uv": [78, 69]},
+						{"origin": [3, 0.1, -5], "size": [2, 5, 3], "uv": [66, 78]}
+					]
+				},
+				{
+					"name": "frontRightLeg",
+					"parent": "dimetrodon",
+					"pivot": [-4, 4.85, -3.75],
+					"rotation": [-40, 0, 0],
+					"cubes": [
+						{"origin": [-5.25, 3.1, -4.75], "size": [3, 4, 4], "pivot": [-3.5, 3.1, -3.5], "rotation": [50, 0, 0], "uv": [74, 32]},
+						{"origin": [-5.5, -2.9, -4.75], "size": [3, 4, 2], "pivot": [-3.5, -0.4, -3.25], "rotation": [-50, 0, 0], "uv": [78, 69]},
+						{"origin": [-5, 0.1, -5], "size": [2, 5, 3], "uv": [66, 78]}
 					]
 				}
 			]

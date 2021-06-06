@@ -2,6 +2,7 @@ package lostworlds.common.entities;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import lostworlds.common.goal.ModBreedGoal;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
@@ -29,7 +30,12 @@ public class DimetrodonEntity extends AbstractPrehistoricAnimalEntity implements
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
 	{
-		if(!(animationSpeed > -0.15F && animationSpeed < 0.15F))
+		if(this.entityData.get(AbstractPrehistoricEntity.ATTACKING))
+		{
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dimetrodon.attack", true));
+			return PlayState.CONTINUE;
+		}
+		else if(!(animationSpeed > -0.15F && animationSpeed < 0.15F))
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dimetrodon.walking", true));
 			return PlayState.CONTINUE;

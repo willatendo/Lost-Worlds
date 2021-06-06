@@ -32,8 +32,16 @@
 					]
 				},
 				{
-					"name": "frontleg1",
+					"name": "tail",
 					"parent": "body",
+					"pivot": [0, 2.5, 7],
+					"cubes": [
+						{"origin": [-0.5, 2, 7], "size": [1, 1, 2], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "frontleg1",
+					"parent": "Diictodon",
 					"pivot": [1, 2, 1.5],
 					"cubes": [
 						{"origin": [0.75, 0, 1.25], "size": [1, 2, 1], "uv": [12, 0]}
@@ -41,7 +49,7 @@
 				},
 				{
 					"name": "frontleg2",
-					"parent": "body",
+					"parent": "Diictodon",
 					"pivot": [-1, 2, 1.5],
 					"cubes": [
 						{"origin": [-1.75, 0, 1.25], "size": [1, 2, 1], "uv": [10, 10]}
@@ -49,7 +57,7 @@
 				},
 				{
 					"name": "backleg1",
-					"parent": "body",
+					"parent": "Diictodon",
 					"pivot": [1, 2, 5.75],
 					"cubes": [
 						{"origin": [0.75, 0, 5.25], "size": [1, 2, 1], "uv": [7, 8]}
@@ -57,18 +65,10 @@
 				},
 				{
 					"name": "backleg2",
-					"parent": "body",
+					"parent": "Diictodon",
 					"pivot": [-1, 2, 5.75],
 					"cubes": [
 						{"origin": [-1.75, 0, 5.25], "size": [1, 2, 1], "uv": [0, 3]}
-					]
-				},
-				{
-					"name": "tail",
-					"parent": "body",
-					"pivot": [0, 2.5, 7],
-					"cubes": [
-						{"origin": [-0.5, 2, 7], "size": [1, 1, 2], "uv": [0, 0]}
 					]
 				}
 			]

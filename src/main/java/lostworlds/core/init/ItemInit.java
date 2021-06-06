@@ -64,7 +64,7 @@ public class ItemInit
 	public static final RegistryObject<Item> JURASSIC_TIME_BOOK = register("jurassic_time_book", new JurassicTimeBook(properties().stacksTo(1).rarity(Rarity.RARE).tab(ItemGroupInit.ITEMS_TAB)));
 	
 	//Time Lord's Staff
-	//public static final RegistryObject<Item> TIME_LORDS_STAFF = register("time_lords_staff", new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
+	//public static fin	al RegistryObject<Item> TIME_LORDS_STAFF = register("time_lords_staff", new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
 	
 	//Leaf Litter
 	public static final RegistryObject<Item> FERN_LITTER = register("fern_litter", properties().food(FoodInit.FERN_LITTER).stacksTo(16).tab(ItemGroupInit.FOOD_TAB));
@@ -885,6 +885,7 @@ public class ItemInit
 		return register(id + "_rib_bone", ItemGroupInit.CREATURES_TAB);
 	}
 	
+	@SuppressWarnings("unused")
 	private static RegistryObject<Item> registerOtherBone(String id)
 	{
 		return register(id, ItemGroupInit.CREATURES_TAB);

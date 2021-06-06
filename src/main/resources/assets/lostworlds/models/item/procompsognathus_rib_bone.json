@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/rib_bone"
+		"layer0": "lostworlds:items/bones/rib_bone"
   }
 }

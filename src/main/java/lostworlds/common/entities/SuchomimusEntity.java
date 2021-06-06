@@ -51,7 +51,7 @@ public class SuchomimusEntity extends AbstractPrehistoricLandAndSeaEntity implem
 		}
 		else
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.suchomimus.swimming_idle", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.suchomimus.swim_idle", true));
 		}
 		return PlayState.CONTINUE;
 	}
