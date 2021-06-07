@@ -75,7 +75,7 @@ repositories {
 }
 
 dependencies {
-	minecraft 'net.minecraftforge:forge:1.16.5-36.1.2'
+	minecraft 'net.minecraftforge:forge:1.16.5-36.1.25'
 	
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.16.5:3.0.30')
 	compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75:api")
