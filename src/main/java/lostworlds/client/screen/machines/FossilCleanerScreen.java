@@ -18,16 +18,19 @@ public class FossilCleanerScreen<T extends FossilCleanerContainer> extends Conta
 	{
 		super(container, playerInv, text);
 	}
-
-	public void render(MatrixStack stack, int i1, int i2, float f) 
+	
+	@Override
+	public void render(MatrixStack stack, int i1, int i2, float f)
 	{
 		this.renderBackground(stack);
 		this.renderBg(stack, f, i1, i2);
+		super.render(stack, i1, i2, f);
 		this.renderTooltip(stack, i1, i2);
 	}
 	
 	@SuppressWarnings("deprecation")
-	protected void renderBg(MatrixStack stack, float f, int i1, int i2) 
+	@Override
+	protected void renderBg(MatrixStack stack, float f, int i1, int i2)
 	{
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.minecraft.getTextureManager().bind(TEXTURE);

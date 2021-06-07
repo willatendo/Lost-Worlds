@@ -1,7 +1,7 @@
 package lostworlds.common.blocks;
 
 import lostworlds.common.blocks.abstracts.AbstractMachineBlock;
-import lostworlds.common.tileentity.FossilGrinderTileEntity;
+import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,14 +33,14 @@ public class FossilGrinderBlock extends AbstractMachineBlock
 	@Override
 	public TileEntity newBlockEntity(IBlockReader reader) 
 	{
-		return new FossilGrinderTileEntity();
+		return new FossilCleanerTileEntity();
 	}
 
 	@Override
 	protected void openContainer(World world, BlockPos pos, PlayerEntity player) 
 	{
 		TileEntity tileentity = world.getBlockEntity(pos);
-		if(tileentity instanceof FossilGrinderTileEntity) 
+		if(tileentity instanceof FossilCleanerTileEntity) 
 		{
 			player.openMenu((INamedContainerProvider)tileentity);
 		}

@@ -1,62 +1,57 @@
 package lostworlds.common.recipe;
 
-import java.util.NavigableMap;
-import java.util.Random;
-import java.util.TreeMap;
-
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
-public class FossilCleanerRecipe 
+public class FossilCleanerRecipe implements IRecipe<IInventory>
 {
-	private ItemStack stack;
-	private NavigableMap<Float, ItemStack> outputMap = new TreeMap<Float, ItemStack>();
-	private float totalWeight;
 	
-	public FossilCleanerRecipe(Item input) 
-	{
-		this.stack = new ItemStack(input);
+
+	@Override
+	public boolean matches(IInventory p_77569_1_, World p_77569_2_) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
-	@SuppressWarnings("deprecation")
-	public FossilCleanerRecipe(Block input) 
-	{
-		this(Item.byBlock(input));
+
+	@Override
+	public ItemStack assemble(IInventory p_77572_1_) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public FossilCleanerRecipe addOutput(ItemStack stack, float weight)
-	{
-		totalWeight += weight;
-		outputMap.put(totalWeight, stack);
-		return this;
+
+	@Override
+	public boolean canCraftInDimensions(int p_194133_1_, int p_194133_2_) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
-	public ItemStack getInput()
-	{
-		return stack;
+
+	@Override
+	public ItemStack getResultItem() {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public ItemStack generateOutput(Random random)
-	{
-		if(totalWeight < 100)
-		{
-			if(random.nextFloat() >= totalWeight * 0.01F)
-			{
-				return ItemStack.EMPTY;
-			}
-		}
-		float entry = random.nextFloat() * totalWeight;
-		return outputMap.higherEntry(entry).getValue().copy();
+
+	@Override
+	public ResourceLocation getId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public NavigableMap<Float, ItemStack> getDisplayMap()
-	{
-		return outputMap;
+
+	@Override
+	public IRecipeSerializer<?> getSerializer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public Float getTotalWeight()
-	{
-		return totalWeight;
+
+	@Override
+	public IRecipeType<?> getType() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
 }

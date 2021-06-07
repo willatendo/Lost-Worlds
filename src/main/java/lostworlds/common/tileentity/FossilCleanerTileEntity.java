@@ -1,6 +1,10 @@
 package lostworlds.common.tileentity;
 
+import java.util.Map;
+
 import javax.annotation.Nullable;
+
+import com.google.common.collect.Maps;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lostworlds.common.container.FossilCleanerContainer;
@@ -13,6 +17,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
@@ -20,6 +25,7 @@ import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.INameable;
 import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
@@ -41,6 +47,20 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	public FossilCleanerTileEntity() 
 	{
 		super(TileEntityInit.FOSSIL_CLEANER_TILE_ENTITY.get());
+	}
+	
+	public static Map<Item, Integer> getFuel() 
+	{
+		Map<Item, Integer> map = Maps.newLinkedHashMap();
+		add(map, Items.WATER_BUCKET, 3500);
+		return map;
+	}
+	
+	private static void add(Map<Item, Integer> map, IItemProvider itemProvider, int length) 
+	{
+		Item item = itemProvider.asItem();
+		
+		map.put(item, length);
 	}
 	
 	@Override
@@ -211,14 +231,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	
 	public static boolean isFuel(ItemStack stack) 
 	{
-		if(stack == Items.WATER_BUCKET.getDefaultInstance())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return getFuel().containsKey(stack.getItem());
 	}
 	
 	@Override
@@ -230,7 +243,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	@Override
 	public boolean isEmpty() 
 	{
-		for(ItemStack itemstack : this.items) 
+		for(ItemStack itemstack : this.items) 	
 		{
 			if(!itemstack.isEmpty()) 
 			{
@@ -324,9 +337,10 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	}
 	
 	@Nullable
-	public IRecipe<?> getRecipeUsed() {
-	      return null;
-	   }
+	public IRecipe<?> getRecipeUsed() 
+	{
+		return null;
+	}
 
 	public void fillStackedContents(RecipeItemHelper helper) 
 	{
