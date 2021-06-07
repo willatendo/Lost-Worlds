@@ -1160,7 +1160,9 @@
 
 	//Time Machine
 	"lostworlds.container.time_machine": "Time Machine",
+	
 	"lostworlds.container.fossil_cleaner": "Fossil Cleaner",
+	"lostworlds.container.dna_extractor": "DNA Extractor",
 
 	//Advancements
 	"lostworlds.advancements.lostworlds.root.title": "Lost Worlds",

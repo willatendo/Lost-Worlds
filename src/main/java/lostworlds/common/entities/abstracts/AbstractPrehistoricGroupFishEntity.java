@@ -25,12 +25,14 @@ public abstract class AbstractPrehistoricGroupFishEntity extends AbstractPrehist
 		super(entityIn, worldIn, timeEra);
 	}
 	
+	@Override
 	protected void registerGoals() 
 	{
 		super.registerGoals();
 		this.goalSelector.addGoal(5, new ModFollowSchoolLeaderGoal(this));
 	}
 	
+	@Override
 	public int getMaxSpawnClusterSize() 
 	{
 		return this.getMaxSchoolSize();
@@ -41,6 +43,7 @@ public abstract class AbstractPrehistoricGroupFishEntity extends AbstractPrehist
 		return super.getMaxSpawnClusterSize();
 	}
 	
+	@Override
 	public boolean canRandomSwim() 
 	{
 		return !this.isFollower();
@@ -79,6 +82,7 @@ public abstract class AbstractPrehistoricGroupFishEntity extends AbstractPrehist
 		return this.hasFollowers() && this.schoolSize < this.getMaxSchoolSize();
 	}
 	
+	@Override
 	public void tick() 
 	{
 		super.tick();
@@ -122,6 +126,7 @@ public abstract class AbstractPrehistoricGroupFishEntity extends AbstractPrehist
 	}
 	
 	@Nullable
+	@Override
 	public ILivingEntityData finalizeSpawn(IServerWorld world, DifficultyInstance difficultyInstance, SpawnReason spawnReason, @Nullable ILivingEntityData entityData, @Nullable CompoundNBT nbt) 
 	{
 		super.finalizeSpawn(world, difficultyInstance, spawnReason, entityData, nbt);

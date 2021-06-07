@@ -19,11 +19,13 @@ public class BredPrehistroicAnimals extends AbstractCriterionTrigger<BredPrehist
 {
 	private static final ResourceLocation ID = new ResourceLocation("bred_prehistoric_animals");
 	
+	@Override
 	public ResourceLocation getId() 
 	{
 		return ID;
 	}
 	
+	@Override
 	public BredPrehistroicAnimals.Instance createInstance(JsonObject json, EntityPredicate.AndPredicate entity, ConditionArrayParser parser) 
 	{
 		EntityPredicate.AndPredicate entitypredicate$andpredicate = EntityPredicate.AndPredicate.fromJson(json, "parent", parser);
@@ -84,6 +86,7 @@ public class BredPrehistroicAnimals extends AbstractCriterionTrigger<BredPrehist
 			}
 		}
 		
+		@Override
 		public JsonObject serializeToJson(ConditionArraySerializer serialiser) 
 		{
 			JsonObject jsonobject = super.serializeToJson(serialiser);

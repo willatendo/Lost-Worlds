@@ -32,6 +32,7 @@ public class QuintuplePlantBlock extends ModBushBlock
 		super(properties);
 	}
 	
+	@Override
 	public BlockState updateShape(BlockState state, Direction direction, BlockState newState, IWorld world, BlockPos pos, BlockPos newPos) 
 	{
 		QuintupleBlockHalfs quintupleblockhalfs = state.getValue(HALFS);
@@ -57,6 +58,7 @@ public class QuintuplePlantBlock extends ModBushBlock
 		}
 	}
 	
+	@Override
 	@Nullable
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
@@ -64,6 +66,7 @@ public class QuintuplePlantBlock extends ModBushBlock
 		return blockpos.getY() < 255 && context.getLevel().getBlockState(blockpos.above()).canBeReplaced(context) ? super.getStateForPlacement(context) : null;
 	}
 	
+	@Override
 	public void setPlacedBy(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) 
 	{
 		world.setBlock(pos.above().above().above().above(), this.defaultBlockState().setValue(HALFS, QuintupleBlockHalfs.TOP), 3);
@@ -72,6 +75,7 @@ public class QuintuplePlantBlock extends ModBushBlock
 		world.setBlock(pos.above(), this.defaultBlockState().setValue(HALFS, QuintupleBlockHalfs.MIDDLE_BOTTOM), 3);
 	}
 	
+	@Override
 	public boolean canSurvive(BlockState state, IWorldReader worldReader, BlockPos pos) 
 	{
 		if(state.getValue(HALFS) != QuintupleBlockHalfs.TOP) 
@@ -98,6 +102,7 @@ public class QuintuplePlantBlock extends ModBushBlock
 		world.setBlock(pos.above().above().above().above(), this.defaultBlockState().setValue(HALFS, QuintupleBlockHalfs.TOP), i);
 	}
 	
+	@Override
 	public void playerWillDestroy(World world, BlockPos pos, BlockState state, PlayerEntity entity) 
 	{
 		if(!world.isClientSide) 
@@ -115,6 +120,7 @@ public class QuintuplePlantBlock extends ModBushBlock
 		super.playerWillDestroy(world, pos, state, entity);
 	}
 	
+	@Override
 	public void playerDestroy(World world, PlayerEntity entity, BlockPos pos, BlockState state, @Nullable TileEntity tileEntity, ItemStack stack) 
 	{
 		super.playerDestroy(world, entity, pos, Blocks.AIR.defaultBlockState(), tileEntity, stack);
@@ -150,11 +156,13 @@ public class QuintuplePlantBlock extends ModBushBlock
 		}
 	}
 	
+	@Override
 	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) 
 	{
 		builder.add(HALFS);
 	}
 	
+	@Override
 	@OnlyIn(Dist.CLIENT)
 	public long getSeed(BlockState state, BlockPos pos) 
 	{

@@ -55,7 +55,6 @@ public class PlasteredFossilBlock extends Block implements IWaterLoggable
 		return PushReaction.DESTROY;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
@@ -67,7 +66,6 @@ public class PlasteredFossilBlock extends Block implements IWaterLoggable
 		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 	 
-	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{

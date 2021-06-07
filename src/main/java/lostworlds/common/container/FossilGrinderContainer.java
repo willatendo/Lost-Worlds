@@ -58,6 +58,7 @@ public class FossilGrinderContainer extends Container
 		return this.container.stillValid(player);
 	}
 	
+	@Override
 	public ItemStack quickMoveStack(PlayerEntity player, int i) 
 	{
 		ItemStack itemstack = ItemStack.EMPTY;
@@ -121,7 +122,6 @@ public class FossilGrinderContainer extends Container
 		return itemstack;
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected boolean canSmelt(ItemStack stack) 
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();

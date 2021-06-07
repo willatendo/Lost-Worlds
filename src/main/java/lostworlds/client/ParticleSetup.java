@@ -14,7 +14,6 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 @EventBusSubscriber(modid = ModUtil.ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ParticleSetup 
 {
-	@SuppressWarnings("resource")
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void registerParticles(ParticleFactoryRegisterEvent event) 
 	{

@@ -51,7 +51,6 @@ public class ExposedTerracottaFossilBlock extends Block implements IWaterLoggabl
 		return SHAPE;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
 	{
@@ -85,7 +84,6 @@ public class ExposedTerracottaFossilBlock extends Block implements IWaterLoggabl
 		return PushReaction.DESTROY;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
@@ -97,7 +95,6 @@ public class ExposedTerracottaFossilBlock extends Block implements IWaterLoggabl
 		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 	 
-	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{
@@ -110,7 +107,6 @@ public class ExposedTerracottaFossilBlock extends Block implements IWaterLoggabl
 		return false;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) 
 	{

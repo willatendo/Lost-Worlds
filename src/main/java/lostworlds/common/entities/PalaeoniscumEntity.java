@@ -56,16 +56,19 @@ public class PalaeoniscumEntity extends AbstractPrehistoricGroupFishEntity imple
 		return SoundEvents.TROPICAL_FISH_FLOP;
 	}
 	
+	@Override
 	protected SoundEvent getAmbientSound() 
 	{
 		return SoundEvents.COD_AMBIENT;
 	}
 	
+	@Override
 	protected SoundEvent getDeathSound() 
 	{
 		return SoundEvents.COD_DEATH;
 	}
 	
+	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
 	{
 		return SoundEvents.COD_HURT;

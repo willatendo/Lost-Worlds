@@ -51,7 +51,8 @@ public class ModSwimSemiAquaticGoal extends RandomWalkingGoal
     }
 
     @Nullable
-    protected Vector3d getPosition() 
+	@Override
+   protected Vector3d getPosition() 
     {
         if(this.mob.hasRestriction() && this.mob.distanceToSqr(Vector3d.atCenterOf(this.mob.getRestrictCenter())) > this.mob.getRestrictRadius() * this.mob.getRestrictRadius())
         {
@@ -81,7 +82,6 @@ public class ModSwimSemiAquaticGoal extends RandomWalkingGoal
         return this.mob.level.getFluidState(blockpos).is(FluidTags.LAVA) || this.mob.level.getFluidState(blockpos).is(FluidTags.WATER) && !this.mob.level.getBlockState(blockpos).getMaterial().blocksMotion();
     }
 
-    @SuppressWarnings("deprecation")
 	private boolean isAirAbove(BlockPos pos, int dx, int dz, int scale) 
     {
         return this.mob.level.getBlockState(pos.offset(dx * scale, 1, dz * scale)).isAir() && this.mob.level.getBlockState(pos.offset(dx * scale, 2, dz * scale)).isAir();

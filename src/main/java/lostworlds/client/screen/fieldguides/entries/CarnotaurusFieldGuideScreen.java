@@ -53,8 +53,7 @@ public class CarnotaurusFieldGuideScreen extends Screen
 		super.render(stack, mouseX, mouseY, partialTicks);
 		this.renderComponentHoverEffect(stack, Style.EMPTY, mouseX, mouseY);
 	}
-	
-	@SuppressWarnings("deprecation")
+
 	private void renderBackgroundElements(MatrixStack stack)
 	{
 		this.renderBackground(stack, 0);

@@ -13,6 +13,7 @@ public class ModSwimGoal extends RandomSwimmingGoal
 		this.prehistoric = entity;
 	}
 	
+	@Override
 	public boolean canUse() 
 	{
 		return this.prehistoric.canRandomSwim() && super.canUse();

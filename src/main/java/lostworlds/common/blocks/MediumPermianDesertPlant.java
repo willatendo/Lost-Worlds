@@ -25,6 +25,7 @@ public class MediumPermianDesertPlant extends BushBlock implements IForgeShearab
 		return VOXEL_SHAPE;
 	}
 	
+	@Override
 	public AbstractBlock.OffsetType getOffsetType() 
 	{
 		return AbstractBlock.OffsetType.XYZ;

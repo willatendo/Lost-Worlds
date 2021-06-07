@@ -26,6 +26,7 @@ public class ModLandAndWaterTemptGoal extends Goal
 		this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
 	}
 
+	@Override
 	public boolean canUse() 
 	{
 		if(this.calmDown > 0) 
@@ -52,11 +53,13 @@ public class ModLandAndWaterTemptGoal extends Goal
 		return this.followItems.test(stack);
 	}
 
+	@Override
 	public boolean canContinueToUse() 
 	{
 		return this.canUse();
 	}
 
+	@Override
 	public void stop() 
 	{
 		this.player = null;
@@ -64,6 +67,7 @@ public class ModLandAndWaterTemptGoal extends Goal
 		this.calmDown = 100;
 	}
 
+	@Override
 	public void tick() 
 	{
 		this.entity.getLookControl().setLookAt(this.player, (float)(this.entity.getMaxHeadYRot() + 20), (float)this.entity.getMaxHeadXRot());

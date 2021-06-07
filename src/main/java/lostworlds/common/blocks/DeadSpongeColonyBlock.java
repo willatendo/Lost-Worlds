@@ -36,7 +36,7 @@ public class DeadSpongeColonyBlock extends Block implements IWaterLoggable
 		return SHAPE;
 	}
 	
-	@SuppressWarnings("deprecation")
+	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
 		if(stateIn.getValue(WATERLOGGED)) 
@@ -62,6 +62,7 @@ public class DeadSpongeColonyBlock extends Block implements IWaterLoggable
 	}
 	
 	@Nullable
+	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
@@ -76,7 +77,6 @@ public class DeadSpongeColonyBlock extends Block implements IWaterLoggable
 		builder.add(WATERLOGGED);
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{

@@ -29,6 +29,7 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 	{
 		super(entityIn, worldIn, timeEra);
 	}
+	@Override
 	public ILivingEntityData finalizeSpawn(IServerWorld serverWorld, DifficultyInstance difficultyInstance, SpawnReason spawnReason, @Nullable ILivingEntityData entityData, @Nullable CompoundNBT nbt) 
 	{
 		if(entityData == null) 
@@ -49,6 +50,7 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 	@Nullable
 	public abstract AbstractPrehistoricAgeingEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricAgeingEntity prehistoricEntity);
 	
+	@Override
 	protected void defineSynchedData() 
 	{
 		super.defineSynchedData();
@@ -114,6 +116,7 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 		}
 	}
 	
+	@Override
 	public void addAdditionalSaveData(CompoundNBT nbt) 
 	{
 		super.addAdditionalSaveData(nbt);
@@ -121,6 +124,7 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 		nbt.putInt("ForcedAge", this.forcedAge);
 	}
 	
+	@Override
 	public void readAdditionalSaveData(CompoundNBT nbt) 
 	{
 		super.readAdditionalSaveData(nbt);
@@ -128,6 +132,7 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 		this.forcedAge = nbt.getInt("ForcedAge");
 	}
 	
+	@Override
 	public void onSyncedDataUpdated(DataParameter<?> dataParameter) 
 	{
 		if(DATA_BABY_ID.equals(dataParameter)) 
@@ -137,6 +142,7 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 		super.onSyncedDataUpdated(dataParameter);
 	}
 	
+	@Override
 	public void aiStep() 
 	{
 		super.aiStep();
@@ -173,11 +179,13 @@ public abstract class AbstractPrehistoricAgeingEntity extends AbstractPrehistori
 		
 	}
 	
+	@Override
 	public boolean isBaby() 
 	{
 		return this.getAge() < 0;
 	}
 	
+	@Override
 	public void setBaby(boolean bool) 
 	{
 		this.setAge(bool ? -24000 : 0);

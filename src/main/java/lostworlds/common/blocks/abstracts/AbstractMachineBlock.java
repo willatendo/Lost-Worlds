@@ -83,6 +83,7 @@ public abstract class AbstractMachineBlock extends RotateableBlock implements IT
 		return buffer[0];
 	}
 
+	@Override
 	protected void runCalculation(VoxelShape shape) 
 	{
 		SHAPES.put(this, new HashMap<Direction, VoxelShape>());
@@ -155,21 +156,25 @@ public abstract class AbstractMachineBlock extends RotateableBlock implements IT
 		}
 	}
 	
+	@Override
 	public boolean hasAnalogOutputSignal(BlockState state) 
 	{
 		return true;
 	}
 	
+	@Override
 	public int getAnalogOutputSignal(BlockState state, World world, BlockPos pos) 
 	{
 		return Container.getRedstoneSignalFromBlockEntity(world.getBlockEntity(pos));
 	}
 	
+	@Override
 	public BlockRenderType getRenderShape(BlockState state) 
 	{
 		return BlockRenderType.MODEL;
 	}
 	
+	@Override
 	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) 
 	{
 		builder.add(HORIZONTAL_FACING, ON);

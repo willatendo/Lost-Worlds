@@ -25,7 +25,6 @@ public class PinkTerracottaFossilBlock extends Block
 		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH));
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
 	{
@@ -51,7 +50,6 @@ public class PinkTerracottaFossilBlock extends Block
 		builder.add(HORIZONTAL_FACING);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void spawnAfterBreak(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack) 
 	{

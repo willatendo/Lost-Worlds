@@ -40,11 +40,13 @@ public class GinkgoFoliagePlacer extends FoliagePlacer
 		this.height = height;
 	}
 	
+	@Override
 	protected FoliagePlacerType<?> type() 
 	{
 		return FoliagePlacerInit.GINKGO_FOLIAGE_PLACER.get();
 	}
 	
+	@Override
 	protected void createFoliage(IWorldGenerationReader reader, Random rand, BaseTreeFeatureConfig config, int i1, FoliagePlacer.Foliage leaves, int i2, int i3, Set<BlockPos> setPos, int i4, MutableBoundingBox box) 
 	{
 		for(int i = i4; i >= i4 - i2; --i) 
@@ -54,11 +56,13 @@ public class GinkgoFoliagePlacer extends FoliagePlacer
 		}
 	}
 	
+	@Override
 	public int foliageHeight(Random rand, int i, BaseTreeFeatureConfig config) 
 	{
 		return this.height;
 	}
 	
+	@Override
 	protected boolean shouldSkipLocation(Random rand, int i1, int i2, int i3, int i4, boolean b) 
 	{
 		return i1 == i4 && i3 == i4 && (rand.nextInt(2) == 0 || i2 == 0);

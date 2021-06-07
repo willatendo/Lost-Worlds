@@ -18,6 +18,7 @@ public class ModSignItem extends WallOrFloorItem
 		super(standingBlock, wallBlock, properties);
 	}
 
+	@Override
 	protected boolean updateCustomBlockEntityTag(BlockPos pos, World worldIn, @Nullable PlayerEntity playerEntity, ItemStack stack, BlockState state) 
 	{
 		boolean flag = super.updateCustomBlockEntityTag(pos, worldIn, playerEntity, stack, state);

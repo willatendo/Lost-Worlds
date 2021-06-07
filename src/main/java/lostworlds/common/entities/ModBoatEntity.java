@@ -259,7 +259,8 @@ public class ModBoatEntity extends BoatEntity
             return this.name;
         }
 
-        public String toString() 
+    	@Override
+    	public String toString() 
         {
             return this.name;
         }

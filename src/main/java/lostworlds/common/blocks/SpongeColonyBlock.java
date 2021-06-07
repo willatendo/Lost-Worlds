@@ -43,8 +43,7 @@ public class SpongeColonyBlock extends Block implements IWaterLoggable
 		return SHAPE;
 	}
 	
-	
-	
+	@Override
 	public void tick(BlockState state, ServerWorld world, BlockPos pos, Random rand) 
 	{
 		if(!this.scanForWater(world, pos)) 
@@ -53,7 +52,7 @@ public class SpongeColonyBlock extends Block implements IWaterLoggable
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
+	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
 		if(!this.scanForWater(worldIn, currentPos)) 
@@ -83,6 +82,7 @@ public class SpongeColonyBlock extends Block implements IWaterLoggable
 		return false;
 	}
 	
+	@Override
 	@Nullable
 	public BlockState getStateForPlacement(BlockItemUseContext context) 
 	{
@@ -103,7 +103,6 @@ public class SpongeColonyBlock extends Block implements IWaterLoggable
 		builder.add(WATERLOGGED);
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{

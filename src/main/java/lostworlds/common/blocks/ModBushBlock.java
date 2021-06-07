@@ -22,6 +22,7 @@ public class ModBushBlock extends BushBlock implements IGrowable
 		super(properties);
 	}	
 	
+	@Override
 	protected boolean mayPlaceOn(BlockState state, IBlockReader blockReader, BlockPos pos) 
 	{
 		Block block = state.getBlock();
@@ -51,6 +52,7 @@ public class ModBushBlock extends BushBlock implements IGrowable
 		}
 	}
 	
+	@Override
 	public AbstractBlock.OffsetType getOffsetType() 
 	{
 		return AbstractBlock.OffsetType.XYZ;

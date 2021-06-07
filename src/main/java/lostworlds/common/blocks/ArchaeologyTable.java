@@ -52,7 +52,6 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
 	{
@@ -72,7 +71,6 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		builder.add(HORIZONTAL_FACING, WATERLOGGED);
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
@@ -84,7 +82,6 @@ public class ArchaeologyTable extends Block implements IWaterLoggable
 		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 	 
-	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{

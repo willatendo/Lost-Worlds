@@ -37,7 +37,7 @@ public class ModRegistry
 {
 	//Deferred Registers
 	public static final DeferredRegister<ParticleType<?>> PARTICLE_REGISTRY = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, ModUtil.ID);
-	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALISER_REGISTRY = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ModUtil.ID);
+	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ModUtil.ID);
 	public static final DeferredRegister<Item> ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, ModUtil.ID);
 	public static final DeferredRegister<PaintingType> PAINTING_REGISTRY = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, ModUtil.ID);
 	public static final DeferredRegister<ContainerType<?>> CONTAINER_REGISTRY = DeferredRegister.create(ForgeRegistries.CONTAINERS, ModUtil.ID);
@@ -58,7 +58,7 @@ public class ModRegistry
 		
 		//Deferred Registers Registers
 		PARTICLE_REGISTRY.register(bus);
-		RECIPE_SERIALISER_REGISTRY.register(bus);
+		RECIPE_SERIALIZERS.register(bus);
 		ITEM_REGISTRY.register(bus);
 		PAINTING_REGISTRY.register(bus);
 		CONTAINER_REGISTRY.register(bus);	

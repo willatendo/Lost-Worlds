@@ -24,6 +24,7 @@ public class BrushItem extends ToolItem
 		super(attackDamageIn, attackSpeedIn, tier, EFFECTIVE_ON_BLOCKS, properties.addToolType(ModToolTypes.BRUSH, tier.getLevel()));
 	}
 	
+	@Override
 	public float getDestroySpeed(ItemStack stack, BlockState state) 
 	{
 		Material material = state.getMaterial();

@@ -67,6 +67,7 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
         }
     }
 	
+	@Override
 	public void travel(Vector3d vec3d) 
 	{
 		if(this.isEffectiveAi() && this.isInWater()) 
@@ -96,6 +97,7 @@ public abstract class AbstractPrehistoricLandAndSeaEntity extends AbstractPrehis
 			this.entity = entity;
 		}
 		
+		@Override
 		public void tick() 
 		{
 			if(this.entity.isEyeInFluid(FluidTags.WATER)) 

@@ -38,7 +38,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-@SuppressWarnings("deprecation")
 public class TimeMachineBlock extends ContainerBlock implements ITileEntityProvider	
 {
 	public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 10, 16);
@@ -48,6 +47,7 @@ public class TimeMachineBlock extends ContainerBlock implements ITileEntityProvi
 		super(properties);
 	}	
 	
+	@Override
 	public boolean useShapeForLightOcclusion(BlockState state) 
 	{
 		return true;
@@ -79,6 +79,7 @@ public class TimeMachineBlock extends ContainerBlock implements ITileEntityProvi
 		return BlockRenderType.MODEL;
 	}
 	
+	@Override
 	public TileEntity newBlockEntity(IBlockReader reader) 
 	{
 		return new TimeMachineTileEntity();
@@ -98,6 +99,7 @@ public class TimeMachineBlock extends ContainerBlock implements ITileEntityProvi
 		}
 	}
 	
+	@Override
 	@Nullable
 	public INamedContainerProvider getMenuProvider(BlockState state, World world, BlockPos pos) 
 	{
@@ -116,6 +118,7 @@ public class TimeMachineBlock extends ContainerBlock implements ITileEntityProvi
 		}
 	}
 	
+	@Override
 	public void setPlacedBy(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) 
 	{
 		if(stack.hasCustomHoverName()) 
@@ -128,6 +131,7 @@ public class TimeMachineBlock extends ContainerBlock implements ITileEntityProvi
 		}
 	}
 	
+	@Override
 	public boolean isPathfindable(BlockState state, IBlockReader reader, BlockPos pos, PathType path) 
 	{
 		return false;

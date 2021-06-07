@@ -1,7 +1,7 @@
 package lostworlds.common.blocks;
 
 import lostworlds.common.blocks.abstracts.AbstractMachineBlock;
-import lostworlds.common.tileentity.FossilCleanerTileEntity;
+import lostworlds.common.tileentity.DNAExtractorTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,14 +33,14 @@ public class DNAExtractorBlock extends AbstractMachineBlock
 	@Override
 	public TileEntity newBlockEntity(IBlockReader reader) 
 	{
-		return new FossilCleanerTileEntity();
+		return new DNAExtractorTileEntity();
 	}
 
 	@Override
 	protected void openContainer(World world, BlockPos pos, PlayerEntity player) 
 	{
 		TileEntity tileentity = world.getBlockEntity(pos);
-		if(tileentity instanceof FossilCleanerTileEntity) 
+		if(tileentity instanceof DNAExtractorTileEntity) 
 		{
 			player.openMenu((INamedContainerProvider)tileentity);
 		}

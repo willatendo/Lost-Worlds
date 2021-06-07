@@ -54,7 +54,6 @@ public class TetraceratopsFieldGuideScreen extends Screen
 		this.renderComponentHoverEffect(stack, Style.EMPTY, mouseX, mouseY);
 	}
 	
-	@SuppressWarnings("deprecation")
 	private void renderBackgroundElements(MatrixStack stack)
 	{
 		this.renderBackground(stack, 0);

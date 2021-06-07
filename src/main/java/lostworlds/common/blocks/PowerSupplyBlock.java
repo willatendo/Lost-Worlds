@@ -48,7 +48,6 @@ public class PowerSupplyBlock extends RedstoneBlock
 		return VOXEL_SHAPE;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
 	{

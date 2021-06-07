@@ -280,6 +280,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 			this.animal = entity;
 		}
 		
+		@Override
 		public void tick() 
 		{
 			if(this.animal.isEyeInFluid(FluidTags.WATER)) 
@@ -317,7 +318,6 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	class ModAttackGoal extends MeleeAttackGoal 
 	{
 		private final AbstractPrehistoricEntity entity;
-		@SuppressWarnings("unused")
 		private int attackStep;
 		
 		public ModAttackGoal(AbstractPrehistoricEntity entityIn, double speedIn, boolean useMemory) 
@@ -327,6 +327,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 			this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
 		}
 		
+		@Override
 		protected void checkAndPerformAttack(LivingEntity entity, double distToEnemySqr) 
 		{
 			double d0 = this.getAttackReachSqr(entity);
@@ -356,18 +357,21 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
             }
 		}
 		
+		@Override
 		public boolean canUse() 
 		{
 			LivingEntity livingentity = this.entity.getTarget();
             return livingentity != null && livingentity.isAlive() && this.entity.canAttack(livingentity);
         }
 
-        public void start() 
+        @Override
+		public void start() 
         {
         	this.attackStep = 0;
         }
 
-        public void stop() 
+        @Override
+		public void stop() 
         {
             super.stop();
             this.entity.setAttacking(false);

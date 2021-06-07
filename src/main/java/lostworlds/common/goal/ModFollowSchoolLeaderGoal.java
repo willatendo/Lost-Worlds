@@ -23,6 +23,7 @@ public class ModFollowSchoolLeaderGoal extends Goal
 		return 200 + mob2.getRandom().nextInt(200) % 20;
 	}
 	
+	@Override
 	public boolean canUse() 
 	{
 		if(this.mob.hasFollowers()) 
@@ -54,21 +55,25 @@ public class ModFollowSchoolLeaderGoal extends Goal
 		}
 	}
 	
+	@Override
 	public boolean canContinueToUse() 
 	{
 		return this.mob.isFollower() && this.mob.inRangeOfLeader();
 	}
 	
+	@Override
 	public void start() 
 	{
 		this.timeToRecalcPath = 0;
 	}
 	
+	@Override
 	public void stop() 
 	{
 		this.mob.stopFollowing();
 	}
 	
+	@Override
 	public void tick() 
 	{
 		if(--this.timeToRecalcPath <= 0) 

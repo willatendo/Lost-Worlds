@@ -28,7 +28,6 @@ public class FossilCleanerScreen<T extends FossilCleanerContainer> extends Conta
 		this.renderTooltip(stack, i1, i2);
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	protected void renderBg(MatrixStack stack, float f, int i1, int i2)
 	{

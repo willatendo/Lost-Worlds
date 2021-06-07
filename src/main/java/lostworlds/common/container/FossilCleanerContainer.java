@@ -11,18 +11,24 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.FurnaceResultSlot;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
+import net.minecraft.world.World;
 
 public class FossilCleanerContainer extends Container
 {
-private final IInventory container;
+	private final IInventory container;
+	private final World level;
+	private final IRecipeType<FurnaceRecipe> recipeType = IRecipeType.SMELTING;
 	
 	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, IInventory tile, IIntArray array) 
 	{
 		super(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), windowID);
 		this.container = tile;
+		this.level = playerInv.player.level;
 		
 		this.addSlot(new Slot(tile, 0, 56, 17));
 		this.addSlot(new FossilCleanerFuelSlot(this, tile, 1, 56, 53));
@@ -55,6 +61,7 @@ private final IInventory container;
 		return this.container.stillValid(player);
 	}
 	
+	@Override
 	public ItemStack quickMoveStack(PlayerEntity player, int i) 
 	{
 		ItemStack itemstack = ItemStack.EMPTY;
@@ -80,14 +87,7 @@ private final IInventory container;
 					{
 						return ItemStack.EMPTY;
 					}
-				} 
-				else if(this.isFuel(itemstack1)) 
-				{
-					if(!this.moveItemStackTo(itemstack1, 1, 2, false)) 
-					{
-						return ItemStack.EMPTY;
-					}
-				} 
+				}
 				else if(i >= 3 && i < 30) 
 				{
 					if(!this.moveItemStackTo(itemstack1, 30, 39, false)) 
@@ -127,8 +127,7 @@ private final IInventory container;
 	
 	protected boolean canSmelt(ItemStack stack) 
 	{
-		return false;
-		//return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
+		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
 	}
 	
 	public boolean isFuel(ItemStack stack) 

@@ -51,7 +51,6 @@ public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 		return SHAPE;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) 
 	{
@@ -85,7 +84,6 @@ public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 		return PushReaction.DESTROY;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
 	{
@@ -97,7 +95,6 @@ public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 	 
-	@SuppressWarnings("deprecation")
 	@Override
 	public FluidState getFluidState(BlockState state) 
 	{
@@ -110,7 +107,6 @@ public class ExposedStoneFossilBlock extends Block implements IWaterLoggable
 		return false;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) 
 	{

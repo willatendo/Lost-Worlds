@@ -32,7 +32,6 @@ public class MossyDirtBlock extends Block implements IGrowable
 	}
 	
 	@Override
-	@Deprecated
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) 
 	{
 		if(!worldIn.isClientSide()) 
@@ -91,7 +90,6 @@ public class MossyDirtBlock extends Block implements IGrowable
 		return true;
 	}
 	
-	@SuppressWarnings({ "deprecation", "rawtypes", "unchecked" })
 	@Override
 	public void performBonemeal(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) 
 	{

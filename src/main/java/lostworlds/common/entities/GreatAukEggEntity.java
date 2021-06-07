@@ -32,6 +32,7 @@ public class GreatAukEggEntity extends ProjectileItemEntity
 		super(EntityInit.GREAT_AUK_EGG_ENTITY.get(), x, y, z, worldIn);
 	}
 	
+	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void handleEntityEvent(byte status) 
 	{
@@ -44,12 +45,14 @@ public class GreatAukEggEntity extends ProjectileItemEntity
 		}
 	}
 	
+	@Override
 	protected void onHitEntity(EntityRayTraceResult trace) 
 	{
 		super.onHitEntity(trace);
 		trace.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), 0.0F);
 	}
 	
+	@Override
 	protected void onHit(RayTraceResult trace) 
 	{
 		super.onHit(trace);

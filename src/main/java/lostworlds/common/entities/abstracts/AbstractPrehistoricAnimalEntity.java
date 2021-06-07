@@ -42,6 +42,7 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		this.setPathfindingMalus(PathNodeType.DAMAGE_FIRE, -1.0F);
 	}
 	
+	@Override
 	protected void customServerAiStep() 
 	{
 		if(this.getAge() != 0) 
@@ -52,6 +53,7 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		super.customServerAiStep();
 	}
 	
+	@Override
 	public void aiStep() 
 	{
 		super.aiStep();
@@ -73,6 +75,7 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		}
 	}
 	
+	@Override
 	public boolean hurt(DamageSource source, float f) 
 	{
 		if(this.isInvulnerableTo(source)) 
@@ -86,12 +89,13 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
+	@Override
 	public float getWalkTargetValue(BlockPos pos, IWorldReader worldReader) 
 	{
 		return worldReader.getBlockState(pos.below()).is(Blocks.GRASS_BLOCK) ? 10.0F : worldReader.getBrightness(pos) - 0.5F;
 	}
 	
+	@Override
 	public void addAdditionalSaveData(CompoundNBT nbt) 
 	{
 		super.addAdditionalSaveData(nbt);
@@ -102,11 +106,13 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		}
 	}
 	
+	@Override
 	public double getMyRidingOffset() 
 	{
 		return 0.14D;
 	}
 	
+	@Override
 	public void readAdditionalSaveData(CompoundNBT nbt) 
 	{
 		super.readAdditionalSaveData(nbt);
@@ -114,11 +120,13 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		this.loveCause = nbt.hasUUID("LoveCause") ? nbt.getUUID("LoveCause") : null;
 	}
 	
+	@Override
 	public int getAmbientSoundInterval() 
 	{
 		return 120;
 	}
 	
+	@Override
 	protected int getExperienceReward(PlayerEntity playerEntity) 
 	{
 		return 1 + this.level.random.nextInt(3);
@@ -129,6 +137,7 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 		return stack.getItem() == Items.BEEF;
 	}
 	
+	@Override
 	public ActionResultType mobInteract(PlayerEntity playerEntity, Hand handIn) 
 	{
 		ItemStack itemstack = playerEntity.getItemInHand(handIn);
@@ -277,6 +286,7 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 	}
 	
 	@OnlyIn(Dist.CLIENT)
+	@Override
 	public void handleEntityEvent(byte p_70103_1_) 
 	{
 		if(p_70103_1_ == 18) 

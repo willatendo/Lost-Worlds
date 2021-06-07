@@ -28,7 +28,8 @@ public class DNAExtractorContainer extends Container
 		this.container = tile;
 		this.level = playerInv.player.level;
 		
-		this.addSlot(new Slot(tile, 0, 56, 17));
+		this.addSlot(new Slot(tile, 0, 55, 24));
+		this.addSlot(new Slot(tile, 1, 55, 45));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
 		
 		for(int i = 0; i < 3; ++i) 
@@ -58,6 +59,7 @@ public class DNAExtractorContainer extends Container
 		return this.container.stillValid(player);
 	}
 	
+	@Override
 	public ItemStack quickMoveStack(PlayerEntity player, int i) 
 	{
 		ItemStack itemstack = ItemStack.EMPTY;
@@ -121,7 +123,6 @@ public class DNAExtractorContainer extends Container
 		return itemstack;
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected boolean canSmelt(ItemStack stack) 
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();

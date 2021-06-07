@@ -24,6 +24,7 @@ public class GroundFernsBlock extends ModBushBlock implements IForgeShearable
 		return VOXEL_SHAPE;
 	}
 	
+	@Override
 	public AbstractBlock.OffsetType getOffsetType() 
 	{
 		return AbstractBlock.OffsetType.XYZ;

@@ -1,14 +1,10 @@
 package lostworlds.common.tileentity;
 
-import java.util.Map;
-
 import javax.annotation.Nullable;
 
-import com.google.common.collect.Maps;
-
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lostworlds.common.blocks.FossilCleanerBlock;
-import lostworlds.common.container.FossilCleanerContainer;
+import lostworlds.common.blocks.DNAExtractorBlock;
+import lostworlds.common.container.DNAExtractorContainer;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.block.BlockState;
@@ -18,9 +14,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
@@ -28,7 +22,6 @@ import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IItemProvider;
 import net.minecraft.util.INameable;
 import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
@@ -36,38 +29,24 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
-public class FossilCleanerTileEntity extends TileEntity implements IInventory, INamedContainerProvider, INameable, ITickableTileEntity	
+public class DNAExtractorTileEntity extends TileEntity implements IInventory, INamedContainerProvider, INameable, ITickableTileEntity	
 {
 protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 	
 	private int onTime;
 	@SuppressWarnings("unused")
 	private int onDuration;
-	private int cleaningProgress;
-	private int cleaningTotalTime;
+	private int extractingProgress;
+	private int extractingTotalTime;
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<? extends AbstractCookingRecipe> recipeType = IRecipeType.SMELTING;
 	
-	public FossilCleanerTileEntity() 
+	public DNAExtractorTileEntity() 
 	{
-		super(TileEntityInit.FOSSIL_CLEANER_TILE_ENTITY.get());
+		super(TileEntityInit.DNA_EXTRACTOR_TILE_ENTITY.get());
 	}
-	
-	public static Map<Item, Integer> getFuel() 
-	{
-		Map<Item, Integer> map = Maps.newLinkedHashMap();
-		add(map, Items.WATER_BUCKET, 3500);
-		return map;
-	}
-	
-	private static void add(Map<Item, Integer> map, IItemProvider itemProvider, int length) 
-	{
-		Item item = itemProvider.asItem();
-		
-		map.put(item, length);
-	}
-	
+
 	@Override
 	public void load(BlockState state, CompoundNBT nbt) 
 	{
@@ -75,9 +54,9 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		ItemStackHelper.loadAllItems(nbt, this.items);
 		this.onTime = nbt.getInt("OnTime");
-		this.cleaningProgress = nbt.getInt("CleanTime");
-		this.cleaningTotalTime = nbt.getInt("CleanTimeTotal");
-		this.onDuration = this.getCleanDuration(this.items.get(1));
+		this.extractingProgress = nbt.getInt("ExtractTime");
+		this.extractingTotalTime = nbt.getInt("ExtractTimeTotal");
+		this.onDuration = this.getExtractDuration(this.items.get(1));
 	}
 	
 	@Override
@@ -85,8 +64,8 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	{
 		super.save(nbt);
 		nbt.putInt("OnTime", this.onTime);
-		nbt.putInt("CleanTime", this.cleaningProgress);
-		nbt.putInt("CleanTimeTotal", this.cleaningTotalTime);
+		nbt.putInt("ExtractTime", this.extractingProgress);
+		nbt.putInt("ExtractTimeTotal", this.extractingTotalTime);
 		ItemStackHelper.saveAllItems(nbt, this.items);
 		return nbt;
 	}
@@ -115,9 +94,9 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 				if(this.isOn() || !itemstack.isEmpty() && !this.items.get(0).isEmpty()) 
 				{
 					IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<AbstractCookingRecipe>)this.recipeType, this, this.level).orElse(null);
-					if(!this.isOn() && this.canCleanWith(irecipe)) 
+					if(!this.isOn() && this.canExtractWith(irecipe)) 
 					{
-						this.onTime = this.getCleanDuration(itemstack);
+						this.onTime = this.getExtractDuration(itemstack);
 						this.onDuration = this.onTime;
 						if(this.isOn()) 
 						{
@@ -136,31 +115,31 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 						}
 					}
 					
-					if(this.isOn() && this.canCleanWith(irecipe)) 
+					if(this.isOn() && this.canExtractWith(irecipe)) 
 					{
-						++this.cleaningProgress;
-						if(this.cleaningProgress == this.cleaningTotalTime) 
+						++this.extractingProgress;
+						if(this.extractingProgress == this.extractingTotalTime) 
 						{
-							this.cleaningProgress = 0;
-							this.cleaningTotalTime = this.getTotalCleanTime();
-							this.canClean(irecipe);
+							this.extractingProgress = 0;
+							this.extractingTotalTime = this.getTotalExtractTime();
+							this.canExtract(irecipe);
 							flag1 = true;
 						}
 					} 
 					else 
 					{
-						this.cleaningProgress = 0;
+						this.extractingProgress = 0;
 					}
 				} 
-				else if(!this.isOn() && this.cleaningProgress > 0) 
+				else if(!this.isOn() && this.extractingProgress > 0) 
 				{
-					this.cleaningProgress = MathHelper.clamp(this.cleaningProgress - 2, 0, this.cleaningTotalTime);
+					this.extractingProgress = MathHelper.clamp(this.extractingProgress - 2, 0, this.extractingTotalTime);
 				}
 				
 				if(flag != this.isOn()) 
 				{
 					flag1 = true;
-					this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(FossilCleanerBlock.ON, Boolean.valueOf(this.isOn())), 3);
+					this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(DNAExtractorBlock.ON, Boolean.valueOf(this.isOn())), 3);
 				}
 			}
 		}
@@ -171,7 +150,7 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		}
 	}
 	
-	protected boolean canCleanWith(@Nullable IRecipe<?> recipe) 
+	protected boolean canExtractWith(@Nullable IRecipe<?> recipe) 
 	{
 		if(!this.items.get(0).isEmpty() && recipe != null) 
 		{
@@ -207,9 +186,9 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		}
 	}
 	
-	private void canClean(@Nullable IRecipe<?> recipe) 
+	private void canExtract(@Nullable IRecipe<?> recipe) 
 	{
-		if(recipe != null && this.canCleanWith(recipe)) 
+		if(recipe != null && this.canExtractWith(recipe)) 
 		{
 			ItemStack itemstack = this.items.get(0);
 			ItemStack itemstack1 = recipe.getResultItem();
@@ -233,12 +212,12 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	}
 	
 	@SuppressWarnings("unchecked")
-	protected int getTotalCleanTime() 
+	protected int getTotalExtractTime() 
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType<AbstractCookingRecipe>)this.recipeType, this, this.level).map(AbstractCookingRecipe::getCookingTime).orElse(200);
 	}
 	
-	protected int getCleanDuration(ItemStack stack) 
+	protected int getExtractDuration(ItemStack stack) 
 	{
 		if(stack.isEmpty()) 
 		{
@@ -248,11 +227,6 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		{
 			return 3500;
 		}
-	}
-	
-	public static boolean isFuel(ItemStack stack) 
-	{
-		return getFuel().containsKey(stack.getItem());
 	}
 	
 	@Override
@@ -306,8 +280,8 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		
 		if (i == 0 && !flag) 
 		{
-			//this.cleaningTotalTime = this.getTotalCleanTime();
-			this.cleaningProgress = 0;
+			this.extractingTotalTime = this.getTotalExtractTime();
+			this.extractingProgress = 0;
 			this.setChanged();
 		}
 	}
@@ -332,13 +306,9 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		{
 			return false;
 		} 
-		else if(i != 1) 
+		else
 		{
 			return true;
-		} 
-		else 
-		{
-			return isFuel(stack);
 		}
 	}
 	
@@ -374,13 +344,13 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new FossilCleanerContainer(windowId, playerInv, this, new IntArray(4));
+		return new DNAExtractorContainer(windowId, playerInv, this, new IntArray(4));
 	}
 
 	@Override
 	public ITextComponent getName() 
 	{
-		return ModUtil.tTC("container.fossil_cleaner");
+		return ModUtil.tTC("container.dna_extractor");
 	}
 
 	@Override

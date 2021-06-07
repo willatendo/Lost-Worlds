@@ -29,6 +29,7 @@ public class PermianLakesFeature<T extends BlockStateFeatureConfig> extends Feat
 		super(config);
 	}
 	
+	@Override
 	public boolean place(ISeedReader seedReader, ChunkGenerator chunk, Random rand, BlockPos pos, T config) 
 	{
 		while(pos.getY() > 5 && seedReader.isEmptyBlock(pos)) 

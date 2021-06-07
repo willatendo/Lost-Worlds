@@ -57,16 +57,19 @@ public class NautilusEntity extends AbstractPrehistoricFishEntity implements IAn
 		return SoundEvents.ANVIL_BREAK;
 	}
 	
+	@Override
 	protected SoundEvent getAmbientSound() 
 	{
 		return SoundEvents.BUBBLE_COLUMN_BUBBLE_POP;
 	}
 	
+	@Override
 	protected SoundEvent getDeathSound() 
 	{
 		return SoundEvents.ANVIL_BREAK;
 	}
 	
+	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) 
 	{
 		return SoundEvents.ANVIL_HIT;

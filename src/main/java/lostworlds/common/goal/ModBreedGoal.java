@@ -35,6 +35,7 @@ public class ModBreedGoal extends Goal
 		this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
 	}
 	
+	@Override
 	public boolean canUse() 
 	{
 		if(!this.animal.isInLove()) 
@@ -48,17 +49,20 @@ public class ModBreedGoal extends Goal
 		}
 	}
 	
+	@Override
 	public boolean canContinueToUse() 
 	{
 		return this.partner.isAlive() && this.partner.isInLove() && this.loveTime < 60;
 	}
 	
+	@Override
 	public void stop() 
 	{
 		this.partner = null;
 		this.loveTime = 0;
 	}
 	
+	@Override
 	public void tick() 
 	{
 		this.animal.getLookControl().setLookAt(this.partner, 10.0F, (float)this.animal.getMaxHeadXRot());

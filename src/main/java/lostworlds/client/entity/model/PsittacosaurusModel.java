@@ -35,14 +35,13 @@ public class PsittacosaurusModel extends AnimatedGeoModel<PsittacosaurusEntity>
 	}
 
 	@Override
-	public void setLivingAnimations(PsittacosaurusEntity entity, Integer uniqueID, @SuppressWarnings("rawtypes") AnimationEvent customPredicate) 
+	public void setLivingAnimations(PsittacosaurusEntity entity, Integer uniqueID, AnimationEvent customPredicate) 
 	{
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("neck");
 
 		texture = MALE;
 		
-		@SuppressWarnings("unchecked")
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
 		head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));
 		head.setRotationY(extraData.netHeadYaw * ((float) Math.PI / 180F));

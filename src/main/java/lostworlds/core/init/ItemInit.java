@@ -885,7 +885,6 @@ public class ItemInit
 		return register(id + "_rib_bone", ItemGroupInit.CREATURES_TAB);
 	}
 	
-	@SuppressWarnings("unused")
 	private static RegistryObject<Item> registerOtherBone(String id)
 	{
 		return register(id, ItemGroupInit.CREATURES_TAB);

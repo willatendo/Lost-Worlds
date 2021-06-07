@@ -21,6 +21,7 @@ public class FossilCleanerFuelSlot extends Slot
 		return this.menu.isFuel(stack);
 	}
 	
+	@Override
 	public int getMaxStackSize(ItemStack stack) 
 	{
 		return super.getMaxStackSize(stack);

@@ -24,6 +24,7 @@ public class LargePermianDesertPlant extends ModBushBlock implements IForgeShear
 		return VOXEL_SHAPE;
 	}
 	
+	@Override
 	public AbstractBlock.OffsetType getOffsetType() 
 	{
 		return AbstractBlock.OffsetType.XYZ;
