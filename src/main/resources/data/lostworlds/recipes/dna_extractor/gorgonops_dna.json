@@ -1,0 +1,12 @@
+{
+	"type": "lostworlds:dna_extractor",
+	"output": {
+		"item": "lostworlds:gorgonops_dna"
+	},
+	"softTissue": {
+		"item": "lostworlds:gorgonops_soft_tissue"
+	},
+	"vile": {
+		"item": "lostworlds:empty_vile"
+	}
+}

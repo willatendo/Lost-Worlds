@@ -13,10 +13,12 @@ import net.minecraft.util.text.ITextComponent;
 public class DNAExtractorScreen<T extends DNAExtractorContainer> extends ContainerScreen<T>
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/dna_extractor.png");
+	private final DNAExtractorContainer container;
 	
 	public DNAExtractorScreen(T container, PlayerInventory playerInv, ITextComponent text) 
 	{
 		super(container, playerInv, text);
+		this.container = container;
 	}
 	
 	@Override
@@ -29,12 +31,13 @@ public class DNAExtractorScreen<T extends DNAExtractorContainer> extends Contain
 	}
 	
 	@Override
-	protected void renderBg(MatrixStack stack, float f, int i1, int i2)
+	protected void renderBg(MatrixStack stack, float partialTicks, int x, int y)
 	{
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.minecraft.getTextureManager().bind(TEXTURE);
 		int i = this.leftPos;
 		int j = this.topPos;
 		this.blit(stack, i, j, 0, 0, this.imageWidth, this.imageHeight);
+		this.blit(stack, 0 + 79, 0 + 35, 176, 0, this.container.getCleanProgress(), 16);
 	}
 }

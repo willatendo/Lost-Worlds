@@ -9,6 +9,7 @@ import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.PaintingInit;
 import lostworlds.core.init.ParticleInit;
 import lostworlds.core.init.PointsOfInterestInit;
+import lostworlds.core.init.RecipeInit;
 import lostworlds.core.init.StructureInit;
 import lostworlds.core.init.SurfaceBuilderInit;
 import lostworlds.core.init.TileEntityInit;
@@ -74,6 +75,7 @@ public class ModRegistry
 		
 		//Class Loaders
 		ParticleInit.initParticles();
+		RecipeInit.initRecipes();
 		ItemInit.initItems();
 		PaintingInit.initPaintings();
 		ContainerInit.initContianers();

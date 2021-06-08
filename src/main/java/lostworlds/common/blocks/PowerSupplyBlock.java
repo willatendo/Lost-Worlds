@@ -27,7 +27,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class PowerSupplyBlock extends RedstoneBlock
 {
 	public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
-	private static final VoxelShape VOXEL_SHAPE = Block.box(0, 0, 0, 16, 10, 16);
+	private static final VoxelShape VOXEL_SHAPE = Block.box(0, 0, 0, 16, 9, 16);
 	
 	public PowerSupplyBlock(Properties properties) 
 	{

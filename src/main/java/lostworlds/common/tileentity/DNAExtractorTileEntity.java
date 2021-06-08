@@ -5,6 +5,8 @@ import javax.annotation.Nullable;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lostworlds.common.blocks.DNAExtractorBlock;
 import lostworlds.common.container.DNAExtractorContainer;
+import lostworlds.common.recipe.DNAExtractorRecipe;
+import lostworlds.core.init.RecipeInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.block.BlockState;
@@ -15,7 +17,6 @@ import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.RecipeItemHelper;
@@ -36,11 +37,11 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	private int onTime;
 	@SuppressWarnings("unused")
 	private int onDuration;
-	private int extractingProgress;
+	public int extractingProgress;
 	private int extractingTotalTime;
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
-	protected final IRecipeType<? extends AbstractCookingRecipe> recipeType = IRecipeType.SMELTING;
+	protected final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
 	
 	public DNAExtractorTileEntity() 
 	{
@@ -88,12 +89,10 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		
 		if(!this.level.isClientSide) 
 		{
-			if(this.level.hasNeighborSignal(this.getBlockPos())) 
-			{
 				ItemStack itemstack = this.items.get(1);
 				if(this.isOn() || !itemstack.isEmpty() && !this.items.get(0).isEmpty()) 
 				{
-					IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<AbstractCookingRecipe>)this.recipeType, this, this.level).orElse(null);
+					IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<DNAExtractorRecipe>)this.recipeType, this, this.level).orElse(null);
 					if(!this.isOn() && this.canExtractWith(irecipe)) 
 					{
 						this.onTime = this.getExtractDuration(itemstack);
@@ -140,7 +139,7 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 				{
 					flag1 = true;
 					this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(DNAExtractorBlock.ON, Boolean.valueOf(this.isOn())), 3);
-				}
+				
 			}
 		}
 		
@@ -214,7 +213,7 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	@SuppressWarnings("unchecked")
 	protected int getTotalExtractTime() 
 	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType<AbstractCookingRecipe>)this.recipeType, this, this.level).map(AbstractCookingRecipe::getCookingTime).orElse(200);
+		return this.level.getRecipeManager().getRecipeFor((IRecipeType<DNAExtractorRecipe>)this.recipeType, this, this.level).map(DNAExtractorRecipe::getExtractingTime).orElse(60);
 	}
 	
 	protected int getExtractDuration(ItemStack stack) 
@@ -225,7 +224,7 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		} 
 		else 
 		{
-			return 3500;
+			return 60;
 		}
 	}
 	
@@ -344,7 +343,7 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new DNAExtractorContainer(windowId, playerInv, this, new IntArray(4));
+		return new DNAExtractorContainer(windowId, playerInv, this, this, new IntArray(4));
 	}
 
 	@Override

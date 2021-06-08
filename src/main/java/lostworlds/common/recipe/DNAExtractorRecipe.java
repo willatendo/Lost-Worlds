@@ -1,27 +1,22 @@
 package lostworlds.common.recipe;
 
-import java.util.List;
-
-import com.google.common.collect.ImmutableList;
-
-import lostworlds.common.recipe.interfaces.IDNAExtractorRecipe;
 import lostworlds.core.init.RecipeInit;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.items.wrapper.RecipeWrapper;
 
-public class DNAExtractorRecipe implements IDNAExtractorRecipe
+public class DNAExtractorRecipe implements IRecipe<IInventory>
 {
 	private final ResourceLocation id;
 	private Ingredient softTissue;
 	private Ingredient vile;
 	private final ItemStack output;
-
-	private List<Ingredient> inputs = ImmutableList.of(this.softTissue, this.vile);
 	
 	public DNAExtractorRecipe(ResourceLocation id, Ingredient softTissue, Ingredient vile, ItemStack output) 
 	{
@@ -32,13 +27,13 @@ public class DNAExtractorRecipe implements IDNAExtractorRecipe
 	}
 
 	@Override
-	public boolean matches(RecipeWrapper inv, World worldIn) 
+	public boolean matches(IInventory inv, World worldIn) 
 	{
 		if(this.softTissue.test(inv.getItem(0))) 
 		{
 			return true;
 		}
-		if(this.vile.test(inv.getItem(1))) 
+		if(this.vile.test(inv.getItem(0))) 
 		{
 			return true;
 		}
@@ -46,7 +41,7 @@ public class DNAExtractorRecipe implements IDNAExtractorRecipe
 	}
 
 	@Override
-	public ItemStack assemble(RecipeWrapper inv) 
+	public ItemStack assemble(IInventory inv) 
 	{
 		return this.output;
 	}
@@ -62,6 +57,11 @@ public class DNAExtractorRecipe implements IDNAExtractorRecipe
 	{
 		return this.id;
 	}
+	
+	public int getExtractingTime() 
+	{
+		return 60;
+	}
 
 	@Override
 	public IRecipeSerializer<?> getSerializer() 
@@ -70,14 +70,23 @@ public class DNAExtractorRecipe implements IDNAExtractorRecipe
 	}
 
 	@Override
-	public Ingredient getInput() 
+	public NonNullList<Ingredient> getIngredients() 
 	{
-		return inputs.get(2);
+		NonNullList<Ingredient> nonnulllist = NonNullList.create();
+		nonnulllist.add(this.softTissue);
+		nonnulllist.add(this.vile);
+		return nonnulllist;
 	}
 
 	@Override
-	public NonNullList<Ingredient> getIngredients() 
+	public boolean canCraftInDimensions(int width, int height) 
 	{
-		return NonNullList.of(this.vile, this.softTissue);
+		return false;
+	}
+
+	@Override
+	public IRecipeType<?> getType() 
+	{
+		return RecipeInit.DNA_EXTRACTOR_RECIPE;
 	}
 }

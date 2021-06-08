@@ -1,5 +1,7 @@
 package lostworlds.common.container;
 
+import lostworlds.common.slot.VileSlot;
+import lostworlds.common.tileentity.DNAExtractorTileEntity;
 import lostworlds.core.init.ContainerInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -15,21 +17,27 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class DNAExtractorContainer extends Container
 {
 	private final IInventory container;
+	private final IIntArray data;
 	private final World level;
 	private final IRecipeType<FurnaceRecipe> recipeType = IRecipeType.SMELTING;
+	private final DNAExtractorTileEntity tile;
 	
-	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, IInventory tile, IIntArray array) 
+	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, DNAExtractorTileEntity tileEntity, IInventory tile, IIntArray array) 
 	{
 		super(ContainerInit.DNA_EXTRACTOR_CONTAINER.get(), windowID);
 		this.container = tile;
 		this.level = playerInv.player.level;
+		this.data = array;
+		this.tile = tileEntity;
 		
-		this.addSlot(new Slot(tile, 0, 55, 24));
-		this.addSlot(new Slot(tile, 1, 55, 45));
+		this.addSlot(new Slot(tile, 0, 56, 25));
+		this.addSlot(new VileSlot(this, tile, 1, 56, 45));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
 		
 		for(int i = 0; i < 3; ++i) 
@@ -50,7 +58,7 @@ public class DNAExtractorContainer extends Container
 	
 	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new Inventory(3), new IntArray(4));
+		this(windowID, playerInv, new DNAExtractorTileEntity(), new Inventory(3), new IntArray(4));
  	}
 
 	@Override
@@ -126,5 +134,11 @@ public class DNAExtractorContainer extends Container
 	protected boolean canSmelt(ItemStack stack) 
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
+	}
+	
+	@OnlyIn(Dist.CLIENT)
+	public int getCleanProgress() 
+	{
+		return this.tile.extractingProgress != 0 && 60 != 0 ? this.tile.extractingProgress * 24 / 60 : 0;
 	}
 }
