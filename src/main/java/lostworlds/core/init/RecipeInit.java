@@ -37,5 +37,5 @@ public class RecipeInit
 		return (T) Registry.register(Registry.RECIPE_TYPE, recipeTypeId, new RecipeType<>());
 	}
 	
-	public static void initRecipes() { }
+	public static void initRecipes() { ModUtil.LOGGER.debug("Registering: Mod Recipes"); }
 }

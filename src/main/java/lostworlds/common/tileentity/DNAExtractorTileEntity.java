@@ -76,7 +76,6 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 		return this.onTime > 0;
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public void tick() 
 	{	
@@ -202,7 +201,6 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	protected int getTotalExtractTime() 
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType<DNAExtractorRecipe>)this.recipeType, this, this.level).map(DNAExtractorRecipe::getExtractingTime).orElse(60);

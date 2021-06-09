@@ -76,7 +76,6 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 		return this.onTime > 0;
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public void tick() 
 	{	
@@ -141,7 +140,7 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	
 	protected boolean canGrindWith(@Nullable IRecipe<?> recipe) 
 	{
-		if(!this.items.get(0).isEmpty() && !this.items.get(1).isEmpty() && recipe != null) 
+		if(!this.items.get(0).isEmpty() && recipe != null) 
 		{
 			ItemStack itemstack = recipe.getResultItem();
 			if(itemstack.isEmpty()) 
@@ -200,10 +199,9 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	protected int getTotalGrindTime() 
 	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).map(FossilGrinderRecipe::getGrindTime).orElse(60);
+		return this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).map(FossilGrinderRecipe::getGrindTime).orElse(200);
 	}
 	
 	protected int getGrindDuration() 

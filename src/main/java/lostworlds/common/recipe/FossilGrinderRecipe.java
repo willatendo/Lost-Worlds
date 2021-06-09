@@ -1,7 +1,5 @@
 package lostworlds.common.recipe;
 
-import java.util.Random;
-
 import lostworlds.core.init.RecipeInit;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -41,16 +39,7 @@ public class FossilGrinderRecipe implements IRecipe<IInventory>
 	@Override
 	public ItemStack assemble(IInventory inv) 
 	{
-		Random rand = new Random();
-		int chance = rand.nextInt(2);
-		if(chance == 1)
-		{
-			return this.output;
-		}
-		else
-		{
-			return this.broken;
-		}
+		return this.output;
 	}
 
 	@Override

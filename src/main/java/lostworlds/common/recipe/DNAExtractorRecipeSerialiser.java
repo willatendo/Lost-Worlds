@@ -14,7 +14,6 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public class DNAExtractorRecipeSerialiser extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<DNAExtractorRecipe>
 {
-
 	@Override
 	public DNAExtractorRecipe fromJson(ResourceLocation recipeId, JsonObject json) 
 	{
