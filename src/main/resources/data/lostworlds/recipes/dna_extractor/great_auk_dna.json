@@ -5,8 +5,5 @@
 	},
 	"softTissue": {
 		"item": "lostworlds:great_auk_soft_tissue"
-	},
-	"vile": {
-		"item": "lostworlds:empty_vile"
 	}
 }

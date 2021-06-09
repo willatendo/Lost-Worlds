@@ -26,6 +26,7 @@ import lostworlds.client.entity.render.TetraceratopsRender;
 import lostworlds.client.entity.render.TyrannosaurusRender;
 import lostworlds.client.screen.machines.DNAExtractorScreen;
 import lostworlds.client.screen.machines.FossilCleanerScreen;
+import lostworlds.client.screen.machines.FossilGrinderScreen;
 import lostworlds.common.entities.ModBoatRender;
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.ContainerInit;
@@ -155,6 +156,7 @@ public class ClientSetup
 
 		//ScreenManager.register(ContainerInit.TIME_MACHINE_CONTAINER.get(), TimeMachineScreen::new);
 		ScreenManager.register(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), FossilCleanerScreen::new);
+		ScreenManager.register(ContainerInit.FOSSIL_GRINDER_CONTAINER.get(), FossilGrinderScreen::new);
 		ScreenManager.register(ContainerInit.DNA_EXTRACTOR_CONTAINER.get(), DNAExtractorScreen::new);
 
 		//EntitiesS

@@ -3,9 +3,9 @@ package lostworlds.common.tileentity;
 import javax.annotation.Nullable;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lostworlds.common.blocks.DNAExtractorBlock;
-import lostworlds.common.container.DNAExtractorContainer;
-import lostworlds.common.recipe.DNAExtractorRecipe;
+import lostworlds.common.blocks.FossilGrinderBlock;
+import lostworlds.common.container.FossilGrinderContainer;
+import lostworlds.common.recipe.FossilGrinderRecipe;
 import lostworlds.core.init.RecipeInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModUtil;
@@ -30,22 +30,22 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
-public class DNAExtractorTileEntity extends TileEntity implements IInventory, INamedContainerProvider, INameable, ITickableTileEntity	
+public class FossilGrinderTileEntity extends TileEntity implements IInventory, INamedContainerProvider, INameable, ITickableTileEntity	
 {
 	protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 	
 	private int onTime;
 	@SuppressWarnings("unused")
 	private int onDuration;
-	public int extractingProgress;
-	private int extractingTotalTime;
+	public int grindingProgress;
+	private int grindingTotalTime;
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
-	protected final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
+	protected final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
 	
-	public DNAExtractorTileEntity() 
+	public FossilGrinderTileEntity() 
 	{
-		super(TileEntityInit.DNA_EXTRACTOR_TILE_ENTITY.get());
+		super(TileEntityInit.FOSSIL_GRINDER_TILE_ENTITY.get());
 	}
 
 	@Override
@@ -55,9 +55,9 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		ItemStackHelper.loadAllItems(nbt, this.items);
 		this.onTime = nbt.getInt("OnTime");
-		this.extractingProgress = nbt.getInt("ExtractTime");
-		this.extractingTotalTime = nbt.getInt("ExtractTimeTotal");
-		this.onDuration = this.getExtractDuration();
+		this.grindingProgress = nbt.getInt("GrindTime");
+		this.grindingTotalTime = nbt.getInt("GrindTimeTotal");
+		this.onDuration = this.getGrindDuration();
 	}
 	
 	@Override
@@ -65,8 +65,8 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	{
 		super.save(nbt);
 		nbt.putInt("OnTime", this.onTime);
-		nbt.putInt("ExtractTime", this.extractingProgress);
-		nbt.putInt("ExtractTimeTotal", this.extractingTotalTime);
+		nbt.putInt("GrindTime", this.grindingProgress);
+		nbt.putInt("GrindTimeTotal", this.grindingTotalTime);
 		ItemStackHelper.saveAllItems(nbt, this.items);
 		return nbt;
 	}
@@ -93,10 +93,10 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 			{
 				if(this.isOn() || !this.items.get(0).isEmpty()) 
 				{
-					IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<DNAExtractorRecipe>)this.recipeType, this, this.level).orElse(null);
-					if(!this.isOn() && this.canExtractWith(irecipe)) 
+					IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).orElse(null);
+					if(!this.isOn() && this.canGrindWith(irecipe)) 
 					{
-						this.onTime = this.getExtractDuration();
+						this.onTime = this.getGrindDuration();
 						this.onDuration = this.onTime;
 						if(this.isOn()) 
 						{
@@ -104,31 +104,31 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 						}
 					}
 					
-					if(this.isOn() && this.canExtractWith(irecipe)) 
+					if(this.isOn() && this.canGrindWith(irecipe)) 
 					{
-						++this.extractingProgress;
-						if(this.extractingProgress == this.extractingTotalTime) 
+						++this.grindingProgress;
+						if(this.grindingProgress == this.grindingTotalTime) 
 						{
-							this.extractingProgress = 0;
-							this.extractingTotalTime = this.getTotalExtractTime();
-							this.canExtract(irecipe);
+							this.grindingProgress = 0;
+							this.grindingTotalTime = this.getTotalGrindTime();
+							this.canGrind(irecipe);
 							flag1 = true;
 						}
 					} 
 					else 
 					{
-						this.extractingProgress = 0;
+						this.grindingProgress = 0;
 					}
 				} 
-				else if(!this.isOn() && this.extractingProgress > 0) 
+				else if(!this.isOn() && this.grindingProgress > 0) 
 				{
-					this.extractingProgress = MathHelper.clamp(this.extractingProgress - 2, 0, this.extractingTotalTime);
+					this.grindingProgress = MathHelper.clamp(this.grindingProgress - 2, 0, this.grindingTotalTime);
 				}
 				
 				if(flag != this.isOn()) 
 				{
 					flag1 = true;
-					this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(DNAExtractorBlock.ON, Boolean.valueOf(this.isOn())), 3);
+					this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(FossilGrinderBlock.ON, Boolean.valueOf(this.isOn())), 3);
 				}
 			}
 		}
@@ -139,7 +139,7 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 		}
 	}
 	
-	protected boolean canExtractWith(@Nullable IRecipe<?> recipe) 
+	protected boolean canGrindWith(@Nullable IRecipe<?> recipe) 
 	{
 		if(!this.items.get(0).isEmpty() && !this.items.get(1).isEmpty() && recipe != null) 
 		{
@@ -175,12 +175,11 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 		}
 	}
 	
-	private void canExtract(@Nullable IRecipe<?> recipe) 
+	private void canGrind(@Nullable IRecipe<?> recipe) 
 	{
-		if(recipe != null && this.canExtractWith(recipe)) 
+		if(recipe != null && this.canGrindWith(recipe)) 
 		{
 			ItemStack itemstack = this.items.get(0);
-			ItemStack vile = this.items.get(1);
 			ItemStack itemstack1 = recipe.getResultItem();
 			ItemStack itemstack2 = this.items.get(2);
 			if(itemstack2.isEmpty()) 
@@ -198,17 +197,16 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 			}
 			
 			itemstack.shrink(1);
-			vile.shrink(1);
 		}
 	}
 	
 	@SuppressWarnings("unchecked")
-	protected int getTotalExtractTime() 
+	protected int getTotalGrindTime() 
 	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType<DNAExtractorRecipe>)this.recipeType, this, this.level).map(DNAExtractorRecipe::getExtractingTime).orElse(60);
+		return this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).map(FossilGrinderRecipe::getGrindTime).orElse(60);
 	}
 	
-	protected int getExtractDuration() 
+	protected int getGrindDuration() 
 	{
 		return 60;
 	}
@@ -229,7 +227,6 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 				return false;
 			}
 		}
-		
 		return true;
 	}
 	
@@ -264,8 +261,8 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 		
 		if (i == 0 && !flag) 
 		{
-			this.extractingTotalTime = this.getTotalExtractTime();
-			this.extractingProgress = 0;
+			this.grindingTotalTime = this.getTotalGrindTime();
+			this.grindingProgress = 0;
 			this.setChanged();
 		}
 	}
@@ -328,13 +325,13 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new DNAExtractorContainer(windowId, playerInv, this, this, new IntArray(4));
+		return new FossilGrinderContainer(windowId, playerInv, this, this, new IntArray(4));
 	}
 
 	@Override
 	public ITextComponent getName() 
 	{
-		return ModUtil.tTC("container.dna_extractor");
+		return ModUtil.tTC("container.fossil_grinder");
 	}
 
 	@Override

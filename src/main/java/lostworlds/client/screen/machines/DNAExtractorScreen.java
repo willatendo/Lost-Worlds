@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import lostworlds.common.container.DNAExtractorContainer;
+import lostworlds.common.tileentity.DNAExtractorTileEntity;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
@@ -14,11 +15,13 @@ public class DNAExtractorScreen<T extends DNAExtractorContainer> extends Contain
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/dna_extractor.png");
 	private final DNAExtractorContainer container;
+	private final DNAExtractorTileEntity tile;
 	
 	public DNAExtractorScreen(T container, PlayerInventory playerInv, ITextComponent text) 
 	{
 		super(container, playerInv, text);
 		this.container = container;
+		this.tile = container.tile;
 	}
 	
 	@Override
@@ -38,6 +41,5 @@ public class DNAExtractorScreen<T extends DNAExtractorContainer> extends Contain
 		int i = this.leftPos;
 		int j = this.topPos;
 		this.blit(stack, i, j, 0, 0, this.imageWidth, this.imageHeight);
-		this.blit(stack, 0 + 79, 0 + 35, 176, 0, this.container.getCleanProgress(), 16);
 	}
 }

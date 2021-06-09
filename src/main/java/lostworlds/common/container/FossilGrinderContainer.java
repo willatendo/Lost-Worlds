@@ -1,6 +1,9 @@
 package lostworlds.common.container;
 
+import lostworlds.common.recipe.FossilGrinderRecipe;
+import lostworlds.common.tileentity.FossilGrinderTileEntity;
 import lostworlds.core.init.ContainerInit;
+import lostworlds.core.init.RecipeInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
@@ -9,7 +12,6 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.FurnaceResultSlot;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
@@ -19,17 +21,21 @@ import net.minecraft.world.World;
 public class FossilGrinderContainer extends Container
 {
 	private final IInventory container;
+	private final IIntArray data;
 	private final World level;
-	private final IRecipeType<FurnaceRecipe> recipeType = IRecipeType.SMELTING;
+	private final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
+	public final FossilGrinderTileEntity tile;
 	
-	public FossilGrinderContainer(int windowID, PlayerInventory playerInv, IInventory tile, IIntArray array) 
+	public FossilGrinderContainer(int windowID, PlayerInventory playerInv, FossilGrinderTileEntity tileEntity, IInventory tile, IIntArray array) 
 	{
 		super(ContainerInit.FOSSIL_GRINDER_CONTAINER.get(), windowID);
 		this.container = tile;
 		this.level = playerInv.player.level;
+		this.data = array;
+		this.tile = tileEntity;
 		
-		this.addSlot(new Slot(tile, 0, 56, 17));
-		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
+		this.addSlot(new Slot(tile, 0, 53, 35));
+		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 1, 116, 35));
 		
 		for(int i = 0; i < 3; ++i) 
 		{
@@ -49,7 +55,7 @@ public class FossilGrinderContainer extends Container
 	
 	public FossilGrinderContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new Inventory(3), new IntArray(4));
+		this(windowID, playerInv, new FossilGrinderTileEntity(), new Inventory(3), new IntArray(4));
  	}
 
 	@Override

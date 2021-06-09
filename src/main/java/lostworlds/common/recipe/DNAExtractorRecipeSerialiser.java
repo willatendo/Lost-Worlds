@@ -2,6 +2,7 @@ package lostworlds.common.recipe;
 
 import com.google.gson.JsonObject;
 
+import lostworlds.core.init.ItemInit;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
@@ -19,7 +20,7 @@ public class DNAExtractorRecipeSerialiser extends ForgeRegistryEntry<IRecipeSeri
 	{
 		ItemStack output = CraftingHelper.getItemStack(JSONUtils.getAsJsonObject(json, "output"), true);
 		Ingredient softTissue = Ingredient.fromJson(JSONUtils.getAsJsonObject(json, "softTissue"));
-		Ingredient vile = Ingredient.fromJson(JSONUtils.getAsJsonObject(json, "vile"));
+		Ingredient vile = Ingredient.of(ItemInit.EMPTY_VILE.get());
 
 		return new DNAExtractorRecipe(recipeId, softTissue, vile, output);
 	}

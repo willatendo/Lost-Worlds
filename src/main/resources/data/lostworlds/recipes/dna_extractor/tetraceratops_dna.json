@@ -5,8 +5,5 @@
 	},
 	"softTissue": {
 		"item": "lostworlds:tetraceratops_soft_tissue"
-	},
-	"vile": {
-		"item": "lostworlds:empty_vile"
 	}
 }

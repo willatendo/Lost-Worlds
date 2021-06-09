@@ -1103,7 +1103,6 @@
 
 	"lostworlds.field_guide.danger": "Danger:",
 	"lostworlds.field_guide.diet": "Diet:",
-	"lostworlds.field_guide.sex": "Sex:",
 	"lostworlds.field_guide.time_era": "Time Era:",
 	"lostworlds.field_guide.type": "Type:",
 		
@@ -1162,6 +1161,7 @@
 	"lostworlds.container.time_machine": "Time Machine",
 	
 	"lostworlds.container.fossil_cleaner": "Fossil Cleaner",
+	"lostworlds.container.fossil_grinder": "Fossil Grinder",
 	"lostworlds.container.dna_extractor": "DNA Extractor",
 
 	//Advancements
