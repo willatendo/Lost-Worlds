@@ -72,19 +72,10 @@ public class FossilGrinderContainer extends Container
 		if(slot != null && slot.hasItem()) 
 		{
 			ItemStack itemstack1 = slot.getItem();
-			itemstack = itemstack1.copy();
-			if(i == 2) 
+			itemstack = itemstack1.copy(); 
+			if(i != 1 && i != 0) 
 			{
-				if(!this.moveItemStackTo(itemstack1, 3, 39, true)) 
-				{
-					return ItemStack.EMPTY;
-				}
-				
-				slot.onQuickCraft(itemstack1, itemstack);
-			} 
-			else if(i != 1 && i != 0) 
-			{
-				if(this.canSmelt(itemstack1)) 
+				if(this.canGrind(itemstack1)) 
 				{
 					if(!this.moveItemStackTo(itemstack1, 0, 1, false)) 
 					{
@@ -128,7 +119,7 @@ public class FossilGrinderContainer extends Container
 		return itemstack;
 	}
 	
-	protected boolean canSmelt(ItemStack stack) 
+	protected boolean canGrind(ItemStack stack) 
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
 	}

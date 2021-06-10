@@ -1,5 +1,6 @@
 package lostworlds.common.recipe;
 
+import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.RecipeInit;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -75,6 +76,7 @@ public class DNAExtractorRecipe implements IRecipe<IInventory>
 		NonNullList<Ingredient> nonnulllist = NonNullList.create();
 		nonnulllist.add(this.softTissue);
 		nonnulllist.add(this.vile);
+		nonnulllist.add(Ingredient.of(new ItemStack(ItemInit.DNA_EXTRACTOR.get())));
 		return nonnulllist;
 	}
 

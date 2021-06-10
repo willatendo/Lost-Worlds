@@ -1,9 +1,11 @@
 package lostworlds.common.container;
 
 import lostworlds.common.recipe.DNAExtractorRecipe;
+import lostworlds.common.slot.SoftTissueSlot;
 import lostworlds.common.slot.VileSlot;
 import lostworlds.common.tileentity.DNAExtractorTileEntity;
 import lostworlds.core.init.ContainerInit;
+import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.RecipeInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -35,7 +37,7 @@ public class DNAExtractorContainer extends Container
 		this.data = array;
 		this.tile = tileEntity;
 		
-		this.addSlot(new Slot(tile, 0, 56, 25));
+		this.addSlot(new SoftTissueSlot(tile, 0, 56, 25));
 		this.addSlot(new VileSlot(tile, 1, 56, 45));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
 		
@@ -83,10 +85,31 @@ public class DNAExtractorContainer extends Container
 				}
 				
 				slot.onQuickCraft(itemstack1, itemstack);
-			} 
+			}
+			else if(i == 1)
+			{
+				if(this.isVile(itemstack1)) 
+				{
+					if(!this.moveItemStackTo(itemstack1, 1, 2, false)) 
+					{
+						return ItemStack.EMPTY;
+					}
+				}
+				else if(i >= 3 && i < 30) 
+				{
+					if(!this.moveItemStackTo(itemstack1, 30, 39, false)) 
+					{
+						return ItemStack.EMPTY;
+					}
+				} 
+				else if(i >= 30 && i < 39 && !this.moveItemStackTo(itemstack1, 3, 30, false)) 
+				{
+					return ItemStack.EMPTY;
+				}
+			}
 			else if(i != 1 && i != 0) 
 			{
-				if(this.canSmelt(itemstack1)) 
+				if(this.canClean(itemstack1)) 
 				{
 					if(!this.moveItemStackTo(itemstack1, 0, 1, false)) 
 					{
@@ -104,7 +127,7 @@ public class DNAExtractorContainer extends Container
 				{
 					return ItemStack.EMPTY;
 				}
-			} 
+			}
 			else if(!this.moveItemStackTo(itemstack1, 3, 39, false)) 
 			{
 				return ItemStack.EMPTY;
@@ -130,8 +153,13 @@ public class DNAExtractorContainer extends Container
 		return itemstack;
 	}
 	
-	protected boolean canSmelt(ItemStack stack) 
+	protected boolean canClean(ItemStack stack) 
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
+	}
+	
+	protected boolean isVile(ItemStack stack) 
+	{
+		return stack.getItem() == ItemInit.EMPTY_SYRINGE.get();
 	}
 }
