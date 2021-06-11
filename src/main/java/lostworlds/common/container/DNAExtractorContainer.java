@@ -5,7 +5,6 @@ import lostworlds.common.slot.SoftTissueSlot;
 import lostworlds.common.slot.VileSlot;
 import lostworlds.common.tileentity.DNAExtractorTileEntity;
 import lostworlds.core.init.ContainerInit;
-import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.RecipeInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -20,6 +19,8 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class DNAExtractorContainer extends Container
 {
@@ -53,8 +54,6 @@ public class DNAExtractorContainer extends Container
 		{
 			this.addSlot(new Slot(playerInv, k, 8 + k * 18, 142));
 		}
-		
-		this.addDataSlots(array);
 	}
 	
 	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
@@ -86,32 +85,11 @@ public class DNAExtractorContainer extends Container
 				
 				slot.onQuickCraft(itemstack1, itemstack);
 			}
-			else if(i == 1)
-			{
-				if(this.isVile(itemstack1)) 
-				{
-					if(!this.moveItemStackTo(itemstack1, 1, 2, false)) 
-					{
-						return ItemStack.EMPTY;
-					}
-				}
-				else if(i >= 3 && i < 30) 
-				{
-					if(!this.moveItemStackTo(itemstack1, 30, 39, false)) 
-					{
-						return ItemStack.EMPTY;
-					}
-				} 
-				else if(i >= 30 && i < 39 && !this.moveItemStackTo(itemstack1, 3, 30, false)) 
-				{
-					return ItemStack.EMPTY;
-				}
-			}
 			else if(i != 1 && i != 0) 
 			{
-				if(this.canClean(itemstack1)) 
+				if(canClean(itemstack1)) 
 				{
-					if(!this.moveItemStackTo(itemstack1, 0, 1, false)) 
+					if(!this.moveItemStackTo(itemstack1, 0, 2, true)) 
 					{
 						return ItemStack.EMPTY;
 					}
@@ -158,8 +136,11 @@ public class DNAExtractorContainer extends Container
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
 	}
 	
-	protected boolean isVile(ItemStack stack) 
+	@OnlyIn(Dist.CLIENT)
+	public int getBurnProgress() 
 	{
-		return stack.getItem() == ItemInit.EMPTY_SYRINGE.get();
+		int i = this.data.get(2);
+		int j = 60;
+		return j != 0 && i != 0 ? i * 35 / j : 0;
 	}
 }

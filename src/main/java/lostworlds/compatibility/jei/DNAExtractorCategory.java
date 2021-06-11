@@ -1,5 +1,8 @@
 package lostworlds.compatibility.jei;
 
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import lostworlds.common.recipe.DNAExtractorRecipe;
@@ -9,7 +12,6 @@ import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableAnimated;
-import mezz.jei.api.gui.drawable.IDrawableStatic;
 import mezz.jei.api.gui.ingredient.IGuiItemStackGroup;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.IIngredients;
@@ -20,20 +22,35 @@ import net.minecraft.util.ResourceLocation;
 public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 {
 	public static final ResourceLocation ID = ModUtil.rL("dna_extractor_category");
-	public static final ResourceLocation DNA_PROGRESS_METER = ModUtil.rL("textures/gui/jei/dna.png");
+	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backrounds.png");
 	
-	protected final IDrawableStatic staticdnaProgressMeter;	
-	protected final IDrawableAnimated dnaProgressMeter;	
+	private final LoadingCache<Integer, IDrawableAnimated> DNAProgessBar;
 	
 	private final IDrawable backround;
 	private final IDrawable icon;
 	
 	public DNAExtractorCategory(IGuiHelper helper) 
 	{
-		this.staticdnaProgressMeter = helper.createDrawable(DNA_PROGRESS_METER, 82, 114, 34, 10);
-		this.dnaProgressMeter = helper.createAnimatedDrawable(staticdnaProgressMeter, 300, IDrawableAnimated.StartDirection.LEFT, true);
-		this.backround = helper.createBlankDrawable(180, 100);
+		this.backround = helper.createDrawable(DISPLAY, 0, 0, 82, 38);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.DNA_EXTRACTOR.get()));
+		this.DNAProgessBar = CacheBuilder.newBuilder().maximumSize(25).build(new CacheLoader<Integer, IDrawableAnimated>() 
+		{
+			@Override
+			public IDrawableAnimated load(Integer cookTime) 
+			{
+				return helper.drawableBuilder(DISPLAY, 82, 0, 34, 10).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
+			}
+		});
+	}
+	
+	protected IDrawableAnimated getDNAProgessBar(DNAExtractorRecipe recipe) 
+	{
+		int cookTime = recipe.getExtractingTime();
+		if(cookTime <= 0) 
+		{
+			cookTime = 60;
+		}
+		return this.DNAProgessBar.getUnchecked(cookTime);
 	}
 	
 	@Override
@@ -72,12 +89,6 @@ public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 		ingredients.setInputIngredients(recipe.getIngredients());
 		ingredients.setOutput(VanillaTypes.ITEM, recipe.getResultItem());
 	}
-	
-	@Override
-	public void draw(DNAExtractorRecipe recipe, MatrixStack matrixStack, double mouseX, double mouseY) 
-	{
-		dnaProgressMeter.draw(matrixStack, 1, 20);
-	}
 
 	@Override
 	public void setRecipe(IRecipeLayout recipeLayout, DNAExtractorRecipe recipe, IIngredients ingredients) 
@@ -86,10 +97,15 @@ public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 		
 		itemStackGroup.init(0, true, 0, 0);
 		itemStackGroup.init(1, true, 0, 20);
-		itemStackGroup.init(2, true, 0, 40);
-		itemStackGroup.init(3, false, 60, 18);
+		itemStackGroup.init(3, false, 60, 10);
 		
 		itemStackGroup.set(ingredients);
 	}
-
+	
+	@Override
+	public void draw(DNAExtractorRecipe recipe, MatrixStack matrixStack, double mouseX, double mouseY) 
+	{
+		IDrawableAnimated arrow = getDNAProgessBar(recipe);
+		arrow.draw(matrixStack, 20, 14);
+	}
 }

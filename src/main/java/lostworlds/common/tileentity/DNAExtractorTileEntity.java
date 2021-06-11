@@ -35,11 +35,10 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 	
 	private int onTime;
-	@SuppressWarnings("unused")
 	private int onDuration;
-	public int extractingProgress;
-	private int extractingTotalTime;
-
+	private int extractingProgress;
+	private int extractingTotalTime = 60;
+	
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
 	

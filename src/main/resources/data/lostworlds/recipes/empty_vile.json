@@ -17,6 +17,7 @@
 		}
 	},
 	"result": {
-		"item": "lostworlds:empty_vile"
+		"item": "lostworlds:empty_vile",
+		"count": 4
 	}
 }

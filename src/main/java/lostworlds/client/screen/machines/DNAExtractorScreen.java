@@ -41,5 +41,8 @@ public class DNAExtractorScreen<T extends DNAExtractorContainer> extends Contain
 		int i = this.leftPos;
 		int j = this.topPos;
 		this.blit(stack, i, j, 0, 0, this.imageWidth, this.imageHeight);
+
+		int l = this.container.getBurnProgress();
+		this.blit(stack, i + 75, j + 38, 176, 0, l + 3, 10);
 	}
 }

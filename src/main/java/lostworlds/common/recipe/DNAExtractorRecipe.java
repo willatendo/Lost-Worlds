@@ -76,7 +76,6 @@ public class DNAExtractorRecipe implements IRecipe<IInventory>
 		NonNullList<Ingredient> nonnulllist = NonNullList.create();
 		nonnulllist.add(this.softTissue);
 		nonnulllist.add(this.vile);
-		nonnulllist.add(Ingredient.of(new ItemStack(ItemInit.DNA_EXTRACTOR.get())));
 		return nonnulllist;
 	}
 
@@ -90,5 +89,11 @@ public class DNAExtractorRecipe implements IRecipe<IInventory>
 	public IRecipeType<?> getType() 
 	{
 		return RecipeInit.DNA_EXTRACTOR_RECIPE;
+	}
+	
+	@Override
+	public ItemStack getToastSymbol() 
+	{
+		return new ItemStack(ItemInit.DNA_EXTRACTOR.get());
 	}
 }
