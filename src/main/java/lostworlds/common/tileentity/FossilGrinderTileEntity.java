@@ -35,7 +35,6 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 	
 	private int onTime;
-	@SuppressWarnings("unused")
 	private int onDuration;
 	public int grindingProgress;
 	private int grindingTotalTime;
@@ -149,7 +148,7 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 			} 
 			else 
 			{
-				ItemStack itemstack1 = this.items.get(2);
+				ItemStack itemstack1 = this.items.get(1);
 				if(itemstack1.isEmpty()) 
 				{
 					return true;
@@ -180,10 +179,10 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 		{
 			ItemStack itemstack = this.items.get(0);
 			ItemStack itemstack1 = recipe.getResultItem();
-			ItemStack itemstack2 = this.items.get(2);
+			ItemStack itemstack2 = this.items.get(1);
 			if(itemstack2.isEmpty()) 
 			{
-				this.items.set(2, itemstack1.copy());
+				this.items.set(1, itemstack1.copy());
 			} 
 			else if(itemstack2.getItem() == itemstack1.getItem()) 
 			{
@@ -201,12 +200,12 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	
 	protected int getTotalGrindTime() 
 	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).map(FossilGrinderRecipe::getGrindTime).orElse(200);
+		return this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).map(FossilGrinderRecipe::getGrindTime).orElse(300);
 	}
 	
 	protected int getGrindDuration() 
 	{
-		return 60;
+		return 300;
 	}
 	
 	@Override
@@ -281,7 +280,7 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	@Override
 	public boolean canPlaceItem(int i, ItemStack stack) 
 	{
-		if(i == 2) 
+		if(i == 1) 
 		{
 			return false;
 		} 

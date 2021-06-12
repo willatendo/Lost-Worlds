@@ -1,0 +1,9 @@
+{
+	"type": "lostworlds:fossil_grinder",
+	"output": {
+		"item": "lostworlds:nautilus_soft_tissue"
+	},
+	"fossil": {
+		"item": "minecraft:nautilus_shell"
+	}
+}

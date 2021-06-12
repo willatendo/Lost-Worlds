@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:suchomimus_skull",
+		"lostworlds:suchomimus_arm_bone",
+		"lostworlds:suchomimus_leg_bone",
+		"lostworlds:suchomimus_foot_bone",
+		"lostworlds:suchomimus_rib_bone"
+	]
+}

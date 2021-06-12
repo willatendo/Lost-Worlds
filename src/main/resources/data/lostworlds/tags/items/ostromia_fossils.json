@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:ostromia_skull",
+		"lostworlds:ostromia_arm_bone",
+		"lostworlds:ostromia_leg_bone",
+		"lostworlds:ostromia_foot_bone",
+		"lostworlds:ostromia_rib_bone",
+		"lostworlds:ostromia_feather"
+	]
+}

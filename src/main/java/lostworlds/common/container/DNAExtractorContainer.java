@@ -137,10 +137,11 @@ public class DNAExtractorContainer extends Container
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	public int getBurnProgress() 
+	public int getCleanProgress() 
 	{
+		int t = this.data.get(1);
 		int i = this.data.get(2);
-		int j = 60;
-		return j != 0 && i != 0 ? i * 35 / j : 0;
+		int j = this.data.get(3);
+		return j != 0 && i != 0 && t != 0 ? i * 35 / j : 0;
 	}
 }

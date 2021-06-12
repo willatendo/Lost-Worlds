@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:edaphosaurus_skull",
+		"lostworlds:edaphosaurus_arm_bone",
+		"lostworlds:edaphosaurus_leg_bone",
+		"lostworlds:edaphosaurus_foot_bone",
+		"lostworlds:edaphosaurus_rib_bone",
+		"lostworlds:edaphosaurus_sail"
+	]
+}

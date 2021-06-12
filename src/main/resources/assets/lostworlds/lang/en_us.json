@@ -76,6 +76,9 @@
 	"item.lostworlds.cooked_palaeoniscum": "Cooked Palaeoniscum",
 	"item.lostworlds.palaeoniscum_spawn_egg": "Palaeoniscum Spawn Egg",	
 	"item.lostworlds.palaeoniscum_bucket": "Palaeoniscum Bucket",
+	"item.lostworlds.palaeoniscum_skull": "Palaeoniscum Skull",
+	"item.lostworlds.palaeoniscum_fin_bone": "Palaeoniscum Fin Bone",
+	"item.lostworlds.palaeoniscum_rib_bone": "Palaeoniscum Rib Bone",
 
 	//Nautilus
 	"item.lostworlds.nautilus_dna": "Nautilus DNA",	
@@ -90,7 +93,7 @@
 	"item.lostworlds.nautilus_tentical": "Nautilus Tentical",	
 	"item.lostworlds.cooked_nautilus_tentical": "Cooked Nautilus Tentical",	
 	"item.lostworlds.nautilus_spawn_egg": "Nautilus Spawn Egg",	
-	"item.lostworlds.nautilus_bucket": "Nautilus Bucket",	
+	"item.lostworlds.nautilus_bucket": "Nautilus Bucket",
 	
 	//Rhinesuchus
 	"item.lostworlds.rhinesuchus_dna": "Rhinesuchus DNA",	
@@ -105,6 +108,11 @@
 	"item.lostworlds.raw_rhinesuchus_meat": "Raw Rhinesuchus Meat",	
 	"item.lostworlds.cooked_rhinesuchus_meat": "Cooked Rhinesuchus Meat",	
 	"item.lostworlds.rhinesuchus_spawn_egg": "Rhinesuchus Spawn Egg",	
+	"item.lostworlds.rhinesuchus_skull": "Rhinesuchus Skull",
+	"item.lostworlds.rhinesuchus_arm_bone": "Rhinesuchus Arm Bone",
+	"item.lostworlds.rhinesuchus_leg_bone": "Rhinesuchus Leg Bone",
+	"item.lostworlds.rhinesuchus_foot_bone": "Rhinesuchus Foot Bone",
+	"item.lostworlds.rhinesuchus_rib_bone": "Rhinesuchus Rib Bone",
 	
 	//Dimetrodon
 	"item.lostworlds.dimetrodon_dna": "Dimetrodon DNA",		
@@ -118,6 +126,12 @@
 	"item.lostworlds.raw_dimetrodon_meat": "Raw Dimetrodon Meat",	
 	"item.lostworlds.cooked_dimetrodon_meat": "Cooked Dimetrodon Meat",	
 	"item.lostworlds.dimetrodon_spawn_egg": "Dimetrodon Spawn Egg",	
+	"item.lostworlds.dimetrodon_skull": "Dimetrodon Skull",
+	"item.lostworlds.dimetrodon_arm_bone": "Dimetrodon Arm Bone",
+	"item.lostworlds.dimetrodon_leg_bone": "Dimetrodon Leg Bone",
+	"item.lostworlds.dimetrodon_foot_bone": "Dimetrodon Foot Bone",
+	"item.lostworlds.dimetrodon_rib_bone": "Dimetrodon Rib Bone",
+	"item.lostworlds.dimetrodon_sail": "Dimetrodon Sail",
 
 	//Edaphosaurus
 	"item.lostworlds.edaphosaurus_dna": "Edaphosaurus DNA",	
@@ -127,10 +141,16 @@
 	"item.lostworlds.vile_of_edaphosaurus_blood": "Vile of Edaphosaurus Blood",
 	"toolTip.lostworlds.edaphosaurus_dna_disc.holding_shift": "Storing: Edaphosaurus pogonias",
 	"toolTip.lostworlds.edaphosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
-	"block.lostworlds.edaphosaurus_egg": "1 Egg",
+	"block.lostworlds.edaphosaurus_egg": "Edaphosaurus Egg",
 	"item.lostworlds.raw_edaphosaurus_meat": "Raw Edaphosaurus Meat",
 	"item.lostworlds.cooked_edaphosaurus_meat": "Cooked Edaphosaurus Meat",
 	"item.lostworlds.edaphosaurus_spawn_egg": "Edaphosaurus Spawn Egg",
+	"item.lostworlds.edaphosaurus_skull": "Edaphosaurus Skull",
+	"item.lostworlds.edaphosaurus_arm_bone": "Edaphosaurus Arm Bone",
+	"item.lostworlds.edaphosaurus_leg_bone": "Edaphosaurus Leg Bone",
+	"item.lostworlds.edaphosaurus_foot_bone": "Edaphosaurus Foot Bone",
+	"item.lostworlds.edaphosaurus_rib_bone": "Edaphosaurus Rib Bone",
+	"item.lostworlds.edaphosaurus_sail": "Edaphosaurus Sail",
 
 	//Gorgonops
 	"item.lostworlds.gorgonops_dna": "Gorgonops DNA",
@@ -144,6 +164,11 @@
 	"item.lostworlds.raw_gorgonops_meat": "Raw Gorgonops Meat",
 	"item.lostworlds.cooked_gorgonops_meat": "Cooked Gorgonops Meat",
 	"item.lostworlds.gorgonops_spawn_egg": "Gorgonops Spawn Egg",
+	"item.lostworlds.gorgonops_skull": "Gorgonops Skull",
+	"item.lostworlds.gorgonops_arm_bone": "Gorgonops Arm Bone",
+	"item.lostworlds.gorgonops_leg_bone": "Gorgonops Leg Bone",
+	"item.lostworlds.gorgonops_foot_bone": "Gorgonops Foot Bone",
+	"item.lostworlds.gorgonops_rib_bone": "Gorgonops Rib Bone",
 
 	//Carnotaurus
 	"item.lostworlds.carnotaurus_dna": "Carnotaurus DNA",
@@ -157,6 +182,11 @@
 	"item.lostworlds.raw_carnotaurus_meat": "Raw Carnotaurus Meat",
 	"item.lostworlds.cooked_carnotaurus_meat": "Cooked Carnotaurus Meat",
 	"item.lostworlds.carnotaurus_spawn_egg": "Carnotaurus Spawn Egg",
+	"item.lostworlds.carnotaurus_skull": "Carnotaurus Skull",
+	"item.lostworlds.carnotaurus_arm_bone": "Carnotaurus Arm Bone",
+	"item.lostworlds.carnotaurus_leg_bone": "Carnotaurus Leg Bone",
+	"item.lostworlds.carnotaurus_foot_bone": "Carnotaurus Foot Bone",
+	"item.lostworlds.carnotaurus_rib_bone": "Carnotaurus Rib Bone",
 
 	//Tyrannosaurus	
 	"item.lostworlds.tyrannosaurus_dna": "Tyrannosaurus DNA",
@@ -170,6 +200,11 @@
 	"item.lostworlds.raw_tyrannosaurus_meat": "Raw Tyrannosaurus Meat",
 	"item.lostworlds.cooked_tyrannosaurus_meat": "Cooked Tyrannosaurus Meat",
 	"item.lostworlds.tyrannosaurus_spawn_egg": "Tyrannosaurus Spawn Egg",
+	"item.lostworlds.tyrannosaurus_skull": "Tyrannosaurus Skull",
+	"item.lostworlds.tyrannosaurus_arm_bone": "Tyrannosaurus Arm Bone",
+	"item.lostworlds.tyrannosaurus_leg_bone": "Tyrannosaurus Leg Bone",
+	"item.lostworlds.tyrannosaurus_foot_bone": "Tyrannosaurus Foot Bone",
+	"item.lostworlds.tyrannosaurus_rib_bone": "Tyrannosaurus Rib Bone",
 
 	//Allosaurus	
 	"item.lostworlds.allosaurus_dna": "Allosaurus DNA",
@@ -182,6 +217,11 @@
 	"item.lostworlds.raw_allosaurus_meat": "Raw Allosaurus Meat",
 	"item.lostworlds.cooked_allosaurus_meat": "Cooked Allosaurus Meat",
 	"item.lostworlds.allosaurus_spawn_egg": "Allosaurus Spawn Egg",
+	"item.lostworlds.allosaurus_skull": "Allosaurus Skull",
+	"item.lostworlds.allosaurus_arm_bone": "Allosaurus Arm Bone",
+	"item.lostworlds.allosaurus_leg_bone": "Allosaurus Leg Bone",
+	"item.lostworlds.allosaurus_foot_bone": "Allosaurus Foot Bone",
+	"item.lostworlds.allosaurus_rib_bone": "Allosaurus Rib Bone",
 	
 	//Giganotosaurus	
 	"item.lostworlds.giganotosaurus_dna": "Giganotosaurus DNA",
@@ -194,6 +234,11 @@
 	"item.lostworlds.raw_giganotosaurus_meat": "Raw Giganotosaurus Meat",
 	"item.lostworlds.cooked_giganotosaurus_meat": "Cooked Giganotosaurus Meat",
 	"item.lostworlds.giganotosaurus_spawn_egg": "Giganotosaurus Spawn Egg",
+	"item.lostworlds.giganotosaurus_skull": "Giganotosaurus Skull",
+	"item.lostworlds.giganotosaurus_arm_bone": "Giganotosaurus Arm Bone",
+	"item.lostworlds.giganotosaurus_leg_bone": "Giganotosaurus Leg Bone",
+	"item.lostworlds.giganotosaurus_foot_bone": "Giganotosaurus Foot Bone",
+	"item.lostworlds.giganotosaurus_rib_bone": "Giganotosaurus Rib Bone",
 
 	//Suchomimus	
 	"item.lostworlds.suchomimus_dna": "Suchomimus DNA",
@@ -206,6 +251,11 @@
 	"item.lostworlds.raw_suchomimus_meat": "Raw Suchomimus Meat",
 	"item.lostworlds.cooked_suchomimus_meat": "Cooked Suchomimus Meat",
 	"item.lostworlds.suchomimus_spawn_egg": "Suchomimus Spawn Egg",
+	"item.lostworlds.suchomimus_skull": "Suchomimus Skull",
+	"item.lostworlds.suchomimus_arm_bone": "Suchomimus Arm Bone",
+	"item.lostworlds.suchomimus_leg_bone": "Suchomimus Leg Bone",
+	"item.lostworlds.suchomimus_foot_bone": "Suchomimus Foot Bone",
+	"item.lostworlds.suchomimus_rib_bone": "Suchomimus Rib Bone",
 	
 	//Tetraceratops	
 	"item.lostworlds.tetraceratops_dna": "Tetraceratops DNA",
@@ -218,6 +268,12 @@
 	"item.lostworlds.raw_tetraceratops_meat": "Raw Tetraceratops Meat",
 	"item.lostworlds.cooked_tetraceratops_meat": "Cooked Tetraceratops Meat",
 	"item.lostworlds.tetraceratops_spawn_egg": "Tetraceratops Spawn Egg",
+	"item.lostworlds.tetraceratops_skull": "Tetraceratops Skull",
+	"item.lostworlds.tetraceratops_arm_bone": "Tetraceratops Arm Bone",
+	"item.lostworlds.tetraceratops_leg_bone": "Tetraceratops Leg Bone",
+	"item.lostworlds.tetraceratops_foot_bone": "Tetraceratops Foot Bone",
+	"item.lostworlds.tetraceratops_rib_bone": "Tetraceratops Rib Bone",
+	"item.lostworlds.tetraceratops_horn": "Tetraceratops Horn",
 
 	//Great Auk	
 	"item.lostworlds.great_auk_dna": "Great Auk DNA",
@@ -231,6 +287,11 @@
 	"item.lostworlds.cooked_great_auk_meat": "Cooked Great Auk Meat",
 	"item.lostworlds.great_auk_egg": "Great Auk Egg",
 	"item.lostworlds.great_auk_spawn_egg": "Great Auk Spawn Egg",
+	"item.lostworlds.great_auk_skull": "Great Auk Skull",
+	"item.lostworlds.great_auk_arm_bone": "Great Auk Arm Bone",
+	"item.lostworlds.great_auk_leg_bone": "Great Auk Leg Bone",
+	"item.lostworlds.great_auk_foot_bone": "Great Auk Foot Bone",
+	"item.lostworlds.great_auk_rib_bone": "Great Auk Rib Bone",
 
 	//Ouranosaurus
 	"item.lostworlds.ouranosaurus_dna": "Ouranosaurus DNA",
@@ -243,6 +304,12 @@
 	"item.lostworlds.raw_ouranosaurus_meat": "Raw Ouranosaurus Meat",
 	"item.lostworlds.cooked_ouranosaurus_meat": "Cooked Ouranosaurus Meat",
 	"item.lostworlds.ouranosaurus_spawn_egg": "Ouranosaurus Spawn Egg",
+	"item.lostworlds.ouranosaurus_skull": "Ouranosaurus Skull",
+	"item.lostworlds.ouranosaurus_arm_bone": "Ouranosaurus Arm Bone",
+	"item.lostworlds.ouranosaurus_leg_bone": "Ouranosaurus Leg Bone",
+	"item.lostworlds.ouranosaurus_foot_bone": "Ouranosaurus Foot Bone",
+	"item.lostworlds.ouranosaurus_rib_bone": "Ouranosaurus Rib Bone",
+	"item.lostworlds.ouranosaurus_sail": "Ouranosaurus Sail",
 
 	//Fukuivenator
 	"item.lostworlds.fukuivenator_dna": "Fukuivenator DNA",
@@ -255,6 +322,12 @@
 	"item.lostworlds.raw_fukuivenator_meat": "Raw Fukuivenator Meat",
 	"item.lostworlds.cooked_fukuivenator_meat": "Cooked Fukuivenator Meat",
 	"item.lostworlds.fukuivenator_spawn_egg": "Fukuivenator Spawn Egg",
+	"item.lostworlds.fukuivenator_skull": "Fukuivenator Skull",
+	"item.lostworlds.fukuivenator_arm_bone": "Fukuivenator Arm Bone",
+	"item.lostworlds.fukuivenator_leg_bone": "Fukuivenator Leg Bone",
+	"item.lostworlds.fukuivenator_foot_bone": "Fukuivenator Foot Bone",
+	"item.lostworlds.fukuivenator_rib_bone": "Fukuivenator Rib Bone",
+	"item.lostworlds.fukuivenator_claw": "Fukuivenator Claw",
 
 	//Psittacosaurus
 	"item.lostworlds.psittacosaurus_dna": "Psittacosaurus DNA",
@@ -267,6 +340,11 @@
 	"item.lostworlds.raw_psittacosaurus_meat": "Raw Psittacosaurus Meat",
 	"item.lostworlds.cooked_psittacosaurus_meat": "Cooked Psittacosaurus Meat",
 	"item.lostworlds.psittacosaurus_spawn_egg": "Psittacosaurus Spawn Egg",
+	"item.lostworlds.psittacosaurus_skull": "Psittacosaurus Skull",
+	"item.lostworlds.psittacosaurus_arm_bone": "Psittacosaurus Arm Bone",
+	"item.lostworlds.psittacosaurus_leg_bone": "Psittacosaurus Leg Bone",
+	"item.lostworlds.psittacosaurus_foot_bone": "Psittacosaurus Foot Bone",
+	"item.lostworlds.psittacosaurus_rib_bone": "Psittacosaurus Rib Bone",
 	
 	//Cryolophosaurus
 	"item.lostworlds.cryolophosaurus_dna": "Cryolophosaurus DNA",
@@ -279,6 +357,11 @@
 	"item.lostworlds.raw_cryolophosaurus_meat": "Raw Cryolophosaurus Meat",
 	"item.lostworlds.cooked_cryolophosaurus_meat": "Cooked Cryolophosaurus Meat",
 	"item.lostworlds.cryolophosaurus_spawn_egg": "Cryolophosaurus Spawn Egg",
+	"item.lostworlds.cryolophosaurus_skull": "Cryolophosaurus Skull",
+	"item.lostworlds.cryolophosaurus_arm_bone": "Cryolophosaurus Arm Bone",
+	"item.lostworlds.cryolophosaurus_leg_bone": "Cryolophosaurus Leg Bone",
+	"item.lostworlds.cryolophosaurus_foot_bone": "Cryolophosaurus Foot Bone",
+	"item.lostworlds.cryolophosaurus_rib_bone": "Cryolophosaurus Rib Bone",
 	
 	//Ostromia
 	"item.lostworlds.ostromia_dna": "Ostromia DNA",
@@ -291,6 +374,12 @@
 	"item.lostworlds.raw_ostromia_meat": "Raw Ostromia Meat",
 	"item.lostworlds.cooked_ostromia_meat": "Cooked Ostromia Meat",
 	"item.lostworlds.ostromia_spawn_egg": "Ostromia Spawn Egg",
+	"item.lostworlds.ostromia_skull": "Ostromia Skull",
+	"item.lostworlds.ostromia_arm_bone": "Ostromia Arm Bone",
+	"item.lostworlds.ostromia_leg_bone": "Ostromia Leg Bone",
+	"item.lostworlds.ostromia_foot_bone": "Ostromia Foot Bone",
+	"item.lostworlds.ostromia_rib_bone": "Ostromia Rib Bone",
+	"item.lostworlds.ostromia_feather": "Ostromia Feather",
 
 	//Protosuchus
 	"item.lostworlds.protosuchus_dna": "Protosuchus DNA",
@@ -303,6 +392,11 @@
 	"item.lostworlds.raw_protosuchus_meat": "Raw Protosuchus Meat",
 	"item.lostworlds.cooked_protosuchus_meat": "Cooked Protosuchus Meat",
 	"item.lostworlds.protosuchus_spawn_egg": "Protosuchus Spawn Egg",
+	"item.lostworlds.protosuchus_skull": "Protosuchus Skull",
+	"item.lostworlds.protosuchus_arm_bone": "Protosuchus Arm Bone",
+	"item.lostworlds.protosuchus_leg_bone": "Protosuchus Leg Bone",
+	"item.lostworlds.protosuchus_foot_bone": "Protosuchus Foot Bone",
+	"item.lostworlds.protosuchus_rib_bone": "Protosuchus Rib Bone",
 	
 	//Diictodon
 	"item.lostworlds.diictodon_dna": "Diictodon DNA",
@@ -315,6 +409,11 @@
 	"item.lostworlds.raw_diictodon_meat": "Raw Diictodon Meat",
 	"item.lostworlds.cooked_diictodon_meat": "Cooked Diictodon Meat",
 	"item.lostworlds.diictodon_spawn_egg": "Diictodon Spawn Egg",
+	"item.lostworlds.diictodon_skull": "Diictodon Skull",
+	"item.lostworlds.diictodon_arm_bone": "Diictodon Arm Bone",
+	"item.lostworlds.diictodon_leg_bone": "Diictodon Leg Bone",
+	"item.lostworlds.diictodon_foot_bone": "Diictodon Foot Bone",
+	"item.lostworlds.diictodon_rib_bone": "Diictodon Rib Bone",
 	
 	//Kentrosaurus
 	"item.lostworlds.kentrosaurus_dna": "Kentrosaurus DNA",
@@ -327,6 +426,12 @@
 	"item.lostworlds.raw_kentrosaurus_meat": "Raw Kentrosaurus Meat",
 	"item.lostworlds.cooked_kentrosaurus_meat": "Cooked Kentrosaurus Meat",
 	"item.lostworlds.kentrosaurus_spawn_egg": "Kentrosaurus Spawn Egg",
+	"item.lostworlds.kentrosaurus_skull": "Kentrosaurus Skull",
+	"item.lostworlds.kentrosaurus_arm_bone": "Kentrosaurus Arm Bone",
+	"item.lostworlds.kentrosaurus_leg_bone": "Kentrosaurus Leg Bone",
+	"item.lostworlds.kentrosaurus_foot_bone": "Kentrosaurus Foot Bone",
+	"item.lostworlds.kentrosaurus_rib_bone": "Kentrosaurus Rib Bone",
+	"item.lostworlds.kentrosaurus_plate": "Kentrosaurus Plate",
 
 	//Chilesaurus
 	"item.lostworlds.chilesaurus_dna": "Chilesaurus DNA",
@@ -339,6 +444,11 @@
 	"item.lostworlds.raw_chilesaurus_meat": "Raw Chilesaurus Meat",
 	"item.lostworlds.cooked_chilesaurus_meat": "Cooked Chilesaurus Meat",
 	"item.lostworlds.chilesaurus_spawn_egg": "Chilesaurus Spawn Egg",
+	"item.lostworlds.chilesaurus_skull": "Chilesaurus Skull",
+	"item.lostworlds.chilesaurus_arm_bone": "Chilesaurus Arm Bone",
+	"item.lostworlds.chilesaurus_leg_bone": "Chilesaurus Leg Bone",
+	"item.lostworlds.chilesaurus_foot_bone": "Chilesaurus Foot Bone",
+	"item.lostworlds.chilesaurus_rib_bone": "Chilesaurus Rib Bone",
 
 	//Liaoningosaurus
 	"item.lostworlds.liaoningosaurus_dna": "Liaoningosaurus DNA",
@@ -351,6 +461,12 @@
 	"item.lostworlds.raw_liaoningosaurus_meat": "Raw Liaoningosaurus Meat",
 	"item.lostworlds.cooked_liaoningosaurus_meat": "Cooked Liaoningosaurus Meat",
 	"item.lostworlds.liaoningosaurus_spawn_egg": "Liaoningosaurus Spawn Egg",
+	"item.lostworlds.liaoningosaurus_skull": "Liaoningosaurus Skull",
+	"item.lostworlds.liaoningosaurus_arm_bone": "Liaoningosaurus Arm Bone",
+	"item.lostworlds.liaoningosaurus_leg_bone": "Liaoningosaurus Leg Bone",
+	"item.lostworlds.liaoningosaurus_foot_bone": "Liaoningosaurus Foot Bone",
+	"item.lostworlds.liaoningosaurus_rib_bone": "Liaoningosaurus Rib Bone",
+	"item.lostworlds.liaoningosaurus_scute": "Liaoningosaurus Scute",
 
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
@@ -1162,6 +1278,7 @@
 	
 	"lostworlds.container.fossil_cleaner": "Fossil Cleaner",
 	"lostworlds.container.fossil_grinder": "Fossil Grinder",
+	"lostworlds.jei.fossil_grinder.title": "Fossil Grinding",
 	"lostworlds.container.dna_extractor": "DNA Extractor",
 	"lostworlds.jei.dna_extractor.title": "DNA Extracting",
 

@@ -56,7 +56,7 @@ public class FossilGrinderRecipe implements IRecipe<IInventory>
 	
 	public int getGrindTime() 
 	{
-		return 200;
+		return 300;
 	}
 
 	@Override

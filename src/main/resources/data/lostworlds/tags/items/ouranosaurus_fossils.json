@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:ouranosaurus_skull",
+		"lostworlds:ouranosaurus_arm_bone",
+		"lostworlds:ouranosaurus_leg_bone",
+		"lostworlds:ouranosaurus_foot_bone",
+		"lostworlds:ouranosaurus_rib_bone",
+		"lostworlds:ouranosaurus_sail"
+	]
+}

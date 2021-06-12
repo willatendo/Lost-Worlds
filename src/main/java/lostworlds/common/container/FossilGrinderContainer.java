@@ -72,29 +72,38 @@ public class FossilGrinderContainer extends Container
 		if(slot != null && slot.hasItem()) 
 		{
 			ItemStack itemstack1 = slot.getItem();
-			itemstack = itemstack1.copy(); 
-			if(i != 1 && i != 0) 
+			itemstack = itemstack1.copy();
+			if(i == 1) 
 			{
-				if(this.canGrind(itemstack1)) 
+				if(!this.moveItemStackTo(itemstack1, 2, 38, true)) 
+				{
+					return ItemStack.EMPTY;
+				}
+				
+				slot.onQuickCraft(itemstack1, itemstack);
+			}
+			else if(i != 0) 
+			{
+				if(canGrind(itemstack1)) 
 				{
 					if(!this.moveItemStackTo(itemstack1, 0, 1, false)) 
 					{
 						return ItemStack.EMPTY;
 					}
 				}
-				else if(i >= 3 && i < 30) 
+				else if(i >= 2 && i < 29) 
 				{
-					if(!this.moveItemStackTo(itemstack1, 30, 39, false)) 
+					if(!this.moveItemStackTo(itemstack1, 29, 38, false)) 
 					{
 						return ItemStack.EMPTY;
 					}
 				} 
-				else if(i >= 30 && i < 39 && !this.moveItemStackTo(itemstack1, 3, 30, false)) 
+				else if(i >= 29 && i < 38 && !this.moveItemStackTo(itemstack1, 2, 29, false)) 
 				{
 					return ItemStack.EMPTY;
 				}
-			} 
-			else if(!this.moveItemStackTo(itemstack1, 3, 39, false)) 
+			}
+			else if(!this.moveItemStackTo(itemstack1, 2, 38, false)) 
 			{
 				return ItemStack.EMPTY;
 			}

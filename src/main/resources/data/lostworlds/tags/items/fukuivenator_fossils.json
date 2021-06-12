@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:fukuivenator_skull",
+		"lostworlds:fukuivenator_arm_bone",
+		"lostworlds:fukuivenator_leg_bone",
+		"lostworlds:fukuivenator_foot_bone",
+		"lostworlds:fukuivenator_rib_bone",
+		"lostworlds:fukuivenator_claw"
+	]
+}

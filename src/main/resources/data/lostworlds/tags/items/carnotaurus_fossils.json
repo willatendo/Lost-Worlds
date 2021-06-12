@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:carnotaurus_skull",
+		"lostworlds:carnotaurus_arm_bone",
+		"lostworlds:carnotaurus_leg_bone",
+		"lostworlds:carnotaurus_foot_bone",
+		"lostworlds:carnotaurus_rib_bone"
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "lostworlds:items/bones/liaoningosaurus/liaoningosaurus_scute"
+  }
+}
