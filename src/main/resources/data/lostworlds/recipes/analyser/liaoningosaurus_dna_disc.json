@@ -1,0 +1,9 @@
+{
+	"type": "lostworlds:analyser",
+	"output": {
+		"item": "lostworlds:liaoningosaurus_dna_disc"
+	},
+	"dna": {
+		"item": "lostworlds:liaoningosaurus_dna"
+	}
+}

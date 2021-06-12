@@ -1,0 +1,9 @@
+{
+	"type": "lostworlds:analyser",
+	"output": {
+		"item": "lostworlds:dimetrodon_dna_disc"
+	},
+	"dna": {
+		"item": "lostworlds:dimetrodon_dna"
+	}
+}

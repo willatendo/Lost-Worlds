@@ -1281,6 +1281,8 @@
 	"lostworlds.jei.fossil_grinder.title": "Fossil Grinding",
 	"lostworlds.container.dna_extractor": "DNA Extractor",
 	"lostworlds.jei.dna_extractor.title": "DNA Extracting",
+	"lostworlds.container.analyser": "Analyser",
+	"lostworlds.jei.analyser.title": "Analysing",
 
 	//Advancements
 	"lostworlds.advancements.lostworlds.root.title": "Lost Worlds",

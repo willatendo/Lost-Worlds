@@ -5,7 +5,7 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
-import lostworlds.common.recipe.DNAExtractorRecipe;
+import lostworlds.common.recipe.AnalyserRecipe;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.ModUtil;
 import mezz.jei.api.constants.VanillaTypes;
@@ -19,9 +19,9 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
+public class AnalyserCategory implements IRecipeCategory<AnalyserRecipe>
 {
-	public static final ResourceLocation ID = ModUtil.rL("dna_extractor_category");
+	public static final ResourceLocation ID = ModUtil.rL("analyser_category");
 	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backrounds.png");
 	
 	private final LoadingCache<Integer, IDrawableAnimated> DNAProgessBar;
@@ -29,7 +29,7 @@ public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 	private final IDrawable backround;
 	private final IDrawable icon;
 	
-	public DNAExtractorCategory(IGuiHelper helper) 
+	public AnalyserCategory(IGuiHelper helper) 
 	{
 		this.backround = helper.createDrawable(DISPLAY, 0, 0, 82, 38);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.DNA_EXTRACTOR.get()));
@@ -43,9 +43,9 @@ public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 		});
 	}
 	
-	protected IDrawableAnimated getDNAProgessBar(DNAExtractorRecipe recipe) 
+	protected IDrawableAnimated getDiscProgessBar(AnalyserRecipe recipe) 
 	{
-		int cookTime = recipe.getExtractingTime();
+		int cookTime = recipe.getAnalysingTime();
 		if(cookTime <= 0) 
 		{
 			cookTime = 60;
@@ -60,15 +60,15 @@ public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 	}
 
 	@Override
-	public Class<? extends DNAExtractorRecipe> getRecipeClass() 
+	public Class<? extends AnalyserRecipe> getRecipeClass() 
 	{
-		return DNAExtractorRecipe.class;
+		return AnalyserRecipe.class;
 	}
 
 	@Override
 	public String getTitle() 
 	{
-		return ModUtil.tTC("jei.dna_extractor.title").getString();
+		return ModUtil.tTC("jei.analyser.title").getString();
 	}
 
 	@Override
@@ -84,14 +84,14 @@ public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 	}
 
 	@Override
-	public void setIngredients(DNAExtractorRecipe recipe, IIngredients ingredients) 
+	public void setIngredients(AnalyserRecipe recipe, IIngredients ingredients) 
 	{
 		ingredients.setInputIngredients(recipe.getIngredients());
 		ingredients.setOutput(VanillaTypes.ITEM, recipe.getResultItem());
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, DNAExtractorRecipe recipe, IIngredients ingredients) 
+	public void setRecipe(IRecipeLayout recipeLayout, AnalyserRecipe recipe, IIngredients ingredients) 
 	{
 		IGuiItemStackGroup itemStackGroup = recipeLayout.getItemStacks();
 		
@@ -103,9 +103,9 @@ public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 	}
 	
 	@Override
-	public void draw(DNAExtractorRecipe recipe, MatrixStack matrixStack, double mouseX, double mouseY) 
+	public void draw(AnalyserRecipe recipe, MatrixStack matrixStack, double mouseX, double mouseY) 
 	{
-		IDrawableAnimated arrow = getDNAProgessBar(recipe);
+		IDrawableAnimated arrow = getDiscProgessBar(recipe);
 		arrow.draw(matrixStack, 20, 14);
 	}
 }

@@ -1,0 +1,9 @@
+{
+	"type": "lostworlds:analyser",
+	"output": {
+		"item": "lostworlds:edaphosaurus_dna_disc"
+	},
+	"dna": {
+		"item": "lostworlds:edaphosaurus_dna"
+	}
+}

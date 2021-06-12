@@ -1,0 +1,9 @@
+{
+	"type": "lostworlds:analyser",
+	"output": {
+		"item": "lostworlds:diictodon_dna_disc"
+	},
+	"dna": {
+		"item": "lostworlds:diictodon_dna"
+	}
+}

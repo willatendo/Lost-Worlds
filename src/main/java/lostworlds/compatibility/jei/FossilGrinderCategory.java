@@ -31,14 +31,14 @@ public class FossilGrinderCategory implements IRecipeCategory<FossilGrinderRecip
 	
 	public FossilGrinderCategory(IGuiHelper helper) 
 	{
-		this.backround = helper.createDrawable(DISPLAY, 0, 0, 82, 38);
+		this.backround = helper.createDrawable(DISPLAY, 0, 38, 94, 26);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.FOSSIL_GRINDER.get()));
 		this.grinderProgessBar = CacheBuilder.newBuilder().maximumSize(25).build(new CacheLoader<Integer, IDrawableAnimated>() 
 		{
 			@Override
 			public IDrawableAnimated load(Integer cookTime) 
 			{
-				return helper.drawableBuilder(DISPLAY, 82, 0, 34, 10).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
+				return helper.drawableBuilder(DISPLAY, 94, 38, 35, 15).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
 			}
 		});
 	}
@@ -95,9 +95,8 @@ public class FossilGrinderCategory implements IRecipeCategory<FossilGrinderRecip
 	{
 		IGuiItemStackGroup itemStackGroup = recipeLayout.getItemStacks();
 		
-		itemStackGroup.init(0, true, 0, 0);
-		itemStackGroup.init(1, true, 0, 20);
-		itemStackGroup.init(3, false, 60, 10);
+		itemStackGroup.init(0, true, 4, 4);
+		itemStackGroup.init(1, false, 71, 4);
 		
 		itemStackGroup.set(ingredients);
 	}
@@ -106,6 +105,6 @@ public class FossilGrinderCategory implements IRecipeCategory<FossilGrinderRecip
 	public void draw(FossilGrinderRecipe recipe, MatrixStack matrixStack, double mouseX, double mouseY) 
 	{
 		IDrawableAnimated arrow = getGrinderProgessBar(recipe);
-		arrow.draw(matrixStack, 20, 14);
+		arrow.draw(matrixStack, 29, 6);
 	}
 }

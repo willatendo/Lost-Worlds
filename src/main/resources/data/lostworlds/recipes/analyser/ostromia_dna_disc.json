@@ -1,0 +1,9 @@
+{
+	"type": "lostworlds:analyser",
+	"output": {
+		"item": "lostworlds:ostromia_dna_disc"
+	},
+	"dna": {
+		"item": "lostworlds:ostromia_dna"
+	}
+}

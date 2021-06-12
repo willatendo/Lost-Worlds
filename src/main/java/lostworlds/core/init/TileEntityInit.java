@@ -1,5 +1,6 @@
 package lostworlds.core.init;
 
+import lostworlds.common.tileentity.AnalyserTileEntity;
 import lostworlds.common.tileentity.DNAExtractorTileEntity;
 import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import lostworlds.common.tileentity.FossilGrinderTileEntity;
@@ -16,6 +17,7 @@ public class TileEntityInit
 	public static final RegistryObject<TileEntityType<FossilCleanerTileEntity>> FOSSIL_CLEANER_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("fossil_cleaner_tile_entity", () -> TileEntityType.Builder.of(FossilCleanerTileEntity::new, BlockInit.FOSSIL_CLEANER.get()).build(null));
 	public static final RegistryObject<TileEntityType<FossilGrinderTileEntity>> FOSSIL_GRINDER_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("fossil_grinder_tile_entity", () -> TileEntityType.Builder.of(FossilGrinderTileEntity::new, BlockInit.FOSSIL_GRINDER.get()).build(null));
 	public static final RegistryObject<TileEntityType<DNAExtractorTileEntity>> DNA_EXTRACTOR_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("dna_extractor_tile_entity", () -> TileEntityType.Builder.of(DNAExtractorTileEntity::new, BlockInit.DNA_EXTRACTOR.get()).build(null));
+	public static final RegistryObject<TileEntityType<AnalyserTileEntity>> ANALYSER_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("analyser_tile_entity", () -> TileEntityType.Builder.of(AnalyserTileEntity::new, BlockInit.ANALYSER.get()).build(null));
 
 	//Time Machine
 	public static final RegistryObject<TileEntityType<TimeMachineTileEntity>> TIME_MACHINE_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("time_machine_tile_entity", () -> TileEntityType.Builder.of(TimeMachineTileEntity::new, BlockInit.TIME_MACHINE.get()).build(null));

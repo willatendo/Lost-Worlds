@@ -289,7 +289,6 @@ public class ItemInit
 	public static final RegistryObject<Item> TETRACERATOPS_RIB_BONE = registerRibBone("tetraceratops");
 	public static final RegistryObject<Item> TETRACERATOPS_HORN = registerOtherBone("tetraceratops_horn");
 
-	//Great Auk
 	public static final RegistryObject<Item> GREAT_AUK_DNA = registerDNA("great_auk");
 	public static final RegistryObject<Item> GREAT_AUK_DNA_DISC = registerDNADisc("great_auk");
 	public static final RegistryObject<Item> GREAT_AUK_SOFT_TISSUE = registerSoftTissue("great_auk");
@@ -323,7 +322,7 @@ public class ItemInit
 	public static final RegistryObject<Item> OURANOSAURUS_RIB_BONE = registerRibBone("ouranosaurus");
 	public static final RegistryObject<Item> OURANOSAURUS_SAIL = registerOtherBone("ouranosaurus_sail");
 
-	//Fukuvenator
+	//Fukuivenator
 	public static final RegistryObject<Item> FUKUIVENATOR_DNA = registerDNA("fukuivenator");
 	public static final RegistryObject<Item> FUKUIVENATOR_DNA_DISC = registerDNADisc("fukuivenator");
 	public static final RegistryObject<Item> FUKUIVENATOR_SOFT_TISSUE = registerSoftTissue("fukuivenator");
@@ -496,7 +495,7 @@ public class ItemInit
 	public static final RegistryObject<Item> RAM = register("ram", properties().tab(ItemGroupInit.ITEMS_TAB));	
 	
 	//Storage
-	public static final RegistryObject<Item> STORAGE_DISC = register("storage_disc", new DiscItem("storage_disc", properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
+	public static final RegistryObject<Item> STORAGE_DISC = register("storage_disc", new Item(properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
 	
 	//Crystal Scarab	
 	public static final RegistryObject<Item> BROKEN_CRYSTAL_SCARAB_GEM = register("broken_crystal_scarab_gem", properties().rarity(Rarity.RARE).tab(ItemGroupInit.ITEMS_TAB));
@@ -955,7 +954,7 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerDNADisc(String id)
 	{
-		return register(id + "_dna_disc", new Item.Properties().tab(ItemGroupInit.CREATURES_TAB).stacksTo(1).defaultDurability(5));
+		return register(id + "_dna_disc", new DiscItem(id + "_dna_disc", new Item.Properties().tab(ItemGroupInit.CREATURES_TAB).stacksTo(1).defaultDurability(5)));
 	}
 	
 	private static RegistryObject<Item> registerRawMeat(String id, Food food)
