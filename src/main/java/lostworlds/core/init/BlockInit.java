@@ -5,7 +5,6 @@ import lostworlds.common.blocks.ArchaeologyTable;
 import lostworlds.common.blocks.BlackTerracottaFossilBlock;
 import lostworlds.common.blocks.BlueTerracottaFossilBlock;
 import lostworlds.common.blocks.BrownTerracottaFossilBlock;
-import lostworlds.common.blocks.LogBlock;
 import lostworlds.common.blocks.CyanTerracottaFossilBlock;
 import lostworlds.common.blocks.DNAExtractorBlock;
 import lostworlds.common.blocks.DNAInjectorBlock;
@@ -22,6 +21,7 @@ import lostworlds.common.blocks.LargePermianDesertPlant;
 import lostworlds.common.blocks.LightBlueTerracottaFossilBlock;
 import lostworlds.common.blocks.LightGreyTerracottaFossilBlock;
 import lostworlds.common.blocks.LimeTerracottaFossilBlock;
+import lostworlds.common.blocks.LogBlock;
 import lostworlds.common.blocks.MagentaTerracottaFossilBlock;
 import lostworlds.common.blocks.MediumPermianDesertPlant;
 import lostworlds.common.blocks.ModBushBlock;
@@ -45,6 +45,7 @@ import lostworlds.common.blocks.TerracottaFossilBlock;
 import lostworlds.common.blocks.TimeMachineBlock;
 import lostworlds.common.blocks.WhiteTerracottaFossilBlock;
 import lostworlds.common.blocks.YellowTerracottaFossilBlock;
+import lostworlds.common.blocks.egg.ProcompsognathusEggBlock;
 import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolTypes;
 import lostworlds.core.util.ModUtil;
@@ -146,6 +147,7 @@ public class BlockInit
 	public static final RegistryObject<Block> POWER_SUPPLY_BLOCK = register("power_supply_block", new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	
 	//Eggs (Coming soon)
+	public static final RegistryObject<Block> PROCOMPSOGNATHUS_EGG = ModRegistry.BLOCK_REGISTRY.register("procompsognathus_egg", () -> new ProcompsognathusEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG), () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get()));
 	
 	//Mud
 	public static final RegistryObject<Block> MUD = register("mud", new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));

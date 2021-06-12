@@ -87,6 +87,7 @@ public class ItemInit
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_BLOOD_VILE = registerVile("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_MEAT = registerRawMeat("procompsognathus", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_COOKED_MEAT = registerCookedMeat("procompsognathus", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> PROCOMPSOGNATHUS_EGG = ModRegistry.ITEM_REGISTRY.register("procompsognathus_egg", () -> new ModBlockItem(() -> BlockInit.PROCOMPSOGNATHUS_EGG.get(), properties().tab(ItemGroupInit.CREATURES_TAB)));
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_SPAWN_EGG = register("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), 0x125611, 0x143025);
 	
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_SKULL = registerSkull("procompsognathus");
