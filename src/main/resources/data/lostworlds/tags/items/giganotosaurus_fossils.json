@@ -1,10 +1,10 @@
 {
 	"replace": false,
 	"values": [
-		"lostworlds:gorgonops_skull",
-		"lostworlds:gorgonops_arm_bone",
-		"lostworlds:gorgonops_leg_bone",
-		"lostworlds:gorgonops_foot_bone",
-		"lostworlds:gorgonops_rib_bone"
+		"lostworlds:giganotosaurus_skull",
+		"lostworlds:giganotosaurus_arm_bone",
+		"lostworlds:giganotosaurus_leg_bone",
+		"lostworlds:giganotosaurus_foot_bone",
+		"lostworlds:giganotosaurus_rib_bone"
 	]
 }

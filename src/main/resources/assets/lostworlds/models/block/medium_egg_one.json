@@ -1,10 +1,13 @@
 {
-	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "lostworlds:blocks/medium_egg",
+		"particle": "lostworlds:blocks/medium_egg"
+	},
 	"elements": [
 		{
-			"from": [7, 0, 7],
-			"to": [9, 4, 9],
-			"color": 0,
+			"from": [3, 0, 4],
+			"to": [7, 8, 8],
+			"color": 3,
 			"faces": {
 				"north": {"uv": [0, 0, 2, 4], "texture": "#missing"},
 				"east": {"uv": [0, 0, 2, 4], "texture": "#missing"},
@@ -13,13 +16,6 @@
 				"up": {"uv": [0, 0, 2, 2], "texture": "#missing"},
 				"down": {"uv": [0, 0, 2, 2], "texture": "#missing"}
 			}
-		}
-	],
-	"groups": [
-		{
-			"name": "VoxelShapes",
-			"origin": [0, 0, 0],
-			"children": [0]
 		}
 	]
 }

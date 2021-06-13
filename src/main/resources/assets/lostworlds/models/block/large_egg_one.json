@@ -1,13 +1,14 @@
 {
+	"texture_size": [32, 32],
 	"textures": {
-		"1": "lostworlds:blocks/procompsognathus_egg",
-		"particle": "lostworlds:blocks/procompsognathus_egg"
+		"1": "lostworlds:blocks/large_egg",
+		"particle": "lostworlds:blocks/large_egg"
 	},
 	"elements": [
 		{
-			"from": [7, 0, 7],
-			"to": [9, 4, 9],
-			"color": 0,
+			"from": [9, 0, 7],
+			"to": [15, 10, 13],
+			"color": 3,
 			"faces": {
 				"north": {"uv": [0, 0, 2, 4], "texture": "#1"},
 				"east": {"uv": [0, 0, 2, 4], "texture": "#1"},
@@ -16,13 +17,6 @@
 				"up": {"uv": [0, 0, 2, 2], "texture": "#1"},
 				"down": {"uv": [0, 0, 2, 2], "texture": "#1"}
 			}
-		}
-	],
-	"groups": [
-		{
-			"name": "VoxelShapes",
-			"origin": [0, 0, 0],
-			"children": [0]
 		}
 	]
 }

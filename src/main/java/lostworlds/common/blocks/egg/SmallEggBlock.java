@@ -33,7 +33,7 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.common.util.NonNullSupplier;
 
-public class ProcompsognathusEggBlock extends Block
+public class SmallEggBlock extends Block
 {
 	private static final VoxelShape EGG_ONE = Block.box(6, 0, 7, 8, 4, 9);
 	private static final VoxelShape EGG_TWO = Block.box(6, 0, 5, 11, 4, 9);
@@ -45,7 +45,7 @@ public class ProcompsognathusEggBlock extends Block
 
 	private final Lazy<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entityTypeSupplier;
 	
-	public ProcompsognathusEggBlock(Properties properties, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity) 
+	public SmallEggBlock(Properties properties, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity) 
 	{
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(HATCH, Integer.valueOf(0)).setValue(EGGS, Integer.valueOf(1)));
@@ -119,7 +119,7 @@ public class ProcompsognathusEggBlock extends Block
 				for(int j = 0; j < state.getValue(EGGS); ++j) 
 				{
 					world.levelEvent(2001, pos, Block.getId(state));
-					AbstractPrehistoricAnimalEntity entity = this.getType().create(world);
+					AbstractPrehistoricAnimalEntity entity = this.entityTypeSupplier.get().create(world);
 					entity.setAge(-24000);
 					world.addFreshEntity(entity);
 				}
@@ -190,11 +190,6 @@ public class ProcompsognathusEggBlock extends Block
 	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) 
 	{
 		builder.add(HATCH, EGGS);
-	}
-	
-	public EntityType<? extends AbstractPrehistoricAnimalEntity> getType() 
-	{
-		return this.entityTypeSupplier.get();
 	}
 	
 	private boolean canDestroyEgg(World world, Entity entity) 
