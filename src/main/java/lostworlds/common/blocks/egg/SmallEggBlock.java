@@ -70,11 +70,11 @@ public class SmallEggBlock extends Block
 		super.fallOn(world, pos, entity, damage);
 	}
 	
-	private void destroyEgg(World world, BlockPos pos, Entity entity, int p_203167_4_) 
+	private void destroyEgg(World world, BlockPos pos, Entity entity, int i) 
 	{
 		if(this.canDestroyEgg(world, entity)) 
 		{
-			if(!world.isClientSide && world.random.nextInt(p_203167_4_) == 0) 
+			if(!world.isClientSide && world.random.nextInt(i) == 0) 
 			{
 				BlockState blockstate = world.getBlockState(pos);
 				if(blockstate.is(this)) 

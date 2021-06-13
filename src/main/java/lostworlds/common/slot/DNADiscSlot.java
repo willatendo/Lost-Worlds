@@ -1,6 +1,6 @@
 package lostworlds.common.slot;
 
-import lostworlds.core.init.ItemInit;
+import lostworlds.common.items.DiscItem;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
@@ -15,11 +15,18 @@ public class DNADiscSlot extends Slot
 	@Override
 	public boolean mayPlace(ItemStack stack) 
 	{
-		return isSoftTissue(stack);
+		return isDNADisc(stack);
 	}
 	
-	public boolean isSoftTissue(ItemStack stack)
+	public boolean isDNADisc(ItemStack stack)
 	{
-		return stack.getItem() == ItemInit.STORAGE_DISC.get();
+		if(stack.getItem() instanceof DiscItem)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

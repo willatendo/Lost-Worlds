@@ -1284,6 +1284,8 @@
 	"lostworlds.jei.dna_extractor.title": "DNA Extracting",
 	"lostworlds.container.analyser": "Analyser",
 	"lostworlds.jei.analyser.title": "Analysing",
+	"lostworlds.container.dna_injector": "DNA Injector",
+	"lostworlds.jei.dna_injector.title": "DNA Injecting",
 
 	//Advancements
 	"lostworlds.advancements.lostworlds.root.title": "Lost Worlds",

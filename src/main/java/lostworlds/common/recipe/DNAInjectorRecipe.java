@@ -67,7 +67,7 @@ public class DNAInjectorRecipe implements IRecipe<IInventory>
 	@Override
 	public IRecipeSerializer<?> getSerializer() 
 	{
-		return RecipeInit.DNA_EXTRACTOR_SERIALIZER.get();
+		return RecipeInit.DNA_INJECTOR_SERIALIZER.get();
 	}
 
 	@Override
@@ -88,7 +88,7 @@ public class DNAInjectorRecipe implements IRecipe<IInventory>
 	@Override
 	public IRecipeType<?> getType() 
 	{
-		return RecipeInit.DNA_EXTRACTOR_RECIPE;
+		return RecipeInit.DNA_INJECTOR_RECIPE;
 	}
 	
 	@Override

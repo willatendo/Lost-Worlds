@@ -1,0 +1,9 @@
+{
+	"type": "lostworlds:dna_injector",
+	"output": {
+		"item": "lostworlds:rhinesuchus_spawn"
+	},
+	"dnaDisc": {
+		"item": "lostworlds:rhinesuchus_dna_disc"
+	}
+}

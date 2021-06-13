@@ -18,7 +18,7 @@ public class DNAInjectorRecipeSerialiser extends ForgeRegistryEntry<IRecipeSeria
 	public DNAInjectorRecipe fromJson(ResourceLocation recipeId, JsonObject json) 
 	{
 		ItemStack output = CraftingHelper.getItemStack(JSONUtils.getAsJsonObject(json, "output"), true);
-		Ingredient dnaDisc = Ingredient.fromJson(JSONUtils.getAsJsonObject(json, "softTissue"));
+		Ingredient dnaDisc = Ingredient.fromJson(JSONUtils.getAsJsonObject(json, "dnaDisc"));
 		Ingredient egg = Ingredient.of(Items.EGG);
 
 		return new DNAInjectorRecipe(recipeId, dnaDisc, egg, output);

@@ -1,5 +1,7 @@
 package lostworlds.common.tileentity;
 
+import java.util.Random;
+
 import javax.annotation.Nullable;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
@@ -177,8 +179,8 @@ public class DNAInjectorTileEntity  extends TileEntity implements IInventory, IN
 	{
 		if(recipe != null && this.canInjectWith(recipe)) 
 		{
-			ItemStack itemstack = this.items.get(0);
-			ItemStack vile = this.items.get(1);
+			ItemStack dnaDisc = this.items.get(0);
+			ItemStack egg = this.items.get(1);
 			ItemStack itemstack1 = recipe.getResultItem();
 			ItemStack itemstack2 = this.items.get(2);
 			if(itemstack2.isEmpty()) 
@@ -195,8 +197,18 @@ public class DNAInjectorTileEntity  extends TileEntity implements IInventory, IN
 				this.setRecipeUsed(recipe);
 			}
 			
-			itemstack.shrink(1);
-			vile.shrink(1);
+			Random rand = new Random();
+			
+			if(dnaDisc.getMaxDamage() - dnaDisc.getDamageValue() <= 1)
+			{
+				dnaDisc.shrink(1);
+			}
+			else
+			{
+				dnaDisc.hurt(1, rand, null);
+			}
+			
+			egg.shrink(1);
 		}
 	}
 	

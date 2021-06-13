@@ -177,7 +177,7 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	{
 		if(recipe != null && this.canExtractWith(recipe)) 
 		{
-			ItemStack itemstack = this.items.get(0);
+			ItemStack softTissue = this.items.get(0);
 			ItemStack vile = this.items.get(1);
 			ItemStack itemstack1 = recipe.getResultItem();
 			ItemStack itemstack2 = this.items.get(2);
@@ -195,7 +195,7 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 				this.setRecipeUsed(recipe);
 			}
 			
-			itemstack.shrink(1);
+			softTissue.shrink(1);
 			vile.shrink(1);
 		}
 	}

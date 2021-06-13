@@ -177,7 +177,7 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	{
 		if(recipe != null && this.canGrindWith(recipe)) 
 		{
-			ItemStack itemstack = this.items.get(0);
+			ItemStack fossil = this.items.get(0);
 			ItemStack itemstack1 = recipe.getResultItem();
 			ItemStack itemstack2 = this.items.get(1);
 			if(itemstack2.isEmpty()) 
@@ -194,7 +194,7 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 				this.setRecipeUsed(recipe);
 			}
 			
-			itemstack.shrink(1);
+			fossil.shrink(1);
 		}
 	}
 	
