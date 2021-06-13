@@ -38,10 +38,12 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	private int onDuration;
 	private int extractingProgress;
 	private int extractingTotalTime = 60;
-	
+
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
-	
+
+	private ITextComponent name;
+
 	public DNAExtractorTileEntity() 
 	{
 		super(TileEntityInit.DNA_EXTRACTOR_TILE_ENTITY.get());
@@ -57,6 +59,10 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 		this.extractingProgress = nbt.getInt("ExtractTime");
 		this.extractingTotalTime = nbt.getInt("ExtractTimeTotal");
 		this.onDuration = this.getExtractDuration();
+		if(nbt.contains("CustomName", 8)) 
+		{
+			this.name = ITextComponent.Serializer.fromJson(nbt.getString("CustomName"));
+		}
 	}
 	
 	@Override
@@ -338,5 +344,10 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	public ITextComponent getDisplayName() 
 	{
 		return this.getName();
+	}
+	
+	public void setCustomName(ITextComponent text) 
+	{
+		this.name = text;
 	}
 }

@@ -134,4 +134,9 @@ public class FieldGuideScreens
 	{
 		Minecraft.getInstance().setScreen(new ChilesaurusFieldGuideScreen(FieldGuideLang.LIAONINGOSAURUS_ENTRY_NAME));
 	}
+	
+	public static void utahraptorEntry()
+	{
+		Minecraft.getInstance().setScreen(new ChilesaurusFieldGuideScreen(FieldGuideLang.UTAHRAPTOR_ENTRY_NAME));
+	}
 }

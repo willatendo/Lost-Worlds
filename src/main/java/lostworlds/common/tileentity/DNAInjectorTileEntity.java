@@ -44,6 +44,8 @@ public class DNAInjectorTileEntity  extends TileEntity implements IInventory, IN
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<DNAInjectorRecipe> recipeType = RecipeInit.DNA_INJECTOR_RECIPE;
 	
+	private ITextComponent name;
+
 	public DNAInjectorTileEntity() 
 	{
 		super(TileEntityInit.DNA_INJECTOR_TILE_ENTITY.get());
@@ -58,7 +60,10 @@ public class DNAInjectorTileEntity  extends TileEntity implements IInventory, IN
 		this.onTime = nbt.getInt("OnTime");
 		this.injectingProgress = nbt.getInt("InjectTime");
 		this.injectingTotalTime = nbt.getInt("InjectTimeTotal");
-		this.onDuration = this.getInjectDuration();
+		this.onDuration = this.getInjectDuration();if(nbt.contains("CustomName", 8)) 
+		{
+			this.name = ITextComponent.Serializer.fromJson(nbt.getString("CustomName"));
+		}
 	}
 	
 	@Override
@@ -350,5 +355,10 @@ public class DNAInjectorTileEntity  extends TileEntity implements IInventory, IN
 	public ITextComponent getDisplayName() 
 	{
 		return this.getName();
+	}
+	
+	public void setCustomName(ITextComponent text) 
+	{
+		this.name = text;
 	}
 }

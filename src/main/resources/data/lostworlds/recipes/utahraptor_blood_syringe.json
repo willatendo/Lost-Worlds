@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "lostworlds:syringe_of_utahraptor_blood"
+		},
+		{
+			"item": "lostworlds:empty_vile"
+		}
+	],
+	"result": 
+	{
+		"item": "lostworlds:vile_of_utahraptor_blood"
+	}
+}

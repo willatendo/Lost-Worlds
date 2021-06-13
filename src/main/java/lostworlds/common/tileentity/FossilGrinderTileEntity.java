@@ -41,7 +41,9 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
-	
+
+	private ITextComponent name;
+
 	public FossilGrinderTileEntity() 
 	{
 		super(TileEntityInit.FOSSIL_GRINDER_TILE_ENTITY.get());
@@ -57,6 +59,10 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 		this.grindingProgress = nbt.getInt("GrindTime");
 		this.grindingTotalTime = nbt.getInt("GrindTimeTotal");
 		this.onDuration = this.getGrindDuration();
+		if(nbt.contains("CustomName", 8)) 
+		{
+			this.name = ITextComponent.Serializer.fromJson(nbt.getString("CustomName"));
+		}
 	}
 	
 	@Override
@@ -335,5 +341,17 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	public ITextComponent getDisplayName() 
 	{
 		return this.getName();
+	}
+	
+	@Override
+	@Nullable
+	public ITextComponent getCustomName() 
+	{
+		return this.name;
+	}
+
+	public void setCustomName(ITextComponent text) 
+	{
+		this.name = text;
 	}
 }

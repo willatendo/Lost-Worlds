@@ -31,14 +31,14 @@ public class DNAInjectorCategory implements IRecipeCategory<DNAInjectorRecipe>
 	
 	public DNAInjectorCategory(IGuiHelper helper) 
 	{
-		this.backround = helper.createDrawable(DISPLAY, 0, 0, 82, 38);
+		this.backround = helper.createDrawable(DISPLAY, 0, 102, 82, 54);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.DNA_INJECTOR.get()));
 		this.DNAProgessBar = CacheBuilder.newBuilder().maximumSize(25).build(new CacheLoader<Integer, IDrawableAnimated>() 
 		{
 			@Override
 			public IDrawableAnimated load(Integer cookTime) 
 			{
-				return helper.drawableBuilder(DISPLAY, 82, 0, 34, 10).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
+				return helper.drawableBuilder(DISPLAY, 82, 103, 16, 16).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
 			}
 		});
 	}
@@ -96,8 +96,8 @@ public class DNAInjectorCategory implements IRecipeCategory<DNAInjectorRecipe>
 		IGuiItemStackGroup itemStackGroup = recipeLayout.getItemStacks();
 		
 		itemStackGroup.init(0, true, 0, 0);
-		itemStackGroup.init(1, true, 0, 20);
-		itemStackGroup.init(2, false, 60, 10);
+		itemStackGroup.init(1, true, 0, 36);
+		itemStackGroup.init(2, false, 60, 18);
 		
 		itemStackGroup.set(ingredients);
 	}
@@ -106,6 +106,6 @@ public class DNAInjectorCategory implements IRecipeCategory<DNAInjectorRecipe>
 	public void draw(DNAInjectorRecipe recipe, MatrixStack matrixStack, double mouseX, double mouseY) 
 	{
 		IDrawableAnimated arrow = getSyringeProgessBar(recipe);
-		arrow.draw(matrixStack, 20, 14);
+		arrow.draw(matrixStack, 30, 19);
 	}
 }

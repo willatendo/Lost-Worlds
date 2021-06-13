@@ -92,6 +92,7 @@ public class FukuivenatorEntity extends AbstractPrehistoricAnimalEntity implemen
 		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PsittacosaurusEntity.class, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, UtahraptorEntity.class, false));
 	}
 
 	@Override

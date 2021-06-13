@@ -24,6 +24,7 @@ import lostworlds.client.entity.render.RhinesuchusRender;
 import lostworlds.client.entity.render.SuchomimusRender;
 import lostworlds.client.entity.render.TetraceratopsRender;
 import lostworlds.client.entity.render.TyrannosaurusRender;
+import lostworlds.client.entity.render.UtahraptorRender;
 import lostworlds.client.screen.machines.AnalyserScreen;
 import lostworlds.client.screen.machines.DNAExtractorScreen;
 import lostworlds.client.screen.machines.DNAInjectorScreen;
@@ -50,11 +51,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @Mod.EventBusSubscriber(modid = ModUtil.ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ClientSetup 
 {
+	
     @SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event)
 	{
     	ModUtil.LOGGER.debug("Loading: Setting Up Client Render");
-    	
+    	    	
     	//Blocks
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_STONE_FOSSIL.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_SANDSTONE_FOSSIL.get(), RenderType.translucent());
@@ -151,8 +153,7 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.FOSSIL_GRINDER.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.DNA_EXTRACTOR.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.ANALYSER.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.DNA_INJECTOR.get(), RenderType.translucent());
-		
+		RenderTypeLookup.setRenderLayer(BlockInit.DNA_INJECTOR.get(), RenderType.translucent());		
 		//Sign
 		ClientRegistry.bindTileEntityRenderer(TileEntityInit.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
 
@@ -163,8 +164,8 @@ public class ClientSetup
 		ScreenManager.register(ContainerInit.ANALYSER_CONTAINER.get(), AnalyserScreen::new);
 		ScreenManager.register(ContainerInit.DNA_INJECTOR_CONTAINER.get(), DNAInjectorScreen::new);
 
-		//EntitiesS
-		//Mobs
+		//Entities
+		//MobsS
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PROCOMPSOGNATHUS_ENTITY.get(), ProcompsognathusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.PALAEONISCUM_ENTITY.get(), PalaeoniscumRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.NAUTILUS_ENTITY.get(), NautilusRender::new);
@@ -189,7 +190,8 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.KENTROSAURUS_ENTITY.get(), KentrosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.CHILESAURUS_ENTITY.get(), ChilesaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.LIAONINGOSAURUS_ENTITY.get(), LiaoningosaurusRender::new);
-		
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.UTAHRAPTOR_ENTITY.get(), UtahraptorRender::new);
+
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);
 		

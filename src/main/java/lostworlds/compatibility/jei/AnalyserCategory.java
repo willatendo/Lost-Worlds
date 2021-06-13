@@ -31,14 +31,14 @@ public class AnalyserCategory implements IRecipeCategory<AnalyserRecipe>
 	
 	public AnalyserCategory(IGuiHelper helper) 
 	{
-		this.backround = helper.createDrawable(DISPLAY, 0, 0, 82, 38);
+		this.backround = helper.createDrawable(DISPLAY, 0, 64, 82, 38);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.DNA_EXTRACTOR.get()));
 		this.DNAProgessBar = CacheBuilder.newBuilder().maximumSize(25).build(new CacheLoader<Integer, IDrawableAnimated>() 
 		{
 			@Override
 			public IDrawableAnimated load(Integer cookTime) 
 			{
-				return helper.drawableBuilder(DISPLAY, 82, 0, 34, 10).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
+				return helper.drawableBuilder(DISPLAY, 82, 64, 34, 16).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
 			}
 		});
 	}
@@ -106,6 +106,6 @@ public class AnalyserCategory implements IRecipeCategory<AnalyserRecipe>
 	public void draw(AnalyserRecipe recipe, MatrixStack matrixStack, double mouseX, double mouseY) 
 	{
 		IDrawableAnimated arrow = getDiscProgessBar(recipe);
-		arrow.draw(matrixStack, 20, 14);
+		arrow.draw(matrixStack, 21, 11);
 	}
 }

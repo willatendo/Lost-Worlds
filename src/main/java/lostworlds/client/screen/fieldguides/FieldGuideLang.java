@@ -299,4 +299,17 @@ public class FieldGuideLang
 	public static final ITextComponent LIAONINGOSAURUS_DIET = ModUtil.tTC("liaoningosaurus.field_guide.diet");
 	public static final ITextComponent LIAONINGOSAURUS_TYPE = ModUtil.tTC("liaoningosaurus.field_guide.type");
 	public static final ITextComponent LIAONINGOSAURUS_TIME_ERA = ModUtil.tTC("liaoningosaurus.field_guide.time_era");
+	
+	public static final ITextComponent UTAHRAPTOR_ENTRY_NAME = ModUtil.tTC("utahraptor.field_guide.name");
+	public static final ITextComponent UTAHRAPTOR_ENTRY_SPECIES_NAME = ModUtil.tTC("utahraptor.field_guide.species_name");
+	public static final ITextComponent UTAHRAPTOR_ENTRY_LINE_ONE = ModUtil.tTC("utahraptor.field_guide.entry_line_one");
+	public static final ITextComponent UTAHRAPTOR_ENTRY_LINE_TWO = ModUtil.tTC("utahraptor.field_guide.entry_line_two");
+	public static final ITextComponent UTAHRAPTOR_ENTRY_LINE_THREE = ModUtil.tTC("utahraptor.field_guide.entry_line_three");
+	public static final ITextComponent UTAHRAPTOR_ENTRY_LINE_FOUR = ModUtil.tTC("utahraptor.field_guide.entry_line_four");
+	public static final ITextComponent UTAHRAPTOR_ENTRY_LINE_FIVE = ModUtil.tTC("utahraptor.field_guide.entry_line_five");
+	public static final ITextComponent UTAHRAPTOR_ENTRY_LINE_SIX = ModUtil.tTC("utahraptor.field_guide.entry_line_six");
+	public static final ITextComponent UTAHRAPTOR_DANGER = ModUtil.tTC("utahraptor.field_guide.danger");
+	public static final ITextComponent UTAHRAPTOR_DIET = ModUtil.tTC("utahraptor.field_guide.diet");
+	public static final ITextComponent UTAHRAPTOR_TYPE = ModUtil.tTC("utahraptor.field_guide.type");
+	public static final ITextComponent UTAHRAPTOR_TIME_ERA = ModUtil.tTC("utahraptor.field_guide.time_era");
 }

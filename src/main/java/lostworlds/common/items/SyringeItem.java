@@ -24,6 +24,7 @@ import lostworlds.common.entities.RhinesuchusEntity;
 import lostworlds.common.entities.SuchomimusEntity;
 import lostworlds.common.entities.TetraceratopsEntity;
 import lostworlds.common.entities.TyrannosaurusEntity;
+import lostworlds.common.entities.UtahraptorEntity;
 import lostworlds.core.init.ItemInit;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -208,6 +209,13 @@ public class SyringeItem extends Item
 		{
 			playerEntity.playSound(SoundEvents.PLAYER_HURT, 1.0F, 1.0F);
 			ItemStack blood = new ItemStack(ItemInit.LIAONINGOSAURUS_BLOOD_SYRINGE.get());
+			playerEntity.setItemInHand(hand, blood);
+			return ActionResultType.SUCCESS;
+		}
+		if(entity instanceof UtahraptorEntity)
+		{
+			playerEntity.playSound(SoundEvents.PLAYER_HURT, 1.0F, 1.0F);
+			ItemStack blood = new ItemStack(ItemInit.UTAHRAPTOR_BLOOD_SYRINGE.get());
 			playerEntity.setItemInHand(hand, blood);
 			return ActionResultType.SUCCESS;
 		}

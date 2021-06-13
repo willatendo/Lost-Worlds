@@ -6,6 +6,10 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import lostworlds.common.blocks.RotateableBlock;
+import lostworlds.common.tileentity.AnalyserTileEntity;
+import lostworlds.common.tileentity.DNAExtractorTileEntity;
+import lostworlds.common.tileentity.DNAInjectorTileEntity;
+import lostworlds.common.tileentity.FossilGrinderTileEntity;
 import lostworlds.core.util.ModBlockStateProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
@@ -22,7 +26,6 @@ import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -33,7 +36,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
@@ -132,9 +134,21 @@ public abstract class AbstractMachineBlock extends RotateableBlock implements IT
 		if(stack.hasCustomHoverName()) 
 		{
 			TileEntity tileentity = world.getBlockEntity(pos);
-			if(tileentity instanceof AbstractFurnaceTileEntity) 
+			if (tileentity instanceof FossilGrinderTileEntity) 
 			{
-				((AbstractFurnaceTileEntity)tileentity).setCustomName(stack.getHoverName());
+				((FossilGrinderTileEntity)tileentity).setCustomName(stack.getHoverName());
+			}
+			else if (tileentity instanceof DNAExtractorTileEntity) 
+			{
+				((DNAExtractorTileEntity)tileentity).setCustomName(stack.getHoverName());
+			}
+			else if (tileentity instanceof AnalyserTileEntity) 
+			{
+				((AnalyserTileEntity)tileentity).setCustomName(stack.getHoverName());
+			}
+			else if (tileentity instanceof DNAInjectorTileEntity) 
+			{
+				((DNAInjectorTileEntity)tileentity).setCustomName(stack.getHoverName());
 			}
 		}
 	}
@@ -145,10 +159,24 @@ public abstract class AbstractMachineBlock extends RotateableBlock implements IT
 		if (!state.is(newState.getBlock())) 
 		{
 			TileEntity tileentity = world.getBlockEntity(pos);
-			if (tileentity instanceof AbstractFurnaceTileEntity) 
+			if (tileentity instanceof FossilGrinderTileEntity) 
 			{
-				InventoryHelper.dropContents(world, pos, (AbstractFurnaceTileEntity)tileentity);
-				((AbstractFurnaceTileEntity)tileentity).getRecipesToAwardAndPopExperience(world, Vector3d.atCenterOf(pos));
+				InventoryHelper.dropContents(world, pos, (FossilGrinderTileEntity)tileentity);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			else if (tileentity instanceof DNAExtractorTileEntity) 
+			{
+				InventoryHelper.dropContents(world, pos, (DNAExtractorTileEntity)tileentity);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			else if (tileentity instanceof AnalyserTileEntity) 
+			{
+				InventoryHelper.dropContents(world, pos, (AnalyserTileEntity)tileentity);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			else if (tileentity instanceof DNAInjectorTileEntity) 
+			{
+				InventoryHelper.dropContents(world, pos, (DNAInjectorTileEntity)tileentity);
 				world.updateNeighbourForOutputSignal(pos, this);
 			}
 			

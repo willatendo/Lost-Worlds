@@ -26,14 +26,22 @@ public enum ModItemTeir implements IItemTier
 	{
 		return Ingredient.of(Items.STRING);
 	}),
+	NETHERITE_BRUSH(0, 2031, 2.9F, 1.4F, 0, () -> 
+	{
+		return Ingredient.of(Items.STRING);
+	}),
+	SCARAB_BRUSH(0, 13616, 3.1F, 1.4F, 0, () -> 
+	{
+		return Ingredient.of(Items.STRING);
+	}),
 	ANCIENT(2, 550, 5.0F, 10.0F, 5, () ->
 	{
 		return Ingredient.of(Items.IRON_INGOT);
 	}),	
-	SCARAB(4, 15000, 30.0F, 80.0F, 40, () -> 
+	SCARAB(4, 13616, 30.0F, 80.0F, 40, () -> 
 	{
 		return Ingredient.of(ItemInit.CRYSTAL_SCARAB_GEM.get()); 
-	});
+	}); 
 	
 	private final int harvestLevel;
 	private final int maxUses;

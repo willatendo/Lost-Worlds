@@ -45,6 +45,8 @@ public class ItemInit
 	public static final RegistryObject<Item> IRON_BRUSH = register("iron_brush", ModItemTeir.IRON_BRUSH);
 	public static final RegistryObject<Item> GOLD_BRUSH = register("gold_brush", ModItemTeir.GOLD_BRUSH);
 	public static final RegistryObject<Item> DIAMOND_BRUSH = register("diamond_brush", ModItemTeir.DIAMOND_BRUSH);
+	public static final RegistryObject<Item> NETHERITE_BRUSH = register("netherite_brush", ModItemTeir.NETHERITE_BRUSH);
+	public static final RegistryObject<Item> CRYSTAL_SCARAB_GEM_BRUSH = register("crystal_scarab_brush", ModItemTeir.SCARAB_BRUSH);
 	
 	//Plaster
 	public static final RegistryObject<Item> WET_PAPER = register("wet_paper", new WetPaperItem(properties().tab(ItemGroupInit.ITEMS_TAB)));
@@ -486,6 +488,25 @@ public class ItemInit
 	public static final RegistryObject<Item> LIAONINGOSAURUS_RIB_BONE = registerRibBone("liaoningosaurus");
 	public static final RegistryObject<Item> LIAONINGOSAURUS_SCUTE = registerOtherBone("liaoningosaurus_scute");
 	
+	//Utahraptor
+	public static final RegistryObject<Item> UTAHRAPTOR_DNA = registerDNA("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_DNA_DISC = registerDNADisc("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_SOFT_TISSUE = registerSoftTissue("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_BLOOD_SYRINGE = ModRegistry.ITEM_REGISTRY.register("syringe_of_utahraptor_blood", () -> new Item(properties().tab(ItemGroupInit.CREATURES_TAB).craftRemainder(EMPTY_SYRINGE.get())));
+	public static final RegistryObject<Item> UTAHRAPTOR_BLOOD_VILE = registerVile("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_MEAT = registerRawMeat("utahraptor", FoodInit.RAW_MEDIUM_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> UTAHRAPTOR_COOKED_MEAT = registerCookedMeat("utahraptor", FoodInit.COOKED_MEDIUM_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> UTAHRAPTOR_EGG = registerEgg("utahraptor", () -> BlockInit.PROCOMPSOGNATHUS_EGG.get());
+	public static final RegistryObject<Item> UTAHRAPTOR_SPAWN_EGG = register("utahraptor", () -> EntityInit.UTAHRAPTOR_ENTITY.get(), 0x634f3c, 0x280e0f);
+		
+	public static final RegistryObject<Item> UTAHRAPTOR_SKULL = registerSkull("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_ARM_BONE = registerArmBone("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_LEG_BONE = registerLegBone("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_FOOT_BONE = registerFootBone("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_RIB_BONE = registerRibBone("utahraptor");
+	public static final RegistryObject<Item> UTAHRAPTOR_FEATHER = registerOtherBone("utahraptor_feather");
+	public static final RegistryObject<Item> UTAHRAPTOR_CLAW = registerOtherBone("utahraptor_claw");
+	
 	/*//Ophthalmosaurus
 	public static final RegistryObject<Item> OPHTHALMOSAURUS_DNA = registerDNA("ophthalmosaurus");
 	public static final RegistryObject<Item> OPHTHALMOSAURUS_DNA_DISC = registerDNADisc("ophthalmosaurus");
@@ -509,7 +530,9 @@ public class ItemInit
 	public static final RegistryObject<Item> MOTHERBOARD = register("motherboard", properties().tab(ItemGroupInit.ITEMS_TAB));
 	public static final RegistryObject<Item> CPU = register("cpu", properties().tab(ItemGroupInit.ITEMS_TAB));
 	public static final RegistryObject<Item> RAM = register("ram", properties().tab(ItemGroupInit.ITEMS_TAB));	
-	
+
+	public static final RegistryObject<Item> COMPUTER_CORE = register("computer_core", properties().tab(ItemGroupInit.ITEMS_TAB));	
+
 	//Storage
 	public static final RegistryObject<Item> STORAGE_DISC = register("storage_disc", new Item(properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
 	

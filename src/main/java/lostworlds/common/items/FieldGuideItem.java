@@ -23,6 +23,7 @@ import lostworlds.common.entities.RhinesuchusEntity;
 import lostworlds.common.entities.SuchomimusEntity;
 import lostworlds.common.entities.TetraceratopsEntity;
 import lostworlds.common.entities.TyrannosaurusEntity;
+import lostworlds.common.entities.UtahraptorEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -132,6 +133,10 @@ public class FieldGuideItem extends Item
 			if(entity instanceof LiaoningosaurusEntity)
 			{
 				DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FieldGuideScreens::liaoningosaurusEntry);
+			}
+			if(entity instanceof UtahraptorEntity)
+			{
+				DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FieldGuideScreens::utahraptorEntry);
 			}
 			return ActionResultType.SUCCESS;
 		}

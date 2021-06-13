@@ -41,7 +41,9 @@ public class AnalyserTileEntity extends TileEntity implements IInventory, INamed
 	
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<AnalyserRecipe> recipeType = RecipeInit.ANALYSER_RECIPE;
-	
+
+	private ITextComponent name;
+
 	public AnalyserTileEntity() 
 	{
 		super(TileEntityInit.ANALYSER_TILE_ENTITY.get());
@@ -57,6 +59,10 @@ public class AnalyserTileEntity extends TileEntity implements IInventory, INamed
 		this.analysingProgress = nbt.getInt("AnalyseTime");
 		this.analysingTotalTime = nbt.getInt("AnalyseTimeTotal");
 		this.onDuration = this.getAnalyseDuration();
+		if(nbt.contains("CustomName", 8)) 
+		{
+			this.name = ITextComponent.Serializer.fromJson(nbt.getString("CustomName"));
+		}
 	}
 	
 	@Override
@@ -327,6 +333,8 @@ public class AnalyserTileEntity extends TileEntity implements IInventory, INamed
 	{
 		return new AnalyserContainer(windowId, playerInv, this, this, new IntArray(4));
 	}
+	
+	
 
 	@Override
 	public ITextComponent getName() 
@@ -338,5 +346,17 @@ public class AnalyserTileEntity extends TileEntity implements IInventory, INamed
 	public ITextComponent getDisplayName() 
 	{
 		return this.getName();
+	}
+	
+	@Override
+	@Nullable
+	public ITextComponent getCustomName() 
+	{
+		return this.name;
+	}
+	
+	public void setCustomName(ITextComponent text) 
+	{
+		this.name = text;
 	}
 }
