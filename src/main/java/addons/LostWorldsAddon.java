@@ -13,6 +13,13 @@ import ogpack.OGPack;
 @Mod.EventBusSubscriber(modid = ModUtil.ID, value = Dist.CLIENT, bus = Bus.FORGE)
 public class LostWorldsAddon 
 {
+	private static String name;
+	
+	public LostWorldsAddon(String id) 
+	{
+		this.name = id;
+	}
+	
 	@SubscribeEvent
 	public static void makeInstallationText(final PlayerEvent.PlayerLoggedInEvent event)
 	{
@@ -24,7 +31,7 @@ public class LostWorldsAddon
 		}
 		if(OGPack.hasInitilised)
 		{
-			event.getPlayer().sendMessage(ModUtil.tTC("installed_og_pack"), player.getUUID());
+			event.getPlayer().sendMessage(ModUtil.tTC("installed_" + name), player.getUUID());
 		}
 	}
 }

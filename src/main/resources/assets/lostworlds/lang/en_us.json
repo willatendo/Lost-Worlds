@@ -470,6 +470,25 @@
 	"item.lostworlds.liaoningosaurus_rib_bone": "Liaoningosaurus Rib Bone",
 	"item.lostworlds.liaoningosaurus_scute": "Liaoningosaurus Scute",
 
+	//Utahraptor
+	"item.lostworlds.utahraptor_dna": "Utahraptor DNA",
+	"item.lostworlds.utahraptor_dna_disc": "Storage Disk",
+	"item.lostworlds.utahraptor_soft_tissue": "Utahraptor Soft Tissue",
+	"item.lostworlds.syringe_of_utahraptor_blood": "Syringe of Utahraptor Blood",
+	"item.lostworlds.vile_of_utahraptor_blood": "Vile of Utahraptor Blood",
+	"toolTip.lostworlds.utahraptor_dna_disc.holding_shift": "Storing: Utahraptor ostrommaysi",
+	"toolTip.lostworlds.utahraptor_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"item.lostworlds.raw_utahraptor_meat": "Raw Utahraptor Meat",
+	"item.lostworlds.cooked_utahraptor_meat": "Cooked Utahraptor Meat",
+	"item.lostworlds.utahraptor_spawn_egg": "Utahraptor Spawn Egg",
+	"item.lostworlds.utahraptor_skull": "Utahraptor Skull",
+	"item.lostworlds.utahraptor_arm_bone": "Utahraptor Arm Bone",
+	"item.lostworlds.utahraptor_leg_bone": "Utahraptor Leg Bone",
+	"item.lostworlds.utahraptor_foot_bone": "Utahraptor Foot Bone",
+	"item.lostworlds.utahraptor_rib_bone": "Utahraptor Rib Bone",
+	"item.lostworlds.utahraptor_feather": "Utahraptor Feather",
+	"item.lostworlds.utahraptor_claw": "Utahraptor Claw",
+
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
 
@@ -1214,6 +1233,19 @@
 	"lostworlds.liaoningosaurus.field_guide.diet": "Herbivore",
 	"lostworlds.liaoningosaurus.field_guide.time_era": "Cretaceous",
 	"lostworlds.liaoningosaurus.field_guide.type": "Ankylosaurus",
+	
+	"lostworlds.utahraptor.field_guide.name": "Utahraptor",
+	"lostworlds.utahraptor.field_guide.species_name": "paradoxus",
+	"lostworlds.utahraptor.field_guide.entry_line_one": "Utahraptor is a small ankylosaurus from",
+	"lostworlds.utahraptor.field_guide.entry_line_two": "the Cretaceous. It's the a very small and",
+	"lostworlds.utahraptor.field_guide.entry_line_three": "unique.",
+	"lostworlds.utahraptor.field_guide.entry_line_four": "",
+	"lostworlds.utahraptor.field_guide.entry_line_five": "",
+	"lostworlds.utahraptor.field_guide.entry_line_six": "",
+	"lostworlds.utahraptor.field_guide.danger": "Passive",
+	"lostworlds.utahraptor.field_guide.diet": "Herbivore",
+	"lostworlds.utahraptor.field_guide.time_era": "Cretaceous",
+	"lostworlds.utahraptor.field_guide.type": "Ankylosaurus",
 
 	"lostworlds.field_guide.danger": "Danger:",
 	"lostworlds.field_guide.diet": "Diet:",
@@ -1267,7 +1299,7 @@
 	
 	//Packs
 	"lostworlds.installed_packs": "You have installed:",
-	"lostworlds.installed_og_pack": "OG Dino Pack - 1.0.0",
+	"lostworlds.installed_ogpack": "OG Dino Pack - 1.0.0",
 	"lostworlds.installed_mod": "Lost Worlds - Alpha 10",
 	
 	//On Book Used

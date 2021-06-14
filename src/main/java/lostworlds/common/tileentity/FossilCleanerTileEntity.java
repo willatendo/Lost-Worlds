@@ -9,6 +9,8 @@ import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lostworlds.common.blocks.FossilCleanerBlock;
 import lostworlds.common.container.FossilCleanerContainer;
+import lostworlds.common.recipe.FossilGrinderRecipe;
+import lostworlds.core.init.RecipeInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.block.BlockState;
@@ -21,7 +23,6 @@ import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.RecipeItemHelper;
@@ -41,18 +42,12 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 	
 	private int onTime;
-	@SuppressWarnings("unused")
 	private int onDuration;
-	private int cleaningProgress;
+	public int cleaningProgress;
 	private int cleaningTotalTime;
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
-	protected final IRecipeType<? extends AbstractCookingRecipe> recipeType = IRecipeType.SMELTING;
-	
-	public FossilCleanerTileEntity() 
-	{
-		super(TileEntityInit.FOSSIL_CLEANER_TILE_ENTITY.get());
-	}
+	protected final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
 	
 	public static Map<Item, Integer> getFuel() 
 	{
@@ -67,7 +62,14 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		
 		map.put(item, length);
 	}
-	
+
+	private ITextComponent name;
+
+	public FossilCleanerTileEntity() 
+	{
+		super(TileEntityInit.FOSSIL_CLEANER_TILE_ENTITY.get());
+	}
+
 	@Override
 	public void load(BlockState state, CompoundNBT nbt) 
 	{
@@ -77,7 +79,11 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		this.onTime = nbt.getInt("OnTime");
 		this.cleaningProgress = nbt.getInt("CleanTime");
 		this.cleaningTotalTime = nbt.getInt("CleanTimeTotal");
-		this.onDuration = this.getCleanDuration(this.items.get(1));
+		this.onDuration = this.getCleanDuration();
+		if(nbt.contains("CustomName", 8)) 
+		{
+			this.name = ITextComponent.Serializer.fromJson(nbt.getString("CustomName"));
+		}
 	}
 	
 	@Override
@@ -91,12 +97,11 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		return nbt;
 	}
 	
-	private boolean isOn() 
+	public boolean isOn() 
 	{
 		return this.onTime > 0;
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public void tick() 
 	{	
@@ -114,10 +119,10 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 				ItemStack itemstack = this.items.get(1);
 				if(this.isOn() || !itemstack.isEmpty() && !this.items.get(0).isEmpty()) 
 				{
-					IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<AbstractCookingRecipe>)this.recipeType, this, this.level).orElse(null);
+					IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).orElse(null);
 					if(!this.isOn() && this.canCleanWith(irecipe)) 
 					{
-						this.onTime = this.getCleanDuration(itemstack);
+						this.onTime = this.getCleanDuration();
 						this.onDuration = this.onTime;
 						if(this.isOn()) 
 						{
@@ -171,6 +176,8 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		}
 	}
 	
+	
+	
 	protected boolean canCleanWith(@Nullable IRecipe<?> recipe) 
 	{
 		if(!this.items.get(0).isEmpty() && recipe != null) 
@@ -182,7 +189,7 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 			} 
 			else 
 			{
-				ItemStack itemstack1 = this.items.get(2);
+				ItemStack itemstack1 = this.items.get(1);
 				if(itemstack1.isEmpty()) 
 				{
 					return true;
@@ -211,12 +218,12 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	{
 		if(recipe != null && this.canCleanWith(recipe)) 
 		{
-			ItemStack itemstack = this.items.get(0);
+			ItemStack fossil = this.items.get(0);
 			ItemStack itemstack1 = recipe.getResultItem();
-			ItemStack itemstack2 = this.items.get(2);
+			ItemStack itemstack2 = this.items.get(1);
 			if(itemstack2.isEmpty()) 
 			{
-				this.items.set(2, itemstack1.copy());
+				this.items.set(1, itemstack1.copy());
 			} 
 			else if(itemstack2.getItem() == itemstack1.getItem()) 
 			{
@@ -228,31 +235,18 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 				this.setRecipeUsed(recipe);
 			}
 			
-			itemstack.shrink(1);
+			fossil.shrink(1);
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	protected int getTotalCleanTime() 
 	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType<AbstractCookingRecipe>)this.recipeType, this, this.level).map(AbstractCookingRecipe::getCookingTime).orElse(200);
+		return this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).map(FossilGrinderRecipe::getGrindTime).orElse(300);
 	}
 	
-	protected int getCleanDuration(ItemStack stack) 
+	protected int getCleanDuration() 
 	{
-		if(stack.isEmpty()) 
-		{
-			return 0;
-		} 
-		else 
-		{
-			return 3500;
-		}
-	}
-	
-	public static boolean isFuel(ItemStack stack) 
-	{
-		return getFuel().containsKey(stack.getItem());
+		return 1000;
 	}
 	
 	@Override
@@ -271,7 +265,6 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 				return false;
 			}
 		}
-		
 		return true;
 	}
 	
@@ -306,7 +299,7 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		
 		if (i == 0 && !flag) 
 		{
-			//this.cleaningTotalTime = this.getTotalCleanTime();
+			this.cleaningTotalTime = this.getTotalCleanTime();
 			this.cleaningProgress = 0;
 			this.setChanged();
 		}
@@ -322,23 +315,6 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		else 
 		{
 			return player.distanceToSqr((double)this.worldPosition.getX() + 0.5D, (double)this.worldPosition.getY() + 0.5D, (double)this.worldPosition.getZ() + 0.5D) <= 64.0D;
-		}
-	}
-	
-	@Override
-	public boolean canPlaceItem(int i, ItemStack stack) 
-	{
-		if(i == 2) 
-		{
-			return false;
-		} 
-		else if(i != 1) 
-		{
-			return true;
-		} 
-		else 
-		{
-			return isFuel(stack);
 		}
 	}
 	
@@ -362,6 +338,11 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	{
 		return null;
 	}
+	
+	public static boolean isFuel(ItemStack stack) 
+	{
+		return getFuel().containsKey(stack.getItem());
+	}
 
 	public void fillStackedContents(RecipeItemHelper helper) 
 	{
@@ -370,11 +351,28 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 			helper.accountStack(itemstack);
 		}
 	}
+	
+	@Override
+	public boolean canPlaceItem(int i, ItemStack stack) 
+	{
+		if(i == 2) 
+		{
+			return false;
+		} 
+		else if(i != 1) 
+		{
+			return true;
+		} 
+		else 
+		{
+			return isFuel(stack);
+		}
+	}
 
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new FossilCleanerContainer(windowId, playerInv, this, new IntArray(4));
+		return new FossilCleanerContainer(windowId, playerInv, this, this, new IntArray(4));
 	}
 
 	@Override
@@ -387,5 +385,17 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	public ITextComponent getDisplayName() 
 	{
 		return this.getName();
+	}
+	
+	@Override
+	@Nullable
+	public ITextComponent getCustomName() 
+	{
+		return this.name;
+	}
+
+	public void setCustomName(ITextComponent text) 
+	{
+		this.name = text;
 	}
 }

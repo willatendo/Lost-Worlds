@@ -5,12 +5,12 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import lostworlds.common.entities.ProcompsognathusEntity;
+import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.util.ModBlockStateProperties;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.ZombieEntity;
@@ -67,7 +67,7 @@ public class SmallEggBlock extends Block {
 		if (this.canDestroyEgg(p_203167_1_, p_203167_3_)) {
 			if (!p_203167_1_.isClientSide && p_203167_1_.random.nextInt(p_203167_4_) == 0) {
 				BlockState blockstate = p_203167_1_.getBlockState(p_203167_2_);
-				if (blockstate.is(Blocks.TURTLE_EGG)) {
+				if (blockstate.is(BlockInit.PROCOMPSOGNATHUS_EGG.get())) {
 					this.decreaseEggs(p_203167_1_, p_203167_2_, blockstate);
 				}
 			}
