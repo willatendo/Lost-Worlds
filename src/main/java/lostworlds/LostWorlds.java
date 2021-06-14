@@ -44,12 +44,15 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import ogpack.OGPack;
 import software.bernie.geckolib3.GeckoLib;
 
 @Mod(ModUtil.ID)
 @Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD)
 public class LostWorlds
 {
+	public static boolean hasInitilised;
+	
 	public LostWorlds() 
 	{
 		ModUtil.LOGGER.debug("Loading: The Lost Worlds");
@@ -68,6 +71,10 @@ public class LostWorlds
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LostWorldsConfig.commonSpec);
 
 		ModUtil.LOGGER.debug("Finished: The Lost Worlds");
+		
+		OGPack.initOGPack();
+		
+		hasInitilised = true;
 	}
 
 	

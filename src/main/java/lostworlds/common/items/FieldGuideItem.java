@@ -33,6 +33,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
+import ogpack.OGPack;
 
 public class FieldGuideItem extends Item
 {	
@@ -138,6 +139,12 @@ public class FieldGuideItem extends Item
 			{
 				DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FieldGuideScreens::utahraptorEntry);
 			}
+			
+			if(OGPack.hasInitilised)
+			{
+				
+			}
+			
 			return ActionResultType.SUCCESS;
 		}
 		

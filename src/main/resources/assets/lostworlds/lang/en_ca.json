@@ -1266,6 +1266,11 @@
 	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 10 Developer Edition. DO NOT REDISTRIBUTE.",
 	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 10",
 	
+	//Packs
+	"lostworlds.installed_packs": "You have installed:",
+	"lostworlds.installed_og_pack": "OG Dino Pack - 1.0.0",
+	"lostworlds.installed_mod": "Lost Worlds - Alpha 10",
+	
 	//On Book Used
 	"lostworlds.transport_to_overworld": "Transporting \u00A7bPlayer \u00A7fBack \u00A76Home\u00A7f!",
 	"lostworlds.transport_to_jurassic": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Jurassic\u00A7f!",
