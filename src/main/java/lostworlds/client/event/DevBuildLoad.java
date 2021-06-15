@@ -4,7 +4,6 @@ import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.TextUtil;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,12 +20,12 @@ public class DevBuildLoad
 		if(!FMLEnvironment.production && !ModUtil.DISABLE_IN_DEV)
 		{
 			PlayerEntity player = event.getPlayer();
-			event.getPlayer().sendMessage(new TranslationTextComponent(ModUtil.ID + ".loadEvent.dev"), player.getUUID());
+			event.getPlayer().sendMessage(ModUtil.tTC("loadEvent.dev"), player.getUUID());
 		}
 		else
 		{
 			PlayerEntity player = event.getPlayer();
-			event.getPlayer().sendMessage(TextUtil.coloredText(new TranslationTextComponent(ModUtil.ID + ".loadEvent.player"), TextFormatting.GOLD), player.getUUID());
+			event.getPlayer().sendMessage(TextUtil.coloredText(ModUtil.tTC("loadEvent.player"), TextFormatting.GOLD), player.getUUID());
 		}
 	}
 }

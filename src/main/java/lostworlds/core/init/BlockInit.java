@@ -45,6 +45,8 @@ import lostworlds.common.blocks.TerracottaFossilBlock;
 import lostworlds.common.blocks.TimeMachineBlock;
 import lostworlds.common.blocks.WhiteTerracottaFossilBlock;
 import lostworlds.common.blocks.YellowTerracottaFossilBlock;
+import lostworlds.common.blocks.egg.LargeEgg;
+import lostworlds.common.blocks.egg.MediumEggBlock;
 import lostworlds.common.blocks.egg.SmallEggBlock;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.core.util.ModMaterials;
@@ -150,27 +152,27 @@ public class BlockInit
 	public static final RegistryObject<Block> POWER_SUPPLY_BLOCK = register("power_supply_block", new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	
 	//Eggs (Coming soon)
-	public static final RegistryObject<Block> PROCOMPSOGNATHUS_EGG = register("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get());
-	public static final RegistryObject<Block> DIMETRODON_EGG = register("dimetrodon", () -> EntityInit.DIMETRODON_ENTITY.get());
-	public static final RegistryObject<Block> EDAPHOSAURUS_EGG = register("edaphosaurus", () -> EntityInit.EDAPHOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> GORGONOPS_EGG = register("gorgonops", () -> EntityInit.GORGONOPS_ENTITY.get());
-	public static final RegistryObject<Block> CARNOTAURUS_EGG = register("carnotaurus", () -> EntityInit.CARNOTAURUS_ENTITY.get());
-	public static final RegistryObject<Block> TYRANNOSAURUS_EGG = register("tyrannosaurus", () -> EntityInit.TYRANNOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> ALLOSAURUS_EGG = register("allosaurus", () -> EntityInit.ALLOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> GIGANOTOSAURUS_EGG = register("giganotosaurus", () -> EntityInit.GIGANOTOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> SUCHOMIMUS_EGG = register("suchomimus", () -> EntityInit.SUCHOMIMUS_ENTITY.get());
-	public static final RegistryObject<Block> TETRACERATOPS_EGG = register("tetraceratops", () -> EntityInit.TETRACERATOPS_ENTITY.get());
-	public static final RegistryObject<Block> OURANOSAURUS_EGG = register("ouranosaurus", () -> EntityInit.OURANOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> FUKUIVENATOR_EGG = register("fukuivenator", () -> EntityInit.FUKUIVENATOR_ENTITY.get());
-	public static final RegistryObject<Block> PSITTACOSAURUS_EGG = register("psittacosaurus", () -> EntityInit.PSITTACOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> CRYOLOPHOSAURUS_EGG = register("cryolophosaurus", () -> EntityInit.CRYOLOPHOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> OSTROMIA_EGG = register("ostromia", () -> EntityInit.OSTROMIA_ENTITY.get());
-	public static final RegistryObject<Block> PROTOSUCHUS_EGG = register("protosuchus", () -> EntityInit.PROTOSUCHUS_ENTITY.get());
-	public static final RegistryObject<Block> DIICTODON_EGG = register("diictodon", () -> EntityInit.DIICTODON_ENTITY.get());
-	public static final RegistryObject<Block> KENTROSAURUS_EGG = register("kentrosaurus", () -> EntityInit.KENTROSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> CHILESAURUS_EGG = register("chilesaurus", () -> EntityInit.CHILESAURUS_ENTITY.get());
-	public static final RegistryObject<Block> LIAONINGOSAURUS_EGG = register("liaoningosaurus", () -> EntityInit.LIAONINGOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> UTAHRAPTOR_EGG = register("utahraptor", () -> EntityInit.UTAHRAPTOR_ENTITY.get());
+	public static final RegistryObject<Block> PROCOMPSOGNATHUS_EGG = registerSmall("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get());
+	public static final RegistryObject<Block> DIMETRODON_EGG = registerMedium("dimetrodon", () -> EntityInit.DIMETRODON_ENTITY.get());
+	public static final RegistryObject<Block> EDAPHOSAURUS_EGG = registerMedium("edaphosaurus", () -> EntityInit.EDAPHOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> GORGONOPS_EGG = registerSmall("gorgonops", () -> EntityInit.GORGONOPS_ENTITY.get());
+	public static final RegistryObject<Block> CARNOTAURUS_EGG = registerMedium("carnotaurus", () -> EntityInit.CARNOTAURUS_ENTITY.get());
+	public static final RegistryObject<Block> TYRANNOSAURUS_EGG = registerLarge("tyrannosaurus", () -> EntityInit.TYRANNOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> ALLOSAURUS_EGG = registerMedium("allosaurus", () -> EntityInit.ALLOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> GIGANOTOSAURUS_EGG = registerLarge("giganotosaurus", () -> EntityInit.GIGANOTOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> SUCHOMIMUS_EGG = registerMedium("suchomimus", () -> EntityInit.SUCHOMIMUS_ENTITY.get());
+	public static final RegistryObject<Block> TETRACERATOPS_EGG = registerSmall("tetraceratops", () -> EntityInit.TETRACERATOPS_ENTITY.get());
+	public static final RegistryObject<Block> OURANOSAURUS_EGG = registerMedium("ouranosaurus", () -> EntityInit.OURANOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> FUKUIVENATOR_EGG = registerSmall("fukuivenator", () -> EntityInit.FUKUIVENATOR_ENTITY.get());
+	public static final RegistryObject<Block> PSITTACOSAURUS_EGG = registerSmall("psittacosaurus", () -> EntityInit.PSITTACOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> CRYOLOPHOSAURUS_EGG = registerMedium("cryolophosaurus", () -> EntityInit.CRYOLOPHOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> OSTROMIA_EGG = registerSmall("ostromia", () -> EntityInit.OSTROMIA_ENTITY.get());
+	public static final RegistryObject<Block> PROTOSUCHUS_EGG = registerSmall("protosuchus", () -> EntityInit.PROTOSUCHUS_ENTITY.get());
+	public static final RegistryObject<Block> DIICTODON_EGG = registerSmall("diictodon", () -> EntityInit.DIICTODON_ENTITY.get());
+	public static final RegistryObject<Block> KENTROSAURUS_EGG = registerMedium("kentrosaurus", () -> EntityInit.KENTROSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> CHILESAURUS_EGG = registerSmall("chilesaurus", () -> EntityInit.CHILESAURUS_ENTITY.get());
+	public static final RegistryObject<Block> LIAONINGOSAURUS_EGG = registerSmall("liaoningosaurus", () -> EntityInit.LIAONINGOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> UTAHRAPTOR_EGG = registerMedium("utahraptor", () -> EntityInit.UTAHRAPTOR_ENTITY.get());
 	
 	//Mud
 	public static final RegistryObject<Block> MUD = register("mud", new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
@@ -505,9 +507,19 @@ public class BlockInit
 		return ModRegistry.BLOCK_REGISTRY.register(id, () -> block);
 	}
 	
-	public static RegistryObject<Block> register(String id, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity)
+	public static RegistryObject<Block> registerSmall(String id, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity)
 	{
 		return register(id + "_egg", new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG), () -> entity.get()));
+	}
+	
+	public static RegistryObject<Block> registerMedium(String id, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity)
+	{
+		return register(id + "_egg", new MediumEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG), () -> entity.get()));
+	}
+	
+	public static RegistryObject<Block> registerLarge(String id, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity)
+	{
+		return register(id + "_egg", new LargeEgg(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG), () -> entity.get()));
 	}
 	
 	public static void initBlocks() { ModUtil.LOGGER.debug("Registering: Mod Blocks"); }

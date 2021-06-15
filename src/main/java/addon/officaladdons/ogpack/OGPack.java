@@ -1,11 +1,20 @@
 package addon.officaladdons.ogpack;
 
+import addon.officaladdons.ogpack.util.AddonRegistry;
+import lostworlds.core.util.ModUtil;
+
 public class OGPack 
 {
-	public static boolean hasInit;
+	public static boolean hasInitilised;
 	
 	public static void init() 
-	{
-		hasInit = true; 
+	{		
+		ModUtil.LOGGER.debug("Loading: OG Pack");
+		
+		AddonRegistry.registry();
+		
+		hasInitilised = true; 
+
+		ModUtil.LOGGER.debug("Finished: OG Pack");
 	}
 }

@@ -120,6 +120,7 @@ public class SmallEggBlock extends Block
 				{
 					world.levelEvent(2001, pos, Block.getId(state));
 					AbstractPrehistoricAnimalEntity entity = this.entityTypeSupplier.get().create(world);
+					entity.moveTo((double)pos.getX() + 0.3D * 0.2D, (double)pos.getY(), (double)pos.getZ() + 0.3D, 0.0F, 0.0F);
 					world.addFreshEntity(entity);
 					entity.setAge(-24000);
 				}

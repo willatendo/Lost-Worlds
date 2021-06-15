@@ -1,9 +1,9 @@
 package addon;
 
 import addon.officaladdons.ogpack.OGPack;
+import lostworlds.LostWorlds;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,15 +11,20 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @Mod.EventBusSubscriber(modid = ModUtil.ID, value = Dist.CLIENT, bus = Bus.FORGE)
-public class LostWorldsAddon 
+public class LostWorldsAddons 
 {
 	@SubscribeEvent
 	public static void onPlayerLoad(final PlayerEvent.PlayerLoggedInEvent event)
 	{
-		if(OGPack.hasInit)
+		PlayerEntity player = event.getPlayer();
+		event.getPlayer().sendMessage(ModUtil.tTC("installed_packs"), player.getUUID());
+		if(LostWorlds.hasInitilised)
 		{
-			PlayerEntity player = event.getPlayer();
-			event.getPlayer().sendMessage(new TranslationTextComponent("installed_ogpack"), player.getUUID());
+			event.getPlayer().sendMessage(ModUtil.tTC("installed_mod"), player.getUUID());
+		}
+		if(OGPack.hasInitilised)
+		{
+			event.getPlayer().sendMessage(ModUtil.tTC("installed_ogpack"), player.getUUID());
 		}
 	}
-}
+}	

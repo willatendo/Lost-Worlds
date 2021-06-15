@@ -1,5 +1,6 @@
 package lostworlds.common.items;
 
+import addon.officaladdons.ogpack.OGPack;
 import lostworlds.client.screen.fieldguides.FieldGuideScreens;
 import lostworlds.common.entities.AllosaurusEntity;
 import lostworlds.common.entities.CarnotaurusEntity;
@@ -137,6 +138,11 @@ public class FieldGuideItem extends Item
 			if(entity instanceof UtahraptorEntity)
 			{
 				DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FieldGuideScreens::utahraptorEntry);
+			}
+			
+			if(OGPack.hasInitilised)
+			{
+				
 			}
 			
 			return ActionResultType.SUCCESS;

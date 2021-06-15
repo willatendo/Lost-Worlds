@@ -1,5 +1,6 @@
 package lostworlds.common.items;
 
+import addon.officaladdons.ogpack.OGPack;
 import lostworlds.common.entities.AllosaurusEntity;
 import lostworlds.common.entities.CarnotaurusEntity;
 import lostworlds.common.entities.ChilesaurusEntity;
@@ -218,6 +219,11 @@ public class SyringeItem extends Item
 			ItemStack blood = new ItemStack(ItemInit.UTAHRAPTOR_BLOOD_SYRINGE.get());
 			playerEntity.setItemInHand(hand, blood);
 			return ActionResultType.SUCCESS;
+		}
+		
+		if(OGPack.hasInitilised)
+		{
+			
 		}
 		
 		return super.interactLivingEntity(stack, playerEntity, entity, hand);

@@ -1,10 +1,6 @@
 package lostworlds;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.Maps;
@@ -18,7 +14,6 @@ import lostworlds.core.init.FeatureInit;
 import lostworlds.core.init.ModOreFeatures;
 import lostworlds.core.init.WorldCarverInit;
 import lostworlds.core.util.ModUtil;
-import lostworlds.core.util.WebHelper;
 import lostworlds.core.util.registry.ModRegistry;
 import lostworlds.world.dimension.jurassic.JurassicDimension;
 import lostworlds.world.dimension.jurassic.JurassicDimensionRenderInfo;
@@ -56,7 +51,6 @@ import software.bernie.geckolib3.GeckoLib;
 @Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD)
 public class LostWorlds
 {
-	public static List<String> OG_PACK_GETTERS = new ArrayList<>();
 	public static boolean hasInitilised;
 	
 	public LostWorlds() 
@@ -64,7 +58,6 @@ public class LostWorlds
 		ModUtil.LOGGER.debug("Loading: The Lost Worlds");
 		
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::startSetupOGPack);
 
 		ModRegistry.registry(); 
 		
@@ -76,11 +69,8 @@ public class LostWorlds
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
 		
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LostWorldsConfig.commonSpec);
-		
-		if(LostWorlds.OG_PACK_GETTERS.contains("Dev"))
-		{
-			OGPack.init();
-		}
+				
+		OGPack.init();
 		
 		hasInitilised = true;
 		
@@ -249,29 +239,5 @@ public class LostWorlds
 	{
 		HoeItem.TILLABLES = Maps.newHashMap(HoeItem.TILLABLES);
 		HoeItem.TILLABLES.put(grass, Blocks.FARMLAND.defaultBlockState());
-	}
-	
-	private void startSetupOGPack(FMLCommonSetupEvent event)
-	{
-		ModUtil.LOGGER.debug("Loading: OG Pack Settup");
-		
-		BufferedReader urlContents = WebHelper.getURLContents("https://raw.githubusercontent.com/willatendo/LostWorlds/master/src/main/resources/assets/lostworlds/og_pack_getters.txt", "assets/lostworlds/og_pack_getters.txt");
-		if(urlContents != null)
-		{
-			try
-			{
-				String line;
-				while((line = urlContents.readLine()) != null)
-				{
-					OG_PACK_GETTERS.add(line);
-				}
-			}
-			catch(IOException e)
-			{
-				ModUtil.LOGGER.debug("Failed to Give Pack");
-			}
-		}
-		
-		ModUtil.LOGGER.debug("Finished: OG Pack Settup");
 	}
 }
