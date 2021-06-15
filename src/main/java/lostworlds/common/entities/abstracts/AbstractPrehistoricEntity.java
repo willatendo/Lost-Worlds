@@ -47,7 +47,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	
     public static final String SEX_TAG = "Sex";
 
-    protected boolean isHostile;
+    protected boolean isHostile = false;
 	protected boolean isScaredOfPlayer;
 	protected boolean isFish = false;
 	protected boolean isAmphibian = false;
@@ -84,7 +84,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	
 	public boolean isHostile() 
 	{
-		return this.isHostile;
+		return this.isHostile;		
 	}
 	
 	public boolean isAmphibian() 
@@ -227,11 +227,11 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 			this.goalSelector.addGoal(1, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
-			if(isHostile())
+			if(this.isHostile())
 			{
-				this.goalSelector.addGoal(4, new ModAttackGoal(this, 1.0D, false));
+				this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
 			}
-			if(!isHostile() && isScaredOfPlayer())
+			if(isScaredOfPlayer())
 			{
 				this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 			}
@@ -248,11 +248,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 			this.goalSelector.addGoal(1, new ModSwimSemiAquaticGoal(this, 1.0D, 30));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
-			if(isHostile())
-			{
-				this.goalSelector.addGoal(4, new ModAttackGoal(this, 1.0D, false));
-			}
-			if(!isHostile() && isScaredOfPlayer())
+			if(isScaredOfPlayer())
 			{
 				this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 			}

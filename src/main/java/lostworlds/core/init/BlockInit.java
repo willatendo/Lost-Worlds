@@ -46,6 +46,7 @@ import lostworlds.common.blocks.TimeMachineBlock;
 import lostworlds.common.blocks.WhiteTerracottaFossilBlock;
 import lostworlds.common.blocks.YellowTerracottaFossilBlock;
 import lostworlds.common.blocks.egg.SmallEggBlock;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
 import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolTypes;
 import lostworlds.core.util.ModUtil;
@@ -80,8 +81,10 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.block.WoodButtonBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.entity.EntityType;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
 
 @SuppressWarnings("deprecation")
@@ -147,28 +150,27 @@ public class BlockInit
 	public static final RegistryObject<Block> POWER_SUPPLY_BLOCK = register("power_supply_block", new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	
 	//Eggs (Coming soon)
-	public static final RegistryObject<Block> PROCOMPSOGNATHUS_EGG = ModRegistry.BLOCK_REGISTRY.register("procompsognathus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> DIMETRODON_EGG = ModRegistry.BLOCK_REGISTRY.register("dimetrodon_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> EDAPHOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("edaphosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> GORGONOPS_EGG = ModRegistry.BLOCK_REGISTRY.register("gorgonops_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> CARNOTAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("carnotaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> TYRANNOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("tyrannosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> ALLOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("allosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> GIGANOTOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("giganotosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> SUCHOMIMUS_EGG = ModRegistry.BLOCK_REGISTRY.register("suchomimus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> TETRACERATOPS_EGG = ModRegistry.BLOCK_REGISTRY.register("tetraceratops_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> GREAT_AUK_EGG = ModRegistry.BLOCK_REGISTRY.register("great_auk_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> OURANOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("ouranosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> FUKUIVENATOR_EGG = ModRegistry.BLOCK_REGISTRY.register("fukuivenator_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> PSITTACOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("pisttacosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> CRYOLOPHOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("cryolophosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> OSTROMIA_EGG = ModRegistry.BLOCK_REGISTRY.register("ostromia_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> PROTOSUCHUS_EGG = ModRegistry.BLOCK_REGISTRY.register("protosuchus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> DIICTODON_EGG = ModRegistry.BLOCK_REGISTRY.register("diictodon_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> KENTROSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("kentrosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> CHILESAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("chilesaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> LIAONINGOSAURUS_EGG = ModRegistry.BLOCK_REGISTRY.register("liaoningosaurus_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
-	public static final RegistryObject<Block> UTAHRAPTOR_EGG = ModRegistry.BLOCK_REGISTRY.register("utahraptor_egg", () -> new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG)));
+	public static final RegistryObject<Block> PROCOMPSOGNATHUS_EGG = register("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get());
+	public static final RegistryObject<Block> DIMETRODON_EGG = register("dimetrodon", () -> EntityInit.DIMETRODON_ENTITY.get());
+	public static final RegistryObject<Block> EDAPHOSAURUS_EGG = register("edaphosaurus", () -> EntityInit.EDAPHOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> GORGONOPS_EGG = register("gorgonops", () -> EntityInit.GORGONOPS_ENTITY.get());
+	public static final RegistryObject<Block> CARNOTAURUS_EGG = register("carnotaurus", () -> EntityInit.CARNOTAURUS_ENTITY.get());
+	public static final RegistryObject<Block> TYRANNOSAURUS_EGG = register("tyrannosaurus", () -> EntityInit.TYRANNOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> ALLOSAURUS_EGG = register("allosaurus", () -> EntityInit.ALLOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> GIGANOTOSAURUS_EGG = register("giganotosaurus", () -> EntityInit.GIGANOTOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> SUCHOMIMUS_EGG = register("suchomimus", () -> EntityInit.SUCHOMIMUS_ENTITY.get());
+	public static final RegistryObject<Block> TETRACERATOPS_EGG = register("tetraceratops", () -> EntityInit.TETRACERATOPS_ENTITY.get());
+	public static final RegistryObject<Block> OURANOSAURUS_EGG = register("ouranosaurus", () -> EntityInit.OURANOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> FUKUIVENATOR_EGG = register("fukuivenator", () -> EntityInit.FUKUIVENATOR_ENTITY.get());
+	public static final RegistryObject<Block> PSITTACOSAURUS_EGG = register("psittacosaurus", () -> EntityInit.PSITTACOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> CRYOLOPHOSAURUS_EGG = register("cryolophosaurus", () -> EntityInit.CRYOLOPHOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> OSTROMIA_EGG = register("ostromia", () -> EntityInit.OSTROMIA_ENTITY.get());
+	public static final RegistryObject<Block> PROTOSUCHUS_EGG = register("protosuchus", () -> EntityInit.PROTOSUCHUS_ENTITY.get());
+	public static final RegistryObject<Block> DIICTODON_EGG = register("diictodon", () -> EntityInit.DIICTODON_ENTITY.get());
+	public static final RegistryObject<Block> KENTROSAURUS_EGG = register("kentrosaurus", () -> EntityInit.KENTROSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> CHILESAURUS_EGG = register("chilesaurus", () -> EntityInit.CHILESAURUS_ENTITY.get());
+	public static final RegistryObject<Block> LIAONINGOSAURUS_EGG = register("liaoningosaurus", () -> EntityInit.LIAONINGOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> UTAHRAPTOR_EGG = register("utahraptor", () -> EntityInit.UTAHRAPTOR_ENTITY.get());
 	
 	//Mud
 	public static final RegistryObject<Block> MUD = register("mud", new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
@@ -501,6 +503,11 @@ public class BlockInit
 	public static RegistryObject<Block> register(String id, Block block)
 	{
 		return ModRegistry.BLOCK_REGISTRY.register(id, () -> block);
+	}
+	
+	public static RegistryObject<Block> register(String id, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity)
+	{
+		return register(id + "_egg", new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG), () -> entity.get()));
 	}
 	
 	public static void initBlocks() { ModUtil.LOGGER.debug("Registering: Mod Blocks"); }

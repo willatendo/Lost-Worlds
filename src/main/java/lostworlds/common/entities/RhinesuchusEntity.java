@@ -35,12 +35,6 @@ public class RhinesuchusEntity extends AbstractPrehistoricLandAndSeaEntity imple
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return true;
-	}
-
-	@Override
 	public void registerControllers(AnimationData data) 
 	{
 		data.addAnimationController(new AnimationController<>(this, "controller", 2, this::predicate));
@@ -58,6 +52,12 @@ public class RhinesuchusEntity extends AbstractPrehistoricLandAndSeaEntity imple
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.rhinesuchus.idol", true));
 			return PlayState.CONTINUE;
 		}
+	}
+	
+	@Override
+	public boolean isHostile() 
+	{
+		return true;
 	}
 	
 	@Override

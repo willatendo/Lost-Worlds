@@ -57,15 +57,15 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 	}
 	
 	@Override
-	public AnimationFactory getFactory() 
-	{
-		return this.factory;
-	}
-	
-	@Override
 	public boolean isHostile() 
 	{
 		return true;
+	}
+	
+	@Override
+	public AnimationFactory getFactory() 
+	{
+		return this.factory;
 	}
 	
 	@Override

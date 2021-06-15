@@ -63,12 +63,6 @@ public class ProtosuchusEntity extends AbstractPrehistoricLandAndSeaEntity imple
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return true;
-	}
-	
-	@Override
 	public boolean isScaredOfPlayer() 
 	{
 		return false;

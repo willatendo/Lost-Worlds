@@ -57,17 +57,17 @@ public class CarnotaurusEntity extends AbstractPrehistoricAnimalEntity implement
 	{
 		data.addAnimationController(new AnimationController<IAnimatable>(this, "controller", 0, this::predicate));
 	}
-
-	@Override
-	public AnimationFactory getFactory() 
-	{
-		return this.factory;
-	}
 	
 	@Override
 	public boolean isHostile() 
 	{
 		return true;
+	}
+
+	@Override
+	public AnimationFactory getFactory() 
+	{
+		return this.factory;
 	}
 	
 	@Override

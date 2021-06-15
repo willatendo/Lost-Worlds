@@ -57,12 +57,6 @@ public class TetraceratopsEntity extends AbstractPrehistoricAnimalEntity impleme
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return true;
-	}
-	
-	@Override
 	public boolean isScaredOfPlayer() 
 	{
 		return false;

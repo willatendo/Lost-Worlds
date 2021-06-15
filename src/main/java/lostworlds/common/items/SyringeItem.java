@@ -33,7 +33,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
-import ogpack.OGPack;
 
 public class SyringeItem extends Item
 {
@@ -219,11 +218,6 @@ public class SyringeItem extends Item
 			ItemStack blood = new ItemStack(ItemInit.UTAHRAPTOR_BLOOD_SYRINGE.get());
 			playerEntity.setItemInHand(hand, blood);
 			return ActionResultType.SUCCESS;
-		}
-		
-		if(OGPack.hasInitilised)
-		{
-			
 		}
 		
 		return super.interactLivingEntity(stack, playerEntity, entity, hand);

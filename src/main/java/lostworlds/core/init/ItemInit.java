@@ -1039,7 +1039,7 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerSkull(String id)
 	{
-		return registerSomeSortOfFossil(id);
+		return registerSomeSortOfFossil(id + "_skull");
 	}
 	
 	private static RegistryObject<Item> registerArmBone(String id)

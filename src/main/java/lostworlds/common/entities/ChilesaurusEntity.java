@@ -59,12 +59,6 @@ public class ChilesaurusEntity extends AbstractPrehistoricAnimalEntity implement
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return true;
-	}
-	
-	@Override
 	public boolean isScaredOfPlayer() 
 	{
 		return false;

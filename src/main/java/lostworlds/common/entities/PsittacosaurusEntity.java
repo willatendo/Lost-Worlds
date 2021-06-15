@@ -59,12 +59,6 @@ public class PsittacosaurusEntity extends AbstractPrehistoricAnimalEntity implem
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return false;
-	}
-	
-	@Override
 	public boolean isScaredOfPlayer() 
 	{
 		return true;

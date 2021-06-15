@@ -58,12 +58,6 @@ public class DiictodonEntity extends AbstractPrehistoricAnimalEntity implements 
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return false;
-	}
-	
-	@Override
 	public boolean isScaredOfPlayer() 
 	{
 		return false;

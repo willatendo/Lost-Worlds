@@ -54,12 +54,6 @@ public abstract class AbstractPrehistoricFishEntity extends AbstractPrehistoricE
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return false;
-	}
-	
-	@Override
 	public boolean isScaredOfPlayer() 
 	{
 		return true;

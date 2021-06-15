@@ -56,12 +56,6 @@ public class KentrosaurusEntity extends AbstractPrehistoricAnimalEntity implemen
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return false;
-	}
-	
-	@Override
 	public boolean isScaredOfPlayer() 
 	{
 		return false;
