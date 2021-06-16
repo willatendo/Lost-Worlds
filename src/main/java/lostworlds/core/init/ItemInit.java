@@ -296,7 +296,6 @@ public class ItemInit
 	public static final RegistryObject<Item> TETRACERATOPS_LEG_BONE = registerLegBone("tetraceratops");
 	public static final RegistryObject<Item> TETRACERATOPS_FOOT_BONE = registerFootBone("tetraceratops");
 	public static final RegistryObject<Item> TETRACERATOPS_RIB_BONE = registerRibBone("tetraceratops");
-	public static final RegistryObject<Item> TETRACERATOPS_HORN = registerOtherBone("tetraceratops_horn");
 
 	public static final RegistryObject<Item> GREAT_AUK_DNA = registerDNA("great_auk");
 	public static final RegistryObject<Item> GREAT_AUK_DNA_DISC = registerDNADisc("great_auk");
@@ -313,6 +312,7 @@ public class ItemInit
 	public static final RegistryObject<Item> GREAT_AUK_LEG_BONE = registerLegBone("great_auk");
 	public static final RegistryObject<Item> GREAT_AUK_FOOT_BONE = registerFootBone("great_auk");
 	public static final RegistryObject<Item> GREAT_AUK_RIB_BONE = registerRibBone("great_auk");
+	public static final RegistryObject<Item> GREAT_AUK_FEATHER = registerOtherBone("great_auk_feather");
 
 	//Ouranosaurus
 	public static final RegistryObject<Item> OURANOSAURUS_DNA = registerDNA("ouranosaurus");

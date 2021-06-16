@@ -60,7 +60,7 @@ public class LostWorlds
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
 		ModRegistry.registry(); 
-		
+
 		//Lib - V. 3.0.30
 		GeckoLib.initialize();
 				

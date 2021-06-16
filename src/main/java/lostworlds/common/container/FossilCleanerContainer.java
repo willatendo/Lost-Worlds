@@ -1,10 +1,9 @@
 package lostworlds.common.container;
 
-import lostworlds.common.recipe.FossilGrinderRecipe;
 import lostworlds.common.slot.FossilCleanerFuelSlot;
 import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import lostworlds.core.init.ContainerInit;
-import lostworlds.core.init.RecipeInit;
+import lostworlds.core.init.ItemInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
@@ -13,7 +12,6 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.FurnaceResultSlot;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
@@ -24,18 +22,17 @@ public class FossilCleanerContainer extends Container
 	private final IInventory container;
 	private final IIntArray data;
 	private final World level;
-	private final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
 	public final FossilCleanerTileEntity tile;
 	
 	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, FossilCleanerTileEntity tileEntity, IInventory tile, IIntArray array) 
 	{
-		super(ContainerInit.FOSSIL_GRINDER_CONTAINER.get(), windowID);
+		super(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), windowID);
 		this.container = tile;
 		this.level = playerInv.player.level;
 		this.data = array;
 		this.tile = tileEntity;
 		
-		this.addSlot(new Slot(tile, 0, 53, 35));
+		this.addSlot(new Slot(tile, 0, 56, 17));
 		this.addSlot(new FossilCleanerFuelSlot(this, tile, 1, 56, 53));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
 		
@@ -76,7 +73,7 @@ public class FossilCleanerContainer extends Container
 		{
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if(i == 1) 
+			if(i == 2) 
 			{
 				if(!this.moveItemStackTo(itemstack1, 2, 38, true)) 
 				{
@@ -85,11 +82,18 @@ public class FossilCleanerContainer extends Container
 				
 				slot.onQuickCraft(itemstack1, itemstack);
 			}
-			else if(i != 0) 
+			else if(i != 0 && i != 0) 
 			{
-				if(canGrind(itemstack1)) 
+				if(canClean(itemstack1)) 
 				{
 					if(!this.moveItemStackTo(itemstack1, 0, 1, false)) 
+					{
+						return ItemStack.EMPTY;
+					}
+				}
+				else if (this.isFuel(itemstack1)) 
+				{
+					if (!this.moveItemStackTo(itemstack1, 1, 2, false)) 
 					{
 						return ItemStack.EMPTY;
 					}
@@ -131,9 +135,9 @@ public class FossilCleanerContainer extends Container
 		return itemstack;
 	}
 	
-	protected boolean canGrind(ItemStack stack) 
+	protected boolean canClean(ItemStack stack) 
 	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
+		return stack.getItem() == ItemInit.PLASTERED_FOSSIL.get();
 	}
 	
 	public boolean isFuel(ItemStack stack) 

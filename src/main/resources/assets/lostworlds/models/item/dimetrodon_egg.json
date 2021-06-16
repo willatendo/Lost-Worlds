@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/dimetrodon_egg"
+		"layer0": "lostworlds:items/medium_egg"
   }
 }

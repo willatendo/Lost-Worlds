@@ -1,7 +1,13 @@
 {
  	"variants": {
- 		"": {
- 			"model": "lostworlds:block/dimetrodon_egg"
+ 		"medium_eggs=1": {
+ 			"model": "lostworlds:block/medium_egg_one"
+    	},
+    	"medium_eggs=2": {
+ 			"model": "lostworlds:block/medium_egg_two"
+    	},
+    	"medium_eggs=3": {
+ 			"model": "lostworlds:block/medium_egg_three"
     	}
   	}
 }

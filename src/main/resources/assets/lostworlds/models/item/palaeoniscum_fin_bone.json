@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/bones/fin_bone"
+		"layer0": "lostworlds:items/bones/palaeoniscum/palaeoniscum_fin_bone"
   }
 }

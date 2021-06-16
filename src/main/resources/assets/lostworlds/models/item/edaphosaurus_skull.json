@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/bones/edaphosarus/edaphosarus_skull"
+		"layer0": "lostworlds:items/bones/edaphosaurus/edaphosaurus_skull"
   }
 }

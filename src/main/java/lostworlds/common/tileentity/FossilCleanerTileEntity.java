@@ -1,16 +1,17 @@
 package lostworlds.common.tileentity;
 
 import java.util.Map;
+import java.util.Random;
 
 import javax.annotation.Nullable;
 
 import com.google.common.collect.Maps;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lostworlds.common.blocks.FossilCleanerBlock;
+import lostworlds.common.blocks.DNAInjectorBlock;
 import lostworlds.common.container.FossilCleanerContainer;
-import lostworlds.common.recipe.FossilGrinderRecipe;
-import lostworlds.core.init.RecipeInit;
+import lostworlds.common.recipe.RecipeManager;
+import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.TileEntityInit;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.block.BlockState;
@@ -24,7 +25,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -34,20 +34,19 @@ import net.minecraft.util.INameable;
 import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
 public class FossilCleanerTileEntity extends TileEntity implements IInventory, INamedContainerProvider, INameable, ITickableTileEntity	
 {
-protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
+    protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 	
 	private int onTime;
 	private int onDuration;
 	public int cleaningProgress;
 	private int cleaningTotalTime;
+	private int rawIndex = -1;
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
-	protected final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
 	
 	public static Map<Item, Integer> getFuel() 
 	{
@@ -105,8 +104,6 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 	@Override
 	public void tick() 
 	{	
-		boolean flag = this.isOn();
-		boolean flag1 = false;
 		if(this.isOn()) 
 		{
 			--this.onTime;
@@ -114,134 +111,67 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		
 		if(!this.level.isClientSide) 
 		{
-			if(this.level.hasNeighborSignal(this.getBlockPos())) 
+			if(this.level.hasNeighborSignal(this.getBlockPos()))
 			{
-				ItemStack itemstack = this.items.get(1);
-				if(this.isOn() || !itemstack.isEmpty() && !this.items.get(0).isEmpty()) 
+				if(this.isOn() && this.canClean())
 				{
-					IRecipe<?> irecipe = this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).orElse(null);
-					if(!this.isOn() && this.canCleanWith(irecipe)) 
-					{
-						this.onTime = this.getCleanDuration();
-						this.onDuration = this.onTime;
-						if(this.isOn()) 
-						{
-							flag1 = true;
-							if(itemstack.hasContainerItem())
-								this.items.set(1, itemstack.getContainerItem());
-							else
-								if(!itemstack.isEmpty()) 
-								{
-									itemstack.shrink(1);
-									if (itemstack.isEmpty()) 
-									{
-										this.items.set(1, itemstack.getContainerItem());
-									}
-								}
-						}
-					}
-					
-					if(this.isOn() && this.canCleanWith(irecipe)) 
-					{
-						++this.cleaningProgress;
-						if(this.cleaningProgress == this.cleaningTotalTime) 
-						{
-							this.cleaningProgress = 0;
-							this.cleaningTotalTime = this.getTotalCleanTime();
-							this.canClean(irecipe);
-							flag1 = true;
-						}
-					} 
-					else 
+					++this.cleaningProgress;
+					if(this.cleaningProgress == 500) 
 					{
 						this.cleaningProgress = 0;
+						this.cleanItem();
 					}
-				} 
-				else if(!this.isOn() && this.cleaningProgress > 0) 
-				{
-					this.cleaningProgress = MathHelper.clamp(this.cleaningProgress - 2, 0, this.cleaningTotalTime);
-				}
-				
-				if(flag != this.isOn()) 
-				{
-					flag1 = true;
-					this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(FossilCleanerBlock.ON, Boolean.valueOf(this.isOn())), 3);
-				}
-			}
-		}
-		
-		if(flag1) 
-		{
-			this.setChanged();
-		}
-	}
-	
-	
-	
-	protected boolean canCleanWith(@Nullable IRecipe<?> recipe) 
-	{
-		if(!this.items.get(0).isEmpty() && recipe != null) 
-		{
-			ItemStack itemstack = recipe.getResultItem();
-			if(itemstack.isEmpty()) 
-			{
-				return false;
-			} 
-			else 
-			{
-				ItemStack itemstack1 = this.items.get(1);
-				if(itemstack1.isEmpty()) 
-				{
-					return true;
-				}
-				else if(!itemstack1.sameItem(itemstack)) 
-				{
-					return false;
-				} 
-				else if(itemstack1.getCount() + itemstack.getCount() <= this.getMaxStackSize() && itemstack1.getCount() + itemstack.getCount() <= itemstack1.getMaxStackSize()) 
-				{
-					return true;
 				} 
 				else 
 				{
-					return itemstack1.getCount() + itemstack.getCount() <= itemstack.getMaxStackSize(); 
+					this.cleaningProgress = 0;
 				}
 			}
-		} 
-		else 
-		{
-			return false;
+			
+			this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(DNAInjectorBlock.ON, Boolean.valueOf(this.isOn())), 3);
 		}
 	}
 	
-	private void canClean(@Nullable IRecipe<?> recipe) 
+	private static boolean isCleanable(ItemStack stack) 
 	{
-		if(recipe != null && this.canCleanWith(recipe)) 
-		{
-			ItemStack fossil = this.items.get(0);
-			ItemStack itemstack1 = recipe.getResultItem();
-			ItemStack itemstack2 = this.items.get(1);
-			if(itemstack2.isEmpty()) 
-			{
-				this.items.set(1, itemstack1.copy());
-			} 
-			else if(itemstack2.getItem() == itemstack1.getItem()) 
-			{
-				itemstack2.grow(itemstack1.getCount());
-			}
-			
-			if(!this.level.isClientSide) 
-			{
-				this.setRecipeUsed(recipe);
-			}
-			
-			fossil.shrink(1);
-		}
+		return stack.getItem() == ItemInit.PLASTERED_FOSSIL.get();
 	}
 	
-	protected int getTotalCleanTime() 
+	private boolean canClean() 
 	{
-		return this.level.getRecipeManager().getRecipeFor((IRecipeType<FossilGrinderRecipe>)this.recipeType, this, this.level).map(FossilGrinderRecipe::getGrindTime).orElse(300);
+		if(!this.items.get(0).isEmpty() && !this.items.get(1).isEmpty()) 
+		{
+			if(isCleanable(this.items.get(0)) && isFuel(this.items.get(1))) 
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void cleanItem() 
+	{
+		if(this.canClean()) 
+		{
+			ItemStack input = this.items.get(rawIndex);
+			ItemStack output = RecipeManager.getAnalyzerRecipeForItem(input).generateOutput(new Random());
+			if(!output.isEmpty()) 
+			{
+				ItemStack stack = this.items.get(2);
+				if(stack.isEmpty()) 
+				{
+					this.items.set(2, output);
+				} 
+				else 
+				{
+					if(stack.sameItem(this.items.get(2)) && stack.getCount() + output.getCount() < 64) 
+					{
+						stack.setCount(stack.getCount() + output.getCount());
+					}
+				}
+			}
+			input.shrink(1);
+		}
 	}
 	
 	protected int getCleanDuration() 
@@ -299,7 +229,7 @@ protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY
 		
 		if (i == 0 && !flag) 
 		{
-			this.cleaningTotalTime = this.getTotalCleanTime();
+			this.cleaningTotalTime = this.getCleanDuration();
 			this.cleaningProgress = 0;
 			this.setChanged();
 		}

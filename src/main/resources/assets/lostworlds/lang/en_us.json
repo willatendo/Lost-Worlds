@@ -294,6 +294,7 @@
 	"item.lostworlds.great_auk_leg_bone": "Great Auk Leg Bone",
 	"item.lostworlds.great_auk_foot_bone": "Great Auk Foot Bone",
 	"item.lostworlds.great_auk_rib_bone": "Great Auk Rib Bone",
+	"item.lostworlds.great_auk_feather": "Great Auk Feather",
 
 	//Ouranosaurus
 	"item.lostworlds.ouranosaurus_dna": "Ouranosaurus DNA",
@@ -1402,6 +1403,12 @@
  
 	"lostworlds.advancements.lostworlds.diamond.title": "Diamond",
 	"lostworlds.advancements.lostworlds.diamond.description": "Acquire an diamond brush.",
+ 
+	"lostworlds.advancements.lostworlds.netherite.title": "Netherite",
+	"lostworlds.advancements.lostworlds.netherite.description": "Acquire an netherite brush.",
+ 
+	"lostworlds.advancements.lostworlds.crystal.title": "Crystal",
+	"lostworlds.advancements.lostworlds.crystal.description": "Acquire an crystal scarab brush.",
  
 	"lostworlds.advancements.lostworlds.building_jurassic_park.title": "Building Jurassic Park",
 	"lostworlds.advancements.lostworlds.building_jurassic_park.description": "Start building the foundations of Jurassic Park with light concrete.",
