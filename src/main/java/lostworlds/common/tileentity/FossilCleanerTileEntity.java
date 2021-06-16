@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lostworlds.common.blocks.DNAInjectorBlock;
+import lostworlds.common.blocks.FossilCleanerBlock;
 import lostworlds.common.container.FossilCleanerContainer;
 import lostworlds.common.recipe.RecipeManager;
 import lostworlds.core.init.ItemInit;
@@ -34,6 +34,7 @@ import net.minecraft.util.INameable;
 import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
 public class FossilCleanerTileEntity extends TileEntity implements IInventory, INamedContainerProvider, INameable, ITickableTileEntity	
@@ -104,6 +105,8 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	@Override
 	public void tick() 
 	{	
+		boolean flag = this.isOn();
+		boolean flag1 = false;
 		if(this.isOn()) 
 		{
 			--this.onTime;
@@ -113,64 +116,121 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		{
 			if(this.level.hasNeighborSignal(this.getBlockPos()))
 			{
-				if(this.isOn() && this.canClean())
+				ItemStack itemstack = this.items.get(1);
+				if(this.isOn() || !itemstack.isEmpty() && !this.items.get(0).isEmpty()) 
 				{
-					++this.cleaningProgress;
-					if(this.cleaningProgress == 500) 
+					if(!this.isOn() && this.canCleanWith()) 
+					{
+						this.onTime = this.getCleanDuration();
+						this.onDuration = this.onTime;
+						if(this.isOn()) 
+						{
+							flag1 = true;
+							if(itemstack.hasContainerItem())
+								this.items.set(1, itemstack.getContainerItem());
+							else
+								if(!itemstack.isEmpty()) 
+								{
+									itemstack.shrink(1);
+									if(itemstack.isEmpty()) 
+									{
+										this.items.set(1, itemstack.getContainerItem());
+									}
+								}
+						}
+					}
+					
+					if(this.isOn() && this.canCleanWith()) 
+					{
+						++this.cleaningProgress;
+						if(this.cleaningProgress == this.cleaningTotalTime) 
+						{
+							this.cleaningProgress = 0;
+							this.cleaningTotalTime = 1000;
+							this.clean();
+							flag1 = true;
+						}
+					} 
+					else 
 					{
 						this.cleaningProgress = 0;
-						this.cleanItem();
 					}
-				} 
-				else 
+				}
+				else if(!this.isOn() && this.cleaningProgress > 0) 
 				{
-					this.cleaningProgress = 0;
+					this.cleaningProgress = MathHelper.clamp(this.cleaningProgress - 2, 0, this.cleaningTotalTime);
+				}
+				
+				if(flag != this.isOn()) 
+				{
+					flag1 = true;
+					this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(FossilCleanerBlock.ON, Boolean.valueOf(this.isOn())), 3);
 				}
 			}
 			
-			this.level.setBlock(this.worldPosition, this.level.getBlockState(this.worldPosition).setValue(DNAInjectorBlock.ON, Boolean.valueOf(this.isOn())), 3);
-		}
-	}
-	
-	private static boolean isCleanable(ItemStack stack) 
-	{
-		return stack.getItem() == ItemInit.PLASTERED_FOSSIL.get();
-	}
-	
-	private boolean canClean() 
-	{
-		if(!this.items.get(0).isEmpty() && !this.items.get(1).isEmpty()) 
-		{
-			if(isCleanable(this.items.get(0)) && isFuel(this.items.get(1))) 
+			if(flag1) 
 			{
-				return true;
+				this.setChanged();
 			}
-		}
-		return false;
+		}		
 	}
 	
-	public void cleanItem() 
+	protected boolean canCleanWith() 
 	{
-		if(this.canClean()) 
+		if(!this.items.get(0).isEmpty()) 
 		{
-			ItemStack input = this.items.get(rawIndex);
-			ItemStack output = RecipeManager.getAnalyzerRecipeForItem(input).generateOutput(new Random());
-			if(!output.isEmpty()) 
+			ItemStack itemstack = ItemStack.EMPTY;
+			ItemStack input = ItemInit.PLASTERED_FOSSIL.get().getDefaultInstance();
+			itemstack = RecipeManager.getAnalyzerRecipeForItem(input).generateOutput(new Random());
+			if(itemstack.isEmpty()) 
 			{
-				ItemStack stack = this.items.get(2);
-				if(stack.isEmpty()) 
+				return false;
+			} 
+			else 
+			{
+				ItemStack itemstack1 = this.items.get(2);
+				if(itemstack1.isEmpty()) 
 				{
-					this.items.set(2, output);
+					return true;
+				}
+				else if(!itemstack1.sameItem(itemstack)) 
+				{
+					return false;
+				} 
+				else if(itemstack1.getCount() + itemstack.getCount() <= this.getMaxStackSize() && itemstack1.getCount() + itemstack.getCount() <= itemstack1.getMaxStackSize()) 
+				{
+					return true;
 				} 
 				else 
 				{
-					if(stack.sameItem(this.items.get(2)) && stack.getCount() + output.getCount() < 64) 
-					{
-						stack.setCount(stack.getCount() + output.getCount());
-					}
-				}
+					return itemstack1.getCount() + itemstack.getCount() <= itemstack.getMaxStackSize();
+	            }
 			}
-			input.shrink(1);
+		} 
+		else 
+		{
+			return false;
+		}
+	}
+	
+	private void clean() 
+	{
+		if(this.canCleanWith()) 
+		{
+			ItemStack itemstack = this.items.get(0);
+			ItemStack input = ItemInit.PLASTERED_FOSSIL.get().getDefaultInstance();
+			ItemStack itemstack1 = RecipeManager.getAnalyzerRecipeForItem(input).generateOutput(new Random());
+			ItemStack itemstack2 = this.items.get(2);
+			if(itemstack2.isEmpty()) 
+			{
+				this.items.set(2, itemstack1.copy());
+			} 
+			else if(itemstack2.getItem() == itemstack1.getItem()) 
+			{
+				itemstack2.grow(itemstack1.getCount());
+			}
+			
+			itemstack.shrink(1);
 		}
 	}
 	

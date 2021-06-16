@@ -9,6 +9,7 @@ import lostworlds.common.blocks.RotateableBlock;
 import lostworlds.common.tileentity.AnalyserTileEntity;
 import lostworlds.common.tileentity.DNAExtractorTileEntity;
 import lostworlds.common.tileentity.DNAInjectorTileEntity;
+import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import lostworlds.common.tileentity.FossilGrinderTileEntity;
 import lostworlds.core.util.ModBlockStateProperties;
 import net.minecraft.block.Block;
@@ -134,19 +135,23 @@ public abstract class AbstractMachineBlock extends RotateableBlock implements IT
 		if(stack.hasCustomHoverName()) 
 		{
 			TileEntity tileentity = world.getBlockEntity(pos);
-			if (tileentity instanceof FossilGrinderTileEntity) 
+			if(tileentity instanceof FossilCleanerTileEntity) 
+			{
+				((FossilCleanerTileEntity)tileentity).setCustomName(stack.getHoverName());
+			}
+			else if(tileentity instanceof FossilGrinderTileEntity) 
 			{
 				((FossilGrinderTileEntity)tileentity).setCustomName(stack.getHoverName());
 			}
-			else if (tileentity instanceof DNAExtractorTileEntity) 
+			else if(tileentity instanceof DNAExtractorTileEntity) 
 			{
 				((DNAExtractorTileEntity)tileentity).setCustomName(stack.getHoverName());
 			}
-			else if (tileentity instanceof AnalyserTileEntity) 
+			else if(tileentity instanceof AnalyserTileEntity) 
 			{
 				((AnalyserTileEntity)tileentity).setCustomName(stack.getHoverName());
 			}
-			else if (tileentity instanceof DNAInjectorTileEntity) 
+			else if(tileentity instanceof DNAInjectorTileEntity) 
 			{
 				((DNAInjectorTileEntity)tileentity).setCustomName(stack.getHoverName());
 			}
@@ -156,25 +161,30 @@ public abstract class AbstractMachineBlock extends RotateableBlock implements IT
 	@Override
 	public void onRemove(BlockState state, World world, BlockPos pos, BlockState newState, boolean b) 
 	{
-		if (!state.is(newState.getBlock())) 
+		if(!state.is(newState.getBlock())) 
 		{
 			TileEntity tileentity = world.getBlockEntity(pos);
-			if (tileentity instanceof FossilGrinderTileEntity) 
+			if(tileentity instanceof FossilCleanerTileEntity) 
+			{
+				InventoryHelper.dropContents(world, pos, (FossilCleanerTileEntity)tileentity);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			else if(tileentity instanceof FossilGrinderTileEntity) 
 			{
 				InventoryHelper.dropContents(world, pos, (FossilGrinderTileEntity)tileentity);
 				world.updateNeighbourForOutputSignal(pos, this);
 			}
-			else if (tileentity instanceof DNAExtractorTileEntity) 
+			else if(tileentity instanceof DNAExtractorTileEntity) 
 			{
 				InventoryHelper.dropContents(world, pos, (DNAExtractorTileEntity)tileentity);
 				world.updateNeighbourForOutputSignal(pos, this);
 			}
-			else if (tileentity instanceof AnalyserTileEntity) 
+			else if(tileentity instanceof AnalyserTileEntity) 
 			{
 				InventoryHelper.dropContents(world, pos, (AnalyserTileEntity)tileentity);
 				world.updateNeighbourForOutputSignal(pos, this);
 			}
-			else if (tileentity instanceof DNAInjectorTileEntity) 
+			else if(tileentity instanceof DNAInjectorTileEntity) 
 			{
 				InventoryHelper.dropContents(world, pos, (DNAInjectorTileEntity)tileentity);
 				world.updateNeighbourForOutputSignal(pos, this);

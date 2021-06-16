@@ -92,13 +92,6 @@ public class FossilCleanerContainer extends Container
 						return ItemStack.EMPTY;
 					}
 				}
-				else if (this.isFuel(itemstack1)) 
-				{
-					if (!this.moveItemStackTo(itemstack1, 1, 2, false)) 
-					{
-						return ItemStack.EMPTY;
-					}
-				}
 				else if(i >= 2 && i < 29) 
 				{
 					if(!this.moveItemStackTo(itemstack1, 29, 38, false)) 
