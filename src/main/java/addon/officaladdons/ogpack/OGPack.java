@@ -5,7 +5,7 @@ import lostworlds.core.util.ModUtil;
 
 public class OGPack 
 {
-	public static boolean hasInitilised;
+	public static boolean hasInitilised = false;
 	
 	public static void init() 
 	{		
