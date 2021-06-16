@@ -33,7 +33,7 @@ public class ModVillagerTrades
 		};
 		VillagerTrades.ITrade[] level2 = new VillagerTrades.ITrade[] 
 		{
-			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.FEILD_GUIDE.get(), 25, 1, 20),
+			//new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.FEILD_GUIDE.get(), 25, 1, 20),
 			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.WET_PAPER.get(), 3, 5, 12)
 		};
 		VillagerTrades.ITrade[] level3 = new VillagerTrades.ITrade[] 

@@ -10,7 +10,7 @@
 		"12": "lostworlds:items/empty_vile",
 		"13": "lostworlds:items/computer_storage_port",
 		"14": "lostworlds:items/storage_disc",
-		"particle": "block/glass"
+		"particle": "block/iron_block"
 	},
 	"elements": [
 		{

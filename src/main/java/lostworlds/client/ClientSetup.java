@@ -25,6 +25,7 @@ import lostworlds.client.entity.render.SuchomimusRender;
 import lostworlds.client.entity.render.TetraceratopsRender;
 import lostworlds.client.entity.render.TyrannosaurusRender;
 import lostworlds.client.entity.render.UtahraptorRender;
+import lostworlds.client.entity.render.ZephyrosaurusRender;
 import lostworlds.client.screen.machines.AnalyserScreen;
 import lostworlds.client.screen.machines.DNAExtractorScreen;
 import lostworlds.client.screen.machines.DNAInjectorScreen;
@@ -191,6 +192,7 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.CHILESAURUS_ENTITY.get(), ChilesaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.LIAONINGOSAURUS_ENTITY.get(), LiaoningosaurusRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.UTAHRAPTOR_ENTITY.get(), UtahraptorRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityInit.ZEPHYROSAURUS_ENTITY.get(), ZephyrosaurusRender::new);
 
 		//Boat
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), ModBoatRender::new);

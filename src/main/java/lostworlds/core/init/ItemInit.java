@@ -3,10 +3,8 @@ package lostworlds.core.init;
 import lostworlds.common.entities.ModBoatEntity;
 import lostworlds.common.entities.ModBoatEntity.ModBoatType;
 import lostworlds.common.items.DiscItem;
-import lostworlds.common.items.FieldGuideItem;
 import lostworlds.common.items.FoodSeedsItem;
 import lostworlds.common.items.FossilItem;
-import lostworlds.common.items.GreatAukEggItem;
 import lostworlds.common.items.ModBlockItem;
 import lostworlds.common.items.ModBoatItem;
 import lostworlds.common.items.ModFishBucketItem;
@@ -53,7 +51,7 @@ public class ItemInit
 	public static final RegistryObject<Item> WET_PAPER = register("wet_paper", new WetPaperItem(properties().tab(ItemGroupInit.ITEMS_TAB)));
 
 	//Field Guide
-	public static final RegistryObject<Item> FEILD_GUIDE = register("field_guide", new FieldGuideItem(properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
+//	public static final RegistryObject<Item> FEILD_GUIDE = register("field_guide", new FieldGuideItem(properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
 	
 	//Syringe
 	public static final RegistryObject<Item> EMPTY_SYRINGE = register("empty_syringe", new SyringeItem(properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
@@ -306,7 +304,7 @@ public class ItemInit
 	public static final RegistryObject<Item> GREAT_AUK_BLOOD_VILE = registerVile("great_auk");
 	public static final RegistryObject<Item> GREAT_AUK_MEAT = registerRawMeat("great_auk", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
 	public static final RegistryObject<Item> GREAT_AUK_COOKED_MEAT = registerCookedMeat("great_auk", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
-	public static final RegistryObject<Item> GREAT_AUK_EGG = register("great_auk_egg", new GreatAukEggItem(properties().stacksTo(16)));
+	public static final RegistryObject<Item> GREAT_AUK_EGG = registerEgg("great_auk", () -> BlockInit.GREAT_AUK_EGG.get());
 	public static final RegistryObject<Item> GREAT_AUK_SPAWN_EGG = register("great_auk", () -> EntityInit.GREAT_AUK_ENTITY.get(), 0x000000, 0xFFFFFF);
 	
 	public static final RegistryObject<Item> GREAT_AUK_SKULL = registerSkull("great_auk");
@@ -509,6 +507,24 @@ public class ItemInit
 	public static final RegistryObject<Item> UTAHRAPTOR_RIB_BONE = registerRibBone("utahraptor");
 	public static final RegistryObject<Item> UTAHRAPTOR_FEATHER = registerOtherBone("utahraptor_feather");
 	public static final RegistryObject<Item> UTAHRAPTOR_CLAW = registerOtherBone("utahraptor_claw");
+	
+	//Utahraptor
+	public static final RegistryObject<Item> ZEPHYROSAURUS_DNA = registerDNA("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_DNA_DISC = registerDNADisc("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_SOFT_TISSUE = registerSoftTissue("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_BLOOD_SYRINGE = ModRegistry.ITEM_REGISTRY.register("syringe_of_zephyrosaurus_blood", () -> new Item(properties().tab(ItemGroupInit.CREATURES_TAB).craftRemainder(EMPTY_SYRINGE.get())));
+	public static final RegistryObject<Item> ZEPHYROSAURUS_BLOOD_VILE = registerVile("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_MEAT = registerRawMeat("zephyrosaurus", FoodInit.RAW_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> ZEPHYROSAURUS_COOKED_MEAT = registerCookedMeat("zephyrosaurus", FoodInit.COOKED_SMALL_DINOSAUR_MEAT);
+	public static final RegistryObject<Item> ZEPHYROSAURUS_EGG = registerEgg("zephyrosaurus", () -> BlockInit.ZEPHYROSAURUS_EGG.get());
+	public static final RegistryObject<Item> ZEPHYROSAURUS_SPAWN_EGG = register("zephyrosaurus", () -> EntityInit.ZEPHYROSAURUS_ENTITY.get(), 0x577476, 0x393939);
+			
+	public static final RegistryObject<Item> ZEPHYROSAURUS_SKULL = registerSkull("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_ARM_BONE = registerArmBone("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_LEG_BONE = registerLegBone("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_FOOT_BONE = registerFootBone("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_RIB_BONE = registerRibBone("zephyrosaurus");
+	public static final RegistryObject<Item> ZEPHYROSAURUS_FEATHER = registerOtherBone("zephyrosaurus_feather");
 	
 	/*//Ophthalmosaurus
 	public static final RegistryObject<Item> OPHTHALMOSAURUS_DNA = registerDNA("ophthalmosaurus");

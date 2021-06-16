@@ -10,7 +10,7 @@
 		"8": "block/redstone_lamp",
 		"9": "block/redstone_lamp_on",
 		"10": "block/diamond_block",
-		"particle": "block/glass"
+		"particle": "block/iron_block"
 	},
 	"elements": [
 		{

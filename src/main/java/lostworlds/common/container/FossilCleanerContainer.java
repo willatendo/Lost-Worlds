@@ -1,6 +1,7 @@
 package lostworlds.common.container;
 
 import lostworlds.common.slot.FossilCleanerFuelSlot;
+import lostworlds.common.slot.PlasteredFossilSlot;
 import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import lostworlds.core.init.ContainerInit;
 import lostworlds.core.init.ItemInit;
@@ -32,7 +33,7 @@ public class FossilCleanerContainer extends Container
 		this.data = array;
 		this.tile = tileEntity;
 		
-		this.addSlot(new Slot(tile, 0, 56, 17));
+		this.addSlot(new PlasteredFossilSlot(tile, 0, 56, 17));
 		this.addSlot(new FossilCleanerFuelSlot(this, tile, 1, 56, 53));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
 		

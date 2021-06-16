@@ -12,7 +12,7 @@
 		"11": "block/gold_block",
 		"13": "lostworlds:items/storage_disc",
 		"14": "item/egg",
-		"particle": "lostworlds:items/computer_storage_port"
+		"particle": "block/iron_block"
 	},
 	"elements": [
 		{

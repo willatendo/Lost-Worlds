@@ -43,6 +43,7 @@ public class AttributeSetup
 			GlobalEntityTypeAttributes.put(EntityInit.TETRACERATOPS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 7.0D).add(Attributes.MOVEMENT_SPEED, 0.2D).build());
 			GlobalEntityTypeAttributes.put(EntityInit.TYRANNOSAURUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 50.0D).add(Attributes.MOVEMENT_SPEED, 0.2D).add(Attributes.ATTACK_DAMAGE, 12.0D).build());
 			GlobalEntityTypeAttributes.put(EntityInit.UTAHRAPTOR_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 15.0D).add(Attributes.MOVEMENT_SPEED, 0.3D).add(Attributes.ATTACK_DAMAGE, 6.0D).build());
+			GlobalEntityTypeAttributes.put(EntityInit.ZEPHYROSAURUS_ENTITY.get(), MobEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 8.0D).add(Attributes.MOVEMENT_SPEED, 0.3D).build());
 		});
 	}
 }

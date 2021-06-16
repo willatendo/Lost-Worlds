@@ -505,6 +505,25 @@
 	"item.lostworlds.utahraptor_feather": "Utahraptor Feather",
 	"item.lostworlds.utahraptor_claw": "Utahraptor Claw",
 
+	//Zephyrosaurus
+	"item.lostworlds.zephyrosaurus_dna": "Zephyrosaurus DNA",
+	"item.lostworlds.zephyrosaurus_dna_disc": "Storage Disc",
+	"item.lostworlds.zephyrosaurus_soft_tissue": "Zephyrosaurus Soft Tissue",
+	"item.lostworlds.syringe_of_zephyrosaurus_blood": "Syringe of Zephyrosaurus Blood",
+	"item.lostworlds.vile_of_zephyrosaurus_blood": "Vile of Zephyrosaurus Blood",
+	"toolTip.lostworlds.zephyrosaurus_dna_disc.holding_shift": "Storing: Zephyrosaurus schaffi",
+	"toolTip.lostworlds.zephyrosaurus_dna_disc.not_holding_shift": "Hold Shift For More Information",
+	"block.lostworlds.zephyrosaurus_egg": "Zephyrosaurus Egg",
+	"item.lostworlds.raw_zephyrosaurus_meat": "Raw Zephyrosaurus Meat",
+	"item.lostworlds.cooked_zephyrosaurus_meat": "Cooked Zephyrosaurus Meat",
+	"item.lostworlds.zephyrosaurus_spawn_egg": "Zephyrosaurus Spawn Egg",
+	"item.lostworlds.zephyrosaurus_skull": "Zephyrosaurus Skull",
+	"item.lostworlds.zephyrosaurus_arm_bone": "Zephyrosaurus Arm Bone",
+	"item.lostworlds.zephyrosaurus_leg_bone": "Zephyrosaurus Leg Bone",
+	"item.lostworlds.zephyrosaurus_foot_bone": "Zephyrosaurus Foot Bone",
+	"item.lostworlds.zephyrosaurus_rib_bone": "Zephyrosaurus Rib Bone",
+	"item.lostworlds.zephyrosaurus_feather": "Zephyrosaurus Feather",
+
 	//Mud
 	"item.lostworlds.mud_ball": "Mud Ball",	
 
@@ -954,6 +973,7 @@
 	"entity.lostworlds.fukuivenator": "Fukuivenator paradoxus",
 	"entity.lostworlds.psittacosaurus": "Psittacosaurus mongoliensis",
 	"entity.lostworlds.liaoningosaurus": "Liaoningosaurus paradoxus",
+	"entity.lostworlds.utahraptor": "Utahraptor ostrommaysi",
 	
 	//Modern Extinct
 	"entity.lostworlds.great_auk": "Pinguinus impennis",
@@ -1252,7 +1272,7 @@
 	"lostworlds.liaoningosaurus.field_guide.type": "Ankylosaurus",
 	
 	"lostworlds.utahraptor.field_guide.name": "Utahraptor",
-	"lostworlds.utahraptor.field_guide.species_name": "paradoxus",
+	"lostworlds.utahraptor.field_guide.species_name": "ostrommaysi",
 	"lostworlds.utahraptor.field_guide.entry_line_one": "Utahraptor is a small ankylosaurus from",
 	"lostworlds.utahraptor.field_guide.entry_line_two": "the Cretaceous. It's the a very small and",
 	"lostworlds.utahraptor.field_guide.entry_line_three": "unique.",
@@ -1263,6 +1283,19 @@
 	"lostworlds.utahraptor.field_guide.diet": "Herbivore",
 	"lostworlds.utahraptor.field_guide.time_era": "Cretaceous",
 	"lostworlds.utahraptor.field_guide.type": "Ankylosaurus",
+	
+	"lostworlds.zephyrosaurus.field_guide.name": "Utahraptor",
+	"lostworlds.zephyrosaurus.field_guide.species_name": "ostrommaysi",
+	"lostworlds.zephyrosaurus.field_guide.entry_line_one": "Utahraptor is a small ankylosaurus from",
+	"lostworlds.zephyrosaurus.field_guide.entry_line_two": "the Cretaceous. It's the a very small and",
+	"lostworlds.zephyrosaurus.field_guide.entry_line_three": "unique.",
+	"lostworlds.zephyrosaurus.field_guide.entry_line_four": "",
+	"lostworlds.zephyrosaurus.field_guide.entry_line_five": "",
+	"lostworlds.zephyrosaurus.field_guide.entry_line_six": "",
+	"lostworlds.zephyrosaurus.field_guide.danger": "Passive",
+	"lostworlds.zephyrosaurus.field_guide.diet": "Herbivore",
+	"lostworlds.zephyrosaurus.field_guide.time_era": "Cretaceous",
+	"lostworlds.zephyrosaurus.field_guide.type": "Ankylosaurus",
 
 	"lostworlds.field_guide.danger": "Danger:",
 	"lostworlds.field_guide.diet": "Diet:",

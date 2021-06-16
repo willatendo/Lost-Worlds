@@ -25,7 +25,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class UtahraptorEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
 {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.CARNOTAURUS_MEAT.get(), ItemInit.FUKUIVENATOR_MEAT.get(), ItemInit.GIGANOTOSAURUS_MEAT.get(), ItemInit.LIAONINGOSAURUS_MEAT.get(), ItemInit.OURANOSAURUS_MEAT.get(), ItemInit.PSITTACOSAURUS_MEAT.get(), ItemInit.SUCHOMIMUS_MEAT.get(), ItemInit.TYRANNOSAURUS_MEAT.get());
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.CARNOTAURUS_MEAT.get(), ItemInit.FUKUIVENATOR_MEAT.get(), ItemInit.GIGANOTOSAURUS_MEAT.get(), ItemInit.LIAONINGOSAURUS_MEAT.get(), ItemInit.OURANOSAURUS_MEAT.get(), ItemInit.PSITTACOSAURUS_MEAT.get(), ItemInit.SUCHOMIMUS_MEAT.get(), ItemInit.TYRANNOSAURUS_MEAT.get(), ItemInit.ZEPHYROSAURUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 

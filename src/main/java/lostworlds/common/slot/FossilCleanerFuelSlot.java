@@ -4,6 +4,7 @@ import lostworlds.common.container.FossilCleanerContainer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 public class FossilCleanerFuelSlot extends Slot
 {
@@ -18,12 +19,11 @@ public class FossilCleanerFuelSlot extends Slot
 	@Override
 	public boolean mayPlace(ItemStack stack) 
 	{
-		return this.menu.isFuel(stack);
+		return isWaterBucket(stack);
 	}
 	
-	@Override
-	public int getMaxStackSize(ItemStack stack) 
+	public boolean isWaterBucket(ItemStack stack)
 	{
-		return super.getMaxStackSize(stack);
+		return stack.getItem() == Items.WATER_BUCKET;
 	}
 }

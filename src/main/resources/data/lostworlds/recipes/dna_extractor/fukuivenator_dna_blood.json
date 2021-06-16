@@ -1,0 +1,9 @@
+{
+	"type": "lostworlds:dna_extractor",
+	"output": {
+		"item": "lostworlds:fukuivenator_dna"
+	},
+	"softTissue": {
+		"item": "lostworlds:vile_of_fukuivenator_blood"
+	}
+}

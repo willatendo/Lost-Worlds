@@ -25,6 +25,7 @@ import lostworlds.common.entities.SuchomimusEntity;
 import lostworlds.common.entities.TetraceratopsEntity;
 import lostworlds.common.entities.TyrannosaurusEntity;
 import lostworlds.common.entities.UtahraptorEntity;
+import lostworlds.common.entities.ZephyrosaurusEntity;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -138,6 +139,10 @@ public class FieldGuideItem extends Item
 			if(entity instanceof UtahraptorEntity)
 			{
 				DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FieldGuideScreens::utahraptorEntry);
+			}
+			if(entity instanceof ZephyrosaurusEntity)
+			{
+				DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FieldGuideScreens::zephyrosaurusEntry);
 			}
 			
 			if(OGPack.hasInitilised)

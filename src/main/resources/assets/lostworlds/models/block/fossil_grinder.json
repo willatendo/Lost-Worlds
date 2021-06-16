@@ -9,7 +9,7 @@
 		"5": "lostworlds:blocks/machine_button_red",
 		"8": "block/redstone_lamp",
 		"10": "block/diamond_block",
-		"particle": "block/glass"
+		"particle": "block/iron_block"
 	},
 	"elements": [
 		{

@@ -162,6 +162,7 @@ public class BlockInit
 	public static final RegistryObject<Block> GIGANOTOSAURUS_EGG = registerLarge("giganotosaurus", () -> EntityInit.GIGANOTOSAURUS_ENTITY.get());
 	public static final RegistryObject<Block> SUCHOMIMUS_EGG = registerMedium("suchomimus", () -> EntityInit.SUCHOMIMUS_ENTITY.get());
 	public static final RegistryObject<Block> TETRACERATOPS_EGG = registerSmall("tetraceratops", () -> EntityInit.TETRACERATOPS_ENTITY.get());
+	public static final RegistryObject<Block> GREAT_AUK_EGG = registerSmall("great_auk", () -> EntityInit.GREAT_AUK_ENTITY.get());
 	public static final RegistryObject<Block> OURANOSAURUS_EGG = registerMedium("ouranosaurus", () -> EntityInit.OURANOSAURUS_ENTITY.get());
 	public static final RegistryObject<Block> FUKUIVENATOR_EGG = registerSmall("fukuivenator", () -> EntityInit.FUKUIVENATOR_ENTITY.get());
 	public static final RegistryObject<Block> PSITTACOSAURUS_EGG = registerSmall("psittacosaurus", () -> EntityInit.PSITTACOSAURUS_ENTITY.get());
@@ -173,6 +174,7 @@ public class BlockInit
 	public static final RegistryObject<Block> CHILESAURUS_EGG = registerSmall("chilesaurus", () -> EntityInit.CHILESAURUS_ENTITY.get());
 	public static final RegistryObject<Block> LIAONINGOSAURUS_EGG = registerSmall("liaoningosaurus", () -> EntityInit.LIAONINGOSAURUS_ENTITY.get());
 	public static final RegistryObject<Block> UTAHRAPTOR_EGG = registerMedium("utahraptor", () -> EntityInit.UTAHRAPTOR_ENTITY.get());
+	public static final RegistryObject<Block> ZEPHYROSAURUS_EGG = registerSmall("zephyrosaurus", () -> EntityInit.ZEPHYROSAURUS_ENTITY.get());
 	
 	//Mud
 	public static final RegistryObject<Block> MUD = register("mud", new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
