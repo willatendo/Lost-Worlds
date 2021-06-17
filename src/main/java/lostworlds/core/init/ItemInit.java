@@ -2,6 +2,7 @@ package lostworlds.core.init;
 
 import lostworlds.common.entities.ModBoatEntity;
 import lostworlds.common.entities.ModBoatEntity.ModBoatType;
+import lostworlds.common.items.DNAItem;
 import lostworlds.common.items.DiscItem;
 import lostworlds.common.items.FoodSeedsItem;
 import lostworlds.common.items.FossilItem;
@@ -12,6 +13,7 @@ import lostworlds.common.items.ModSignItem;
 import lostworlds.common.items.ModSlabBurnableItem;
 import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.common.items.ModWoodBurnableItem;
+import lostworlds.common.items.SoftTissueItem;
 import lostworlds.common.items.SyringeItem;
 import lostworlds.common.items.WetPaperItem;
 import lostworlds.common.items.timebooks.JurassicTimeBook;
@@ -1002,12 +1004,12 @@ public class ItemInit
 	
 	private static RegistryObject<Item> registerDNA(String id)
 	{
-		return register(id + "_dna", ItemGroupInit.CREATURES_TAB);
+		return register(id + "_dna", new DNAItem(new Item.Properties().tab(ItemGroupInit.CREATURES_TAB)));
 	}
 	
 	private static RegistryObject<Item> registerSoftTissue(String id)
 	{
-		return register(id + "_soft_tissue", ItemGroupInit.CREATURES_TAB);
+		return register(id + "_soft_tissue", new SoftTissueItem(new Item.Properties().tab(ItemGroupInit.CREATURES_TAB)));
 	}
 	
 	private static RegistryObject<Item> registerVile(String id)

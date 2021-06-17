@@ -38,8 +38,11 @@ public class FossilGrinderScreen<T extends FossilGrinderContainer> extends Conta
 	{
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.minecraft.getTextureManager().bind(TEXTURE);
-		int i = this.leftPos;
-		int j = this.topPos;
-		this.blit(stack, i, j, 0, 0, this.imageWidth, this.imageHeight);
+		int leftPos = this.leftPos;
+		int topPos = this.topPos;
+		this.blit(stack, leftPos, topPos, 0, 0, this.imageWidth, this.imageHeight);
+
+		int progress = (this.container).getGrindingProgress() + 3;
+		this.blit(stack, leftPos + 76, topPos + 37, 176, 0, progress, 15);
 	}
 }

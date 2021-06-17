@@ -1,6 +1,6 @@
 package lostworlds.common.container;
 
-import lostworlds.common.recipe.DNAExtractorRecipe;
+import lostworlds.common.recipe.DNAInjectorRecipe;
 import lostworlds.common.slot.DNADiscSlot;
 import lostworlds.common.slot.EggSlot;
 import lostworlds.common.tileentity.DNAInjectorTileEntity;
@@ -27,7 +27,7 @@ public class DNAInjectorContianer extends Container
 	private final IInventory container;
 	private final IIntArray data;
 	private final World level;
-	private final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
+	private final IRecipeType<DNAInjectorRecipe> recipeType = RecipeInit.DNA_INJECTOR_RECIPE;
 	public final DNAInjectorTileEntity tile;
 	
 	public DNAInjectorContianer(int windowID, PlayerInventory playerInv, DNAInjectorTileEntity tileEntity, IInventory tile, IIntArray array) 

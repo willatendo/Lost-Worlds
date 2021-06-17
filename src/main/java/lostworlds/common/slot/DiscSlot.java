@@ -1,13 +1,13 @@
 package lostworlds.common.slot;
 
-import lostworlds.common.items.DiscItem;
+import lostworlds.core.init.ItemInit;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 
-public class DNADiscSlot extends Slot
+public class DiscSlot extends Slot
 {
-	public DNADiscSlot(IInventory inventory, int x, int z, int y) 
+	public DiscSlot(IInventory inventory, int x, int z, int y) 
 	{
 		super(inventory, x, z, y);
 	}
@@ -20,13 +20,6 @@ public class DNADiscSlot extends Slot
 	
 	public boolean isDNADisc(ItemStack stack)
 	{
-		if(stack.getItem() instanceof DiscItem)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return stack.getItem() == ItemInit.STORAGE_DISC.get();
 	}
 }

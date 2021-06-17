@@ -13,6 +13,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.FurnaceResultSlot;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
@@ -85,11 +86,28 @@ public class FossilCleanerContainer extends Container
 			}
 			else if(i != 0 && i != 0) 
 			{
-				if(canClean(itemstack1)) 
+				if(canClean(itemstack1))
 				{
 					if(!this.moveItemStackTo(itemstack1, 0, 1, false)) 
 					{
 						return ItemStack.EMPTY;
+					}
+				}
+				else if(isWaterBucket(itemstack1))
+				{
+					if(!this.moveItemStackTo(itemstack1, 1, 2, false)) 
+					{
+						return ItemStack.EMPTY;
+					}
+				}
+				else if(i == 1) 
+				{
+					if(isBucket(itemstack1))
+					{
+						if(!this.moveItemStackTo(itemstack1, 2, 38, true)) 
+						{
+							return ItemStack.EMPTY;
+						}
 					}
 				}
 				else if(i >= 2 && i < 29) 
@@ -118,7 +136,7 @@ public class FossilCleanerContainer extends Container
 				slot.setChanged();
 			}
 			
-			if (itemstack1.getCount() == itemstack.getCount()) 
+			if(itemstack1.getCount() == itemstack.getCount()) 
 			{
 				return ItemStack.EMPTY;
 			}
@@ -134,8 +152,13 @@ public class FossilCleanerContainer extends Container
 		return stack.getItem() == ItemInit.PLASTERED_FOSSIL.get();
 	}
 	
-	public boolean isFuel(ItemStack stack) 
+	protected boolean isWaterBucket(ItemStack stack) 
 	{
-		return FossilCleanerTileEntity.isFuel(stack);
+		return stack.getItem() == Items.WATER_BUCKET;
+	}
+	
+	protected boolean isBucket(ItemStack stack) 
+	{
+		return stack.getItem() == Items.BUCKET;
 	}
 }

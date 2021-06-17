@@ -1,8 +1,12 @@
 {
     "variants": {
-        "facing=north": { "model": "lostworlds:block/analyser" },
-        "facing=south": { "model": "lostworlds:block/analyser", "y": 180 },
-        "facing=west":  { "model": "lostworlds:block/analyser", "y": 270 },
-        "facing=east":  { "model": "lostworlds:block/analyser", "y": 90 }
+        "facing=north,on=false": { "model": "lostworlds:block/analyser" },
+        "facing=north,on=true": { "model": "lostworlds:block/analyser_on" },
+        "facing=south,on=false": { "model": "lostworlds:block/analyser", "y": 180 },
+        "facing=south,on=true": { "model": "lostworlds:block/analyser_on", "y": 180 },
+        "facing=west,on=false":  { "model": "lostworlds:block/analyser", "y": 270 },
+        "facing=west,on=true":  { "model": "lostworlds:block/analyser_on", "y": 270 },
+        "facing=east,on=false":  { "model": "lostworlds:block/analyser", "y": 90 },
+        "facing=east,on=true":  { "model": "lostworlds:block/analyser_on", "y": 90 }
     }
 }

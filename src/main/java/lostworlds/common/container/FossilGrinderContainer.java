@@ -17,6 +17,8 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FossilGrinderContainer extends Container
 {
@@ -131,5 +133,19 @@ public class FossilGrinderContainer extends Container
 	protected boolean canGrind(ItemStack stack) 
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	public boolean isOn() 
+	{
+		return this.data.get(0) > 0;
+	}
+	
+	@OnlyIn(Dist.CLIENT)
+	public int getGrindingProgress() 
+	{
+		int i = this.data.get(1);
+		int j = this.data.get(2);
+		return j != 0 && i != 0 ? i * 35 / j : 0;
 	}
 }

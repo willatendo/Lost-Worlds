@@ -1,8 +1,8 @@
 package lostworlds.common.container;
 
 import lostworlds.common.recipe.AnalyserRecipe;
-import lostworlds.common.slot.DNADiscSlot;
 import lostworlds.common.slot.DNASlot;
+import lostworlds.common.slot.DiscSlot;
 import lostworlds.common.tileentity.AnalyserTileEntity;
 import lostworlds.core.init.ContainerInit;
 import lostworlds.core.init.RecipeInit;
@@ -39,7 +39,7 @@ public class AnalyserContainer extends Container
 		this.tile = tileEntity;
 		
 		this.addSlot(new DNASlot(tile, 0, 56, 25));
-		this.addSlot(new DNADiscSlot(tile, 1, 56, 45));
+		this.addSlot(new DiscSlot(tile, 1, 56, 45));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
 		
 		for(int i = 0; i < 3; ++i) 

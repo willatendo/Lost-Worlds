@@ -7,6 +7,7 @@ import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -91,6 +92,7 @@ public class RecipeManager
 				.addOutput(() -> ItemInit.LIAONINGOSAURUS_RIB_BONE.get()) 
 				.addOutput(() -> ItemInit.LIAONINGOSAURUS_SKULL.get())
 				.addOutput(() -> ItemInit.LIAONINGOSAURUS_SCUTE.get())
+				.addOutput(() -> Items.NAUTILUS_SHELL)
 				.addOutput(() -> ItemInit.OSTROMIA_ARM_BONE.get())
 				.addOutput(() -> ItemInit.OSTROMIA_FOOT_BONE.get())
 				.addOutput(() -> ItemInit.OSTROMIA_LEG_BONE.get())
@@ -103,6 +105,9 @@ public class RecipeManager
 				.addOutput(() -> ItemInit.OURANOSAURUS_RIB_BONE.get()) 
 				.addOutput(() -> ItemInit.OURANOSAURUS_SKULL.get())
 				.addOutput(() -> ItemInit.OURANOSAURUS_SAIL.get())
+				.addOutput(() -> ItemInit.PALAEONISCUM_FIN_BONE.get())
+				.addOutput(() -> ItemInit.PALAEONISCUM_SKULL.get())
+				.addOutput(() -> ItemInit.PALAEONISCUM_RIB_BONE.get())
 				.addOutput(() -> ItemInit.PROCOMPSOGNATHUS_ARM_BONE.get())
 				.addOutput(() -> ItemInit.PROCOMPSOGNATHUS_FOOT_BONE.get())
 				.addOutput(() -> ItemInit.PROCOMPSOGNATHUS_LEG_BONE.get())
