@@ -81,6 +81,8 @@ public class ItemInit
 	
 	public static final RegistryObject<Item> PALEO_SALAD = register("paleo_salad", FoodInit.PALEO_SALAD, ItemGroupInit.FOOD_TAB);
 
+	public static final RegistryObject<Item> GROUND_FOSSIL = register("ground_fossil", ItemGroupInit.ITEMS_TAB);
+	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA_DISC = registerDNADisc("procompsognathus");

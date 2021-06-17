@@ -22,23 +22,23 @@ import net.minecraft.util.ResourceLocation;
 public class DNAInjectorCategory implements IRecipeCategory<DNAInjectorRecipe>
 {
 	public static final ResourceLocation ID = ModUtil.rL("dna_injector_category");
-	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backrounds.png");
+	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backgrounds.png");
 	
 	private final LoadingCache<Integer, IDrawableAnimated> DNAProgessBar;
 	
-	private final IDrawable backround;
+	private final IDrawable background;
 	private final IDrawable icon;
 	
 	public DNAInjectorCategory(IGuiHelper helper) 
 	{
-		this.backround = helper.createDrawable(DISPLAY, 0, 102, 82, 54);
+		this.background = helper.createDrawable(DISPLAY, 0, 122, 82, 54);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.DNA_INJECTOR.get()));
 		this.DNAProgessBar = CacheBuilder.newBuilder().maximumSize(25).build(new CacheLoader<Integer, IDrawableAnimated>() 
 		{
 			@Override
 			public IDrawableAnimated load(Integer cookTime) 
 			{
-				return helper.drawableBuilder(DISPLAY, 82, 103, 16, 16).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
+				return helper.drawableBuilder(DISPLAY, 82, 123, 16, 16).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
 			}
 		});
 	}
@@ -74,7 +74,7 @@ public class DNAInjectorCategory implements IRecipeCategory<DNAInjectorRecipe>
 	@Override
 	public IDrawable getBackground() 
 	{
-		return backround;
+		return background;
 	}
 
 	@Override

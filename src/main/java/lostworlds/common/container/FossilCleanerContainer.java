@@ -81,8 +81,6 @@ public class FossilCleanerContainer extends Container
 				{
 					return ItemStack.EMPTY;
 				}
-				
-				slot.onQuickCraft(itemstack1, itemstack);
 			}
 			else if(i != 0 && i != 0) 
 			{

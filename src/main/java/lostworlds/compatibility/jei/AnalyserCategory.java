@@ -22,23 +22,23 @@ import net.minecraft.util.ResourceLocation;
 public class AnalyserCategory implements IRecipeCategory<AnalyserRecipe>
 {
 	public static final ResourceLocation ID = ModUtil.rL("analyser_category");
-	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backrounds.png");
+	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backgrounds.png");
 	
 	private final LoadingCache<Integer, IDrawableAnimated> DNAProgessBar;
 	
-	private final IDrawable backround;
+	private final IDrawable background;
 	private final IDrawable icon;
 	
 	public AnalyserCategory(IGuiHelper helper) 
 	{
-		this.backround = helper.createDrawable(DISPLAY, 0, 64, 82, 38);
+		this.background = helper.createDrawable(DISPLAY, 0, 84, 82, 38);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.DNA_EXTRACTOR.get()));
 		this.DNAProgessBar = CacheBuilder.newBuilder().maximumSize(25).build(new CacheLoader<Integer, IDrawableAnimated>() 
 		{
 			@Override
 			public IDrawableAnimated load(Integer cookTime) 
 			{
-				return helper.drawableBuilder(DISPLAY, 82, 64, 34, 16).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
+				return helper.drawableBuilder(DISPLAY, 82, 84, 34, 16).buildAnimated(cookTime, IDrawableAnimated.StartDirection.LEFT, false);
 			}
 		});
 	}
@@ -74,7 +74,7 @@ public class AnalyserCategory implements IRecipeCategory<AnalyserRecipe>
 	@Override
 	public IDrawable getBackground() 
 	{
-		return backround;
+		return background;
 	}
 
 	@Override
@@ -106,6 +106,6 @@ public class AnalyserCategory implements IRecipeCategory<AnalyserRecipe>
 	public void draw(AnalyserRecipe recipe, MatrixStack matrixStack, double mouseX, double mouseY) 
 	{
 		IDrawableAnimated arrow = getDiscProgessBar(recipe);
-		arrow.draw(matrixStack, 21, 11);
+		arrow.draw(matrixStack, 20, 11);
 	}
 }

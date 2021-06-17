@@ -22,16 +22,16 @@ import net.minecraft.util.ResourceLocation;
 public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 {
 	public static final ResourceLocation ID = ModUtil.rL("dna_extractor_category");
-	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backrounds.png");
+	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backgrounds.png");
 	
 	private final LoadingCache<Integer, IDrawableAnimated> DNAProgessBar;
 	
-	private final IDrawable backround;
+	private final IDrawable background;
 	private final IDrawable icon;
 	
 	public DNAExtractorCategory(IGuiHelper helper) 
 	{
-		this.backround = helper.createDrawable(DISPLAY, 0, 0, 82, 38);
+		this.background = helper.createDrawable(DISPLAY, 0, 0, 82, 38);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.DNA_EXTRACTOR.get()));
 		this.DNAProgessBar = CacheBuilder.newBuilder().maximumSize(25).build(new CacheLoader<Integer, IDrawableAnimated>() 
 		{
@@ -74,7 +74,7 @@ public class DNAExtractorCategory implements IRecipeCategory<DNAExtractorRecipe>
 	@Override
 	public IDrawable getBackground() 
 	{
-		return backround;
+		return background;
 	}
 
 	@Override

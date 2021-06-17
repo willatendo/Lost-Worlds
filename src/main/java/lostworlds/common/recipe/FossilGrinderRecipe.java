@@ -1,9 +1,11 @@
 package lostworlds.common.recipe;
 
+import java.util.Random;
+
+import lostworlds.core.init.ItemInit;
 import lostworlds.core.init.RecipeInit;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
@@ -16,9 +18,9 @@ public class FossilGrinderRecipe implements IRecipe<IInventory>
 {
 	private final ResourceLocation id;
 	private Ingredient fossil;
-	private final ItemStack output;
-	private final ItemStack broken = Items.AIR.getDefaultInstance();
-	
+	public  final ItemStack output;
+	public final ItemStack broken = ItemInit.GROUND_FOSSIL.get().getDefaultInstance();
+		
 	public FossilGrinderRecipe(ResourceLocation id, Ingredient fossil, ItemStack output) 
 	{
 		this.id = id;
@@ -39,15 +41,43 @@ public class FossilGrinderRecipe implements IRecipe<IInventory>
 	@Override
 	public ItemStack assemble(IInventory inv) 
 	{
-		return this.output;
+		Random rand = new Random();
+		int chance = rand.nextInt(4);
+		
+		if(chance == 0)
+		{
+			return this.output;
+		}
+		else
+		{
+			return this.broken;
+		}
 	}
 
 	@Override
 	public ItemStack getResultItem() 
 	{
-		return this.output;
+		Random rand = new Random();
+		int chance = rand.nextInt(4);
+		
+		if(chance == 0)
+		{
+			return this.output;
+		}
+		else
+		{
+			return this.broken;
+		}
 	}
-
+	
+	public NonNullList<ItemStack> getOutputs()
+	{
+		NonNullList<ItemStack> outputs = NonNullList.create();
+		outputs.add(this.output);
+		outputs.add(this.broken);
+		return outputs;
+	}
+	
 	@Override
 	public ResourceLocation getId() 
 	{

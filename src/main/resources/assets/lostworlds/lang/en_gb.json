@@ -46,6 +46,8 @@
 
 	"item.lostworlds.paleo_salad": "Paleo Salad",
 
+	"item.lostworlds.ground_fossil": "Ground Fossil",
+
 	//Procompsognathus
 	"item.lostworlds.procompsognathus_dna": "Procompsognathus DNA",
 	"item.lostworlds.procompsognathus_dna_disc": "Storage Disc",
@@ -1364,6 +1366,7 @@
 	"lostworlds.container.fossil_cleaner": "Fossil Cleaner",
 	"lostworlds.container.fossil_grinder": "Fossil Grinder",
 	"lostworlds.jei.fossil_grinder.title": "Fossil Grinding",
+	"lostworlds.jei.fossil_grinder.chance": "Break Chance: 75%",
 	"lostworlds.container.dna_extractor": "DNA Extractor",
 	"lostworlds.jei.dna_extractor.title": "DNA Extracting",
 	"lostworlds.container.analyser": "Analyser",

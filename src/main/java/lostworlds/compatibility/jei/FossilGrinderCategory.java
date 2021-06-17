@@ -16,22 +16,25 @@ import mezz.jei.api.gui.ingredient.IGuiItemStackGroup;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class FossilGrinderCategory implements IRecipeCategory<FossilGrinderRecipe>
 {
 	public static final ResourceLocation ID = ModUtil.rL("fossil_grinder_category");
-	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backrounds.png");
+	public static final ResourceLocation DISPLAY = ModUtil.rL("textures/gui/jei/lostworlds_backgrounds.png");
 	
 	private final LoadingCache<Integer, IDrawableAnimated> grinderProgessBar;
 	
-	private final IDrawable backround;
+	private final IDrawable background;
 	private final IDrawable icon;
 	
 	public FossilGrinderCategory(IGuiHelper helper) 
 	{
-		this.backround = helper.createDrawable(DISPLAY, 0, 38, 94, 26);
+		this.background = helper.createDrawable(DISPLAY, 0, 38, 94, 46);
 		this.icon = helper.createDrawableIngredient(new ItemStack(ItemInit.FOSSIL_GRINDER.get()));
 		this.grinderProgessBar = CacheBuilder.newBuilder().maximumSize(25).build(new CacheLoader<Integer, IDrawableAnimated>() 
 		{
@@ -74,7 +77,7 @@ public class FossilGrinderCategory implements IRecipeCategory<FossilGrinderRecip
 	@Override
 	public IDrawable getBackground() 
 	{
-		return backround;
+		return background;
 	}
 
 	@Override
@@ -87,7 +90,7 @@ public class FossilGrinderCategory implements IRecipeCategory<FossilGrinderRecip
 	public void setIngredients(FossilGrinderRecipe recipe, IIngredients ingredients) 
 	{
 		ingredients.setInputIngredients(recipe.getIngredients());
-		ingredients.setOutput(VanillaTypes.ITEM, recipe.getResultItem());
+		ingredients.setOutputs(VanillaTypes.ITEM, recipe.getOutputs());
 	}
 
 	@Override
@@ -106,5 +109,16 @@ public class FossilGrinderCategory implements IRecipeCategory<FossilGrinderRecip
 	{
 		IDrawableAnimated arrow = getGrinderProgessBar(recipe);
 		arrow.draw(matrixStack, 29, 6);
+		
+		drawChance(recipe, matrixStack, 30);
+	}
+	
+	public void drawChance(FossilGrinderRecipe recipe, MatrixStack matrixStack, int y)
+	{
+		TranslationTextComponent name = ModUtil.tTC("jei.fossil_grinder.chance");
+		Minecraft minecraft = Minecraft.getInstance();
+		FontRenderer fontRenderer = minecraft.font;
+		int stringWidth = fontRenderer.width(name);
+		fontRenderer.draw(matrixStack, name, background.getWidth() - stringWidth, y, 0xFF808080);
 	}
 }
