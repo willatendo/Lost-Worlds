@@ -73,7 +73,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		this.onTime = nbt.getInt("OnTime");
 		this.cleaningProgress = nbt.getInt("CleanTime");
 		this.cleaningTotalTime = nbt.getInt("CleanTimeTotal");
-		this.onDuration = this.getCleanDuration();
+		this.onDuration = this.getCleanDuration(this.items.get(1));
 		if(nbt.contains("CustomName", 8)) 
 		{
 			this.name = ITextComponent.Serializer.fromJson(nbt.getString("CustomName"));
@@ -115,7 +115,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 				{
 					if(!this.isOn() && this.canCleanWith()) 
 					{
-						this.onTime = this.getCleanDuration();
+						this.onTime = this.getCleanDuration(fuel);
 						this.onDuration = this.onTime;
 						if(this.isOn()) 
 						{
@@ -228,9 +228,17 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		}
 	}
 	
-	protected int getCleanDuration() 
+	protected int getCleanDuration(ItemStack stack) 
 	{
-		return 3500;
+		if(stack.isEmpty())
+		{
+			return 0;
+		}
+		else
+		{
+			Item item = stack.getItem();
+			return getFuel().getOrDefault(item, 0);
+		}
 	}
 	
 	@Override
@@ -283,7 +291,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		
 		if (i == 0 && !flag) 
 		{
-			this.cleaningTotalTime = this.getCleanDuration();
+			this.cleaningTotalTime = 3500;
 			this.cleaningProgress = 0;
 			this.setChanged();
 		}
