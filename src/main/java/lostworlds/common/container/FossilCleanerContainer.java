@@ -75,14 +75,7 @@ public class FossilCleanerContainer extends Container
 		{
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if(i == 2) 
-			{
-				if(!this.moveItemStackTo(itemstack1, 2, 38, true)) 
-				{
-					return ItemStack.EMPTY;
-				}
-			}
-			else if(i != 0 && i != 0) 
+			if(i != 0 && i != 0) 
 			{
 				if(canClean(itemstack1))
 				{

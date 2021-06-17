@@ -26,6 +26,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -81,7 +82,7 @@ public class ItemInit
 	
 	public static final RegistryObject<Item> PALEO_SALAD = register("paleo_salad", FoodInit.PALEO_SALAD, ItemGroupInit.FOOD_TAB);
 
-	public static final RegistryObject<Item> GROUND_FOSSIL = register("ground_fossil", ItemGroupInit.ITEMS_TAB);
+	public static final RegistryObject<Item> GROUND_FOSSIL = register("ground_fossil", new BoneMealItem(properties().tab(ItemGroupInit.ITEMS_TAB)));
 	
 	//Procompsognathus
 	public static final RegistryObject<Item> PROCOMPSOGNATHUS_DNA = registerDNA("procompsognathus");
