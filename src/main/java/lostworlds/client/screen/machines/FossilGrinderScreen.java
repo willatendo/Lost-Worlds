@@ -42,7 +42,6 @@ public class FossilGrinderScreen<T extends FossilGrinderContainer> extends Conta
 		int topPos = this.topPos;
 		this.blit(stack, leftPos, topPos, 0, 0, this.imageWidth, this.imageHeight);
 
-		int progress = (this.container).getGrindingProgress() + 3;
-		this.blit(stack, leftPos + 76, topPos + 37, 176, 0, progress, 15);
+		this.blit(stack, leftPos + 75, topPos + 37, 176, 0, 34, 16);
 	}
 }

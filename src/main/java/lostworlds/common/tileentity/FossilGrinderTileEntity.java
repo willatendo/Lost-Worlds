@@ -37,7 +37,7 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	private int onTime;
 	private int onDuration;
 	public int grindingProgress;
-	private int grindingTotalTime;
+	public int grindingTotalTime;
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;

@@ -1,6 +1,3 @@
 {
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "lostworlds:blocks/small_cephalotaxus"
-  }
+	"parent": "lostworlds:block/cephalotaxus"
 }

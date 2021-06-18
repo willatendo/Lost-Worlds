@@ -18,7 +18,7 @@ public class FossilGrinderRecipe implements IRecipe<IInventory>
 {
 	private final ResourceLocation id;
 	private Ingredient fossil;
-	public  final ItemStack output;
+	public final ItemStack output;
 	public final ItemStack broken = ItemInit.GROUND_FOSSIL.get().getDefaultInstance();
 		
 	public FossilGrinderRecipe(ResourceLocation id, Ingredient fossil, ItemStack output) 
