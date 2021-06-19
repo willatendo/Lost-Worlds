@@ -15,8 +15,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
-import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FossilGrinderContainer extends Container
 {
@@ -26,12 +27,12 @@ public class FossilGrinderContainer extends Container
 	private final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
 	public final FossilGrinderTileEntity tile;
 	
-	public FossilGrinderContainer(int windowID, PlayerInventory playerInv, FossilGrinderTileEntity tileEntity, IInventory tile, IIntArray array) 
+	public FossilGrinderContainer(int windowID, PlayerInventory playerInv, FossilGrinderTileEntity tileEntity, IInventory tile) 
 	{
 		super(ContainerInit.FOSSIL_GRINDER_CONTAINER.get(), windowID);
 		this.container = tile;
 		this.level = playerInv.player.level;
-		this.data = array;
+		this.data = tileEntity.getGrinderData();
 		this.tile = tileEntity;
 		
 		this.addSlot(new Slot(tile, 0, 53, 35));
@@ -50,12 +51,12 @@ public class FossilGrinderContainer extends Container
 			this.addSlot(new Slot(playerInv, k, 8 + k * 18, 142));
 		}
 		
-		this.addDataSlots(array);
+		this.addDataSlots(this.data);
 	}
 	
 	public FossilGrinderContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new FossilGrinderTileEntity(), new Inventory(3), new IntArray(4));
+		this(windowID, playerInv, new FossilGrinderTileEntity(), new Inventory(2));
  	}
 
 	@Override
@@ -132,4 +133,12 @@ public class FossilGrinderContainer extends Container
 	{
 		return this.level.getRecipeManager().getRecipeFor((IRecipeType)this.recipeType, new Inventory(stack), this.level).isPresent();
 	}
+	
+	@OnlyIn(Dist.CLIENT)
+	public int getProgress()
+	{
+		int grindingProgress = this.data.get(2);
+        int grindingTotalTime = this.data.get(3);
+        return grindingTotalTime != 0 && grindingProgress != 0 ? grindingProgress * 35 / grindingTotalTime : 0;
+    }
 }

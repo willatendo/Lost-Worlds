@@ -23,6 +23,7 @@ import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.INameable;
 import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
@@ -38,6 +39,53 @@ public class AnalyserTileEntity extends TileEntity implements IInventory, INamed
 	private int onDuration;
 	private int analysingProgress;
 	private int analysingTotalTime = 60;
+	
+	protected final IIntArray analysingData = new IIntArray()
+	{
+		@Override
+		public int get(int index)
+		{
+			switch(index)
+			{
+				case 0:
+					return onTime;
+				case 1:
+					return onDuration;
+				case 2:
+					return analysingProgress;
+				case 3:
+					return analysingTotalTime;
+				default:
+					return 0;
+			}
+		}
+		
+		@Override
+		public void set(int index, int value)
+		{
+			switch(index)
+			{
+				case 0:
+					onTime = value;
+					break;
+				case 1:
+					onDuration = value;
+					break;
+				case 2:
+					analysingProgress = value;
+					break;
+				case 3:
+					analysingTotalTime = value;
+					break;
+			}
+		}
+		
+		@Override
+		public int getCount()
+		{
+			return 4;
+		}
+	};
 	
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<AnalyserRecipe> recipeType = RecipeInit.ANALYSER_RECIPE;
@@ -74,6 +122,11 @@ public class AnalyserTileEntity extends TileEntity implements IInventory, INamed
 		nbt.putInt("AnalyseTimeTotal", this.analysingTotalTime);
 		ItemStackHelper.saveAllItems(nbt, this.items);
 		return nbt;
+	}
+	
+	public IIntArray getAnalysingData()
+	{
+		return this.analysingData;
 	}
 	
 	public boolean isOn() 

@@ -28,7 +28,6 @@ public class FossilGrinderScreen<T extends FossilGrinderContainer> extends Conta
 	public void render(MatrixStack stack, int i1, int i2, float f)
 	{
 		this.renderBackground(stack);
-		this.renderBg(stack, f, i1, i2);
 		super.render(stack, i1, i2, f);
 		this.renderTooltip(stack, i1, i2);
 	}
@@ -42,6 +41,7 @@ public class FossilGrinderScreen<T extends FossilGrinderContainer> extends Conta
 		int topPos = this.topPos;
 		this.blit(stack, leftPos, topPos, 0, 0, this.imageWidth, this.imageHeight);
 
-		this.blit(stack, leftPos + 75, topPos + 37, 176, 0, 34, 16);
+		int progress = this.container.getProgress();
+		this.blit(stack, this.leftPos + 75, this.topPos + 37, 176, 0, progress + 1, 16);
 	}
 }

@@ -28,7 +28,6 @@ public class AnalyserScreen<T extends AnalyserContainer> extends ContainerScreen
 	public void render(MatrixStack stack, int i1, int i2, float f)
 	{
 		this.renderBackground(stack);
-		this.renderBg(stack, f, i1, i2);
 		super.render(stack, i1, i2, f);
 		this.renderTooltip(stack, i1, i2);
 	}
@@ -38,11 +37,11 @@ public class AnalyserScreen<T extends AnalyserContainer> extends ContainerScreen
 	{
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.minecraft.getTextureManager().bind(TEXTURE);
-		int i = this.leftPos;
-		int j = this.topPos;
-		this.blit(stack, i, j, 0, 0, this.imageWidth, this.imageHeight);
+		int leftPos = this.leftPos;
+		int topPos = this.topPos;
+		this.blit(stack, leftPos, topPos, 0, 0, this.imageWidth, this.imageHeight);
 
-		int l = this.container.getCleanProgress();
-		this.blit(stack, i + 75, j + 38, 176, 0, l + 3, 10);
+		int progress = this.container.getProgress();
+		this.blit(stack, this.leftPos + 76, this.topPos + 35, 176, 0, progress + 1, 16);
 	}
 }

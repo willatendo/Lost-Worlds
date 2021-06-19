@@ -17,7 +17,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
-import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -30,12 +29,12 @@ public class DNAExtractorContainer extends Container
 	private final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
 	public final DNAExtractorTileEntity tile;
 	
-	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, DNAExtractorTileEntity tileEntity, IInventory tile, IIntArray array) 
+	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, DNAExtractorTileEntity tileEntity, IInventory tile) 
 	{
 		super(ContainerInit.DNA_EXTRACTOR_CONTAINER.get(), windowID);
 		this.container = tile;
 		this.level = playerInv.player.level;
-		this.data = array;
+		this.data = tileEntity.getExtractingData();
 		this.tile = tileEntity;
 		
 		this.addSlot(new SoftTissueSlot(tile, 0, 56, 25));
@@ -54,11 +53,13 @@ public class DNAExtractorContainer extends Container
 		{
 			this.addSlot(new Slot(playerInv, k, 8 + k * 18, 142));
 		}
+
+		this.addDataSlots(this.data);
 	}
 	
 	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new DNAExtractorTileEntity(), new Inventory(3), new IntArray(4));
+		this(windowID, playerInv, new DNAExtractorTileEntity(), new Inventory(3));
  	}
 
 	@Override
@@ -137,11 +138,10 @@ public class DNAExtractorContainer extends Container
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	public int getCleanProgress() 
+	public int getProgress()
 	{
-		int t = this.data.get(1);
-		int i = this.data.get(2);
-		int j = this.data.get(3);
-		return j != 0 && i != 0 && t != 0 ? i * 35 / j : 0;
-	}
+		int extractingProgress = this.data.get(2);
+        int extractingTotalTime = this.data.get(3);
+        return extractingTotalTime != 0 && extractingProgress != 0 ? extractingProgress * 35 / extractingTotalTime : 0;
+    }
 }

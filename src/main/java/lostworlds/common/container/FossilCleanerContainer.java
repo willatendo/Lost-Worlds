@@ -16,8 +16,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
-import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FossilCleanerContainer extends Container
 {
@@ -26,12 +27,12 @@ public class FossilCleanerContainer extends Container
 	private final World level;
 	public final FossilCleanerTileEntity tile;
 	
-	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, FossilCleanerTileEntity tileEntity, IInventory tile, IIntArray array) 
+	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, FossilCleanerTileEntity tileEntity, IInventory tile) 
 	{
 		super(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), windowID);
 		this.container = tile;
 		this.level = playerInv.player.level;
-		this.data = array;
+		this.data = tileEntity.getCleanerData();
 		this.tile = tileEntity;
 		
 		this.addSlot(new PlasteredFossilSlot(tile, 0, 56, 17));
@@ -52,12 +53,12 @@ public class FossilCleanerContainer extends Container
 			this.addSlot(new Slot(playerInv, k, 8 + k * 18, 142));
 		}
 		
-		this.addDataSlots(array);
+		this.addDataSlots(this.data);
 	}
 	
 	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new FossilCleanerTileEntity(), new Inventory(3), new IntArray(4));
+		this(windowID, playerInv, new FossilCleanerTileEntity(), new Inventory(3));
  	}
 
 	@Override
@@ -151,5 +152,31 @@ public class FossilCleanerContainer extends Container
 	protected boolean isBucket(ItemStack stack) 
 	{
 		return stack.getItem() == Items.BUCKET;
+	}
+	
+	@OnlyIn(Dist.CLIENT)
+	public boolean isOn() 
+	{
+		return this.data.get(0) > 0;
+	}
+	
+	@OnlyIn(Dist.CLIENT)
+	public int getProgress()
+	{
+		int cleaningProgress = this.data.get(2);
+        int cleaningTotalTime = this.data.get(3);
+        return cleaningTotalTime != 0 && cleaningProgress != 0 ? cleaningProgress * 32 / cleaningTotalTime : 0;
+    }
+	
+	@OnlyIn(Dist.CLIENT)
+	public int getOnProgress() 
+	{
+		int i = this.data.get(1);
+		if(i == 0) 
+		{
+			i = 3500;
+		}
+		
+		return this.data.get(0) * 16 / i;
 	}
 }

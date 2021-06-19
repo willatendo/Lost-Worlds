@@ -42,7 +42,7 @@ public class DNAExtractorScreen<T extends DNAExtractorContainer> extends Contain
 		int j = this.topPos;
 		this.blit(stack, i, j, 0, 0, this.imageWidth, this.imageHeight);
 
-		int l = this.container.getCleanProgress();
-		this.blit(stack, i + 75, j + 38, 176, 0, l + 3, 10);
+		int l = this.container.getProgress();
+		this.blit(stack, i + 75, j + 38, 176, 0, l + 1, 10);
 	}
 }

@@ -23,8 +23,8 @@ import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.INameable;
-import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -36,8 +36,55 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	
 	private int onTime;
 	private int onDuration;
-	public int grindingProgress;
-	public int grindingTotalTime;
+	private int grindingProgress;
+	private int grindingTotalTime;
+	
+	protected final IIntArray grinderData = new IIntArray()
+	{
+		@Override
+		public int get(int index)
+		{
+			switch(index)
+			{
+				case 0:
+					return onTime;
+				case 1:
+					return onDuration;
+				case 2:
+					return grindingProgress;
+				case 3:
+					return grindingTotalTime;
+				default:
+					return 0;
+			}
+		}
+		
+		@Override
+		public void set(int index, int value)
+		{
+			switch(index)
+			{
+				case 0:
+					onTime = value;
+					break;
+				case 1:
+					onDuration = value;
+					break;
+				case 2:
+					grindingProgress = value;
+					break;
+				case 3:
+					grindingTotalTime = value;
+					break;
+			}
+		}
+		
+		@Override
+		public int getCount()
+		{
+			return 4;
+		}
+	};
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
@@ -47,6 +94,16 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	public FossilGrinderTileEntity() 
 	{
 		super(TileEntityInit.FOSSIL_GRINDER_TILE_ENTITY.get());
+	}
+	
+	public int getGrindingProgress()
+	{
+		return grindingProgress;
+	}
+	
+	public int getGrindingTotalTime()
+	{
+		return this.grindingTotalTime;
 	}
 
 	@Override
@@ -74,6 +131,11 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 		nbt.putInt("GrindTimeTotal", this.grindingTotalTime);
 		ItemStackHelper.saveAllItems(nbt, this.items);
 		return nbt;
+	}
+	
+	public IIntArray getGrinderData()
+	{
+		return this.grinderData;
 	}
 	
 	public boolean isOn() 
@@ -328,7 +390,7 @@ public class FossilGrinderTileEntity extends TileEntity implements IInventory, I
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new FossilGrinderContainer(windowId, playerInv, this, this, new IntArray(4));
+		return new FossilGrinderContainer(windowId, playerInv, this, this);
 	}
 
 	@Override

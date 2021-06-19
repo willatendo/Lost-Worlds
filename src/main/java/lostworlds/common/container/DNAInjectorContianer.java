@@ -17,7 +17,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
-import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -30,12 +29,12 @@ public class DNAInjectorContianer extends Container
 	private final IRecipeType<DNAInjectorRecipe> recipeType = RecipeInit.DNA_INJECTOR_RECIPE;
 	public final DNAInjectorTileEntity tile;
 	
-	public DNAInjectorContianer(int windowID, PlayerInventory playerInv, DNAInjectorTileEntity tileEntity, IInventory tile, IIntArray array) 
+	public DNAInjectorContianer(int windowID, PlayerInventory playerInv, DNAInjectorTileEntity tileEntity, IInventory tile) 
 	{
 		super(ContainerInit.DNA_INJECTOR_CONTAINER.get(), windowID);
 		this.container = tile;
 		this.level = playerInv.player.level;
-		this.data = array;
+		this.data = tileEntity.getInjectorData();
 		this.tile = tileEntity;
 		
 		this.addSlot(new DNADiscSlot(tile, 0, 56, 17));
@@ -54,11 +53,13 @@ public class DNAInjectorContianer extends Container
 		{
 			this.addSlot(new Slot(playerInv, k, 8 + k * 18, 142));
 		}
+		
+		this.addDataSlots(this.data);
 	}
 	
 	public DNAInjectorContianer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new DNAInjectorTileEntity(), new Inventory(3), new IntArray(4));
+		this(windowID, playerInv, new DNAInjectorTileEntity(), new Inventory(3));
  	}
 
 	@Override
@@ -137,11 +138,10 @@ public class DNAInjectorContianer extends Container
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	public int getCleanProgress() 
+	public int getProgress()
 	{
-		int t = this.data.get(1);
-		int i = this.data.get(2);
-		int j = this.data.get(3);
-		return j != 0 && i != 0 && t != 0 ? i * 35 / j : 0;
-	}
+		int injectingProgress = this.data.get(2);
+        int injectingTotalTime = this.data.get(3);
+        return injectingTotalTime != 0 && injectingProgress != 0 ? injectingProgress * 16 / injectingTotalTime : 0;
+    }
 }

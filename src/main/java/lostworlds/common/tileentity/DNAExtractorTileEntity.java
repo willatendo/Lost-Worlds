@@ -23,8 +23,8 @@ import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.INameable;
-import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -38,6 +38,53 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	private int onDuration;
 	private int extractingProgress;
 	private int extractingTotalTime = 60;
+	
+	protected final IIntArray extractingData = new IIntArray()
+	{
+		@Override
+		public int get(int index)
+		{
+			switch(index)
+			{
+				case 0:
+					return onTime;
+				case 1:
+					return onDuration;
+				case 2:
+					return extractingProgress;
+				case 3:
+					return extractingTotalTime;
+				default:
+					return 0;
+			}
+		}
+		
+		@Override
+		public void set(int index, int value)
+		{
+			switch(index)
+			{
+				case 0:
+					onTime = value;
+					break;
+				case 1:
+					onDuration = value;
+					break;
+				case 2:
+					extractingProgress = value;
+					break;
+				case 3:
+					extractingTotalTime = value;
+					break;
+			}
+		}
+		
+		@Override
+		public int getCount()
+		{
+			return 4;
+		}
+	};
 
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
@@ -73,7 +120,12 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 		nbt.putInt("ExtractTime", this.extractingProgress);
 		nbt.putInt("ExtractTimeTotal", this.extractingTotalTime);
 		ItemStackHelper.saveAllItems(nbt, this.items);
-		return nbt;
+		return nbt;	
+	}
+	
+	public IIntArray getExtractingData()
+	{
+		return this.extractingData;
 	}
 	
 	public boolean isOn() 
@@ -331,7 +383,7 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new DNAExtractorContainer(windowId, playerInv, this, this, new IntArray(4));
+		return new DNAExtractorContainer(windowId, playerInv, this, this);
 	}
 
 	@Override

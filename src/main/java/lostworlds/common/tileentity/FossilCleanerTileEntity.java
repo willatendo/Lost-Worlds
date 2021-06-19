@@ -27,9 +27,9 @@ import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.INameable;
-import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
@@ -42,6 +42,53 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	private int onDuration;
 	public int cleaningProgress;
 	private int cleaningTotalTime;
+	
+	protected final IIntArray cleanerData = new IIntArray()
+	{
+		@Override
+		public int get(int index)
+		{
+			switch(index)
+			{
+				case 0:
+					return onTime;
+				case 1:
+					return onDuration;
+				case 2:
+					return cleaningProgress;
+				case 3:
+					return cleaningTotalTime;
+				default:
+					return 0;
+			}
+		}
+		
+		@Override
+		public void set(int index, int value)
+		{
+			switch(index)
+			{
+				case 0:
+					onTime = value;
+					break;
+				case 1:
+					onDuration = value;
+					break;
+				case 2:
+					cleaningProgress = value;
+					break;
+				case 3:
+					cleaningTotalTime = value;
+					break;
+			}
+		}
+		
+		@Override
+		public int getCount()
+		{
+			return 4;
+		}
+	};
 	
 	public static Map<Item, Integer> getFuel() 
 	{
@@ -89,6 +136,11 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 		nbt.putInt("CleanTimeTotal", this.cleaningTotalTime);
 		ItemStackHelper.saveAllItems(nbt, this.items);
 		return nbt;
+	}
+	
+	public IIntArray getCleanerData()
+	{
+		return this.cleanerData;
 	}
 	
 	public boolean isOn() 
@@ -349,7 +401,7 @@ public class FossilCleanerTileEntity extends TileEntity implements IInventory, I
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new FossilCleanerContainer(windowId, playerInv, this, this, new IntArray(4));
+		return new FossilCleanerContainer(windowId, playerInv, this, this);
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class AnalyserContainer extends Container
 		super(ContainerInit.ANALYSER_CONTAINER.get(), windowID);
 		this.container = tile;	
 		this.level = playerInv.player.level;
-		this.data = array;
+		this.data = tileEntity.getAnalysingData();
 		this.tile = tileEntity;
 		
 		this.addSlot(new DNASlot(tile, 0, 56, 25));
@@ -54,6 +54,8 @@ public class AnalyserContainer extends Container
 		{
 			this.addSlot(new Slot(playerInv, k, 8 + k * 18, 142));
 		}
+		
+		this.addDataSlots(this.data);
 	}
 	
 	public AnalyserContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
@@ -137,11 +139,10 @@ public class AnalyserContainer extends Container
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	public int getCleanProgress() 
+	public int getProgress()
 	{
-		int t = this.data.get(1);
-		int i = this.data.get(2);
-		int j = this.data.get(3);
-		return j != 0 && i != 0 && t != 0 ? i * 35 / j : 0;
-	}
+		int analysingProgress = this.data.get(2);
+        int analysingTotalTime = this.data.get(3);
+        return analysingTotalTime != 0 && analysingProgress != 0 ? analysingProgress * 32 / analysingTotalTime : 0;
+    }
 }
