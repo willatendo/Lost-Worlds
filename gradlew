@@ -107,7 +107,7 @@ if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
     OURCYGPATTERN="(^($ROOTDIRS))"
     if [ "$GRADLE_CYGPATTERN" != "" ] ; then
         OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"
-    fi
+	fi
     i=0
     for arg in "$@" ; do
         CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`
