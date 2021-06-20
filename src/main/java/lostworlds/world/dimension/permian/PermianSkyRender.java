@@ -41,7 +41,6 @@ public class PermianSkyRender implements ISkyRenderHandler
         generateStars();
     }
 
-    @SuppressWarnings("deprecation")
 	@Override
     public void render(int ticks, float partialTicks, MatrixStack matrix, ClientWorld world, Minecraft mc) 
     {
@@ -214,7 +213,6 @@ public class PermianSkyRender implements ISkyRenderHandler
     @OnlyIn(Dist.CLIENT)
     public float getStarBrightness(ClientWorld world, float par1) 
     {
-        @SuppressWarnings("resource")
 		PlayerEntity player = Minecraft.getInstance().player;
         Optional<RegistryKey<Biome>> biome = world.getBiomeName(new BlockPos(player.getX(), player.getY(), player.getZ()));
 

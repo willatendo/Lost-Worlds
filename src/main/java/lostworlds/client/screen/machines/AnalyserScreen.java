@@ -15,6 +15,7 @@ public class AnalyserScreen<T extends AnalyserContainer> extends ContainerScreen
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/analyser.png");
 	private final AnalyserContainer container;
+	@SuppressWarnings("unused")
 	private final AnalyserTileEntity tile;
 	
 	public AnalyserScreen(T container, PlayerInventory playerInv, ITextComponent text) 

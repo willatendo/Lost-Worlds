@@ -15,6 +15,7 @@ public class FossilGrinderScreen<T extends FossilGrinderContainer> extends Conta
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/fossil_grinder.png");
 	private final FossilGrinderContainer container;
+	@SuppressWarnings("unused")
 	private final FossilGrinderTileEntity tile;
 	
 	public FossilGrinderScreen(T container, PlayerInventory playerInv, ITextComponent text) 

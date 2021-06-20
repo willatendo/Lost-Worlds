@@ -15,6 +15,7 @@ public class DNAInjectorScreen<T extends DNAInjectorContianer> extends Container
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/dna_injector.png");
 	private final DNAInjectorContianer container;
+	@SuppressWarnings("unused")
 	private final DNAInjectorTileEntity tile;
 	
 	public DNAInjectorScreen(T container, PlayerInventory playerInv, ITextComponent text) 

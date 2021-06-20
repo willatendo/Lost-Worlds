@@ -35,7 +35,7 @@ public class GiganotosaurusModel extends AnimatedGeoModel<GiganotosaurusEntity>
 	}
 
 	@Override
-	public void setLivingAnimations(GiganotosaurusEntity entity, Integer uniqueID, @SuppressWarnings("rawtypes") AnimationEvent customPredicate) 
+	public void setLivingAnimations(GiganotosaurusEntity entity, Integer uniqueID, AnimationEvent customPredicate) 
 	{
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("neck");

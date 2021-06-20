@@ -16,7 +16,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IIntArray;
-import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -24,19 +23,17 @@ public class FossilCleanerContainer extends Container
 {
 	private final IInventory container;
 	private final IIntArray data;
-	private final World level;
 	public final FossilCleanerTileEntity tile;
 	
 	public FossilCleanerContainer(int windowID, PlayerInventory playerInv, FossilCleanerTileEntity tileEntity, IInventory tile) 
 	{
 		super(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), windowID);
 		this.container = tile;
-		this.level = playerInv.player.level;
 		this.data = tileEntity.getCleanerData();
 		this.tile = tileEntity;
 		
 		this.addSlot(new PlasteredFossilSlot(tile, 0, 56, 17));
-		this.addSlot(new FossilCleanerFuelSlot(this, tile, 1, 56, 53));
+		this.addSlot(new FossilCleanerFuelSlot(tile, 1, 56, 53));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
 		
 		

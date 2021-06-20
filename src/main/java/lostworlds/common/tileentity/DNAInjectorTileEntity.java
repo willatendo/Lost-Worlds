@@ -91,6 +91,7 @@ public class DNAInjectorTileEntity  extends TileEntity implements IInventory, IN
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<DNAInjectorRecipe> recipeType = RecipeInit.DNA_INJECTOR_RECIPE;
 	
+	@SuppressWarnings("unused")
 	private ITextComponent name;
 
 	public DNAInjectorTileEntity() 

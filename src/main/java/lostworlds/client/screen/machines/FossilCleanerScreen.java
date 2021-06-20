@@ -15,6 +15,7 @@ public class FossilCleanerScreen<T extends FossilCleanerContainer> extends Conta
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/fossil_cleaner.png");
 	private final FossilCleanerContainer container;
+	@SuppressWarnings("unused")
 	private final FossilCleanerTileEntity tile;
 	
 	public FossilCleanerScreen(T container, PlayerInventory playerInv, ITextComponent text) 

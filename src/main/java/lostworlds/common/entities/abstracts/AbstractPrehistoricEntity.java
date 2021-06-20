@@ -314,6 +314,7 @@ public abstract class AbstractPrehistoricEntity extends CreatureEntity
 	class ModAttackGoal extends MeleeAttackGoal 
 	{
 		private final AbstractPrehistoricEntity entity;
+		@SuppressWarnings("unused")
 		private int attackStep;
 		
 		public ModAttackGoal(AbstractPrehistoricEntity entityIn, double speedIn, boolean useMemory) 

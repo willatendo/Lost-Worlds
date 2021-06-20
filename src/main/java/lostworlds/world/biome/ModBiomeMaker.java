@@ -500,7 +500,6 @@ public class ModBiomeMaker
 		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.CHILESAURUS_ENTITY.get(), 2, 5, 9));
 		mobspawninfo$builder.addSpawn(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityInit.PROTOSUCHUS_ENTITY.get(), 2, 1, 1));
 		
-		@SuppressWarnings("unchecked")
 		BiomeGenerationSettings.Builder builder = genSettings(SurfaceBuilderInit.NAKED_JURASSIC_MOUNTAIN, ModSurfaceBuilders.JURASSIC_STONE_MOUNTAIN_CONFIG);
 		
 		ModBiomeFeatures.addJurassicWaterLakes(builder);

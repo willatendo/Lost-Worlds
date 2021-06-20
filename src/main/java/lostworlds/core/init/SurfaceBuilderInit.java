@@ -6,7 +6,6 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.fml.RegistryObject;
 
-@SuppressWarnings({ "rawtypes", "unchecked" })
 public class SurfaceBuilderInit 
 {
 	public static final SurfaceBuilder NAKED_JURASSIC_MOUNTAIN = new JurassicMountainSurfaceBuilder(SurfaceBuilderConfig.CODEC);

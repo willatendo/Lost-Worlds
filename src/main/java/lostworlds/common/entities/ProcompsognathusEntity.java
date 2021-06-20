@@ -44,7 +44,6 @@ public class ProcompsognathusEntity extends AbstractPrehistoricAnimalEntity impl
 		super(type, worldIn, TimeEras.TRIASSIC);
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void registerControllers(AnimationData data) 
 	{

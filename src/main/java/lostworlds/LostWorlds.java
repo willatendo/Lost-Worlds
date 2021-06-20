@@ -78,7 +78,6 @@ public class LostWorlds
 	}
 
 	
-	@SuppressWarnings("deprecation")
 	private void setup(final FMLCommonSetupEvent event)
 	{
 		DeferredWorkQueue.runLater(() -> 

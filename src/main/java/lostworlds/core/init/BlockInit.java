@@ -89,7 +89,6 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
 
-@SuppressWarnings("deprecation")
 public class BlockInit 
 {
 	//Ore

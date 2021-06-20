@@ -13,14 +13,12 @@ public class ModFishBucketItem extends FishBucketItem
 {
 	public final Lazy<? extends EntityType<?>> entityTypeSupplier;
 
-	@SuppressWarnings("deprecation")
 	public ModFishBucketItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
 		super(null, fluid, new Item.Properties().tab(ItemGroupInit.CREATURES_TAB).stacksTo(1));
 		this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
 	}
 
-	@SuppressWarnings("deprecation")
 	public ModFishBucketItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final Fluid fluid) 
 	{
 		super(null, fluid, new Item.Properties().tab(ItemGroupInit.CREATURES_TAB).stacksTo(1));

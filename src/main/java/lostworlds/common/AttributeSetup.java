@@ -12,7 +12,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 @Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AttributeSetup 
 {
-	@SuppressWarnings("deprecation")
 	@SubscribeEvent
 	public static void registerEntityAttributes(FMLCommonSetupEvent event) 
 	{

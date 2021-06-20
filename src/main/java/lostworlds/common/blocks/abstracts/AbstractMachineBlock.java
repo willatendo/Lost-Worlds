@@ -40,7 +40,6 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-@SuppressWarnings("deprecation")
 public abstract class AbstractMachineBlock extends RotateableBlock implements ITileEntityProvider
 {
 	protected static final Map<Block, Map<Direction, VoxelShape>> SHAPES = new HashMap<Block, Map<Direction, VoxelShape>>();

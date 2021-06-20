@@ -21,7 +21,6 @@ public class ModHuntGoal extends Goal
 	private double pathedTargetZ;
 	private int ticksUntilNextPathRecalculation;
 	private int ticksUntilNextAttack;
-	private final int attackInterval = 20;
 	private long lastCanUseCheck;
 	private int failedPathFindingPenalty = 0;
 	private boolean canPenalize = false;

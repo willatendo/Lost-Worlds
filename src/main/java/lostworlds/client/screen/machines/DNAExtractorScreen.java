@@ -15,6 +15,7 @@ public class DNAExtractorScreen<T extends DNAExtractorContainer> extends Contain
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/dna_extractor.png");
 	private final DNAExtractorContainer container;
+	@SuppressWarnings("unused")
 	private final DNAExtractorTileEntity tile;
 	
 	public DNAExtractorScreen(T container, PlayerInventory playerInv, ITextComponent text) 

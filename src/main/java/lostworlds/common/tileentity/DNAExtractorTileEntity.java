@@ -89,6 +89,7 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 	protected final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
 
+	@SuppressWarnings("unused")
 	private ITextComponent name;
 
 	public DNAExtractorTileEntity() 

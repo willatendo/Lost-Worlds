@@ -123,7 +123,6 @@ public class ModBoatEntity extends BoatEntity
         this.setDamage(this.getDamage() * 11.0F);
     }
 
-    @SuppressWarnings("deprecation")
 	@Override
     protected void checkFallDamage(double y, boolean onGroundIn, BlockState state, BlockPos pos) 
     {
@@ -170,7 +169,6 @@ public class ModBoatEntity extends BoatEntity
         }
     }
 
-    @SuppressWarnings("deprecation")
 	@Override
     public boolean hurt(DamageSource source, float amount) 
     {
