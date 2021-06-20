@@ -4,25 +4,19 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import lostworlds.common.container.FossilCleanerContainer;
-import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class FossilCleanerScreen<T extends FossilCleanerContainer> extends ContainerScreen<T>
+public class FossilCleanerScreen extends ContainerScreen<FossilCleanerContainer>
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/fossil_cleaner.png");
-	private final FossilCleanerContainer container;
-	@SuppressWarnings("unused")
-	private final FossilCleanerTileEntity tile;
 	
-	public FossilCleanerScreen(T container, PlayerInventory playerInv, ITextComponent text) 
+	public FossilCleanerScreen(FossilCleanerContainer container, PlayerInventory playerInv, ITextComponent text) 
 	{
 		super(container, playerInv, text);
-		this.container = container;
-		this.tile = container.tile;
 	}
 	
 	@Override
@@ -48,7 +42,7 @@ public class FossilCleanerScreen<T extends FossilCleanerContainer> extends Conta
 			this.blit(stack, leftPos + 56, topPos + 35 + 14 - onTime, 176, 14 - onTime, 16, onTime + 1);
 		}
 
-		int progress = this.container.getProgress();
+		int progress = this.menu.getProgress();
 		this.blit(stack, this.leftPos + 76, this.topPos + 34, 176, 16, progress + 1, 16);
 	}
 }

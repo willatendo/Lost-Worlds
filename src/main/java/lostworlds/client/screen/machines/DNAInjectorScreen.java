@@ -3,26 +3,20 @@ package lostworlds.client.screen.machines;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import lostworlds.common.container.DNAInjectorContianer;
-import lostworlds.common.tileentity.DNAInjectorTileEntity;
+import lostworlds.common.container.DNAInjectorContainer;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class DNAInjectorScreen<T extends DNAInjectorContianer> extends ContainerScreen<T>
+public class DNAInjectorScreen extends ContainerScreen<DNAInjectorContainer>
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/dna_injector.png");
-	private final DNAInjectorContianer container;
-	@SuppressWarnings("unused")
-	private final DNAInjectorTileEntity tile;
 	
-	public DNAInjectorScreen(T container, PlayerInventory playerInv, ITextComponent text) 
+	public DNAInjectorScreen(DNAInjectorContainer container, PlayerInventory playerInv, ITextComponent text) 
 	{
 		super(container, playerInv, text);
-		this.container = container;
-		this.tile = container.tile;
 	}
 	
 	@Override
@@ -42,7 +36,7 @@ public class DNAInjectorScreen<T extends DNAInjectorContianer> extends Container
 		int topPos = this.topPos;
 		this.blit(stack, leftPos, topPos, 0, 0, this.imageWidth, this.imageHeight);
 
-		int progress = this.container.getProgress();
+		int progress = this.menu.getProgress();
 		this.blit(stack, this.leftPos + 85, this.topPos + 35, 176, 0, progress + 1, 16);
 	}
 }

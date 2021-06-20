@@ -25,7 +25,6 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.INameable;
-import net.minecraft.util.IntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -384,7 +383,7 @@ public class AnalyserTileEntity extends TileEntity implements IInventory, INamed
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new AnalyserContainer(windowId, playerInv, this, this, new IntArray(4));
+		return new AnalyserContainer(windowId, playerInv, this, this);
 	}
 	
 	

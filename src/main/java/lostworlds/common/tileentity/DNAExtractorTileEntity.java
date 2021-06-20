@@ -384,7 +384,7 @@ public class DNAExtractorTileEntity extends TileEntity implements IInventory, IN
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new DNAExtractorContainer(windowId, playerInv, this, this);
+		return new DNAExtractorContainer(windowId, playerInv, this);
 	}
 
 	@Override

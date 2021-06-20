@@ -1,5 +1,8 @@
 package lostworlds.common.container;
 
+import java.util.Objects;
+
+import lostworlds.common.blocks.DNAExtractorBlock;
 import lostworlds.common.recipe.DNAExtractorRecipe;
 import lostworlds.common.slot.SoftTissueSlot;
 import lostworlds.common.slot.VileSlot;
@@ -8,7 +11,6 @@ import lostworlds.core.init.ContainerInit;
 import lostworlds.core.init.RecipeInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.FurnaceResultSlot;
@@ -16,26 +18,28 @@ import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIntArray;
+import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class DNAExtractorContainer extends Container
 {
-	private final IInventory container;
+	private final IWorldPosCallable canInteractWithCallable;
 	private final IIntArray data;
 	private final World level;
 	private final IRecipeType<DNAExtractorRecipe> recipeType = RecipeInit.DNA_EXTRACTOR_RECIPE;
 	public final DNAExtractorTileEntity tile;
 	
-	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, DNAExtractorTileEntity tileEntity, IInventory tile) 
+	public DNAExtractorContainer(final int windowID, final PlayerInventory playerInv, final DNAExtractorTileEntity tileEntity) 
 	{
 		super(ContainerInit.DNA_EXTRACTOR_CONTAINER.get(), windowID);
-		this.container = tile;
 		this.level = playerInv.player.level;
 		this.data = tileEntity.getExtractingData();
 		this.tile = tileEntity;
+		this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 		
 		this.addSlot(new SoftTissueSlot(tile, 0, 56, 25));
 		this.addSlot(new VileSlot(tile, 1, 56, 45));
@@ -59,14 +63,26 @@ public class DNAExtractorContainer extends Container
 	
 	public DNAExtractorContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new DNAExtractorTileEntity(), new Inventory(3));
+		this(windowID, playerInv, getTileEntity(playerInv, data));
  	}
-
-	@Override
-	public boolean stillValid(PlayerEntity player) 
+	
+	private static DNAExtractorTileEntity getTileEntity(final PlayerInventory playerInventory, final PacketBuffer data)
 	{
-		return this.container.stillValid(player);
+		Objects.requireNonNull(playerInventory, "Error: " + DNAExtractorContainer.class.getSimpleName() + " - Player Inventory cannot be null!");
+		Objects.requireNonNull(data, "Error: " + DNAExtractorContainer.class.getSimpleName() + " - Packer Buffer Data cannot be null!");
+		
+		final TileEntity tileEntityAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
+		if(tileEntityAtPos instanceof DNAExtractorTileEntity)
+			return (DNAExtractorTileEntity) tileEntityAtPos;
+		
+		throw new IllegalStateException("Error: " + DNAExtractorContainer.class.getSimpleName() + " - TileEntity is not corrent! " + tileEntityAtPos);
 	}
+	
+	@Override
+	public boolean stillValid(PlayerEntity playerIn)
+	{
+		return this.canInteractWithCallable.evaluate((world, blockPos) -> world.getBlockState(blockPos).getBlock() instanceof DNAExtractorBlock && playerIn.distanceToSqr((double) blockPos.getX() + 0.5D, (double) blockPos.getY() + 0.5D, (double) blockPos.getZ() + 0.5D) <= 64.0D, true);
+    }
 	
 	@Override
 	public ItemStack quickMoveStack(PlayerEntity player, int i) 

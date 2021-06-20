@@ -18,6 +18,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
@@ -39,6 +40,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.network.NetworkHooks;
 
 public abstract class AbstractMachineBlock extends RotateableBlock implements ITileEntityProvider
 {
@@ -115,19 +117,38 @@ public abstract class AbstractMachineBlock extends RotateableBlock implements IT
 	@Override
 	public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult result) 
 	{
-		if(world.isClientSide) 
+		if(!world.isClientSide) 
 		{
-			return ActionResultType.SUCCESS;
+			TileEntity tile = world.getBlockEntity(pos);
+			if(tile instanceof FossilCleanerTileEntity) 
+			{
+				NetworkHooks.openGui((ServerPlayerEntity)player, (INamedContainerProvider)tile, pos);
+				return ActionResultType.SUCCESS;
+			}
+			else if(tile instanceof FossilGrinderTileEntity) 
+			{
+				NetworkHooks.openGui((ServerPlayerEntity)player, (INamedContainerProvider)tile, pos);
+				return ActionResultType.SUCCESS;
+			}
+			else if(tile instanceof DNAExtractorTileEntity) 
+			{
+				NetworkHooks.openGui((ServerPlayerEntity)player, (INamedContainerProvider)tile, pos);
+				return ActionResultType.SUCCESS;
+			}
+			else if(tile instanceof AnalyserTileEntity) 
+			{
+				NetworkHooks.openGui((ServerPlayerEntity)player, (INamedContainerProvider)tile, pos);
+				return ActionResultType.SUCCESS;
+			}
+			else if(tile instanceof DNAInjectorTileEntity) 
+			{
+				NetworkHooks.openGui((ServerPlayerEntity)player, (INamedContainerProvider)tile, pos);
+				return ActionResultType.SUCCESS;
+			}
 		}
-		else 
-		{
-			this.openContainer(world, pos, player);
-			return ActionResultType.CONSUME;
-		}
+		return ActionResultType.SUCCESS;
 	}
-	
-	protected abstract void openContainer(World world, BlockPos pos, PlayerEntity player);
-	
+		
 	@Override
 	public void setPlacedBy(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) 
 	{

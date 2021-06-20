@@ -52,7 +52,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @Mod.EventBusSubscriber(modid = ModUtil.ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ClientSetup 
 {
-	
     @SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event)
 	{
@@ -155,9 +154,11 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.DNA_EXTRACTOR.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.ANALYSER.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.DNA_INJECTOR.get(), RenderType.translucent());		
+		
 		//Sign
 		ClientRegistry.bindTileEntityRenderer(TileEntityInit.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
 
+		//Screens
 		//ScreenManager.register(ContainerInit.TIME_MACHINE_CONTAINER.get(), TimeMachineScreen::new);
 		ScreenManager.register(ContainerInit.FOSSIL_CLEANER_CONTAINER.get(), FossilCleanerScreen::new);
 		ScreenManager.register(ContainerInit.FOSSIL_GRINDER_CONTAINER.get(), FossilGrinderScreen::new);

@@ -185,7 +185,7 @@ public class BlockInit
 	public static final RegistryObject<Block> TIME_MACHINE = register("time_machine", new TimeMachineBlock(AbstractBlock.Properties.of(Material.METAL, MaterialColor.GOLD).harvestTool(ToolType.PICKAXE).harvestLevel(4).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
 	
 	//Museum Stuff
-	public static final RegistryObject<Block> ARCHAEOLOGY_TABLE = register("archaeology_table", new ArchaeologyTable(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).harvestTool(ToolType.PICKAXE).strength(2.0F, 3.0F).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> ARCHAEOLOGY_TABLE = register("archaeology_table", new ArchaeologyTable(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).harvestTool(ToolType.PICKAXE).strength(2.0F, 3.0F).noOcclusion().sound(SoundType.STONE)));
 
 	//Volcanic Stuff
 	public static final RegistryObject<Block> VOLCANIC_ROCK = register("volcanic_rock", new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.GILDED_BLACKSTONE)));

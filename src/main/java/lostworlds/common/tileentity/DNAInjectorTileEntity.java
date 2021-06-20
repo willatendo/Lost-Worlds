@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lostworlds.common.blocks.DNAInjectorBlock;
-import lostworlds.common.container.DNAInjectorContianer;
+import lostworlds.common.container.DNAInjectorContainer;
 import lostworlds.common.recipe.DNAInjectorRecipe;
 import lostworlds.core.init.RecipeInit;
 import lostworlds.core.init.TileEntityInit;
@@ -395,7 +395,7 @@ public class DNAInjectorTileEntity  extends TileEntity implements IInventory, IN
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player) 
 	{
-		return new DNAInjectorContianer(windowId, playerInv, this, this);
+		return new DNAInjectorContainer(windowId, playerInv, this, this);
 	}
 
 	@Override

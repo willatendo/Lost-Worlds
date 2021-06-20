@@ -1,5 +1,8 @@
 package lostworlds.common.container;
 
+import java.util.Objects;
+
+import lostworlds.common.blocks.FossilGrinderBlock;
 import lostworlds.common.recipe.FossilGrinderRecipe;
 import lostworlds.common.tileentity.FossilGrinderTileEntity;
 import lostworlds.core.init.ContainerInit;
@@ -14,14 +17,16 @@ import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIntArray;
+import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FossilGrinderContainer extends Container
 {
-	private final IInventory container;
+	private final IWorldPosCallable canInteractWithCallable;
 	private final IIntArray data;
 	private final World level;
 	private final IRecipeType<FossilGrinderRecipe> recipeType = RecipeInit.FOSSIL_GRINDER_RECIPE;
@@ -30,10 +35,10 @@ public class FossilGrinderContainer extends Container
 	public FossilGrinderContainer(int windowID, PlayerInventory playerInv, FossilGrinderTileEntity tileEntity, IInventory tile) 
 	{
 		super(ContainerInit.FOSSIL_GRINDER_CONTAINER.get(), windowID);
-		this.container = tile;
 		this.level = playerInv.player.level;
 		this.data = tileEntity.getGrinderData();
 		this.tile = tileEntity;
+		this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 		
 		this.addSlot(new Slot(tile, 0, 53, 35));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 1, 116, 35));
@@ -56,14 +61,26 @@ public class FossilGrinderContainer extends Container
 	
 	public FossilGrinderContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new FossilGrinderTileEntity(), new Inventory(2));
+		this(windowID, playerInv, new FossilGrinderTileEntity(), getTileEntity(playerInv, data));
  	}
-
-	@Override
-	public boolean stillValid(PlayerEntity player) 
+	
+	private static FossilGrinderTileEntity getTileEntity(final PlayerInventory playerInventory, final PacketBuffer data)
 	{
-		return this.container.stillValid(player);
+		Objects.requireNonNull(playerInventory, "Error: " + FossilGrinderContainer.class.getSimpleName() + " - Player Inventory cannot be null!");
+		Objects.requireNonNull(data, "Error: " + FossilGrinderContainer.class.getSimpleName() + " - Packer Buffer Data cannot be null!");
+		
+		final TileEntity tileEntityAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
+		if(tileEntityAtPos instanceof FossilGrinderTileEntity)
+			return (FossilGrinderTileEntity) tileEntityAtPos;
+		
+		throw new IllegalStateException("Error: " + FossilGrinderContainer.class.getSimpleName() + " - TileEntity is not corrent! " + tileEntityAtPos);
 	}
+	
+	@Override
+	public boolean stillValid(PlayerEntity playerIn)
+	{
+		return this.canInteractWithCallable.evaluate((world, blockPos) -> world.getBlockState(blockPos).getBlock() instanceof FossilGrinderBlock && playerIn.distanceToSqr((double) blockPos.getX() + 0.5D, (double) blockPos.getY() + 0.5D, (double) blockPos.getZ() + 0.5D) <= 64.0D, true);
+    }
 	
 	@Override
 	public ItemStack quickMoveStack(PlayerEntity player, int i) 

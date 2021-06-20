@@ -1,5 +1,8 @@
 package lostworlds.common.container;
 
+import java.util.Objects;
+
+import lostworlds.common.blocks.DNAInjectorBlock;
 import lostworlds.common.recipe.DNAInjectorRecipe;
 import lostworlds.common.slot.DNADiscSlot;
 import lostworlds.common.slot.EggSlot;
@@ -16,26 +19,28 @@ import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIntArray;
+import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class DNAInjectorContianer extends Container
+public class DNAInjectorContainer extends Container
 {
-	private final IInventory container;
+	private final IWorldPosCallable canInteractWithCallable;
 	private final IIntArray data;
 	private final World level;
 	private final IRecipeType<DNAInjectorRecipe> recipeType = RecipeInit.DNA_INJECTOR_RECIPE;
 	public final DNAInjectorTileEntity tile;
 	
-	public DNAInjectorContianer(int windowID, PlayerInventory playerInv, DNAInjectorTileEntity tileEntity, IInventory tile) 
+	public DNAInjectorContainer(int windowID, PlayerInventory playerInv, DNAInjectorTileEntity tileEntity, IInventory tile) 
 	{
 		super(ContainerInit.DNA_INJECTOR_CONTAINER.get(), windowID);
-		this.container = tile;
 		this.level = playerInv.player.level;
 		this.data = tileEntity.getInjectorData();
 		this.tile = tileEntity;
+		this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 		
 		this.addSlot(new DNADiscSlot(tile, 0, 56, 17));
 		this.addSlot(new EggSlot(tile, 1, 56, 53));
@@ -57,16 +62,28 @@ public class DNAInjectorContianer extends Container
 		this.addDataSlots(this.data);
 	}
 	
-	public DNAInjectorContianer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
+	public DNAInjectorContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new DNAInjectorTileEntity(), new Inventory(3));
+		this(windowID, playerInv, new DNAInjectorTileEntity(), getTileEntity(playerInv, data));
  	}
-
-	@Override
-	public boolean stillValid(PlayerEntity player) 
+	
+	private static DNAInjectorTileEntity getTileEntity(final PlayerInventory playerInventory, final PacketBuffer data)
 	{
-		return this.container.stillValid(player);
+		Objects.requireNonNull(playerInventory, "Error: " + DNAInjectorContainer.class.getSimpleName() + " - Player Inventory cannot be null!");
+		Objects.requireNonNull(data, "Error: " + DNAInjectorContainer.class.getSimpleName() + " - Packer Buffer Data cannot be null!");
+		
+		final TileEntity tileEntityAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
+		if(tileEntityAtPos instanceof DNAInjectorTileEntity)
+			return (DNAInjectorTileEntity) tileEntityAtPos;
+		
+		throw new IllegalStateException("Error: " + DNAInjectorContainer.class.getSimpleName() + " - TileEntity is not corrent! " + tileEntityAtPos);
 	}
+	
+	@Override
+	public boolean stillValid(PlayerEntity playerIn)
+	{
+		return this.canInteractWithCallable.evaluate((world, blockPos) -> world.getBlockState(blockPos).getBlock() instanceof DNAInjectorBlock && playerIn.distanceToSqr((double) blockPos.getX() + 0.5D, (double) blockPos.getY() + 0.5D, (double) blockPos.getZ() + 0.5D) <= 64.0D, true);
+    }
 	
 	@Override
 	public ItemStack quickMoveStack(PlayerEntity player, int i) 

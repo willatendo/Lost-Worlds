@@ -4,14 +4,11 @@ import lostworlds.common.blocks.abstracts.AbstractMachineBlock;
 import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
 
 public class FossilCleanerBlock extends AbstractMachineBlock
 {
@@ -34,15 +31,5 @@ public class FossilCleanerBlock extends AbstractMachineBlock
 	public TileEntity newBlockEntity(IBlockReader reader) 
 	{
 		return new FossilCleanerTileEntity();
-	}
-
-	@Override
-	protected void openContainer(World world, BlockPos pos, PlayerEntity player) 
-	{
-		TileEntity tileentity = world.getBlockEntity(pos);
-		if(tileentity instanceof FossilCleanerTileEntity) 
-		{
-			player.openMenu((INamedContainerProvider)tileentity);
-		}
 	}
 }

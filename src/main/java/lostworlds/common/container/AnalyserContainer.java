@@ -1,5 +1,8 @@
 package lostworlds.common.container;
 
+import java.util.Objects;
+
+import lostworlds.common.blocks.AnalyserBlock;
 import lostworlds.common.recipe.AnalyserRecipe;
 import lostworlds.common.slot.DNASlot;
 import lostworlds.common.slot.DiscSlot;
@@ -16,28 +19,29 @@ import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIntArray;
-import net.minecraft.util.IntArray;
+import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class AnalyserContainer extends Container
 {
-	private final IInventory container;
+	private final IWorldPosCallable canInteractWithCallable;
 	private final IIntArray data;
 	private final World level;
 	private final IRecipeType<AnalyserRecipe> recipeType = RecipeInit.ANALYSER_RECIPE;
 	public final AnalyserTileEntity tile;
 	
-	public AnalyserContainer(int windowID, PlayerInventory playerInv, AnalyserTileEntity tileEntity, IInventory tile, IIntArray array) 
+	public AnalyserContainer(int windowID, PlayerInventory playerInv, AnalyserTileEntity tileEntity, IInventory tile) 
 	{
 		super(ContainerInit.ANALYSER_CONTAINER.get(), windowID);
-		this.container = tile;	
 		this.level = playerInv.player.level;
 		this.data = tileEntity.getAnalysingData();
 		this.tile = tileEntity;
-		
+		this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
+	
 		this.addSlot(new DNASlot(tile, 0, 56, 25));
 		this.addSlot(new DiscSlot(tile, 1, 56, 45));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, tile, 2, 116, 35));
@@ -60,14 +64,26 @@ public class AnalyserContainer extends Container
 	
 	public AnalyserContainer(int windowID, PlayerInventory playerInv, PacketBuffer data) 
 	{
-		this(windowID, playerInv, new AnalyserTileEntity(), new Inventory(3), new IntArray(4));
+		this(windowID, playerInv, new AnalyserTileEntity(), getTileEntity(playerInv, data));
  	}
-
-	@Override
-	public boolean stillValid(PlayerEntity player) 
+	
+	private static AnalyserTileEntity getTileEntity(final PlayerInventory playerInventory, final PacketBuffer data)
 	{
-		return this.container.stillValid(player);
+		Objects.requireNonNull(playerInventory, "Error: " + AnalyserContainer.class.getSimpleName() + " - Player Inventory cannot be null!");
+		Objects.requireNonNull(data, "Error: " + AnalyserContainer.class.getSimpleName() + " - Packer Buffer Data cannot be null!");
+		
+		final TileEntity tileEntityAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
+		if(tileEntityAtPos instanceof AnalyserTileEntity)
+			return (AnalyserTileEntity) tileEntityAtPos;
+		
+		throw new IllegalStateException("Error: " + AnalyserContainer.class.getSimpleName() + " - TileEntity is not corrent! " + tileEntityAtPos);
 	}
+	
+	@Override
+	public boolean stillValid(PlayerEntity playerIn)
+	{
+		return this.canInteractWithCallable.evaluate((world, blockPos) -> world.getBlockState(blockPos).getBlock() instanceof AnalyserBlock && playerIn.distanceToSqr((double) blockPos.getX() + 0.5D, (double) blockPos.getY() + 0.5D, (double) blockPos.getZ() + 0.5D) <= 64.0D, true);
+    }
 	
 	@Override
 	public ItemStack quickMoveStack(PlayerEntity player, int i) 

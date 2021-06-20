@@ -4,25 +4,19 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import lostworlds.common.container.FossilGrinderContainer;
-import lostworlds.common.tileentity.FossilGrinderTileEntity;
 import lostworlds.core.util.ModUtil;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class FossilGrinderScreen<T extends FossilGrinderContainer> extends ContainerScreen<T>
+public class FossilGrinderScreen extends ContainerScreen<FossilGrinderContainer>
 {
 	private static final ResourceLocation TEXTURE = ModUtil.rL("textures/gui/machines/fossil_grinder.png");
-	private final FossilGrinderContainer container;
-	@SuppressWarnings("unused")
-	private final FossilGrinderTileEntity tile;
 	
-	public FossilGrinderScreen(T container, PlayerInventory playerInv, ITextComponent text) 
+	public FossilGrinderScreen(FossilGrinderContainer container, PlayerInventory playerInv, ITextComponent text) 
 	{
 		super(container, playerInv, text);
-		this.container = container;
-		this.tile = container.tile;
 	}
 	
 	@Override
@@ -42,7 +36,7 @@ public class FossilGrinderScreen<T extends FossilGrinderContainer> extends Conta
 		int topPos = this.topPos;
 		this.blit(stack, leftPos, topPos, 0, 0, this.imageWidth, this.imageHeight);
 
-		int progress = this.container.getProgress();
+		int progress = this.menu.getProgress();
 		this.blit(stack, this.leftPos + 75, this.topPos + 37, 176, 0, progress + 1, 16);
 	}
 }
