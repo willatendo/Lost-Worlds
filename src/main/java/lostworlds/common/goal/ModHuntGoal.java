@@ -2,7 +2,7 @@ package lostworlds.common.goal;
 
 import java.util.EnumSet;
 
-import lostworlds.common.entities.abstracts.AbstractPrehistoricCarnivoreEntity;
+import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,7 +12,7 @@ import net.minecraft.util.Hand;
 
 public class ModHuntGoal extends Goal
 {
-	protected final AbstractPrehistoricCarnivoreEntity entity;
+	protected final BasePrehistoricEntity entity;
 	private final double speedModifier;
 	private final boolean followingTargetEvenIfNotSeen;
 	private Path path;
@@ -25,7 +25,7 @@ public class ModHuntGoal extends Goal
 	private int failedPathFindingPenalty = 0;
 	private boolean canPenalize = false;
 	
-	public ModHuntGoal(AbstractPrehistoricCarnivoreEntity entity, double speedModifier, boolean followingTargetEvenIfNotSeen) 
+	public ModHuntGoal(BasePrehistoricEntity entity, double speedModifier, boolean followingTargetEvenIfNotSeen) 
 	{
 		this.entity = entity;
 		this.speedModifier = speedModifier;
@@ -131,7 +131,6 @@ public class ModHuntGoal extends Goal
 		
 		this.entity.setAggressive(false);
 		this.entity.getNavigation().stop();
-		this.entity.setKilled(true);
 	}
 	
 	@Override

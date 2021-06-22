@@ -2,7 +2,7 @@ package lostworlds.common.events;
 
 import javax.annotation.Nullable;
 
-import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
+import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,14 +10,14 @@ import net.minecraftforge.eventbus.api.Cancelable;
 import net.minecraftforge.eventbus.api.Event;
 
 @Cancelable
-public class PrehistoricBabySpawnEvent extends Event
+public class PrehistoricBabySpawnEvent1 extends Event
 {
 	 private final MobEntity parentA;
 	 private final MobEntity parentB;
 	 private final PlayerEntity causedByPlayer;
-	 private BasePrehistoricEntity child;
+	 private AbstractPrehistoricAgeingEntity child;
 
-	 public PrehistoricBabySpawnEvent(MobEntity parentA, MobEntity parentB, @Nullable BasePrehistoricEntity proposedChild)
+	 public PrehistoricBabySpawnEvent1(MobEntity parentA, MobEntity parentB, @Nullable AbstractPrehistoricAgeingEntity ageableentity)
 	 {
 		 PlayerEntity causedByPlayer = null;
 		 if (parentA instanceof AnimalEntity) 
@@ -33,7 +33,7 @@ public class PrehistoricBabySpawnEvent extends Event
 		 this.parentA = parentA;
 		 this.parentB = parentB;
 		 this.causedByPlayer = causedByPlayer;
-		 this.child = proposedChild;
+		 this.child = ageableentity;
 	 }
 
 	 public MobEntity getParentA()
@@ -53,12 +53,12 @@ public class PrehistoricBabySpawnEvent extends Event
 	 }
 
 	 @Nullable
-	 public BasePrehistoricEntity getChild()
+	 public AbstractPrehistoricAgeingEntity getChild()
 	 {
 		 return child;
 	 }
 
-	 public void setChild(BasePrehistoricEntity proposedChild)
+	 public void setChild(AbstractPrehistoricAgeingEntity proposedChild)
 	 {
 		 child = proposedChild;
 	 }

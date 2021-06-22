@@ -1,9 +1,7 @@
 package lostworlds.common.entities;
 
-import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
-import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
-import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
-import lostworlds.common.goal.ModBreedGoal;
+import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
+import lostworlds.common.entities.abstracts.PrehistoricCarnivoreEntity;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
@@ -23,14 +21,14 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements IAnimatable
+public class AllosaurusEntity extends PrehistoricCarnivoreEntity implements IAnimatable
 {
     private static final Ingredient FOOD_ITEMS = Ingredient.of(ItemInit.CHILESAURUS_MEAT.get(), ItemInit.CRYOLOPHOSAURUS_MEAT.get(), ItemInit.KENTROSAURUS_MEAT.get(), ItemInit.OSTROMIA_MEAT.get(), ItemInit.PROTOSUCHUS_MEAT.get());
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) 
 	{				
-		if(this.entityData.get(AbstractPrehistoricEntity.ATTACKING))
+		if(this.entityData.get(BasePrehistoricEntity.ATTACKING))
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.allosaurus.attack", true));
 		}
@@ -47,7 +45,7 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 	
 	public AllosaurusEntity(EntityType<? extends AllosaurusEntity> entityIn, World worldIn) 
 	{
-		super(entityIn, worldIn, TimeEras.JURASSIC);
+		super(entityIn, worldIn, TimeEras.JURASSIC, false, false);
 	}
 	
 	@Override
@@ -57,27 +55,9 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 	}
 	
 	@Override
-	public boolean isHostile() 
-	{
-		return true;
-	}
-	
-	@Override
 	public AnimationFactory getFactory() 
 	{
 		return this.factory;
-	}
-	
-	@Override
-	public boolean isScaredOfPlayer() 
-	{
-		return false;
-	}
-	
-	@Override
-	public boolean isFish() 
-	{
-		return false;
 	}
 	
 	@Override
@@ -90,7 +70,6 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 	protected void registerGoals()
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(5, new ModBreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ChilesaurusEntity.class, false));
@@ -101,7 +80,7 @@ public class AllosaurusEntity extends AbstractPrehistoricAnimalEntity implements
 	}
 
 	@Override
-	public AbstractPrehistoricAgeingEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricAgeingEntity prehistoricEntity) 
+	public BasePrehistoricEntity getBreedOffspring(ServerWorld serverWorld, BasePrehistoricEntity prehistoricEntity) 
 	{
 		return EntityInit.ALLOSAURUS_ENTITY.get().create(serverWorld);
 	}

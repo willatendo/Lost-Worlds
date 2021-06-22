@@ -3,6 +3,7 @@ package lostworlds.common.goal;
 import javax.annotation.Nullable;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
+import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
 import lostworlds.core.util.interfaces.ISemiAquatic;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.ai.RandomPositionGenerator;
@@ -15,6 +16,11 @@ import net.minecraft.util.math.vector.Vector3d;
 public class ModSwimSemiAquaticGoal extends RandomWalkingGoal 
 {
     public ModSwimSemiAquaticGoal(AbstractPrehistoricEntity creature, double speed, int chance) 
+    {
+        super(creature, speed, chance, false);
+    }
+    
+    public ModSwimSemiAquaticGoal(BasePrehistoricEntity creature, double speed, int chance) 
     {
         super(creature, speed, chance, false);
     }

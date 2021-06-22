@@ -101,6 +101,6 @@ public class UtahraptorEntity extends AbstractPrehistoricAnimalEntity implements
 	@Override
 	public AbstractPrehistoricAgeingEntity getBreedOffspring(ServerWorld serverWorld, AbstractPrehistoricAgeingEntity prehistoricEntity) 
 	{
-		return EntityInit.ALLOSAURUS_ENTITY.get().create(serverWorld);
+		return EntityInit.UTAHRAPTOR_ENTITY.get().create(serverWorld);
 	}
 }

@@ -4,8 +4,7 @@ import javax.annotation.Nullable;
 
 import com.google.gson.JsonObject;
 
-import lostworlds.common.entities.abstracts.AbstractPrehistoricAgeingEntity;
-import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
+import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
 import net.minecraft.advancements.criterion.AbstractCriterionTrigger;
 import net.minecraft.advancements.criterion.CriterionInstance;
 import net.minecraft.advancements.criterion.EntityPredicate;
@@ -34,11 +33,11 @@ public class BredPrehistroicAnimals extends AbstractCriterionTrigger<BredPrehist
 		return new BredPrehistroicAnimals.Instance(entity, entitypredicate$andpredicate, entitypredicate$andpredicate1, entitypredicate$andpredicate2);
 	}
 	
-	public void trigger(ServerPlayerEntity serverEntity, AbstractPrehistoricAnimalEntity prehistoricEntity, AbstractPrehistoricAnimalEntity prehistoricEntity2, @Nullable AbstractPrehistoricAgeingEntity ageEntity) 
+	public void trigger(ServerPlayerEntity serverEntity, BasePrehistoricEntity prehistoricEntity, BasePrehistoricEntity prehistoricEntity2, @Nullable BasePrehistoricEntity ageableentity) 
 	{
 		LootContext lootcontext = EntityPredicate.createContext(serverEntity, prehistoricEntity);
 		LootContext lootcontext1 = EntityPredicate.createContext(serverEntity, prehistoricEntity2);
-		LootContext lootcontext2 = ageEntity != null ? EntityPredicate.createContext(serverEntity, ageEntity) : null;
+		LootContext lootcontext2 = ageableentity != null ? EntityPredicate.createContext(serverEntity, ageableentity) : null;
 		this.trigger(serverEntity, (p_233510_3_) -> 
 		{
 			return p_233510_3_.matches(lootcontext, lootcontext1, lootcontext2);

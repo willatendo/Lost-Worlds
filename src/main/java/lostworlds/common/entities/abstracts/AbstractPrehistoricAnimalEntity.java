@@ -4,8 +4,7 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import lostworlds.common.events.PrehistoricBabySpawnEvent;
-import lostworlds.common.triggers.ModCriteriaTriggers;
+import lostworlds.common.events.PrehistoricBabySpawnEvent1;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -244,7 +243,7 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 	public void spawnChildFromBreeding(ServerWorld world, AbstractPrehistoricAnimalEntity entity) 
 	{
 		AbstractPrehistoricAgeingEntity ageableentity = this.getBreedOffspring(world, entity);
-		final PrehistoricBabySpawnEvent event = new PrehistoricBabySpawnEvent(this, entity, ageableentity);
+		final PrehistoricBabySpawnEvent1 event = new PrehistoricBabySpawnEvent1(this, entity, ageableentity);
 		final boolean cancelled = MinecraftForge.EVENT_BUS.post(event);
 		ageableentity = event.getChild();
 		if(cancelled) 
@@ -267,7 +266,7 @@ public abstract class AbstractPrehistoricAnimalEntity extends AbstractPrehistori
 			if(serverplayerentity != null) 
 			{
 				serverplayerentity.awardStat(Stats.ANIMALS_BRED);
-				ModCriteriaTriggers.BRED_PREHISTORIC_ANIMALS.trigger(serverplayerentity, this, entity, ageableentity);
+				//ModCriteriaTriggers.BRED_PREHISTORIC_ANIMALS.trigger(serverplayerentity, this, entity, ageableentity);
 			}
 			
 			this.setAge(6000);

@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ContainerInit 
-{
+{	
 	public static final RegistryObject<ContainerType<FossilCleanerContainer>> FOSSIL_CLEANER_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("fossil_cleaner_container", () -> IForgeContainerType.create(FossilCleanerContainer::new));
 	public static final RegistryObject<ContainerType<FossilGrinderContainer>> FOSSIL_GRINDER_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("fossil_grinder_container", () -> IForgeContainerType.create(FossilGrinderContainer::new));
 	public static final RegistryObject<ContainerType<DNAExtractorContainer>> DNA_EXTRACTOR_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("dna_extractor_container", () -> IForgeContainerType.create(DNAExtractorContainer::new));

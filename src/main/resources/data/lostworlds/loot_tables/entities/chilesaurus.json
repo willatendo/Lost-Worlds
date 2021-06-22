@@ -35,7 +35,7 @@
 					"max": 1.0
 				}
 			}],
-			"name": "lostworlds:raw_kentrosaurus_meat"
+			"name": "lostworlds:raw_chilesaurus_meat"
 		}]
 	},
 	{
@@ -43,7 +43,7 @@
 		"entries": [
 		{
 			"type": "minecraft:item",
-			"name": "lostworlds:kentrosaurus_skull"
+			"name": "lostworlds:chilesaurus_skull"
 		}]
 	},
 	{
@@ -51,7 +51,7 @@
 		"entries": [
 		{
 			"type": "minecraft:item",
-			"name": "lostworlds:kentrosaurus_arm_bone"
+			"name": "lostworlds:chilesaurus_arm_bone"
 		}]
 	},
 	{
@@ -59,7 +59,7 @@
 		"entries": [
 		{
 			"type": "minecraft:item",
-			"name": "lostworlds:kentrosaurus_leg_bone"
+			"name": "lostworlds:chilesaurus_leg_bone"
 		}]
 	},
 	{
@@ -67,7 +67,7 @@
 		"entries": [
 		{
 			"type": "minecraft:item",
-			"name": "lostworlds:kentrosaurus_foot_bone"
+			"name": "lostworlds:chilesaurus_foot_bone"
 		}]
 	},
 	{
@@ -75,7 +75,7 @@
 		"entries": [
 		{
 			"type": "minecraft:item",
-			"name": "lostworlds:kentrosaurus_rib_bone"
+			"name": "lostworlds:chilesaurus_rib_bone"
 		}]
 	}
 	]

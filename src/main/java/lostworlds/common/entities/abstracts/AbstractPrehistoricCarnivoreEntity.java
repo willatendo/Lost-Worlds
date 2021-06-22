@@ -1,6 +1,5 @@
 package lostworlds.common.entities.abstracts;
 
-import lostworlds.common.goal.ModHuntGoal;
 import lostworlds.core.util.ModDamageSources;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
@@ -96,6 +95,5 @@ public abstract class AbstractPrehistoricCarnivoreEntity extends AbstractPrehist
 	protected void registerGoals() 
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(6, new ModHuntGoal(this, 1.0D, false));
 	}
 }

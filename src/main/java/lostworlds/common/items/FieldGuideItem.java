@@ -26,7 +26,7 @@ import lostworlds.common.entities.TetraceratopsEntity;
 import lostworlds.common.entities.TyrannosaurusEntity;
 import lostworlds.common.entities.UtahraptorEntity;
 import lostworlds.common.entities.ZephyrosaurusEntity;
-import lostworlds.common.entities.abstracts.AbstractPrehistoricEntity;
+import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -46,7 +46,7 @@ public class FieldGuideItem extends Item
 	@Override
 	public ActionResultType interactLivingEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity entity, Hand hand) 
 	{
-		if(entity instanceof AbstractPrehistoricEntity)
+		if(entity instanceof BasePrehistoricEntity)
 		{
 			if(entity instanceof ProcompsognathusEntity)
 			{
