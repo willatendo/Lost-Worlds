@@ -32,6 +32,7 @@ import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraftforge.fml.RegistryObject;
 
 public class EntityInit 
@@ -70,6 +71,11 @@ public class EntityInit
 	public static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, EntityType.IFactory<T> entity, EntityClassification entitytype, Class<T> entityClass, float width, float height) 
 	{
 		return ModRegistry.ENTITY_REGISTRY.register(name, () -> EntityType.Builder.of(entity, entitytype).sized(width, height).build(name));
+	}
+	
+	public static void initializeAttributes() 
+	{
+		GlobalEntityTypeAttributes.put(ALLOSAURUS_ENTITY.get(), AllosaurusEntity.makeAttributes().build());
 	}
 	
 	public static void initEntities() { ModUtil.LOGGER.debug("Registering: Mod Entities"); }

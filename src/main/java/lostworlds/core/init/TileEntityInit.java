@@ -7,6 +7,7 @@ import lostworlds.common.tileentity.FossilCleanerTileEntity;
 import lostworlds.common.tileentity.FossilGrinderTileEntity;
 import lostworlds.common.tileentity.ModSignTileEntity;
 import lostworlds.common.tileentity.TimeMachineTileEntity;
+import lostworlds.common.tileentity.VaseTileEntity;
 import lostworlds.core.util.ModUtil;
 import lostworlds.core.util.registry.ModRegistry;
 import net.minecraft.tileentity.TileEntityType;
@@ -27,6 +28,8 @@ public class TileEntityInit
 	//Sign
 	public static final RegistryObject<TileEntityType<ModSignTileEntity>> SIGN_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("sign_tile_entity", () -> TileEntityType.Builder.of(ModSignTileEntity::new, BlockInit.CONIFER_SIGN.get(), BlockInit.CONIFER_WALL_SIGN.get(), BlockInit.GINKGO_SIGN.get(), BlockInit.GINKGO_WALL_SIGN.get(), BlockInit.ARAUCARIA_SIGN.get(), BlockInit.ARAUCARIA_WALL_SIGN.get()).build(null));
 			
+	public static final RegistryObject<TileEntityType<VaseTileEntity>> VASE_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("vase_tile_entity", () -> TileEntityType.Builder.of(VaseTileEntity::new, BlockInit.ARAUCARIA_BUTTON.get()).build(null));
+	
 	//Registry
 	public static void initTileEntities() { ModUtil.LOGGER.debug("Registering: Mod Tile Entities"); }
 }

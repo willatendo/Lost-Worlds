@@ -2,6 +2,7 @@ package lostworlds.core.util.registry;
 
 import lostworlds.core.init.BiomeInit;
 import lostworlds.core.init.BlockInit;
+import lostworlds.core.init.BlockPlacerTypeInit;
 import lostworlds.core.init.ContainerInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.FoliagePlacerInit;
@@ -26,6 +27,7 @@ import net.minecraft.particles.ParticleType;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.village.PointOfInterestType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.blockplacer.BlockPlacerType;
 import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.foliageplacer.FoliagePlacerType;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
@@ -44,6 +46,7 @@ public class ModRegistry
 	public static final DeferredRegister<ContainerType<?>> CONTAINER_REGISTRY = DeferredRegister.create(ForgeRegistries.CONTAINERS, ModUtil.ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, ModUtil.ID);
 	public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ModUtil.ID);
+	public static final DeferredRegister<BlockPlacerType<?>> BLOCK_PLACER_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_PLACER_TYPES, ModUtil.ID);
 	public static final DeferredRegister<PointOfInterestType> POINTS_OF_INTEREST_REGISTRY = DeferredRegister.create(ForgeRegistries.POI_TYPES, ModUtil.ID);
 	public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS_REGISTRY = DeferredRegister.create(ForgeRegistries.PROFESSIONS, ModUtil.ID);
 	public static final DeferredRegister<EntityType<?>> ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModUtil.ID);
@@ -65,6 +68,7 @@ public class ModRegistry
 		CONTAINER_REGISTRY.register(bus);	
 		TILE_ENTITY_REGISTRY.register(bus);
 		BLOCK_REGISTRY.register(bus);
+		BLOCK_PLACER_REGISTRY.register(bus);
 		POINTS_OF_INTEREST_REGISTRY.register(bus);
 		VILLAGER_PROFESSIONS_REGISTRY.register(bus);
 		ENTITY_REGISTRY.register(bus);
@@ -81,6 +85,7 @@ public class ModRegistry
 		ContainerInit.initContianers();
 		TileEntityInit.initTileEntities(); 
 		BlockInit.initBlocks();
+		BlockPlacerTypeInit.initBlockPlacerTypes();
 		PointsOfInterestInit.initPointsOfInterest();;
 		VillagerProfessionInit.initVillageProfession();
 		EntityInit.initEntities();

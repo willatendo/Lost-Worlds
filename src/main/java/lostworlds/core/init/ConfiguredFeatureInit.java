@@ -5,9 +5,6 @@ import com.google.common.collect.ImmutableList;
 import lostworlds.core.util.ModBlockStates;
 import lostworlds.core.util.ModUtil;
 import lostworlds.world.feature.ModFillerBlockType;
-import lostworlds.world.feature.SurfacePlaceConfig;
-import lostworlds.world.feature.foliageplacer.GinkgoFoliagePlacer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
@@ -22,8 +19,7 @@ import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.ReplaceBlockConfig;
 import net.minecraft.world.gen.feature.TwoLayerFeature;
-import net.minecraft.world.gen.foliageplacer.AcaciaFoliagePlacer;
-import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.FancyFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.SpruceFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.ChanceConfig;
@@ -31,11 +27,12 @@ import net.minecraft.world.gen.placement.DepthAverageConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.gen.trunkplacer.ForkyTrunkPlacer;
+import net.minecraft.world.gen.trunkplacer.FancyTrunkPlacer;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 
 public class ConfiguredFeatureInit 
 {
+	
     //Plants
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_SMALL = register("patch_permian_desert_plant_small", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_SMALL).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 	public static final ConfiguredFeature<?, ?> PATCH_PERMIAN_DESERT_PLANT_MEDIUM = register("patch_permian_desert_plant_medium", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_PERMAIN_DESERT_CONFIG_MEDIUM).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
@@ -60,11 +57,11 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> PATCH_DILLHOFFIA = register("patch_dillhoffia", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.DEFAULT_DILLHOFFIA_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
 
 	//Trees
-	//Trees
+	//Trees	
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> CONIFER_TREE = register("conifer_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.CONIFER_LOG), new SimpleBlockStateProvider(ModBlockStates.CONIFER_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(2, 1), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
-	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> GINKGO_TREE = register("ginkgo_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.GINKGO_LOG), new SimpleBlockStateProvider(ModBlockStates.GINKGO_LEAVES), new GinkgoFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 7), new StraightTrunkPlacer(7, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
-	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ARAUCARIA_TREE = register("araucaria_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LOG), new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LEAVES), new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 1), new ForkyTrunkPlacer(11, 2, 2), new TwoLayerFeature(1, 0, 2))).ignoreVines().build()));
-	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ARAUCARIA_TREE_SMALL = register("araucaria_tree_small", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LOG), new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LEAVES), new AcaciaFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0)), new StraightTrunkPlacer(5, 2, 2), new TwoLayerFeature(1, 0, 2))).ignoreVines().build()));
+	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> GINKGO_TREE = register("ginkgo_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.GINKGO_LOG), new SimpleBlockStateProvider(ModBlockStates.GINKGO_LEAVES), new  FancyFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(4), 4), new FancyTrunkPlacer(7, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
+	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ARAUCARIA_TREE = register("araucaria_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LOG), new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LEAVES), new SpruceFoliagePlacer(FeatureSpread.of(2, 1), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(10, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
+	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ARAUCARIA_TREE_SMALL = register("araucaria_tree_small", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LOG), new SimpleBlockStateProvider(ModBlockStates.ARAUCARIA_LEAVES), new SpruceFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 2), new TwoLayerFeature(1, 0, 2))).ignoreVines().build()));
 
 	public static final ConfiguredFeature<?, ?> SINGLE_CONIFER_TREE = register("single_conifer_tree", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ConfiguredFeatureInit.CONIFER_TREE.weighted(0.5F)), ConfiguredFeatureInit.CONIFER_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> CONIFER_TREES = register("conifer_trees", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ConfiguredFeatureInit.CONIFER_TREE.weighted(0.5F)), ConfiguredFeatureInit.CONIFER_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
@@ -75,8 +72,6 @@ public class ConfiguredFeatureInit
 	public static final ConfiguredFeature<?, ?> GINKGO_VEGETATION = register("gingko_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(GINKGO_TREE.weighted(0.33333334F)), GINKGO_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> ARAUCARIA_VEGETATION = register("araucaria_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ARAUCARIA_TREE.weighted(0.33333334F)), ARAUCARIA_TREE)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	public static final ConfiguredFeature<?, ?> ARAUCARIA_VEGETATION_SMALL = register("araucaria_vegetation_small", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(ARAUCARIA_TREE_SMALL.weighted(0.33333334F)), ARAUCARIA_TREE_SMALL)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
-
-	public static final ConfiguredFeature<?, ?> DIICTODON_BURROW = register("diictodon_burrow", FeatureInit.SURFACE_BLOCK.configured(new SurfacePlaceConfig(BlockInit.DIICTODON_BURROW.get().defaultBlockState(), BlockInit.PERMIAN_SAND.get().defaultBlockState())));
 	
 	//Ores
 	//Permian
@@ -100,22 +95,20 @@ public class ConfiguredFeatureInit
 	
 	//Lakes
 	//Permian
-	public static final ConfiguredFeature<?, ?> PERMIAN_WATER_LAKE = FeatureInit.LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.WATER)).decorated(Placement.WATER_LAKE.configured(new ChanceConfig(4)));
-	public static final ConfiguredFeature<?, ?> PERMIAN_LAVA_LAKE = FeatureInit.LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.LAVA)).decorated(Placement.LAVA_LAKE.configured(new ChanceConfig(80)));
+	public static final ConfiguredFeature<?, ?> PERMIAN_WATER_LAKE = FeatureInit.PERMIAN_LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.WATER)).decorated(Placement.WATER_LAKE.configured(new ChanceConfig(10)));
+	public static final ConfiguredFeature<?, ?> PERMIAN_LAVA_LAKE = FeatureInit.PERMIAN_LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.LAVA)).decorated(Placement.LAVA_LAKE.configured(new ChanceConfig(80)));
 	
 	//Jurassic
-	public static final ConfiguredFeature<?, ?> JURASSIC_WATER_LAKE = FeatureInit.JURASSIC_LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.WATER)).decorated(Placement.WATER_LAKE.configured(new ChanceConfig(4)));
+	public static final ConfiguredFeature<?, ?> JURASSIC_WATER_LAKE = FeatureInit.JURASSIC_LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.WATER)).decorated(Placement.WATER_LAKE.configured(new ChanceConfig(10)));
 	public static final ConfiguredFeature<?, ?> JURASSIC_LAVA_LAKE = FeatureInit.JURASSIC_LAKES.configured(new BlockStateFeatureConfig(ModBlockStates.LAVA)).decorated(Placement.LAVA_LAKE.configured(new ChanceConfig(80)));
 	
 	public static void init()
 	{
-		Registry<ConfiguredFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_FEATURE;
-		
-		Registry.register(registry, new ResourceLocation(ModUtil.ID, "permian_water_lake"), PERMIAN_WATER_LAKE);
-		Registry.register(registry, new ResourceLocation(ModUtil.ID, "permian_lava_lake"), PERMIAN_LAVA_LAKE);
-		
-		Registry.register(registry, new ResourceLocation(ModUtil.ID, "jurassic_water_lake"), JURASSIC_WATER_LAKE);
-		Registry.register(registry, new ResourceLocation(ModUtil.ID, "jurassic_lava_lake"), JURASSIC_LAVA_LAKE);
+		register("permian_water_lakes", PERMIAN_WATER_LAKE);
+		register("permian_lava_lakes", PERMIAN_LAVA_LAKE);
+
+		register("jurassic_water_lakes", JURASSIC_WATER_LAKE);
+		register("jurassic_lava_lakes", JURASSIC_LAVA_LAKE);
 	}
 	
 	public static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) 

@@ -692,6 +692,7 @@
 	"block.lostworlds.cephalotaxus": "Cephalotaxus",
 	"block.lostworlds.lycophyta": "Lycophyta",
 	"block.lostworlds.dillhoffia": "Dillhoffia",
+	"block.lostworlds.horsetail": "Horsetail",
 	
 	"block.lostworlds.dead_sponge_colony": "Dead Sponge Colony",
 	"block.lostworlds.sponge_colony": "Sponge Colony",
@@ -1443,6 +1444,9 @@
  
 	"lostworlds.advancements.lostworlds.digitalisation.title": "Digitalisation",
 	"lostworlds.advancements.lostworlds.digitalisation.description": "Store DNA on a disc.",
+ 
+	"lostworlds.advancements.lostworlds.this_is_how_you_play_god.title": "This is How You Play God",
+	"lostworlds.advancements.lostworlds.this_is_how_you_play_god.description": "Make a prehistoric egg.",
  
 	"lostworlds.advancements.lostworlds.cheat.title": "Cheat!",
 	"lostworlds.advancements.lostworlds.cheat.description": "Take a creature's blood to skip the process.",

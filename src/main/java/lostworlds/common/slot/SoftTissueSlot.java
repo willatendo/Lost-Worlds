@@ -1,6 +1,7 @@
 package lostworlds.common.slot;
 
 import lostworlds.common.items.SoftTissueItem;
+import lostworlds.common.items.VileItem;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
@@ -20,7 +21,7 @@ public class SoftTissueSlot extends Slot
 	
 	public boolean isSoftTissue(ItemStack stack)
 	{
-		if(stack.getItem() instanceof SoftTissueItem)
+		if(stack.getItem() instanceof SoftTissueItem || stack.getItem() instanceof VileItem)
 		{
 			return true;
 		}

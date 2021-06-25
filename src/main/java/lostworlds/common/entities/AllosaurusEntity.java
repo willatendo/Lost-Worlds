@@ -1,16 +1,28 @@
 package lostworlds.common.entities;
 
+import lostworlds.LostWorldsConfig;
+import lostworlds.common.blocks.egg.MediumEggBlock;
 import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
 import lostworlds.common.entities.abstracts.PrehistoricCarnivoreEntity;
+import lostworlds.common.goal.EggBreedingGoal;
+import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.ItemInit;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.MoveToBlockGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -48,6 +60,11 @@ public class AllosaurusEntity extends PrehistoricCarnivoreEntity implements IAni
 		super(entityIn, worldIn, TimeEras.JURASSIC, false, false);
 	}
 	
+	public static AttributeModifierMap.MutableAttribute makeAttributes()
+	{
+		return MonsterEntity.createMonsterAttributes().add(Attributes.MAX_HEALTH, LostWorldsConfig.COMMON.allosaurusHeath.get()).add(Attributes.MOVEMENT_SPEED, LostWorldsConfig.COMMON.allosaurusMovementSpeed.get()).add(Attributes.ATTACK_DAMAGE, LostWorldsConfig.COMMON.allosaurusAttackDamage.get());
+	}
+	
 	@Override
 	public void registerControllers(AnimationData data) 
 	{
@@ -70,6 +87,7 @@ public class AllosaurusEntity extends PrehistoricCarnivoreEntity implements IAni
 	protected void registerGoals()
 	{
 		super.registerGoals();
+		this.goalSelector.addGoal(5, new EggBreedingGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new TemptGoal(this, 1.0D, false, FOOD_ITEMS));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, ChilesaurusEntity.class, false));
@@ -83,5 +101,59 @@ public class AllosaurusEntity extends PrehistoricCarnivoreEntity implements IAni
 	public BasePrehistoricEntity getBreedOffspring(ServerWorld serverWorld, BasePrehistoricEntity prehistoricEntity) 
 	{
 		return EntityInit.ALLOSAURUS_ENTITY.get().create(serverWorld);
+	}
+	
+	static class LayEggGoal extends MoveToBlockGoal 
+	{
+		private final BasePrehistoricEntity entity;
+		
+		LayEggGoal(final BasePrehistoricEntity entity, final double speedModifier) 
+		{
+			super(entity, speedModifier, 16);
+			this.entity = entity;
+		}
+		
+		public boolean canUse() 
+		{
+			return this.entity.hasEgg() ? super.canUse() : false;
+		}
+		
+		public boolean canContinueToUse() 	
+		{
+			return super.canContinueToUse() && this.entity.hasEgg();
+		}
+		
+		public void tick() 
+		{
+			super.tick();
+			BlockPos blockpos = this.entity.blockPosition();
+			if(!this.entity.isInWater() && this.isReachedTarget()) 
+			{
+				if(this.entity.layEggCounter < 1) 
+				{
+					this.entity.setLayingEgg(true);
+				} 
+				else if(this.entity.layEggCounter > 200) 
+				{
+					World world = this.entity.level;
+					world.playSound((PlayerEntity)null, blockpos, SoundEvents.TURTLE_LAY_EGG, SoundCategory.BLOCKS, 0.3F, 0.9F + world.random.nextFloat() * 0.2F);
+					world.setBlock(this.blockPos.above(), BlockInit.ALLOSAURUS_EGG.get().defaultBlockState().setValue(MediumEggBlock.EGGS, Integer.valueOf(this.entity.getRandom().nextInt(3) + 1)), 3);
+					world.setBlock(this.blockPos, BlockInit.NESTING_BLOCK.get().defaultBlockState(), 3);
+					this.entity.setHasEgg(false);
+					this.entity.setLayingEgg(false);
+					this.entity.setInLoveTime(600);
+				}
+				
+				if(this.entity.isLayingEgg()) 
+				{
+					this.entity.layEggCounter++;
+	            }
+			}
+		}
+		
+		protected boolean isValidTarget(IWorldReader reader, BlockPos pos) 
+		{
+			return !reader.isEmptyBlock(pos.above()) ? false : true;
+		}
 	}
 }

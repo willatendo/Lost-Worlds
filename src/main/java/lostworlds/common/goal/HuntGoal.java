@@ -10,7 +10,7 @@ import net.minecraft.pathfinding.Path;
 import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.Hand;
 
-public class ModHuntGoal extends Goal
+public class HuntGoal extends Goal
 {
 	protected final BasePrehistoricEntity entity;
 	private final double speedModifier;
@@ -25,7 +25,7 @@ public class ModHuntGoal extends Goal
 	private int failedPathFindingPenalty = 0;
 	private boolean canPenalize = false;
 	
-	public ModHuntGoal(BasePrehistoricEntity entity, double speedModifier, boolean followingTargetEvenIfNotSeen) 
+	public HuntGoal(BasePrehistoricEntity entity, double speedModifier, boolean followingTargetEvenIfNotSeen) 
 	{
 		this.entity = entity;
 		this.speedModifier = speedModifier;
@@ -89,10 +89,10 @@ public class ModHuntGoal extends Goal
 	public boolean canContinueToUse() 
 	{
 		LivingEntity livingentity = this.entity.getTarget();
-		if(livingentity == null) 
+		if(livingentity == null)
 		{
 			return false;
-		} 
+		}
 		else if(!livingentity.isAlive()) 
 		{
 			return false;
@@ -181,14 +181,14 @@ public class ModHuntGoal extends Goal
 		this.checkAndPerformAttack(livingentity, d0);
 	}
 	
-	protected void checkAndPerformAttack(LivingEntity p_190102_1_, double p_190102_2_) 
+	protected void checkAndPerformAttack(LivingEntity target, double reach) 
 	{
-		double d0 = this.getAttackReachSqr(p_190102_1_);
-		if (p_190102_2_ <= d0 && this.ticksUntilNextAttack <= 0) 
+		double d0 = this.getAttackReachSqr(target);
+		if (reach <= d0 && this.ticksUntilNextAttack <= 0) 
 		{
 			this.resetAttackCooldown();
 			this.entity.swing(Hand.MAIN_HAND);
-			this.entity.doHurtTarget(p_190102_1_);
+			this.entity.doHurtTarget(target);
 		}
 	}
 	
@@ -209,7 +209,7 @@ public class ModHuntGoal extends Goal
 	
 	protected int getAttackInterval() 
 	{
-		return 20;
+		return 0;
 	}
 	
 	protected double getAttackReachSqr(LivingEntity p_179512_1_) 

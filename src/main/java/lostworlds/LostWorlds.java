@@ -10,6 +10,7 @@ import lostworlds.common.items.ModSpawnEggItem;
 import lostworlds.core.init.BiomeInit;
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.init.ConfiguredFeatureInit;
+import lostworlds.core.init.EntityInit;
 import lostworlds.core.init.FeatureInit;
 import lostworlds.core.init.ModOreFeatures;
 import lostworlds.core.init.WorldCarverInit;
@@ -184,12 +185,12 @@ public class LostWorlds
 	@SubscribeEvent
 	public static void onRegisterFeatures(Register<Feature<?>> event)
 	{
-		ModUtil.LOGGER.debug("Loading: Making Features");
+		ModUtil.LOGGER.debug("Loading: Making Configured Features");
 
 		FeatureInit.init(event);
 		ConfiguredFeatureInit.init();
 
-		ModUtil.LOGGER.debug("Finished: Making Features");
+		ModUtil.LOGGER.debug("Finished: Making Configured Features");
 	}
 
 	public void clientSetup(FMLClientSetupEvent event) 
@@ -208,11 +209,12 @@ public class LostWorlds
 	@SubscribeEvent
 	public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
 	{
-		ModUtil.LOGGER.debug("Loading: Spawn Eggs");
+		ModUtil.LOGGER.debug("Loading: Spawn Eggs & Attributes");
 		
+		EntityInit.initializeAttributes();
 		ModSpawnEggItem.initSpawnEggs();
 		
-		ModUtil.LOGGER.debug("Finished: Spawn Eggs");
+		ModUtil.LOGGER.debug("Finished: Spawn Eggs & Attributes");
 	}
 	
 	public static void add(Block logBlock, Block strippedLogBlock)

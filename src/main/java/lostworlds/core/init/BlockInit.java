@@ -2,6 +2,7 @@ package lostworlds.core.init;
 
 import lostworlds.common.blocks.AnalyserBlock;
 import lostworlds.common.blocks.ArchaeologyTable;
+import lostworlds.common.blocks.BakedVaseBlock;
 import lostworlds.common.blocks.BlackTerracottaFossilBlock;
 import lostworlds.common.blocks.BlueTerracottaFossilBlock;
 import lostworlds.common.blocks.BrownTerracottaFossilBlock;
@@ -43,12 +44,15 @@ import lostworlds.common.blocks.SpongeColonyBlock;
 import lostworlds.common.blocks.StoneFossilBlock;
 import lostworlds.common.blocks.TerracottaFossilBlock;
 import lostworlds.common.blocks.TimeMachineBlock;
+import lostworlds.common.blocks.TriplePlantBlock;
+import lostworlds.common.blocks.VaseBlock;
 import lostworlds.common.blocks.WhiteTerracottaFossilBlock;
 import lostworlds.common.blocks.YellowTerracottaFossilBlock;
 import lostworlds.common.blocks.egg.LargeEgg;
 import lostworlds.common.blocks.egg.MediumEggBlock;
 import lostworlds.common.blocks.egg.SmallEggBlock;
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
+import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
 import lostworlds.core.util.ModMaterials;
 import lostworlds.core.util.ModToolTypes;
 import lostworlds.core.util.ModUtil;
@@ -150,15 +154,19 @@ public class BlockInit
 	
 	public static final RegistryObject<Block> POWER_SUPPLY_BLOCK = register("power_supply_block", new PowerSupplyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F, 5.5F).sound(SoundType.STONE)));
 	
+	//Pottery
+	public static final RegistryObject<Block> BAKED_KYLIX = register("baked_kylix", new BakedVaseBlock(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.TERRACOTTA_ORANGE).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> KYLIX = register("kylix", new VaseBlock(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.TERRACOTTA_ORANGE).instabreak().noOcclusion().sound(SoundType.GRAVEL), () -> BlockInit.BAKED_KYLIX.get()));	
+	
 	//Eggs (Coming soon)
-	public static final RegistryObject<Block> PROCOMPSOGNATHUS_EGG = registerSmall("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get());
+	/*public static final RegistryObject<Block> PROCOMPSOGNATHUS_EGG = registerSmall("procompsognathus", () -> EntityInit.PROCOMPSOGNATHUS_ENTITY.get());
 	public static final RegistryObject<Block> DIMETRODON_EGG = registerMedium("dimetrodon", () -> EntityInit.DIMETRODON_ENTITY.get());
 	public static final RegistryObject<Block> EDAPHOSAURUS_EGG = registerMedium("edaphosaurus", () -> EntityInit.EDAPHOSAURUS_ENTITY.get());
 	public static final RegistryObject<Block> GORGONOPS_EGG = registerSmall("gorgonops", () -> EntityInit.GORGONOPS_ENTITY.get());
 	public static final RegistryObject<Block> CARNOTAURUS_EGG = registerMedium("carnotaurus", () -> EntityInit.CARNOTAURUS_ENTITY.get());
-	public static final RegistryObject<Block> TYRANNOSAURUS_EGG = registerLarge("tyrannosaurus", () -> EntityInit.TYRANNOSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> TYRANNOSAURUS_EGG = registerLarge("tyrannosaurus", () -> EntityInit.TYRANNOSAURUS_ENTITY.get());*/
 	public static final RegistryObject<Block> ALLOSAURUS_EGG = registerMedium("allosaurus", () -> EntityInit.ALLOSAURUS_ENTITY.get());
-	public static final RegistryObject<Block> GIGANOTOSAURUS_EGG = registerLarge("giganotosaurus", () -> EntityInit.GIGANOTOSAURUS_ENTITY.get());
+	/*public static final RegistryObject<Block> GIGANOTOSAURUS_EGG = registerLarge("giganotosaurus", () -> EntityInit.GIGANOTOSAURUS_ENTITY.get());
 	public static final RegistryObject<Block> SUCHOMIMUS_EGG = registerMedium("suchomimus", () -> EntityInit.SUCHOMIMUS_ENTITY.get());
 	public static final RegistryObject<Block> TETRACERATOPS_EGG = registerSmall("tetraceratops", () -> EntityInit.TETRACERATOPS_ENTITY.get());
 	public static final RegistryObject<Block> GREAT_AUK_EGG = registerSmall("great_auk", () -> EntityInit.GREAT_AUK_ENTITY.get());
@@ -173,7 +181,7 @@ public class BlockInit
 	public static final RegistryObject<Block> CHILESAURUS_EGG = registerSmall("chilesaurus", () -> EntityInit.CHILESAURUS_ENTITY.get());
 	public static final RegistryObject<Block> LIAONINGOSAURUS_EGG = registerSmall("liaoningosaurus", () -> EntityInit.LIAONINGOSAURUS_ENTITY.get());
 	public static final RegistryObject<Block> UTAHRAPTOR_EGG = registerMedium("utahraptor", () -> EntityInit.UTAHRAPTOR_ENTITY.get());
-	public static final RegistryObject<Block> ZEPHYROSAURUS_EGG = registerSmall("zephyrosaurus", () -> EntityInit.ZEPHYROSAURUS_ENTITY.get());
+	public static final RegistryObject<Block> ZEPHYROSAURUS_EGG = registerSmall("zephyrosaurus", () -> EntityInit.ZEPHYROSAURUS_ENTITY.get());*/
 	
 	//Mud
 	public static final RegistryObject<Block> MUD = register("mud", new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
@@ -246,6 +254,7 @@ public class BlockInit
 	public static final RegistryObject<Block> LYCOPHYTA = register("lycophyta", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> DILLHOFFIA = register("dillhoffia", new FlowerBlock(Effects.BLINDNESS, 7, AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> POTTED_DILLHOFFIA = ModRegistry.BLOCK_REGISTRY.register("potted_dillhoffia", () -> new FlowerPotBlock(DILLHOFFIA.get(), AbstractBlock.Properties.of(Material.DECORATION).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> HORSETAIL = register("horsetail", new TriplePlantBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 
 	//Jurassic Blocks
 	public static final RegistryObject<Block> JURASSIC_STONE = register("jurassic_stone", new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(3.0F)));
@@ -513,7 +522,7 @@ public class BlockInit
 		return register(id + "_egg", new SmallEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG), () -> entity.get()));
 	}
 	
-	public static RegistryObject<Block> registerMedium(String id, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity)
+	public static RegistryObject<Block> registerMedium(String id, NonNullSupplier<? extends EntityType<? extends BasePrehistoricEntity>> entity)
 	{
 		return register(id + "_egg", new MediumEggBlock(AbstractBlock.Properties.copy(Blocks.TURTLE_EGG), () -> entity.get()));
 	}

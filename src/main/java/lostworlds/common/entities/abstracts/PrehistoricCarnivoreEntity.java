@@ -1,6 +1,6 @@
 package lostworlds.common.entities.abstracts;
 
-import lostworlds.common.goal.ModHuntGoal;
+import lostworlds.common.goal.HuntGoal;
 import lostworlds.core.util.enums.TimeEras;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
@@ -10,6 +10,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.event.ForgeEventFactory;
 
 public abstract class PrehistoricCarnivoreEntity extends BasePrehistoricEntity
 {	
@@ -45,7 +46,7 @@ public abstract class PrehistoricCarnivoreEntity extends BasePrehistoricEntity
 		if(this.anger > 0) 
 		{
 			--this.anger;
-			if (this.anger == 0 && net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.level, this)) 
+			if (this.anger == 0 && ForgeEventFactory.getMobGriefingEvent(this.level, this)) 
 			{
 				int i1 = MathHelper.floor(this.getY());
 				int l1 = MathHelper.floor(this.getX());
@@ -63,7 +64,7 @@ public abstract class PrehistoricCarnivoreEntity extends BasePrehistoricEntity
 							int l = i2 + l2;
 							BlockPos blockpos = new BlockPos(i3, k, l);
 							BlockState blockstate = this.level.getBlockState(blockpos);
-							if(blockstate.canEntityDestroy(this.level, blockpos, this) && net.minecraftforge.event.ForgeEventFactory.onEntityDestroyBlock(this, blockpos, blockstate)) 
+							if(ForgeEventFactory.onEntityDestroyBlock(this, blockpos, blockstate))
 							{
 								flag = this.level.destroyBlock(blockpos, true, this) || flag;
 							}
@@ -94,6 +95,6 @@ public abstract class PrehistoricCarnivoreEntity extends BasePrehistoricEntity
 	protected void registerGoals() 
 	{
 		super.registerGoals();
-		this.goalSelector.addGoal(5, new ModHuntGoal(this, 2.0D, false));
+		this.goalSelector.addGoal(5, new HuntGoal(this, 2.0D, false));
 	}
 }

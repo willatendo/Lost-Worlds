@@ -58,7 +58,8 @@ public class ClientSetup
     	ModUtil.LOGGER.debug("Loading: Setting Up Client Render");
     	    	
     	//Blocks
-		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_STONE_FOSSIL.get(), RenderType.translucent());
+		//Fossils
+    	RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_STONE_FOSSIL.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_SANDSTONE_FOSSIL.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_RED_SANDSTONE_FOSSIL.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
@@ -79,9 +80,13 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_RED_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_WHITE_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.EXPOSED_YELLOW_TERRACOTTA_FOSSIL.get(), RenderType.translucent());
+		
+		//Plants
 		RenderTypeLookup.setRenderLayer(BlockInit.SMALL_PERMIAN_DESERT_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LARGE_PERMIAN_DESERT_PLANT.get(), RenderType.cutout());
+		
+		RenderTypeLookup.setRenderLayer(BlockInit.GROUND_FERNS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DICKSONIA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.TALL_DICKSONIA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.OSMUNDA.get(), RenderType.cutout());
@@ -91,20 +96,18 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.DILLHOFFIA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_DILLHOFFIA.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DUISBERGIA.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.HORSETAIL.get(), RenderType.cutout());
+		
+		//Saplings
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_SAPLING.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.GINKGO_SAPLING.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_SAPLING.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.GROUND_FERNS.get(), RenderType.cutout());
+		
+		//Glass
 		RenderTypeLookup.setRenderLayer(BlockInit.CLEAR_GLASS.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.CLEAR_GLASS_PANE.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.TINTED_GLASS.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.TINTED_GLASS_PANE.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.OUTDOOR_TOILET_DOOR.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.GLASS_SHOP_DOOR.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.VISITOR_CENTRE_DOOR.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.INNOVATION_CENTRE_DOOR.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.SECURITY_DOOR.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.BACK_DOOR.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.WHITE_GLASS.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.WHITE_GLASS_PANE.get(), RenderType.translucent());		
 		RenderTypeLookup.setRenderLayer(BlockInit.LIGHT_GREY_GLASS.get(), RenderType.translucent());
@@ -138,7 +141,9 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.BROWN_GLASS.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.BROWN_GLASS_PANE.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.SHADED_GLASS.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.SHADED_GLASS_PANE.get(), RenderType.translucent());	
+		RenderTypeLookup.setRenderLayer(BlockInit.SHADED_GLASS_PANE.get(), RenderType.translucent());
+		
+		//Tree Stuff
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_LEAVES.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_DOOR.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.CONIFER_TRAPDOOR.get(), RenderType.translucent());
@@ -148,7 +153,16 @@ public class ClientSetup
 		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_LEAVES.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_DOOR.get(), RenderType.translucent());	
 		RenderTypeLookup.setRenderLayer(BlockInit.ARAUCARIA_TRAPDOOR.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.ARCHAEOLOGY_TABLE.get(), RenderType.translucent());
+		
+		//Doors
+		RenderTypeLookup.setRenderLayer(BlockInit.OUTDOOR_TOILET_DOOR.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.GLASS_SHOP_DOOR.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.VISITOR_CENTRE_DOOR.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.INNOVATION_CENTRE_DOOR.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.SECURITY_DOOR.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.BACK_DOOR.get(), RenderType.translucent());
+		
+		//Machines
 		RenderTypeLookup.setRenderLayer(BlockInit.FOSSIL_CLEANER.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.FOSSIL_GRINDER.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.DNA_EXTRACTOR.get(), RenderType.translucent());

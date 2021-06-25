@@ -1,10 +1,12 @@
 package lostworlds.common.entities.abstracts;
 
+import java.util.Random;
 import java.util.UUID;
 
 import javax.annotation.Nullable;
 
 import lostworlds.common.events.PrehistoricBabySpawnEvent;
+import lostworlds.common.goal.ModBreedGoal1;
 import lostworlds.common.goal.ModSwimSemiAquaticGoal;
 import lostworlds.common.triggers.ModCriteriaTriggers;
 import lostworlds.core.util.ModDamageSources;
@@ -57,10 +59,11 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 	protected static final DataParameter<Boolean> ATTACKING = EntityDataManager.defineId(BasePrehistoricEntity.class, DataSerializers.BOOLEAN);	
 	protected static final DataParameter<Byte> SEX = EntityDataManager.defineId(BasePrehistoricEntity.class, DataSerializers.BYTE);
 	
-	public static final String SEX_TAG = "Sex";
 	
 	protected boolean isScaredOfPlayer;
 	protected boolean isSemiAquatic;
+	
+	public boolean killedTarget = false;
 	
 	protected int hunger;
 	protected int age;
@@ -68,7 +71,10 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 	protected int forcedAgeTimer;
 	protected int inLove;
 	
+	public int layEggCounter;
+	
 	protected UUID loveCause;
+	public static final String SEX_TAG = "Sex";
 
 	public BasePrehistoricEntity(final EntityType<? extends BasePrehistoricEntity> entity, final World world, final TimeEras era, final boolean isScaredOfPlayer, final boolean isSemiAquatic)
 	{
@@ -87,6 +93,11 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 		return this.isScaredOfPlayer;
 	}
 	
+	private boolean hasKilledTarget() 
+	{
+		return this.killedTarget;
+	}
+	
 	@Override
 	protected void defineSynchedData() 
 	{
@@ -95,6 +106,8 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 		this.entityData.define(SEX, sex);
  		this.getEntityData().define(ATTACKING, Boolean.FALSE);
 		this.entityData.define(DATA_BABY_ID, false);
+		this.entityData.define(HAS_EGG, false);
+		this.entityData.define(LAYING_EGG, false);
 	}
 	
 	@Override
@@ -120,12 +133,14 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 		{
 			nbt.putUUID("LoveCause", this.loveCause);
 		}
+		nbt.putBoolean("HasEgg", this.hasEgg());
 	}
 	
 	@Override
 	public void readAdditionalSaveData(CompoundNBT nbt) 
 	{
 		super.readAdditionalSaveData(nbt);
+		this.setHasEgg(nbt.getBoolean("HasEgg"));
 		setSex(nbt.getByte(SEX_TAG));
 		this.setAge(nbt.getInt("Age"));
 		this.setHunger(nbt.getInt("Hunger"));
@@ -158,6 +173,27 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 		return true;
 	}
 	
+	public boolean isLayingEgg() 
+	{
+		return this.entityData.get(LAYING_EGG);
+	}
+	
+	public void setLayingEgg(boolean layingEggs) 
+	{
+		this.layEggCounter = layingEggs ? 1 : 0;
+		this.entityData.set(LAYING_EGG, layingEggs);
+	}
+	
+	public boolean hasEgg() 
+	{
+		return this.entityData.get(HAS_EGG);
+	}
+	
+	public void setHasEgg(boolean hasEgg) 
+	{
+		this.entityData.set(HAS_EGG, hasEgg);
+	}
+	
 	public int getHunger()
 	{
 		return this.hunger;
@@ -171,11 +207,6 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 	public boolean isHungry()
 	{
 		return this.getHunger() <= 0;
-	}
-	
-	public boolean setDrinking(boolean drinking)
-	{
-		return drinking;
 	}
 	
 	public byte getSex() 
@@ -255,7 +286,7 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 	@Override
 	public ILivingEntityData finalizeSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason spawnReason, ILivingEntityData entityData, CompoundNBT nbt) 
 	{
-		this.hunger = 10000;
+		this.hunger = 9000;
 		return super.finalizeSpawn(world, difficulty, spawnReason, entityData, nbt);
 	}
 	
@@ -282,6 +313,26 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 			this.setAge(i);
 		}
 		
+		if(this.hasKilledTarget())
+		{
+			Random rand = new Random();
+			int fill = rand.nextInt(3);
+			if(fill == 0)
+			{
+				this.setHunger(this.getHunger() + 2000);
+				this.killedTarget = false;
+			}
+			if(fill == 1)
+			{
+				this.setHunger(this.getHunger() + 5000);
+				this.killedTarget = false;
+			}
+			if(fill == 2)
+			{
+				this.setHunger(this.getHunger() + 9000);
+			}
+		}
+		
 		if(this.isAlive())
 		{
 			int i = this.getHunger();
@@ -294,7 +345,7 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 			this.hurt(ModDamageSources.AGE, 200.0F);
 		}
 		
-		if(this.getHunger() < -2200)
+		if(this.getHunger() < -5000)
 		{
 			this.hurt(ModDamageSources.HUNGER, 3.0F);
 		}
@@ -602,9 +653,10 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 			this.goalSelector.addGoal(1, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
+			this.goalSelector.addGoal(4, new ModBreedGoal1(this, 1.0D));
 			if(this.isScaredOfPlayer())
 			{
-				this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
+				this.goalSelector.addGoal(5, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 			}
 		}
 		if(this.isSemiAquatic())
@@ -613,9 +665,10 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 			this.goalSelector.addGoal(1, new ModSwimSemiAquaticGoal(this, 1.0D, 30));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
-			if(this.isScaredOfPlayer())
+			this.goalSelector.addGoal(4, new ModBreedGoal1(this, 1.0D));
+		if(this.isScaredOfPlayer())
 			{
-				this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
+				this.goalSelector.addGoal(5, new AvoidEntityGoal<>(this, PlayerEntity.class, 8.0F, 1.6D, 1.4D, EntityPredicates.NO_SPECTATORS::test));
 			}
 		}
 	}
@@ -635,7 +688,7 @@ public abstract class BasePrehistoricEntity extends LostWorldsEntity
 	{
 		private final AbstractPrehistoricEntity animal;
 		
-		SemiAquaticMoveHelperController(AbstractPrehistoricEntity entity) 
+		SemiAquaticMoveHelperController(final AbstractPrehistoricEntity entity) 
 		{
 			super(entity);
 			this.animal = entity;

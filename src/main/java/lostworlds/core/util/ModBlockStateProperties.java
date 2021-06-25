@@ -1,6 +1,7 @@
 package lostworlds.core.util;
 
 import lostworlds.core.util.enums.QuintupleBlockHalfs;
+import lostworlds.core.util.enums.TripleBlockHalfs;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.IntegerProperty;
@@ -13,4 +14,5 @@ public class ModBlockStateProperties
 	public static final IntegerProperty LARGE_EGGS = IntegerProperty.create("large_eggs", 1, 2);
 	public static final BooleanProperty LAVALOGGED = BooleanProperty.create("lavalogged");
 	public static final EnumProperty<QuintupleBlockHalfs> HALFS = EnumProperty.create("halfs", QuintupleBlockHalfs.class);
+	public static final EnumProperty<TripleBlockHalfs> TRIPLE_HALFS = EnumProperty.create("triple_halfs", TripleBlockHalfs.class);
 }

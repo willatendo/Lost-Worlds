@@ -13,6 +13,11 @@ public class ModBiomeFeatures
 		builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ConfiguredFeatureInit.PATCH_PERMIAN_DESERT_PLANT_LARGE);
 	}
 	
+	public static void addAllPermianPlants(BiomeGenerationSettings.Builder builder)
+	{
+		
+	}
+	
 	public static void addAllJurassicPlants(BiomeGenerationSettings.Builder builder) 
 	{
 		ModBiomeFeatures.addCephalotaxus(builder);
@@ -143,10 +148,5 @@ public class ModBiomeFeatures
 	public static void addJurassicLavaLakes(BiomeGenerationSettings.Builder builder)
 	{
 		builder.addFeature(GenerationStage.Decoration.LAKES, ConfiguredFeatureInit.JURASSIC_LAVA_LAKE);		
-	}
-	
-	public static void addDiictodonBurrow(BiomeGenerationSettings.Builder builder)
-	{
-		builder.addFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION, ConfiguredFeatureInit.DIICTODON_BURROW);		
 	}
 }

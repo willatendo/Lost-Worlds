@@ -692,6 +692,7 @@
 	"block.lostworlds.cephalotaxus": "Cephalotaxus",
 	"block.lostworlds.lycophyta": "Lycophyta",
 	"block.lostworlds.dillhoffia": "Dillhoffia",
+	"block.lostworlds.horsetail": "Horsetail",
 	
 	"block.lostworlds.dead_sponge_colony": "Dead Sponge Colony",
 	"block.lostworlds.sponge_colony": "Sponge Colony",
@@ -1376,7 +1377,7 @@
 
 	//Advancements
 	"lostworlds.advancements.lostworlds.root.title": "Lost Worlds",
-	"lostworlds.advancements.lostworlds.root.description": "You played the Lost Worlds mod!",
+	"lostworlds.advancements.lostworlds.root.description": "You started to play the Lost Worlds mod from the beginning! It's like any other experence, it starts with a crafting table!",
 
 	"lostworlds.advancements.lostworlds.baby_time_lord.title": "Baby Time Lord",
 	"lostworlds.advancements.lostworlds.baby_time_lord.description": "Acquire a Time Book, the mystical work of the Time Lord.",
@@ -1388,7 +1389,7 @@
 	"lostworlds.advancements.lostworlds.the_jurassic.description": "Acquire a Jurassic Time Book, volume 2 of the Time Lord's works.",
  
 	"lostworlds.advancements.lostworlds.like_indiana_jones.title": "Like Indiana Jones",
-	"lostworlds.advancements.lostworlds.like_indiana_jones.description": "Acquire an archaeology table, the start of the archaeology side.",
+	"lostworlds.advancements.lostworlds.like_indiana_jones.description": "Acquire an archaeology table, the start of the archaeology side of the mod.",
  
 	"lostworlds.advancements.lostworlds.assembly_required.title": "Assembly Required",
 	"lostworlds.advancements.lostworlds.assembly_required.description": "Acquire the broken crystal scarab gem. It may need to be polished a bit.",
@@ -1412,25 +1413,25 @@
 	"lostworlds.advancements.lostworlds.shovel_thats_all.description": "Improve a neatherite shovel into a crystal scarab shovel.",
  
 	"lostworlds.advancements.lostworlds.the_first_steps.title": "The First Steps",
-	"lostworlds.advancements.lostworlds.the_first_steps.description": "Acquire a leather brush.",
+	"lostworlds.advancements.lostworlds.the_first_steps.description": "Acquire a leather brush, the start of aquiring fossils.",
  
 	"lostworlds.advancements.lostworlds.safe_pickup.title": "Safe Pickup",
-	"lostworlds.advancements.lostworlds.safe_pickup.description": "Acquire wet paper.",
+	"lostworlds.advancements.lostworlds.safe_pickup.description": "Acquire wet paper, the perfect plaster to safely transport the delicate fossils.",
  
 	"lostworlds.advancements.lostworlds.from_the_past.title": "From the Past",
-	"lostworlds.advancements.lostworlds.from_the_past.description": "Acquire a plastered fossil.",
+	"lostworlds.advancements.lostworlds.from_the_past.description": "Acquire a plastered fossil, the remince of creatures long past.",
  
 	"lostworlds.advancements.lostworlds.knowledge.title": "Knowledge",
-	"lostworlds.advancements.lostworlds.knowledge.description": "Buy a feild guide.",
+	"lostworlds.advancements.lostworlds.knowledge.description": "Buy a feild guide from a archaeologist.",
  
 	"lostworlds.advancements.lostworlds.prehistoric_food.title": "Prehistoric Food",
-	"lostworlds.advancements.lostworlds.prehistoric_food.description": "Acquire some fern litter, nutritious so long as you're not poisoned.",
+	"lostworlds.advancements.lostworlds.prehistoric_food.description": "Acquire some fern litter, nutritious so long as you're not poisoned by it.",
  
 	"lostworlds.advancements.lostworlds.safety_first.title": "Safety First",
-	"lostworlds.advancements.lostworlds.safety_first.description": "Cook away the poison in fern litter.",
+	"lostworlds.advancements.lostworlds.safety_first.description": "Cook away the poison in fern litter, it'll be a tasty snack.",
  
 	"lostworlds.advancements.lostworlds.paleo_salad.title": "Paleo Salad",
-	"lostworlds.advancements.lostworlds.paleo_salad.description": "Toss some fern litter and seeds together.",
+	"lostworlds.advancements.lostworlds.paleo_salad.description": "Toss some fern litter and seeds together. It's a crunch salad!",
  
 	"lostworlds.advancements.lostworlds.ancient_seeds.title": "Ancient Seeds",
 	"lostworlds.advancements.lostworlds.ancient_seeds.description": "Acquire ancient seeds. They're very good in salads.",
@@ -1439,13 +1440,16 @@
 	"lostworlds.advancements.lostworlds.just_a_trace.description": "Acquire soft tissue, the last trace of DNA of the Dinosaurs.",
  
 	"lostworlds.advancements.lostworlds.the_broken_kt_boundary.title": "The Broken K-T Boundary",
-	"lostworlds.advancements.lostworlds.the_broken_kt_boundary.description": "Acquire DNA.",
+	"lostworlds.advancements.lostworlds.the_broken_kt_boundary.description": "Acquire DNA from soft tissue or blood.",
  
 	"lostworlds.advancements.lostworlds.digitalisation.title": "Digitalisation",
-	"lostworlds.advancements.lostworlds.digitalisation.description": "Store DNA on a disc.",
+	"lostworlds.advancements.lostworlds.digitalisation.description": "Store DNA on a disc for later use.",
+ 
+	"lostworlds.advancements.lostworlds.this_is_how_you_play_god.title": "This is How You Play God",
+	"lostworlds.advancements.lostworlds.this_is_how_you_play_god.description": "Make a prehistoric egg, the first one in thousands or even millions of years.",
  
 	"lostworlds.advancements.lostworlds.cheat.title": "Cheat!",
-	"lostworlds.advancements.lostworlds.cheat.description": "Take a creature's blood to skip the process.",
+	"lostworlds.advancements.lostworlds.cheat.description": "Take a creature's blood. A way to skip most of the process!",
  
 	"lostworlds.advancements.lostworlds.upgraded.title": "Upgraded",
 	"lostworlds.advancements.lostworlds.upgraded.description": "Acquire an iron brush.",

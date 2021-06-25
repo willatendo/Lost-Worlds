@@ -5,6 +5,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import lostworlds.common.entities.abstracts.AbstractPrehistoricAnimalEntity;
+import lostworlds.common.entities.abstracts.BasePrehistoricEntity;
 import lostworlds.core.init.BlockInit;
 import lostworlds.core.util.ModBlockStateProperties;
 import net.minecraft.block.AbstractBlock;
@@ -41,9 +42,9 @@ public class MediumEggBlock extends Block
 	public static final IntegerProperty HATCH = BlockStateProperties.HATCH;
 	public static final IntegerProperty EGGS = ModBlockStateProperties.MEDIUM_EGGS;
 
-	private final Lazy<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entityTypeSupplier;
+	private final Lazy<? extends EntityType<? extends BasePrehistoricEntity>> entityTypeSupplier;
 	
-	public MediumEggBlock(AbstractBlock.Properties properties, NonNullSupplier<? extends EntityType<? extends AbstractPrehistoricAnimalEntity>> entity) 
+	public MediumEggBlock(AbstractBlock.Properties properties, NonNullSupplier<? extends EntityType<? extends BasePrehistoricEntity>> entity) 
 	{
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(HATCH, Integer.valueOf(0)).setValue(EGGS, Integer.valueOf(1)));
@@ -117,7 +118,7 @@ public class MediumEggBlock extends Block
 				for(int j = 0; j < state.getValue(EGGS); ++j) 
 				{
 					world.levelEvent(2001, pos, Block.getId(state));
-					AbstractPrehistoricAnimalEntity entity = this.entityTypeSupplier.get().create(world);
+					BasePrehistoricEntity entity = this.entityTypeSupplier.get().create(world);
 					entity.moveTo((double)pos.getX() + 0.3D * 0.2D, (double)pos.getY(), (double)pos.getZ() + 0.3D, 0.0F, 0.0F);
 					world.addFreshEntity(entity);
 					entity.setAge(-24000);
