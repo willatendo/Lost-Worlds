@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "lostworlds.mixin",
+  "package": "mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "lostworlds.refmap.json",
   "mixins": [

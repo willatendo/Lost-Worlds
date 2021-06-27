@@ -1,7 +1,7 @@
 package addon.officaladdons.ogpack;
 
 import addon.officaladdons.ogpack.util.AddonRegistry;
-import lostworlds.core.util.ModUtil;
+import library.util.ModUtil;
 
 public class OGPack 
 {

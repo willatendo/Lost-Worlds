@@ -620,6 +620,12 @@
 	"block.lostworlds.power_supply_block": "Power Supply Block",
 	"toolTip.lostworlds.power_supply_block": "A Fancier Way of Powering Your Machines",
 
+	//Pottery
+	"block.lostworlds.kylix": "Kylix",
+	"block.lostworlds.baked_kylix": "Baked Kylix",	
+	"block.lostworlds.chipped_baked_kylix": "Chipped Kylix",
+	"block.lostworlds.damaged_baked_kylix": "Damaged Kylix",
+
 	//Mud
 	"block.lostworlds.mud": "Mud",
 
@@ -1347,33 +1353,38 @@
 	"biome.lostworlds.volcano": "Volcano",
 	
 	//On Load Event
-	"lostworlds.loadEvent.dev": "You are running Lost Worlds: Alpha 10 Developer Edition. DO NOT REDISTRIBUTE.",
-	"lostworlds.loadEvent.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 10",
+	"loadEvent.lostworlds.dev": "You are running Lost Worlds: Alpha 10 Developer Edition. DO NOT REDISTRIBUTE.",
+	"loadEvent.lostworlds.player": "Willatendo, Jooji, Dapper Dino, and bAbA thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 11",
 	
 	//Packs
-	"lostworlds.installed_packs": "You have installed:",
-	"lostworlds.installed_ogpack": "OG Dino Pack - 1.0.0",
-	"lostworlds.installed_mod": "Lost Worlds - Alpha 10",
+	"addon.lostworlds.installed_packs": "You have installed:",
+	"addon.lostworlds.installed_ogpack": "OG Dino Pack - 1.0.0",
+	"addon.lostworlds.installed_mod": "Lost Worlds - Alpha 10",
 	
 	//On Book Used
-	"lostworlds.transport_to_overworld": "Transporting \u00A7bPlayer \u00A7fBack \u00A76Home\u00A7f!",
-	"lostworlds.transport_to_jurassic": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Jurassic\u00A7f!",
-	"lostworlds.transport_to_permian": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Permian\u00A7f!",
-	"lostworlds.doesnt_work": "Cannot Transport \u00A7bPlayer \u00A7fin This Dimension!",
+	"timebook.lostworlds.transport_to_overworld": "Transporting \u00A7bPlayer \u00A7fBack \u00A76Home\u00A7f!",
+	"timebook.lostworlds.transport_to_jurassic": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Jurassic\u00A7f!",
+	"timebook.lostworlds.transport_to_permian": "Transporting \u00A7bPlayer \u00A7fto the \u00A76Permian\u00A7f!",
+	"timebook.lostworlds.doesnt_work": "Cannot Transport \u00A7bPlayer \u00A7fin This Dimension!",
 
 	//Time Machine
 	"lostworlds.container.time_machine": "Time Machine",
+
+	//Machines
 	
 	"lostworlds.container.fossil_cleaner": "Fossil Cleaner",
 	"lostworlds.container.fossil_grinder": "Fossil Grinder",
-	"lostworlds.jei.fossil_grinder.title": "Fossil Grinding",
-	"lostworlds.jei.fossil_grinder.chance": "Break Chance: 75%",
+	"jei.lostworlds.fossil_grinder.title": "Fossil Grinding",
+	"jei.lostworlds.fossil_grinder.chance": "Break Chance: 75%",
 	"lostworlds.container.dna_extractor": "DNA Extractor",
-	"lostworlds.jei.dna_extractor.title": "DNA Extracting",
+	"jei.lostworlds.dna_extractor.title": "DNA Extracting",
 	"lostworlds.container.analyser": "Analyser",
-	"lostworlds.jei.analyser.title": "Analysing",
+	"jei.lostworlds.analyser.title": "Analysing",
 	"lostworlds.container.dna_injector": "DNA Injector",
-	"lostworlds.jei.dna_injector.title": "DNA Injecting",
+	"jei.lostworlds.dna_injector.title": "DNA Injecting",
+
+	//Pottery
+	"lostworlds.container.kylix": "Kylix",
 
 	//Advancements
 	"lostworlds.advancements.lostworlds.root.title": "Lost Worlds",
