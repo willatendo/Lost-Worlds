@@ -6,6 +6,7 @@ import library.entites.ModBoatEntity;
 import library.entites.ModBoatEntity.ModBoatType;
 import library.enums.ModItemTeir;
 import library.items.BrushItem;
+import library.items.FieldGuideItem;
 import library.items.FoodSeedsItem;
 import library.items.WetPaperItem;
 import library.items.bases.ModBlockItem;
@@ -56,7 +57,7 @@ public class ItemInit extends ModRegistry
 	public static final RegistryObject<Item> WET_PAPER = register("wet_paper", new WetPaperItem(properties().tab(ItemGroupInit.ITEMS_TAB)));
 
 	//Field Guide
-//	public static final RegistryObject<Item> FEILD_GUIDE = register("field_guide", new FieldGuideItem(properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
+	public static final RegistryObject<Item> FEILD_GUIDE = register("field_guide", new FieldGuideItem(properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
 	
 	//Syringe
 	public static final RegistryObject<Item> EMPTY_SYRINGE = register("empty_syringe", new SyringeItem(properties().stacksTo(1).tab(ItemGroupInit.ITEMS_TAB)));
