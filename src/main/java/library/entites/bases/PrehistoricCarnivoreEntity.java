@@ -2,6 +2,7 @@ package library.entites.bases;
 
 import library.enums.TimeEras;
 import library.goals.HuntGoal;
+import library.util.base.ModDamageSources;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -83,9 +84,12 @@ public abstract class PrehistoricCarnivoreEntity extends BasePrehistoricEntity
 	@Override
 	public boolean hurt(DamageSource source, float f) 
 	{
-		if(this.anger <= 0) 
+		if(source != ModDamageSources.AGE || source != ModDamageSources.HUNGER)
 		{
-			this.anger = 20;
+			if(this.anger <= 0) 
+			{
+				this.anger = 20;
+			}
 		}
 		
 		return super.hurt(source, f);

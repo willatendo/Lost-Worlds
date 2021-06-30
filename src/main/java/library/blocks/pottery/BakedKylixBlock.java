@@ -63,7 +63,7 @@ public class BakedKylixBlock extends FallingRotateableBlock implements ITileEnti
 	
 	@Override
 	public void onLand(World world, BlockPos pos, BlockState state, BlockState newState, FallingBlockEntity blockEntity) 
-	{
+	{	
 		if(!blockEntity.isSilent()) 
 		{
 			world.levelEvent(1031, pos, 0);

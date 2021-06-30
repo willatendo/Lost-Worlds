@@ -31,10 +31,10 @@ public class RecipeInit extends ModRegistry
 	public static final IRecipeType<AnalyserRecipe> ANALYSER_RECIPE = registerType(ModUtil.rL("analyser"));
 	public static final IRecipeType<DNAInjectorRecipe> DNA_INJECTOR_RECIPE = registerType(ModUtil.rL("dna_injector"));
 
-	public static final RegistryObject<IRecipeSerializer<?>> FOSSIL_GRINDER_SERIALIZER = ModRegistry.RECIPE_SERIALIZERS.register("fossil_grinder", () -> FOSSIL_GRINDER_RECIPE_SERIALIZER);
-	public static final RegistryObject<IRecipeSerializer<?>> DNA_EXTRACTOR_SERIALIZER = ModRegistry.RECIPE_SERIALIZERS.register("dna_extractor", () -> DNA_EXTRACTOR_RECIPE_SERIALIZER);
-	public static final RegistryObject<IRecipeSerializer<?>> ANALYSER_SERIALIZER = ModRegistry.RECIPE_SERIALIZERS.register("analyser", () -> ANALYSER_RECIPE_SERIALIZER);
-	public static final RegistryObject<IRecipeSerializer<?>> DNA_INJECTOR_SERIALIZER = ModRegistry.RECIPE_SERIALIZERS.register("dna_injector", () -> DNA_INJECTOR_RECIPE_SERIALIZER);
+	public static final RegistryObject<IRecipeSerializer<?>> FOSSIL_GRINDER_SERIALIZER = RECIPE_SERIALIZERS.register("fossil_grinder", () -> FOSSIL_GRINDER_RECIPE_SERIALIZER);
+	public static final RegistryObject<IRecipeSerializer<?>> DNA_EXTRACTOR_SERIALIZER = RECIPE_SERIALIZERS.register("dna_extractor", () -> DNA_EXTRACTOR_RECIPE_SERIALIZER);
+	public static final RegistryObject<IRecipeSerializer<?>> ANALYSER_SERIALIZER = RECIPE_SERIALIZERS.register("analyser", () -> ANALYSER_RECIPE_SERIALIZER);
+	public static final RegistryObject<IRecipeSerializer<?>> DNA_INJECTOR_SERIALIZER = RECIPE_SERIALIZERS.register("dna_injector", () -> DNA_INJECTOR_RECIPE_SERIALIZER);
 
 	private static class RecipeType<T extends IRecipe<?>> implements IRecipeType<T> 
 	{

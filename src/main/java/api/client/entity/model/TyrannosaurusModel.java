@@ -1,6 +1,8 @@
 package api.client.entity.model;
 
 import library.entites.TyrannosaurusEntity;
+import library.util.CalendarUtil.Holidays;
+import library.util.CalendarUtil;
 import library.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -14,6 +16,7 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 public class TyrannosaurusModel extends AnimatedGeoModel<TyrannosaurusEntity> 
 {
 	private static final ResourceLocation MALE = new ResourceLocation(ModUtil.ID, "textures/model/entity/tyrannosaurus/male.png");
+	private static final ResourceLocation CHRISTMAS = new ResourceLocation(ModUtil.ID, "textures/model/entity/tyrannosaurus/christmas.png");
 	private ResourceLocation texture;
 	
 	@Override
@@ -40,7 +43,14 @@ public class TyrannosaurusModel extends AnimatedGeoModel<TyrannosaurusEntity>
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("neck");
 		
-		texture = MALE;
+		if(CalendarUtil.HOLIDAYS == Holidays.CHRISTMAS)
+		{
+			texture = CHRISTMAS;
+		}
+		else
+		{
+			texture = MALE;
+		}
 
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
 		head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));

@@ -52,6 +52,8 @@ public abstract class ModRegistry
 
 	public static void register(IEventBus bus)
 	{
+		ModUtil.LOGGER.debug("Starting: Setting Up Registries");
+		
 		PARTICLE_REGISTRY.register(bus);
 		RECIPE_SERIALIZERS.register(bus);
 		SOUND_REGISTRY.register(bus);
@@ -70,6 +72,8 @@ public abstract class ModRegistry
 		BIOME_REGISTRY.register(bus);
 		
 		registries();
+		
+		ModUtil.LOGGER.debug("Finished: Setting Up Registries");
 	}
 	
 	public static void registries() 

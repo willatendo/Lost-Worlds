@@ -5,14 +5,10 @@ import java.util.Map;
 
 import com.google.common.collect.Maps;
 
-import addon.officaladdons.ogpack.OGPack;
-import api.core.config.LostWorldsConfig;
-import api.core.init.BiomeInit;
 import api.core.init.BlockInit;
 import api.core.init.ConfiguredFeatureInit;
 import api.core.init.EntityInit;
 import api.core.init.FeatureInit;
-import api.core.init.ModOreFeatures;
 import api.core.init.WorldCarverInit;
 import library.ModRegistry;
 import library.dimension.jurassic.JurassicDimension;
@@ -28,6 +24,7 @@ import net.minecraft.block.ComposterBlock;
 import net.minecraft.block.FireBlock;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.ShovelItem;
@@ -37,52 +34,38 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.RegistryEvent.Register;
-import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
-@Mod(ModUtil.ID)
-@Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD)
-public class LostWorlds
+@Mod("lostworlds")
+public class LostWorlds 
 {
-	public static boolean hasInitilised;
+	private static boolean hasInitialised;
 	
 	public LostWorlds() 
 	{
-		ModUtil.LOGGER.debug("Loading: The Lost Worlds");
-		
+		//Setup
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
 		
-		//Deferred Registers
+		//Register Objects
 		final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		
 		ModRegistry.register(bus);
-
-		//Lib - V. 3.0.30
+		
+		//Lib 3.0.30
 		GeckoLib.initialize();
-				
+		
 		MinecraftForge.EVENT_BUS.register(this);
-		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, ModOreFeatures::generateOre);
-		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeInit::addBiomesToOverworld);
 		
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LostWorldsConfig.commonSpec);
-				
-		OGPack.init();
-		
-		hasInitilised = true;
-		
-		ModUtil.LOGGER.debug("Finished: The Lost Worlds");
+		hasInitialised = true;
 	}
-
 	
 	private void setup(final FMLCommonSetupEvent event)
 	{
@@ -90,16 +73,16 @@ public class LostWorlds
 		{
 			ModUtil.LOGGER.debug("Loading: Adding Things to Maps");
 			
-			ComposterBlock.add(0.3F, BlockInit.CONIFER_LEAVES.get());
-			ComposterBlock.add(0.3F, BlockInit.ARAUCARIA_LEAVES.get());
-			ComposterBlock.add(0.3F, BlockInit.GINKGO_LEAVES.get());
-			ComposterBlock.add(0.3F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
-			ComposterBlock.add(0.4F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
-			ComposterBlock.add(0.5F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
-			ComposterBlock.add(0.3F, BlockInit.GROUND_FERNS.get());
-			ComposterBlock.add(0.3F, BlockInit.CONIFER_SAPLING.get());
-			ComposterBlock.add(0.3F, BlockInit.ARAUCARIA_SAPLING.get());
-			ComposterBlock.add(0.3F, BlockInit.GINKGO_SAPLING.get());
+			add(0.3F, BlockInit.CONIFER_LEAVES.get());
+			add(0.3F, BlockInit.ARAUCARIA_LEAVES.get());
+			add(0.3F, BlockInit.GINKGO_LEAVES.get());
+			add(0.3F, BlockInit.SMALL_PERMIAN_DESERT_PLANT.get());
+			add(0.4F, BlockInit.MEDIUM_PERMIAN_DESERT_PLANT.get());
+			add(0.5F, BlockInit.LARGE_PERMIAN_DESERT_PLANT.get());
+			add(0.3F, BlockInit.GROUND_FERNS.get());
+			add(0.3F, BlockInit.CONIFER_SAPLING.get());
+			add(0.3F, BlockInit.ARAUCARIA_SAPLING.get());
+			add(0.3F, BlockInit.GINKGO_SAPLING.get());
 			
 			add(BlockInit.CONIFER_BUTTON.get(), 5, 5);
 			add(BlockInit.CONIFER_DOOR.get(), 5, 5);
@@ -177,28 +160,7 @@ public class LostWorlds
 		});	
 	}
 	
-	@SubscribeEvent
-	public static void onRegisterWorldCarvers(Register<WorldCarver<?>> event)
-	{
-		ModUtil.LOGGER.debug("Loading: Making World Carvers");
-
-		WorldCarverInit.init(event);
-
-		ModUtil.LOGGER.debug("Finished: Making World Carvers");
-	}
-	
-	@SubscribeEvent
-	public static void onRegisterFeatures(Register<Feature<?>> event)
-	{
-		ModUtil.LOGGER.debug("Loading: Making Configured Features");
-
-		FeatureInit.init(event);
-		ConfiguredFeatureInit.init();
-
-		ModUtil.LOGGER.debug("Finished: Making Configured Features");
-	}
-
-	public void clientSetup(FMLClientSetupEvent event) 
+	private void setupClient(FMLClientSetupEvent event) 
 	{
 		ModUtil.LOGGER.debug("Loading: Dimension Renders");
 
@@ -207,43 +169,93 @@ public class LostWorlds
 		
 		DimensionRenderInfo jurassic = new JurassicDimensionRenderInfo();
 		DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModUtil.ID, "jurassic_render"), jurassic);
-
+		
 		ModUtil.LOGGER.debug("Finished: Dimension Renders");
 	}
 	
-	@SubscribeEvent
-	public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
+	private static void add(float value, Block compostable)
 	{
-		ModUtil.LOGGER.debug("Loading: Spawn Eggs & Attributes");
-		
-		EntityInit.initializeAttributes();
-		ModSpawnEggItem.initSpawnEggs();
-		
-		ModUtil.LOGGER.debug("Finished: Spawn Eggs & Attributes");
+		ComposterBlock.add(value, compostable);
 	}
 	
-	public static void add(Block logBlock, Block strippedLogBlock)
+	private static void add(Block logBlock, Block strippedLogBlock)
 	{
 		AxeItem.STRIPABLES = Maps.newHashMap(AxeItem.STRIPABLES);
 		AxeItem.STRIPABLES.put(logBlock, strippedLogBlock);
 	}
 	
-	public static void add(Block block, int encouragement, int flammability) 
+	private static void add(Block block, int encouragement, int flammability) 
 	{
 		FireBlock fire = (FireBlock) Blocks.FIRE;
 		fire.setFlammable(block, encouragement, flammability);
 	}
 	
-	public static void add(Block grass)
+	private static void add(Block grass)
 	{
 		Map<Block, BlockState> FLATTENABLES = new HashMap<>(ShovelItem.FLATTENABLES);
 		FLATTENABLES.put(grass, Blocks.GRASS_PATH.defaultBlockState());
 		ShovelItem.FLATTENABLES = FLATTENABLES;
 	}
 	
-	public static void farm(Block grass)
+	private static void farm(Block grass)
 	{
 		HoeItem.TILLABLES = Maps.newHashMap(HoeItem.TILLABLES);
 		HoeItem.TILLABLES.put(grass, Blocks.FARMLAND.defaultBlockState());
+	}
+	
+	@Mod.EventBusSubscriber(modid = "lostworlds", bus = Mod.EventBusSubscriber.Bus.MOD)
+	static class LostWorldsAddonManager
+	{
+		public static void manageAddons()
+		{
+			
+		}
+		
+		@SubscribeEvent
+		public void listInstalledAddons(final PlayerEvent.PlayerLoggedInEvent event)
+		{
+			PlayerEntity player = event.getPlayer();
+			event.getPlayer().sendMessage(ModUtil.tTC("addon", "installed_packs"), player.getUUID());
+			if(LostWorlds.hasInitialised)
+			{
+				player.sendMessage(ModUtil.tTC("addon", "installed_mod"), player.getUUID());
+			}
+		}
+	}
+	
+	@Mod.EventBusSubscriber(modid = "lostworlds", bus = Mod.EventBusSubscriber.Bus.MOD)
+	static class LostWorldsSetup
+	{
+		@SubscribeEvent
+		public static void onRegisterWorldCarvers(Register<WorldCarver<?>> event)
+		{
+			ModUtil.LOGGER.debug("Loading: Making World Carvers");
+
+			WorldCarverInit.init(event);
+
+			ModUtil.LOGGER.debug("Finished: Making World Carvers");
+		}
+		
+		@SubscribeEvent
+		public static void onRegisterFeatures(Register<Feature<?>> event)
+		{
+			ModUtil.LOGGER.debug("Loading: Making Configured Features");
+
+			FeatureInit.init(event);
+			ConfiguredFeatureInit.init();
+
+			ModUtil.LOGGER.debug("Finished: Making Configured Features");
+		}
+		
+		@SubscribeEvent
+		public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
+		{
+			ModUtil.LOGGER.debug("Loading: Spawn Eggs & Attributes");
+			
+			EntityInit.initializeAttributes();
+			ModSpawnEggItem.initSpawnEggs();
+			
+			ModUtil.LOGGER.debug("Finished: Spawn Eggs & Attributes");
+		}
 	}
 }

@@ -29,7 +29,6 @@ import library.entites.TetraceratopsEntity;
 import library.entites.TyrannosaurusEntity;
 import library.entites.UtahraptorEntity;
 import library.entites.ZephyrosaurusEntity;
-import library.util.ModUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -68,7 +67,7 @@ public class EntityInit extends ModRegistry
 	
 	//Boat
     public static final RegistryObject<EntityType<ModBoatEntity>> BOAT = registerEntity("boat", ModBoatEntity::new, EntityClassification.MISC, ModBoatEntity.class, 1.375F, 0.5625F);
-    
+
 	//Registry
 	public static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, EntityType.IFactory<T> entity, EntityClassification entitytype, Class<T> entityClass, float width, float height) 
 	{
@@ -79,6 +78,4 @@ public class EntityInit extends ModRegistry
 	{
 		GlobalEntityTypeAttributes.put(ALLOSAURUS_ENTITY.get(), AllosaurusEntity.makeAttributes().build());
 	}
-	
-	public static void initEntities() { ModUtil.LOGGER.debug("Registering: Mod Entities"); }
 }

@@ -64,6 +64,7 @@ public class ModTags
 		public static final INamedTag<Block> DINO_BREAKABLES = blockTag("dino_breakables");
 		public static final INamedTag<Block> FOSSILS = blockTag("fossils");
 		public static final INamedTag<Block> GINKGO_LOGS = blockTag("ginkgo_logs");
+		public static final INamedTag<Block> KYLIX = blockTag("kylix");
 		public static final INamedTag<Block> GLASS = blockTag("glass");
 		public static final INamedTag<Block> LIGHT_CONCRETE = blockTag("light_concrete");
 		public static final INamedTag<Block> PAVEMENTS = blockTag("pavements");

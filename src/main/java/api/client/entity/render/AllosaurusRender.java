@@ -34,20 +34,23 @@ public class AllosaurusRender extends GeoEntityRenderer<AllosaurusEntity>
 			{
 				stack.scale(0.15F, 0.15F, 0.15F);
 			}
-			if(entity.getAge() >= -20001 && entity.getAge() <= -16000)
+			else if(entity.getAge() >= -20001 && entity.getAge() <= -16000)
 			{
 				stack.scale(0.40F, 0.40F, 0.40F);
 			}
-			if(entity.getAge() >= -16001 && entity.getAge() <= -10000)
+			else if(entity.getAge() >= -16001 && entity.getAge() <= -10000)
 			{
 				stack.scale(0.70F, 0.70F, 0.70F);
 			}
-			if(entity.getAge() >= -10001 && entity.getAge() <= 0)
+			else if(entity.getAge() >= -10001 && entity.getAge() <= 0)
 			{
 				stack.scale(1.0F, 1.0F, 1.0F);
 			}
 		}
-		stack.scale(1.4F, 1.5F, 1.5F); //Lenght, Height, Width
+		else
+		{
+			stack.scale(1.4F, 1.5F, 1.5F); //Lenght, Height, Width
+		}
 		
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}
