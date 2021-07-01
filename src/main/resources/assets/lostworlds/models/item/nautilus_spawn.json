@@ -1,7 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/spawn",
-		"layer1": "lostworlds:items/nautilus_spawn_overlay"
+		"layer0": "lostworlds:items/nautilus_spawn"
   }
 }

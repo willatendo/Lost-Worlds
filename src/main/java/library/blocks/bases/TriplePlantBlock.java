@@ -42,6 +42,10 @@ public class TriplePlantBlock extends ModBushBlock
 		{
 			return blockhalfs == TripleBlockHalfs.BOTTOM && direction == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, newPos);
 		}
+		else if(direction.getAxis() != Direction.Axis.Y || blockhalfs == TripleBlockHalfs.BOTTOM != (direction == Direction.UP) || newState.is(this) && newState.getValue(HALFS) != blockhalfs) 
+		{
+			return blockhalfs == TripleBlockHalfs.BOTTOM && direction == Direction.UP && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, newPos);
+		}
 		else if(direction.getAxis() != Direction.Axis.Y || blockhalfs == TripleBlockHalfs.MIDDLE != (direction == Direction.UP) || newState.is(this) && newState.getValue(HALFS) != blockhalfs) 
 		{
 			return blockhalfs == TripleBlockHalfs.MIDDLE && direction == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, newPos);

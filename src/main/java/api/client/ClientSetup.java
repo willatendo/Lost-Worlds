@@ -36,14 +36,23 @@ import api.client.tileentityrender.KylixTileEntityRender;
 import api.core.init.BlockInit;
 import api.core.init.ContainerInit;
 import api.core.init.EntityInit;
+import api.core.init.ItemInit;
 import api.core.init.TileEntityInit;
 import library.entites.ModBoatRender;
 import library.util.ModUtil;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.color.BlockColors;
+import net.minecraft.client.renderer.color.IItemColor;
+import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
+import net.minecraft.item.BlockItem;
+import net.minecraft.world.FoliageColors;
+import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -218,5 +227,31 @@ public class ClientSetup
 		RenderingRegistry.registerEntityRenderingHandler(EntityInit.BOAT.get(), manager -> new ModBoatRender(manager));
 		
     	ModUtil.LOGGER.debug("Finished: Setting Up Client Render");
+	}
+	
+	@SubscribeEvent
+	public static void onBlockColorsInit(ColorHandlerEvent.Block event) 
+	{
+		BlockColors blockColors = event.getBlockColors();
+		
+		blockColors.register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColors.get(0.5D, 1.0D), BlockInit.ALLOSAURUS_EGG.get());
+	}
+	
+	@SubscribeEvent
+	public static void onItemColorsInit(ColorHandlerEvent.Item event) 
+	{
+		final BlockColors blockColors = event.getBlockColors();
+		final ItemColors itemColors = event.getItemColors();
+		
+		IItemColor itemBlockColourHandler = (stack, tintIndex) ->
+		{
+			BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
+			return blockColors.getColor(state, null, null, tintIndex);
+		};
+		
+		if(itemBlockColourHandler != null) 
+		{
+			itemColors.register(itemBlockColourHandler, ItemInit.ALLOSAURUS_EGG.get());
+		}
 	}
 }

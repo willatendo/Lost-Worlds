@@ -80,11 +80,11 @@ public class QuintuplePlantBlock extends ModBushBlock
 	@Override
 	public boolean canSurvive(BlockState state, IWorldReader worldReader, BlockPos pos) 
 	{
-		if(state.getValue(HALFS) != QuintupleBlockHalfs.TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_BOTTOM && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_MIDDLE && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_TOP) 
+		if(state.getValue(HALFS) != QuintupleBlockHalfs.TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_MIDDLE && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_BOTTOM && state.getValue(HALFS) == QuintupleBlockHalfs.BOTTOM) 
 		{
 			return super.canSurvive(state, worldReader, pos);
 		}
-		else if(state.getValue(HALFS) == QuintupleBlockHalfs.TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_BOTTOM && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_MIDDLE && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_TOP) 
+		else if(state.getValue(HALFS) == QuintupleBlockHalfs.TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_MIDDLE && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_BOTTOM && state.getValue(HALFS) != QuintupleBlockHalfs.BOTTOM) 
 		{
 			BlockState blockstate = worldReader.getBlockState(pos.below());
 			if(state.getBlock() != this)
@@ -93,16 +93,16 @@ public class QuintuplePlantBlock extends ModBushBlock
 			}
 			return blockstate.is(this) && blockstate.getValue(HALFS) == QuintupleBlockHalfs.MIDDLE_TOP;
 		}
-		else if(state.getValue(HALFS) != QuintupleBlockHalfs.TOP && state.getValue(HALFS) == QuintupleBlockHalfs.MIDDLE_BOTTOM && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_MIDDLE && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_TOP) 
+		else if(state.getValue(HALFS) != QuintupleBlockHalfs.TOP && state.getValue(HALFS) == QuintupleBlockHalfs.MIDDLE_TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_MIDDLE && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_BOTTOM && state.getValue(HALFS) != QuintupleBlockHalfs.BOTTOM) 
 		{
 			BlockState blockstate = worldReader.getBlockState(pos.below());
 			if(state.getBlock() != this)
 			{
 				return super.canSurvive(blockstate, worldReader, pos);
 			}
-			return blockstate.is(this) && blockstate.getValue(HALFS) == QuintupleBlockHalfs.BOTTOM;
+			return blockstate.is(this) && blockstate.getValue(HALFS) == QuintupleBlockHalfs.MIDDLE_MIDDLE;
 		}
-		else if(state.getValue(HALFS) != QuintupleBlockHalfs.TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_BOTTOM && state.getValue(HALFS) == QuintupleBlockHalfs.MIDDLE_MIDDLE && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_TOP) 
+		else if(state.getValue(HALFS) != QuintupleBlockHalfs.TOP && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_TOP && state.getValue(HALFS) == QuintupleBlockHalfs.MIDDLE_MIDDLE && state.getValue(HALFS) != QuintupleBlockHalfs.MIDDLE_BOTTOM && state.getValue(HALFS) != QuintupleBlockHalfs.BOTTOM) 
 		{
 			BlockState blockstate = worldReader.getBlockState(pos.below());
 			if(state.getBlock() != this)
@@ -118,7 +118,7 @@ public class QuintuplePlantBlock extends ModBushBlock
 			{
 				return super.canSurvive(blockstate, worldReader, pos);
 			}
-			return blockstate.is(this) && blockstate.getValue(HALFS) == QuintupleBlockHalfs.MIDDLE_MIDDLE;
+			return blockstate.is(this) && blockstate.getValue(HALFS) == QuintupleBlockHalfs.BOTTOM;
 		}
 	}
 	

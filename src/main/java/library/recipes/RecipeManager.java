@@ -168,7 +168,7 @@ public class RecipeManager
 	
 	public static FossilCleanerRecipe getAnalyzerRecipeForItem(ItemStack stack) 
 	{
-		for (FossilCleanerRecipe recipe : cleanerRecipes) 
+		for(FossilCleanerRecipe recipe : cleanerRecipes) 
 		{
 			if(ItemStack.matches(recipe.getInput(), stack))
 			{

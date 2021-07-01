@@ -163,7 +163,7 @@ public class LostWorlds
 	private void setupClient(FMLClientSetupEvent event) 
 	{
 		ModUtil.LOGGER.debug("Loading: Dimension Renders");
-
+		
 		DimensionRenderInfo permian = new PermianDimensionRenderInfo();
 		DimensionRenderInfo.EFFECTS.put(new ResourceLocation(ModUtil.ID, "permian_render"), permian);
 		
