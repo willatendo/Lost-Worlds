@@ -1,0 +1,87 @@
+package lostworlds.content.server.init;
+
+import lostworlds.library.item.BoneMealItem;
+import lostworlds.library.item.BrushItem;
+import lostworlds.library.item.BrushItem.Teirs;
+import lostworlds.library.item.CrystalScarabAxeItem;
+import lostworlds.library.item.CrystalScarabGemItem;
+import lostworlds.library.item.CrystalScarabHoeItem;
+import lostworlds.library.item.CrystalScarabPickaxeItem;
+import lostworlds.library.item.CrystalScarabShovelItem;
+import lostworlds.library.item.CrystalScarabSwordItem;
+import lostworlds.library.item.FieldGuideItem;
+import lostworlds.library.item.FoodItem;
+import lostworlds.library.item.FoodItem.FoodType;
+import lostworlds.library.item.FoodSeedsItem;
+import lostworlds.library.item.JurassicTimeBook;
+import lostworlds.library.item.PermianTimeBook;
+import lostworlds.library.item.forge.ForgeItem;
+import net.minecraft.item.Item;
+
+/*
+ * Author: Willatendo
+ * Date: July 1, 2021
+ */
+
+public class ItemInit
+{	
+	public static final Item LEATHER_BRUSH = BrushItem.create(Teirs.LEATHER);
+	public static final Item IRON_BRUSH = BrushItem.create(Teirs.IRON);
+	public static final Item GOLD_BRUSH = BrushItem.create(Teirs.GOLD);
+	public static final Item DIAMOND_BRUSH = BrushItem.create(Teirs.DIAMOND);
+	public static final Item NETHERITE_BRUSH = BrushItem.create(Teirs.NETHERITE);
+	public static final Item CRYSTAL_SCARAB_BRUSH = BrushItem.create(Teirs.CRYSTAL_SCARAB);
+	
+	public static final Item WET_PAPER = ForgeItem.create("wet_paper");
+	
+	public static final Item FIELD_GUIDE = FieldGuideItem.create();
+	
+	public static final Item EMPTY_VILE = ForgeItem.create("empty_vile");
+	
+	public static final Item PERMIAN_ERA_TIME_BOOK = PermianTimeBook.create();
+	public static final Item JURASSIC_ERA_TIME_BOOK = JurassicTimeBook.create();
+	
+	public static final Item FERN_LEAVES = FoodItem.create(FoodType.FERN_LEAVES);
+	public static final Item COOKED_FERN_LEAVES = FoodItem.create(FoodType.COOKED_FERN_LEAVES);
+	
+	public static final Item CYCAD_SEEDS = FoodSeedsItem.create("cycad");
+	public static final Item OSMUNDA_SEEDS = FoodSeedsItem.create("osmunda");
+	public static final Item DUISBERGIA_SEEDS = FoodSeedsItem.create("duisbergia");
+	public static final Item CEPHALOTAXUS_SEEDS = FoodSeedsItem.create("cephalotaxus");
+	public static final Item LYCOPHYTA_SEEDS = FoodSeedsItem.create("lycophyta");
+	public static final Item DILLHOFFIA_SEEDS = FoodSeedsItem.create("dillhoffia");
+	
+	public static final Item PALEO_SALAD = FoodItem.create(FoodType.PALEO_SALAD);
+	
+	public static final Item GROUND_FOSSIL = BoneMealItem.create("ground_fossil");
+	
+	public static final Item MUD_BALL = ForgeItem.create("mud_ball");
+	
+	public static final Item COPPER_INGOT = ForgeItem.create("copper_ingot");
+	public static final Item COPPER_NUGGET = ForgeItem.create("copper_nugget");
+	
+	public static final Item COPPER_WIRE = ForgeItem.create("copper_wire");
+	public static final Item COMPUTER_FAN = ForgeItem.create("computer_fan");
+	public static final Item COMPUTER_SCREEN = ForgeItem.create("computer_screen");
+	public static final Item COMPUTER_FRAME = ForgeItem.create("computer_frame");
+	public static final Item COMPUTER_STORAGE_PORT = ForgeItem.create("computer_storage_port");
+	public static final Item MOTHERBOARD = ForgeItem.create("motherboard");
+	public static final Item CPU = ForgeItem.create("cpu");
+	public static final Item RAM = ForgeItem.create("ram");
+	
+	public static final Item COMPUTER_CORE = ForgeItem.create("computer_core");
+	
+	public static final Item STORAGE_DISC = ForgeItem.create("storage_disc");
+	
+	public static final Item BROKEN_CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create("broken_");
+	public static final Item CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create("");
+	
+	public static final Item CRYSTAL_SCARAB_SWORD = CrystalScarabSwordItem.create();
+	public static final Item CRYSTAL_SCARAB_SHOVEL = CrystalScarabShovelItem.create();
+	public static final Item CRYSTAL_SCARAB_PICKAXE = CrystalScarabPickaxeItem.create();
+	public static final Item CRYSTAL_SCARAB_AXE = CrystalScarabAxeItem.create();
+	public static final Item CRYSTAL_SCARAB_HOE = CrystalScarabHoeItem.create();
+		
+	//Registry
+	public static void init() { }
+}
