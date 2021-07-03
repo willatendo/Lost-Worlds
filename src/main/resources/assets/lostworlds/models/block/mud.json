@@ -1,6 +1,6 @@
 {
- 	"parent": "minecraft:block/cube_all",
+	"parent": "minecraft:block/cube_all",
 	"textures": {
-    	"all": "lostworlds:blocks/mud"
-  	}
+		"all": "lostworlds:blocks/mud"
+	}
 }

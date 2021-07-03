@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/cephalotaxus"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/cephalotaxus"
+		}
+	}
 }

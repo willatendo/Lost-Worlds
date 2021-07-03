@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/permian_seagrass"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/permian_seagrass"
+		}
+	}
 }

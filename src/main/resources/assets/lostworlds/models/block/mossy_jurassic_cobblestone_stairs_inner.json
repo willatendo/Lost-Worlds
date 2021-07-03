@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/inner_stairs",
- 	"textures": {
+	"textures": {
 		"bottom": "lostworlds:blocks/mossy_jurassic_cobblestone",
 		"top": "lostworlds:blocks/mossy_jurassic_cobblestone",
 		"side": "lostworlds:blocks/mossy_jurassic_cobblestone"

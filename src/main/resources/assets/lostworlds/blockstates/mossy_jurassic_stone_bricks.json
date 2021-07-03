@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/mossy_jurassic_stone_bricks"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/mossy_jurassic_stone_bricks"
+		}
+	}
 }

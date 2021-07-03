@@ -4,10 +4,15 @@ import lostworlds.library.util.JigsawUtil;
 import lostworlds.library.util.ModUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent;
 
-@Mod.EventBusSubscriber()
+/*
+ * Author: Willatendo
+ * Date: July 3, 2021
+ */
+
+@EventBusSubscriber
 public class AddVillageStructures 
 {
 	@SubscribeEvent

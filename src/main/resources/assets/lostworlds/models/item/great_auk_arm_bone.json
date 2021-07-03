@@ -2,5 +2,4 @@
 	"parent": "minecraft:item/generated",
 	"textures": {
 		"layer0": "lostworlds:items/bones/arm_bone"
-  }
-}
+	}}

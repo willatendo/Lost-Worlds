@@ -20,11 +20,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.MerchantOffer;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD)
+/*
+ * Author: Willatendo
+ * Date: July 3, 2021
+ */
+
+@EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD)
 public class FillTradeData 
 {
 	public static void fillTradeData() 

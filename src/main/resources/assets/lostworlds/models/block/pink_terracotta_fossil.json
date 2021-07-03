@@ -1,6 +1,6 @@
 {
- 	"parent": "minecraft:block/cube_all",
+	"parent": "minecraft:block/cube_all",
 	"textures": {
-    	"all": "lostworlds:blocks/pink_terracotta_fossil"
-  	}
+		"all": "lostworlds:blocks/pink_terracotta_fossil"
+	}
 }

@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/araucaria_sapling"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/araucaria_sapling"
+		}
+	}
 }

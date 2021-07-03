@@ -1,7 +1,5 @@
 {
  	"variants": {
- 		"": {
- 			"model": "lostworlds:block/yellow_terracotta_fossil"
-    	}
+ 		"": { "model": "lostworlds:block/yellow_terracotta_fossil" }
   	}
 }

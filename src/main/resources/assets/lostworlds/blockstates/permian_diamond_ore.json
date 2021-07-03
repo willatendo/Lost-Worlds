@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/permian_diamond_ore"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/permian_diamond_ore"
+		}
+	}
 }

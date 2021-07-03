@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/dark_concrete"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/dark_concrete"
+		}
+	}
 }

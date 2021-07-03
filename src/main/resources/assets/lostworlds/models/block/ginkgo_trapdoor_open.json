@@ -1,6 +1,6 @@
 {
- 	"parent": "minecraft:block/template_orientable_trapdoor_open",
+	"parent": "minecraft:block/template_orientable_trapdoor_open",
 	"textures": {
-    	"texture": "lostworlds:blocks/ginkgo_trapdoor"
-  	}
+		"texture": "lostworlds:blocks/ginkgo_trapdoor"
+	}
 }

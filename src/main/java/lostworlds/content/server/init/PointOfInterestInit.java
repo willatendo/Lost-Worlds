@@ -10,6 +10,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.village.PointOfInterestType;
 import net.minecraftforge.fml.RegistryObject;
 
+/*
+ * Author: Willatendo
+ * Date: July 2, 2021
+ */
+
 public class PointOfInterestInit 
 {
 	public static Set<BlockState> getBlockStates(Block block) 

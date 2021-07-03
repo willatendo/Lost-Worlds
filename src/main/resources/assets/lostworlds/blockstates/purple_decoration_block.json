@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/purple_decoration_block"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/purple_decoration_block"
+		}
+	}
 }

@@ -16,7 +16,7 @@ import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -25,7 +25,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
  * Date: July 2, 2021
  */
 
-@Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientSetup 
 {
 	@SubscribeEvent

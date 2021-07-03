@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/stairs",
- 	"textures": {
+	"textures": {
 		"bottom": "lostworlds:blocks/conifer_planks",
 		"top": "lostworlds:blocks/conifer_planks",
 		"side": "lostworlds:blocks/conifer_planks"

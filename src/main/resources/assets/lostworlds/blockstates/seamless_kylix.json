@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/seamless_kylix"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/seamless_kylix"
+		}
+	}
 }

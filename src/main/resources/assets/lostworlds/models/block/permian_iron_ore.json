@@ -1,6 +1,6 @@
 {
- 	"parent": "minecraft:block/cube_all",
+	"parent": "minecraft:block/cube_all",
 	"textures": {
-    	"all": "lostworlds:blocks/permian_iron_ore"
-  	}
+		"all": "lostworlds:blocks/permian_iron_ore"
+	}
 }

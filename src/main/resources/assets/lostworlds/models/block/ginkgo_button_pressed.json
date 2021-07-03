@@ -1,6 +1,6 @@
 {
- 	"parent": "minecraft:block/button_pressed",
+	"parent": "minecraft:block/button_pressed",
 	"textures": {
-    	"texture": "lostworlds:blocks/ginkgo_planks"
-  	}
+		"texture": "lostworlds:blocks/ginkgo_planks"
+	}
 }

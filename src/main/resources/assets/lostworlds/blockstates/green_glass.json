@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/green_glass"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/green_glass"
+		}
+	}
 }

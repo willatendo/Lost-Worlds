@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/outer_stairs",
- 	"textures": {
+	"textures": {
 		"bottom": "lostworlds:blocks/polished_dark_concrete",
 		"top": "lostworlds:blocks/polished_dark_concrete",
 		"side": "lostworlds:blocks/polished_dark_concrete"

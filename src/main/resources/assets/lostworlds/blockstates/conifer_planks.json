@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/conifer_planks"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/conifer_planks"
+		}
+	}
 }

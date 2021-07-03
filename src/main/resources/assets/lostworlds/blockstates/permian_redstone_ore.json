@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/permian_redstone_ore"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/permian_redstone_ore"
+		}
+	}
 }

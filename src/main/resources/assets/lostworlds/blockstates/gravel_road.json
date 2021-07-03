@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/gravel_road"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/gravel_road"
+		}
+	}
 }

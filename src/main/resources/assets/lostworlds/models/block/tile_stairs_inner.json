@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/inner_stairs",
- 	"textures": {
+	"textures": {
 		"bottom": "lostworlds:blocks/tile",
 		"top": "lostworlds:blocks/tile",
 		"side": "lostworlds:blocks/tile"

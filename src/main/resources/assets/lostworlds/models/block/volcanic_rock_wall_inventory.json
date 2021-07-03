@@ -2,5 +2,5 @@
 	"parent": "minecraft:block/wall_inventory",
 	"textures": {
 		"wall": "lostworlds:blocks/volcanic_rock"
-  	}
+	}
 }

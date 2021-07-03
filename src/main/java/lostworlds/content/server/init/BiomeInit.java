@@ -6,6 +6,11 @@ import lostworlds.library.util.ModRegistry;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.RegistryObject;
 
+/*
+ * Author: Willatendo
+ * Date: July 3, 2021
+ */
+
 public class BiomeInit 
 {
 	public static final RegistryObject<Biome> PERMIAN_DESERT = ModRegistry.register(1, BiomeKeys.PERMIAN_DESERT, "permian_desert", ModBiomeMaker.permianDesert());

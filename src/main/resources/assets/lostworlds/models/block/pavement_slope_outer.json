@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/outer_stairs",
- 	"textures": {
+	"textures": {
 		"bottom": "lostworlds:blocks/pavement",
 		"top": "lostworlds:blocks/pavement",
 		"side": "lostworlds:blocks/pavement"

@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/cyan_glass"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/cyan_glass"
+		}
+	}
 }

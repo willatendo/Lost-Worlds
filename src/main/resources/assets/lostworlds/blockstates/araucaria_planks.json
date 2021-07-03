@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/araucaria_planks"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/araucaria_planks"
+		}
+	}
 }

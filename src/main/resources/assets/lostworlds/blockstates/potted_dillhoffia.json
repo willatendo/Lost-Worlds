@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/potted_dillhoffia"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/potted_dillhoffia"
+		}
+	}
 }

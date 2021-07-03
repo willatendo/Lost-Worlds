@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/inner_stairs",
- 	"textures": {
+	"textures": {
 		"bottom": "lostworlds:blocks/permian_stone_bricks",
 		"top": "lostworlds:blocks/permian_stone_bricks",
 		"side": "lostworlds:blocks/permian_stone_bricks"

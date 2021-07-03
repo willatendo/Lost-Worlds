@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/stairs",
- 	"textures": {
+	"textures": {
 		"bottom": "lostworlds:blocks/ginkgo_planks",
 		"top": "lostworlds:blocks/ginkgo_planks",
 		"side": "lostworlds:blocks/ginkgo_planks"

@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/tinted_glass"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/tinted_glass"
+		}
+	}
 }

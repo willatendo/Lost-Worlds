@@ -1,20 +1,20 @@
-package lostworlds.content.server.event;
+package lostworlds.content.client.event;
 
 import lostworlds.library.util.ModUtil;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 3, 2021
  */
 
-@Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ModUtil.ID, bus = Bus.FORGE, value = Dist.CLIENT)
 public class OnLoadEvent 
 {
 	@SubscribeEvent

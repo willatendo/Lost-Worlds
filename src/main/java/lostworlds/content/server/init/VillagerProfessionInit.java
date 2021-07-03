@@ -5,6 +5,11 @@ import lostworlds.library.villager.ModVillagerProfession;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.fml.RegistryObject;
 
+/*
+ * Author: Willatendo
+ * Date: July 2, 2021
+ */
+
 public class VillagerProfessionInit 
 {
 	public static final RegistryObject<ModVillagerProfession> ARCHAEOLOGIST = ModRegistry.register("archaeologist", () -> PointOfInterestInit.ARCHAEOLOGY_TABLE_POI.get(), SoundEvents.VILLAGER_WORK_MASON);

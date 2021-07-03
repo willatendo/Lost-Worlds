@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/pavement"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/pavement"
+		}
+	}
 }

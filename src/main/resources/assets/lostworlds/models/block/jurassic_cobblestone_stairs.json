@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/stairs",
- 	"textures": {
+	"textures": {
 		"bottom": "lostworlds:blocks/jurassic_cobblestone",
 		"top": "lostworlds:blocks/jurassic_cobblestone",
 		"side": "lostworlds:blocks/jurassic_cobblestone"

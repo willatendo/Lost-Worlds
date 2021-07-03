@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/lycophyta"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/lycophyta"
+		}
+	}
 }

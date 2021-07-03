@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/time_machine"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/time_machine"
+		}
+	}
 }

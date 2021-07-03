@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/conifer_sign"
- 		}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/conifer_sign"
+		}
 	}
 }

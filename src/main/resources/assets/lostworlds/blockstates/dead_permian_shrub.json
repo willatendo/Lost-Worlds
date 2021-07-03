@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/dead_permian_shrub"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/dead_permian_shrub"
+		}
+	}
 }

@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/jurassic_shattered_red_cobblestone"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/jurassic_shattered_red_cobblestone"
+		}
+	}
 }

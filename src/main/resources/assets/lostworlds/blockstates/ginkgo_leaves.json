@@ -1,7 +1,7 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/ginkgo_leaves"
-    	}
-  	}
+	"variants": {
+		"": {
+			"model": "lostworlds:block/ginkgo_leaves"
+		}
+	}
 }
