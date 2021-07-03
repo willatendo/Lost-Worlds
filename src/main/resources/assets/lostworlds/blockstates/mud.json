@@ -1,7 +1,5 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/mud"
-    	}
-  	}
+    "variants": {
+        "": { "model": "lostworlds:block/mud" }
+    }
 }

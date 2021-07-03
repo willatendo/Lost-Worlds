@@ -1,9 +1,0 @@
-{
-	"type": "lostworlds:dna_injector",
-	"output": {
-		"item": "lostworlds:ostromia_egg"
-	},
-	"dnaDisc": {
-		"item": "lostworlds:ostromia_dna_disc"
-	}
-}

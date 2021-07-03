@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smoking",
-	"ingredient": {
-		"item": "lostworlds:raw_psittacosaurus_meat"
-	},
-	"result": "lostworlds:cooked_psittacosaurus_meat",
-	"experience": 0.5,
-	"cookingtime": 100
-}

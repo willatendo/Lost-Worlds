@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smelting",
-	"ingredient": {
-		"item": "lostworlds:raw_procompsognathus_meat"
-	},
-	"result": "lostworlds:cooked_procompsognathus_meat",
-	"experience": 0.5,
-	"cookingtime": 200
-}

@@ -1,7 +1,5 @@
 {
  	"variants": {
- 		"": {
- 			"model": "lostworlds:block/copper_ore"
-    	}
+ 		"": { "model": "lostworlds:block/copper_ore" }
   	}
 }

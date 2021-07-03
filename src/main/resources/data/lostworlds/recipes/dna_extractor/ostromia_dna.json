@@ -1,9 +1,0 @@
-{
-	"type": "lostworlds:dna_extractor",
-	"output": {
-		"item": "lostworlds:ostromia_dna"
-	},
-	"softTissue": {
-		"item": "lostworlds:ostromia_soft_tissue"
-	}
-}

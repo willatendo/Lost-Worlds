@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smelting",
-	"ingredient": {
-		"item": "lostworlds:nautilus_tentical"
-	},
-	"result": "lostworlds:cooked_nautilus_tentical",
-	"experience": 0.5,
-	"cookingtime": 200
-}

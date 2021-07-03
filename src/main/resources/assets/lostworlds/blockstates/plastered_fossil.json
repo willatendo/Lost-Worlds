@@ -1,7 +1,5 @@
 {
  	"variants": {
- 		"": {
- 			"model": "lostworlds:block/plastered_fossil"
-    	}
+ 		"": { "model": "lostworlds:block/plastered_fossil" }
   	}
 }

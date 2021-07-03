@@ -1,8 +1,0 @@
-{
-    "block.pot.smash": {
-        "subtitle": "subtitle.lostworlds.smash_pot",
-        "sounds": [ 
-        	"lostworlds:block/pot_smash" 
-        ]
-    }
-}

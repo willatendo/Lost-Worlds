@@ -1,7 +1,5 @@
 {
- 	"variants": {
- 		"": {
- 			"model": "lostworlds:block/nesting_block"
-    	}
-  	}
+    "variants": {
+        "": { "model": "lostworlds:block/nesting_block" }
+    }
 }

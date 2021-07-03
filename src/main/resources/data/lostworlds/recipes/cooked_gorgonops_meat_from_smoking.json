@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smoking",
-	"ingredient": {
-		"item": "lostworlds:raw_gorgonops_meat"
-	},
-	"result": "lostworlds:cooked_gorgonops_meat",
-	"experience": 0.5,
-	"cookingtime": 100
-}

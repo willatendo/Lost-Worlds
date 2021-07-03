@@ -1,7 +1,5 @@
 {
-    "variants": {
-        "": { 
-        	"model": "lostworlds:block/archaeology_table" 
-        }
-    }
+ 	"variants": {
+ 		"": { "model": "lostworlds:block/archaeology_table" }
+  	}
 }

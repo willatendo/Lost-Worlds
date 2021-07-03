@@ -1,9 +1,0 @@
-{
-	"type": "lostworlds:dna_injector",
-	"output": {
-		"item": "lostworlds:nautilus_spawn"
-	},
-	"dnaDisc": {
-		"item": "lostworlds:nautilus_dna_disc"
-	}
-}

@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smelting",
-	"ingredient": {
-		"item": "lostworlds:raw_utahraptor_meat"
-	},
-	"result": "lostworlds:cooked_utahraptor_meat",
-	"experience": 0.5,
-	"cookingtime": 200
-}
