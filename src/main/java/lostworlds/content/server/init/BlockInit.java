@@ -28,6 +28,7 @@ import lostworlds.library.block.TriplePlantBlock;
 import lostworlds.library.block.forge.ForgeBlock;
 import lostworlds.library.block.forge.ForgeBlockAndItem;
 import lostworlds.library.block.forge.ForgeSignBlock;
+import lostworlds.library.tree.ConiferTree;
 import lostworlds.library.util.ModWoodTypes;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -99,6 +100,7 @@ public class BlockInit
 	public static final Block LARGE_PERMIAN_DESERT_PLANT = ForgeBlockAndItem.create("large_permian_desert_plant", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final Block LUSH_PERMIAN_DESERT_PLANT = ForgeBlockAndItem.create("lush_permian_desert_plant", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final Block DEAD_PERMIAN_SHRUB = ForgeBlockAndItem.create("dead_permian_shrub", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
+	public static final Block DEAD_LARGE_PERMIAN_SHRUB = ForgeBlockAndItem.create("dead_large_permian_shrub", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final Block TEMPSKYA = ForgeBlockAndItem.create("tempskya", new QuintuplePlantBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 
 	public static final Block DIICTODON_BURROW = ForgeBlockAndItem.create("diictodon_burrow", new Block(AbstractBlock.Properties.of(Material.SAND, MaterialColor.SAND).harvestTool(ToolType.SHOVEL).strength(1.5F).sound(SoundType.SAND)));
@@ -165,7 +167,7 @@ public class BlockInit
 	public static final Block CONIFER_WOOD = ForgeBlockAndItem.create("conifer_wood", new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
 	public static final Block STRIPPED_CONIFER_WOOD = ForgeBlockAndItem.create("stripped_conifer_wood", new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.0F).sound(SoundType.WOOD)));
 	public static final Block CONIFER_LEAVES = ForgeBlockAndItem.create("conifer_leaves", new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.3F).noOcclusion().sound(SoundType.GRASS)));
-	public static final Block CONIFER_SAPLING = ForgeBlockAndItem.create("conifer_sapling", new ModSaplingBlock(null, AbstractBlock.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+	public static final Block CONIFER_SAPLING = ForgeBlockAndItem.create("conifer_sapling", new ModSaplingBlock(new ConiferTree(), AbstractBlock.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 	public static final Block CONIFER_PLANKS = ForgeBlockAndItem.create("conifer_planks", new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final Block CONIFER_STAIRS = ForgeBlockAndItem.create("conifer_stairs", new StairsBlock(() -> BlockInit.CONIFER_PLANKS.defaultBlockState(), AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final Block CONIFER_SLAB = ForgeBlockAndItem.create("conifer_slab", new SlabBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));

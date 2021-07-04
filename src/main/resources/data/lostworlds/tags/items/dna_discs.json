@@ -1,0 +1,29 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:procompsognathus_dna_disc",
+		"lostworlds:palaeoniscum_dna_disc",
+		"lostworlds:nautilus_dna_disc",
+		"lostworlds:rhinesuchus_dna_disc",
+		"lostworlds:dimetrodon_dna_disc",
+		"lostworlds:edaphosaurus_dna_disc",
+		"lostworlds:gorgonops_dna_disc",
+		"lostworlds:carnotaurus_dna_disc",
+		"lostworlds:tyrannosaurus_dna_disc",
+		"lostworlds:allosaurus_dna_disc",
+		"lostworlds:giganotosaurus_dna_disc",
+		"lostworlds:suchomimus_dna_disc",
+		"lostworlds:tetraceratops_dna_disc",
+		"lostworlds:great_auk_dna_disc",
+		"lostworlds:ouranosaurus_dna_disc",
+		"lostworlds:fukuivenator_dna_disc",
+		"lostworlds:psittacosaurus_dna_disc",
+		"lostworlds:cryolophosaurus_dna_disc",
+		"lostworlds:ostromia_dna_disc",
+		"lostworlds:protosuchus_dna_disc",
+		"lostworlds:diictodon_dna_disc",
+		"lostworlds:kentrosaurus_dna_disc",
+		"lostworlds:chilesaurus_dna_disc",
+		"lostworlds:liaoningosaurus_dna_disc"
+	]
+}

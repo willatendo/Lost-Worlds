@@ -14,6 +14,7 @@ import lostworlds.content.server.init.ItemInit;
 import lostworlds.content.server.init.ParticleInit;
 import lostworlds.content.server.init.PointOfInterestInit;
 import lostworlds.content.server.init.RecipeInit;
+import lostworlds.content.server.init.SurfaceBuilderInit;
 import lostworlds.content.server.init.TileEntityInit;
 import lostworlds.content.server.init.VillagerProfessionInit;
 import lostworlds.library.villager.ModVillagerProfession;
@@ -34,6 +35,8 @@ import net.minecraft.village.PointOfInterestType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.blockplacer.BlockPlacerType;
 import net.minecraft.world.gen.foliageplacer.FoliagePlacerType;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -42,7 +45,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 3, 2021
  */
 
 public class ModRegistry 
@@ -51,20 +54,21 @@ public class ModRegistry
 	private static final Int2ObjectMap<RegistryKey<Biome>> TO_NAME = new Int2ObjectArrayMap<>();
 	
 	//Deferred Registers
-	public static final DeferredRegister<ParticleType<?>> PARTICLE_REGISTRY = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, ModUtil.ID);
-	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ModUtil.ID);
-	public static final DeferredRegister<SoundEvent> SOUND_REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ModUtil.ID);
+	private static final DeferredRegister<ParticleType<?>> PARTICLE_REGISTRY = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, ModUtil.ID);
+	private static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ModUtil.ID);
+	private static final DeferredRegister<SoundEvent> SOUND_REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ModUtil.ID);
 	public static final DeferredRegister<Item> ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, ModUtil.ID);
-	public static final DeferredRegister<PaintingType> PAINTING_REGISTRY = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, ModUtil.ID);
+	private static final DeferredRegister<PaintingType> PAINTING_REGISTRY = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, ModUtil.ID);
 	public static final DeferredRegister<ContainerType<?>> CONTAINER_REGISTRY = DeferredRegister.create(ForgeRegistries.CONTAINERS, ModUtil.ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, ModUtil.ID);
-	public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ModUtil.ID);
-	public static final DeferredRegister<BlockPlacerType<?>> BLOCK_PLACER_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_PLACER_TYPES, ModUtil.ID);
-	public static final DeferredRegister<PointOfInterestType> POINTS_OF_INTEREST_REGISTRY = DeferredRegister.create(ForgeRegistries.POI_TYPES, ModUtil.ID);
-	public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS_REGISTRY = DeferredRegister.create(ForgeRegistries.PROFESSIONS, ModUtil.ID);
-	public static final DeferredRegister<EntityType<?>> ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModUtil.ID);
-	public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_REGISTRY = DeferredRegister.create(ForgeRegistries.FOLIAGE_PLACER_TYPES, ModUtil.ID);
-	public static final DeferredRegister<Biome> BIOME_REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, ModUtil.ID);
+	private static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ModUtil.ID);
+	private static final DeferredRegister<BlockPlacerType<?>> BLOCK_PLACER_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_PLACER_TYPES, ModUtil.ID);
+	private static final DeferredRegister<PointOfInterestType> POINTS_OF_INTEREST_REGISTRY = DeferredRegister.create(ForgeRegistries.POI_TYPES, ModUtil.ID);
+	private static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS_REGISTRY = DeferredRegister.create(ForgeRegistries.PROFESSIONS, ModUtil.ID);
+	private static final DeferredRegister<EntityType<?>> ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModUtil.ID);
+	private static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_REGISTRY = DeferredRegister.create(ForgeRegistries.FOLIAGE_PLACER_TYPES, ModUtil.ID);
+	private static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDER_REGISTRY = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, ModUtil.ID);
+	private static final DeferredRegister<Biome> BIOME_REGISTRY = DeferredRegister.create(ForgeRegistries.BIOMES, ModUtil.ID);
 	
 	//Registers
 	public static RegistryObject<BasicParticleType> register(String id)
@@ -103,6 +107,11 @@ public class ModRegistry
 		return BIOME_REGISTRY.register(id, () -> biome);
 	}
 	
+	public static RegistryObject<SurfaceBuilder<SurfaceBuilderConfig>> register(String id, SurfaceBuilder<SurfaceBuilderConfig> surfaceBuilder)
+	{
+		return SURFACE_BUILDER_REGISTRY.register(id, () -> surfaceBuilder);
+	}
+	
 	//Registers Deferred Registers
 	public static void register(IEventBus bus)
 	{
@@ -121,6 +130,7 @@ public class ModRegistry
 		VILLAGER_PROFESSIONS_REGISTRY.register(bus);
 		ENTITY_REGISTRY.register(bus);
 		FOLIAGE_PLACER_REGISTRY.register(bus);
+		SURFACE_BUILDER_REGISTRY.register(bus);
 		BIOME_REGISTRY.register(bus);
 		
 		ParticleInit.init();
@@ -132,6 +142,7 @@ public class ModRegistry
 		BlockInit.init();
 		PointOfInterestInit.init();
 		VillagerProfessionInit.init();
+		SurfaceBuilderInit.init();
 		BiomeInit.init();
 		
 		ModUtil.LOGGER.debug("Finished: Setting Up Registries");

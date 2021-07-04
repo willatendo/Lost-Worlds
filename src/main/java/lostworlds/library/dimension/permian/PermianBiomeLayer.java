@@ -11,17 +11,16 @@ public class PermianBiomeLayer implements IAreaTransformer0
     protected int[] commonBiomes = new int[]
     {
     	PermianLayerUtil.getBiomeId(BiomeKeys.PERMIAN_DESERT),
-    	PermianLayerUtil.getBiomeId(BiomeKeys.PERMIAN_DESERT_HILLS)
+    	PermianLayerUtil.getBiomeId(BiomeKeys.PERMIAN_DESERT_HILLS),
+    	PermianLayerUtil.getBiomeId(BiomeKeys.PERMIAN_DRIED_PLAINS)
     };
     protected int[] uncommonBiomes = (new int[]
     {
     	PermianLayerUtil.getBiomeId(BiomeKeys.PERMIAN_DESERT),
-    	PermianLayerUtil.getBiomeId(BiomeKeys.PERMIAN_DESERT_HILLS)	
     });
     protected int[] rareBiomes = (new int[]
     {
     	PermianLayerUtil.getBiomeId(BiomeKeys.PERMIAN_DESERT),
-    	PermianLayerUtil.getBiomeId(BiomeKeys.PERMIAN_DESERT_HILLS)
     });
 
     public PermianBiomeLayer() { }

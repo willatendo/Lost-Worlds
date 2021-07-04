@@ -6,11 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.FarmlandWaterManager;
+import net.minecraftforge.common.IPlantable;
 
 public class DriedSoilBlock extends Block
 {
@@ -48,5 +51,11 @@ public class DriedSoilBlock extends Block
 	public static void turnToDirt(BlockState state, World world, BlockPos pos) 
 	{
 		world.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
+	}
+	
+	@Override
+	public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, IPlantable plantable) 
+	{
+		return true;
 	}
 }
