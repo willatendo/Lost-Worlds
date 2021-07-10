@@ -1,7 +1,7 @@
 package lostworlds.content.server.init;
 
-import lostworlds.library.enums.DinoTypes;
 import lostworlds.library.item.forge.ForgeFossilItem;
+import lostworlds.library.util.ModUtil;
 
 /*
  * Author: Willatendo
@@ -13,6 +13,8 @@ public class FossilInit
 	//Registry
 	public static void init() 
 	{
-		ForgeFossilItem.create(DinoTypes.ALLOSAURUS);
+		ModUtil.LOGGER.debug("Registering Fossils");
+		
+		ForgeFossilItem.create("allosaurus");
 	}
 }

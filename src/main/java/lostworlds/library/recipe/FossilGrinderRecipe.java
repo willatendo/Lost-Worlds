@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 /*
  * Author: Willatendo
- * Date: July 1, 2021
+ * Date: July 8, 2021
  */
 
 
@@ -98,7 +98,7 @@ public class FossilGrinderRecipe implements IRecipe<IInventory>
 	@Override
 	public IRecipeSerializer<?> getSerializer() 
 	{
-		return RecipeInit.FOSSIL_GRINDER_SERIALIZER.get();
+		return RecipeInit.FOSSIL_GRINDER_SERIALIZER;
 	}
 
 	@Override

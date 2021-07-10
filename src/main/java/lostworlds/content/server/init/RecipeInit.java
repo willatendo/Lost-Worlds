@@ -15,11 +15,10 @@ import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
-import net.minecraftforge.fml.RegistryObject;
 
 /*
  * Author: Willatendo
- * Date: July 1, 2021
+ * Date: July 8, 2021
  */
 
 public class RecipeInit 
@@ -34,10 +33,10 @@ public class RecipeInit
 	public static final IRecipeType<AnalyserRecipe> ANALYSER_RECIPE = registerType(ModUtil.rL("analyser"));
 	public static final IRecipeType<DNAInjectorRecipe> DNA_INJECTOR_RECIPE = registerType(ModUtil.rL("dna_injector"));
 
-	public static final RegistryObject<IRecipeSerializer<?>> FOSSIL_GRINDER_SERIALIZER = ModRegistry.register("fossil_grinder", FOSSIL_GRINDER_RECIPE_SERIALIZER);
-	public static final RegistryObject<IRecipeSerializer<?>> DNA_EXTRACTOR_SERIALIZER = ModRegistry.register("dna_extractor", DNA_EXTRACTOR_RECIPE_SERIALIZER);
-	public static final RegistryObject<IRecipeSerializer<?>> ANALYSER_SERIALIZER = ModRegistry.register("analyser", ANALYSER_RECIPE_SERIALIZER);
-	public static final RegistryObject<IRecipeSerializer<?>> DNA_INJECTOR_SERIALIZER = ModRegistry.register("dna_injector", DNA_INJECTOR_RECIPE_SERIALIZER);
+	public static final IRecipeSerializer<?> FOSSIL_GRINDER_SERIALIZER = ModRegistry.register("fossil_grinder", FOSSIL_GRINDER_RECIPE_SERIALIZER);
+	public static final IRecipeSerializer<?> DNA_EXTRACTOR_SERIALIZER = ModRegistry.register("dna_extractor", DNA_EXTRACTOR_RECIPE_SERIALIZER);
+	public static final IRecipeSerializer<?> ANALYSER_SERIALIZER = ModRegistry.register("analyser", ANALYSER_RECIPE_SERIALIZER);
+	public static final IRecipeSerializer<?> DNA_INJECTOR_SERIALIZER = ModRegistry.register("dna_injector", DNA_INJECTOR_RECIPE_SERIALIZER);
 	
 	private static class RecipeType<T extends IRecipe<?>> implements IRecipeType<T> 
 	{
@@ -54,5 +53,5 @@ public class RecipeInit
 	}
 	
 	//Registry
-	public static void init() { }
+	public static void init() { ModUtil.LOGGER.debug("Registering Mod Recipes"); }
 }

@@ -3,24 +3,57 @@ package lostworlds.library.item;
 import lostworlds.library.tab.ModItemGroup;
 import lostworlds.library.util.ModRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 8, 2021
  */
 
 public class CrystalScarabGemItem extends Item
 {	
-	protected CrystalScarabGemItem(Properties properties)
+	private Variant variant;
+	
+	protected CrystalScarabGemItem(Properties properties, Variant variant)
 	{
 		super(properties);
+		this.variant = variant;
 	}
 	
-	public static Item create(String broken)
+	@Override
+	public boolean isFoil(ItemStack stack) 
 	{
-		Item item = new CrystalScarabGemItem(new Properties().tab(ModItemGroup.ITEMS).rarity(Rarity.RARE));
-		ModRegistry.register(broken + "crystal_scarab_gem", item);
-		return item;
+		if(this.variant != Variant.CHARGED)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	public static Item create(Variant varient)
+	{
+		if(varient != Variant.CHARGED)
+		{
+			Item item = new CrystalScarabGemItem(new Properties().tab(ModItemGroup.ITEMS).rarity(Rarity.RARE), varient);
+			ModRegistry.register(varient.toString().toLowerCase() + "_crystal_scarab_gem", item);
+			return item;
+		}
+		else
+		{
+			Item item = new CrystalScarabGemItem(new Properties().tab(ModItemGroup.ITEMS).rarity(Rarity.RARE).fireResistant(), varient);
+			ModRegistry.register(varient.toString().toLowerCase() + "_crystal_scarab_gem", item);
+			return item;
+		}
+	}
+	
+	public enum Variant
+	{
+		BROKEN,
+		UNCHARGED,
+		CHARGED;
 	}
 }

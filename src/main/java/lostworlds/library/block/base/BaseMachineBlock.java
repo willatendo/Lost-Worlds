@@ -2,9 +2,11 @@ package lostworlds.library.block.base;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import lostworlds.content.server.init.SoundInit;
 import lostworlds.library.ModBlockStateProperties;
 import lostworlds.library.tileentity.AnalyserTileEntity;
 import lostworlds.library.tileentity.DNAExtractorTileEntity;
@@ -33,6 +35,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -43,7 +46,7 @@ import net.minecraftforge.fml.network.NetworkHooks;
 
 /*
  * Author: Willatendo
- * Date: July 1, 2021
+ * Date: July 8, 2021
  */
 
 public abstract class BaseMachineBlock extends Block implements ITileEntityProvider
@@ -215,6 +218,18 @@ public abstract class BaseMachineBlock extends Block implements ITileEntityProvi
 			
 			super.onRemove(state, world, pos, newState, b);
 		}
+	}
+	
+	@Override
+	public void animateTick(BlockState state, World world, BlockPos pos, Random rand) 
+	{
+		double d0 = (double)pos.getX() + 0.5D;
+		double d1 = (double)pos.getY();
+		double d2 = (double)pos.getZ() + 0.5D;
+		if(rand.nextDouble() < 0.1D) 
+		{
+			world.playLocalSound(d0, d1, d2, SoundInit.MACHINE_WHIRLING, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+         }
 	}
 	
 	@Override

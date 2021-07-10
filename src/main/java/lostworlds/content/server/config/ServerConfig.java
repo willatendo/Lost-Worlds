@@ -13,17 +13,13 @@ public class ServerConfig
 	public final ForgeConfigSpec.DoubleValue allosaurusMovementSpeed;
 	public final ForgeConfigSpec.DoubleValue allosaurusAttackDamage;
 			
-	public final ForgeConfigSpec.DoubleValue carnotaurusHeath;
-	public final ForgeConfigSpec.DoubleValue carnotaurusMovementSpeed;
-	public final ForgeConfigSpec.DoubleValue carnotaurusAttackDamage;
-			
 	/*
 	 * World Settings
 	 * 
 	 * Sorted Boolean then Integer
 	 */
 	
-	public final ForgeConfigSpec.BooleanValue creatureSpawnInOverworld;
+	public final ForgeConfigSpec.BooleanValue ancientCreatureSpawnInOverworld;
 	
 	public final ForgeConfigSpec.BooleanValue shouldForestsSpawnInOverworld;
 		
@@ -46,11 +42,7 @@ public class ServerConfig
 		this.allosaurusMovementSpeed = builder.comment("Sets the Allosaurus's movement speed.").translation("lostworlds.config.allosaurusMovementSpeed").defineInRange("allosaurusMovementSpeed", 0.2D, 0.0D, 1.0D);
 		this.allosaurusAttackDamage = builder.comment("Sets the Allosaurus's attack damage.").translation("lostworlds.config.allosaurusAttackDamage").defineInRange("allosaurusAttackDamage", 8.0D, 0.0D, 30.0D);
 		
-		this.carnotaurusHeath = builder.comment("Sets the Carnotaurus's heath.").translation("lostworlds.config.carnotaurusHeath").defineInRange("carnotaurusHeath", 45.0D, 0.0D, 1000.0D);
-		this.carnotaurusMovementSpeed = builder.comment("Sets the Carnotaurus's movement speed.").translation("lostworlds.config.carnotaurusMovementSpeed").defineInRange("carnotaurusMovementSpeed", 0.2D, 0.0D, 1.0D);
-		this.carnotaurusAttackDamage = builder.comment("Sets the Carnotaurus's attack damage.").translation("lostworlds.config.carnotaurusAttackDamage").defineInRange("carnotaurusAttackDamage", 8.0D, 0.0D, 30.0D);
-		
-		this.creatureSpawnInOverworld = builder.comment("If true, prehistoric creatures will spawn naturally in the overworld.").translation("lostworlds.config.creatureSpawnInOverworld").define("creatureSpawnInOverworld", false);
+		this.ancientCreatureSpawnInOverworld = builder.comment("If true, prehistoric creatures will spawn naturally in the overworld.").translation("lostworlds.config.ancientCreatureSpawnInOverworld").define("ancientCreatureSpawnInOverworld", false);
 		
 		this.shouldForestsSpawnInOverworld = builder.comment("If true, forests will spawn naturally in the overworld.").translation("lostworlds.config.shouldForestsSpawnInOverworld").define("shouldForestsSpawnInOverworld", true);
 		

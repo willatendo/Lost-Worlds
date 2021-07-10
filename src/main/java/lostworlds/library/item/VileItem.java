@@ -4,7 +4,6 @@ import lostworlds.library.enums.DinoTypes;
 import lostworlds.library.tab.ModItemGroup;
 import lostworlds.library.util.ModRegistry;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.RegistryObject;
 
 /*
  * Author: Willatendo
@@ -18,7 +17,7 @@ public class VileItem extends Item
 		super(new Properties().tab(ModItemGroup.ITEMS));
 	}
 	
-	public static RegistryObject<Item> create(DinoTypes dino)
+	public static Item create(DinoTypes dino)
 	{
 		return ModRegistry.register(dino.toString().toLowerCase() + "_blood_vile", new VileItem());
 	}

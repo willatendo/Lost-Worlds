@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "lostworlds:items/permian_era_time_book"
+		"layer0": "lostworlds:items/crystal_scarab_gem"
 	}
 }

@@ -4,6 +4,7 @@ import lostworlds.library.ModMaterials;
 import lostworlds.library.ModToolTypes;
 import lostworlds.library.block.AnalyserBlock;
 import lostworlds.library.block.ArchaeologyTable;
+import lostworlds.library.block.AshLayerBlock;
 import lostworlds.library.block.ColouredDecorationBlock;
 import lostworlds.library.block.DNAExtractorBlock;
 import lostworlds.library.block.DNAInjectorBlock;
@@ -13,9 +14,11 @@ import lostworlds.library.block.ExposedFossilBlock;
 import lostworlds.library.block.FossilBlock;
 import lostworlds.library.block.FossilCleanerBlock;
 import lostworlds.library.block.FossilGrinderBlock;
+import lostworlds.library.block.GeyserBlock;
 import lostworlds.library.block.GroundFernsBlock;
 import lostworlds.library.block.ModBushBlock;
 import lostworlds.library.block.ModOreBlock;
+import lostworlds.library.block.ModOreRotatedPillerBlock;
 import lostworlds.library.block.ModSaplingBlock;
 import lostworlds.library.block.ModStandingSignBlock;
 import lostworlds.library.block.ModWallSignBlock;
@@ -23,12 +26,16 @@ import lostworlds.library.block.MossyDirtBlock;
 import lostworlds.library.block.PlasteredFossilBlock;
 import lostworlds.library.block.PowerSupplyBlock;
 import lostworlds.library.block.QuintuplePlantBlock;
+import lostworlds.library.block.RockOutcropBlock;
 import lostworlds.library.block.SpongeColonyBlock;
+import lostworlds.library.block.SticksBlock;
+import lostworlds.library.block.TimeMachineBlock;
 import lostworlds.library.block.TriplePlantBlock;
 import lostworlds.library.block.forge.ForgeBlock;
 import lostworlds.library.block.forge.ForgeBlockAndItem;
 import lostworlds.library.block.forge.ForgeSignBlock;
 import lostworlds.library.tree.ConiferTree;
+import lostworlds.library.util.ModUtil;
 import lostworlds.library.util.ModWoodTypes;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -63,7 +70,7 @@ import net.minecraftforge.common.ToolType;
 
 /*
  * Author: Willatendo
- * Date: July 3, 2021
+ * Date: July 9, 2021
  */
 
 public class BlockInit 
@@ -84,6 +91,7 @@ public class BlockInit
 	 */
 	
 	//Nature Blocks
+	public static final Block ASHY_SHRUB = ForgeBlockAndItem.create("ashy_shrub", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final Block CEPHALOTAXUS = ForgeBlockAndItem.create("cephalotaxus", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final Block CYCAD = ForgeBlockAndItem.create("cycad", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final Block DICKSONIA = ForgeBlockAndItem.create("dicksonia", new ModBushBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_GREEN).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS)));
@@ -108,22 +116,29 @@ public class BlockInit
 	public static final Block DRIED_SOIL = ForgeBlockAndItem.create("dried_soil", new DriedSoilBlock(AbstractBlock.Properties.of(Material.DIRT, MaterialColor.DIRT).strength(0.75F).sound(SoundType.GRAVEL).randomTicks()));
 	public static final Block CRACKED_SOIL = ForgeBlockAndItem.create("cracked_soil", new Block(AbstractBlock.Properties.of(Material.DIRT, MaterialColor.DIRT).strength(0.75F).sound(SoundType.GRAVEL)));
 	
+	public static final Block GEYSER_BLOCK = ForgeBlockAndItem.create("geyser_block", new GeyserBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).strength(0.75F).noOcclusion()));
+	
 	public static final Block MOSSY_DIRT = MossyDirtBlock.create();
 	
 	public static final Block MUD = ForgeBlockAndItem.create("mud", new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.6F).sound(SoundType.GRAVEL)));
 
 	public static final Block NESTING_BLOCK = ForgeBlockAndItem.create("nesting_block", new Block(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).harvestTool(ToolType.SHOVEL).strength(0.3F).sound(SoundType.GRASS)));
 
+	public static final Block PERMIAN_ROCK_OUTCROP = ForgeBlockAndItem.create("permian_rock_outcrop", new RockOutcropBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(1.5F, 6.0F).noOcclusion().sound(SoundType.STONE)));
+	
 	public static final Block DEAD_SPONGE_COLONY = ForgeBlockAndItem.create("dead_sponge_colony", new DeadSpongeColonyBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.STONE).noOcclusion().instabreak().sound(SoundType.GRASS)));
 	public static final Block SPONGE_COLONY = ForgeBlockAndItem.create("sponge_colony", new SpongeColonyBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().noOcclusion().strength(1.5F, 6.0F).sound(SoundType.CORAL_BLOCK), () -> BlockInit.DEAD_SPONGE_COLONY));
 
 	public static final Block TUNNELED_SOIL = ForgeBlockAndItem.create("tunneled_soil", new Block(AbstractBlock.Properties.of(Material.DIRT, MaterialColor.DIRT).strength(0.5F).sound(SoundType.GRAVEL)));
 
 	public static final Block VOLCANIC_ASH = ForgeBlockAndItem.create("volcanic_ash", new SandBlock(0x888988, AbstractBlock.Properties.of(Material.SAND, MaterialColor.COLOR_GRAY).harvestTool(ToolType.SHOVEL).harvestLevel(1).strength(0.5F).sound(SoundType.SAND)));
+	public static final Block VOLCANIC_ASH_LAYER = ForgeBlockAndItem.create("volcanic_ash_layer", new AshLayerBlock());
 	
 	//Overworld Ores
 	public static final Block COPPER_ORE = ForgeBlockAndItem.create("copper_ore", new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.0F).sound(SoundType.STONE)));
-	
+
+	public static final Block BASALT_DIAMOND_ORE = ForgeBlockAndItem.create("basalt_diamond_ore", new ModOreRotatedPillerBlock(AbstractBlock.Properties.copy(Blocks.BASALT)));
+
 	public static final Block EXPOSED_STONE_FOSSIL = ForgeBlockAndItem.create("exposed_stone_fossil", new ExposedFossilBlock(AbstractBlock.Properties.of(ModMaterials.MADE_FOR_NOTHING, MaterialColor.STONE).harvestTool(ModToolTypes.BRUSH).requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.STONE)));
 	public static final Block STONE_FOSSIL = ForgeBlockAndItem.create("stone_fossil", new FossilBlock(EXPOSED_STONE_FOSSIL, AbstractBlock.Properties.of(ModMaterials.MADE_FOR_BRUSH, MaterialColor.STONE).harvestTool(ModToolTypes.BRUSH).requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.STONE)));
 	
@@ -140,6 +155,8 @@ public class BlockInit
 	public static final Block DNA_INJECTOR = DNAInjectorBlock.create();
 	
 	public static final Block ARCHAEOLOGY_TABLE = ArchaeologyTable.create();
+	
+	public static final Block TIME_MACHINE_BLOCK = TimeMachineBlock.create();
 	
 	public static final Block POWER_SUPPLY_BLOCK = PowerSupplyBlock.create();
 
@@ -179,6 +196,8 @@ public class BlockInit
 	public static final Block CONIFER_DOOR = ForgeBlockAndItem.create("conifer_door", new DoorBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).noOcclusion().sound(SoundType.WOOD)));
 	public static final Block CONIFER_SIGN = ForgeSignBlock.create("conifer", new ModStandingSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission(), ModWoodTypes.CONIFER), new ModWallSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission(), ModWoodTypes.CONIFER));
 
+	public static final Block CONIFER_STICKS = ForgeBlockAndItem.create("conifer_sticks", new SticksBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).instabreak().noCollission().noOcclusion().sound(SoundType.WOOD)));
+	
 	//Ginkgo
 	public static final Block GINKGO_LOG = ForgeBlockAndItem.create("ginkgo_log", new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_GRAY).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
 	public static final Block STRIPPED_GINKGO_LOG = ForgeBlockAndItem.create("stripped_ginkgo_log", new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
@@ -196,6 +215,14 @@ public class BlockInit
 	public static final Block GINKGO_TRAPDOOR = ForgeBlockAndItem.create("ginkgo_trapdoor", new TrapDoorBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).noOcclusion().sound(SoundType.WOOD)));
 	public static final Block GINKGO_DOOR = ForgeBlockAndItem.create("ginkgo_door", new DoorBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).noOcclusion().sound(SoundType.WOOD)));
 	public static final Block GINKGO_SIGN = ForgeSignBlock.create("ginkgo", new ModStandingSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission(), ModWoodTypes.GINKGO), new ModWallSignBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD).noCollission(), ModWoodTypes.GINKGO));
+
+	//Scorched
+	public static final Block SCORCHED_LOG = ForgeBlockAndItem.create("scorched_log", new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final Block STRIPPED_SCORCHED_LOG = ForgeBlockAndItem.create("stripped_scorched_log", new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final Block SCORCHED_WOOD = ForgeBlockAndItem.create("scorched_wood", new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+	public static final Block STRIPPED_SCORCHED_WOOD = ForgeBlockAndItem.create("stripped_scorched_wood", new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK).harvestTool(ToolType.AXE).strength(2.5F).sound(SoundType.WOOD)));
+
+	public static final Block SCORCHED_STICKS = ForgeBlockAndItem.create("scorched_sticks", new SticksBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.SAND).instabreak().noCollission().noOcclusion().sound(SoundType.WOOD)));
 
 	//Permain Blocks	
 	public static final Block PERMIAN_SAND = ForgeBlockAndItem.create("permian_sand", new SandBlock(0xaa915c, AbstractBlock.Properties.of(Material.SAND, MaterialColor.SAND).harvestTool(ToolType.SHOVEL).strength(1.5F).sound(SoundType.SAND)));
@@ -416,5 +443,5 @@ public class BlockInit
 	public static final Block RAISED_PAVED_ROAD = ForgeBlockAndItem.create("raised_paved_road", new SlabBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.STONE)));
 	
 	//Registry
-	public static void init() { }
+	public static void init() { ModUtil.LOGGER.debug("Registering Mod Blocks"); }
 }

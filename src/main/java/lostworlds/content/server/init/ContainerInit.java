@@ -7,6 +7,7 @@ import lostworlds.library.container.DNAExtractorContainer;
 import lostworlds.library.container.DNAInjectorContainer;
 import lostworlds.library.container.FossilCleanerContainer;
 import lostworlds.library.container.FossilGrinderContainer;
+import lostworlds.library.container.TimeMachineContainer;
 import lostworlds.library.util.ModRegistry;
 import lostworlds.library.util.ModUtil;
 import net.minecraft.inventory.container.ContainerType;
@@ -18,7 +19,7 @@ import net.minecraftforge.fml.common.Mod;
 
 /*
  * Author: Willatendo
- * Date: July 1, 2021
+ * Date: July 8, 2021
  */
 
 @Mod.EventBusSubscriber(modid = ModUtil.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -30,6 +31,7 @@ public class ContainerInit
 	public static final RegistryObject<ContainerType<AnalyserContainer>> ANALYSER_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("analyser_container", () -> IForgeContainerType.create(AnalyserContainer::new));
 	public static final RegistryObject<ContainerType<DNAInjectorContainer>> DNA_INJECTOR_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("dna_injector_container", () -> IForgeContainerType.create(DNAInjectorContainer::new));
 
+	public static final RegistryObject<ContainerType<TimeMachineContainer>> TIME_MACHINE_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("time_machine_container", () -> IForgeContainerType.create(TimeMachineContainer::new));
 	
 	//Registry
 	@SubscribeEvent
@@ -59,5 +61,5 @@ public class ContainerInit
 		}
 	}
 	
-	public static void init() { }
+	public static void init() { ModUtil.LOGGER.debug("Registering Mod Container"); }
 }

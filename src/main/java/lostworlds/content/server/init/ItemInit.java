@@ -1,8 +1,10 @@
 package lostworlds.content.server.init;
 
+import lostworlds.library.enums.TimeEras;
 import lostworlds.library.item.BoneMealItem;
 import lostworlds.library.item.BrushItem;
 import lostworlds.library.item.BrushItem.Teirs;
+import lostworlds.library.item.CrystalScarabGemItem.Variant;
 import lostworlds.library.item.CrystalScarabAxeItem;
 import lostworlds.library.item.CrystalScarabGemItem;
 import lostworlds.library.item.CrystalScarabHoeItem;
@@ -13,9 +15,9 @@ import lostworlds.library.item.FieldGuideItem;
 import lostworlds.library.item.FoodItem;
 import lostworlds.library.item.FoodItem.FoodType;
 import lostworlds.library.item.FoodSeedsItem;
-import lostworlds.library.item.JurassicTimeBook;
-import lostworlds.library.item.PermianTimeBook;
+import lostworlds.library.item.TimeBookItem;
 import lostworlds.library.item.forge.ForgeItem;
+import lostworlds.library.util.ModUtil;
 import net.minecraft.item.Item;
 
 /*
@@ -38,8 +40,8 @@ public class ItemInit
 	
 	public static final Item EMPTY_VILE = ForgeItem.create("empty_vile");
 	
-	public static final Item PERMIAN_ERA_TIME_BOOK = PermianTimeBook.create();
-	public static final Item JURASSIC_ERA_TIME_BOOK = JurassicTimeBook.create();
+	public static final Item PERMIAN_ERA_TIME_BOOK = TimeBookItem.create(TimeEras.PERMIAN_PERIOD);
+	//public static final Item JURASSIC_ERA_TIME_BOOK = JurassicTimeBook.create();
 	
 	public static final Item FERN_LEAVES = FoodItem.create(FoodType.FERN_LEAVES);
 	public static final Item COOKED_FERN_LEAVES = FoodItem.create(FoodType.COOKED_FERN_LEAVES);
@@ -54,6 +56,8 @@ public class ItemInit
 	public static final Item PALEO_SALAD = FoodItem.create(FoodType.PALEO_SALAD);
 	
 	public static final Item GROUND_FOSSIL = BoneMealItem.create("ground_fossil");
+	
+	public static final Item AMBER = ForgeItem.create("amber");
 	
 	public static final Item MUD_BALL = ForgeItem.create("mud_ball");
 	
@@ -73,8 +77,9 @@ public class ItemInit
 	
 	public static final Item STORAGE_DISC = ForgeItem.create("storage_disc");
 	
-	public static final Item BROKEN_CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create("broken_");
-	public static final Item CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create("");
+	public static final Item BROKEN_CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create(Variant.BROKEN);
+	public static final Item UNCHARGED_CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create(Variant.UNCHARGED);
+	public static final Item CHARGED_CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create(Variant.CHARGED);
 	
 	public static final Item CRYSTAL_SCARAB_SWORD = CrystalScarabSwordItem.create();
 	public static final Item CRYSTAL_SCARAB_SHOVEL = CrystalScarabShovelItem.create();
@@ -83,5 +88,5 @@ public class ItemInit
 	public static final Item CRYSTAL_SCARAB_HOE = CrystalScarabHoeItem.create();
 		
 	//Registry
-	public static void init() { }
+	public static void init() { ModUtil.LOGGER.debug("Registering Mod Items");}
 }

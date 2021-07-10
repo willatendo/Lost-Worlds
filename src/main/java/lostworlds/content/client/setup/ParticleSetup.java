@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 8, 2021
  */
 
 @EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD, value = Dist.CLIENT)
@@ -24,7 +24,7 @@ public class ParticleSetup
 	{
 		ModUtil.LOGGER.debug("Loading: Setting Up Particle Render");
 		
-		Minecraft.getInstance().particleEngine.register(ParticleInit.PERMIAN_DESERT_AMBIANT_DUST.get(), ModParticle.Factory::new);
+		Minecraft.getInstance().particleEngine.register(ParticleInit.PERMIAN_DESERT_AMBIANT_DUST, ModParticle.Factory::new);
 		
 		ModUtil.LOGGER.debug("Finished: Setting Up Particle Render");
 	}

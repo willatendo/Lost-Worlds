@@ -6,7 +6,7 @@ import net.minecraft.tileentity.TileEntityType;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 8, 2021
  */
 
 public class ModSignTileEntity extends SignTileEntity

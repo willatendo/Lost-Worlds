@@ -11,7 +11,7 @@ public enum ModBiomeTypes
 	PLAINS, 
 	SAVANNA, 
 	ICY, 
-	BEACH, 
+	BEACH,
 	FOREST, 
 	OCEAN, 
 	DESERT,

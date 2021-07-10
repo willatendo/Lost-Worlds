@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 /*
  * Author: Willatendo
- * Date: July 1, 2021
+ * Date: July 8, 2021
  */
 
 public class DNAInjectorRecipe implements IRecipe<IInventory>
@@ -72,7 +72,7 @@ public class DNAInjectorRecipe implements IRecipe<IInventory>
 	@Override
 	public IRecipeSerializer<?> getSerializer() 
 	{
-		return RecipeInit.DNA_INJECTOR_SERIALIZER.get();
+		return RecipeInit.DNA_INJECTOR_SERIALIZER;
 	}
 
 	@Override

@@ -26,7 +26,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 /*
  * Author: Willatendo
- * Date: July 1, 2021
+ * Date: July 8, 2021
  */
 
 public class FossilGrinderContainer extends Container

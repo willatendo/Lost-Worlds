@@ -24,7 +24,7 @@ public class PermianBiomeProvider extends BiomeProvider
 	private final long seed;
 	private final Registry<Biome> registry;
 	private final Layer genBiomes;
-	private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeKeys.PERMIAN_DESERT, BiomeKeys.PERMIAN_DESERT_HILLS, BiomeKeys.PERMIAN_DRIED_PLAINS);
+	private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeKeys.PERMIAN_DESERT, BiomeKeys.PERMIAN_DESERT_HILLS, BiomeKeys.PERMIAN_DRIED_PLAINS, BiomeKeys.PERMIAN_DRIED_PLAINS_HILLS, BiomeKeys.PERMIAN_FLOOD_BASALTS, BiomeKeys.PERMIAN_ASHY_MEDOWS);
 	
 	public PermianBiomeProvider(long seed, Registry<Biome> registry) 
 	{		
@@ -58,7 +58,7 @@ public class PermianBiomeProvider extends BiomeProvider
 		Biome biome = registry.byId(i);
 		if(biome == null) 
 		{
-			if (SharedConstants.IS_RUNNING_IN_IDE) 
+			if(SharedConstants.IS_RUNNING_IN_IDE) 
 			{
 				throw Util.pauseInIde(new IllegalStateException("Unknown biome id: " + i));
 			} 

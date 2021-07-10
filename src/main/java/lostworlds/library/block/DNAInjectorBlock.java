@@ -18,7 +18,7 @@ import net.minecraft.world.IBlockReader;
 
 /*
  * Author: Willatendo
- * Date: July 1, 2021
+ * Date: July 8, 2021
  */
 
 public class DNAInjectorBlock extends BaseMachineBlock
@@ -48,6 +48,19 @@ public class DNAInjectorBlock extends BaseMachineBlock
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) 
 	{
 		return TileEntityInit.DNA_INJECTOR_TILE_ENTITY.get().create();
+	}
+	
+	@Override
+	public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) 
+	{
+		if(state.getValue(ON))
+		{
+			return 15;
+		}
+		else
+		{
+			return 1;
+		}
 	}
 	
 	public static Block create()

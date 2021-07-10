@@ -53,14 +53,14 @@ public class FillTradeData
 		VillagerTrades.ITrade[] level4 = new VillagerTrades.ITrade[] 
 		{
 			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.PERMIAN_ERA_TIME_BOOK, 64, 1, 100),
-			new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.JURASSIC_ERA_TIME_BOOK, 64, 1, 100)
+			//new VillagerTrades.ItemsForEmeraldsTrade(ItemInit.JURASSIC_ERA_TIME_BOOK, 64, 1, 100)
 		};
 		VillagerTrades.ITrade[] level5 = new VillagerTrades.ITrade[] 
 		{
 			new VillagerTrades.ItemsForEmeraldsTrade(Items.LODESTONE, 64, 1, 100),
 			new FillTradeData.MultiItemForEmeraldsTrade(ImmutableList.of(Items.GOLD_INGOT, Items.DIAMOND, Items.IRON_INGOT, Items.NETHERITE_SCRAP, ItemInit.BROKEN_CRYSTAL_SCARAB_GEM), ImmutableList.of(5, 1, 3, 1, 1), ImmutableList.of(10, 30, 20, 50, 64), 1, 100)
 		};
-		VillagerTrades.TRADES.put(VillagerProfessionInit.ARCHAEOLOGIST.get(), toIntMap(ImmutableMap.of(1, level1, 2, level2, 3, level3, 4, level4, 5, level5)));
+		VillagerTrades.TRADES.put(VillagerProfessionInit.ARCHAEOLOGIST, toIntMap(ImmutableMap.of(1, level1, 2, level2, 3, level3, 4, level4, 5, level5)));
 	}
 	
 	private static Int2ObjectMap<VillagerTrades.ITrade[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ITrade[]> tradeMap) 

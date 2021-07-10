@@ -14,8 +14,7 @@
 	
 	"item.lostworlds.empty_vile": "Empty Vile",
 	
-	"item.lostworlds.permian_era_time_book": "Permian Era Time Book",
-	"item.lostworlds.jurassic_era_time_book": "Jurassic Era Time Book",
+	"item.lostworlds.permian_period_time_book": "Permian Period Time Book",
 	
 	"item.lostworlds.fern_leaves": "Fern Leaves",
 	"item.lostworlds.cooked_fern_leaves": "Cooked Fern Leaves",
@@ -29,6 +28,8 @@
 	"item.lostworlds.paleo_salad": "Paleo Salad",
 	
 	"item.lostworlds.ground_fossil": "Ground Fossil",
+
+	"item.lostworlds.amber": "Amber",
 	
 	"item.lostworlds.mud_ball": "Mud Ball",
 	
@@ -49,7 +50,8 @@
 	"item.lostworlds.storage_disc": "Storage Disc",
 	
 	"item.lostworlds.broken_crystal_scarab_gem": "Broken Crystal Scarab Gem",
-	"item.lostworlds.crystal_scarab_gem": "Crystal Scarab Gem",
+	"item.lostworlds.uncharged_crystal_scarab_gem": "Uncharged Crystal Scarab Gem",
+	"item.lostworlds.charged_crystal_scarab_gem": "Charged Crystal Scarab Gem",
 	
 	"item.lostworlds.crystal_scarab_sword": "Crystal Scarab Sword",
 	"item.lostworlds.crystal_scarab_shovel": "Crystal Scarab Shovel",
@@ -58,6 +60,7 @@
 	"item.lostworlds.crystal_scarab_hoe": "Crystal Scarab Hoe",
 	
 	//Blocks
+	"block.lostworlds.ashy_shrub": "Ashy Shrub",
 	"block.lostworlds.cephalotaxus": "Cepgalotaxus",
 	"block.lostworlds.cycad": "Cycad",
 	"block.lostworlds.dicksonia": "Dicksonia",
@@ -80,6 +83,8 @@
 
 	"block.lostworlds.dried_soil": "Dried Soil",
 	"block.lostworlds.cracked_soil": "Cracked Soil",
+
+	"block.lostworlds.geyser_block": "Geyser Block",
 	
 	"block.lostworlds.mossy_dirt": "Mossy Dirt",
 
@@ -93,8 +98,11 @@
 	"block.lostworlds.tunneled_soil": "Tunneled Soil",
 	
 	"block.lostworlds.volcanic_ash": "Volcanic Ash",
+	"block.lostworlds.volcanic_ash_layer": "Volcanic Ash Layer",
 	
 	"block.lostworlds.copper_ore": "Copper Ore",
+
+	"block.lostworlds.basalt_diamond_ore": "Basalt Diamond Ore",
 		
 	"block.lostworlds.stone_fossil": "Stone Fossil",
 	"block.lostworlds.exposed_stone_fossil": "Exposed Stone Fossil",
@@ -153,6 +161,8 @@
 	"block.lostworlds.conifer_door": "Conifer Door",
 	"block.lostworlds.conifer_sign": "Conifer Sign",
 
+	"block.lostworlds.conifer_sticks": "Conifer Sticks",
+
 	"block.lostworlds.ginkgo_log": "Ginkgo Log",
 	"block.lostworlds.stripped_ginkgo_log": "Stripped Ginkgo Log",
 	"block.lostworlds.ginkgo_wood": "Ginkgo Wood",
@@ -169,6 +179,13 @@
 	"block.lostworlds.ginkgo_trapdoor": "Ginkgo Trapdoor",
 	"block.lostworlds.ginkgo_door": "Ginkgo Door",
 	"block.lostworlds.ginkgo_sign": "Ginkgo Sign",
+
+	"block.lostworlds.scorched_log": "Scorched Log",
+	"block.lostworlds.stripped_scorched_log": "Stripped Scorched Log",
+	"block.lostworlds.scorched_wood": "Scorched Wood",
+	"block.lostworlds.stripped_scorched_wood": "Stripped Scorched Wood",
+
+	"block.lostworlds.scorched_sticks": "Scorched Sticks",
 
 	"block.lostworlds.permian_sand": "Permian Sand",
 
@@ -382,16 +399,59 @@
 	"block.lostworlds.paved_road": "Paved Road",
 	"block.lostworlds.raised_paved_road": "Raised Paved Road",
 	
-	"event.lostworlds.dev_load": "You are running Lost Worlds: Alpha 10 Developer Edition. DO NOT REDISTRIBUTE.",
+	//Sounds
+	"subtitle.lostworlds.machine_whirling": "Machine Whirling",
+	
+	//Event
+	"event.lostworlds.dev_load": "You are running Lost Worlds: Alpha 11 Developer Edition. DO NOT REDISTRIBUTE.",
 	"event.lostworlds.player_load": "We thank you for downloading and installing the Lost Worlds Mod. Enjoy. Please note: You Are Running Public Alpha 11",
 	
+	//Deaths
+	"death.attack.ashyLung": "Your lungs filled with ash and you died!",
+	
+	//Effects
+	"item.minecraft.potion.effect.ashy_lung_potion": "Potion of Ashy Lung",
+	"item.minecraft.splash_potion.effect.ashy_lung_potion": "Splash Potion of Ashy Lung",
+	"item.minecraft.tipped_arrow.effect.ashy_lung_potion": "Arrow of Ashy Lung",
+	"item.minecraft.lingering_potion.effect.ashy_lung_potion": "Lingering Potion of Ashy Lung",
+	"effect.lostworlds.ashy_lung_effect": "Ashy Lung",
+	
+	//Entities
 	"entity.minecraft.villager.lostworlds.archaeologist": "Archaeologist",
 	
+	//Biomes
 	"biome.lostworlds.permian_desert": "Permian Desert",
 	"biome.lostworlds.permian_desert_hills": "Permian Desert Hills",
+	"biome.lostworlds.permian_desert_lake": "Permian Desert Lake",
 
 	"biome.lostworlds.permian_dried_plains": "Permian Dried Plains",
+	"biome.lostworlds.permian_dried_plains_hills": "Permian Dried Plains Hills",
+
+	"biome.lostworlds.permian_ashy_medows": "Permian Ashy Medows",
+
+	"biome.lostworlds.permian_flood_basalts": "Permian Flood Basalts",
 	
+	//World Types
+	"generator.lostworlds.rift_world_type": "Rift",
+	
+	//Config
+	"config.lostworlds.allosaurusHeath": "Allosaurus Heath",
+	"config.lostworlds.allosaurusMovementSpeed": "Allosaurus Movement Speed",
+	"config.lostworlds.allosaurusAttackDamage": "Allosaurus Attack Damage",
+
+	"config.lostworlds.ancientCreatureSpawnInOverworld": "Ancient Creatures Spawn in Overworld",
+
+	"config.lostworlds.shouldForestsSpawnInOverworld": "Should Forests Spawn in Overworld",
+
+	"config.lostworlds.araucaria_forest_weight": "Araucaria Forest Weight",
+	"config.lostworlds.conifer_forest_weight": "Conifer Forest Weight",
+	"config.lostworlds.ginkgo_forest_weight": "Ginkgo Forest Weight",
+	
+	"config.lostworlds.shouldVolcanosSpawnInOverworld": "Should Volcanos Spawn in Overworld",
+
+	"config.lostworlds.volcanoWeight": "Volcano Weight",
+	
+	//Item Groups
 	"itemGroup.lostworlds.items": "Lost Worlds Items",
 	"itemGroup.lostworlds.blocks": "Lost Worlds Blocks",
 	"itemGroup.lostworlds.lost_worlds": "Lost Worlds"

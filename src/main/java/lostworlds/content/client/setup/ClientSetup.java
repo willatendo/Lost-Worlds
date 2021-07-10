@@ -5,6 +5,7 @@ import lostworlds.content.client.screen.DNAExtractorScreen;
 import lostworlds.content.client.screen.DNAInjectorScreen;
 import lostworlds.content.client.screen.FossilCleanerScreen;
 import lostworlds.content.client.screen.FossilGrinderScreen;
+import lostworlds.content.client.screen.TimeMachineScreen;
 import lostworlds.content.server.init.BlockInit;
 import lostworlds.content.server.init.ContainerInit;
 import lostworlds.content.server.init.TileEntityInit;
@@ -22,7 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 8, 2021
  */
 
 @EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD, value = Dist.CLIENT)
@@ -31,6 +32,7 @@ public class ClientSetup
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event)
 	{
+		RenderTypeLookup.setRenderLayer(BlockInit.ASHY_SHRUB, RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CEPHALOTAXUS, RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CYCAD, RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DICKSONIA, RenderType.cutout());
@@ -122,5 +124,7 @@ public class ClientSetup
 		ScreenManager.register(ContainerInit.DNA_EXTRACTOR_CONTAINER.get(), DNAExtractorScreen::new);
 		ScreenManager.register(ContainerInit.ANALYSER_CONTAINER.get(), AnalyserScreen::new);
 		ScreenManager.register(ContainerInit.DNA_INJECTOR_CONTAINER.get(), DNAInjectorScreen::new);
+
+		ScreenManager.register(ContainerInit.TIME_MACHINE_CONTAINER.get(), TimeMachineScreen::new);
 	}
 }

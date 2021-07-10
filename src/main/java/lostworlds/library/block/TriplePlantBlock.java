@@ -25,10 +25,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 4, 2021
  */
 
-public class TriplePlantBlock  extends ModBushBlock
+public class TriplePlantBlock extends ModBushBlock
 {
 	public static final EnumProperty<TripleBlockHalfs> HALFS = ModBlockStateProperties.TRIPLE_HALFS;
 	

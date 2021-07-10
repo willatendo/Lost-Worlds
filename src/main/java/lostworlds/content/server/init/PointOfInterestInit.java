@@ -5,14 +5,14 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 
 import lostworlds.library.util.ModRegistry;
+import lostworlds.library.util.ModUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.village.PointOfInterestType;
-import net.minecraftforge.fml.RegistryObject;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 8, 2021
  */
 
 public class PointOfInterestInit 
@@ -22,8 +22,8 @@ public class PointOfInterestInit
 		return ImmutableSet.copyOf(block.getStateDefinition().getPossibleStates());
 	}
 	
-	public static final RegistryObject<PointOfInterestType> ARCHAEOLOGY_TABLE_POI = ModRegistry.register("archaeology_table_poi", getBlockStates(BlockInit.ARCHAEOLOGY_TABLE));
+	public static final PointOfInterestType ARCHAEOLOGY_TABLE_POI = ModRegistry.register("archaeology_table_poi", new PointOfInterestType("archaeology_table_poi", getBlockStates(BlockInit.ARCHAEOLOGY_TABLE), 1, 1));
 	
 	//Registry
-	public static void init() { }
+	public static void init() { ModUtil.LOGGER.debug("Registering Mod Points of Interest"); }
 }

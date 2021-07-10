@@ -72,6 +72,10 @@ repositories {
         name = "ModMaven"
 		url = "https://modmaven.k-4u.nl"
     }
+    
+    maven {
+        url = "https://www.cursemaven.com"
+    }
 }
 
 dependencies {
@@ -81,6 +85,9 @@ dependencies {
 	compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75:api")
 	runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75")
     annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
+    
+    compile fg.deobf('curse.maven:configured-457570:3291560')
+    compile fg.deobf('curse.maven:catalogue-459701:3285353')
 }
 
 jar {

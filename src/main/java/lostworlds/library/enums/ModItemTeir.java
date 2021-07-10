@@ -9,14 +9,14 @@ import net.minecraft.util.LazyValue;
 
 /*
  * Author: Willatendo
- * Date: July 1, 2021
+ * Date: July 8, 2021
  */
 
 public enum ModItemTeir implements IItemTier
 {
 	CRYSTAL_SCARAB(4, 13616, 30.0F, 80.0F, 40, () -> 
 	{
-		return Ingredient.of(ItemInit.CRYSTAL_SCARAB_GEM); 
+		return Ingredient.of(ItemInit.CHARGED_CRYSTAL_SCARAB_GEM); 
 	}); 
 	
 	private final int level;
