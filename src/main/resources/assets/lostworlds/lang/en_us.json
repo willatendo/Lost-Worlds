@@ -95,6 +95,8 @@
 	"block.lostworlds.dead_sponge_colony": "Dead Sponge Colony",
 	"block.lostworlds.sponge_colony": "Sponge Colony",
 	
+	"block.lostworlds.silt": "Silt",
+	
 	"block.lostworlds.tunneled_soil": "Tunneled Soil",
 	
 	"block.lostworlds.volcanic_ash": "Volcanic Ash",
@@ -183,7 +185,19 @@
 	"block.lostworlds.scorched_log": "Scorched Log",
 	"block.lostworlds.stripped_scorched_log": "Stripped Scorched Log",
 	"block.lostworlds.scorched_wood": "Scorched Wood",
-	"block.lostworlds.stripped_scorched_wood": "Stripped Scorched Wood",
+	"block.lostworlds.stripped_scorched_wood": "Stripped scorched Wood",
+	"block.lostworlds.scorched_leaves": "Scorched Leaves",
+	"block.lostworlds.scorched_sapling": "Scorched Sapling",
+	"block.lostworlds.scorched_planks": "Scorched Planks",
+	"block.lostworlds.scorched_stairs": "Scorched Stairs",
+	"block.lostworlds.scorched_slab": "Scorched Slab",
+	"block.lostworlds.scorched_fence": "Scorched Fence",
+	"block.lostworlds.scorched_fence_gate": "Scorched Fence Gate",
+	"block.lostworlds.scorched_pressure_plate": "Scorched Pressure Plate",
+	"block.lostworlds.scorched_button": "Scorched Button",
+	"block.lostworlds.scorched_trapdoor": "Scorched Trapdoor",
+	"block.lostworlds.scorched_door": "Scorched Door",
+	"block.lostworlds.scorched_sign": "Scorched Sign",
 
 	"block.lostworlds.scorched_sticks": "Scorched Sticks",
 
@@ -408,6 +422,7 @@
 	
 	//Deaths
 	"death.attack.ashyLung": "Your lungs filled with ash and you died!",
+	"death.attack.suffication": "You ran out of breath! Next time, where a mask!",
 	
 	//Effects
 	"item.minecraft.potion.effect.ashy_lung_potion": "Potion of Ashy Lung",
@@ -430,6 +445,17 @@
 	"biome.lostworlds.permian_ashy_medows": "Permian Ashy Medows",
 
 	"biome.lostworlds.permian_flood_basalts": "Permian Flood Basalts",
+
+	"biome.lostworlds.permian_mountains": "Permian Mountains",
+
+	"biome.lostworlds.permian_conifer_forest": "Permian Conifer Forest",
+	"biome.lostworlds.permian_conifer_forest_hills": "Permian Conifer Forest Hills",
+
+	"biome.lostworlds.permian_ginkgo_forest": "Permian Ginkgo Forest",
+	"biome.lostworlds.permian_ginkgo_forest_hills": "Permian Ginkgo Forest Hills",
+
+	"biome.lostworlds.permian_plains_forest": "Permian Plains",
+	"biome.lostworlds.permian_plains_forest_hills": "Permian Plains Hills",
 	
 	//World Types
 	"generator.lostworlds.rift_world_type": "Rift",

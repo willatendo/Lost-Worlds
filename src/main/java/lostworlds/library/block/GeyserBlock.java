@@ -6,6 +6,7 @@ import lostworlds.library.ModBlockStateProperties;
 import lostworlds.library.interfaces.ILavaLoggable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
@@ -16,18 +17,19 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 /*
  * Author: Willatendo
- * Date: July 9, 2021
+ * Date: July 11, 2021
  */
 
 public class GeyserBlock extends Block implements ILavaLoggable
 {
-	private static final BooleanProperty LAVALOGGED = ModBlockStateProperties.LAVALOGGED;
+	public static final BooleanProperty LAVALOGGED = ModBlockStateProperties.LAVALOGGED;
 	
 	public GeyserBlock(Properties properties) 
 	{
@@ -43,6 +45,14 @@ public class GeyserBlock extends Block implements ILavaLoggable
 	}
 	
 	@Override
+	public boolean canSurvive(BlockState state, IWorldReader reader, BlockPos pos) 
+	{
+		BlockState blockstate = reader.getBlockState(pos.below());
+		return blockstate.getBlock() == Blocks.AIR ? false : blockstate.getBlock() == Blocks.LAVA ? false : blockstate.getBlock() == Blocks.MAGMA_BLOCK ? false : true;
+	}
+	
+	
+	@Override
 	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) 
 	{
 		super.createBlockStateDefinition(builder);
@@ -50,14 +60,14 @@ public class GeyserBlock extends Block implements ILavaLoggable
 	}
 	
 	@Override
-	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) 
+	public BlockState updateShape(BlockState state, Direction direction, BlockState newState, IWorld world, BlockPos pos, BlockPos newPos) 
 	{
-		if (stateIn.getValue(LAVALOGGED)) 
+		if (state.getValue(LAVALOGGED)) 
 		{
-			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.LAVA, Fluids.LAVA.getTickDelay(worldIn));
+			world.getLiquidTicks().scheduleTick(pos, Fluids.LAVA, Fluids.LAVA.getTickDelay(world));
 		}
 		
-		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return Direction.DOWN == direction && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, newPos);
 	}
 	 
 	@Override

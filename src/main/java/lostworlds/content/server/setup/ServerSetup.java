@@ -1,6 +1,5 @@
 package lostworlds.content.server.setup;
 
-import lostworlds.content.server.init.FeatureInit;
 import lostworlds.library.biome.ModConfiguredFeatures;
 import lostworlds.library.util.ModUtil;
 import net.minecraft.world.gen.feature.Feature;
@@ -20,7 +19,6 @@ public class ServerSetup
 	@SubscribeEvent
 	public static void onRegsterFeatures(Register<Feature<?>> feature)
 	{
-		FeatureInit.init();
 		ModConfiguredFeatures.init();
 	}
 }

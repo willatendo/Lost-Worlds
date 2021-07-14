@@ -1,9 +1,10 @@
 package lostworlds.content;
 
+import lostworlds.addon.LostWorldsAddon;
 import lostworlds.content.server.config.LostWorldsConfig;
 import lostworlds.content.server.init.BlockInit;
+import lostworlds.content.server.init.DimensionInit;
 import lostworlds.content.server.init.PotionInit;
-import lostworlds.library.dimension.permian.PermianInit;
 import lostworlds.library.util.ModRegistry;
 import lostworlds.library.util.ModUtil;
 import net.minecraft.client.world.DimensionRenderInfo;
@@ -24,7 +25,7 @@ import software.bernie.geckolib3.GeckoLib;
 
 /*
  * Author: Willatendo
- * Date: July 8, 2021
+ * Date: July 10, 2021
  */
 
 @Mod("lostworlds")
@@ -38,12 +39,14 @@ public class LostWorlds
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
 		
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LostWorldsConfig.serverSpec);
+		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, LostWorldsConfig.serverSpec);
 		
 		//Objects
 		final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		ModRegistry.register(bus);
-							
+		
+		LostWorldsAddon.getModPlugins();
+		
 		//v3.0.30
 		GeckoLib.initialize();
 		
@@ -58,7 +61,7 @@ public class LostWorlds
 		{
 			ModUtil.LOGGER.debug("Loading: Making Dimension Pieces");
 
-			PermianInit.init();
+			DimensionInit.init();
 
 			ModUtil.LOGGER.debug("Finished: Making Dimension Pieces");
 		});	

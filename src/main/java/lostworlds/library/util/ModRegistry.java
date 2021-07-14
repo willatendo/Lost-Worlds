@@ -4,6 +4,9 @@ import lostworlds.content.server.init.BiomeInit;
 import lostworlds.content.server.init.BlockInit;
 import lostworlds.content.server.init.BlockPlacerInit;
 import lostworlds.content.server.init.ContainerInit;
+import lostworlds.content.server.init.EntityInit;
+import lostworlds.content.server.init.FeatureInit;
+import lostworlds.content.server.init.FoliagePlacerInit;
 import lostworlds.content.server.init.FossilInit;
 import lostworlds.content.server.init.Init;
 import lostworlds.content.server.init.ItemInit;
@@ -15,8 +18,11 @@ import lostworlds.content.server.init.SoundInit;
 import lostworlds.content.server.init.SurfaceBuilderInit;
 import lostworlds.content.server.init.TileEntityInit;
 import lostworlds.content.server.init.VillagerProfessionInit;
-import lostworlds.library.villager.ModVillagerProfession;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -30,6 +36,7 @@ import net.minecraft.village.PointOfInterestType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.blockplacer.BlockPlacerType;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.foliageplacer.FoliagePlacerType;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -37,7 +44,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 /*
  * Author: Willatendo
- * Date: July 8, 2021
+ * Date: July 10, 2021
  */
 
 public class ModRegistry 
@@ -109,11 +116,30 @@ public class ModRegistry
 		return type;
 	}
 	
-	public static ModVillagerProfession register(String id, ModVillagerProfession profession)
+	private static EntityType<?> register(String id, EntityType<?> entity) 
+	{
+		entity.setRegistryName(ModUtil.rL(id));
+		ForgeRegistries.ENTITIES.register(entity);
+		return entity;
+	}
+	
+	public static <T extends Entity> EntityType<?> register(String id, EntityType.IFactory<T> entity, EntityClassification entitytype, Class<T> entityClass, float width, float height) 
+	{
+		return register(id, EntityType.Builder.of(entity, entitytype).sized(width, height).build(id));
+	}
+	
+	public static VillagerProfession register(String id, VillagerProfession profession)
 	{
 		profession.setRegistryName(ModUtil.rL(id));
 		ForgeRegistries.PROFESSIONS.register(profession);
 		return profession;
+	}
+	
+	public static FoliagePlacerType<?> register(String id, FoliagePlacerType<?> foliagePlacer)
+	{
+		foliagePlacer.setRegistryName(ModUtil.rL(id));
+		ForgeRegistries.FOLIAGE_PLACER_TYPES.register(foliagePlacer);
+		return foliagePlacer;
 	}
 	
 	public static Biome register(String id, Biome biome) 
@@ -156,9 +182,12 @@ public class ModRegistry
 		BlockInit.init();
 		BlockPlacerInit.init();
 		PointOfInterestInit.init();
+		EntityInit.init();
 		VillagerProfessionInit.init();
-		SurfaceBuilderInit.init();
 		BiomeInit.init();
+		SurfaceBuilderInit.init();
+		FoliagePlacerInit.init();
+		FeatureInit.init();
 		
 		Init.setup();
 		

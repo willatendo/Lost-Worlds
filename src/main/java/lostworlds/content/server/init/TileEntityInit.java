@@ -27,7 +27,7 @@ public class TileEntityInit
 
 	public static final RegistryObject<TileEntityType<TimeMachineTileEntity>> TIME_MACHINE_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("time_machine_tile_entity", () -> TileEntityType.Builder.of(TimeMachineTileEntity::new, BlockInit.TIME_MACHINE_BLOCK).build(null));
 
-	public static final RegistryObject<TileEntityType<ModSignTileEntity>> SIGN_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("sign_tile_entity", () -> TileEntityType.Builder.of(ModSignTileEntity::new, BlockInit.CONIFER_SIGN, BlockInit.GINKGO_SIGN, BlockInit.ARAUCARIA_SIGN).build(null));
+	public static final RegistryObject<TileEntityType<ModSignTileEntity>> SIGN_TILE_ENTITY = ModRegistry.TILE_ENTITY_REGISTRY.register("sign_tile_entity", () -> TileEntityType.Builder.of(ModSignTileEntity::new, BlockInit.CONIFER_SIGN, BlockInit.CONIFER_WALL_SIGN, BlockInit.GINKGO_SIGN, BlockInit.GINKGO_WALL_SIGN, BlockInit.ARAUCARIA_SIGN, BlockInit.ARAUCARIA_WALL_SIGN, BlockInit.SCORCHED_SIGN, BlockInit.SCORCHED_WALL_SIGN).build(null));
 	
 	//Registry
 	public static void init() { ModUtil.LOGGER.debug("Registering Mod Tile Entities"); }

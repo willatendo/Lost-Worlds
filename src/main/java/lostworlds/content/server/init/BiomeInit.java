@@ -24,6 +24,20 @@ public class BiomeInit
 
 	public static final Biome PERMIAN_FLOOD_BASALT_PLAINS = ModRegistry.register("permian_flood_basalts", ModBiomeMaker.permianFloodBasalts());
 
+	public static final Biome PERMIAN_MOUNTAINS = ModRegistry.register("permian_mountains", ModBiomeMaker.permianMountains());
+
+	public static final Biome PERMIAN_CONIFER_FOREST = ModRegistry.register("permian_conifer_forest", ModBiomeMaker.permianConiferForest());
+	public static final Biome PERMIAN_CONIFER_FOREST_HILLS = ModRegistry.register("permian_conifer_forest_hills", ModBiomeMaker.permianConiferForestHills());
+
+	public static final Biome PERMIAN_GINKGO_FOREST = ModRegistry.register("permian_ginkgo_forest", ModBiomeMaker.permianGinkgoForest());
+	public static final Biome PERMIAN_GINKGO_FOREST_HILLS = ModRegistry.register("permian_ginkgo_forest_hills", ModBiomeMaker.permianGinkgoForestHills());
+
+	public static final Biome PERMIAN_PLAINS = ModRegistry.register("permian_plains", ModBiomeMaker.permianPlains());
+	public static final Biome PERMIAN_PLAINS_HILLS = ModRegistry.register("permian_plains_hills", ModBiomeMaker.permianPlainsHills());
+	
+	public static final Biome PERMIAN_OCEAN = ModRegistry.register("permian_ocean", ModBiomeMaker.permianOcean());
+	public static final Biome PERMIAN_DEEP_OCEAN = ModRegistry.register("permian_deep_ocean", ModBiomeMaker.permianDeepOcean());
+	
 	//Registry
 	public static void init() { ModUtil.LOGGER.debug("Registering Mod Biomes"); }
 }

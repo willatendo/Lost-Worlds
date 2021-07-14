@@ -24,7 +24,7 @@ public class PermianBiomeProvider extends BiomeProvider
 	private final long seed;
 	private final Registry<Biome> registry;
 	private final Layer genBiomes;
-	private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeKeys.PERMIAN_DESERT, BiomeKeys.PERMIAN_DESERT_HILLS, BiomeKeys.PERMIAN_DRIED_PLAINS, BiomeKeys.PERMIAN_DRIED_PLAINS_HILLS, BiomeKeys.PERMIAN_FLOOD_BASALTS, BiomeKeys.PERMIAN_ASHY_MEDOWS);
+	private static final List<RegistryKey<Biome>> BIOMES = ImmutableList.of(BiomeKeys.PERMIAN_DESERT, BiomeKeys.PERMIAN_DESERT_HILLS, BiomeKeys.PERMIAN_DRIED_PLAINS, BiomeKeys.PERMIAN_DRIED_PLAINS_HILLS, BiomeKeys.PERMIAN_FLOOD_BASALTS, BiomeKeys.PERMIAN_ASHY_MEDOWS, BiomeKeys.PERMIAN_MOUNTAINS, BiomeKeys.PERMIAN_CONIFER_FOREST,BiomeKeys.PERMIAN_CONIFER_FOREST, BiomeKeys.PERMIAN_CONIFER_FOREST_HILLS, BiomeKeys.PERMIAN_GINKGO_FOREST, BiomeKeys.PERMIAN_GINKGO_FOREST_HILLS, BiomeKeys.PERMIAN_PLAINS, BiomeKeys.PERMIAN_PLAINS_HILLS, BiomeKeys.PERMIAN_OCEAN, BiomeKeys.PERMIAN_DEEP_OCEAN);
 	
 	public PermianBiomeProvider(long seed, Registry<Biome> registry) 
 	{		
@@ -35,9 +35,9 @@ public class PermianBiomeProvider extends BiomeProvider
 	}
 
 	@Override
-	public BiomeProvider withSeed(long s) 
+	public BiomeProvider withSeed(long seed) 
 	{
-		return new PermianBiomeProvider(s, registry);
+		return new PermianBiomeProvider(seed, registry);
 	}
 	
 	@Override

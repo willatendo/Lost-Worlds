@@ -1,6 +1,6 @@
 package lostworlds.library.item;
 
-import lostworlds.library.dimension.permian.PermianInit;
+import lostworlds.content.server.init.DimensionInit;
 import lostworlds.library.enums.TimeEras;
 import lostworlds.library.tab.ModItemGroup;
 import lostworlds.library.util.ModRegistry;
@@ -48,12 +48,12 @@ public class TimeBookItem extends Item
                 {
                 	ServerWorld serverworld = (ServerWorld)entity.level;
                     MinecraftServer minecraftserver = serverworld.getServer();
-                    RegistryKey<World> registrykey = entity.level.dimension() == PermianInit.PERMIAN_WORLD ? World.OVERWORLD : PermianInit.PERMIAN_WORLD;
+                    RegistryKey<World> registrykey = entity.level.dimension() == DimensionInit.PERMIAN_WORLD ? World.OVERWORLD : DimensionInit.PERMIAN_WORLD;
                     ServerWorld serverworld1 = minecraftserver.getLevel(registrykey);
                     if(serverworld1 != null && !entity.isPassenger()) 
                     {
                         entity.changeDimension(serverworld1, new ModTeleporter(serverworld1));
-                        if(registrykey.equals(PermianInit.PERMIAN_WORLD))
+                        if(registrykey.equals(DimensionInit.PERMIAN_WORLD))
                         {
                         	entity.sendMessage(ModUtil.tTC("timeBook", "transport_to_permian"), entity.getUUID());
                         }

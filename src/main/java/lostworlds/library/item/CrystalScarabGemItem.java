@@ -2,13 +2,15 @@ package lostworlds.library.item;
 
 import lostworlds.library.tab.ModItemGroup;
 import lostworlds.library.util.ModRegistry;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
+import net.minecraft.world.World;
 
 /*
  * Author: Willatendo
- * Date: July 8, 2021
+ * Date: July 10, 2021
  */
 
 public class CrystalScarabGemItem extends Item
@@ -55,5 +57,11 @@ public class CrystalScarabGemItem extends Item
 		BROKEN,
 		UNCHARGED,
 		CHARGED;
+	}
+	
+	@FunctionalInterface
+	public interface EntityFactory 
+	{
+		ItemEntity create(World w, double x, double y, double z, ItemStack is);
 	}
 }

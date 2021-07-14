@@ -32,6 +32,7 @@ public class ClientSetup
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event)
 	{
+		RenderTypeLookup.setRenderLayer(BlockInit.ALETHOPTERIS, RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.ASHY_SHRUB, RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CEPHALOTAXUS, RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CYCAD, RenderType.cutout());

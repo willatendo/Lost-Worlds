@@ -2,6 +2,7 @@ package lostworlds.content.client.event;
 
 import lostworlds.library.util.ModUtil;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,7 +12,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 
 /*
  * Author: Willatendo
- * Date: July 3, 2021
+ * Date: July 11, 2021
  */
 
 @EventBusSubscriber(modid = ModUtil.ID, bus = Bus.FORGE, value = Dist.CLIENT)
@@ -28,7 +29,7 @@ public class OnLoadEvent
 		else
 		{
 			PlayerEntity player = event.getPlayer();
-			player.sendMessage(ModUtil.gTC("event", "player_load"), player.getUUID());
+			player.sendMessage(ModUtil.cTC("event", "player_load", TextFormatting.GOLD), player.getUUID());
 		}
 	}
 }

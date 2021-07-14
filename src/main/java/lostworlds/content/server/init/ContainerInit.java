@@ -3,6 +3,7 @@ package lostworlds.content.server.init;
 import java.lang.reflect.Field;
 
 import lostworlds.library.container.AnalyserContainer;
+import lostworlds.library.container.ArchaeologyTableContianer;
 import lostworlds.library.container.DNAExtractorContainer;
 import lostworlds.library.container.DNAInjectorContainer;
 import lostworlds.library.container.FossilCleanerContainer;
@@ -32,6 +33,8 @@ public class ContainerInit
 	public static final RegistryObject<ContainerType<DNAInjectorContainer>> DNA_INJECTOR_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("dna_injector_container", () -> IForgeContainerType.create(DNAInjectorContainer::new));
 
 	public static final RegistryObject<ContainerType<TimeMachineContainer>> TIME_MACHINE_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("time_machine_container", () -> IForgeContainerType.create(TimeMachineContainer::new));
+
+	public static final RegistryObject<ContainerType<ArchaeologyTableContianer>> ARCHAEOLOGY_CONTAINER = ModRegistry.CONTAINER_REGISTRY.register("archaeology_table_container", () -> IForgeContainerType.create(ArchaeologyTableContianer::new));
 	
 	//Registry
 	@SubscribeEvent
