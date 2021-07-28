@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+  <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="The-Lost-Worlds"/>
+  <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.minecraftforge.userdev.LaunchTesting"/>
+  <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dforge.logging.console.level=debug -Dforge.logging.markers=SCAN,REGISTRIES,REGISTRYDUMP"/>
+  <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="--mod lostworlds --all --output C:\Users\willi\Documents\GitHub\The-Lost-Worlds\src\generated\resources --existing C:\Users\willi\Documents\GitHub\The-Lost-Worlds\src\main\resources"/>
+  <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\Users\willi\Documents\GitHub\The-Lost-Worlds\run"/>
+  <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+    <mapEntry key="MOD_CLASSES" value="lostworlds%%C:\Users\willi\Documents\GitHub\The-Lost-Worlds\bin\main;lostworlds%%C:\Users\willi\Documents\GitHub\The-Lost-Worlds\bin\main"/>
+    <mapEntry key="MCP_MAPPINGS" value="official_1.16.5"/>
+    <mapEntry key="MCP_VERSION" value="20210115.111550"/>
+    <mapEntry key="FORGE_VERSION" value="36.1.63"/>
+    <mapEntry key="assetIndex" value="1.16"/>
+    <mapEntry key="assetDirectory" value="C:\Users\willi\.gradle\caches\forge_gradle\assets"/>
+    <mapEntry key="FORGE_GROUP" value="net.minecraftforge"/>
+    <mapEntry key="target" value="fmluserdevdata"/>
+    <mapEntry key="MC_VERSION" value="1.16.5"/>
+  </mapAttribute>
+</launchConfiguration>

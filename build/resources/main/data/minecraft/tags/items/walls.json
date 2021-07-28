@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"lostworlds:volcanic_rock_wall",
+		"lostworlds:light_concrete_wall",
+		"lostworlds:dark_concrete_wall"
+  ]
+}

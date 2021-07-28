@@ -1,0 +1,12 @@
+Args: "--task", "SRG_TO_MCP", "--input", "C:\Users\willi\.gradle\caches\modules-2\files-2.1\software.bernie.geckolib\geckolib-forge-1.16.5\3.0.41\3c2a2abfaea5a2d01f88eeec983cd7659432eee0\geckolib-forge-1.16.5-3.0.41.jar", "--output", "C:\Users\willi\.gradle\caches\forge_gradle\deobf_dependencies\software\bernie\geckolib\geckolib-forge-1.16.5\3.0.41_mapped_official_1.16.5\geckolib-forge-1.16.5-3.0.41_mapped_official_1.16.5.jar", "--mcp", "C:\Users\willi\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\mapping\1.16.5\mapping-1.16.5-mapping.zip", "--strip-signatures"
+Classpath: C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.1.10\installertools-1.1.10-fatjar.jar
+WorkDir: C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\_RenameSrg2Mcp_1052103014
+Main: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\willi\.gradle\caches\modules-2\files-2.1\software.bernie.geckolib\geckolib-forge-1.16.5\3.0.41\3c2a2abfaea5a2d01f88eeec983cd7659432eee0\geckolib-forge-1.16.5-3.0.41.jar
+Output: C:\Users\willi\.gradle\caches\forge_gradle\deobf_dependencies\software\bernie\geckolib\geckolib-forge-1.16.5\3.0.41_mapped_official_1.16.5\geckolib-forge-1.16.5-3.0.41_mapped_official_1.16.5.jar
+MCP:    C:\Users\willi\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\mapping\1.16.5\mapping-1.16.5-mapping.zip
+Loading MCP Data
+Stripped Manifest of sha digests
+Process complete

@@ -1,0 +1,12 @@
+Args: "--task", "SRG_TO_MCP", "--input", "C:\Users\willi\.gradle\caches\modules-2\files-2.1\curse.maven\catalogue-459701\3285353\39309270c9429e7f7c1c71aa0c09aef0744f1354\catalogue-459701-3285353.jar", "--output", "C:\Users\willi\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\catalogue-459701\3285353_mapped_official_1.16.5\catalogue-459701-3285353_mapped_official_1.16.5.jar", "--mcp", "C:\Users\willi\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\mapping\1.16.5\mapping-1.16.5-mapping.zip", "--strip-signatures"
+Classpath: C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.1.10\installertools-1.1.10-fatjar.jar
+WorkDir: C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\_RenameSrg2Mcp_805564036
+Main: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\willi\.gradle\caches\modules-2\files-2.1\curse.maven\catalogue-459701\3285353\39309270c9429e7f7c1c71aa0c09aef0744f1354\catalogue-459701-3285353.jar
+Output: C:\Users\willi\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\catalogue-459701\3285353_mapped_official_1.16.5\catalogue-459701-3285353_mapped_official_1.16.5.jar
+MCP:    C:\Users\willi\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\mapping\1.16.5\mapping-1.16.5-mapping.zip
+Loading MCP Data
+Stripped Manifest of sha digests
+Process complete

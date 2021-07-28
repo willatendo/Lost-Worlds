@@ -1,0 +1,41 @@
+{
+  "lostworlds:recipes/lostworlds.blocks/analyser": {
+    "criteria": {
+      "has_item": "2021-07-20 15:09:03 -0600"
+    },
+    "done": true
+  },
+  "lostworlds:recipes/lostworlds.blocks/dna_injector": {
+    "criteria": {
+      "has_item": "2021-07-20 15:09:03 -0600"
+    },
+    "done": true
+  },
+  "lostworlds:recipes/lostworlds.blocks/fossil_grinder": {
+    "criteria": {
+      "has_item": "2021-07-20 15:09:03 -0600"
+    },
+    "done": true
+  },
+  "lostworlds:recipes/lostworlds.blocks/dna_extractor": {
+    "criteria": {
+      "has_item": "2021-07-20 15:09:03 -0600"
+    },
+    "done": true
+  },
+  "lostworlds:recipes/lostworlds.blocks/fossil_cleaner": {
+    "criteria": {
+      "has_item": "2021-07-20 15:09:03 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2021-07-20 14:36:40 -0600",
+      "minecraft:mountains": "2021-07-20 14:36:26 -0600",
+      "minecraft:plains": "2021-07-20 14:36:21 -0600"
+    },
+    "done": false
+  },
+  "DataVersion": 2586
+}

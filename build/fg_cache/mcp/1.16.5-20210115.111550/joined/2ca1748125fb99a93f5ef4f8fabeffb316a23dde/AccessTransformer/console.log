@@ -1,0 +1,5 @@
+JVM Args:    
+Run Args:    "--inJar", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\mcinject\output.jar", "--outJar", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\AccessTransformer\output.jar", "--atFile", "C:\Users\willi\Documents\GitHub\Lost-Worlds\src\main\resources\META-INF\accesstransformer.cfg", "--atFile", "C:\Users\willi\AppData\Local\Temp\FG_ats_1820362133170218357.cfg"
+Classpath:   C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\accesstransformers\1.0.5\accesstransformers-1.0.5-fatjar.jar
+Working Dir: C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\AccessTransformer
+Main Class:  net.minecraftforge.accesstransformer.TransformerProcessor

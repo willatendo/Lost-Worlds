@@ -1,0 +1,22 @@
+#This is an String value
+stringValue = "YEP"
+#This is a Boolean value
+booleanValue = false
+#This is a List of Strings
+listValue = []
+
+#YEP
+[more_properties]
+	#This is an Enum value
+	#Allowed Values: DOWN, UP, NORTH, SOUTH, WEST, EAST
+	enumValue = "NORTH"
+	#This is an Integer value
+	#Range: 0 ~ 10
+	int_Value = 0
+	#This is a Double value
+	#Range: 0.0 ~ 10.0
+	doubleValue = 0.0
+	#This is a Long value
+	#Range: 0 ~ 10
+	longValue = 0
+

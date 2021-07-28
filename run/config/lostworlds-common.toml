@@ -1,0 +1,28 @@
+#Sets the Allosaurus's heath.
+#Range: 0.0 ~ 1000.0
+allosaurusHeath = 55.0
+#Sets the Allosaurus's movement speed.
+#Range: 0.0 ~ 1.0
+allosaurusMovementSpeed = 0.2
+#Sets the Allosaurus's attack damage.
+#Range: 0.0 ~ 30.0
+allosaurusAttackDamage = 8.0
+#If true, forests will spawn naturally in the overworld.
+shouldForestsSpawnInOverworld = true
+#Sets the weight of Conifer Forests spawns in the Overworld.
+#Range: 1 ~ 10
+coniferForestWeight = 3
+#Sets the weight of Gingko Forests spawns in the Overworld.
+#Range: 1 ~ 10
+ginkgoForestWeight = 3
+#Sets the weight of Araucaria Forests spawns in the Overworld.
+#Range: 1 ~ 10
+araucariaForestWeight = 3
+#If true, volcanos will spawn naturally in the overworld.
+shouldVolcanoSpawnInOverworld = true
+#Sets the weight of Volcanos spawns in the Overworld.
+#Range: 1 ~ 10
+volcanoWeight = 1
+#If true, prehistoric creatures will spawn naturally in the overworld.
+ancientCreatureSpawnInOverworld = false
+

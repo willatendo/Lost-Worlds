@@ -1,0 +1,62 @@
+{
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2021-07-19 23:26:30 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2021-07-19 23:26:30 -0600"
+    },
+    "done": true
+  },
+  "lostworlds:recipes/lostworlds.blocks/conifer_planks": {
+    "criteria": {
+      "has_logs": "2021-07-19 23:28:31 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2021-07-19 23:26:30 -0600"
+    },
+    "done": true
+  },
+  "lostworlds:recipes/lostworlds.blocks/conifer_wood": {
+    "criteria": {
+      "has_log": "2021-07-19 23:28:31 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2021-07-19 23:26:30 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2021-07-19 23:26:30 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2021-07-19 23:26:30 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2021-07-19 20:21:49 -0600",
+      "minecraft:beach": "2021-07-19 23:24:44 -0600",
+      "minecraft:river": "2021-07-19 23:26:29 -0600",
+      "minecraft:lukewarm_ocean": "2021-07-19 23:47:39 -0600",
+      "minecraft:wooded_hills": "2021-07-19 20:21:54 -0600",
+      "minecraft:plains": "2021-07-19 23:47:00 -0600"
+    },
+    "done": false
+  },
+  "DataVersion": 2586
+}
