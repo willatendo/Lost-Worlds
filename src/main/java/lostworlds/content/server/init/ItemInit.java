@@ -14,9 +14,9 @@ import lostworlds.library.item.CrystalScarabSwordItem;
 import lostworlds.library.item.FieldGuideItem;
 import lostworlds.library.item.FoodItem;
 import lostworlds.library.item.FoodItem.FoodType;
+import lostworlds.library.item.basic.BasicItem;
 import lostworlds.library.item.FoodSeedsItem;
 import lostworlds.library.item.TimeBookItem;
-import lostworlds.library.item.forge.ForgeItem;
 import lostworlds.library.util.ModUtil;
 import net.minecraft.item.Item;
 
@@ -34,13 +34,13 @@ public class ItemInit
 	public static final Item NETHERITE_BRUSH = BrushItem.create(Teirs.NETHERITE);
 	public static final Item CRYSTAL_SCARAB_BRUSH = BrushItem.create(Teirs.CRYSTAL_SCARAB);
 	
-	public static final Item WET_PAPER = ForgeItem.create("wet_paper");
+	public static final Item WET_PAPER = BasicItem.create("wet_paper");
 	
 	public static final Item FIELD_GUIDE = FieldGuideItem.create();
 	
-	public static final Item EMPTY_VILE = ForgeItem.create("empty_vile");
+	public static final Item EMPTY_VILE = BasicItem.create("empty_vile");
 	
-	public static final Item PERMIAN_ERA_TIME_BOOK = TimeBookItem.create(TimeEras.PERMIAN_PERIOD);
+	public static final Item PERMIAN_PERIOD_TIME_BOOK = TimeBookItem.create(TimeEras.PERMIAN_PERIOD);
 	//public static final Item JURASSIC_ERA_TIME_BOOK = JurassicTimeBook.create();
 	
 	public static final Item FERN_LEAVES = FoodItem.create(FoodType.FERN_LEAVES);
@@ -57,25 +57,25 @@ public class ItemInit
 	
 	public static final Item GROUND_FOSSIL = BoneMealItem.create("ground_fossil");
 	
-	public static final Item AMBER = ForgeItem.create("amber");
+	public static final Item AMBER = BasicItem.create("amber");
 	
-	public static final Item MUD_BALL = ForgeItem.create("mud_ball");
+	public static final Item MUD_BALL = BasicItem.create("mud_ball");
 	
-	public static final Item COPPER_INGOT = ForgeItem.create("copper_ingot");
-	public static final Item COPPER_NUGGET = ForgeItem.create("copper_nugget");
+	public static final Item COPPER_INGOT = BasicItem.create("copper_ingot");
+	public static final Item COPPER_NUGGET = BasicItem.create("copper_nugget");
 	
-	public static final Item COPPER_WIRE = ForgeItem.create("copper_wire");
-	public static final Item COMPUTER_FAN = ForgeItem.create("computer_fan");
-	public static final Item COMPUTER_SCREEN = ForgeItem.create("computer_screen");
-	public static final Item COMPUTER_FRAME = ForgeItem.create("computer_frame");
-	public static final Item COMPUTER_STORAGE_PORT = ForgeItem.create("computer_storage_port");
-	public static final Item MOTHERBOARD = ForgeItem.create("motherboard");
-	public static final Item CPU = ForgeItem.create("cpu");
-	public static final Item RAM = ForgeItem.create("ram");
+	public static final Item COPPER_WIRE = BasicItem.create("copper_wire");
+	public static final Item COMPUTER_FAN = BasicItem.create("computer_fan");
+	public static final Item COMPUTER_SCREEN = BasicItem.create("computer_screen");
+	public static final Item COMPUTER_FRAME = BasicItem.create("computer_frame");
+	public static final Item COMPUTER_STORAGE_PORT = BasicItem.create("computer_storage_port");
+	public static final Item MOTHERBOARD = BasicItem.create("motherboard");
+	public static final Item CPU = BasicItem.create("cpu");
+	public static final Item RAM = BasicItem.create("ram");
 	
-	public static final Item COMPUTER_CORE = ForgeItem.create("computer_core");
+	public static final Item COMPUTER_CORE = BasicItem.create("computer_core");
 	
-	public static final Item STORAGE_DISC = ForgeItem.create("storage_disc");
+	public static final Item STORAGE_DISC = BasicItem.create("storage_disc");
 	
 	public static final Item BROKEN_CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create(Variant.BROKEN);
 	public static final Item UNCHARGED_CRYSTAL_SCARAB_GEM = CrystalScarabGemItem.create(Variant.UNCHARGED);

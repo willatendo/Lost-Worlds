@@ -82,6 +82,6 @@ public class TimeMachineContainer extends Container
 	@Override
 	public boolean stillValid(PlayerEntity player) 
 	{
-		return stillValid(this.access, player, BlockInit.TIME_MACHINE_BLOCK);
+		return stillValid(this.access, player, BlockInit.TIME_MACHINE);
 	}
 }

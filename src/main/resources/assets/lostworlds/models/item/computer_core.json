@@ -1,12 +1,12 @@
 {
 	"textures": {
 		"0": "block/iron_block",
-		"1": "lostworlds:items/computer_fan",
-		"2": "lostworlds:items/computer_screen",
-		"3": "lostworlds:items/computer_storage_port",
-		"4": "lostworlds:items/motherboard",
-		"5": "lostworlds:items/ram",
-		"6": "lostworlds:items/cpu"
+		"1": "lostworlds:item/computer_fan",
+		"2": "lostworlds:item/computer_screen",
+		"3": "lostworlds:item/computer_storage_port",
+		"4": "lostworlds:item/motherboard",
+		"5": "lostworlds:item/ram",
+		"6": "lostworlds:item/cpu"
 	},
 	"elements": [
 		{

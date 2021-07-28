@@ -1,6 +1,6 @@
 package lostworlds.library.item;
 
-import lostworlds.library.item.forge.ForgeBlockItem;
+import lostworlds.library.item.basic.BasicBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -11,13 +11,12 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.NonNullSupplier;
 
-public class AshLayerItem extends ForgeBlockItem
+public class AshLayerItem extends BasicBlockItem
 {
-	public AshLayerItem(NonNullSupplier<? extends Block> blockSupplier) 
+	public AshLayerItem(Block block) 
 	{
-		super(blockSupplier);
+		super(block);
 	}
 	
 	@Override

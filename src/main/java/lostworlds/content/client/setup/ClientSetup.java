@@ -1,6 +1,7 @@
 package lostworlds.content.client.setup;
 
 import lostworlds.content.client.screen.AnalyserScreen;
+import lostworlds.content.client.screen.ArchaeologyTableScreen;
 import lostworlds.content.client.screen.DNAExtractorScreen;
 import lostworlds.content.client.screen.DNAInjectorScreen;
 import lostworlds.content.client.screen.FossilCleanerScreen;
@@ -127,5 +128,6 @@ public class ClientSetup
 		ScreenManager.register(ContainerInit.DNA_INJECTOR_CONTAINER.get(), DNAInjectorScreen::new);
 
 		ScreenManager.register(ContainerInit.TIME_MACHINE_CONTAINER.get(), TimeMachineScreen::new);
+		ScreenManager.register(ContainerInit.ARCHAEOLOGY_CONTAINER.get(), ArchaeologyTableScreen::new);
 	}
 }

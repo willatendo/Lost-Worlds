@@ -2,7 +2,7 @@ package lostworlds.library.block;
 
 import lostworlds.content.server.init.TileEntityInit;
 import lostworlds.library.block.base.BaseMachineBlock;
-import lostworlds.library.block.forge.ForgeBlockAndItem;
+import lostworlds.library.block.base.BasicBlockAndItem;
 import lostworlds.library.tileentity.DNAInjectorTileEntity;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -65,6 +65,6 @@ public class DNAInjectorBlock extends BaseMachineBlock
 	
 	public static Block create()
 	{
-		return ForgeBlockAndItem.create("dna_injector", new DNAInjectorBlock());
+		return BasicBlockAndItem.create("dna_injector", new DNAInjectorBlock());
 	}
 }

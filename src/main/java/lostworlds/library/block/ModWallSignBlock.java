@@ -9,7 +9,7 @@ import net.minecraft.world.IBlockReader;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 16, 2021
  */
 
 public class ModWallSignBlock extends WallSignBlock

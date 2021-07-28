@@ -2,17 +2,17 @@ package lostworlds.library.block;
 
 import lostworlds.library.tileentity.ModSignTileEntity;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.StandingSignBlock;
+import net.minecraft.block.WallSignBlock;
 import net.minecraft.block.WoodType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockReader;
 
 /*
  * Author: Willatendo
- * Date: July 2, 2021
+ * Date: July 16, 2021
  */
 
-public class ModStandingSignBlock extends StandingSignBlock
+public class ModStandingSignBlock extends WallSignBlock
 {
 	public ModStandingSignBlock(Properties properties, WoodType woodType) 
 	{
@@ -29,5 +29,5 @@ public class ModStandingSignBlock extends StandingSignBlock
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) 
 	{
 		return this.newBlockEntity(world);
-	}
+	}	
 }

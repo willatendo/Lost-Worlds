@@ -16,7 +16,7 @@ public class ModUtil
 {
 	public static final Logger LOGGER = LogManager.getLogger(ModUtil.ID);
 	public static boolean DISABLE_IN_DEV = false;
-	
+		
 	public static final String ID = "lostworlds";
 	
 	public static ResourceLocation rL(String location)

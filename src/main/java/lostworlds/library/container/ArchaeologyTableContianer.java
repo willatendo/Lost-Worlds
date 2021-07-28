@@ -4,32 +4,24 @@ import java.util.Optional;
 
 import lostworlds.content.server.init.BlockInit;
 import lostworlds.content.server.init.ContainerInit;
+import lostworlds.content.server.init.RecipeInit;
 import lostworlds.library.inventory.ArchaeologyTableInventory;
 import lostworlds.library.inventory.ArchaeologyTableResultInventory;
+import lostworlds.library.recipe.ArchaeologyTableRecipe;
 import lostworlds.library.slot.ArchaeologyTableResultSlot;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.inventory.CraftResultInventory;
-import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.inventory.container.CraftingResultSlot;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.ICraftingRecipe;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ArchaeologyTableContianer extends Container 
 {
@@ -50,14 +42,14 @@ public class ArchaeologyTableContianer extends Container
 		this.player = playerInv.player;
 		this.addSlot(new ArchaeologyTableResultSlot(playerInv.player, this.craftSlots, this.resultSlots, 0, 124, 35));
 
-		for(int i = 0; i < 5; ++i) 
+		for(int i = 0; i < 3; ++i) 
 		{
-			for(int j = 0; j < 5; ++j) 
+			for(int j = 0; j < 3; ++j) 
 			{
 				this.addSlot(new Slot(this.craftSlots, j + i * 3, 30 + j * 18, 17 + i * 18));
 			}
 		}
-
+		
 		for(int k = 0; k < 3; ++k) 
 		{
 			for(int i1 = 0; i1 < 9; ++i1) 
@@ -65,7 +57,7 @@ public class ArchaeologyTableContianer extends Container
 				this.addSlot(new Slot(playerInv, i1 + k * 9 + 9, 8 + i1 * 18, 84 + k * 18));
 			}
 		}
-
+		
 		for(int l = 0; l < 9; ++l) 
 		{
 			this.addSlot(new Slot(playerInv, l, 8 + l * 18, 142));
@@ -77,13 +69,13 @@ public class ArchaeologyTableContianer extends Container
 		if (!world.isClientSide) {
 			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) player;
 			ItemStack itemstack = ItemStack.EMPTY;
-			Optional<ICraftingRecipe> optional = world.getServer().getRecipeManager().getRecipeFor(IRecipeType.CRAFTING, inv, world);
+			Optional<ArchaeologyTableRecipe> optional = world.getServer().getRecipeManager().getRecipeFor(RecipeInit.ARCHAEOLOGY_TABLE_RECIPE, inv, world);
 			if(optional.isPresent()) 
 			{
-				ICraftingRecipe icraftingrecipe = optional.get();
-				if(result.setRecipeUsed(world, serverplayerentity, icraftingrecipe)) 
+				ArchaeologyTableRecipe recipe = optional.get();
+				if(result.setRecipeUsed(world, serverplayerentity, recipe)) 
 				{
-					itemstack = icraftingrecipe.assemble(inv);
+					itemstack = recipe.assemble(inv);
 				}
 			}
 

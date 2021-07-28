@@ -6,7 +6,6 @@ import com.google.common.collect.ImmutableList;
 
 import lostworlds.content.server.init.BlockInit;
 import lostworlds.content.server.init.FeatureInit;
-import lostworlds.library.blockplacer.RockOutcropPlacer;
 import lostworlds.library.foliageplacer.ConiferFoliagePlacer;
 import lostworlds.library.util.ModUtil;
 import net.minecraft.block.Blocks;
@@ -61,8 +60,6 @@ public class ModConfiguredFeatures
 	
 	public static final ConfiguredFeature<?, ?> SPONGE_COLONEY = register("sponge_coloney", Feature.SIMPLE_BLOCK.configured(new BlockWithContextConfig(BlockInit.SPONGE_COLONY.defaultBlockState(), ImmutableList.of(BlockInit.PERMIAN_SAND.defaultBlockState()), ImmutableList.of(Blocks.WATER.defaultBlockState()), ImmutableList.of(Blocks.WATER.defaultBlockState()))).decorated(Placement.CARVING_MASK.configured(new CaveEdgeConfig(GenerationStage.Carving.LIQUID, 0.1F))));
 
-	public static final ConfiguredFeature<?, ?> PERMIAN_ROCK_OUTCROP = register("permian_rock_outcrop", Feature.RANDOM_PATCH.configured(ModBlockClusterFeatureConfig.PERMIAN_ROCK_OUTCROP_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
-
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> CONIFER_TREE = register("conifer_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.CONIFER_LOG.defaultBlockState()), new SimpleBlockStateProvider(BlockInit.CONIFER_LEAVES.defaultBlockState()), new ConiferFoliagePlacer(FeatureSpread.of(2, 1), FeatureSpread.of(0, 2), FeatureSpread.of(1, 1)), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> GINKGO_TREE = register("ginkgo_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.GINKGO_LOG.defaultBlockState()), new SimpleBlockStateProvider(BlockInit.GINKGO_LEAVES.defaultBlockState()), new FancyFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(4), 4), new FancyTrunkPlacer(3, 11, 0), new TwoLayerFeature(0, 0, 0, OptionalInt.of(4)))).ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build()));
 	public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> SCORCHED_TREE = register("scorched_tree", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.SCORCHED_LOG.defaultBlockState()), new SimpleBlockStateProvider(Blocks.AIR.defaultBlockState()), new FancyFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(4), 4), new FancyTrunkPlacer(3, 11, 0), new TwoLayerFeature(0, 0, 0, OptionalInt.of(4)))).ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build()));
@@ -94,8 +91,6 @@ public class ModConfiguredFeatures
 		public static final BlockClusterFeatureConfig CONIFER_STICKS = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.CONIFER_STICKS.defaultBlockState()), SimpleBlockPlacer.INSTANCE)).tries(1).build();
 		public static final BlockClusterFeatureConfig GEYSER_BLOCK = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.GEYSER_BLOCK.defaultBlockState()), SimpleBlockPlacer.INSTANCE)).tries(1).build();
 		
-		public static final BlockClusterFeatureConfig PERMIAN_ROCK_OUTCROP_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.PERMIAN_ROCK_OUTCROP.defaultBlockState()), RockOutcropPlacer.INSTANCE)).tries(1).build();
-
 		public static final BlockClusterFeatureConfig FERN_CONFIG = (new BlockClusterFeatureConfig.Builder((new WeightedBlockStateProvider()).add(Blocks.FERN.defaultBlockState(), 4), SimpleBlockPlacer.INSTANCE)).tries(32).build();
 
 		public static final BlockClusterFeatureConfig ASHY_SHRUB_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.ASHY_SHRUB.defaultBlockState()), SimpleBlockPlacer.INSTANCE)).tries(16).build();

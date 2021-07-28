@@ -2,7 +2,7 @@ package lostworlds.library.block;
 
 import lostworlds.content.server.init.TileEntityInit;
 import lostworlds.library.block.base.BaseMachineBlock;
-import lostworlds.library.block.forge.ForgeBlockAndItem;
+import lostworlds.library.block.base.BasicBlockAndItem;
 import lostworlds.library.tileentity.FossilCleanerTileEntity;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -65,6 +65,6 @@ public class FossilCleanerBlock extends BaseMachineBlock
 	
 	public static Block create()
 	{
-		return ForgeBlockAndItem.create("fossil_cleaner", new FossilCleanerBlock());
+		return BasicBlockAndItem.create("fossil_cleaner", new FossilCleanerBlock());
 	}
 }

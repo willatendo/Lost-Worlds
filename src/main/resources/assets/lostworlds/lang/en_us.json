@@ -479,6 +479,5 @@
 	
 	//Item Groups
 	"itemGroup.lostworlds.items": "Lost Worlds Items",
-	"itemGroup.lostworlds.blocks": "Lost Worlds Blocks",
-	"itemGroup.lostworlds.lost_worlds": "Lost Worlds"
+	"itemGroup.lostworlds.blocks": "Lost Worlds Blocks"
 }

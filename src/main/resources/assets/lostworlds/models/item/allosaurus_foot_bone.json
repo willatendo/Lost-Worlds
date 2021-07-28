@@ -1,6 +1,0 @@
-{
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "lostworlds:items/bones/allosaurus/allosaurus_foot_bone"
-	}
-}

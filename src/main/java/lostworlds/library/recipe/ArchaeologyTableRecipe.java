@@ -2,9 +2,10 @@ package lostworlds.library.recipe;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -12,8 +13,6 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 
 import lostworlds.library.inventory.ArchaeologyTableInventory;
-import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -23,8 +22,8 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.crafting.IShapedRecipe;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
@@ -50,50 +49,60 @@ public class ArchaeologyTableRecipe implements IRecipe<ArchaeologyTableInventory
 	private final NonNullList<Ingredient> recipeItems;
 	private final ItemStack result;
 	private final ResourceLocation id;
-	private final String group;
 
-	public ArchaeologyTableRecipe(ResourceLocation p_i48162_1_, String p_i48162_2_, int p_i48162_3_, int p_i48162_4_, NonNullList<Ingredient> p_i48162_5_, ItemStack p_i48162_6_) 
+	public ArchaeologyTableRecipe(ResourceLocation id, int width, int height, NonNullList<Ingredient> recipeItems, ItemStack result) 
 	{
-		this.id = p_i48162_1_;
-		this.group = p_i48162_2_;
-		this.width = p_i48162_3_;
-		this.height = p_i48162_4_;
-		this.recipeItems = p_i48162_5_;
-		this.result = p_i48162_6_;
+		this.id = id;
+		this.width = width;
+		this.height = height;
+		this.recipeItems = recipeItems;
+		this.result = result;
 	}
 
-	public ResourceLocation getId() {
+	@Override
+	public ResourceLocation getId() 
+	{
 		return this.id;
 	}
 
-	public IRecipeSerializer<?> getSerializer() {
+	@Override
+	public IRecipeSerializer<?> getSerializer() 
+	{
 		return IRecipeSerializer.SHAPED_RECIPE;
 	}
 
-	public String getGroup() {
-		return this.group;
-	}
-
-	public ItemStack getResultItem() {
+	@Override
+	public ItemStack getResultItem() 
+	{
 		return this.result;
 	}
 
-	public NonNullList<Ingredient> getIngredients() {
+	@Override
+	public NonNullList<Ingredient> getIngredients() 
+	{
 		return this.recipeItems;
 	}
 
-	public boolean canCraftInDimensions(int p_194133_1_, int p_194133_2_) {
-		return p_194133_1_ >= this.width && p_194133_2_ >= this.height;
+	@Override
+	public boolean canCraftInDimensions(int width, int height) 
+	{
+		return width >= this.width && height >= this.height;
 	}
 
-	public boolean matches(CraftingInventory p_77569_1_, World p_77569_2_) {
-		for (int i = 0; i <= p_77569_1_.getWidth() - this.width; ++i) {
-			for (int j = 0; j <= p_77569_1_.getHeight() - this.height; ++j) {
-				if (this.matches(p_77569_1_, i, j, true)) {
+	@Override
+	public boolean matches(ArchaeologyTableInventory inv, World world) 
+	{
+		for(int i = 0; i <= inv.getWidth() - this.width; ++i) 
+		{
+			for(int j = 0; j <= inv.getHeight() - this.height; ++j) 
+			{
+				if(this.matches(inv, i, j, true)) 
+				{
 					return true;
 				}
 
-				if (this.matches(p_77569_1_, i, j, false)) {
+				if(this.matches(inv, i, j, false)) 
+				{
 					return true;
 				}
 			}
@@ -102,21 +111,29 @@ public class ArchaeologyTableRecipe implements IRecipe<ArchaeologyTableInventory
 		return false;
 	}
 
-	private boolean matches(CraftingInventory p_77573_1_, int p_77573_2_, int p_77573_3_, boolean p_77573_4_) {
-		for (int i = 0; i < p_77573_1_.getWidth(); ++i) {
-			for (int j = 0; j < p_77573_1_.getHeight(); ++j) {
-				int k = i - p_77573_2_;
-				int l = j - p_77573_3_;
+	private boolean matches(ArchaeologyTableInventory inv, int width, int height, boolean b) 
+	{
+		for(int i = 0; i < inv.getWidth(); ++i) 
+		{
+			for(int j = 0; j < inv.getHeight(); ++j) 
+			{
+				int k = i - width;
+				int l = j - height;
 				Ingredient ingredient = Ingredient.EMPTY;
-				if (k >= 0 && l >= 0 && k < this.width && l < this.height) {
-					if (p_77573_4_) {
+				if(k >= 0 && l >= 0 && k < this.width && l < this.height) 
+				{
+					if(b) 
+					{
 						ingredient = this.recipeItems.get(this.width - k - 1 + l * this.width);
-					} else {
+					} 
+					else 
+					{
 						ingredient = this.recipeItems.get(k + l * this.width);
 					}
 				}
 
-				if (!ingredient.test(p_77573_1_.getItem(i + j * p_77573_1_.getWidth()))) {
+				if(!ingredient.test(inv.getItem(i + j * inv.getWidth())))
+				{
 					return false;
 				}
 			}
@@ -125,94 +142,150 @@ public class ArchaeologyTableRecipe implements IRecipe<ArchaeologyTableInventory
 		return true;
 	}
 
-	public ItemStack assemble(CraftingInventory p_77572_1_) {
+	@Override
+	public ItemStack assemble(ArchaeologyTableInventory inv) 
+	{
 		return this.getResultItem().copy();
 	}
 
-	public int getWidth() {
+	public int getWidth() 
+	{
 		return this.width;
 	}
 
 	@Override
-	public int getRecipeWidth() {
+	public int getRecipeWidth() 
+	{
 		return getWidth();
 	}
 
-	public int getHeight() {
+	public int getHeight() 
+	{
 		return this.height;
 	}
 
 	@Override
-	public int getRecipeHeight() {
+	public int getRecipeHeight() 
+	{
 		return getHeight();
 	}
 
-	@VisibleForTesting
-	static String[] shrink(String... p_194134_0_) {
+	private static NonNullList<Ingredient> dissolvePattern(String[] stacks, Map<String, Ingredient> map, int width, int height) 
+	{
+		NonNullList<Ingredient> nonnulllist = NonNullList.withSize(width * height, Ingredient.EMPTY);
+		Set<String> set = Sets.newHashSet(map.keySet());
+		set.remove(" ");
+		
+		for(int i = 0; i < stacks.length; ++i) 
+		{
+			for(int j = 0; j < stacks[i].length(); ++j) 
+			{
+				String s = stacks[i].substring(j, j + 1);
+				Ingredient ingredient = map.get(s);
+				if(ingredient == null) 
+				{
+					throw new JsonSyntaxException("Pattern references symbol '" + s + "' but it's not defined in the key");
+				}
+				
+				set.remove(s);
+				nonnulllist.set(j + width * i, ingredient);
+			}
+		}
+		
+		if(!set.isEmpty()) 
+		{
+			throw new JsonSyntaxException("Key defines symbols that aren't used in pattern: " + set);
+		} 
+		else 
+		{
+			return nonnulllist;
+		}
+	}
+	
+	static String[] shrink(String... stacks) 
+	{
 		int i = Integer.MAX_VALUE;
 		int j = 0;
 		int k = 0;
 		int l = 0;
 
-		for (int i1 = 0; i1 < p_194134_0_.length; ++i1) {
-			String s = p_194134_0_[i1];
+		for(int i1 = 0; i1 < stacks.length; ++i1) 
+		{
+			String s = stacks[i1];
 			i = Math.min(i, firstNonSpace(s));
 			int j1 = lastNonSpace(s);
 			j = Math.max(j, j1);
-			if (j1 < 0) {
-				if (k == i1) {
+			if(j1 < 0) 
+			{
+				if(k == i1) 
+				{
 					++k;
 				}
 
 				++l;
-			} else {
+			} 
+			else 
+			{
 				l = 0;
 			}
 		}
 
-		if (p_194134_0_.length == l) {
+		if(stacks.length == l) 
+		{
 			return new String[0];
-		} else {
-			String[] astring = new String[p_194134_0_.length - l - k];
+		} 
+		else 
+		{
+			String[] astring = new String[stacks.length - l - k];
 
-			for (int k1 = 0; k1 < astring.length; ++k1) {
-				astring[k1] = p_194134_0_[k1 + k].substring(i, j + 1);
+			for(int k1 = 0; k1 < astring.length; ++k1) 
+			{
+				astring[k1] = stacks[k1 + k].substring(i, j + 1);
 			}
 
 			return astring;
 		}
 	}
 
-	private static int firstNonSpace(String p_194135_0_) {
+	private static int firstNonSpace(String stacks) 
+	{
 		int i;
-		for (i = 0; i < p_194135_0_.length() && p_194135_0_.charAt(i) == ' '; ++i) {
-		}
+		for(i = 0; i < stacks.length() && stacks.charAt(i) == ' '; ++i) { }
 
 		return i;
 	}
 
-	private static int lastNonSpace(String p_194136_0_) {
+	private static int lastNonSpace(String stacks) 
+	{
 		int i;
-		for (i = p_194136_0_.length() - 1; i >= 0 && p_194136_0_.charAt(i) == ' '; --i) {
-		}
+		for(i = stacks.length() - 1; i >= 0 && stacks.charAt(i) == ' '; --i) { }
 
 		return i;
 	}
 
-	private static String[] patternFromJson(JsonArray p_192407_0_) {
-		String[] astring = new String[p_192407_0_.size()];
-		if (astring.length > MAX_HEIGHT) {
+	private static String[] patternFromJson(JsonArray array) 
+	{
+		String[] astring = new String[array.size()];
+		if(astring.length > MAX_HEIGHT) 
+		{
 			throw new JsonSyntaxException("Invalid pattern: too many rows, " + MAX_HEIGHT + " is maximum");
-		} else if (astring.length == 0) {
+		} 
+		else if(astring.length == 0) 
+		{
 			throw new JsonSyntaxException("Invalid pattern: empty pattern not allowed");
-		} else {
-			for (int i = 0; i < astring.length; ++i) {
-				String s = JSONUtils.convertToString(p_192407_0_.get(i), "pattern[" + i + "]");
-				if (s.length() > MAX_WIDTH) {
+		} 
+		else 
+		{
+			for(int i = 0; i < astring.length; ++i) 
+			{
+				String s = JSONUtils.convertToString(array.get(i), "pattern[" + i + "]");
+				if(s.length() > MAX_WIDTH) 
+				{
 					throw new JsonSyntaxException("Invalid pattern: too many columns, " + MAX_WIDTH + " is maximum");
 				}
 
-				if (i > 0 && astring[0].length() != s.length()) {
+				if(i > 0 && astring[0].length() != s.length()) 
+				{
 					throw new JsonSyntaxException("Invalid pattern: each row must be the same width");
 				}
 
@@ -223,16 +296,19 @@ public class ArchaeologyTableRecipe implements IRecipe<ArchaeologyTableInventory
 		}
 	}
 
-	private static Map<String, Ingredient> keyFromJson(JsonObject p_192408_0_) {
+	private static Map<String, Ingredient> keyFromJson(JsonObject json) 
+	{
 		Map<String, Ingredient> map = Maps.newHashMap();
 
-		for (Entry<String, JsonElement> entry : p_192408_0_.entrySet()) {
-			if (entry.getKey().length() != 1) {
-				throw new JsonSyntaxException("Invalid key entry: '" + (String) entry.getKey()
-						+ "' is an invalid symbol (must be 1 character only).");
+		for(Entry<String, JsonElement> entry : json.entrySet()) 
+		{
+			if(entry.getKey().length() != 1) 
+			{
+				throw new JsonSyntaxException("Invalid key entry: '" + (String) entry.getKey() + "' is an invalid symbol (must be 1 character only).");
 			}
 
-			if (" ".equals(entry.getKey())) {
+			if(" ".equals(entry.getKey())) 
+			{
 				throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
 			}
 
@@ -243,77 +319,63 @@ public class ArchaeologyTableRecipe implements IRecipe<ArchaeologyTableInventory
 		return map;
 	}
 
-	public static ItemStack itemFromJson(JsonObject p_199798_0_) {
-		String s = JSONUtils.getAsString(p_199798_0_, "item");
-		Item item = Registry.ITEM.getOptional(new ResourceLocation(s)).orElseThrow(() -> {
-			return new JsonSyntaxException("Unknown item '" + s + "'");
-		});
-		if (p_199798_0_.has("data")) {
+	public static ItemStack itemFromJson(JsonObject json) 
+	{
+		if(json.has("data")) 
+		{
 			throw new JsonParseException("Disallowed data tag found");
-		} else {
-			int i = JSONUtils.getAsInt(p_199798_0_, "count", 1);
-			return net.minecraftforge.common.crafting.CraftingHelper.getItemStack(p_199798_0_, true);
+		} 
+		else 
+		{
+			return CraftingHelper.getItemStack(json, true);
 		}
 	}
 
 	@Override
-	public boolean matches(ArchaeologyTableInventory p_77569_1_, World p_77569_2_) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public ItemStack assemble(ArchaeologyTableInventory p_77572_1_) {
-		// TODO Auto-generated method stub
+	public IRecipeType<?> getType() 
+	{
 		return null;
 	}
 
-	@Override
-	public IRecipeType<?> getType() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<ArchaeologyTableRecipe> {
-		private static final ResourceLocation NAME = new ResourceLocation("minecraft", "crafting_shaped");
-
-		public ArchaeologyTableRecipe fromJson(ResourceLocation p_199425_1_, JsonObject p_199425_2_) {
-			String s = JSONUtils.getAsString(p_199425_2_, "group", "");
-			Map<String, Ingredient> map = ArchaeologyTableRecipe
-					.keyFromJson(JSONUtils.getAsJsonObject(p_199425_2_, "key"));
-			String[] astring = ArchaeologyTableRecipe
-					.shrink(ArchaeologyTableRecipe.patternFromJson(JSONUtils.getAsJsonArray(p_199425_2_, "pattern")));
+	public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<ArchaeologyTableRecipe> 
+	{
+		public ArchaeologyTableRecipe fromJson(ResourceLocation id, JsonObject json) 
+		{
+			Map<String, Ingredient> map = ArchaeologyTableRecipe.keyFromJson(JSONUtils.getAsJsonObject(json, "key"));
+			String[] astring = ArchaeologyTableRecipe.shrink(ArchaeologyTableRecipe.patternFromJson(JSONUtils.getAsJsonArray(json, "pattern")));
 			int i = astring[0].length();
 			int j = astring.length;
 			NonNullList<Ingredient> nonnulllist = ArchaeologyTableRecipe.dissolvePattern(astring, map, i, j);
-			ItemStack itemstack = ArchaeologyTableRecipe.itemFromJson(JSONUtils.getAsJsonObject(p_199425_2_, "result"));
-			return new ArchaeologyTableRecipe(p_199425_1_, s, i, j, nonnulllist, itemstack);
+			ItemStack itemstack = ArchaeologyTableRecipe.itemFromJson(JSONUtils.getAsJsonObject(json, "result"));
+			return new ArchaeologyTableRecipe(id, i, j, nonnulllist, itemstack);
 		}
 
-		public ArchaeologyTableRecipe fromNetwork(ResourceLocation p_199426_1_, PacketBuffer p_199426_2_) {
+		public ArchaeologyTableRecipe fromNetwork(ResourceLocation id, PacketBuffer p_199426_2_) 
+		{
 			int i = p_199426_2_.readVarInt();
 			int j = p_199426_2_.readVarInt();
-			String s = p_199426_2_.readUtf(32767);
 			NonNullList<Ingredient> nonnulllist = NonNullList.withSize(i * j, Ingredient.EMPTY);
 
-			for (int k = 0; k < nonnulllist.size(); ++k) {
+			for (int k = 0; k < nonnulllist.size(); ++k) 
+			{
 				nonnulllist.set(k, Ingredient.fromNetwork(p_199426_2_));
 			}
 
 			ItemStack itemstack = p_199426_2_.readItem();
-			return new ArchaeologyTableRecipe(p_199426_1_, s, i, j, nonnulllist, itemstack);
+			return new ArchaeologyTableRecipe(id, i, j, nonnulllist, itemstack);
 		}
 
-		public void toNetwork(PacketBuffer p_199427_1_, ArchaeologyTableRecipe p_199427_2_) {
-			p_199427_1_.writeVarInt(p_199427_2_.width);
-			p_199427_1_.writeVarInt(p_199427_2_.height);
-			p_199427_1_.writeUtf(p_199427_2_.group);
+		public void toNetwork(PacketBuffer buffer, ArchaeologyTableRecipe recipe) 
+		{
+			buffer.writeVarInt(recipe.width);
+			buffer.writeVarInt(recipe.height);
 
-			for (Ingredient ingredient : p_199427_2_.recipeItems) {
-				ingredient.toNetwork(p_199427_1_);
+			for(Ingredient ingredient : recipe.recipeItems) 
+			{
+				ingredient.toNetwork(buffer);
 			}
 
-			p_199427_1_.writeItem(p_199427_2_.result);
+			buffer.writeItem(recipe.result);
 		}
 	}
 }

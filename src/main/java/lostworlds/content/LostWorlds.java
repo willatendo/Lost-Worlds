@@ -23,39 +23,39 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
-/*
- * Author: Willatendo
- * Date: July 10, 2021
- */
-
-@Mod("lostworlds")
+@Mod(ModUtil.ID)
 public class LostWorlds 
 {
 	public LostWorlds() 
 	{
 		ModUtil.LOGGER.debug("Starting: Lost Worlds Registration");
 		
-		//Setup
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
-		
-		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, LostWorldsConfig.serverSpec);
-		
 		//Objects
 		final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		ModRegistry.register(bus);
-		
 		LostWorldsAddon.getModPlugins();
 		
-		//v3.0.30
+		//Config
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LostWorldsConfig.serverSpec);
+		
+		//Setup
+		bus.addListener(this::commonSetup);
+		bus.addListener(this::clientSetup);
+		
+		//v3.0.30	
 		GeckoLib.initialize();
 		
 		ModUtil.LOGGER.debug("Finished: Lost Worlds Registration");
 	}
 	
-	private void setup(final FMLCommonSetupEvent event)
+	private void commonSetup(final FMLCommonSetupEvent event)
 	{
+		ModUtil.LOGGER.debug("Loading: Mod Potion Recipes");
+		
+		//Recipes
 		BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(BlockInit.VOLCANIC_ASH.asItem()), PotionUtils.setPotion(new ItemStack(Items.POTION), PotionInit.ASHY_LUNG_POTION));
+
+		ModUtil.LOGGER.debug("Finished: Mod Potion Recipes");
 		
 		event.enqueueWork(() -> 
 		{
@@ -67,10 +67,11 @@ public class LostWorlds
 		});	
 	}
 	
-	private void setupClient(FMLClientSetupEvent event) 
+	private void clientSetup(FMLClientSetupEvent event) 
 	{
 		ModUtil.LOGGER.debug("Loading: Dimension Renders");
 		
+		//Sky Render
 		DimensionRenderInfo permian = new DimensionRenderInfo.Overworld();
 		DimensionRenderInfo.EFFECTS.put(ModUtil.rL("permian_render"), permian);
 		

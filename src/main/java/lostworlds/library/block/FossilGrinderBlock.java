@@ -2,7 +2,7 @@ package lostworlds.library.block;
 
 import lostworlds.content.server.init.TileEntityInit;
 import lostworlds.library.block.base.BaseMachineBlock;
-import lostworlds.library.block.forge.ForgeBlockAndItem;
+import lostworlds.library.block.base.BasicBlockAndItem;
 import lostworlds.library.tileentity.FossilGrinderTileEntity;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -65,6 +65,6 @@ public class FossilGrinderBlock extends BaseMachineBlock
 	
 	public static Block create()
 	{
-		return ForgeBlockAndItem.create("fossil_grinder", new FossilGrinderBlock());
+		return BasicBlockAndItem.create("fossil_grinder", new FossilGrinderBlock());
 	}
 }

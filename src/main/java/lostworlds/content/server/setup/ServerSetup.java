@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 /*
  * Author: Willatendo
- * Date: July 6, 2021
+ * Date: July 16, 2021
  */
 
 @EventBusSubscriber(modid = ModUtil.ID, bus = Bus.MOD)
@@ -19,6 +19,10 @@ public class ServerSetup
 	@SubscribeEvent
 	public static void onRegsterFeatures(Register<Feature<?>> feature)
 	{
+		ModUtil.LOGGER.debug("Loading: Mod Configured Features");
+		
 		ModConfiguredFeatures.init();
+
+		ModUtil.LOGGER.debug("Finished: Mod Configured Features");
 	}
 }
