@@ -1,6 +1,7 @@
+JVM:         C:\Users\willi\.gradle\jdks\jdk8u292-b10\bin\java.exe
 JVM Args:    
 Run Args:    "--strip", "--input", "C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\AccessTransformer\output.jar", "--output", "C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\SideStripper\output.jar", "--data", "C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\SideStripper\string_data.sas"
-Classpath:   C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\mergetool\1.0.7\mergetool-1.0.7-fatjar.jar
+Classpath:   C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\mergetool\1.1.3\mergetool-1.1.3-fatjar.jar
 Working Dir: C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\SideStripper
 Main Class:  net.minecraftforge.mergetool.ConsoleMerger
 Input:  C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\AccessTransformer\output.jar

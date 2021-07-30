@@ -1,6 +1,0 @@
-{
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "lostworlds:items/bones/great_auk/great_auk_feather"
-	}
-}

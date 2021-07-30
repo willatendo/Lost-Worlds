@@ -1,5 +1,5 @@
 version:2586
-autoJump:false
+autoJump:true
 autoSuggestions:true
 chatColors:true
 chatLinks:true
@@ -12,9 +12,9 @@ invertYMouse:false
 realmsNotifications:true
 reducedDebugInfo:false
 snooperEnabled:false
-showSubtitles:true
+showSubtitles:false
 touchscreen:false
-fullscreen:true
+fullscreen:false
 bobView:true
 toggleCrouch:false
 toggleSprint:false
@@ -25,13 +25,13 @@ fovEffectScale:1.0
 gamma:0.0
 renderDistance:12
 entityDistanceScaling:1.0
-guiScale:2
+guiScale:0
 particles:0
-maxFps:260
+maxFps:120
 difficulty:2
 graphicsMode:1
 ao:2
-biomeBlendRadius:7
+biomeBlendRadius:2
 renderClouds:true
 resourcePacks:[]
 incompatibleResourcePacks:[]
@@ -43,7 +43,7 @@ chatLineSpacing:0.0
 textBackgroundOpacity:0.5
 backgroundForChatOnly:true
 hideServerAddress:false
-advancedItemTooltips:true
+advancedItemTooltips:false
 pauseOnLostFocus:true
 overrideWidth:0
 overrideHeight:0
@@ -114,7 +114,7 @@ key_key.jei.nextCategory:key.keyboard.page.down:SHIFT
 key_key.jei.bookmark:key.keyboard.a
 key_key.jei.toggleBookmarkOverlay:key.keyboard.unknown
 soundCategory_master:1.0
-soundCategory_music:0.0
+soundCategory_music:1.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0

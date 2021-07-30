@@ -1,6 +1,0 @@
-{
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "lostworlds:items/jurassic_era_time_book"
-	}
-}

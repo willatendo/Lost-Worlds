@@ -1,10 +1,11 @@
+JVM:         C:\Users\willi\.gradle\jdks\jdk8u292-b10\bin\java.exe
 JVM Args:    
-Run Args:    "--in", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\rename\output.jar", "--out", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\mcinject\output.jar", "--log", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\mcinject\log.log", "--level=INFO", "--lvt=LVT", "--exc", "config/exceptions.txt", "--acc", "config/access.txt", "--ctr", "config/constructors.txt"
+Run Args:    "--in", "C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\rename\output.jar", "--out", "C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\mcinject\output.jar", "--log", "C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\mcinject\log.log", "--level=INFO", "--lvt=LVT", "--exc", "config/exceptions.txt", "--acc", "config/access.txt", "--ctr", "config/constructors.txt"
 Classpath:   C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\de\oceanlabs\mcp\mcinjector\3.8.0\mcinjector-3.8.0-fatjar.jar
-Working Dir: C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\mcinject
+Working Dir: C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\mcinject
 Main Class:  de.oceanlabs.mcp.mcinjector.MCInjector
-Processing: C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\rename\output.jar
-  Output: C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\mcinject\output.jar
+Processing: C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\rename\output.jar
+  Output: C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\mcinject\output.jar
 Processing net/minecraft/block/WitherSkeletonSkullBlock.class
 Processed 9044 -> 9368
 Processing net/minecraft/network/play/client/CPlayerPacket$PositionRotationPacket.class
@@ -10903,4 +10904,4 @@ Processing net/minecraft/block/WitherSkeletonWallSkullBlock.class
 Processed 1605 -> 1683
 Processing net/minecraft/network/play/client/CPlayerPacket$RotationPacket.class
 Processed 1604 -> 1730
-Processed C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\rename\output.jar
+Processed C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\cfebe1e9e78fa1a7b56eabcd9e286dc7f556f6d9\rename\output.jar

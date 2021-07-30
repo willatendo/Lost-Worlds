@@ -1,5 +1,0 @@
-JVM Args:    
-Run Args:    "--client", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\stripClient\output.jar", "--server", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\stripServer\output.jar", "--ann", "1.16.5", "--output", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\merge\output.jar", "--inject", "false"
-Classpath:   C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\mergetool\1.1.1\mergetool-1.1.1-fatjar.jar
-Working Dir: C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\merge
-Main Class:  net.minecraftforge.mergetool.ConsoleMerger

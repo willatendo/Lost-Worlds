@@ -1,8 +1,0 @@
-JVM Args:    
-Run Args:    "--strip", "--input", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\AccessTransformer\output.jar", "--output", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\SideStripper\output.jar", "--data", "C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\SideStripper\string_data.sas"
-Classpath:   C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\mergetool\1.0.7\mergetool-1.0.7-fatjar.jar
-Working Dir: C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\SideStripper
-Main Class:  net.minecraftforge.mergetool.ConsoleMerger
-Input:  C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\AccessTransformer\output.jar
-Output: C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\SideStripper\output.jar
-Data:   C:\Users\willi\Documents\GitHub\Lost-Worlds\build\fg_cache\mcp\1.16.5-20210115.111550\joined\2ca1748125fb99a93f5ef4f8fabeffb316a23dde\SideStripper\string_data.sas
