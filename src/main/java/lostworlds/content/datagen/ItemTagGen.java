@@ -7,6 +7,7 @@ import lostworlds.library.util.ModUtil;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
+import net.minecraft.item.Items;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -36,5 +37,6 @@ public class ItemTagGen extends ItemTagsProvider
 		this.copy(ModBlockTags.SCORCHED_LOGS, ModItemTags.SCORCHED_LOGS);
 		this.tag(ModItemTags.SOFT_TISSUE);
 		this.tag(ModItemTags.TIME_BOOKS).add(ItemInit.PERMIAN_PERIOD_TIME_BOOK); 
+		this.tag(ModItemTags.TIME_BOOK_FUEL).add(Items.REDSTONE); 
 	}
 }

@@ -22,6 +22,7 @@ public class ModTags
 		public static final ITag.INamedTag<Item> GINKGO_LOGS = tag("ginkgo_logs");
 		public static final ITag.INamedTag<Item> SCORCHED_LOGS = tag("scorched_logs");
 		public static final ITag.INamedTag<Item> SOFT_TISSUE = tag("soft_tissue");
+		public static final ITag.INamedTag<Item> TIME_BOOK_FUEL = tag("time_book_fuel");
 		public static final ITag.INamedTag<Item> TIME_BOOKS = tag("time_books");
 		
 		private static ITag.INamedTag<Item> tag(String id)
