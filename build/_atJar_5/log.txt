@@ -1,7 +1,0 @@
-Java Launcher: C:\Users\willi\.gradle\jdks\jdk8u292-b10\bin\java.exe
-Arguments: '--inJar, C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\net\minecraftforge\forge\1.16.5-36.2.2\forge-1.16.5-36.2.2-injected.jar, --outJar, C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\fg_cache\net\minecraftforge\forge\1.16.5-36.2.2_mapped_official_1.16.5\forge-1.16.5-36.2.2_mapped_official_1.16.5.jar, --logFile, accesstransform.log, --atFile, C:\Users\willi\Documents\GitHub\The-Lost-Worlds\src\main\resources\META-INF\accesstransformer.cfg, --atFile, C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\_atJar_5\parent_at.cfg'
-Classpath:
- - C:\Users\willi\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\accesstransformers\3.0.1\accesstransformers-3.0.1-fatjar.jar
-Working directory: C:\Users\willi\Documents\GitHub\The-Lost-Worlds\build\_atJar_5
-Main class: net.minecraftforge.accesstransformer.TransformerProcessor
-====================================
