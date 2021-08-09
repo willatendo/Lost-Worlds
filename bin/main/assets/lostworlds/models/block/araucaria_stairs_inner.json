@@ -1,8 +1,0 @@
-{
-	"parent": "minecraft:block/inner_stairs",
-	"textures": {
-		"bottom": "lostworlds:blocks/araucaria_planks",
-		"top": "lostworlds:blocks/araucaria_planks",
-		"side": "lostworlds:blocks/araucaria_planks"
-	}
-}

@@ -1,8 +1,0 @@
-{
-	"parent": "minecraft:block/stairs",
-	"textures": {
-		"bottom": "lostworlds:blocks/scorched_planks",
-		"top": "lostworlds:blocks/scorched_planks",
-		"side": "lostworlds:blocks/scorched_planks"
-	}
-}S

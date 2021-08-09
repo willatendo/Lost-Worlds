@@ -1,7 +1,0 @@
-{
-	"parent": "minecraft:block/template_glass_pane_side",
-	"textures": {
-		"pane": "lostworlds:blocks/tinted_glass",
-		"edge": "lostworlds:blocks/tinted_glass_pane_top"
-	}
-}

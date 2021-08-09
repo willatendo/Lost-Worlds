@@ -1,8 +1,0 @@
-{
-	"parent": "minecraft:block/inner_stairs",
-	"textures": {
-		"bottom": "lostworlds:blocks/permian_cobblestone",
-		"top": "lostworlds:blocks/permian_cobblestone",
-		"side": "lostworlds:blocks/permian_cobblestone"
-	}
-}

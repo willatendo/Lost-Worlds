@@ -1,8 +1,0 @@
-{
-	"parent": "minecraft:block/slab",
-	"textures": {
-		"bottom": "lostworlds:blocks/gravel_road",
-		"top": "lostworlds:blocks/gravel_road",
-		"side": "lostworlds:blocks/gravel_road"
-	}
-}

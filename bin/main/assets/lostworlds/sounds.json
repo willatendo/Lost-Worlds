@@ -1,8 +1,0 @@
-{
-    "block.sound.machine_whirling": {
-        "subtitle": "subtitle.lostworlds.machine_whirling",
-        "sounds": [ 
-        	"lostworlds:block/machine_whirling" 
-        ]
-    }
-}
